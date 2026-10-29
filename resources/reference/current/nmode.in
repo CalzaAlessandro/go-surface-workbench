@@ -1,0 +1,8 @@
+Input file for running NMODE
+
+&general
+verbose=1, keep_files=0,
+/
+&nmode
+  nmode_istrng=0.100
+/

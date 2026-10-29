@@ -1,0 +1,9 @@
+{
+  "name": "finite_GO_random_grafting_demo",
+  "nx": 8,
+  "ny": 8,
+  "pbc": [false, false, false],
+  "seed": 17,
+  "faces": "both",
+  "groups": {"epoxide": 4}
+}

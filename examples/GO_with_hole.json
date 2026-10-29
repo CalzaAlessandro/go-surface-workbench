@@ -1,0 +1,10 @@
+{
+  "name": "finite_GO_hole_demo",
+  "nx": 9,
+  "ny": 9,
+  "pbc": [false, false, false],
+  "seed": 23,
+  "holes": [{"center": [18, 10], "radius": 2.5}],
+  "faces": "both",
+  "groups": {"OH": 4, "epoxide": 6, "carbonyl": 2, "COOH": 1, "COO": 1}
+}

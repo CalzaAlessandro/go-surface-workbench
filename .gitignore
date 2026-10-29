@@ -1,0 +1,34 @@
+# Python environments and caches
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.pyright/
+
+# Local and generated work
+.DS_Store
+*.py[cod]
+*.egg-info/
+build/
+dist/
+work/
+results/
+validation/
+
+# Scientific engine outputs
+*.log
+*.out
+*.err
+*.chk
+*.rwf
+*.nc
+*.parm7
+*.prmtop
+*.rst7
+*.inpcrd
+*.pdbqt
+
+# Versioned small scientific regression fixtures
+!resources/reference/old/*.parm7
+!resources/reference/old/*.rst7

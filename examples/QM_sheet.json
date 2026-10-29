@@ -1,0 +1,8 @@
+{
+  "name": "small_H_capped_QM_sheet",
+  "nx": 2,
+  "ny": 2,
+  "pbc": [false, false, false],
+  "seed": 0,
+  "groups": {}
+}

@@ -1,0 +1,14 @@
+dinamica scaldando fino 298k no vincoli di volume
+&cntrl
+ imin=0, irest=0, ntx=1,
+ ntb=1, ntc=2, ntf=2,
+ ntt=3, gamma_ln=1,
+ tempi=0.0, temp0=298.0,
+ ntp=0,
+ cut=10.0,
+ ntr=0,
+ nstlim=500000, dt=0.002,
+ ntpr=500, ntwx=500, ntwr=500,
+ iwrap=1
+/
+

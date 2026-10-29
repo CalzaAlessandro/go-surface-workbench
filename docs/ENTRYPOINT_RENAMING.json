@@ -1,0 +1,16 @@
+{
+  "reason": "Order main workflow from GO construction through docking and complex assembly; optional utilities have descriptive names",
+  "mapping": {
+    "00_prepare_fragment.py": "prepare_fragment.py",
+    "04_export_gromacs.py": "07_export_gromacs.py",
+    "05_audit_charges.py": "audit_charges.py",
+    "06_prepare_QM.py": "prepare_QM.py",
+    "07_compare_ESP.py": "compare_ESP.py",
+    "08_import_Amber.py": "import_Amber.py",
+    "09_check_model.py": "check_model.py",
+    "10_assemble_docked_complex.py": "06_assemble_docked_complex.py",
+    "11_prepare_docking_receptor.py": "04_prepare_docking_receptor.py",
+    "12_dock_boxes.py": "05_dock_boxes.py",
+    "13_update_alignment.py": "update_alignment.py"
+  }
+}

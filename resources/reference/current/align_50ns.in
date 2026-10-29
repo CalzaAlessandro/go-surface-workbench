@@ -1,0 +1,9 @@
+parm compl_solv.parm7
+trajin md_50ns.nc
+strip :WAT
+strip :Cl-
+strip :Na+
+autoimage MASK
+box nobox
+align first 
+trajout md_50ns_imaged.nc

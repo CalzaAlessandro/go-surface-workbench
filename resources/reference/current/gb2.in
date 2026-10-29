@@ -1,0 +1,11 @@
+Input file for running GB
+
+&general
+verbose=1, keep_files=0,
+/
+&gb
+  igb=2, saltcon=0.100,
+/
+&decomp
+  idecomp=1, csv_format=0,
+/

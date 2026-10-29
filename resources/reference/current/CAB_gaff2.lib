@@ -1,0 +1,45 @@
+!!index array str
+ "CAB"
+!entry.CAB.unit.atoms table  str name  str type  int typex  int resx  int flags  int seq  int elmnt  dbl chg
+ "CN" "ca" 0 1 131072 1 6 0.581
+ "ON" "o"  0 1 131072 2 8 -0.581
+!entry.CAB.unit.atomspertinfo table  str pname  str ptype  int ptypex  int pelmnt  dbl pchg
+ "CN" "ca" 0 -1 0.581
+ "ON" "o"  0 -1 -0.581
+!entry.CAB.unit.boundbox array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.CAB.unit.childsequence single int
+ 2
+!entry.CAB.unit.connect array int
+ 0
+ 0
+!entry.CAB.unit.connectivity table  int atom1x  int atom2x  int flags
+ 1 2 1
+!entry.CAB.unit.hierarchy table  str abovetype  int abovex  str belowtype  int belowx
+ "U" 0 "R" 1
+ "R" 1 "A" 1
+ "R" 1 "A" 2
+!entry.CAB.unit.name single str
+ "CAB"
+!entry.CAB.unit.positions table  dbl x  dbl y  dbl z
+ -2.195000 -2.358000 0.0
+ -1.719000 -1.684000 1.168000
+!entry.CAB.unit.residueconnect table  int c1x  int c2x  int c3x  int c4x  int c5x  int c6x
+ 0 0 0 0 0 0
+!entry.CAB.unit.residues table  str name  int seq  int childseq  int startatomx  str restype  int imagingx
+ "CAB" 1 3 1 "?" 0
+!entry.CAB.unit.residuesPdbSequenceNumber array int
+ 0
+!entry.CAB.unit.solventcap array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.CAB.unit.velocities table  dbl x  dbl y  dbl z
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0

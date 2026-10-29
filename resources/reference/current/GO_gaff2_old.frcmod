@@ -1,0 +1,293 @@
+Remark line goes here
+MASS
+ca 12.010        0.360
+ha 1.008         0.135
+c2 12.010        0.360
+o  16.000        0.434
+oh 16.000        0.465
+ho 1.008         0.135
+c6 12.010        0.878               same as c3 
+cx 12.010        0.360
+op 16.000        0.465
+h1 1.008         0.135
+
+BOND
+ca-ha  345.80   1.086
+ca-ca  461.10   1.398
+c2-ha  343.10   1.088
+c2-ca  482.10   1.385
+c2-c2  569.40   1.334
+ca-cx  340.50   1.496
+c2-cx  352.00   1.485
+ca-o   598.10   1.236
+c2-c6  326.80   1.510       same as c2-c3, penalty score=  0.0
+c6-ca  321.00   1.516       same as c3-ca, penalty score=  0.0
+c2-o   622.90   1.225
+c2-oh  417.60   1.339
+ho-oh  371.40   0.973
+c6-oh  316.70   1.423       same as c3-oh, penalty score=  0.0
+cx-cx  328.50   1.508
+cx-op  303.20   1.437
+cx-h1  341.50   1.089
+
+ANGLE
+o -ca-cx   77.080     122.860	same as c3-c2-o  !!!
+o -ca-c6   77.080     122.860	same as c3-c2-o  !!!
+c2-ca-c6   63.500     120.770   same as c6-ca-ca !!!
+c2-ca-cx   64.400     124.810	same as c2-c2-cx !!!
+cx-ca-c6   62.800     117.870   same as c6-c2-cx !!!
+c6-ca-c6   59.870     115.960   same as c6-c2-c6 !!!
+ha-ca-c6   42.550     116.570	same as c6-c2-ha !!!
+ha-ca-cx   43.340     116.230	same as cx-c2-ha !!!
+cx-ca-cx   61.390     114.570	same as cx-c2-cx !!!
+ca-ca-ha   48.200     119.880
+ca-ca-ca   66.600     120.020
+c2-ca-ca   66.800     120.600
+ca-ca-cx   64.000     120.950
+c2-c2-c2   69.300     121.810
+c2-c2-cx   64.400     124.810
+ca-c2-ha   47.900     123.300   same as ca-c2-hc, penalty score=  1.2
+c2-c2-ha   49.900     120.430
+c2-c2-ca   69.400     117.000
+c2-cx-ca   63.722     112.120   Calculated using ca-c3-c2, penalty score= 75.5
+ca-cx-cx   61.600     121.840
+ca-cx-op   65.900     118.220
+c2-cx-c2   63.885     112.000   Calculated using c2-c3-c2, penalty score= 75.5
+c2-cx-cx   62.200     120.220
+c2-cx-op   66.500     116.860
+c2-c2-c6   64.100     123.630   same as c2-c2-c3, penalty score=  0.0
+ca-c2-cx   63.200     125.190   same as c3-c2-cc, penalty score= 10.0
+ca-ca-o    71.400     123.260
+c2-c6-c2   63.900     112.000   same as c2-c3-c2, penalty score=  0.0
+c2-c6-oh   68.200     110.350   same as c2-c3-oh, penalty score=  0.0
+c6-c2-ca   63.200     125.190   same as c3-c2-cc, penalty score=  2.0
+ca-cx-ca   64.400     112.090
+c6-ca-ca   63.500     120.770   same as c3-ca-ca, penalty score=  0.0
+c2-c6-ca   63.600     112.490   same as c2-c3-ca, penalty score=  0.0
+c6-c2-ha   45.900     115.680   same as c3-c2-ha, penalty score=  0.0
+ca-c6-ca   63.600     112.240   same as ca-c3-ca, penalty score=  0.0
+ca-c6-oh   67.900     110.620   same as ca-c3-oh, penalty score=  0.0
+ca-c2-o    72.800     123.590   same as cc-c2-o , penalty score=  2.0
+o -c2-o    80.200     121.690
+ca-c2-oh   72.600     115.180   same as cc-c2-oh, penalty score=  2.0
+c2-oh-ho   50.000     107.630
+o -c2-oh   76.500     121.230
+c6-oh-ho   47.400     107.260   same as c3-oh-ho, penalty score=  0.0
+c6-c2-cx   62.800     117.870   same as c3-c2-cx, penalty score=  0.0
+cx-cx-op   92.800      59.100
+cx-op-cx   84.300      61.760
+cx-c2-cx   64.200     114.570
+ca-cx-h1   43.340     114.770   
+cx-c2-ha   46.500     116.230
+cx-cx-h1   45.400     118.690
+c2-cx-h1   46.600     115.880
+h1-cx-op   49.600     114.930
+
+DIHE
+o -ca-c6-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+o -ca-c6-cx   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+c6-c6-c6-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+cx-c6-c6-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+h1-cx-c6-c6   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+ca-c6-cx-c6   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+ha-ca-c6-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+ha-ca-c6-cx   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+cx-c6-ca-c2   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+oh-c6-cx-c6   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+c6-cx-c6-oh   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+h1-cx-ca-cx   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+h1-cx-c6-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+h1-cx-c6-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+c6-ca-cx-h1   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+oh-c6-cx-h1   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+cx-ca-cx-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+c6-ca-c6-cx   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+ca-c6-cx-h1   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+o -ca-cx-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+o -ca-cx-h1   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+o -ca-c6-ca   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+o -ca-c6-oh   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+ca-c6-ca-o    6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+o -ca-cx-op   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+ca-cx-ca-o    6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+o -ca-cx-cx   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+ca-cx-c6-c6   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+ca-c6-c6-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+ca-c6-c6-c6   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+ca-c6-c6-oh   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+ca-c6-c6-ca   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+ca-cx-c6-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+ca-ca-c6-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+ca-cx-c6-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+ha-ca-cx-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+ca-cx-c6-oh   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+ca-cx-c6-ca   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+c2-ca-cx-ca   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+c2-ca-cx-h1   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+op-cx-c6-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+cx-c6-cx-op   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+cx-cx-c6-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+cx-c6-cx-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+op-cx-c6-c6   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+cx-cx-c6-c6   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+ca-ca-cx-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+c2-ca-c6-oh   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+c2-ca-cx-op   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+c2-ca-cx-cx   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+oh-c6-c6-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+cx-cx-c6-oh   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+oh-c6-cx-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+op-cx-c6-oh   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+oh-c6-cx-op   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+cx-op-cx-c6   3	   1.150	 0.000		 3.000 	    same as X -c3-os-X !!!
+cx-c6-oh-ho   3    0.500         0.000		 3.000	    same as X -c3-oh-X !!!
+oh-c6-c6-c6   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+c6-c6-c6-oh   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+oh-c6-c6-oh   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+cx-ca-c6-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+c6-c6-oh-ho   3    0.500         0.000		 3.000	    same as X -c3-oh-X !!!
+ho-oh-c6-c6   3    0.500         0.000		 3.000	    same as X -c3-oh-X !!!
+c6-cx-ca-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+op-cx-ca-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+cx-c6-ca-cx   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+cx-cx-ca-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+ca-c6-cx-cx   9    1.400         0.000	  	 3.000	    same as X -c3-c3-X  !!! 
+ca-c6-cx-op   1    0.156         0.000           3.000      same as ca-c3-cx-os !!!
+oh-c6-ca-cx   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+c6-ca-c6-oh   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+c6-ca-c6-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+ca-c6-ca-c2   6    0.000         0.000           2.000      same as ca-c6-ca-ca , penalty score= 0.0 !!!
+ca-cx-ca-c6   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+ca-ca-c6-cx   1    0.240       180.000		 2.000	    same as c3-c3-ca-ca !!!
+ca-c6-ca-cx   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+c6-ca-c6-ca   6    0.000         0.000		 2.000	    same as X -c2-c3-X , penalty score= 92.0 !!!
+ha-ca-c6-oh   1    0.000         0.000           2.000      same as ha-c2-cx-os (tainah) same as X -c2-c3-X !!!
+ha-ca-c6-ca   1    0.000	 0.000		 2.000	    same as cx-cx-c2-ha (tainah) same as X -c2-c3-X !!!
+ca-cx-ca-cx   1    0.000	 0.000		 2.000	    same as c2-cx-c2-cx (tainah) same as X -c2-c3-X !!!
+ha-ca-cx-cx   6    0.000         0.000           2.000      same as ha-c2-cx-cx , penalty score= 92.0 !!!
+ha-ca-cx-h1   6    0.000         0.000           2.000      same as ha-c2-cx-h1 , penalty score= 92.0 !!!
+ha-ca-cx-op   6    0.000         0.000           2.000      same as ha-c2-cx-op , penalty score= 92.0 !!!
+ha-ca-cx-ca   6    0.000         0.000           2.000      same as ha-c2-cx-ca , penalty score= 92.0 !!!
+ca-cx-ca-ha   6    0.000         0.000           2.000      same as ha-c2-cx-ca , penalty score= 92.0 !!!
+cx-cx-ca-cx   6    0.000         0.000           2.000      same as cx-c2-cx-cx , penalty score= 92.0 !!!
+cx-ca-cx-op   6    0.000         0.000           2.000      same as cx-c2-cx-op , penalty score= 92.0 !!!
+op-cx-ca-cx   6    0.000         0.000           2.000      same as cx-c2-cx-op , penalty score= 92.0 !!!
+ca-ca-ca-ha   4   14.500       180.000           2.000
+ca-ca-ca-ca   4   14.500       180.000           2.000
+ha-ca-ca-ha   4   14.500       180.000           2.000
+ca-ca-ca-cx   4   14.500       180.000           2.000
+c2-ca-ca-ha   4   14.500       180.000           2.000
+c2-ca-ca-ca   4   14.500       180.000           2.000
+ca-ca-cx-c2   6    0.000         0.000           2.000      same as X -c3-ca-X , penalty score= 92.0
+ca-ca-cx-cx   6    0.000         0.000           2.000      same as X -c3-ca-X , penalty score= 92.0
+ca-ca-cx-op   6    0.000         0.000           2.000      same as X -c3-ca-X , penalty score= 92.0
+c2-ca-ca-cx   4   14.500       180.000           2.000
+c2-c2-cx-c2   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+c2-c2-cx-cx   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+c2-c2-cx-op   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+ha-c2-ca-ca   4    2.800       180.000           2.000
+c2-c2-c2-ha   4   26.600       180.000           2.000
+cx-c2-c2-ha   4   26.600       180.000           2.000
+c2-c2-c2-ca   4   26.600       180.000           2.000
+ca-c2-c2-cx   4   26.600       180.000           2.000
+c2-cx-cx-ca   9    1.400         0.000           3.000
+ca-cx-cx-op   9    1.400         0.000           3.000
+ca-cx-op-cx   3    1.150         0.000           3.000      same as X -c3-os-X , penalty score= 92.0
+c2-ca-ca-c2   4   14.500       180.000           2.000
+c2-c2-ca-ca   4    2.800       180.000           2.000
+c2-cx-op-cx   3    1.150         0.000           3.000      same as X -c3-os-X , penalty score= 92.0
+c2-c2-c2-cx   4   26.600       180.000           2.000
+c2-c2-c6-c2   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score=  0.0
+c2-c2-c6-oh   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score=  0.0
+c6-c2-c2-ca   4   26.600       180.000           2.000
+ca-c2-cx-c2   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+ca-c2-cx-cx   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+ca-c2-cx-op   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+ca-cx-cx-ca   9    1.400         0.000           3.000
+ca-ca-cx-ca   6    0.000         0.000           2.000      same as X -c3-ca-X , penalty score= 92.0
+c6-ca-ca-ca   4   14.500       180.000           2.000
+ha-ca-ca-o    4   14.500       180.000           2.000
+ca-ca-ca-o    4   14.500       180.000           2.000
+c2-cx-cx-c2   9    1.400         0.000           3.000
+c2-cx-cx-op   9    1.400         0.000           3.000
+c2-c6-oh-ho   3    0.500         0.000           3.000      same as X -c3-oh-X , penalty score=  0.0
+ca-c2-cx-ca   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+ca-c2-c6-c2   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score=  0.0
+ca-c2-c6-oh   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score=  0.0
+c2-c2-cx-ca   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+c6-c2-c2-ha   4   26.600       180.000           2.000
+c2-c6-ca-ca   6    0.000         0.000           2.000      same as X -c3-ca-X , penalty score=  0.0
+ca-c6-ca-ca   6    0.000         0.000           2.000      same as X -c3-ca-X , penalty score=  0.0
+oh-c6-ca-ca   6    0.000         0.000           2.000      same as X -c3-ca-X , penalty score=  0.0
+ha-c2-c6-ca   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score=  0.0
+ha-c2-c6-oh   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score=  0.0
+ca-c6-oh-ho   3    0.500         0.000           3.000      same as X -c3-oh-X , penalty score=  0.0
+o -c2-ca-ca   4    2.800       180.000           2.000
+c6-ca-ca-ha   4   14.500       180.000           2.000
+ca-c2-c6-ca   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score=  0.0
+oh-c2-ca-ca   4    2.800       180.000           2.000
+c6-c2-ca-ca   4    2.800       180.000           2.000
+cx-c2-ca-ca   4    2.800       180.000           2.000
+ca-c2-oh-ho   2    2.100       180.000           2.000
+o -c2-oh-ho   2    2.100       180.000           2.000
+cx-c2-c6-c2   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score=  0.0
+cx-c2-c6-oh   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score=  0.0
+cx-cx-op-cx   1    0.383         0.000          -3.000      same as c3-c3-os-c3
+cx-cx-op-cx   1    0.100       180.000           2.000      same as c3-c3-os-c3, penalty score=266.0
+c6-c2-c2-cx   4   26.600       180.000           2.000
+op-cx-cx-op   9    1.400         0.000           3.000
+c6-c2-cx-ca   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+c6-c2-cx-cx   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+c6-c2-cx-op   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+cx-c2-cx-ca   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+cx-c2-cx-cx   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+cx-c2-cx-op   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+cx-ca-ca-ha   4   14.500       180.000           2.000
+c6-ca-ca-cx   4   14.500       180.000           2.000
+cx-c2-c6-ca   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score=  0.0
+cx-ca-ca-cx   4   14.500       180.000           2.000
+ca-ca-cx-h1   1    0.000         0.000           1.000      same as hc-c3-ca-ca, penalty score=179.0
+h1-cx-cx-h1   9    1.400         0.000           3.000
+c2-cx-cx-h1   9    1.400         0.000           3.000
+ha-c2-cx-cx   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+ca-cx-cx-h1   9    1.400         0.000           3.000
+ha-c2-cx-ca   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+ha-c2-cx-op   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+ca-c2-cx-h1   1    0.380       180.000          -3.000      same as hc-c3-c2-c2
+ca-c2-cx-h1   1    0.000         0.000          -2.000      same as hc-c3-c2-c2
+ca-c2-cx-h1   1    1.150         0.000           1.000      same as hc-c3-c2-c2, penalty score=266.0
+ha-c2-cx-h1   6    0.000         0.000           2.000      same as X -c2-c3-X , penalty score= 92.0
+h1-cx-op-cx   3    1.150         0.000           3.000      same as X -c3-os-X , penalty score= 92.0
+h1-cx-cx-op   9    1.400         0.000           3.000
+
+IMPROPER
+ca-ca-ca-ha         1.1          180.0         2.0          Using general improper torsional angle  X- X-ca-ha, penalty score=  6.0)
+ca-ca-ca-ca         1.1          180.0         2.0          Same as c2-ca-ca-ca, penalty score= 31.1)
+c2-ca-c2-ha         1.1          180.0         2.0          Using the default value
+c2-ca-ca-ca         1.1          180.0         2.0
+ca-ca-ca-cx         1.1          180.0         2.0          Using the default value
+c2-c2-c2-cx         1.1          180.0         2.0          Same as ca-ca-ca-cx, penalty score=473.2)
+c2-ca-c2-cx         1.1          180.0         2.0          Same as c2-c2-c2-cx, penalty score=131.1)
+ca-ca-ca-o          1.1          180.0         2.0          Using the default value
+c6-ca-c2-cx         1.1          180.0         2.0          Using the default value
+c2-c2-c2-c6         1.1          180.0         2.0          Using the default value
+c2-c6-c2-cx         1.1          180.0         2.0          Using the default value
+c2-cx-c2-cx         1.1          180.0         2.0          Using the default value
+c6-ca-c2-ha         1.1          180.0         2.0          Using the default value
+c6-ca-ca-ca         1.1          180.0         2.0          Same as c2-c2-c2-c6, penalty score=473.2)
+ca-o -c2-o          1.1          180.0         2.0          Using the default value
+ca-o -c2-oh         1.1          180.0         2.0          Same as ca-o -c2-o , penalty score= 35.9)
+ca-cx-c2-ha         1.1          180.0         2.0          Same as X -X -ca-ha, penalty score= 65.4 (use general term))
+
+NONBON
+  ca          1.9080  0.0860
+  ha          1.4590  0.0150
+  c2          1.9080  0.0860
+  o           1.6612  0.2100
+  oh          1.7210  0.2104
+  ho          0.0000  0.0000
+  c6          1.9080  0.1094             same as c3 
+  cx          1.9080  0.0860
+  op          1.6837  0.1700
+  h1          1.3870  0.0157
+

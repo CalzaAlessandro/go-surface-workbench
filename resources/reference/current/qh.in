@@ -1,0 +1,5 @@
+Input file for running QH
+
+&general
+verbose=1, entropy=1, keep_files=0,
+/

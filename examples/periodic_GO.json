@@ -1,0 +1,10 @@
+{
+  "name": "periodic_GO_graph_demo",
+  "nx": 5,
+  "ny": 5,
+  "pbc": [true, true, false],
+  "seed": 17,
+  "vacuum": 40,
+  "faces": "both",
+  "groups": {"OH": 4, "epoxide": 6}
+}

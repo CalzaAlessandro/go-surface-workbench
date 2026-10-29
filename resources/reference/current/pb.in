@@ -1,0 +1,11 @@
+Input file for PB
+
+&general
+verbose=1, keep_files=0,
+/
+&pb
+  istrng=0.100, radiopt=0,
+/
+&decomp
+  idecomp=1, csv_format=0,
+/

@@ -1,0 +1,10 @@
+{
+  "name": "finite_GO_demo",
+  "nx": 6,
+  "ny": 6,
+  "pbc": [false, false, false],
+  "seed": 17,
+  "vacuum": 40,
+  "faces": "both",
+  "groups": {"OH": 4, "epoxide": 4, "carbonyl": 2, "COOH": 1, "COO": 1}
+}

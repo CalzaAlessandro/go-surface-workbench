@@ -1,0 +1,37 @@
+{
+  "repository": "https://github.com/IFM-molecular-simulation-group/HierGO",
+  "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+  "license": "GPL-3.0",
+  "files": [
+    {
+      "path": "LICENSE",
+      "upstream_path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/IFM-molecular-simulation-group/HierGO/60382a1a1807ef0003ffcc3903392e913b1e5e9a/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "OPLS-top.f90",
+      "upstream_path": "OPLS-top.f90",
+      "url": "https://raw.githubusercontent.com/IFM-molecular-simulation-group/HierGO/60382a1a1807ef0003ffcc3903392e913b1e5e9a/OPLS-top.f90",
+      "sha256": "7b9388e1689aed7f3e14075c317f32f345e48f31a70b703a065d82ca9029061f"
+    },
+    {
+      "path": "Oplsatom2",
+      "upstream_path": "Oplsatom2",
+      "url": "https://raw.githubusercontent.com/IFM-molecular-simulation-group/HierGO/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Oplsatom2",
+      "sha256": "780bf2c161822eb59fd8ab2ac2cc57ee08c1a5cf63672459880ddca247a67398"
+    },
+    {
+      "path": "README.md",
+      "upstream_path": "README.md",
+      "url": "https://raw.githubusercontent.com/IFM-molecular-simulation-group/HierGO/60382a1a1807ef0003ffcc3903392e913b1e5e9a/README.md",
+      "sha256": "51f917ff9505eae8cd9ac1e434fbff9f8df7d5d186d845a5c0c7c789dd8a50b4"
+    },
+    {
+      "path": "atom-typing.py",
+      "upstream_path": "Scripts/atom-typing.py",
+      "url": "https://raw.githubusercontent.com/IFM-molecular-simulation-group/HierGO/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Scripts/atom-typing.py",
+      "sha256": "5a6c002afa7a4148e451c65d7f17d4e57a2c5cab906889c9d5b150fb86ab0e8e"
+    }
+  ]
+}

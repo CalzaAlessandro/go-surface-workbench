@@ -1,0 +1,64 @@
+!!index array str
+ "EPT"
+!entry.EPT.unit.atoms table  str name  str type  int typex  int resx  int flags  int seq  int elmnt  dbl chg
+ "CP" "cx" 0 1 131072 1 6 0.020
+ "CK" "cx" 0 1 131072 2 6 0.020
+ "HK" "h1" 0 1 131072 3 1 0.120
+ "OE" "op" 0 1 131072 4 8 -0.280
+ "HP" "h1" 0 1 131072 5 1 0.120
+!entry.EPT.unit.atomspertinfo table  str pname  str ptype  int ptypex  int pelmnt  dbl pchg
+ "CP" "cx" 0 -1 0.020
+ "CK" "cx" 0 -1 0.020
+ "HK" "h1" 0 -1 0.120
+ "OE" "op" 0 -1 -0.280
+ "HP" "h1" 0 -1 0.120
+!entry.EPT.unit.boundbox array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.EPT.unit.childsequence single int
+ 2
+!entry.EPT.unit.connect array int
+ 0
+ 0
+!entry.EPT.unit.connectivity table  int atom1x  int atom2x  int flags
+ 1 2 2
+ 1 4 1
+ 1 5 1
+ 2 3 1
+ 2 4 1
+!entry.EPT.unit.hierarchy table  str abovetype  int abovex  str belowtype  int belowx
+ "U" 0 "R" 1
+ "R" 1 "A" 1
+ "R" 1 "A" 2
+ "R" 1 "A" 3
+ "R" 1 "A" 4
+ "R" 1 "A" 5
+!entry.EPT.unit.name single str
+ "EPT"
+!entry.EPT.unit.positions table  dbl x  dbl y  dbl z
+ -3.955000 1.574000 -0.412000
+ -2.854000 0.778000 -0.001000
+ -2.067000 0.378000 -0.623000
+ -2.761000 2.145000 -0.056000
+ -4.718000 2.013000 0.213000
+!entry.EPT.unit.residueconnect table  int c1x  int c2x  int c3x  int c4x  int c5x  int c6x
+ 0 0 0 0 0 0
+!entry.EPT.unit.residues table  str name  int seq  int childseq  int startatomx  str restype  int imagingx
+ "EPT" 1 6 1 "?" 0
+!entry.EPT.unit.residuesPdbSequenceNumber array int
+ 0
+!entry.EPT.unit.solventcap array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.EPT.unit.velocities table  dbl x  dbl y  dbl z
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0

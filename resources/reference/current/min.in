@@ -1,0 +1,13 @@
+minimizzazione con boxacqua
+&cntrl
+ imin = 1,
+ maxcyc = 10000,
+ ncyc = 5000,
+ ntb = 1,
+ igb = 0,
+ ntr = 0,
+ cut = 10.0,
+ ntxo = 2,
+ iwrap=1
+/
+

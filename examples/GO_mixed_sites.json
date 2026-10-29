@@ -1,0 +1,15 @@
+{
+  "name": "finite_GO_fixed_and_random_sites_demo",
+  "nx": 6,
+  "ny": 6,
+  "pbc": [false, false, false],
+  "seed": 1,
+  "faces": "both",
+  "groups": {
+    "OH": {"count": 1, "id": [58]},
+    "carbonyl": {"count": 1, "id": [26]},
+    "epoxide": 3,
+    "COOH": 1,
+    "COO": 1
+  }
+}

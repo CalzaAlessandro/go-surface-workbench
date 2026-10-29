@@ -1,0 +1,108 @@
+!!index array str
+ "EPH"
+!entry.EPH.unit.atoms table  str name  str type  int typex  int resx  int flags  int seq  int elmnt  dbl chg
+ "CZ" "cx" 0 1 131072 1 6 0.053
+ "CK" "cx" 0 1 131072 2 6 0.137
+ "HK" "h1" 0 1 131072 3 1 0.120
+ "OE" "op" 0 1 131072 4 8 -0.310
+!entry.EPH.unit.atomspertinfo table  str pname  str ptype  int ptypex  int pelmnt  dbl pchg
+ "CZ" "cx" 0 -1 0.053
+ "CK" "c2" 0 -1 0.137
+ "HZ" "h1" 0 -1 0.120
+ "OE" "op" 0 -1 -0.310
+!entry.EPH.unit.boundbox array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.EPH.unit.childsequence single int
+ 2
+!entry.EPH.unit.connect array int
+ 0
+ 0
+!entry.EPH.unit.connectivity table  int atom1x  int atom2x  int flags
+ 1 2 1
+ 1 4 1
+ 2 3 1
+ 2 4 1
+!entry.EPH.unit.hierarchy table  str abovetype  int abovex  str belowtype  int belowx
+ "U" 0 "R" 1
+ "R" 1 "A" 1
+ "R" 1 "A" 2
+ "R" 1 "A" 3
+ "R" 1 "A" 4
+!entry.EPH.unit.name single str
+ "EPH"
+!entry.EPH.unit.positions table  dbl x  dbl y  dbl z
+ -3.868000 1.677000 -0.069000
+ -2.636000 0.828000 0.062000
+ -2.299000 0.270000 -0.802000
+ -2.559000 2.257000 -0.002000
+!entry.EPH.unit.residueconnect table  int c1x  int c2x  int c3x  int c4x  int c5x  int c6x
+ 0 0 0 0 0 0
+!entry.EPH.unit.residues table  str name  int seq  int childseq  int startatomx  str restype  int imagingx
+ "EPH" 1 5 1 "?" 0
+!entry.EPH.unit.residuesPdbSequenceNumber array int
+ 0
+!entry.EPH.unit.solventcap array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.EPH.unit.velocities table  dbl x  dbl y  dbl z
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+!entry.EPX.unit.atoms table  str name  str type  int typex  int resx  int flags  int seq  int elmnt  dbl chg
+ "CY" "CA" 0 1 131073 1 6 0.0
+ "CY" "CA" 0 1 131073 2 6 0.0
+ "OE" "OS" 0 1 131073 3 8 -0.369100
+!entry.EPX.unit.atomspertinfo table  str pname  str ptype  int ptypex  int pelmnt  dbl pchg
+ "C" "CA" 0 -1 0.0
+ "C" "CA" 0 -1 0.0
+ "O" "OS" 0 -1 -0.369100
+!entry.EPX.unit.boundbox array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.EPX.unit.childsequence single int
+ 379
+!entry.EPX.unit.connect array int
+ 0
+ 0
+!entry.EPX.unit.connectivity table  int atom1x  int atom2x  int flags
+ 1 2 17
+ 1 3 17
+ 2 3 17
+!entry.EPX.unit.hierarchy table  str abovetype  int abovex  str belowtype  int belowx
+ "U" 0 "R" 1
+ "R" 1 "A" 1
+ "R" 1 "A" 2
+ "R" 1 "A" 3
+!entry.EPX.unit.name single str
+ "default_name"
+!entry.EPX.unit.positions table  dbl x  dbl y  dbl z
+ 13.508000 20.561000 0.0
+ 14.736000 21.270000 0.0
+ 14.122000 20.916000 1.264000
+!entry.EPX.unit.residueconnect table  int c1x  int c2x  int c3x  int c4x  int c5x  int c6x
+ 0 0 0 0 0 0
+!entry.EPX.unit.residues table  str name  int seq  int childseq  int startatomx  str restype  int imagingx
+ "EPX" 378 4 1 "?" 0
+!entry.EPX.unit.residuesPdbSequenceNumber array int
+ 1
+!entry.EPX.unit.solventcap array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.EPX.unit.velocities table  dbl x  dbl y  dbl z
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
