@@ -1,0 +1,1774 @@
+[
+  {
+    "file": "gaff2_aim/GO_18/GO_sheet_1_8.top",
+    "defaults": {
+      "nbfunc": "1",
+      "comb_rule": "2",
+      "gen_pairs": "yes",
+      "fudgeLJ": "0.5",
+      "fudgeQQ": "0.8333"
+    },
+    "moleculetypes": [
+      [
+        "GRA",
+        "3"
+      ]
+    ],
+    "atom_count": 15597,
+    "element_counts": {
+      "6": 8540,
+      "8": 4745,
+      "1": 2312
+    },
+    "O_over_C": 0.5556206088992974,
+    "C_over_O": 1.7997892518440464,
+    "sum_charge_e": 8.88971862268717e-10,
+    "atomtype_parameters": [
+      {
+        "type": "c311",
+        "count": 27,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.343882834909,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.198584669424
+        ],
+        "min_charge_e": 0.198584669424,
+        "max_charge_e": 0.198584669424
+      },
+      {
+        "type": "c312",
+        "count": 76,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.344548800649,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.180785502757
+        ],
+        "min_charge_e": 0.180785502757,
+        "max_charge_e": 0.180785502757
+      },
+      {
+        "type": "c313",
+        "count": 156,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.34353784922,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.196705361731
+        ],
+        "min_charge_e": 0.196705361731,
+        "max_charge_e": 0.196705361731
+      },
+      {
+        "type": "c314",
+        "count": 132,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.345597090194,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.148147131545
+        ],
+        "min_charge_e": 0.148147131545,
+        "max_charge_e": 0.148147131545
+      },
+      {
+        "type": "c315",
+        "count": 419,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.344291363637,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.169648453831
+        ],
+        "min_charge_e": 0.169648453831,
+        "max_charge_e": 0.169648453831
+      },
+      {
+        "type": "c316",
+        "count": 411,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.342758114157,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.190198983292
+        ],
+        "min_charge_e": 0.190198983292,
+        "max_charge_e": 0.190198983292
+      },
+      {
+        "type": "c317",
+        "count": 85,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.346430286446,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.116853838051
+        ],
+        "min_charge_e": 0.116853838051,
+        "max_charge_e": 0.116853838051
+      },
+      {
+        "type": "c318",
+        "count": 328,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.345429565857,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.13672409422
+        ],
+        "min_charge_e": 0.13672409422,
+        "max_charge_e": 0.13672409422
+      },
+      {
+        "type": "c319",
+        "count": 468,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.344294020374,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.15642556686
+        ],
+        "min_charge_e": 0.15642556686,
+        "max_charge_e": 0.15642556686
+      },
+      {
+        "type": "c320",
+        "count": 210,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.342667969441,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.177819169424
+        ],
+        "min_charge_e": 0.177819169424,
+        "max_charge_e": 0.177819169424
+      },
+      {
+        "type": "ca1",
+        "count": 115,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.348047848891,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.011644585366
+        ],
+        "min_charge_e": 0.011644585366,
+        "max_charge_e": 0.011644585366
+      },
+      {
+        "type": "ca10",
+        "count": 218,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.357536389813,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.092284290821
+        ],
+        "min_charge_e": -0.092284290821,
+        "max_charge_e": -0.092284290821
+      },
+      {
+        "type": "ca3",
+        "count": 76,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.349694630079,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.014149194611
+        ],
+        "min_charge_e": -0.014149194611,
+        "max_charge_e": -0.014149194611
+      },
+      {
+        "type": "ca5",
+        "count": 1,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.351258749732881,
+        "epsilon_kJ_mol": 0.2591872310183991,
+        "unique_charges_e": [
+          -0.001717997243
+        ],
+        "min_charge_e": -0.001717997243,
+        "max_charge_e": -0.001717997243
+      },
+      {
+        "type": "ca6",
+        "count": 64,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.351913913002,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.038429622243
+        ],
+        "min_charge_e": -0.038429622243,
+        "max_charge_e": -0.038429622243
+      },
+      {
+        "type": "ca7",
+        "count": 150,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.355746767406,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.04926778391
+        ],
+        "min_charge_e": -0.04926778391,
+        "max_charge_e": -0.04926778391
+      },
+      {
+        "type": "ca8",
+        "count": 318,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.355627636339,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.042595277117
+        ],
+        "min_charge_e": -0.042595277117,
+        "max_charge_e": -0.042595277117
+      },
+      {
+        "type": "ca9",
+        "count": 420,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.355848952748,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.058579249624
+        ],
+        "min_charge_e": -0.058579249624,
+        "max_charge_e": -0.058579249624
+      },
+      {
+        "type": "cx23",
+        "count": 287,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.344981321413,
+        "epsilon_kJ_mol": 0.259187,
+        "unique_charges_e": [
+          0.124784588123
+        ],
+        "min_charge_e": 0.124784588123,
+        "max_charge_e": 0.124784588123
+      },
+      {
+        "type": "cx25",
+        "count": 526,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.34625881846,
+        "epsilon_kJ_mol": 0.259187,
+        "unique_charges_e": [
+          0.10224822519
+        ],
+        "min_charge_e": 0.10224822519,
+        "max_charge_e": 0.10224822519
+      },
+      {
+        "type": "cx26",
+        "count": 917,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.343978226143,
+        "epsilon_kJ_mol": 0.259187,
+        "unique_charges_e": [
+          0.123925194687
+        ],
+        "min_charge_e": 0.123925194687,
+        "max_charge_e": 0.123925194687
+      },
+      {
+        "type": "cx28",
+        "count": 618,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.347529835749,
+        "epsilon_kJ_mol": 0.259187,
+        "unique_charges_e": [
+          0.066074787547
+        ],
+        "min_charge_e": 0.066074787547,
+        "max_charge_e": 0.066074787547
+      },
+      {
+        "type": "cx29",
+        "count": 1529,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.345786121875,
+        "epsilon_kJ_mol": 0.259187,
+        "unique_charges_e": [
+          0.086401703215
+        ],
+        "min_charge_e": 0.086401703215,
+        "max_charge_e": 0.086401703215
+      },
+      {
+        "type": "cx30",
+        "count": 989,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.343486659459,
+        "epsilon_kJ_mol": 0.259187,
+        "unique_charges_e": [
+          0.108025250482
+        ],
+        "min_charge_e": 0.108025250482,
+        "max_charge_e": 0.108025250482
+      },
+      {
+        "type": "ho11",
+        "count": 27,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.206630297226,
+        "epsilon_kJ_mol": 0.15047381002,
+        "unique_charges_e": [
+          0.370642373127
+        ],
+        "min_charge_e": 0.370642373127,
+        "max_charge_e": 0.370642373127
+      },
+      {
+        "type": "ho12",
+        "count": 76,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.208265463674,
+        "epsilon_kJ_mol": 0.150472790047,
+        "unique_charges_e": [
+          0.369054752757
+        ],
+        "min_charge_e": 0.369054752757,
+        "max_charge_e": 0.369054752757
+      },
+      {
+        "type": "ho13",
+        "count": 156,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.206992002105,
+        "epsilon_kJ_mol": 0.150472986675,
+        "unique_charges_e": [
+          0.369194188654
+        ],
+        "min_charge_e": 0.369194188654,
+        "max_charge_e": 0.369194188654
+      },
+      {
+        "type": "ho14",
+        "count": 132,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.208544798076,
+        "epsilon_kJ_mol": 0.150472815831,
+        "unique_charges_e": [
+          0.371445464878
+        ],
+        "min_charge_e": 0.371445464878,
+        "max_charge_e": 0.371445464878
+      },
+      {
+        "type": "ho15",
+        "count": 419,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.207198526178,
+        "epsilon_kJ_mol": 0.150472871399,
+        "unique_charges_e": [
+          0.371147398938
+        ],
+        "min_charge_e": 0.371147398938,
+        "max_charge_e": 0.371147398938
+      },
+      {
+        "type": "ho16",
+        "count": 411,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.206341134479,
+        "epsilon_kJ_mol": 0.150472741788,
+        "unique_charges_e": [
+          0.370517462611
+        ],
+        "min_charge_e": 0.370517462611,
+        "max_charge_e": 0.370517462611
+      },
+      {
+        "type": "ho17",
+        "count": 85,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.208329433236,
+        "epsilon_kJ_mol": 0.150472492499,
+        "unique_charges_e": [
+          0.372602120404
+        ],
+        "min_charge_e": 0.372602120404,
+        "max_charge_e": 0.372602120404
+      },
+      {
+        "type": "ho18",
+        "count": 328,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.20771521449,
+        "epsilon_kJ_mol": 0.150472795087,
+        "unique_charges_e": [
+          0.370180435684
+        ],
+        "min_charge_e": 0.370180435684,
+        "max_charge_e": 0.370180435684
+      },
+      {
+        "type": "ho19",
+        "count": 468,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.207262983799,
+        "epsilon_kJ_mol": 0.150472842292,
+        "unique_charges_e": [
+          0.369115453612
+        ],
+        "min_charge_e": 0.369115453612,
+        "max_charge_e": 0.369115453612
+      },
+      {
+        "type": "ho20",
+        "count": 210,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.205917374617,
+        "epsilon_kJ_mol": 0.150472886478,
+        "unique_charges_e": [
+          0.368928002757
+        ],
+        "min_charge_e": 0.368928002757,
+        "max_charge_e": 0.368928002757
+      },
+      {
+        "type": "oh11",
+        "count": 27,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.298883759362,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.464602515762
+        ],
+        "min_charge_e": -0.464602515762,
+        "max_charge_e": -0.464602515762
+      },
+      {
+        "type": "oh12",
+        "count": 76,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.299767261023,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.472974339348
+        ],
+        "min_charge_e": -0.472974339348,
+        "max_charge_e": -0.472974339348
+      },
+      {
+        "type": "oh13",
+        "count": 156,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.299322017083,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.470499817756
+        ],
+        "min_charge_e": -0.470499817756,
+        "max_charge_e": -0.470499817756
+      },
+      {
+        "type": "oh14",
+        "count": 132,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.299556672719,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.461103035122
+        ],
+        "min_charge_e": -0.461103035122,
+        "max_charge_e": -0.461103035122
+      },
+      {
+        "type": "oh15",
+        "count": 419,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.299351497973,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.467333787219
+        ],
+        "min_charge_e": -0.467333787219,
+        "max_charge_e": -0.467333787219
+      },
+      {
+        "type": "oh16",
+        "count": 411,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.298957723428,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.469032559287
+        ],
+        "min_charge_e": -0.469032559287,
+        "max_charge_e": -0.469032559287
+      },
+      {
+        "type": "oh17",
+        "count": 85,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.301227067553,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.486876056067
+        ],
+        "min_charge_e": -0.486876056067,
+        "max_charge_e": -0.486876056067
+      },
+      {
+        "type": "oh18",
+        "count": 328,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.300702699229,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.485185667975
+        ],
+        "min_charge_e": -0.485185667975,
+        "max_charge_e": -0.485185667975
+      },
+      {
+        "type": "oh19",
+        "count": 468,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.300165450795,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.483589747243
+        ],
+        "min_charge_e": -0.483589747243,
+        "max_charge_e": -0.483589747243
+      },
+      {
+        "type": "oh20",
+        "count": 210,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.299727115667,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.484137359148
+        ],
+        "min_charge_e": -0.484137359148,
+        "max_charge_e": -0.484137359148
+      },
+      {
+        "type": "os10",
+        "count": 118,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.288663370558,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.215339624362
+        ],
+        "min_charge_e": -0.215339624362,
+        "max_charge_e": -0.215339624362
+      },
+      {
+        "type": "os29",
+        "count": 30,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290757761851,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.226459397243
+        ],
+        "min_charge_e": -0.226459397243,
+        "max_charge_e": -0.226459397243
+      },
+      {
+        "type": "os3",
+        "count": 5,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.291399328216,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.252359997243
+        ],
+        "min_charge_e": -0.252359997243,
+        "max_charge_e": -0.252359997243
+      },
+      {
+        "type": "os30",
+        "count": 26,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290210123831,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.231802728012
+        ],
+        "min_charge_e": -0.231802728012,
+        "max_charge_e": -0.231802728012
+      },
+      {
+        "type": "os32",
+        "count": 69,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.291804761187,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.249519504489
+        ],
+        "min_charge_e": -0.249519504489,
+        "max_charge_e": -0.249519504489
+      },
+      {
+        "type": "os33",
+        "count": 113,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290746952199,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.234479147685
+        ],
+        "min_charge_e": -0.234479147685,
+        "max_charge_e": -0.234479147685
+      },
+      {
+        "type": "os34",
+        "count": 39,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290927870715,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.243438535705
+        ],
+        "min_charge_e": -0.243438535705,
+        "max_charge_e": -0.243438535705
+      },
+      {
+        "type": "os41",
+        "count": 103,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290208059929,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.229819065204
+        ],
+        "min_charge_e": -0.229819065204,
+        "max_charge_e": -0.229819065204
+      },
+      {
+        "type": "os43",
+        "count": 77,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290783115264,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.228399503737
+        ],
+        "min_charge_e": -0.228399503737,
+        "max_charge_e": -0.228399503737
+      },
+      {
+        "type": "os44",
+        "count": 161,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290650041801,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.231105258113
+        ],
+        "min_charge_e": -0.231105258113,
+        "max_charge_e": -0.231105258113
+      },
+      {
+        "type": "os45",
+        "count": 101,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.289884151804,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.224193729916
+        ],
+        "min_charge_e": -0.224193729916,
+        "max_charge_e": -0.224193729916
+      },
+      {
+        "type": "os47",
+        "count": 152,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290521459881,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.234238319611
+        ],
+        "min_charge_e": -0.234238319611,
+        "max_charge_e": -0.234238319611
+      },
+      {
+        "type": "os48",
+        "count": 350,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290105244879,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.2273932201
+        ],
+        "min_charge_e": -0.2273932201,
+        "max_charge_e": -0.2273932201
+      },
+      {
+        "type": "os49",
+        "count": 168,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.289274035604,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.223116646053
+        ],
+        "min_charge_e": -0.223116646053,
+        "max_charge_e": -0.223116646053
+      },
+      {
+        "type": "os5",
+        "count": 27,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.29108541771,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.235432256502
+        ],
+        "min_charge_e": -0.235432256502,
+        "max_charge_e": -0.235432256502
+      },
+      {
+        "type": "os53",
+        "count": 141,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290686469662,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.231648259654
+        ],
+        "min_charge_e": -0.231648259654,
+        "max_charge_e": -0.231648259654
+      },
+      {
+        "type": "os54",
+        "count": 125,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.289617352207,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.223232869243
+        ],
+        "min_charge_e": -0.223232869243,
+        "max_charge_e": -0.223232869243
+      },
+      {
+        "type": "os55",
+        "count": 320,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.289442163893,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.220579587868
+        ],
+        "min_charge_e": -0.220579587868,
+        "max_charge_e": -0.220579587868
+      },
+      {
+        "type": "os6",
+        "count": 59,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290186961636,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.236447810802
+        ],
+        "min_charge_e": -0.236447810802,
+        "max_charge_e": -0.236447810802
+      },
+      {
+        "type": "os8",
+        "count": 27,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.291305760104,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.231357849095
+        ],
+        "min_charge_e": -0.231357849095,
+        "max_charge_e": -0.231357849095
+      },
+      {
+        "type": "os9",
+        "count": 222,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290314075297,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.228948731477
+        ],
+        "min_charge_e": -0.228948731477,
+        "max_charge_e": -0.228948731477
+      }
+    ],
+    "transfer_status": "source_specific; no graph mapping or generic charge assignment performed"
+  },
+  {
+    "file": "gaff2_aim/GO_30/GO_sheet_3_0.top",
+    "defaults": {
+      "nbfunc": "1",
+      "comb_rule": "2",
+      "gen_pairs": "yes",
+      "fudgeLJ": "0.5",
+      "fudgeQQ": "0.8333"
+    },
+    "moleculetypes": [
+      [
+        "GRA",
+        "3"
+      ]
+    ],
+    "atom_count": 12819,
+    "element_counts": {
+      "6": 8540,
+      "8": 2847,
+      "1": 1432
+    },
+    "O_over_C": 0.3333723653395785,
+    "C_over_O": 2.9996487530734104,
+    "sum_charge_e": -5.133018746161788e-09,
+    "atomtype_parameters": [
+      {
+        "type": "c311",
+        "count": 17,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.343548192762,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.203912532376
+        ],
+        "min_charge_e": 0.203912532376,
+        "max_charge_e": 0.203912532376
+      },
+      {
+        "type": "c312",
+        "count": 56,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.344639490062,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.180457252964
+        ],
+        "min_charge_e": 0.180457252964,
+        "max_charge_e": 0.180457252964
+      },
+      {
+        "type": "c313",
+        "count": 98,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.343410989763,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.197580951944
+        ],
+        "min_charge_e": 0.197580951944,
+        "max_charge_e": 0.197580951944
+      },
+      {
+        "type": "c314",
+        "count": 118,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.345206121972,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.151353731778
+        ],
+        "min_charge_e": 0.151353731778,
+        "max_charge_e": 0.151353731778
+      },
+      {
+        "type": "c315",
+        "count": 299,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.344117598765,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.171405648449
+        ],
+        "min_charge_e": 0.171405648449,
+        "max_charge_e": 0.171405648449
+      },
+      {
+        "type": "c316",
+        "count": 213,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.342580248406,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.190933359772
+        ],
+        "min_charge_e": 0.190933359772,
+        "max_charge_e": 0.190933359772
+      },
+      {
+        "type": "c317",
+        "count": 47,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.346419061458,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.114882364666
+        ],
+        "min_charge_e": 0.114882364666,
+        "max_charge_e": 0.114882364666
+      },
+      {
+        "type": "c318",
+        "count": 218,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.345489326292,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.134576158927
+        ],
+        "min_charge_e": 0.134576158927,
+        "max_charge_e": 0.134576158927
+      },
+      {
+        "type": "c319",
+        "count": 252,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.344207068472,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.154673296615
+        ],
+        "min_charge_e": 0.154673296615,
+        "max_charge_e": 0.154673296615
+      },
+      {
+        "type": "c320",
+        "count": 114,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.342541384385,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.177913590683
+        ],
+        "min_charge_e": 0.177913590683,
+        "max_charge_e": 0.177913590683
+      },
+      {
+        "type": "ca1",
+        "count": 2844,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.347694381794,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          0.005401694947
+        ],
+        "min_charge_e": 0.005401694947,
+        "max_charge_e": 0.005401694947
+      },
+      {
+        "type": "ca10",
+        "count": 65,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.359131835877,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.118556304728
+        ],
+        "min_charge_e": -0.118556304728,
+        "max_charge_e": -0.118556304728
+      },
+      {
+        "type": "ca2",
+        "count": 18,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.351513867865,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.013288385925
+        ],
+        "min_charge_e": -0.013288385925,
+        "max_charge_e": -0.013288385925
+      },
+      {
+        "type": "ca3",
+        "count": 578,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.349407525929,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.013491881119
+        ],
+        "min_charge_e": -0.013491881119,
+        "max_charge_e": -0.013491881119
+      },
+      {
+        "type": "ca4",
+        "count": 22,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.353710294462,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.019394906127
+        ],
+        "min_charge_e": -0.019394906127,
+        "max_charge_e": -0.019394906127
+      },
+      {
+        "type": "ca5",
+        "count": 58,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.353184544373,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.031112238415
+        ],
+        "min_charge_e": -0.031112238415,
+        "max_charge_e": -0.031112238415
+      },
+      {
+        "type": "ca6",
+        "count": 244,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.352536313399,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.050096898675
+        ],
+        "min_charge_e": -0.050096898675,
+        "max_charge_e": -0.050096898675
+      },
+      {
+        "type": "ca7",
+        "count": 115,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.355439138045,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.035225805732
+        ],
+        "min_charge_e": -0.035225805732,
+        "max_charge_e": -0.035225805732
+      },
+      {
+        "type": "ca8",
+        "count": 190,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.355364023069,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.042442818089
+        ],
+        "min_charge_e": -0.042442818089,
+        "max_charge_e": -0.042442818089
+      },
+      {
+        "type": "ca9",
+        "count": 144,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.356947618361,
+        "epsilon_kJ_mol": 0.259187231018,
+        "unique_charges_e": [
+          -0.078003351203
+        ],
+        "min_charge_e": -0.078003351203,
+        "max_charge_e": -0.078003351203
+      },
+      {
+        "type": "cx23",
+        "count": 353,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.342978424071,
+        "epsilon_kJ_mol": 0.259187,
+        "unique_charges_e": [
+          0.142348022794
+        ],
+        "min_charge_e": 0.142348022794,
+        "max_charge_e": 0.142348022794
+      },
+      {
+        "type": "cx25",
+        "count": 414,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.345416006882,
+        "epsilon_kJ_mol": 0.259187,
+        "unique_charges_e": [
+          0.108432940162
+        ],
+        "min_charge_e": 0.108432940162,
+        "max_charge_e": 0.108432940162
+      },
+      {
+        "type": "cx26",
+        "count": 677,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.343049599285,
+        "epsilon_kJ_mol": 0.259187,
+        "unique_charges_e": [
+          0.128423745948
+        ],
+        "min_charge_e": 0.128423745948,
+        "max_charge_e": 0.128423745948
+      },
+      {
+        "type": "cx28",
+        "count": 371,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.347393309593,
+        "epsilon_kJ_mol": 0.259187,
+        "unique_charges_e": [
+          0.065585035309
+        ],
+        "min_charge_e": 0.065585035309,
+        "max_charge_e": 0.065585035309
+      },
+      {
+        "type": "cx29",
+        "count": 731,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.345523944516,
+        "epsilon_kJ_mol": 0.259187,
+        "unique_charges_e": [
+          0.086682567943
+        ],
+        "min_charge_e": 0.086682567943,
+        "max_charge_e": 0.086682567943
+      },
+      {
+        "type": "cx30",
+        "count": 284,
+        "atomic_number": 6,
+        "mass": 12.01,
+        "sigma_nm": 0.343304409193,
+        "epsilon_kJ_mol": 0.259187,
+        "unique_charges_e": [
+          0.108920622682
+        ],
+        "min_charge_e": 0.108920622682,
+        "max_charge_e": 0.108920622682
+      },
+      {
+        "type": "ho11",
+        "count": 17,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.208385717072,
+        "epsilon_kJ_mol": 0.150472604753,
+        "unique_charges_e": [
+          0.364197532376
+        ],
+        "min_charge_e": 0.364197532376,
+        "max_charge_e": 0.364197532376
+      },
+      {
+        "type": "ho12",
+        "count": 56,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.208777373742,
+        "epsilon_kJ_mol": 0.150473109737,
+        "unique_charges_e": [
+          0.368645770821
+        ],
+        "min_charge_e": 0.368645770821,
+        "max_charge_e": 0.368645770821
+      },
+      {
+        "type": "ho13",
+        "count": 98,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.208155576436,
+        "epsilon_kJ_mol": 0.150472730214,
+        "unique_charges_e": [
+          0.368127911127
+        ],
+        "min_charge_e": 0.368127911127,
+        "max_charge_e": 0.368127911127
+      },
+      {
+        "type": "ho14",
+        "count": 118,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.208105892269,
+        "epsilon_kJ_mol": 0.150472851437,
+        "unique_charges_e": [
+          0.371724841947
+        ],
+        "min_charge_e": 0.371724841947,
+        "max_charge_e": 0.371724841947
+      },
+      {
+        "type": "ho15",
+        "count": 299,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.207461653716,
+        "epsilon_kJ_mol": 0.150472702974,
+        "unique_charges_e": [
+          0.371475116676
+        ],
+        "min_charge_e": 0.371475116676,
+        "max_charge_e": 0.371475116676
+      },
+      {
+        "type": "ho16",
+        "count": 213,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.207025471455,
+        "epsilon_kJ_mol": 0.150472751071,
+        "unique_charges_e": [
+          0.36951110625
+        ],
+        "min_charge_e": 0.36951110625,
+        "max_charge_e": 0.36951110625
+      },
+      {
+        "type": "ho17",
+        "count": 47,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.209161902824,
+        "epsilon_kJ_mol": 0.150472707,
+        "unique_charges_e": [
+          0.370838173177
+        ],
+        "min_charge_e": 0.370838173177,
+        "max_charge_e": 0.370838173177
+      },
+      {
+        "type": "ho18",
+        "count": 218,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.208482184143,
+        "epsilon_kJ_mol": 0.150472979832,
+        "unique_charges_e": [
+          0.369833787368
+        ],
+        "min_charge_e": 0.369833787368,
+        "max_charge_e": 0.369833787368
+      },
+      {
+        "type": "ho19",
+        "count": 252,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.207217661094,
+        "epsilon_kJ_mol": 0.150472643435,
+        "unique_charges_e": [
+          0.370497860107
+        ],
+        "min_charge_e": 0.370497860107,
+        "max_charge_e": 0.370497860107
+      },
+      {
+        "type": "ho20",
+        "count": 114,
+        "atomic_number": 1,
+        "mass": 1.08,
+        "sigma_nm": 0.206299007941,
+        "epsilon_kJ_mol": 0.150472535117,
+        "unique_charges_e": [
+          0.369815432789
+        ],
+        "min_charge_e": 0.369815432789,
+        "max_charge_e": 0.369815432789
+      },
+      {
+        "type": "oh11",
+        "count": 17,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.299158931878,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.465606644095
+        ],
+        "min_charge_e": -0.465606644095,
+        "max_charge_e": -0.465606644095
+      },
+      {
+        "type": "oh12",
+        "count": 56,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.299687768772,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.472279389893
+        ],
+        "min_charge_e": -0.472279389893,
+        "max_charge_e": -0.472279389893
+      },
+      {
+        "type": "oh13",
+        "count": 98,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.299618617329,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.47667673173
+        ],
+        "min_charge_e": -0.47667673173,
+        "max_charge_e": -0.47667673173
+      },
+      {
+        "type": "oh14",
+        "count": 118,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.300014283377,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.475730988561
+        ],
+        "min_charge_e": -0.475730988561,
+        "max_charge_e": -0.475730988561
+      },
+      {
+        "type": "oh15",
+        "count": 299,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.299674196152,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.475129264595
+        ],
+        "min_charge_e": -0.475129264595,
+        "max_charge_e": -0.475129264595
+      },
+      {
+        "type": "oh16",
+        "count": 213,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.299169341714,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.471371499383
+        ],
+        "min_charge_e": -0.471371499383,
+        "max_charge_e": -0.471371499383
+      },
+      {
+        "type": "oh17",
+        "count": 47,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.301293293737,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.487405465121
+        ],
+        "min_charge_e": -0.487405465121,
+        "max_charge_e": -0.487405465121
+      },
+      {
+        "type": "oh18",
+        "count": 218,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.300846216659,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.487862873183
+        ],
+        "min_charge_e": -0.487862873183,
+        "max_charge_e": -0.487862873183
+      },
+      {
+        "type": "oh19",
+        "count": 252,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.300104153235,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.485611028782
+        ],
+        "min_charge_e": -0.485611028782,
+        "max_charge_e": -0.485611028782
+      },
+      {
+        "type": "oh20",
+        "count": 114,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.300041877228,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.488695523352
+        ],
+        "min_charge_e": -0.488695523352,
+        "max_charge_e": -0.488695523352
+      },
+      {
+        "type": "os10",
+        "count": 11,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.288330560638,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.216604815218
+        ],
+        "min_charge_e": -0.216604815218,
+        "max_charge_e": -0.216604815218
+      },
+      {
+        "type": "os29",
+        "count": 58,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290975349414,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.252081979795
+        ],
+        "min_charge_e": -0.252081979795,
+        "max_charge_e": -0.252081979795
+      },
+      {
+        "type": "os3",
+        "count": 5,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290632178366,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.250376997036
+        ],
+        "min_charge_e": -0.250376997036,
+        "max_charge_e": -0.250376997036
+      },
+      {
+        "type": "os30",
+        "count": 64,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290635011642,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.251623918911
+        ],
+        "min_charge_e": -0.251623918911,
+        "max_charge_e": -0.251623918911
+      },
+      {
+        "type": "os32",
+        "count": 60,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.291634780124,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.252377863703
+        ],
+        "min_charge_e": -0.252377863703,
+        "max_charge_e": -0.252377863703
+      },
+      {
+        "type": "os33",
+        "count": 128,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.291026792587,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.250025403286
+        ],
+        "min_charge_e": -0.250025403286,
+        "max_charge_e": -0.250025403286
+      },
+      {
+        "type": "os34",
+        "count": 33,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290598496601,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.249742966733
+        ],
+        "min_charge_e": -0.249742966733,
+        "max_charge_e": -0.249742966733
+      },
+      {
+        "type": "os41",
+        "count": 108,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290454240517,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.244164756295
+        ],
+        "min_charge_e": -0.244164756295,
+        "max_charge_e": -0.244164756295
+      },
+      {
+        "type": "os43",
+        "count": 49,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.291933650611,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.253457670505
+        ],
+        "min_charge_e": -0.253457670505,
+        "max_charge_e": -0.253457670505
+      },
+      {
+        "type": "os44",
+        "count": 97,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.291059924103,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.243415811469
+        ],
+        "min_charge_e": -0.243415811469,
+        "max_charge_e": -0.243415811469
+      },
+      {
+        "type": "os45",
+        "count": 42,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290600158455,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.240608544655
+        ],
+        "min_charge_e": -0.240608544655,
+        "max_charge_e": -0.240608544655
+      },
+      {
+        "type": "os47",
+        "count": 128,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290705571898,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.244898293911
+        ],
+        "min_charge_e": -0.244898293911,
+        "max_charge_e": -0.244898293911
+      },
+      {
+        "type": "os48",
+        "count": 236,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290088074358,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.235287391104
+        ],
+        "min_charge_e": -0.235287391104,
+        "max_charge_e": -0.235287391104
+      },
+      {
+        "type": "os49",
+        "count": 49,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.289488003488,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.229986384791
+        ],
+        "min_charge_e": -0.229986384791,
+        "max_charge_e": -0.229986384791
+      },
+      {
+        "type": "os5",
+        "count": 30,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.291187544209,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.247637297036
+        ],
+        "min_charge_e": -0.247637297036,
+        "max_charge_e": -0.247637297036
+      },
+      {
+        "type": "os53",
+        "count": 55,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.29140251476,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.240732851581
+        ],
+        "min_charge_e": -0.240732851581,
+        "max_charge_e": -0.240732851581
+      },
+      {
+        "type": "os54",
+        "count": 57,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290160704315,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.233309330369
+        ],
+        "min_charge_e": -0.233309330369,
+        "max_charge_e": -0.233309330369
+      },
+      {
+        "type": "os55",
+        "count": 81,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.289603256103,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.223978577283
+        ],
+        "min_charge_e": -0.223978577283,
+        "max_charge_e": -0.223978577283
+      },
+      {
+        "type": "os6",
+        "count": 46,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290151241684,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.245831192688
+        ],
+        "min_charge_e": -0.245831192688,
+        "max_charge_e": -0.245831192688
+      },
+      {
+        "type": "os8",
+        "count": 11,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.291608356935,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.236946360672
+        ],
+        "min_charge_e": -0.236946360672,
+        "max_charge_e": -0.236946360672
+      },
+      {
+        "type": "os9",
+        "count": 67,
+        "atomic_number": 8,
+        "mass": 16.0,
+        "sigma_nm": 0.290570967909,
+        "epsilon_kJ_mol": 0.418805520302,
+        "unique_charges_e": [
+          -0.237641907484
+        ],
+        "min_charge_e": -0.237641907484,
+        "max_charge_e": -0.237641907484
+      }
+    ],
+    "transfer_status": "source_specific; no graph mapping or generic charge assignment performed"
+  }
+]

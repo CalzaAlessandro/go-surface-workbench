@@ -1,0 +1,10 @@
+{
+  "model_id": "pyrene_dione",
+  "method": "wB97X-D/6-311++G(d,p)",
+  "scope": "Gas-phase finite-fragment geometry/Hessian/stability benchmark for bonded parameters; not new RESP or LJ model.",
+  "initial_model_sha256": "c5f8fddaf61e5c96d1d0f72f533a89cee64462fafd385c123f27b432b1c40bed",
+  "input_sha256": "e083e9837833627afb2741522eb2d1d37c7f4de4e289eecbbaa5bc22553cba19",
+  "nuclear_optimization": true,
+  "normal_mode_scaling_applied": false,
+  "parameter_fit_performed": false
+}

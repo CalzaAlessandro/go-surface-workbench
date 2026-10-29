@@ -1,0 +1,43 @@
+{
+  "doi": "10.1063/1.4890503",
+  "source_url": "https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf",
+  "locator": "Table I, page 044705-4",
+  "retrieval": "Primary author PDF indexed text retrieved by web search; full PDF network download timed out",
+  "models": {
+    "ESP": {
+      "epoxy": {
+        "O": -0.24,
+        "C": 0.12
+      },
+      "hydroxyl": {
+        "O": -0.38,
+        "C": 0.12,
+        "H": 0.26
+      }
+    },
+    "SESP": {
+      "epoxy": {
+        "O": -0.36,
+        "C": 0.18
+      },
+      "hydroxyl": {
+        "O": -0.57,
+        "C": 0.18,
+        "H": 0.39
+      }
+    },
+    "modified_AM1_BCC": {
+      "epoxy": {
+        "O": -0.36,
+        "C": 0.18
+      },
+      "hydroxyl": {
+        "O": -0.58,
+        "C": 0.16,
+        "H": 0.42
+      }
+    }
+  },
+  "units": "elementary charge",
+  "note": "Do not label SESP as RESP. The RESP column in Table I has no GO values. Epoxy has two C atoms; hydroxyl one C and one H. Carboxyl and carbonyl values are not supplied by this table."
+}

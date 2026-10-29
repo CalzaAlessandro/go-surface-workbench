@@ -1,0 +1,227 @@
+{
+  "status": "raw_native_AM1_BCC_diagnostic",
+  "candidate": "raw_native_am1_bcc",
+  "model_id": "pyrene_COOH",
+  "coverage": {
+    "complete": true
+  },
+  "final_parameter_validation": false,
+  "atoms": [
+    {
+      "atom_id": 1,
+      "name": "C001",
+      "element": "C",
+      "role": "COOH_anchor",
+      "charge_e": -0.1346
+    },
+    {
+      "atom_id": 2,
+      "name": "C002",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.0565
+    },
+    {
+      "atom_id": 3,
+      "name": "C003",
+      "element": "C",
+      "role": "scaffold_C",
+      "charge_e": -0.0495
+    },
+    {
+      "atom_id": 4,
+      "name": "C004",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.11
+    },
+    {
+      "atom_id": 5,
+      "name": "C005",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.114
+    },
+    {
+      "atom_id": 6,
+      "name": "C006",
+      "element": "C",
+      "role": "scaffold_C",
+      "charge_e": -0.0265
+    },
+    {
+      "atom_id": 7,
+      "name": "C007",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.115
+    },
+    {
+      "atom_id": 8,
+      "name": "C008",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.12
+    },
+    {
+      "atom_id": 9,
+      "name": "C009",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.115
+    },
+    {
+      "atom_id": 10,
+      "name": "C010",
+      "element": "C",
+      "role": "scaffold_C",
+      "charge_e": -0.0265
+    },
+    {
+      "atom_id": 11,
+      "name": "C011",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.114
+    },
+    {
+      "atom_id": 12,
+      "name": "C012",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.11
+    },
+    {
+      "atom_id": 13,
+      "name": "C013",
+      "element": "C",
+      "role": "scaffold_C",
+      "charge_e": -0.0495
+    },
+    {
+      "atom_id": 14,
+      "name": "C014",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.0565
+    },
+    {
+      "atom_id": 15,
+      "name": "C015",
+      "element": "C",
+      "role": "scaffold_C",
+      "charge_e": 0.011
+    },
+    {
+      "atom_id": 16,
+      "name": "C016",
+      "element": "C",
+      "role": "scaffold_C",
+      "charge_e": -0.026
+    },
+    {
+      "atom_id": 17,
+      "name": "C017",
+      "element": "C",
+      "role": "COOH_C",
+      "charge_e": 0.6517
+    },
+    {
+      "atom_id": 18,
+      "name": "O018",
+      "element": "O",
+      "role": "COOH_O",
+      "charge_e": -0.554
+    },
+    {
+      "atom_id": 19,
+      "name": "O019",
+      "element": "O",
+      "role": "COOH_OH",
+      "charge_e": -0.6081
+    },
+    {
+      "atom_id": 20,
+      "name": "H020",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.159
+    },
+    {
+      "atom_id": 21,
+      "name": "H021",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.1385
+    },
+    {
+      "atom_id": 22,
+      "name": "H022",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.1365
+    },
+    {
+      "atom_id": 23,
+      "name": "H023",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.1365
+    },
+    {
+      "atom_id": 24,
+      "name": "H024",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.136
+    },
+    {
+      "atom_id": 25,
+      "name": "H025",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.1365
+    },
+    {
+      "atom_id": 26,
+      "name": "H026",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.1365
+    },
+    {
+      "atom_id": 27,
+      "name": "H027",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.1385
+    },
+    {
+      "atom_id": 28,
+      "name": "H028",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.159
+    },
+    {
+      "atom_id": 29,
+      "name": "H029",
+      "element": "H",
+      "role": "COOH_H",
+      "charge_e": 0.447
+    }
+  ],
+  "charge_sum_e": 0.000999999999999994,
+  "formal_charge": 0,
+  "bcc_evidence": {
+    "native_BCC_verified": true,
+    "parameterized_bonds": 32,
+    "nonzero_BCC_bonds": 4,
+    "max_abs_BCC_delta_e": 0.2997,
+    "source_mulliken_decimals": 3,
+    "raw_mulliken_sum_e": 0.0010000000000000356,
+    "pre_BCC_sum_e": 0.0010000000000000356,
+    "post_BCC_sum_e": 0.000999999999999994,
+    "parameter_sha256": "05f034901d058ad9331325b6ee3fafa25c75b1ce4f52839fe85032eb92941276"
+  }
+}

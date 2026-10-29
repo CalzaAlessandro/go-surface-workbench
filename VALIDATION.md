@@ -1,8 +1,8 @@
 # Software validation status
 
-The private development snapshot passed 258 tests on 29 October 2026 using
+The private development snapshot passed 287 tests on 29 October 2026 using
 Python 3.14.10 and the existing isolated GO_BUILDER environment. The suite covers
-graph construction, placement failures, anti grafting, external-engine input
+graph construction (including 14 additional equivalence checks for the performance refactor), placement failures, anti grafting, external-engine input
 preparation, topology conversion and execution wrappers.
 
 Reproduce with `uv sync --group dev` then `uv run pytest -q`. This is software

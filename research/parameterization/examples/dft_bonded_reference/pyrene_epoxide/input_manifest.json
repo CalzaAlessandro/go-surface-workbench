@@ -1,0 +1,10 @@
+{
+  "model_id": "pyrene_epoxide",
+  "method": "wB97X-D/6-311++G(d,p)",
+  "scope": "Gas-phase finite-fragment geometry/Hessian/stability benchmark for bonded parameters; not new RESP or LJ model.",
+  "initial_model_sha256": "48b022740f7d6334403c5a61d734688488b9fc6f12fdeca539275bea26bc287f",
+  "input_sha256": "dba893db20699c868edafa6d8e0e032452d3d48447fcfabb48861125f684909e",
+  "nuclear_optimization": true,
+  "normal_mode_scaling_applied": false,
+  "parameter_fit_performed": false
+}

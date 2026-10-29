@@ -1,0 +1,4 @@
+addAtomTypes {
+ { "GX" "C" "sp3" }
+ { "GO" "O" "sp3" }
+}

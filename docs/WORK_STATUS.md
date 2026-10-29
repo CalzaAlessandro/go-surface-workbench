@@ -1,3 +1,5 @@
+> Historical baseline record. The current builder has 287 passing tests and local-only GO creation; current parameterization/preset status is documented in README, LAYERONE_PRESETS and research/parameterization.
+
 > **Nota sulla snapshot:** questo documento conserva lo stato di lavoro registrato il 29 ottobre 2026. La cartella `validation/`, gli archivi di output e i binari citati nei resoconti sono stati esclusi dalla snapshot; i relativi risultati qui riassunti non sono quindi verificabili dai soli file inclusi.
 
 # Stato di lavoro — 29 ottobre 2026

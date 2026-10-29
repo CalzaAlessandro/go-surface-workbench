@@ -1,0 +1,1538 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-29T20:21:39.596809+00:00",
+  "model_id": "pyrene_dione",
+  "status": "unsupported_BCC_parameter_coverage_diagnostic_ONLY",
+  "attempt_dir": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/am1_bcc/pyrene_dione/attempt_003",
+  "strict_production_gate_unchanged": true,
+  "existing_failure_marker": {
+    "exception": "ValueError",
+    "message": "BCC parameter missing for native types 16-12-2"
+  },
+  "classification": "Exclude from supported AM1-BCC method comparisons and all validated/final parameter claims; retain native output as explicitly incomplete-coverage diagnostic.",
+  "no_artifacts_modified": true,
+  "no_candidate_exported": true,
+  "no_rerun_performed": true,
+  "native_antechamber_exit_code": 0,
+  "sqm_AM1_optimization_converged": true,
+  "atom_count": 26,
+  "native_bond_count": 29,
+  "explicitly_parameterized_bond_count": 28,
+  "unparameterized_native_fallback_bond_count": 1,
+  "nonzero_explicit_BCC_bond_count": 4,
+  "max_abs_per_atom_increment_proof_residual_e": 5.551115123125783e-17,
+  "max_abs_BCC_delta_e": 0.2597,
+  "raw_output_matches_post_BCC_AC": true,
+  "raw_Mulliken_sum_e": -0.0009999999999999783,
+  "pre_BCC_sum_e": -0.0009999999999999783,
+  "post_BCC_sum_e": -0.0009999999999999783,
+  "raw_native_output_charge_sum_e": -0.0009999999999999783,
+  "formal_charge_e": 0,
+  "raw_charge_error_e": -0.0009999999999999783,
+  "representation_validation": {
+    "representation_changes": [
+      {
+        "atom_ids": [
+          10,
+          11
+        ],
+        "kind": "RDKit_aromatic_representation",
+        "input_order": 1.0,
+        "output_order": "ar"
+      },
+      {
+        "atom_ids": [
+          11,
+          12
+        ],
+        "kind": "RDKit_aromatic_representation",
+        "input_order": 2.0,
+        "output_order": "ar"
+      },
+      {
+        "atom_ids": [
+          12,
+          13
+        ],
+        "kind": "RDKit_aromatic_representation",
+        "input_order": 1.0,
+        "output_order": "ar"
+      },
+      {
+        "atom_ids": [
+          13,
+          15
+        ],
+        "kind": "RDKit_aromatic_representation",
+        "input_order": 1.0,
+        "output_order": "ar"
+      }
+    ],
+    "alternating_cycle_atom_ids": [],
+    "validated_aromatic_metadata": true,
+    "fixed_sigma_and_functional_group_bonds_preserved": true
+  },
+  "coverage_gaps": [
+    {
+      "bond_id": 13,
+      "atom_ids": [
+        13,
+        14
+      ],
+      "atom_names": [
+        "C013",
+        "C014"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "12"
+      ],
+      "native_bond_code": 2,
+      "coverage": "native_implicit_zero_fallback_NOT_parameter_coverage",
+      "parameter": null,
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "12",
+          2
+        ],
+        [
+          "12",
+          "16",
+          2
+        ]
+      ]
+    }
+  ],
+  "native_fallback_primary_source": {
+    "url": "https://github.com/Amber-MD/AmberClassic/blob/main/src/antechamber/am1bcc.c#L113-L154",
+    "raw_url": "https://raw.githubusercontent.com/Amber-MD/AmberClassic/main/src/antechamber/am1bcc.c",
+    "function": "bccparm",
+    "context": "After direct/reversed and optional CORR remapping lookups have failed, immediately before returning the bond correction.",
+    "exact_source_excerpt": "if(suc == 0) bcc = 0;\nreturn bcc;",
+    "source_lines": [
+      152,
+      153
+    ],
+    "version_limit": "Public Amber implementation inspected directly; not a claim of byte-identical source for the installed binary. Actual native output independently matches the documented fallback."
+  },
+  "bond_increment_proof": [
+    {
+      "bond_id": 1,
+      "atom_ids": [
+        1,
+        2
+      ],
+      "atom_names": [
+        "C001",
+        "C002"
+      ],
+      "native_BCC_atom_types": [
+        "14",
+        "14"
+      ],
+      "native_bond_code": 1,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 69,
+        "source_line": 69,
+        "lookup_key": [
+          "14",
+          "14",
+          1
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "14",
+          "14",
+          1
+        ]
+      ]
+    },
+    {
+      "bond_id": 2,
+      "atom_ids": [
+        2,
+        3
+      ],
+      "atom_names": [
+        "C002",
+        "C003"
+      ],
+      "native_BCC_atom_types": [
+        "14",
+        "16"
+      ],
+      "native_bond_code": 1,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 71,
+        "source_line": 71,
+        "lookup_key": [
+          "14",
+          "16",
+          1
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0206
+      },
+      "signed_increment_to_first_atom_e": 0.0206,
+      "signed_increment_to_second_atom_e": -0.0206,
+      "lookup_trace": [
+        [
+          "14",
+          "16",
+          1
+        ]
+      ]
+    },
+    {
+      "bond_id": 3,
+      "atom_ids": [
+        3,
+        4
+      ],
+      "atom_names": [
+        "C003",
+        "C004"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 7,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 294,
+        "source_line": 294,
+        "lookup_key": [
+          "16",
+          "16",
+          7
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          7
+        ]
+      ]
+    },
+    {
+      "bond_id": 4,
+      "atom_ids": [
+        4,
+        5
+      ],
+      "atom_names": [
+        "C004",
+        "C005"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 8,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 319,
+        "source_line": 319,
+        "lookup_key": [
+          "16",
+          "16",
+          8
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          8
+        ]
+      ]
+    },
+    {
+      "bond_id": 5,
+      "atom_ids": [
+        5,
+        6
+      ],
+      "atom_names": [
+        "C005",
+        "C006"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 7,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 294,
+        "source_line": 294,
+        "lookup_key": [
+          "16",
+          "16",
+          7
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          7
+        ]
+      ]
+    },
+    {
+      "bond_id": 6,
+      "atom_ids": [
+        6,
+        7
+      ],
+      "atom_names": [
+        "C006",
+        "C007"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 7,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 294,
+        "source_line": 294,
+        "lookup_key": [
+          "16",
+          "16",
+          7
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          7
+        ]
+      ]
+    },
+    {
+      "bond_id": 7,
+      "atom_ids": [
+        7,
+        8
+      ],
+      "atom_names": [
+        "C007",
+        "C008"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 8,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 319,
+        "source_line": 319,
+        "lookup_key": [
+          "16",
+          "16",
+          8
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          8
+        ]
+      ]
+    },
+    {
+      "bond_id": 8,
+      "atom_ids": [
+        8,
+        9
+      ],
+      "atom_names": [
+        "C008",
+        "C009"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 7,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 294,
+        "source_line": 294,
+        "lookup_key": [
+          "16",
+          "16",
+          7
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          7
+        ]
+      ]
+    },
+    {
+      "bond_id": 9,
+      "atom_ids": [
+        9,
+        10
+      ],
+      "atom_names": [
+        "C009",
+        "C010"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 8,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 319,
+        "source_line": 319,
+        "lookup_key": [
+          "16",
+          "16",
+          8
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          8
+        ]
+      ]
+    },
+    {
+      "bond_id": 10,
+      "atom_ids": [
+        10,
+        11
+      ],
+      "atom_names": [
+        "C010",
+        "C011"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 7,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 294,
+        "source_line": 294,
+        "lookup_key": [
+          "16",
+          "16",
+          7
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          7
+        ]
+      ]
+    },
+    {
+      "bond_id": 11,
+      "atom_ids": [
+        11,
+        12
+      ],
+      "atom_names": [
+        "C011",
+        "C012"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 8,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 319,
+        "source_line": 319,
+        "lookup_key": [
+          "16",
+          "16",
+          8
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          8
+        ]
+      ]
+    },
+    {
+      "bond_id": 12,
+      "atom_ids": [
+        12,
+        13
+      ],
+      "atom_names": [
+        "C012",
+        "C013"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 7,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 294,
+        "source_line": 294,
+        "lookup_key": [
+          "16",
+          "16",
+          7
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          7
+        ]
+      ]
+    },
+    {
+      "bond_id": 13,
+      "atom_ids": [
+        13,
+        14
+      ],
+      "atom_names": [
+        "C013",
+        "C014"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "12"
+      ],
+      "native_bond_code": 2,
+      "coverage": "native_implicit_zero_fallback_NOT_parameter_coverage",
+      "parameter": null,
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "12",
+          2
+        ],
+        [
+          "12",
+          "16",
+          2
+        ]
+      ]
+    },
+    {
+      "bond_id": 14,
+      "atom_ids": [
+        13,
+        15
+      ],
+      "atom_names": [
+        "C013",
+        "C015"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 7,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 294,
+        "source_line": 294,
+        "lookup_key": [
+          "16",
+          "16",
+          7
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          7
+        ]
+      ]
+    },
+    {
+      "bond_id": 15,
+      "atom_ids": [
+        15,
+        16
+      ],
+      "atom_names": [
+        "C015",
+        "C016"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 7,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 294,
+        "source_line": 294,
+        "lookup_key": [
+          "16",
+          "16",
+          7
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          7
+        ]
+      ]
+    },
+    {
+      "bond_id": 16,
+      "atom_ids": [
+        14,
+        1
+      ],
+      "atom_names": [
+        "C014",
+        "C001"
+      ],
+      "native_BCC_atom_types": [
+        "12",
+        "14"
+      ],
+      "native_bond_code": 1,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 27,
+        "source_line": 27,
+        "lookup_key": [
+          "12",
+          "14",
+          1
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": -0.0192
+      },
+      "signed_increment_to_first_atom_e": -0.0192,
+      "signed_increment_to_second_atom_e": 0.0192,
+      "lookup_trace": [
+        [
+          "12",
+          "14",
+          1
+        ]
+      ]
+    },
+    {
+      "bond_id": 17,
+      "atom_ids": [
+        15,
+        3
+      ],
+      "atom_names": [
+        "C015",
+        "C003"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 8,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 319,
+        "source_line": 319,
+        "lookup_key": [
+          "16",
+          "16",
+          8
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          8
+        ]
+      ]
+    },
+    {
+      "bond_id": 18,
+      "atom_ids": [
+        16,
+        6
+      ],
+      "atom_names": [
+        "C016",
+        "C006"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 8,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 319,
+        "source_line": 319,
+        "lookup_key": [
+          "16",
+          "16",
+          8
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          8
+        ]
+      ]
+    },
+    {
+      "bond_id": 19,
+      "atom_ids": [
+        16,
+        10
+      ],
+      "atom_names": [
+        "C016",
+        "C010"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "16"
+      ],
+      "native_bond_code": 7,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 294,
+        "source_line": 294,
+        "lookup_key": [
+          "16",
+          "16",
+          7
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "16",
+          7
+        ]
+      ]
+    },
+    {
+      "bond_id": 20,
+      "atom_ids": [
+        1,
+        17
+      ],
+      "atom_names": [
+        "C001",
+        "O017"
+      ],
+      "native_BCC_atom_types": [
+        "14",
+        "31"
+      ],
+      "native_bond_code": 2,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 255,
+        "source_line": 255,
+        "lookup_key": [
+          "14",
+          "31",
+          2
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.2391
+      },
+      "signed_increment_to_first_atom_e": 0.2391,
+      "signed_increment_to_second_atom_e": -0.2391,
+      "lookup_trace": [
+        [
+          "14",
+          "31",
+          2
+        ]
+      ]
+    },
+    {
+      "bond_id": 21,
+      "atom_ids": [
+        2,
+        18
+      ],
+      "atom_names": [
+        "C002",
+        "O018"
+      ],
+      "native_BCC_atom_types": [
+        "14",
+        "31"
+      ],
+      "native_bond_code": 2,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 255,
+        "source_line": 255,
+        "lookup_key": [
+          "14",
+          "31",
+          2
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.2391
+      },
+      "signed_increment_to_first_atom_e": 0.2391,
+      "signed_increment_to_second_atom_e": -0.2391,
+      "lookup_trace": [
+        [
+          "14",
+          "31",
+          2
+        ]
+      ]
+    },
+    {
+      "bond_id": 22,
+      "atom_ids": [
+        4,
+        19
+      ],
+      "atom_names": [
+        "C004",
+        "H019"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "91"
+      ],
+      "native_bond_code": 1,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 126,
+        "source_line": 126,
+        "lookup_key": [
+          "16",
+          "91",
+          1
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "91",
+          1
+        ]
+      ]
+    },
+    {
+      "bond_id": 23,
+      "atom_ids": [
+        5,
+        20
+      ],
+      "atom_names": [
+        "C005",
+        "H020"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "91"
+      ],
+      "native_bond_code": 1,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 126,
+        "source_line": 126,
+        "lookup_key": [
+          "16",
+          "91",
+          1
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "91",
+          1
+        ]
+      ]
+    },
+    {
+      "bond_id": 24,
+      "atom_ids": [
+        7,
+        21
+      ],
+      "atom_names": [
+        "C007",
+        "H021"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "91"
+      ],
+      "native_bond_code": 1,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 126,
+        "source_line": 126,
+        "lookup_key": [
+          "16",
+          "91",
+          1
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "91",
+          1
+        ]
+      ]
+    },
+    {
+      "bond_id": 25,
+      "atom_ids": [
+        8,
+        22
+      ],
+      "atom_names": [
+        "C008",
+        "H022"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "91"
+      ],
+      "native_bond_code": 1,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 126,
+        "source_line": 126,
+        "lookup_key": [
+          "16",
+          "91",
+          1
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "91",
+          1
+        ]
+      ]
+    },
+    {
+      "bond_id": 26,
+      "atom_ids": [
+        9,
+        23
+      ],
+      "atom_names": [
+        "C009",
+        "H023"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "91"
+      ],
+      "native_bond_code": 1,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 126,
+        "source_line": 126,
+        "lookup_key": [
+          "16",
+          "91",
+          1
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "91",
+          1
+        ]
+      ]
+    },
+    {
+      "bond_id": 27,
+      "atom_ids": [
+        11,
+        24
+      ],
+      "atom_names": [
+        "C011",
+        "H024"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "91"
+      ],
+      "native_bond_code": 1,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 126,
+        "source_line": 126,
+        "lookup_key": [
+          "16",
+          "91",
+          1
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "91",
+          1
+        ]
+      ]
+    },
+    {
+      "bond_id": 28,
+      "atom_ids": [
+        12,
+        25
+      ],
+      "atom_names": [
+        "C012",
+        "H025"
+      ],
+      "native_BCC_atom_types": [
+        "16",
+        "91"
+      ],
+      "native_bond_code": 1,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 126,
+        "source_line": 126,
+        "lookup_key": [
+          "16",
+          "91",
+          1
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "16",
+          "91",
+          1
+        ]
+      ]
+    },
+    {
+      "bond_id": 29,
+      "atom_ids": [
+        14,
+        26
+      ],
+      "atom_names": [
+        "C014",
+        "H026"
+      ],
+      "native_BCC_atom_types": [
+        "12",
+        "91"
+      ],
+      "native_bond_code": 1,
+      "coverage": "explicit_parameter_match",
+      "parameter": {
+        "entry_id": 47,
+        "source_line": 47,
+        "lookup_key": [
+          "12",
+          "91",
+          1
+        ],
+        "orientation_sign": 1,
+        "table_increment_e": 0.0
+      },
+      "signed_increment_to_first_atom_e": 0.0,
+      "signed_increment_to_second_atom_e": -0.0,
+      "lookup_trace": [
+        [
+          "12",
+          "91",
+          1
+        ]
+      ]
+    }
+  ],
+  "atomic_increment_proof": [
+    {
+      "atom_id": 1,
+      "name": "C001",
+      "element": "C",
+      "role": "carbonyl_C",
+      "raw_Mulliken_charge_e": 0.213,
+      "pre_BCC_charge_e": 0.213,
+      "post_BCC_charge_e": 0.4713,
+      "observed_BCC_delta_e": 0.2583,
+      "predicted_delta_including_documented_native_fallback_e": 0.25830000000000003,
+      "residual_e": -5.551115123125783e-17
+    },
+    {
+      "atom_id": 2,
+      "name": "C002",
+      "element": "C",
+      "role": "carbonyl_C",
+      "raw_Mulliken_charge_e": 0.221,
+      "pre_BCC_charge_e": 0.221,
+      "post_BCC_charge_e": 0.4807,
+      "observed_BCC_delta_e": 0.25970000000000004,
+      "predicted_delta_including_documented_native_fallback_e": 0.2597,
+      "residual_e": 5.551115123125783e-17
+    },
+    {
+      "atom_id": 3,
+      "name": "C003",
+      "element": "C",
+      "role": "scaffold_C",
+      "raw_Mulliken_charge_e": -0.12,
+      "pre_BCC_charge_e": -0.12,
+      "post_BCC_charge_e": -0.1406,
+      "observed_BCC_delta_e": -0.020600000000000007,
+      "predicted_delta_including_documented_native_fallback_e": -0.0206,
+      "residual_e": -6.938893903907228e-18
+    },
+    {
+      "atom_id": 4,
+      "name": "C004",
+      "element": "C",
+      "role": "edge_C",
+      "raw_Mulliken_charge_e": -0.09,
+      "pre_BCC_charge_e": -0.09,
+      "post_BCC_charge_e": -0.09,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 5,
+      "name": "C005",
+      "element": "C",
+      "role": "edge_C",
+      "raw_Mulliken_charge_e": -0.112,
+      "pre_BCC_charge_e": -0.112,
+      "post_BCC_charge_e": -0.112,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 6,
+      "name": "C006",
+      "element": "C",
+      "role": "scaffold_C",
+      "raw_Mulliken_charge_e": -0.021,
+      "pre_BCC_charge_e": -0.021,
+      "post_BCC_charge_e": -0.021,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 7,
+      "name": "C007",
+      "element": "C",
+      "role": "edge_C",
+      "raw_Mulliken_charge_e": -0.109,
+      "pre_BCC_charge_e": -0.109,
+      "post_BCC_charge_e": -0.109,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 8,
+      "name": "C008",
+      "element": "C",
+      "role": "edge_C",
+      "raw_Mulliken_charge_e": -0.122,
+      "pre_BCC_charge_e": -0.122,
+      "post_BCC_charge_e": -0.122,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 9,
+      "name": "C009",
+      "element": "C",
+      "role": "edge_C",
+      "raw_Mulliken_charge_e": -0.099,
+      "pre_BCC_charge_e": -0.099,
+      "post_BCC_charge_e": -0.099,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 10,
+      "name": "C010",
+      "element": "C",
+      "role": "scaffold_C",
+      "raw_Mulliken_charge_e": -0.043,
+      "pre_BCC_charge_e": -0.043,
+      "post_BCC_charge_e": -0.043,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 11,
+      "name": "C011",
+      "element": "C",
+      "role": "edge_C",
+      "raw_Mulliken_charge_e": -0.087,
+      "pre_BCC_charge_e": -0.087,
+      "post_BCC_charge_e": -0.087,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 12,
+      "name": "C012",
+      "element": "C",
+      "role": "edge_C",
+      "raw_Mulliken_charge_e": -0.137,
+      "pre_BCC_charge_e": -0.137,
+      "post_BCC_charge_e": -0.137,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 13,
+      "name": "C013",
+      "element": "C",
+      "role": "scaffold_C",
+      "raw_Mulliken_charge_e": 0.03,
+      "pre_BCC_charge_e": 0.03,
+      "post_BCC_charge_e": 0.03,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 14,
+      "name": "C014",
+      "element": "C",
+      "role": "edge_C",
+      "raw_Mulliken_charge_e": -0.214,
+      "pre_BCC_charge_e": -0.214,
+      "post_BCC_charge_e": -0.2332,
+      "observed_BCC_delta_e": -0.019199999999999995,
+      "predicted_delta_including_documented_native_fallback_e": -0.0192,
+      "residual_e": 3.469446951953614e-18
+    },
+    {
+      "atom_id": 15,
+      "name": "C015",
+      "element": "C",
+      "role": "scaffold_C",
+      "raw_Mulliken_charge_e": 0.002,
+      "pre_BCC_charge_e": 0.002,
+      "post_BCC_charge_e": 0.002,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 16,
+      "name": "C016",
+      "element": "C",
+      "role": "scaffold_C",
+      "raw_Mulliken_charge_e": -0.024,
+      "pre_BCC_charge_e": -0.024,
+      "post_BCC_charge_e": -0.024,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 17,
+      "name": "O017",
+      "element": "O",
+      "role": "carbonyl_O",
+      "raw_Mulliken_charge_e": -0.226,
+      "pre_BCC_charge_e": -0.226,
+      "post_BCC_charge_e": -0.4651,
+      "observed_BCC_delta_e": -0.2391,
+      "predicted_delta_including_documented_native_fallback_e": -0.2391,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 18,
+      "name": "O018",
+      "element": "O",
+      "role": "carbonyl_O",
+      "raw_Mulliken_charge_e": -0.227,
+      "pre_BCC_charge_e": -0.227,
+      "post_BCC_charge_e": -0.4661,
+      "observed_BCC_delta_e": -0.2391,
+      "predicted_delta_including_documented_native_fallback_e": -0.2391,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 19,
+      "name": "H019",
+      "element": "H",
+      "role": "edge_H",
+      "raw_Mulliken_charge_e": 0.161,
+      "pre_BCC_charge_e": 0.161,
+      "post_BCC_charge_e": 0.161,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 20,
+      "name": "H020",
+      "element": "H",
+      "role": "edge_H",
+      "raw_Mulliken_charge_e": 0.143,
+      "pre_BCC_charge_e": 0.143,
+      "post_BCC_charge_e": 0.143,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 21,
+      "name": "H021",
+      "element": "H",
+      "role": "edge_H",
+      "raw_Mulliken_charge_e": 0.14,
+      "pre_BCC_charge_e": 0.14,
+      "post_BCC_charge_e": 0.14,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 22,
+      "name": "H022",
+      "element": "H",
+      "role": "edge_H",
+      "raw_Mulliken_charge_e": 0.14,
+      "pre_BCC_charge_e": 0.14,
+      "post_BCC_charge_e": 0.14,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 23,
+      "name": "H023",
+      "element": "H",
+      "role": "edge_H",
+      "raw_Mulliken_charge_e": 0.139,
+      "pre_BCC_charge_e": 0.139,
+      "post_BCC_charge_e": 0.139,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 24,
+      "name": "H024",
+      "element": "H",
+      "role": "edge_H",
+      "raw_Mulliken_charge_e": 0.139,
+      "pre_BCC_charge_e": 0.139,
+      "post_BCC_charge_e": 0.139,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 25,
+      "name": "H025",
+      "element": "H",
+      "role": "edge_H",
+      "raw_Mulliken_charge_e": 0.143,
+      "pre_BCC_charge_e": 0.143,
+      "post_BCC_charge_e": 0.143,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    },
+    {
+      "atom_id": 26,
+      "name": "H026",
+      "element": "H",
+      "role": "edge_H",
+      "raw_Mulliken_charge_e": 0.159,
+      "pre_BCC_charge_e": 0.159,
+      "post_BCC_charge_e": 0.159,
+      "observed_BCC_delta_e": 0.0,
+      "predicted_delta_including_documented_native_fallback_e": 0.0,
+      "residual_e": 0.0
+    }
+  ],
+  "hypothetical_projection_NOT_APPLIED": {
+    "status": "audit_only_hypothetical_not_a_candidate",
+    "policy": "uniform minimum-L2 charge projection",
+    "raw_charge_sum_e": -0.0009999999999999783,
+    "would_be_charge_sum_e": 1.1102230246251565e-16,
+    "would_be_max_abs_per_atom_delta_e": 3.846153846153763e-05,
+    "propagated_source_rounding_bound_e": 0.013260000000000001,
+    "warning": "This would address only rounded total charge. It would not supply the missing BCC parameter, so it is not applied or promoted."
+  },
+  "source_artifacts_sha256": {
+    "AM1_BCC_FAILED.json": "0f262b10d85dfce85d8fa772d3c8210a5d82b02855c4b0824870c726f3d4a488",
+    "ANTECHAMBER_AC.AC": "1ace4a660f284e895fc449755a544ee448b0bdc8a648122db8518e8923b0cb43",
+    "ANTECHAMBER_AC.AC0": "4af659ef848f82a5274f5ce675d6d9b296b226c9c664d7efccb39b07bee18b38",
+    "ANTECHAMBER_AM1BCC.AC": "4103f3fe70d24eeb65f823025de83834ce15ef4388624cfe1f6dc7549a008527",
+    "ANTECHAMBER_AM1BCC_PRE.AC": "7231fca05be95fbb757f26652cf250e66583ef2fb475bb5d480c09e483de1dbc",
+    "ANTECHAMBER_BOND_TYPE.AC": "4af659ef848f82a5274f5ce675d6d9b296b226c9c664d7efccb39b07bee18b38",
+    "ANTECHAMBER_BOND_TYPE.AC0": "63db39148cb4aef87d117ea8da2c147de7c85f9063b417d655077d374e1ba1b9",
+    "ATOMTYPE.INF": "4972f560cc0d9b616141abd6963d42afa7e8da7e3e58f8058dfe305b0ee77ce1",
+    "BCCPARM.DAT": "05f034901d058ad9331325b6ee3fafa25c75b1ce4f52839fe85032eb92941276",
+    "am1_bcc.mol2": "ffbbdd198312f4bc7935d9f2d21cdc145940657194e473498c8d10453daab44c",
+    "antechamber.log": "2c7ae99969feb4f05f2c732c875e62f4e46dcfb8f2a30100386d02e2ed4eaf0c",
+    "atom_mapping.json": "9347beb806ed0cc71194b672751ca907081241960a9fc79dd8aef9c4e841ea18",
+    "command.json": "8f8d3640668d86250459081dec0fb6b07a6fde17f19c96376ab5e5113afbf3a6",
+    "execution.json": "c0fd75146386985caf9805ee26269c876cf4dceae7b09f32f387555f32977a1b",
+    "input.mol2": "9cf1a7a9982ea172291eed92f25a8b20b915ee2ba3d02b6e095657ff4e11dfea",
+    "input.sdf": "5b0f59050b8f273743d4cec3db3845b665b84903a76d5b1f6aba6b9fd5da9854",
+    "model.json": "65abf9abdcfb2f85fa1da5280bc881c4739a7a06005354f02ceca9d2365a92c8",
+    "sqm.in": "7b29faba8771fe722489940d1edcea9c010ed91cfdb1efef5044bd8ff22c3611",
+    "sqm.out": "d6b460240e6b793f5b7f6d7777fca81ef0f64c97c78ff3a11573fc75b4d6fc63",
+    "sqm.pdb": "22fc927d22079e791d43524d8cc3f596b3aaa3d09355ccaaf4fa6a1d9137978e"
+  },
+  "BCC_parameter_file_sha256": "05f034901d058ad9331325b6ee3fafa25c75b1ce4f52839fe85032eb92941276",
+  "program_source_provenance_limit": "Failed attempt preserves command paths and native artifacts; no complete-marker binary digest provenance is inferred from other attempts."
+}

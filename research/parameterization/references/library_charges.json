@@ -1,0 +1,632 @@
+[
+  {
+    "file": "local_snapshot/current/CAB_amber.lib",
+    "unit": "CAB",
+    "atoms": [
+      {
+        "name": "CN",
+        "type": "C",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "ON",
+        "type": "O",
+        "atomic_number": 8,
+        "charge_e": 0.0
+      }
+    ],
+    "sum_charge_e": 0.0,
+    "sha256": "56ebdc872d15ea2c30549368faa16100d73c28a94d7493d67a1563f2a9c58979"
+  },
+  {
+    "file": "local_snapshot/current/CAB_gaff2.lib",
+    "unit": "CAB",
+    "atoms": [
+      {
+        "name": "CN",
+        "type": "ca",
+        "atomic_number": 6,
+        "charge_e": 0.581
+      },
+      {
+        "name": "ON",
+        "type": "o",
+        "atomic_number": 8,
+        "charge_e": -0.581
+      }
+    ],
+    "sum_charge_e": 0.0,
+    "sha256": "2a6311b8fd181bce6c64acba9b57b02f2a2e02bc8f0a8bcadb22e2dfcfd1d0a4"
+  },
+  {
+    "file": "local_snapshot/current/CBD_amber.lib",
+    "unit": "CBD",
+    "atoms": [
+      {
+        "name": "CY",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "C4",
+        "type": "C",
+        "atomic_number": 6,
+        "charge_e": 0.6801
+      },
+      {
+        "name": "OJ",
+        "type": "O",
+        "atomic_number": 8,
+        "charge_e": -0.5838
+      },
+      {
+        "name": "OK",
+        "type": "OH",
+        "atomic_number": 8,
+        "charge_e": -0.6511
+      }
+    ],
+    "sum_charge_e": -0.5548,
+    "sha256": "68954e0dc0c10ea49a9d8fd27836facaf09c1ff0e11e1619ca69a94bfa11396c"
+  },
+  {
+    "file": "local_snapshot/current/CBD_gaff2.lib",
+    "unit": "CBD",
+    "atoms": [
+      {
+        "name": "CY",
+        "type": "ca",
+        "atomic_number": 6,
+        "charge_e": -0.18
+      },
+      {
+        "name": "C4",
+        "type": "c2",
+        "atomic_number": 6,
+        "charge_e": 0.76
+      },
+      {
+        "name": "OJ",
+        "type": "o",
+        "atomic_number": 8,
+        "charge_e": -0.79
+      },
+      {
+        "name": "OK",
+        "type": "o",
+        "atomic_number": 8,
+        "charge_e": -0.79
+      }
+    ],
+    "sum_charge_e": -1.0,
+    "sha256": "6d35d60e31d2925dd6de1d2b7f8bd1fccad1493d5b217cbc71b07b4cd3635896"
+  },
+  {
+    "file": "local_snapshot/current/CBX_amber.lib",
+    "unit": "CBX",
+    "atoms": [
+      {
+        "name": "CY",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "C4",
+        "type": "C",
+        "atomic_number": 6,
+        "charge_e": 0.6801
+      },
+      {
+        "name": "OJ",
+        "type": "O",
+        "atomic_number": 8,
+        "charge_e": -0.5838
+      },
+      {
+        "name": "OK",
+        "type": "OH",
+        "atomic_number": 8,
+        "charge_e": -0.6511
+      },
+      {
+        "name": "HK",
+        "type": "HO",
+        "atomic_number": 1,
+        "charge_e": 0.4641
+      }
+    ],
+    "sum_charge_e": -0.09069999999999995,
+    "sha256": "e24939816f36d4d48887f190dcd2c964cffcf68e3d66e4ca69c3496f79961cad"
+  },
+  {
+    "file": "local_snapshot/current/CBX_gaff2.lib",
+    "unit": "CBX",
+    "atoms": [
+      {
+        "name": "CY",
+        "type": "ca",
+        "atomic_number": 6,
+        "charge_e": -0.115
+      },
+      {
+        "name": "C4",
+        "type": "c2",
+        "atomic_number": 6,
+        "charge_e": 0.735
+      },
+      {
+        "name": "OJ",
+        "type": "o",
+        "atomic_number": 8,
+        "charge_e": -0.475
+      },
+      {
+        "name": "OK",
+        "type": "oh",
+        "atomic_number": 8,
+        "charge_e": -0.605
+      },
+      {
+        "name": "HK",
+        "type": "ho",
+        "atomic_number": 1,
+        "charge_e": 0.46
+      }
+    ],
+    "sum_charge_e": 4.163336342344337e-17,
+    "sha256": "57f988478d37c41110c43f37ea44b6e183eceeab9e83cea23ce77b82fd88d328"
+  },
+  {
+    "file": "local_snapshot/current/EHH.lib",
+    "unit": "EPX",
+    "atoms": [
+      {
+        "name": "CY",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "CY",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "OE",
+        "type": "OS",
+        "atomic_number": 8,
+        "charge_e": -0.3691
+      }
+    ],
+    "sum_charge_e": -0.3691,
+    "sha256": "c1a95b0a671ea4ce5977d84120768d1285b897135995c97c8d61f18085f0ddaf"
+  },
+  {
+    "file": "local_snapshot/current/EPH_amber.lib",
+    "unit": "EPH",
+    "atoms": [
+      {
+        "name": "CZ",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "CK",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "OE",
+        "type": "OS",
+        "atomic_number": 8,
+        "charge_e": -0.3691
+      }
+    ],
+    "sum_charge_e": -0.3691,
+    "sha256": "53a4895eb1b9c71dfb0b1d4f7056f3c1ae43d160f92fd0d26d5b358f41a83137"
+  },
+  {
+    "file": "local_snapshot/current/EPH_gaff2.lib",
+    "unit": "EPH",
+    "atoms": [
+      {
+        "name": "CZ",
+        "type": "cx",
+        "atomic_number": 6,
+        "charge_e": 0.053
+      },
+      {
+        "name": "CK",
+        "type": "cx",
+        "atomic_number": 6,
+        "charge_e": 0.137
+      },
+      {
+        "name": "HK",
+        "type": "h1",
+        "atomic_number": 1,
+        "charge_e": 0.12
+      },
+      {
+        "name": "OE",
+        "type": "op",
+        "atomic_number": 8,
+        "charge_e": -0.31
+      }
+    ],
+    "sum_charge_e": 6.938893903907228e-18,
+    "sha256": "bddb2304b5394152f91501b5eaf14b2db2742ed234d73ae0595b499cf9d95cf8"
+  },
+  {
+    "file": "local_snapshot/current/EPH_gaff2.lib",
+    "unit": "EPX",
+    "atoms": [
+      {
+        "name": "CY",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "CY",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "OE",
+        "type": "OS",
+        "atomic_number": 8,
+        "charge_e": -0.3691
+      }
+    ],
+    "sum_charge_e": -0.3691,
+    "sha256": "bddb2304b5394152f91501b5eaf14b2db2742ed234d73ae0595b499cf9d95cf8"
+  },
+  {
+    "file": "local_snapshot/current/EPT_amber.lib",
+    "unit": "EPT",
+    "atoms": [
+      {
+        "name": "CP",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "CK",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "OE",
+        "type": "OS",
+        "atomic_number": 8,
+        "charge_e": -0.3691
+      }
+    ],
+    "sum_charge_e": -0.3691,
+    "sha256": "a4194da6db2eea0a2a5b649150970e4786bfc51286cf9a71fe4e189cdd0214fa"
+  },
+  {
+    "file": "local_snapshot/current/EPT_gaff2.lib",
+    "unit": "EPT",
+    "atoms": [
+      {
+        "name": "CP",
+        "type": "cx",
+        "atomic_number": 6,
+        "charge_e": 0.02
+      },
+      {
+        "name": "CK",
+        "type": "cx",
+        "atomic_number": 6,
+        "charge_e": 0.02
+      },
+      {
+        "name": "HK",
+        "type": "h1",
+        "atomic_number": 1,
+        "charge_e": 0.12
+      },
+      {
+        "name": "OE",
+        "type": "op",
+        "atomic_number": 8,
+        "charge_e": -0.28
+      },
+      {
+        "name": "HP",
+        "type": "h1",
+        "atomic_number": 1,
+        "charge_e": 0.12
+      }
+    ],
+    "sum_charge_e": -3.469446951953614e-17,
+    "sha256": "e3793a739c1bb11150ce4992fe1f119d220bf1d7a5a9f4e4d00fa9c66757b598"
+  },
+  {
+    "file": "local_snapshot/current/EPX_amber.lib",
+    "unit": "EPX",
+    "atoms": [
+      {
+        "name": "CY",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "CZ",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "OE",
+        "type": "OS",
+        "atomic_number": 8,
+        "charge_e": -0.3691
+      }
+    ],
+    "sum_charge_e": -0.3691,
+    "sha256": "574aa84f8fde48bb1bac4acb73cba19e06de209d3f7eb6e927850beb11859d0e"
+  },
+  {
+    "file": "local_snapshot/current/EPX_gaff2.lib",
+    "unit": "EPX",
+    "atoms": [
+      {
+        "name": "CY",
+        "type": "cx",
+        "atomic_number": 6,
+        "charge_e": 0.185
+      },
+      {
+        "name": "CZ",
+        "type": "cx",
+        "atomic_number": 6,
+        "charge_e": 0.185
+      },
+      {
+        "name": "OE",
+        "type": "op",
+        "atomic_number": 8,
+        "charge_e": -0.37
+      }
+    ],
+    "sum_charge_e": 0.0,
+    "sha256": "95c90d34bb3e56fcc0bcb2938b1e428b12febf45d10241afce17fa15d9fa266e"
+  },
+  {
+    "file": "local_snapshot/current/GGG_amber.lib",
+    "unit": "GGG",
+    "atoms": [
+      {
+        "name": "CX",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      }
+    ],
+    "sum_charge_e": 0.0,
+    "sha256": "ebdb52ab559d8ac38891954d069d2bd2d7d86036de7529ed5e6fb3896d502b81"
+  },
+  {
+    "file": "local_snapshot/current/GGG_gaff2.lib",
+    "unit": "GGG",
+    "atoms": [
+      {
+        "name": "CX",
+        "type": "ca",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      }
+    ],
+    "sum_charge_e": 0.0,
+    "sha256": "0eff381f25a87b1a18c9052079a84f46563060bff502088c1652a5cb96c13085"
+  },
+  {
+    "file": "local_snapshot/current/GRT_amber.lib",
+    "unit": "GRT",
+    "atoms": [
+      {
+        "name": "CH",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": -0.15
+      },
+      {
+        "name": "HC",
+        "type": "HA",
+        "atomic_number": 1,
+        "charge_e": 0.15
+      }
+    ],
+    "sum_charge_e": 0.0,
+    "sha256": "19278b2edc8245566a49a726e26eff2547cd0b8ff9a73a6c722398f18fc59d8d"
+  },
+  {
+    "file": "local_snapshot/current/GRT_gaff2.lib",
+    "unit": "GRT",
+    "atoms": [
+      {
+        "name": "CH",
+        "type": "ca",
+        "atomic_number": 6,
+        "charge_e": -0.15
+      },
+      {
+        "name": "HC",
+        "type": "ha",
+        "atomic_number": 1,
+        "charge_e": 0.15
+      }
+    ],
+    "sum_charge_e": 0.0,
+    "sha256": "b79b53c097d3e154e3d0234bb8c7da348a46c12e1a1a3c5006231a33124c3278"
+  },
+  {
+    "file": "local_snapshot/current/HYD_amber.lib",
+    "unit": "HYD",
+    "atoms": [
+      {
+        "name": "CL",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "OL",
+        "type": "OH",
+        "atomic_number": 8,
+        "charge_e": -0.6546
+      },
+      {
+        "name": "HL",
+        "type": "HO",
+        "atomic_number": 1,
+        "charge_e": 0.4275
+      }
+    ],
+    "sum_charge_e": -0.22709999999999997,
+    "sha256": "0728d52813880951ce0582fc7147197ac0fdc9cf6d674ad775eb3cf32e7930d4"
+  },
+  {
+    "file": "local_snapshot/current/HYD_gaff2.lib",
+    "unit": "HYD",
+    "atoms": [
+      {
+        "name": "CL",
+        "type": "c6",
+        "atomic_number": 6,
+        "charge_e": 0.25
+      },
+      {
+        "name": "OL",
+        "type": "oh",
+        "atomic_number": 8,
+        "charge_e": -0.64
+      },
+      {
+        "name": "HL",
+        "type": "ho",
+        "atomic_number": 1,
+        "charge_e": 0.39
+      }
+    ],
+    "sum_charge_e": 0.0,
+    "sha256": "283fd79a85280034aeb390677a28b7bfb347fd2a81575573f4f453677ceedf7f"
+  },
+  {
+    "file": "gopy/GO_tutorial/C1A.lib",
+    "unit": "C1A",
+    "atoms": [
+      {
+        "name": "CY",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "C4",
+        "type": "C",
+        "atomic_number": 6,
+        "charge_e": 0.6801
+      },
+      {
+        "name": "OJ",
+        "type": "O",
+        "atomic_number": 8,
+        "charge_e": -0.5838
+      },
+      {
+        "name": "OK",
+        "type": "OH",
+        "atomic_number": 8,
+        "charge_e": -0.6511
+      },
+      {
+        "name": "HK",
+        "type": "HO",
+        "atomic_number": 1,
+        "charge_e": 0.4641
+      }
+    ],
+    "sum_charge_e": -0.09069999999999995,
+    "sha256": "888de357dec5c17307edb7c2f8bde7a92cf635093d025c956b07ecda7a9393a5"
+  },
+  {
+    "file": "gopy/GO_tutorial/E1A.lib",
+    "unit": "E1A",
+    "atoms": [
+      {
+        "name": "CY",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "CZ",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "OE",
+        "type": "OS",
+        "atomic_number": 8,
+        "charge_e": -0.3691
+      }
+    ],
+    "sum_charge_e": -0.3691,
+    "sha256": "d88ff513d7bbcaf88d0e155141c345501e14caf548135d0c8c24b002bc8c19fc"
+  },
+  {
+    "file": "gopy/GO_tutorial/GGG.lib",
+    "unit": "GGG",
+    "atoms": [
+      {
+        "name": "CX",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      }
+    ],
+    "sum_charge_e": 0.0,
+    "sha256": "ebdb52ab559d8ac38891954d069d2bd2d7d86036de7529ed5e6fb3896d502b81"
+  },
+  {
+    "file": "gopy/GO_tutorial/H1A.lib",
+    "unit": "H1A",
+    "atoms": [
+      {
+        "name": "CY",
+        "type": "CA",
+        "atomic_number": 6,
+        "charge_e": 0.0
+      },
+      {
+        "name": "OL",
+        "type": "OH",
+        "atomic_number": 8,
+        "charge_e": -0.6546
+      },
+      {
+        "name": "HK",
+        "type": "HO",
+        "atomic_number": 1,
+        "charge_e": 0.4275
+      }
+    ],
+    "sum_charge_e": -0.22709999999999997,
+    "sha256": "20949237bc95f3608f4666a5074f72cbbcdd5fe22c43c6aae140eb3060bb4386"
+  }
+]

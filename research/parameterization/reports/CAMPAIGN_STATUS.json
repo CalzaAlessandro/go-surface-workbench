@@ -1,0 +1,37 @@
+{
+  "verified_at_utc": "2026-10-29T20:23:18.940217+00:00",
+  "forcefield_candidates": {
+    "status": "unfitted_controls_with_unresolved_gaps",
+    "technical_LEaP_cases": 24,
+    "passed_technical_only": 11,
+    "job_id": "1392682"
+  },
+  "HF_RESP": {
+    "completed_diagnostic_models": 7,
+    "rejected_models": [
+      "pyrene_epoxide"
+    ],
+    "reason": "RHF instability remains diagnostic; epoxide also failed topology distance gate."
+  },
+  "AM1_BCC": {
+    "pilot_job_id": "1392601",
+    "pilot_verified_native_BCC_bonds": 29,
+    "pilot_artifact_hashes_verified": 23,
+    "raw_charge_sum_e": 0.002,
+    "derived_max_atomic_correction_e": 7.692307692307693e-05,
+    "array_job_id": "1392843",
+    "successful_models": 7,
+    "one_model_under_review": "pyrene_dione: 28/29 explicit BCC parameters; native zero fallback diagnostic, excluded from primary full-coverage comparison",
+    "scope": "native raw control plus explicitly labelled integer-charge constrained-rounding candidate",
+    "successful_artifact_hashes_verified": 161
+  },
+  "DFT_bonded_references": {
+    "job_id": "1392558",
+    "method": "wB97X-D/6-311++G(d,p)",
+    "models": 8,
+    "max_concurrent_tasks": 2,
+    "status": "RUNNING_AND_PENDING_NOT_COMPLETED"
+  },
+  "final_parameter_set_selected": false,
+  "definitive_four_material_rebuild": "deferred_until_parameterization_selected"
+}

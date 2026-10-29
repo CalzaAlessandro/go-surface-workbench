@@ -1,0 +1,933 @@
+{
+  "benchmark": "go_builder.build.build_sheet",
+  "source_checkout": "go-surface-workbench",
+  "python_executable": "isolated Python 3.14.10 environment",
+  "python_version": "3.14.10 (main, Oct 25 2026, 17:12:00) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "darwin",
+  "method": "5 wall-time repetitions after warmup; isolated tracemalloc and cProfile calls; each case alarm-limited to 90 s",
+  "composition_fixed_counts": {
+    "OH": 4,
+    "epoxide": 3,
+    "carbonyl": 2,
+    "COOH": 2,
+    "COO": 2
+  },
+  "seed": 17,
+  "results": [
+    {
+      "nx": 8,
+      "ny": 8,
+      "seed": 17,
+      "groups": {
+        "OH": 4,
+        "epoxide": 3,
+        "carbonyl": 2,
+        "COOH": 2,
+        "COO": 2
+      },
+      "repeats": 5,
+      "atom_count": 303,
+      "bond_count": 403,
+      "sheet_carbon_count_untrimmed": 256,
+      "model_sha256": "5e741d70599489e9266b45d94d92740a1acab7cdb7ef20355d009937ff3d41db",
+      "repeated_output_identical": true,
+      "wall_seconds": [
+        0.024157208001270192,
+        0.024156124998626183,
+        0.024149834000127157,
+        0.02417583399983414,
+        0.02412158399965847
+      ],
+      "wall_median_seconds": 0.024156124998626183,
+      "wall_min_seconds": 0.02412158399965847,
+      "wall_max_seconds": 0.02417583399983414,
+      "tracemalloc_peak_bytes": 1112640,
+      "tracemalloc_top_allocations": [
+        {
+          "location": "copy.py:202",
+          "bytes": 114840,
+          "blocks": 781
+        },
+        {
+          "location": "model.py:116",
+          "bytes": 57888,
+          "blocks": 804
+        },
+        {
+          "location": "copy.py:199",
+          "bytes": 52160,
+          "blocks": 815
+        },
+        {
+          "location": "model.py:37",
+          "bytes": 43488,
+          "blocks": 604
+        },
+        {
+          "location": "model.py:38",
+          "bytes": 42408,
+          "blocks": 589
+        },
+        {
+          "location": "copy.py:173",
+          "bytes": 32704,
+          "blocks": 584
+        },
+        {
+          "location": "copy.py:177",
+          "bytes": 18720,
+          "blocks": 580
+        },
+        {
+          "location": "build.py:30",
+          "bytes": 17680,
+          "blocks": 130
+        },
+        {
+          "location": "build.py:47",
+          "bytes": 16896,
+          "blocks": 152
+        },
+        {
+          "location": "build.py:171",
+          "bytes": 11424,
+          "blocks": 476
+        },
+        {
+          "location": "build.py:168",
+          "bytes": 11160,
+          "blocks": 93
+        },
+        {
+          "location": "build.py:280",
+          "bytes": 10944,
+          "blocks": 171
+        }
+      ],
+      "cprofile_top_cumulative": [
+        {
+          "function": "build.py:573:build_sheet",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.000195834,
+          "cumulative_seconds": 0.052498459000000004
+        },
+        {
+          "function": "build.py:98:_collision_free",
+          "calls": 55,
+          "primitive_calls": 55,
+          "self_seconds": 0.000242997,
+          "cumulative_seconds": 0.030496499000000003
+        },
+        {
+          "function": "build.py:72:_collision_free_vectorized",
+          "calls": 55,
+          "primitive_calls": 55,
+          "self_seconds": 0.013037178,
+          "cumulative_seconds": 0.030253502
+        },
+        {
+          "function": "build.py:434:_decorate",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.000183885,
+          "cumulative_seconds": 0.018428458
+        },
+        {
+          "function": "build.py:526:_cap_edges",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.000298927,
+          "cumulative_seconds": 0.017290334
+        },
+        {
+          "function": "build.py:315:_place_group",
+          "calls": 13,
+          "primitive_calls": 13,
+          "self_seconds": 0.000553381,
+          "cumulative_seconds": 0.010788128000000001
+        },
+        {
+          "function": "model.py:33:adjacency",
+          "calls": 18,
+          "primitive_calls": 18,
+          "self_seconds": 0.003536116,
+          "cumulative_seconds": 0.005826293000000001
+        },
+        {
+          "function": "_arraysetops_impl.py:958:isin",
+          "calls": 371,
+          "primitive_calls": 371,
+          "self_seconds": 0.000270175,
+          "cumulative_seconds": 0.0050145350000000005
+        },
+        {
+          "function": "model.py:62:validate_model",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.002263493,
+          "cumulative_seconds": 0.004740375000000001
+        },
+        {
+          "function": "_arraysetops_impl.py:806:_isin",
+          "calls": 371,
+          "primitive_calls": 371,
+          "self_seconds": 0.0025645850000000003,
+          "cumulative_seconds": 0.00464492
+        },
+        {
+          "function": "copy.py:110:deepcopy",
+          "calls": 11253,
+          "primitive_calls": 3,
+          "self_seconds": 0.001526851,
+          "cumulative_seconds": 0.004185249
+        },
+        {
+          "function": "copy.py:198:_deepcopy_dict",
+          "calls": 815,
+          "primitive_calls": 2,
+          "self_seconds": 0.001177496,
+          "cumulative_seconds": 0.004181125
+        },
+        {
+          "function": "copy.py:172:_deepcopy_list",
+          "calls": 584,
+          "primitive_calls": 8,
+          "self_seconds": 0.000496779,
+          "cumulative_seconds": 0.004152916
+        },
+        {
+          "function": "~:0:<built-in method numpy.asarray>",
+          "calls": 2361,
+          "primitive_calls": 2361,
+          "self_seconds": 0.0028114520000000003,
+          "cumulative_seconds": 0.0028114520000000003
+        },
+        {
+          "function": "~:0:<built-in method numpy.array>",
+          "calls": 13368,
+          "primitive_calls": 13368,
+          "self_seconds": 0.0028052520000000003,
+          "cumulative_seconds": 0.0028052520000000003
+        },
+        {
+          "function": "build.py:258:_max_matching",
+          "calls": 2,
+          "primitive_calls": 2,
+          "self_seconds": 8.6669e-05,
+          "cumulative_seconds": 0.0027868330000000003
+        },
+        {
+          "function": "build.py:296:_outward",
+          "calls": 44,
+          "primitive_calls": 44,
+          "self_seconds": 9.2781e-05,
+          "cumulative_seconds": 0.0027574590000000003
+        },
+        {
+          "function": "~:0:<method 'setdefault' of 'dict' objects>",
+          "calls": 41496,
+          "primitive_calls": 41496,
+          "self_seconds": 0.002719453,
+          "cumulative_seconds": 0.002719453
+        },
+        {
+          "function": "~:0:<method 'add' of 'set' objects>",
+          "calls": 43296,
+          "primitive_calls": 43296,
+          "self_seconds": 0.002489587,
+          "cumulative_seconds": 0.002489587
+        },
+        {
+          "function": "_linalg.py:2615:norm",
+          "calls": 821,
+          "primitive_calls": 821,
+          "self_seconds": 0.0010182120000000001,
+          "cumulative_seconds": 0.0023324590000000003
+        },
+        {
+          "function": "build.py:266:augment",
+          "calls": 1159,
+          "primitive_calls": 194,
+          "self_seconds": 0.000572869,
+          "cumulative_seconds": 0.001972081
+        },
+        {
+          "function": "build.py:197:_apply_holes",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 7.1251e-05,
+          "cumulative_seconds": 0.001886042
+        },
+        {
+          "function": "~:0:<built-in method numpy.fromiter>",
+          "calls": 55,
+          "primitive_calls": 55,
+          "self_seconds": 0.000866221,
+          "cumulative_seconds": 0.0016032540000000001
+        },
+        {
+          "function": "random.py:356:shuffle",
+          "calls": 1164,
+          "primitive_calls": 1164,
+          "self_seconds": 0.000512731,
+          "cumulative_seconds": 0.0015646260000000002
+        },
+        {
+          "function": "build.py:51:_coordinates",
+          "calls": 20,
+          "primitive_calls": 20,
+          "self_seconds": 0.000500971,
+          "cumulative_seconds": 0.0015308350000000001
+        },
+        {
+          "function": "~:0:<method 'reduce' of 'numpy.ufunc' objects>",
+          "calls": 1788,
+          "primitive_calls": 1788,
+          "self_seconds": 0.001245077,
+          "cumulative_seconds": 0.001245077
+        },
+        {
+          "function": "build.py:127:_prune_tips",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.00010694,
+          "cumulative_seconds": 0.001184125
+        },
+        {
+          "function": "random.py:245:_randbelow_with_getrandbits",
+          "calls": 2496,
+          "primitive_calls": 2496,
+          "self_seconds": 0.000630165,
+          "cumulative_seconds": 0.001009165
+        },
+        {
+          "function": "~:0:<method 'append' of 'list' objects>",
+          "calls": 17318,
+          "primitive_calls": 17318,
+          "self_seconds": 0.0009692180000000001,
+          "cumulative_seconds": 0.0009692180000000001
+        },
+        {
+          "function": "~:0:<method 'get' of 'dict' objects>",
+          "calls": 14891,
+          "primitive_calls": 14891,
+          "self_seconds": 0.000964117,
+          "cumulative_seconds": 0.000964117
+        }
+      ],
+      "case_elapsed_seconds_including_profile": 0.3588146250003774,
+      "case_timeout_seconds": 90
+    },
+    {
+      "nx": 12,
+      "ny": 12,
+      "seed": 17,
+      "groups": {
+        "OH": 4,
+        "epoxide": 3,
+        "carbonyl": 2,
+        "COOH": 2,
+        "COO": 2
+      },
+      "repeats": 5,
+      "atom_count": 639,
+      "bond_count": 883,
+      "sheet_carbon_count_untrimmed": 576,
+      "model_sha256": "bd75be9ddc2039d7f4db2201c119089429b32e55b1b54f7c4fb026a910eedbfd",
+      "repeated_output_identical": true,
+      "wall_seconds": [
+        0.06291062499985856,
+        0.06281404199944518,
+        0.06293224999899394,
+        0.06283774999974412,
+        0.06283308299862256
+      ],
+      "wall_median_seconds": 0.06283774999974412,
+      "wall_min_seconds": 0.06281404199944518,
+      "wall_max_seconds": 0.06293224999899394,
+      "tracemalloc_peak_bytes": 3066816,
+      "tracemalloc_top_allocations": [
+        {
+          "location": "model.py:38",
+          "bytes": 427064,
+          "blocks": 8287
+        },
+        {
+          "location": "copy.py:202",
+          "bytes": 269976,
+          "blocks": 1845
+        },
+        {
+          "location": "model.py:36",
+          "bytes": 215152,
+          "blocks": 4746
+        },
+        {
+          "location": "model.py:37",
+          "bytes": 178248,
+          "blocks": 2489
+        },
+        {
+          "location": "copy.py:199",
+          "bytes": 121280,
+          "blocks": 1895
+        },
+        {
+          "location": "model.py:34",
+          "bytes": 102936,
+          "blocks": 1181
+        },
+        {
+          "location": "copy.py:173",
+          "bytes": 75712,
+          "blocks": 1352
+        },
+        {
+          "location": "copy.py:177",
+          "bytes": 43360,
+          "blocks": 1348
+        },
+        {
+          "location": "build.py:162",
+          "bytes": 38528,
+          "blocks": 1204
+        },
+        {
+          "location": "build.py:437",
+          "bytes": 32984,
+          "blocks": 2
+        },
+        {
+          "location": "build.py:280",
+          "bytes": 29376,
+          "blocks": 459
+        },
+        {
+          "location": "build.py:171",
+          "bytes": 26400,
+          "blocks": 1100
+        }
+      ],
+      "cprofile_top_cumulative": [
+        {
+          "function": "build.py:573:build_sheet",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.000417291,
+          "cumulative_seconds": 0.139039625
+        },
+        {
+          "function": "build.py:98:_collision_free",
+          "calls": 78,
+          "primitive_calls": 78,
+          "self_seconds": 0.0006777080000000001,
+          "cumulative_seconds": 0.0866165
+        },
+        {
+          "function": "build.py:72:_collision_free_vectorized",
+          "calls": 78,
+          "primitive_calls": 78,
+          "self_seconds": 0.039154770000000005,
+          "cumulative_seconds": 0.085938792
+        },
+        {
+          "function": "build.py:526:_cap_edges",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.000513904,
+          "cumulative_seconds": 0.055338292000000004
+        },
+        {
+          "function": "build.py:434:_decorate",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.000380427,
+          "cumulative_seconds": 0.042956375000000005
+        },
+        {
+          "function": "build.py:315:_place_group",
+          "calls": 13,
+          "primitive_calls": 13,
+          "self_seconds": 0.0011619170000000002,
+          "cumulative_seconds": 0.022999540000000002
+        },
+        {
+          "function": "model.py:33:adjacency",
+          "calls": 18,
+          "primitive_calls": 18,
+          "self_seconds": 0.009727318,
+          "cumulative_seconds": 0.015049374
+        },
+        {
+          "function": "_arraysetops_impl.py:958:isin",
+          "calls": 730,
+          "primitive_calls": 730,
+          "self_seconds": 0.000548085,
+          "cumulative_seconds": 0.010258606
+        },
+        {
+          "function": "model.py:62:validate_model",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.00488941,
+          "cumulative_seconds": 0.010207250000000001
+        },
+        {
+          "function": "_arraysetops_impl.py:806:_isin",
+          "calls": 730,
+          "primitive_calls": 730,
+          "self_seconds": 0.005398108,
+          "cumulative_seconds": 0.009525551
+        },
+        {
+          "function": "copy.py:110:deepcopy",
+          "calls": 26093,
+          "primitive_calls": 3,
+          "self_seconds": 0.003501105,
+          "cumulative_seconds": 0.009399084
+        },
+        {
+          "function": "copy.py:198:_deepcopy_dict",
+          "calls": 1895,
+          "primitive_calls": 2,
+          "self_seconds": 0.002556833,
+          "cumulative_seconds": 0.009394001
+        },
+        {
+          "function": "copy.py:172:_deepcopy_list",
+          "calls": 1352,
+          "primitive_calls": 8,
+          "self_seconds": 0.0011143840000000002,
+          "cumulative_seconds": 0.009366627
+        },
+        {
+          "function": "build.py:258:_max_matching",
+          "calls": 2,
+          "primitive_calls": 2,
+          "self_seconds": 0.00021889400000000002,
+          "cumulative_seconds": 0.009033543
+        },
+        {
+          "function": "~:0:<method 'setdefault' of 'dict' objects>",
+          "calls": 131900,
+          "primitive_calls": 131900,
+          "self_seconds": 0.008989895000000001,
+          "cumulative_seconds": 0.008989895000000001
+        },
+        {
+          "function": "~:0:<built-in method numpy.asarray>",
+          "calls": 4683,
+          "primitive_calls": 4683,
+          "self_seconds": 0.008263882,
+          "cumulative_seconds": 0.008263882
+        },
+        {
+          "function": "~:0:<method 'add' of 'set' objects>",
+          "calls": 137289,
+          "primitive_calls": 137289,
+          "self_seconds": 0.007954069000000001,
+          "cumulative_seconds": 0.007954069000000001
+        },
+        {
+          "function": "build.py:266:augment",
+          "calls": 3956,
+          "primitive_calls": 482,
+          "self_seconds": 0.0021246470000000003,
+          "cumulative_seconds": 0.006971274
+        },
+        {
+          "function": "~:0:<built-in method numpy.array>",
+          "calls": 30076,
+          "primitive_calls": 30076,
+          "self_seconds": 0.006394278000000001,
+          "cumulative_seconds": 0.006394278000000001
+        },
+        {
+          "function": "build.py:296:_outward",
+          "calls": 68,
+          "primitive_calls": 68,
+          "self_seconds": 0.00014888,
+          "cumulative_seconds": 0.006194337
+        },
+        {
+          "function": "_linalg.py:2615:norm",
+          "calls": 1684,
+          "primitive_calls": 1684,
+          "self_seconds": 0.00227954,
+          "cumulative_seconds": 0.005951309
+        },
+        {
+          "function": "build.py:197:_apply_holes",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.000168541,
+          "cumulative_seconds": 0.005545417
+        },
+        {
+          "function": "random.py:356:shuffle",
+          "calls": 3961,
+          "primitive_calls": 3961,
+          "self_seconds": 0.0017537980000000002,
+          "cumulative_seconds": 0.005137885
+        },
+        {
+          "function": "~:0:<built-in method numpy.fromiter>",
+          "calls": 78,
+          "primitive_calls": 78,
+          "self_seconds": 0.0025755500000000002,
+          "cumulative_seconds": 0.0049002920000000005
+        },
+        {
+          "function": "build.py:127:_prune_tips",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.00024807700000000003,
+          "cumulative_seconds": 0.003879084
+        },
+        {
+          "function": "~:0:<method 'reduce' of 'numpy.ufunc' objects>",
+          "calls": 3560,
+          "primitive_calls": 3560,
+          "self_seconds": 0.0035592360000000003,
+          "cumulative_seconds": 0.0035592360000000003
+        },
+        {
+          "function": "build.py:51:_coordinates",
+          "calls": 20,
+          "primitive_calls": 20,
+          "self_seconds": 0.0010999380000000002,
+          "cumulative_seconds": 0.0033943750000000003
+        },
+        {
+          "function": "random.py:245:_randbelow_with_getrandbits",
+          "calls": 8264,
+          "primitive_calls": 8264,
+          "self_seconds": 0.0020121970000000003,
+          "cumulative_seconds": 0.003223872
+        },
+        {
+          "function": "build.py:75:<genexpr>",
+          "calls": 47017,
+          "primitive_calls": 47017,
+          "self_seconds": 0.002334037,
+          "cumulative_seconds": 0.002334037
+        },
+        {
+          "function": "~:0:<method 'append' of 'list' objects>",
+          "calls": 39894,
+          "primitive_calls": 39894,
+          "self_seconds": 0.0022282440000000003,
+          "cumulative_seconds": 0.0022282440000000003
+        }
+      ],
+      "case_elapsed_seconds_including_profile": 0.8918797499991342,
+      "case_timeout_seconds": 90
+    },
+    {
+      "nx": 16,
+      "ny": 16,
+      "seed": 17,
+      "groups": {
+        "OH": 4,
+        "epoxide": 3,
+        "carbonyl": 2,
+        "COOH": 2,
+        "COO": 2
+      },
+      "repeats": 5,
+      "atom_count": 1103,
+      "bond_count": 1555,
+      "sheet_carbon_count_untrimmed": 1024,
+      "model_sha256": "74da04f792f51eb811906e7412c6603f69395562d757feca4faf5998d0266e26",
+      "repeated_output_identical": true,
+      "wall_seconds": [
+        0.13256004200047755,
+        0.1324511659986456,
+        0.13625716599926818,
+        0.13642925000021933,
+        0.13524904100086133
+      ],
+      "wall_median_seconds": 0.13524904100086133,
+      "wall_min_seconds": 0.1324511659986456,
+      "wall_max_seconds": 0.13642925000021933,
+      "tracemalloc_peak_bytes": 4778144,
+      "tracemalloc_top_allocations": [
+        {
+          "location": "copy.py:202",
+          "bytes": 490136,
+          "blocks": 3357
+        },
+        {
+          "location": "model.py:38",
+          "bytes": 398864,
+          "blocks": 7679
+        },
+        {
+          "location": "copy.py:199",
+          "bytes": 219072,
+          "blocks": 3423
+        },
+        {
+          "location": "model.py:36",
+          "bytes": 195736,
+          "blocks": 4319
+        },
+        {
+          "location": "model.py:37",
+          "bytes": 179576,
+          "blocks": 2503
+        },
+        {
+          "location": "copy.py:173",
+          "bytes": 136640,
+          "blocks": 2440
+        },
+        {
+          "location": "model.py:34",
+          "bytes": 96704,
+          "blocks": 1069
+        },
+        {
+          "location": "build.py:162",
+          "bytes": 94656,
+          "blocks": 2958
+        },
+        {
+          "location": "copy.py:177",
+          "bytes": 90912,
+          "blocks": 2437
+        },
+        {
+          "location": "build.py:280",
+          "bytes": 56000,
+          "blocks": 875
+        },
+        {
+          "location": "build.py:171",
+          "bytes": 47520,
+          "blocks": 1980
+        },
+        {
+          "location": "build.py:47",
+          "bytes": 34056,
+          "blocks": 255
+        }
+      ],
+      "cprofile_top_cumulative": [
+        {
+          "function": "build.py:573:build_sheet",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.0007293310000000001,
+          "cumulative_seconds": 0.29298533400000004
+        },
+        {
+          "function": "build.py:98:_collision_free",
+          "calls": 104,
+          "primitive_calls": 104,
+          "self_seconds": 0.001528457,
+          "cumulative_seconds": 0.193647543
+        },
+        {
+          "function": "build.py:72:_collision_free_vectorized",
+          "calls": 104,
+          "primitive_calls": 104,
+          "self_seconds": 0.09089367200000001,
+          "cumulative_seconds": 0.19211908600000002
+        },
+        {
+          "function": "build.py:526:_cap_edges",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.0007889230000000001,
+          "cumulative_seconds": 0.1323755
+        },
+        {
+          "function": "build.py:434:_decorate",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.0006373150000000001,
+          "cumulative_seconds": 0.082383334
+        },
+        {
+          "function": "build.py:315:_place_group",
+          "calls": 13,
+          "primitive_calls": 13,
+          "self_seconds": 0.001987668,
+          "cumulative_seconds": 0.039877126000000006
+        },
+        {
+          "function": "model.py:33:adjacency",
+          "calls": 18,
+          "primitive_calls": 18,
+          "self_seconds": 0.017516322,
+          "cumulative_seconds": 0.027167416000000003
+        },
+        {
+          "function": "build.py:258:_max_matching",
+          "calls": 2,
+          "primitive_calls": 2,
+          "self_seconds": 0.00038686600000000003,
+          "cumulative_seconds": 0.022744708000000002
+        },
+        {
+          "function": "~:0:<method 'setdefault' of 'dict' objects>",
+          "calls": 313248,
+          "primitive_calls": 313248,
+          "self_seconds": 0.021315079,
+          "cumulative_seconds": 0.021315079
+        },
+        {
+          "function": "build.py:266:augment",
+          "calls": 10424,
+          "primitive_calls": 898,
+          "self_seconds": 0.00594492,
+          "cumulative_seconds": 0.019055799000000002
+        },
+        {
+          "function": "~:0:<built-in method numpy.asarray>",
+          "calls": 7855,
+          "primitive_calls": 7855,
+          "self_seconds": 0.018583288,
+          "cumulative_seconds": 0.018583288
+        },
+        {
+          "function": "~:0:<method 'add' of 'set' objects>",
+          "calls": 326217,
+          "primitive_calls": 326217,
+          "self_seconds": 0.018368409000000002,
+          "cumulative_seconds": 0.018368409000000002
+        },
+        {
+          "function": "model.py:62:validate_model",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.008518611,
+          "cumulative_seconds": 0.018366584000000002
+        },
+        {
+          "function": "_arraysetops_impl.py:958:isin",
+          "calls": 1220,
+          "primitive_calls": 1220,
+          "self_seconds": 0.0009179580000000001,
+          "cumulative_seconds": 0.017537414
+        },
+        {
+          "function": "copy.py:110:deepcopy",
+          "calls": 47077,
+          "primitive_calls": 3,
+          "self_seconds": 0.006382175,
+          "cumulative_seconds": 0.017057916
+        },
+        {
+          "function": "copy.py:198:_deepcopy_dict",
+          "calls": 3423,
+          "primitive_calls": 2,
+          "self_seconds": 0.00455368,
+          "cumulative_seconds": 0.01705225
+        },
+        {
+          "function": "copy.py:172:_deepcopy_list",
+          "calls": 2440,
+          "primitive_calls": 8,
+          "self_seconds": 0.002060423,
+          "cumulative_seconds": 0.017023876
+        },
+        {
+          "function": "_arraysetops_impl.py:806:_isin",
+          "calls": 1220,
+          "primitive_calls": 1220,
+          "self_seconds": 0.009362514,
+          "cumulative_seconds": 0.016302022
+        },
+        {
+          "function": "random.py:356:shuffle",
+          "calls": 10429,
+          "primitive_calls": 10429,
+          "self_seconds": 0.004587451,
+          "cumulative_seconds": 0.013411932000000001
+        },
+        {
+          "function": "_linalg.py:2615:norm",
+          "calls": 2870,
+          "primitive_calls": 2870,
+          "self_seconds": 0.004354698000000001,
+          "cumulative_seconds": 0.013094372
+        },
+        {
+          "function": "~:0:<built-in method numpy.array>",
+          "calls": 53644,
+          "primitive_calls": 53644,
+          "self_seconds": 0.011641440000000001,
+          "cumulative_seconds": 0.011641440000000001
+        },
+        {
+          "function": "~:0:<built-in method numpy.fromiter>",
+          "calls": 104,
+          "primitive_calls": 104,
+          "self_seconds": 0.005950960000000001,
+          "cumulative_seconds": 0.011558210000000001
+        },
+        {
+          "function": "build.py:296:_outward",
+          "calls": 92,
+          "primitive_calls": 92,
+          "self_seconds": 0.000185872,
+          "cumulative_seconds": 0.010880338
+        },
+        {
+          "function": "build.py:197:_apply_holes",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.00029487400000000004,
+          "cumulative_seconds": 0.009485
+        },
+        {
+          "function": "~:0:<method 'reduce' of 'numpy.ufunc' objects>",
+          "calls": 5984,
+          "primitive_calls": 5984,
+          "self_seconds": 0.008555923,
+          "cumulative_seconds": 0.008555923
+        },
+        {
+          "function": "random.py:245:_randbelow_with_getrandbits",
+          "calls": 21343,
+          "primitive_calls": 21343,
+          "self_seconds": 0.0052256640000000005,
+          "cumulative_seconds": 0.008373745
+        },
+        {
+          "function": "build.py:127:_prune_tips",
+          "calls": 1,
+          "primitive_calls": 1,
+          "self_seconds": 0.000431802,
+          "cumulative_seconds": 0.006503208000000001
+        },
+        {
+          "function": "build.py:51:_coordinates",
+          "calls": 20,
+          "primitive_calls": 20,
+          "self_seconds": 0.0019150780000000002,
+          "cumulative_seconds": 0.005991415000000001
+        },
+        {
+          "function": "build.py:75:<genexpr>",
+          "calls": 109741,
+          "primitive_calls": 109741,
+          "self_seconds": 0.005619046,
+          "cumulative_seconds": 0.005619046
+        },
+        {
+          "function": "~:0:<method 'append' of 'list' objects>",
+          "calls": 71878,
+          "primitive_calls": 71878,
+          "self_seconds": 0.003973275,
+          "cumulative_seconds": 0.003973275
+        }
+      ],
+      "case_elapsed_seconds_including_profile": 1.8366397919999145,
+      "case_timeout_seconds": 90
+    }
+  ]
+}

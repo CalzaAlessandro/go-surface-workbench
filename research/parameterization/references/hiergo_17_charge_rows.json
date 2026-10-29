@@ -1,0 +1,121 @@
+[
+  {
+    "opls_type": "opls_154",
+    "residue": "HYD",
+    "atom_name": "OH1",
+    "charge_e": -0.683,
+    "comment": "###hydroxyl O"
+  },
+  {
+    "opls_type": "opls_155",
+    "residue": "HYD",
+    "atom_name": "HH",
+    "charge_e": 0.418,
+    "comment": "###hydroxyl H"
+  },
+  {
+    "opls_type": "opls_159",
+    "residue": "HYD",
+    "atom_name": "CD",
+    "charge_e": 0.265,
+    "comment": "###hydroxyl C"
+  },
+  {
+    "opls_type": "opls_180",
+    "residue": "EPX",
+    "atom_name": "OE",
+    "charge_e": -0.4,
+    "comment": "###epoxy O"
+  },
+  {
+    "opls_type": "opls_184",
+    "residue": "EPX",
+    "atom_name": "CE",
+    "charge_e": 0.2,
+    "comment": "###epoxy C"
+  },
+  {
+    "opls_type": "opls_180",
+    "residue": "ETH",
+    "atom_name": "OT",
+    "charge_e": -0.17,
+    "comment": "###ether O"
+  },
+  {
+    "opls_type": "opls_518",
+    "residue": "ETH",
+    "atom_name": "CT",
+    "charge_e": 0.085,
+    "comment": "###ether C"
+  },
+  {
+    "opls_type": "opls_281",
+    "residue": "CAB",
+    "atom_name": "ON",
+    "charge_e": -0.47,
+    "comment": "###carbonyl O"
+  },
+  {
+    "opls_type": "opls_280",
+    "residue": "CAB",
+    "atom_name": "CN",
+    "charge_e": 0.47,
+    "comment": "###carbonyl C"
+  },
+  {
+    "opls_type": "opls_269",
+    "residue": "CARB",
+    "atom_name": "OC",
+    "charge_e": -0.44,
+    "comment": "###carboxylic OC"
+  },
+  {
+    "opls_type": "opls_268",
+    "residue": "CARB",
+    "atom_name": "OH",
+    "charge_e": -0.53,
+    "comment": "###carboxylic OH"
+  },
+  {
+    "opls_type": "opls_270",
+    "residue": "CARB",
+    "atom_name": "HC1",
+    "charge_e": 0.45,
+    "comment": "###carboxylic H"
+  },
+  {
+    "opls_type": "opls_267",
+    "residue": "CARB",
+    "atom_name": "CA",
+    "charge_e": 0.52,
+    "comment": "###carboxylic C"
+  },
+  {
+    "opls_type": "opls_147",
+    "residue": "CARB",
+    "atom_name": "CC",
+    "charge_e": 0.0,
+    "comment": "###C-carboxylic"
+  },
+  {
+    "opls_type": "opls_146",
+    "residue": "GRAT",
+    "atom_name": "HC",
+    "charge_e": 0.115,
+    "comment": "###terminal H"
+  },
+  {
+    "opls_type": "opls_145",
+    "residue": "GRAT",
+    "atom_name": "CH",
+    "charge_e": -0.115,
+    "comment": "###terminal C"
+  },
+  {
+    "opls_type": "opls_147",
+    "residue": "GRA",
+    "atom_name": "C",
+    "charge_e": 0.0,
+    "comment": "###In-plane sp2 carbon"
+  }
+]

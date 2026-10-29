@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "models": [
+    {
+      "model_id": "pyrene_pristine",
+      "path": "pyrene_pristine/model.json",
+      "formula": "C16H10",
+      "formal_charge": 0,
+      "multiplicity": 1,
+      "atom_count": 26
+    },
+    {
+      "model_id": "pyrene_epoxide",
+      "path": "pyrene_epoxide/model.json",
+      "formula": "C16H10O",
+      "formal_charge": 0,
+      "multiplicity": 1,
+      "atom_count": 27
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "path": "pyrene_diol_cis/model.json",
+      "formula": "C16H12O2",
+      "formal_charge": 0,
+      "multiplicity": 1,
+      "atom_count": 30
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "path": "pyrene_diol_trans/model.json",
+      "formula": "C16H12O2",
+      "formal_charge": 0,
+      "multiplicity": 1,
+      "atom_count": 30
+    },
+    {
+      "model_id": "pyrene_dione",
+      "path": "pyrene_dione/model.json",
+      "formula": "C16H8O2",
+      "formal_charge": 0,
+      "multiplicity": 1,
+      "atom_count": 26
+    },
+    {
+      "model_id": "pyrene_COOH",
+      "path": "pyrene_COOH/model.json",
+      "formula": "C17H10O2",
+      "formal_charge": 0,
+      "multiplicity": 1,
+      "atom_count": 29
+    },
+    {
+      "model_id": "pyrene_COO",
+      "path": "pyrene_COO/model.json",
+      "formula": "C17H9O2-",
+      "formal_charge": -1,
+      "multiplicity": 1,
+      "atom_count": 28
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "path": "pyrene_diol_epoxide/model.json",
+      "formula": "C16H12O3",
+      "formal_charge": 0,
+      "multiplicity": 1,
+      "atom_count": 31
+    }
+  ],
+  "status": "initial_models_only_no_QM_results_or_fitted_parameters"
+}

@@ -1,0 +1,126 @@
+{
+  "status": "RHF_INSTABILITY_DIAGNOSTIC_ATOMIC_RESP_AND_TRAINING_ESP_COMPLETE",
+  "validated_final_parameters": false,
+  "model_id": "pyrene_pristine",
+  "charge_sum_e": 0.0,
+  "orientations": 3,
+  "fit_artifact_hashes_verified": 21,
+  "stage2": {
+    "status": "noop_no_methyl_methylene",
+    "groups_atom_ids": [],
+    "max_abs_change_e": 0.0,
+    "explanation": "All charges retained from stage 1; stage2.in is audit only and was not executed."
+  },
+  "first_orientation_scores": [
+    {
+      "candidate": "new_atomic_resp_reference",
+      "charge_error_e": 0.0,
+      "status": "matched_charge_control",
+      "rmse_au": 0.0007703508580820146,
+      "mae_au": 0.0003963506981823382,
+      "bias_au": -0.00014929065809691258,
+      "max_abs_error_au": 0.014928106003926495,
+      "relative_rmse": 0.07814314848384779,
+      "dipole_e_angstrom": [
+        6.832533894772232e-07,
+        -4.517403441725033e-07,
+        -6.137334327261069e-08
+      ]
+    },
+    {
+      "candidate": "current_gaff2",
+      "charge_error_e": 0.0,
+      "status": "matched_charge_control",
+      "rmse_au": 0.0035785796362272056,
+      "mae_au": 0.0020149891676283106,
+      "bias_au": -0.000736728008270297,
+      "max_abs_error_au": 0.03512934921593953,
+      "relative_rmse": 0.36300534612399277,
+      "dipole_e_angstrom": [
+        2.9845594700341243e-07,
+        -2.9766218094873593e-07,
+        1.5002173910115908e-07
+      ]
+    },
+    {
+      "candidate": "hiergo_opls",
+      "charge_error_e": 0.0,
+      "status": "matched_charge_control",
+      "rmse_au": 0.0018002392790484503,
+      "mae_au": 0.0012426914513294423,
+      "bias_au": -0.00015954942188168563,
+      "max_abs_error_au": 0.023103501065553637,
+      "relative_rmse": 0.18261336871797343,
+      "dipole_e_angstrom": [
+        2.2881622602167327e-07,
+        -2.2820767252124904e-07,
+        1.1501666652822074e-07
+      ]
+    },
+    {
+      "candidate": "gopy_raw",
+      "charge_error_e": 0.0,
+      "status": "matched_charge_control",
+      "rmse_au": 0.0035785796362272056,
+      "mae_au": 0.0020149891676283106,
+      "bias_au": -0.000736728008270297,
+      "max_abs_error_au": 0.03512934921593953,
+      "relative_rmse": 0.36300534612399277,
+      "dipole_e_angstrom": [
+        2.9845594700341243e-07,
+        -2.9766218094873593e-07,
+        1.5002173910115908e-07
+      ]
+    },
+    {
+      "candidate": "stauffer_esp",
+      "status": "skipped",
+      "reason": "unsupported_chemistry"
+    },
+    {
+      "candidate": "stauffer_sesp",
+      "status": "skipped",
+      "reason": "unsupported_chemistry"
+    },
+    {
+      "candidate": "stauffer_esp_hybrid",
+      "charge_error_e": 0.0,
+      "status": "matched_charge_control",
+      "rmse_au": 0.0035785796362272056,
+      "mae_au": 0.0020149891676283106,
+      "bias_au": -0.000736728008270297,
+      "max_abs_error_au": 0.03512934921593953,
+      "relative_rmse": 0.36300534612399277,
+      "dipole_e_angstrom": [
+        2.9845594700341243e-07,
+        -2.9766218094873593e-07,
+        1.5002173910115908e-07
+      ]
+    },
+    {
+      "candidate": "stauffer_sesp_hybrid",
+      "charge_error_e": 0.0,
+      "status": "matched_charge_control",
+      "rmse_au": 0.0035785796362272056,
+      "mae_au": 0.0020149891676283106,
+      "bias_au": -0.000736728008270297,
+      "max_abs_error_au": 0.03512934921593953,
+      "relative_rmse": 0.36300534612399277,
+      "dipole_e_angstrom": [
+        2.9845594700341243e-07,
+        -2.9766218094873593e-07,
+        1.5002173910115908e-07
+      ]
+    },
+    {
+      "candidate": "old_whole_sheet",
+      "status": "skipped",
+      "reason": "unsupported_chemistry"
+    },
+    {
+      "candidate": "pinto_gaff2_aim",
+      "status": "skipped",
+      "reason": "unsupported_chemistry"
+    }
+  ]
+}

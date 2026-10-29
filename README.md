@@ -1,5 +1,12 @@
 # GO Builder
 
+Nome provvisorio della repository: **go-surface-workbench**.
+Vedere [direzione scientifica](docs/ROADMAP.md) e [prestazioni misurate](docs/PERFORMANCE.md).
+
+Lo studio dei metodi di carica e dei tre candidati di force field è in
+[research/parameterization](research/parameterization/README.md); i nuovi
+parametri restano separati dalle librerie usate nelle campagne esistenti.
+
 > **Private development snapshot.** This repository is a source snapshot of the
 > GO Builder workbench, not a complete software bundle or a release. Executables,
 > software archives, virtual environments, and validation campaign outputs were
@@ -366,15 +373,20 @@ migliore per l'adsorbimento. Vedere [CHARGES.md](docs/CHARGES.md).
 
 ## Esecuzione locale e Slurm
 
-Tutti gli script usano lo stesso worker. Per esempio, sul cluster:
+La creazione del grafene con `01_build_GO.py` o `go.py build` è locale:
+accetta ricette personalizzate o preset e non espone opzioni Slurm. `--dry-run`
+mostra il comando locale senza creare il modello o file di invio.
+
+Gli altri stadi mantengono lo stesso worker per esecuzione locale e Slurm.
+Per esempio, per preparare gli input Amber sul cluster:
 
 ```bash
-uv run python 01_build_GO.py --recipe examples/finite_GO.json \
-  --output work/slurm_GO.json --slurm --cpus 1 --memory 2G \
+uv run python 03_prepare_amber.py --model work/GO.json \
+  --output-dir work/amber_slurm --slurm --cpus 1 --memory 2G \
   --time 00:10:00 --partition ciamician_cpu
 ```
 
-Opzioni comuni: `--slurm`, `--dry-run`, `--submission-dir`, `--cpus`, `--memory`,
+Opzioni comuni agli stadi successivi alla creazione: `--slurm`, `--dry-run`, `--submission-dir`, `--cpus`, `--memory`,
 `--time`, `--partition`, `--account`, `--setup`, `--python`, `--json`.
 `--setup /percorso/site_setup.sh` inizializza i moduli del proprio sistema;
 `--python` indica l'interprete disponibile sul worker. Non sono scelti moduli o

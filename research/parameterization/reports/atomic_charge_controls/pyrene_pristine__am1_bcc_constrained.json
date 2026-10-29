@@ -1,0 +1,415 @@
+{
+  "candidate": "new_am1_bcc_charge_constrained_vsraw",
+  "model_id": "pyrene_pristine",
+  "model_kind": "derived_charge_constrained_AM1_BCC_control",
+  "source_reference_scope": "input_reference_scope_unspecified",
+  "atoms": [
+    {
+      "atom_id": 1,
+      "name": "C001",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.1270769230769231,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 2,
+      "name": "C002",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.11407692307692308,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 3,
+      "name": "C003",
+      "element": "C",
+      "role": "scaffold_C",
+      "charge_e": -0.03307692307692308,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 4,
+      "name": "C004",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.11507692307692308,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 5,
+      "name": "C005",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.11507692307692308,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 6,
+      "name": "C006",
+      "element": "C",
+      "role": "scaffold_C",
+      "charge_e": -0.03307692307692308,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 7,
+      "name": "C007",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.11407692307692308,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 8,
+      "name": "C008",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.1270769230769231,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 9,
+      "name": "C009",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.11407692307692308,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 10,
+      "name": "C010",
+      "element": "C",
+      "role": "scaffold_C",
+      "charge_e": -0.03307692307692308,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 11,
+      "name": "C011",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.11507692307692308,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 12,
+      "name": "C012",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.11507692307692308,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 13,
+      "name": "C013",
+      "element": "C",
+      "role": "scaffold_C",
+      "charge_e": -0.03307692307692308,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 14,
+      "name": "C014",
+      "element": "C",
+      "role": "edge_C",
+      "charge_e": -0.11407692307692308,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 15,
+      "name": "C015",
+      "element": "C",
+      "role": "scaffold_C",
+      "charge_e": -0.015076923076923078,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 16,
+      "name": "C016",
+      "element": "C",
+      "role": "scaffold_C",
+      "charge_e": -0.015076923076923078,
+      "amber_type": "ca"
+    },
+    {
+      "atom_id": 17,
+      "name": "H017",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.13292307692307692,
+      "amber_type": "ha"
+    },
+    {
+      "atom_id": 18,
+      "name": "H018",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.13392307692307692,
+      "amber_type": "ha"
+    },
+    {
+      "atom_id": 19,
+      "name": "H019",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.13292307692307692,
+      "amber_type": "ha"
+    },
+    {
+      "atom_id": 20,
+      "name": "H020",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.13292307692307692,
+      "amber_type": "ha"
+    },
+    {
+      "atom_id": 21,
+      "name": "H021",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.13392307692307692,
+      "amber_type": "ha"
+    },
+    {
+      "atom_id": 22,
+      "name": "H022",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.13292307692307692,
+      "amber_type": "ha"
+    },
+    {
+      "atom_id": 23,
+      "name": "H023",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.13392307692307692,
+      "amber_type": "ha"
+    },
+    {
+      "atom_id": 24,
+      "name": "H024",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.13292307692307692,
+      "amber_type": "ha"
+    },
+    {
+      "atom_id": 25,
+      "name": "H025",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.13292307692307692,
+      "amber_type": "ha"
+    },
+    {
+      "atom_id": 26,
+      "name": "H026",
+      "element": "H",
+      "role": "edge_H",
+      "charge_e": 0.13392307692307692,
+      "amber_type": "ha"
+    }
+  ],
+  "coverage": {
+    "complete": true,
+    "covered_atoms": 26,
+    "total_atoms": 26,
+    "unsupported_atom_ids": []
+  },
+  "formal_charge_e": 0,
+  "total_charge_e": -4.163336342344337e-17,
+  "charge_error_e": -4.163336342344337e-17,
+  "charge_tolerance_e": 1.526e-05,
+  "final_parameter_validation": false,
+  "geometry": {
+    "sqm_optimization_converged": true,
+    "method": "standard antechamber AM1-BCC defaults; sqm.in retained verbatim",
+    "am1_final_positions_angstrom": [
+      [
+        -3.1541,
+        0.5967,
+        1.7861
+      ],
+      [
+        -2.8827,
+        -0.5528,
+        1.0479
+      ],
+      [
+        -1.761,
+        -0.6087,
+        0.2107
+      ],
+      [
+        -1.4462,
+        -1.7779,
+        -0.568
+      ],
+      [
+        -0.3557,
+        -1.8156,
+        -1.3741
+      ],
+      [
+        0.5324,
+        -0.6878,
+        -1.4845
+      ],
+      [
+        1.6625,
+        -0.7097,
+        -2.3119
+      ],
+      [
+        2.4984,
+        0.4016,
+        -2.3922
+      ],
+      [
+        2.2269,
+        1.5512,
+        -1.654
+      ],
+      [
+        1.1052,
+        1.607,
+        -0.8167
+      ],
+      [
+        0.7905,
+        2.7762,
+        -0.0379
+      ],
+      [
+        -0.3,
+        2.8139,
+        0.7681
+      ],
+      [
+        -1.1881,
+        1.6861,
+        0.8785
+      ],
+      [
+        -2.3183,
+        1.708,
+        1.7059
+      ],
+      [
+        -0.904,
+        0.519,
+        0.1228
+      ],
+      [
+        0.2482,
+        0.4793,
+        -0.7288
+      ],
+      [
+        -4.0388,
+        0.6273,
+        2.44
+      ],
+      [
+        -3.5504,
+        -1.4243,
+        1.1198
+      ],
+      [
+        -2.123,
+        -2.6424,
+        -0.4863
+      ],
+      [
+        -0.1184,
+        -2.7116,
+        -1.9681
+      ],
+      [
+        1.8875,
+        -1.612,
+        -2.8999
+      ],
+      [
+        3.383,
+        0.3711,
+        -3.0461
+      ],
+      [
+        2.8946,
+        2.4227,
+        -1.7258
+      ],
+      [
+        1.4673,
+        3.6407,
+        -0.1196
+      ],
+      [
+        -0.5373,
+        3.7099,
+        1.3621
+      ],
+      [
+        -2.5432,
+        2.6104,
+        2.2939
+      ]
+    ],
+    "max_input_to_am1_displacement_angstrom": 0.03607962838066855,
+    "am1_geometry_changed": true,
+    "scoring_geometry": "assign these charges by stable atom ID onto the common HF reference geometry; do not substitute AM1 coordinates"
+  },
+  "charge_policy": {
+    "policy": "constrained-rounding",
+    "raw_charge_sum_e": 0.0020000000000000295,
+    "raw_charge_error_e": 0.0020000000000000295,
+    "corrected_charge_sum_e": -4.163336342344337e-17,
+    "per_atom_correction_e": [
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05,
+      -7.692307692307806e-05
+    ],
+    "max_abs_correction_e": 7.692307692307806e-05,
+    "source_mulliken_decimals": 3,
+    "propagated_rounding_bound_e": 0.013260000000000001,
+    "method": "uniform minimum-L2 correction subject to the integer total; explicit derived candidate, not unmodified standard AM1-BCC"
+  },
+  "bcc_evidence": {
+    "native_BCC_verified": true,
+    "parameterized_bonds": 29,
+    "nonzero_BCC_bonds": 0,
+    "max_abs_BCC_delta_e": 0.0,
+    "source_mulliken_decimals": 3,
+    "raw_mulliken_sum_e": 0.0020000000000000295,
+    "pre_BCC_sum_e": 0.0020000000000000295,
+    "post_BCC_sum_e": 0.0020000000000000295,
+    "parameter_sha256": "05f034901d058ad9331325b6ee3fafa25c75b1ce4f52839fe85032eb92941276"
+  }
+}

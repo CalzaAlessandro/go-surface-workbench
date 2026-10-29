@@ -56,9 +56,18 @@ def parser_for(stage: str) -> argparse.ArgumentParser:
         parser.add_argument("--no-optimize", action="store_true")
         parser.add_argument("--output", type=Path)
     elif stage == "build":
-        parser.add_argument("--recipe", required=True, type=Path)
-        parser.add_argument("--output", required=True, type=Path)
+        from .presets import PRESET_NAMES
+
+        source = parser.add_mutually_exclusive_group(required=True)
+        source.add_argument("--recipe", type=Path)
+        source.add_argument("--preset", choices=PRESET_NAMES)
+        source.add_argument("--list-presets", action="store_true")
+        parser.add_argument("--output", type=Path)
         parser.add_argument("--pdb", type=Path)
+        parser.add_argument("--seed", type=int, help="Override the selected recipe's random seed")
+        parser.add_argument("--dry-run", action="store_true", help="Show a local creation plan")
+        parser.add_argument("--json", action="store_true", help="Print machine-readable report")
+        return parser
     elif stage == "functionalize":
         parser.add_argument("--model", required=True, type=Path)
         parser.add_argument("--recipe", required=True, type=Path)
@@ -265,6 +274,8 @@ def _report(stage: str, result: dict, machine: bool, error: bool = False) -> Non
             summary["datasets"] = len(result["datasets"])
         if "candidates" in result:
             summary["candidates"] = list(result["candidates"])
+        if "presets" in result:
+            summary["presets"] = result["presets"]
         if "gbsa" in result:
             summary["gbsa_ready"] = result["gbsa"]["ready"]
         print(
@@ -378,7 +389,25 @@ def _dispatch(stage: str, args: argparse.Namespace) -> dict:
         if stage == "build":
             from .build import build_sheet
 
-            model = build_sheet(_read(args.recipe))
+            provenance = None
+            if args.preset:
+                from .presets import resolve_preset
+
+                recipe, provenance = resolve_preset(args.preset, seed=args.seed)
+                readiness = provenance["source_info"]
+                if not readiness.get("build_enabled", False):
+                    raise ValueError(
+                        f"Preset {args.preset} is disabled: {readiness.get('readiness', 'validation pending')}; "
+                        "placement validation and force-field parameterization selection are pending. "
+                        "No model was written."
+                    )
+            else:
+                recipe = _read(args.recipe)
+                if args.seed is not None:
+                    recipe["seed"] = args.seed
+            model = build_sheet(recipe)
+            if provenance is not None:
+                model.setdefault("metadata", {})["preset"] = provenance
         elif stage == "functionalize":
             from .functionalize import open_epoxides
 
@@ -510,15 +539,27 @@ def main(stage: str | None = None, argv: list[str] | None = None) -> int:
         first = top.parse_args(argv[:1])
         stage = first.stage
         argv = argv[1:]
-    args = parser_for(stage).parse_args(argv)
+    parser = parser_for(stage)
+    args = parser.parse_args(argv)
+    if stage == "build" and not args.list_presets and args.output is None:
+        parser.error("--output is required for creation with --recipe or --preset")
     command = [
-        args.worker_python or sys.executable,
+        getattr(args, "worker_python", None) or sys.executable,
         str(ROOT / "go.py"),
         stage,
         *_worker_argv(argv),
     ]
     try:
-        if args.slurm:
+        if stage == "build":
+            if args.list_presets:
+                from .presets import list_presets
+
+                result = {"status": "AVAILABLE_PRESETS", "presets": list_presets()}
+            elif args.dry_run:
+                result = {"status": "PLANNED", "command": command, "backend": "local"}
+            else:
+                result = _dispatch(stage, args)
+        elif args.slurm:
             result = submit_slurm(
                 command,
                 Path.cwd(),

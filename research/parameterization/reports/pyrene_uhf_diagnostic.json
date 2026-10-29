@@ -1,0 +1,26 @@
+{
+  "scope": "Fixed RHF geometry UHF diagnostic; not exact spin-adapted singlet or final parameters",
+  "normal_terminations": 2,
+  "uhf_energies_hartree": [
+    -611.796050452,
+    -611.796050452
+  ],
+  "final_hf_energy_hartree": -611.796050452,
+  "s_squared_before_after_annihilation": [
+    [
+      "1.8279",
+      "7.1070"
+    ],
+    [
+      "1.8279",
+      "7.1070"
+    ]
+  ],
+  "stability_messages": [
+    "The wavefunction is stable under the perturbations considered.",
+    "The wavefunction is already stable.",
+    "The wavefunction is stable under the perturbations considered."
+  ],
+  "rhf_reference_energy_hartree": -611.76795709,
+  "delta_energy_vs_rhf_kcal_mol": -17.628850811542733
+}

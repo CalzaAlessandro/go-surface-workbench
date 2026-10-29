@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "thesis": {
+      "citation": "Calza, A. (2026). A multiscale computational framework for the design and screening of graphene oxide in wastewater remediation. PhD thesis, University of Bologna.",
+      "doi": "10.48676/unibo/amsdottorato/13227",
+      "url": "https://amsdottorato.unibo.it/id/eprint/13227/",
+      "locators": {
+        "model_O_C_targets": "Section 2.3, printed p. 23: computational model O/C ratios 0.43, 0.19, 0.07, 0.02 in product order.",
+        "carboxylate_assumption": "Section 2.3, printed p. 25: 90% of carboxyl groups are randomly converted to carboxylates as a modeling assumption.",
+        "vacancy_protocol": "Section 2.3, printed pp. 24-25: vacancy defects are introduced randomly using mixed-size defects, then dangling carbons are removed."
+      }
+    },
+    "corrected_integer_recipe_table": {
+      "description": "Author-provided LayerOne XPS composition slide deck, slide 10, titled '4x4nm - corrected'. The source deck is not included in this repository.",
+      "columns_in_product_order": ["fully oxidized", "partially reduced", "medium reduced", "fully reduced"],
+      "locator": "Slide 10 table: carbon count and integer OH, epoxide, C=O, COOH, and COO- counts; vacancy labels are 10%, 5%, 2%, and 1%.",
+      "integer_group_counts_are_source_values": true,
+      "interpretation_note": "The table gives integer model recipes; this repository reuses those counts and records the author's model O/C targets. It does not infer a unique group recipe from XPS peak-area fractions or equate the model targets with manufacturer bulk composition."
+    },
+    "manufacturer_products": {
+      "GOX8-P935": {
+        "url": "https://www.layeronematerials.com/gox8-graphene-oxide-p935",
+        "public_product_claim": "GOX8 Graphene Oxide P935 powder, -35 mesh.",
+        "datasheet_url": "https://filgen.jp/Product/Bioscience4/Abalonyx/TDS_GO_Pastes_and_powders.pdf",
+        "datasheet_claim": "P935 powder: carbon 64-65 wt%, oxygen 33-34 wt%, sulfur 1-2 wt%, nitrogen <1 wt%, chloride about 1 wt%, metals not detected; dry basis. The datasheet identifies P935 as <35 mesh and reports >99% GO crystalline phase.",
+        "code_warning": "P935 is a product code associated with powder mesh, not evidence of 93.5% purity."
+      },
+      "REGOX8-P980": {
+        "url": "https://www.layeronematerials.com/regox8-graphene-p980",
+        "public_product_claim": "REGOX8 reduced graphene oxide powder labelled 80% C; product page does not state the percentage basis."
+      },
+      "REGOX8-P995": {
+        "url": "https://www.layeronematerials.com/regox8-graphene-p995",
+        "public_product_claim": "REGOX8 reduced graphene oxide powder labelled 95% C; product page does not state the percentage basis."
+      },
+      "REGOX8-P999": {
+        "url": "https://www.layeronematerials.com/regox8-graphene-p999",
+        "public_product_claim": "REGOX8 reduced graphene oxide powder labelled 99% C; product page does not state the percentage basis."
+      },
+      "basis_note": "These product/data-sheet claims are kept separate from the computational O/C targets and integer functional-group recipes. They are not converted into model recipes."
+    }
+  },
+  "presets": {
+    "GOX8-P935": {
+      "recipe_file": "GOX8-P935.json",
+      "build_enabled": false,
+      "readiness": "placement_validation_pending",
+      "material_model_class": "fully oxidized",
+      "source_composition": {
+        "source_carbon_count": 595,
+        "target_O_C_atomic_ratio": 0.43,
+        "target_O_count_from_group_stoichiometry": 253,
+        "target_group_counts": {"OH": 85, "epoxide": 100, "carbonyl": 30, "COOH": 3, "COO": 16},
+        "nominal_source_vacancy_fraction": 0.10,
+        "nominal_source_vacancy_percent": 10,
+        "source_carboxylate_fraction": 0.8421052631578947,
+        "thesis_assumed_carboxylate_fraction": 0.9,
+        "carboxylate_note": "The corrected integer table gives 16 COO- among 19 carboxyl groups (84.2%), not exactly 90%; preserve the source integers rather than silently changing net charge."
+      },
+      "current_builder_validation": {
+        "recipe_vacancies": 64,
+        "recipe_initial_sheet_carbon_count": 640,
+        "result": "failed exact placement after 128 attempts",
+        "diagnostic": "No collision-free exact placement found; best tried counts were COOH 3 and COO 2, with OH 0, epoxide 0, and carbonyl 0.",
+        "capacity_report": {"eligible_edge_carbons": 180, "eligible_basal_carbons": 318, "max_disjoint_epoxide_sites": 143},
+        "action": "Do not generate output from this preset until placement validation succeeds. The failure is a current builder placement result, not evidence that the thesis model or source composition is wrong."
+      }
+    },
+    "REGOX8-P980": {
+      "recipe_file": "REGOX8-P980.json",
+      "build_enabled": true,
+      "readiness": "provisional_unrelaxed",
+      "material_model_class": "partially reduced",
+      "source_composition": {
+        "source_carbon_count": 640,
+        "target_O_C_atomic_ratio": 0.19,
+        "target_O_count_from_group_stoichiometry": 120,
+        "target_group_counts": {"OH": 70, "epoxide": 12, "carbonyl": 24, "COOH": 1, "COO": 6},
+        "nominal_source_vacancy_fraction": 0.05,
+        "nominal_source_vacancy_percent": 5,
+        "source_carboxylate_fraction": 0.8571428571428571,
+        "thesis_assumed_carboxylate_fraction": 0.9,
+        "carboxylate_note": "The corrected integer table gives 6 COO- among 7 carboxyl groups (85.7%), not exactly 90%; preserve the source integers rather than silently changing net charge."
+      },
+      "current_builder_validation": {
+        "recipe_vacancies": 0,
+        "recipe_initial_sheet_carbon_count": 672,
+        "result": "built successfully with the recorded seed",
+        "actual_atom_counts": {"C": 649, "O": 120, "H": 112},
+        "actual_O_C_atomic_ratio": 0.18489984591679506,
+        "actual_group_counts": {"OH": 70, "epoxide": 12, "carbonyl": 24, "COOH": 1, "COO": 6},
+        "builder_tip_pruned_sheet_carbons": 30,
+        "deviation_note": "The recorded source model lists C=640 and nominal 5% vacancies. This provisional build uses zero explicit vacancies because the 5% vacancy recipe did not place all groups successfully; actual carbon count is 649, so it is not an atom-for-atom reproduction."
+      }
+    },
+    "REGOX8-P995": {
+      "recipe_file": "REGOX8-P995.json",
+      "build_enabled": true,
+      "readiness": "provisional_unrelaxed",
+      "material_model_class": "medium reduced",
+      "source_composition": {
+        "source_carbon_count": 663,
+        "target_O_C_atomic_ratio": 0.07,
+        "target_O_count_from_group_stoichiometry": 45,
+        "target_group_counts": {"OH": 31, "epoxide": 3, "carbonyl": 1, "COOH": 1, "COO": 4},
+        "nominal_source_vacancy_fraction": 0.02,
+        "nominal_source_vacancy_percent": 2,
+        "source_carboxylate_fraction": 0.8,
+        "thesis_assumed_carboxylate_fraction": 0.9,
+        "carboxylate_note": "The corrected integer table gives 4 COO- among 5 carboxyl groups (80%), not exactly 90%; preserve the source integers rather than silently changing net charge."
+      },
+      "current_builder_validation": {
+        "recipe_vacancies": 13,
+        "recipe_initial_sheet_carbon_count": 672,
+        "result": "built successfully with the recorded seed",
+        "actual_atom_counts": {"C": 632, "O": 45, "H": 131},
+        "actual_O_C_atomic_ratio": 0.07120253164556962,
+        "actual_group_counts": {"OH": 31, "epoxide": 3, "carbonyl": 1, "COOH": 1, "COO": 4},
+        "builder_total_removed_sheet_carbons": 45,
+        "deviation_note": "The recorded source model lists C=663 and nominal 2% vacancies. The build preserves all group counts and the nominal vacancy count but prunes 32 additional tip carbons; actual carbon count is 632, so it is not an atom-for-atom reproduction."
+      }
+    },
+    "REGOX8-P999": {
+      "recipe_file": "REGOX8-P999.json",
+      "build_enabled": true,
+      "readiness": "provisional_unrelaxed",
+      "material_model_class": "fully reduced",
+      "source_composition": {
+        "source_carbon_count": 671,
+        "target_O_C_atomic_ratio": 0.02,
+        "target_O_count_from_group_stoichiometry": 13,
+        "target_group_counts": {"OH": 5, "epoxide": 3, "carbonyl": 3, "COOH": 0, "COO": 1},
+        "nominal_source_vacancy_fraction": 0.01,
+        "nominal_source_vacancy_percent": 1,
+        "source_carboxylate_fraction": 1.0,
+        "thesis_assumed_carboxylate_fraction": 0.9,
+        "carboxylate_note": "The corrected integer table gives 1 COO- among 1 carboxyl group (100%), not exactly 90%; preserve the source integers rather than silently changing net charge."
+      },
+      "current_builder_validation": {
+        "recipe_vacancies": 7,
+        "recipe_initial_sheet_carbon_count": 680,
+        "result": "built successfully with the recorded seed",
+        "actual_atom_counts": {"C": 638, "O": 13, "H": 92},
+        "actual_O_C_atomic_ratio": 0.02037617554858934,
+        "actual_group_counts": {"OH": 5, "epoxide": 3, "carbonyl": 3, "COOH": 0, "COO": 1},
+        "builder_total_removed_sheet_carbons": 43,
+        "deviation_note": "The recorded source model lists C=671 and nominal 1% vacancies. The build preserves all group counts and the nominal vacancy count but prunes 36 additional tip carbons; actual carbon count is 638, so it is not an atom-for-atom reproduction."
+      }
+    }
+  }
+}

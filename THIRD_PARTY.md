@@ -25,7 +25,7 @@ here; do not assume they are covered by a project license.
 ## GOPY citation
 
 GOPY informed the conceptual comparison of graphene-oxide construction and
-functionalization workflows. No GOPY source is copied into this snapshot. Cite
+functionalization workflows. No GOPY program is executed by the builder. The research audit now includes the original GO.frcmod parameter reference under research/parameterization/references/gopy; its source/terms must remain attributed to GOPY. Cite
 the project when discussing that conceptual relationship: Iourarum, GOPY,
 <https://github.com/Iourarum/GOPY> (repository source and tutorial links are
 also listed in `docs/COMPARISON.md`).

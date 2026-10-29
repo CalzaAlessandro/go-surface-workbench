@@ -1,0 +1,15 @@
+{
+  "name": "GOX8-P935",
+  "nx": 10,
+  "ny": 16,
+  "seed": 17,
+  "vacancies": 64,
+  "faces": "both",
+  "groups": {
+    "OH": 85,
+    "epoxide": 100,
+    "carbonyl": 30,
+    "COOH": 3,
+    "COO": 16
+  }
+}

@@ -32,3 +32,8 @@ validation/
 # Versioned small scientific regression fixtures
 !resources/reference/old/*.parm7
 !resources/reference/old/*.rst7
+
+# External system force-field inputs, provided by Amber installation
+research/parameterization/references/system_forcefield_sources/*.dat
+research/parameterization/references/system_forcefield_sources/frcmod.ff*
+research/parameterization/references/system_forcefield_sources/leaprc.*

@@ -14,7 +14,7 @@ def test_build_help_available_without_external_amber():
     )
     assert result.returncode == 0, result.stderr
     assert "--recipe" in result.stdout
-    assert "--slurm" in result.stdout
+    assert "--slurm" not in result.stdout
 
 
 def test_missing_recipe_returns_nonzero_without_creating_output(tmp_path):

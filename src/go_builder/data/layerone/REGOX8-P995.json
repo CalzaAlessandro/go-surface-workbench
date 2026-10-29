@@ -1,0 +1,15 @@
+{
+  "name": "REGOX8-P995",
+  "nx": 12,
+  "ny": 14,
+  "seed": 17,
+  "vacancies": 13,
+  "faces": "both",
+  "groups": {
+    "OH": 31,
+    "epoxide": 3,
+    "carbonyl": 1,
+    "COOH": 1,
+    "COO": 4
+  }
+}

@@ -1,0 +1,75 @@
+candidate,role,charge_e,source,locator,source_url
+current_gaff2,COOH_C,0.735,local_snapshot/current/CBX_gaff2.lib,C4,
+current_gaff2,COOH_H,0.46,local_snapshot/current/CBX_gaff2.lib,HK,
+current_gaff2,COOH_O,-0.475,local_snapshot/current/CBX_gaff2.lib,OJ,
+current_gaff2,COOH_OH,-0.605,local_snapshot/current/CBX_gaff2.lib,OK,
+current_gaff2,COOH_anchor,-0.115,local_snapshot/current/CBX_gaff2.lib,CY,
+current_gaff2,COO_C,0.76,local_snapshot/current/CBD_gaff2.lib,C4,
+current_gaff2,COO_O,-0.79,local_snapshot/current/CBD_gaff2.lib,OJ,
+current_gaff2,COO_anchor,-0.18,local_snapshot/current/CBD_gaff2.lib,CY,
+current_gaff2,carbonyl_C,0.581,local_snapshot/current/CAB_gaff2.lib,CN,
+current_gaff2,carbonyl_O,-0.581,local_snapshot/current/CAB_gaff2.lib,ON,
+current_gaff2,edge_C,-0.15,local_snapshot/current/GRT_gaff2.lib,CH,
+current_gaff2,edge_H,0.15,local_snapshot/current/GRT_gaff2.lib,HC,
+current_gaff2,epoxide_C,0.185,local_snapshot/current/EPX_gaff2.lib,CY,
+current_gaff2,epoxide_O,-0.37,local_snapshot/current/EPX_gaff2.lib,OE,
+current_gaff2,hydroxyl_C,0.25,local_snapshot/current/HYD_gaff2.lib,CL,
+current_gaff2,hydroxyl_H,0.39,local_snapshot/current/HYD_gaff2.lib,HL,
+current_gaff2,hydroxyl_O,-0.64,local_snapshot/current/HYD_gaff2.lib,OL,
+current_gaff2,scaffold_C,0.0,local_snapshot/current/GGG_gaff2.lib,CX,
+hiergo_opls,COOH_C,0.52,hiergo_17_charge_rows.json,CARB:CA,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,COOH_H,0.45,hiergo_17_charge_rows.json,CARB:HC1,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,COOH_O,-0.44,hiergo_17_charge_rows.json,CARB:OC,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,COOH_OH,-0.53,hiergo_17_charge_rows.json,CARB:OH,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,COOH_anchor,0.0,hiergo_17_charge_rows.json,CARB:CC,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,carbonyl_C,0.47,hiergo_17_charge_rows.json,CAB:CN,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,carbonyl_O,-0.47,hiergo_17_charge_rows.json,CAB:ON,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,edge_C,-0.115,hiergo_17_charge_rows.json,GRAT:CH,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,edge_H,0.115,hiergo_17_charge_rows.json,GRAT:HC,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,epoxide_C,0.2,hiergo_17_charge_rows.json,EPX:CE,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,epoxide_O,-0.4,hiergo_17_charge_rows.json,EPX:OE,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,ether_C,0.085,hiergo_17_charge_rows.json,ETH:CT,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,ether_O,-0.17,hiergo_17_charge_rows.json,ETH:OT,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,hydroxyl_C,0.265,hiergo_17_charge_rows.json,HYD:CD,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,hydroxyl_H,0.418,hiergo_17_charge_rows.json,HYD:HH,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,hydroxyl_O,-0.683,hiergo_17_charge_rows.json,HYD:OH1,https://github.com/IFM-molecular-simulation-group/HierGO
+hiergo_opls,scaffold_C,0.0,hiergo_17_charge_rows.json,GRA:C,https://github.com/IFM-molecular-simulation-group/HierGO
+gopy_raw,COOH_C,0.6801,gopy/GO_tutorial/C1A.lib,C4,https://github.com/Iourarum/GOPY
+gopy_raw,COOH_H,0.4641,gopy/GO_tutorial/C1A.lib,HK,https://github.com/Iourarum/GOPY
+gopy_raw,COOH_O,-0.5838,gopy/GO_tutorial/C1A.lib,OJ,https://github.com/Iourarum/GOPY
+gopy_raw,COOH_OH,-0.6511,gopy/GO_tutorial/C1A.lib,OK,https://github.com/Iourarum/GOPY
+gopy_raw,COOH_anchor,0.0,gopy/GO_tutorial/C1A.lib,CY,https://github.com/Iourarum/GOPY
+gopy_raw,edge_C,-0.15,local_snapshot/current/GRT_gaff2.lib,CH,
+gopy_raw,edge_H,0.15,local_snapshot/current/GRT_gaff2.lib,HC,
+gopy_raw,epoxide_C,0.0,gopy/GO_tutorial/E1A.lib,CY,https://github.com/Iourarum/GOPY
+gopy_raw,epoxide_O,-0.3691,gopy/GO_tutorial/E1A.lib,OE,https://github.com/Iourarum/GOPY
+gopy_raw,hydroxyl_C,0.0,gopy/GO_tutorial/H1A.lib,CY,https://github.com/Iourarum/GOPY
+gopy_raw,hydroxyl_H,0.4275,gopy/GO_tutorial/H1A.lib,HK,https://github.com/Iourarum/GOPY
+gopy_raw,hydroxyl_O,-0.6546,gopy/GO_tutorial/H1A.lib,OL,https://github.com/Iourarum/GOPY
+gopy_raw,scaffold_C,0.0,gopy/GO_tutorial/GGG.lib,CX,https://github.com/Iourarum/GOPY
+stauffer_esp,epoxide_C,0.12,stauffer2014_table_I_GO_charges.json,Table I:ESP:epoxy:C,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_esp,epoxide_O,-0.24,stauffer2014_table_I_GO_charges.json,Table I:ESP:epoxy:O,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_esp,hydroxyl_C,0.12,stauffer2014_table_I_GO_charges.json,Table I:ESP:hydroxyl:C,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_esp,hydroxyl_H,0.26,stauffer2014_table_I_GO_charges.json,Table I:ESP:hydroxyl:H,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_esp,hydroxyl_O,-0.38,stauffer2014_table_I_GO_charges.json,Table I:ESP:hydroxyl:O,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_sesp,epoxide_C,0.18,stauffer2014_table_I_GO_charges.json,Table I:SESP:epoxy:C,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_sesp,epoxide_O,-0.36,stauffer2014_table_I_GO_charges.json,Table I:SESP:epoxy:O,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_sesp,hydroxyl_C,0.18,stauffer2014_table_I_GO_charges.json,Table I:SESP:hydroxyl:C,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_sesp,hydroxyl_H,0.39,stauffer2014_table_I_GO_charges.json,Table I:SESP:hydroxyl:H,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_sesp,hydroxyl_O,-0.57,stauffer2014_table_I_GO_charges.json,Table I:SESP:hydroxyl:O,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_esp_hybrid,edge_C,-0.15,local_snapshot/current/GRT_gaff2.lib,CH,
+stauffer_esp_hybrid,edge_H,0.15,local_snapshot/current/GRT_gaff2.lib,HC,
+stauffer_esp_hybrid,epoxide_C,0.12,stauffer2014_table_I_GO_charges.json,Table I:ESP:epoxy:C,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_esp_hybrid,epoxide_O,-0.24,stauffer2014_table_I_GO_charges.json,Table I:ESP:epoxy:O,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_esp_hybrid,hydroxyl_C,0.12,stauffer2014_table_I_GO_charges.json,Table I:ESP:hydroxyl:C,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_esp_hybrid,hydroxyl_H,0.26,stauffer2014_table_I_GO_charges.json,Table I:ESP:hydroxyl:H,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_esp_hybrid,hydroxyl_O,-0.38,stauffer2014_table_I_GO_charges.json,Table I:ESP:hydroxyl:O,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_esp_hybrid,scaffold_C,0.0,local_snapshot/current/GGG_gaff2.lib,CX,
+stauffer_sesp_hybrid,edge_C,-0.15,local_snapshot/current/GRT_gaff2.lib,CH,
+stauffer_sesp_hybrid,edge_H,0.15,local_snapshot/current/GRT_gaff2.lib,HC,
+stauffer_sesp_hybrid,epoxide_C,0.18,stauffer2014_table_I_GO_charges.json,Table I:SESP:epoxy:C,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_sesp_hybrid,epoxide_O,-0.36,stauffer2014_table_I_GO_charges.json,Table I:SESP:epoxy:O,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_sesp_hybrid,hydroxyl_C,0.18,stauffer2014_table_I_GO_charges.json,Table I:SESP:hydroxyl:C,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_sesp_hybrid,hydroxyl_H,0.39,stauffer2014_table_I_GO_charges.json,Table I:SESP:hydroxyl:H,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_sesp_hybrid,hydroxyl_O,-0.57,stauffer2014_table_I_GO_charges.json,Table I:SESP:hydroxyl:O,https://orubel.mcmaster.ca/publications/2014/Stauffer_JCP_141_044705.pdf
+stauffer_sesp_hybrid,scaffold_C,0.0,local_snapshot/current/GGG_gaff2.lib,CX,

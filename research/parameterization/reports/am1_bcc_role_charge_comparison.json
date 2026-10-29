@@ -1,0 +1,429 @@
+{
+  "scope": "Non-ESP charge distribution comparison. Raw native AM1-BCC preserved; explicit constrained-rounding candidate shown.",
+  "models": [
+    {
+      "model": "pyrene_COO",
+      "candidate": "new_am1_bcc_charge_constrained_vsraw",
+      "formal_charge": -1,
+      "charge_sum_e": -0.9999999999999999,
+      "atom_charge_RMS_difference_vs_current_e": 0.051260203563658964,
+      "roles": [
+        {
+          "role": "COO_C",
+          "n_atoms": 1,
+          "mean_q_e": 0.9092714285714286,
+          "min_q_e": 0.9092714285714286,
+          "max_q_e": 0.9092714285714286,
+          "current_library_q_mean_e": 0.76
+        },
+        {
+          "role": "COO_O",
+          "n_atoms": 2,
+          "mean_q_e": -0.8252285714285714,
+          "min_q_e": -0.8252285714285714,
+          "max_q_e": -0.8252285714285714,
+          "current_library_q_mean_e": -0.79
+        },
+        {
+          "role": "COO_anchor",
+          "n_atoms": 1,
+          "mean_q_e": -0.13552857142857141,
+          "min_q_e": -0.13552857142857141,
+          "max_q_e": -0.13552857142857141,
+          "current_library_q_mean_e": -0.18
+        },
+        {
+          "role": "edge_C",
+          "n_atoms": 9,
+          "mean_q_e": -0.11603968253968254,
+          "min_q_e": -0.16592857142857143,
+          "max_q_e": -0.06592857142857143,
+          "current_library_q_mean_e": -0.15
+        },
+        {
+          "role": "edge_H",
+          "n_atoms": 9,
+          "mean_q_e": 0.12807142857142859,
+          "min_q_e": 0.11407142857142857,
+          "max_q_e": 0.15907142857142859,
+          "current_library_q_mean_e": 0.15
+        },
+        {
+          "role": "scaffold_C",
+          "n_atoms": 6,
+          "mean_q_e": -0.0385952380952381,
+          "min_q_e": -0.08192857142857143,
+          "max_q_e": -0.014928571428571428,
+          "current_library_q_mean_e": 0.0
+        }
+      ],
+      "source_marker": "calculations/am1_bcc/pyrene_COO/attempt_003/AM1_BCC_COMPLETE.json",
+      "artifact_hashes_verified": 23,
+      "scope": "Finite-fragment charge-method sensitivity; not transferable block parameters or a force-field winner."
+    },
+    {
+      "model": "pyrene_COOH",
+      "candidate": "new_am1_bcc_charge_constrained_vsraw",
+      "formal_charge": 0,
+      "charge_sum_e": -1.1796119636642288e-16,
+      "atom_charge_RMS_difference_vs_current_e": 0.04103094942771077,
+      "roles": [
+        {
+          "role": "COOH_C",
+          "n_atoms": 1,
+          "mean_q_e": 0.6516655172413792,
+          "min_q_e": 0.6516655172413792,
+          "max_q_e": 0.6516655172413792,
+          "current_library_q_mean_e": 0.735
+        },
+        {
+          "role": "COOH_H",
+          "n_atoms": 1,
+          "mean_q_e": 0.44696551724137934,
+          "min_q_e": 0.44696551724137934,
+          "max_q_e": 0.44696551724137934,
+          "current_library_q_mean_e": 0.46
+        },
+        {
+          "role": "COOH_O",
+          "n_atoms": 1,
+          "mean_q_e": -0.5540344827586208,
+          "min_q_e": -0.5540344827586208,
+          "max_q_e": -0.5540344827586208,
+          "current_library_q_mean_e": -0.475
+        },
+        {
+          "role": "COOH_OH",
+          "n_atoms": 1,
+          "mean_q_e": -0.6081344827586207,
+          "min_q_e": -0.6081344827586207,
+          "max_q_e": -0.6081344827586207,
+          "current_library_q_mean_e": -0.605
+        },
+        {
+          "role": "COOH_anchor",
+          "n_atoms": 1,
+          "mean_q_e": -0.1346344827586207,
+          "min_q_e": -0.1346344827586207,
+          "max_q_e": -0.1346344827586207,
+          "current_library_q_mean_e": -0.115
+        },
+        {
+          "role": "edge_C",
+          "n_atoms": 9,
+          "mean_q_e": -0.10125670498084291,
+          "min_q_e": -0.12003448275862069,
+          "max_q_e": -0.05653448275862069,
+          "current_library_q_mean_e": -0.15
+        },
+        {
+          "role": "edge_H",
+          "n_atoms": 9,
+          "mean_q_e": 0.1418544061302682,
+          "min_q_e": 0.1359655172413793,
+          "max_q_e": 0.1589655172413793,
+          "current_library_q_mean_e": 0.15
+        },
+        {
+          "role": "scaffold_C",
+          "n_atoms": 6,
+          "mean_q_e": -0.027867816091954024,
+          "min_q_e": -0.04953448275862069,
+          "max_q_e": 0.01096551724137931,
+          "current_library_q_mean_e": 0.0
+        }
+      ],
+      "source_marker": "calculations/am1_bcc/pyrene_COOH/attempt_003/AM1_BCC_COMPLETE.json",
+      "artifact_hashes_verified": 23,
+      "scope": "Finite-fragment charge-method sensitivity; not transferable block parameters or a force-field winner."
+    },
+    {
+      "model": "pyrene_diol_cis",
+      "candidate": "new_am1_bcc_charge_constrained_vsraw",
+      "formal_charge": 0,
+      "charge_sum_e": -2.7755575615628914e-17,
+      "atom_charge_RMS_difference_vs_current_e": 0.041210652614207505,
+      "roles": [
+        {
+          "role": "edge_C",
+          "n_atoms": 10,
+          "mean_q_e": -0.11253333333333333,
+          "min_q_e": -0.12393333333333333,
+          "max_q_e": -0.10693333333333332,
+          "current_library_q_mean_e": -0.15
+        },
+        {
+          "role": "edge_H",
+          "n_atoms": 10,
+          "mean_q_e": 0.13456666666666667,
+          "min_q_e": 0.13356666666666667,
+          "max_q_e": 0.13556666666666667,
+          "current_library_q_mean_e": 0.15
+        },
+        {
+          "role": "hydroxyl_C",
+          "n_atoms": 2,
+          "mean_q_e": 0.22476666666666667,
+          "min_q_e": 0.22476666666666667,
+          "max_q_e": 0.22476666666666667,
+          "current_library_q_mean_e": 0.25
+        },
+        {
+          "role": "hydroxyl_H",
+          "n_atoms": 2,
+          "mean_q_e": 0.42006666666666664,
+          "min_q_e": 0.42006666666666664,
+          "max_q_e": 0.42006666666666664,
+          "current_library_q_mean_e": 0.39
+        },
+        {
+          "role": "hydroxyl_O",
+          "n_atoms": 2,
+          "mean_q_e": -0.5922333333333334,
+          "min_q_e": -0.5922333333333334,
+          "max_q_e": -0.5922333333333334,
+          "current_library_q_mean_e": -0.64
+        },
+        {
+          "role": "scaffold_C",
+          "n_atoms": 4,
+          "mean_q_e": -0.08138333333333332,
+          "min_q_e": -0.08138333333333332,
+          "max_q_e": -0.08138333333333332,
+          "current_library_q_mean_e": 0.0
+        }
+      ],
+      "source_marker": "calculations/am1_bcc/pyrene_diol_cis/attempt_003/AM1_BCC_COMPLETE.json",
+      "artifact_hashes_verified": 23,
+      "scope": "Finite-fragment charge-method sensitivity; not transferable block parameters or a force-field winner."
+    },
+    {
+      "model": "pyrene_diol_epoxide",
+      "candidate": "new_am1_bcc_charge_constrained_vsraw",
+      "formal_charge": 0,
+      "charge_sum_e": 1.249000902703301e-16,
+      "atom_charge_RMS_difference_vs_current_e": 0.03974074359335464,
+      "roles": [
+        {
+          "role": "edge_C",
+          "n_atoms": 10,
+          "mean_q_e": -0.12601225806451613,
+          "min_q_e": -0.1692322580645161,
+          "max_q_e": -0.09203225806451613,
+          "current_library_q_mean_e": -0.15
+        },
+        {
+          "role": "edge_H",
+          "n_atoms": 10,
+          "mean_q_e": 0.14036774193548388,
+          "min_q_e": 0.1359677419354839,
+          "max_q_e": 0.14796774193548387,
+          "current_library_q_mean_e": 0.15
+        },
+        {
+          "role": "epoxide_C",
+          "n_atoms": 2,
+          "mean_q_e": 0.11956774193548386,
+          "min_q_e": 0.10296774193548386,
+          "max_q_e": 0.13616774193548387,
+          "current_library_q_mean_e": 0.185
+        },
+        {
+          "role": "epoxide_O",
+          "n_atoms": 1,
+          "mean_q_e": -0.3586322580645161,
+          "min_q_e": -0.3586322580645161,
+          "max_q_e": -0.3586322580645161,
+          "current_library_q_mean_e": -0.37
+        },
+        {
+          "role": "hydroxyl_C",
+          "n_atoms": 2,
+          "mean_q_e": 0.22906774193548388,
+          "min_q_e": 0.21196774193548387,
+          "max_q_e": 0.24616774193548388,
+          "current_library_q_mean_e": 0.25
+        },
+        {
+          "role": "hydroxyl_H",
+          "n_atoms": 2,
+          "mean_q_e": 0.42546774193548387,
+          "min_q_e": 0.42296774193548387,
+          "max_q_e": 0.42796774193548387,
+          "current_library_q_mean_e": 0.39
+        },
+        {
+          "role": "hydroxyl_O",
+          "n_atoms": 2,
+          "mean_q_e": -0.582332258064516,
+          "min_q_e": -0.5888322580645161,
+          "max_q_e": -0.5758322580645161,
+          "current_library_q_mean_e": -0.64
+        },
+        {
+          "role": "scaffold_C",
+          "n_atoms": 2,
+          "mean_q_e": -0.08423225806451613,
+          "min_q_e": -0.12223225806451614,
+          "max_q_e": -0.04623225806451613,
+          "current_library_q_mean_e": 0.0
+        }
+      ],
+      "source_marker": "calculations/am1_bcc/pyrene_diol_epoxide/attempt_003/AM1_BCC_COMPLETE.json",
+      "artifact_hashes_verified": 23,
+      "scope": "Finite-fragment charge-method sensitivity; not transferable block parameters or a force-field winner."
+    },
+    {
+      "model": "pyrene_diol_trans",
+      "candidate": "new_am1_bcc_charge_constrained_vsraw",
+      "formal_charge": 0,
+      "charge_sum_e": 0.0,
+      "atom_charge_RMS_difference_vs_current_e": 0.04459100058681497,
+      "roles": [
+        {
+          "role": "edge_C",
+          "n_atoms": 10,
+          "mean_q_e": -0.1105,
+          "min_q_e": -0.1225,
+          "max_q_e": -0.10325,
+          "current_library_q_mean_e": -0.15
+        },
+        {
+          "role": "edge_H",
+          "n_atoms": 10,
+          "mean_q_e": 0.13440000000000002,
+          "min_q_e": 0.13325,
+          "max_q_e": 0.13575,
+          "current_library_q_mean_e": 0.15
+        },
+        {
+          "role": "hydroxyl_C",
+          "n_atoms": 2,
+          "mean_q_e": 0.2087,
+          "min_q_e": 0.2087,
+          "max_q_e": 0.2087,
+          "current_library_q_mean_e": 0.25
+        },
+        {
+          "role": "hydroxyl_H",
+          "n_atoms": 2,
+          "mean_q_e": 0.4075,
+          "min_q_e": 0.4075,
+          "max_q_e": 0.4075,
+          "current_library_q_mean_e": 0.39
+        },
+        {
+          "role": "hydroxyl_O",
+          "n_atoms": 2,
+          "mean_q_e": -0.5703,
+          "min_q_e": -0.5703,
+          "max_q_e": -0.5703,
+          "current_library_q_mean_e": -0.64
+        },
+        {
+          "role": "scaffold_C",
+          "n_atoms": 4,
+          "mean_q_e": -0.0827,
+          "min_q_e": -0.0827,
+          "max_q_e": -0.0827,
+          "current_library_q_mean_e": 0.0
+        }
+      ],
+      "source_marker": "calculations/am1_bcc/pyrene_diol_trans/attempt_003/AM1_BCC_COMPLETE.json",
+      "artifact_hashes_verified": 23,
+      "scope": "Finite-fragment charge-method sensitivity; not transferable block parameters or a force-field winner."
+    },
+    {
+      "model": "pyrene_epoxide",
+      "candidate": "new_am1_bcc_charge_constrained_vsraw",
+      "formal_charge": 0,
+      "charge_sum_e": 8.326672684688674e-17,
+      "atom_charge_RMS_difference_vs_current_e": 0.0361065296238988,
+      "roles": [
+        {
+          "role": "edge_C",
+          "n_atoms": 10,
+          "mean_q_e": -0.1106,
+          "min_q_e": -0.128,
+          "max_q_e": -0.1055,
+          "current_library_q_mean_e": -0.15
+        },
+        {
+          "role": "edge_H",
+          "n_atoms": 10,
+          "mean_q_e": 0.13540000000000002,
+          "min_q_e": 0.135,
+          "max_q_e": 0.1355,
+          "current_library_q_mean_e": 0.15
+        },
+        {
+          "role": "epoxide_C",
+          "n_atoms": 2,
+          "mean_q_e": 0.1542,
+          "min_q_e": 0.1542,
+          "max_q_e": 0.1542,
+          "current_library_q_mean_e": 0.185
+        },
+        {
+          "role": "epoxide_O",
+          "n_atoms": 1,
+          "mean_q_e": -0.3276,
+          "min_q_e": -0.3276,
+          "max_q_e": -0.3276,
+          "current_library_q_mean_e": -0.37
+        },
+        {
+          "role": "scaffold_C",
+          "n_atoms": 4,
+          "mean_q_e": -0.05720000000000001,
+          "min_q_e": -0.05720000000000001,
+          "max_q_e": -0.05720000000000001,
+          "current_library_q_mean_e": 0.0
+        }
+      ],
+      "source_marker": "calculations/am1_bcc/pyrene_epoxide/attempt_003/AM1_BCC_COMPLETE.json",
+      "artifact_hashes_verified": 23,
+      "scope": "Finite-fragment charge-method sensitivity; not transferable block parameters or a force-field winner."
+    },
+    {
+      "model": "pyrene_pristine",
+      "candidate": "new_am1_bcc_charge_constrained_vsraw",
+      "formal_charge": 0,
+      "charge_sum_e": -4.163336342344337e-17,
+      "atom_charge_RMS_difference_vs_current_e": 0.026822669913746003,
+      "roles": [
+        {
+          "role": "edge_C",
+          "n_atoms": 10,
+          "mean_q_e": -0.11707692307692308,
+          "min_q_e": -0.1270769230769231,
+          "max_q_e": -0.11407692307692308,
+          "current_library_q_mean_e": -0.15
+        },
+        {
+          "role": "edge_H",
+          "n_atoms": 10,
+          "mean_q_e": 0.13332307692307693,
+          "min_q_e": 0.13292307692307692,
+          "max_q_e": 0.13392307692307692,
+          "current_library_q_mean_e": 0.15
+        },
+        {
+          "role": "scaffold_C",
+          "n_atoms": 6,
+          "mean_q_e": -0.02707692307692308,
+          "min_q_e": -0.03307692307692308,
+          "max_q_e": -0.015076923076923078,
+          "current_library_q_mean_e": 0.0
+        }
+      ],
+      "source_marker": "calculations/am1_bcc/pyrene_pristine/attempt_004/AM1_BCC_COMPLETE.json",
+      "artifact_hashes_verified": 23,
+      "scope": "Finite-fragment charge-method sensitivity; not transferable block parameters or a force-field winner."
+    }
+  ],
+  "excluded": {
+    "pyrene_dione": "28/29 explicit BCC bonds; one native zero fallback. Separate diagnostic report, not accepted full-coverage candidate."
+  },
+  "final_parameter_set_selected": false
+}

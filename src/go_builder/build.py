@@ -69,26 +69,39 @@ def _minimum_image(delta, model):
     return fractional @ cell
 
 
+def _collision_free_vectorized(model, new_ids):
+    """Reject severe nonbonded overlaps with O(N) temporary arrays."""
+    atoms = model["atoms"]
+    atom_ids = np.fromiter((atom["id"] for atom in atoms), dtype=np.int64, count=len(atoms))
+    elements = np.asarray([atom["element"] for atom in atoms])
+    coords = np.asarray([atom["position"] for atom in atoms], dtype=float)
+    bonded_neighbors = {}
+    for bond in model["bonds"]:
+        bonded_neighbors.setdefault(bond["a"], set()).add(bond["b"])
+        bonded_neighbors.setdefault(bond["b"], set()).add(bond["a"])
+
+    for index, atom in enumerate(atoms):
+        if atom["id"] not in new_ids:
+            continue
+        distances = np.linalg.norm(_minimum_image(coords - coords[index], model), axis=1)
+        eligible = np.ones(len(atoms), dtype=bool)
+        eligible[index] = False
+        bonded_ids = bonded_neighbors.get(atom["id"])
+        if bonded_ids:
+            eligible &= ~np.isin(atom_ids, tuple(bonded_ids))
+        cutoffs = np.where((elements == "H") | (atom["element"] == "H"), 0.8, 1.25)
+        if np.any(distances[eligible] < cutoffs[eligible]):
+            return False
+    return True
+
+
 def _collision_free(model, new_ids):
     """Reject severe nonbonded overlaps, using periodic minimum images.
 
     This is a steric screen only. Passing it does not establish optimized
     bond angles, torsions, energetics, or suitability for dynamics.
     """
-    bonded = {frozenset((b["a"], b["b"])) for b in model["bonds"]}
-    atoms = model["atoms"]
-    coords = np.array([a["position"] for a in atoms])
-    for index, atom in enumerate(atoms):
-        if atom["id"] not in new_ids:
-            continue
-        distances = np.linalg.norm(_minimum_image(coords - coords[index], model), axis=1)
-        for j, other in enumerate(atoms):
-            if j == index or frozenset((atom["id"], other["id"])) in bonded:
-                continue
-            cutoff = 0.8 if "H" in (atom["element"], other["element"]) else 1.25
-            if distances[j] < cutoff:
-                return False
-    return True
+    return _collision_free_vectorized(model, new_ids)
 
 
 def _connected(model):
@@ -280,11 +293,17 @@ def _set_site(model, identifier, name, resname, resid, group_id, group, sp3=Fals
                 bond["order"] = 1.0
 
 
-def _outward(model, identifier):
-    ns = adjacency(model)[identifier]
-    coords = _coordinates(model)
+def _outward(model, identifier, *, neighbors=None, coordinates=None, cell=None):
+    if neighbors is None:
+        neighbors = adjacency(model)
+    if coordinates is None:
+        coordinates = _coordinates(model)
+    if cell is None:
+        cell = np.array(model["cell"])
+    ns = neighbors[identifier]
+    coords = coordinates
     direction = -sum(
-        (coords[j] + image @ np.array(model["cell"]) - coords[identifier] for j, image, _ in ns),
+        (coords[j] + image @ cell - coords[identifier] for j, image, _ in ns),
         start=np.zeros(3),
     )
     norm = np.linalg.norm(direction)
@@ -506,18 +525,25 @@ def _decorate(base, counts, fixed, faces, rng):
 
 def _cap_edges(model):
     ns = adjacency(model)
+    coordinates = _coordinates(model)
+    cell = np.array(model["cell"])
+    atoms_by_id = {atom["id"]: atom for atom in model["atoms"]}
+    next_resid = max(a.get("resid", 1) for a in model["atoms"]) + 1
     occupied = {i for g in model["metadata"]["groups"] for i in g["site_ids"]}
     for identifier, neighbors in ns.items():
-        atom = next(a for a in model["atoms"] if a["id"] == identifier)
+        atom = atoms_by_id[identifier]
         if (
             atom.get("metadata", {}).get("role") != "sheet_carbon"
             or len(neighbors) != 2
             or identifier in occupied
         ):
             continue
-        resid = max(a.get("resid", 1) for a in model["atoms"]) + 1
+        resid = next_resid
+        next_resid += 1
         atom.update(name="CH", resname="GRT", resid=resid)
-        outward = _outward(model, identifier)
+        outward = _outward(
+            model, identifier, neighbors=ns, coordinates=coordinates, cell=cell
+        )
         hydrogen = _add_atom(
             model,
             "H",

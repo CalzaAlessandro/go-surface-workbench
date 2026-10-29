@@ -1,0 +1,163 @@
+gaff2_native: PINNED UNFITTED BASELINE - NOT PRODUCTION VALIDATED
+MASS
+c              12.01000000    source gaff2.dat:2
+ca             12.01000000    source gaff2.dat:7
+cx             12.01000000    source gaff2.dat:16
+c6             12.01000000    source gaff2.dat:19
+ha             1.00800000    source gaff2.dat:28
+ho             1.00800000    source gaff2.dat:31
+o              16.00000000    source gaff2.dat:74
+oh             16.00000000    source gaff2.dat:75
+op             16.00000000    source gaff2.dat:76
+
+BOND
+c6-c6          226.81000000 1.53840000    source gaff2.dat:356
+c6-ca          239.73000000 1.52030000    source gaff2.dat:357
+c6-cx          234.27000000 1.52780000    source gaff2.dat:365
+c6-o           440.85000000 1.29760000    source gaff2.dat:393
+c6-oh          285.25000000 1.42410000    source gaff2.dat:394
+ca-ca          354.25000000 1.39860000    source gaff2.dat:405
+ca-cx          258.91000000 1.49550000    source gaff2.dat:416
+ca-ha          360.69000000 1.08600000    source gaff2.dat:421
+ca-o           549.99000000 1.23770000    source gaff2.dat:444
+ca-oh          348.55000000 1.36440000    source gaff2.dat:445
+c -c           219.37000000 1.54940000    source gaff2.dat:464
+c -c6          233.63000000 1.52870000    source gaff2.dat:468
+c -ca          262.84000000 1.49070000    source gaff2.dat:469
+c -cx          252.53000000 1.50350000    source gaff2.dat:528
+c -ha          368.80000000 1.10100000    source gaff2.dat:661
+c -o           590.60000000 1.21900000    source gaff2.dat:720
+c -oh          359.27000000 1.35560000    source gaff2.dat:721
+c -op          399.64000000 1.32510000    source gaff2.dat:722
+cx-cx          248.86000000 1.50820000    source gaff2.dat:798
+cx-oh          311.88000000 1.39720000    source gaff2.dat:825
+cx-op          273.64000000 1.43680000    source gaff2.dat:826
+ho-o           540.30000000 0.98100000    source gaff2.dat:933
+ho-oh          535.51000000 0.97250000    source gaff2.dat:934
+oh-oh          145.92000000 1.45560000    source gaff2.dat:1309
+o -o           141.40000000 1.43000000    source gaff2.dat:1323
+o -oh          116.98000000 1.52600000    source gaff2.dat:1324
+op-op          94.61000000 1.59680000    source gaff2.dat:1332
+
+ANGLE
+c6-c6-c6       60.18000000 111.06000000    source gaff2.dat:4004
+c6-c6-ca       60.28000000 111.97000000    source gaff2.dat:4005
+c6-c6-cx       60.28000000 111.46000000    source gaff2.dat:4013
+c6-c6-o        78.01000000 113.05000000    source gaff2.dat:4040
+c6-c6-oh       76.56000000 110.05000000    source gaff2.dat:4041
+c6-ca-ca       60.66000000 120.60000000    source gaff2.dat:4052
+c6-c -c6       59.34000000 115.66000000    source gaff2.dat:4056
+c6-c -ca       59.78000000 116.80000000    source gaff2.dat:4057
+c6-c -cx       60.05000000 114.81000000    source gaff2.dat:4074
+c6-c -o        76.56000000 122.34000000    source gaff2.dat:4112
+c6-c -oh       77.16000000 113.36000000    source gaff2.dat:4113
+c6-cx-c6       59.90000000 113.65000000    source gaff2.dat:4122
+c6-cx-ca       59.37000000 118.13000000    source gaff2.dat:4123
+c6-cx-cx       58.71000000 119.82000000    source gaff2.dat:4126
+c6-cx-op       74.71000000 115.66000000    source gaff2.dat:4130
+c6-oh-ho       65.23000000 107.07000000    source gaff2.dat:4246
+ca-c6-ca       60.61000000 112.10000000    source gaff2.dat:4414
+ca-c6-cx       60.08000000 113.53000000    source gaff2.dat:4420
+ca-c6-oh       77.00000000 110.34000000    source gaff2.dat:4438
+ca-ca-ca       63.67000000 120.02000000    source gaff2.dat:4444
+ca-ca-cx       61.17000000 120.95000000    source gaff2.dat:4455
+ca-ca-ha       44.90000000 119.88000000    source gaff2.dat:4459
+ca-ca-o        80.94000000 123.25000000    source gaff2.dat:4482
+ca-ca-oh       78.86000000 119.90000000    source gaff2.dat:4483
+ca-c -ca       60.27000000 117.93000000    source gaff2.dat:4501
+ca-c -cx       60.08000000 117.66000000    source gaff2.dat:4534
+ca-c -ha       47.20000000 114.12000000    source gaff2.dat:4618
+ca-c -o        77.96000000 122.60000000    source gaff2.dat:4628
+ca-c -oh       78.37000000 113.45000000    source gaff2.dat:4629
+ca-cx-ca       61.62000000 112.09000000    source gaff2.dat:4652
+ca-cx-cx       58.85000000 121.84000000    source gaff2.dat:4653
+ca-cx-oh       86.70000000 112.93000000    source gaff2.dat:4663
+ca-cx-op       74.79000000 118.22000000    source gaff2.dat:4664
+ca-oh-ho       67.41000000 108.58000000    source gaff2.dat:4882
+c -c6-c        59.98000000 113.20000000    source gaff2.dat:5122
+c -c6-c6       60.27000000 111.43000000    source gaff2.dat:5123
+c -c6-ca       61.20000000 109.36000000    source gaff2.dat:5124
+c -c6-cx       60.64000000 110.82000000    source gaff2.dat:5131
+c -c6-oh       77.57000000 108.01000000    source gaff2.dat:5153
+c -ca-c        64.50000000 120.00000000    source gaff2.dat:5158
+c -ca-ca       61.44000000 120.33000000    source gaff2.dat:5159
+c -ca-ha       46.90000000 115.90000000    source gaff2.dat:5162
+c -c -c        58.65000000 115.25000000    source gaff2.dat:5214
+c -c -c6       58.95000000 115.61000000    source gaff2.dat:5230
+c -c -ca       58.87000000 118.71000000    source gaff2.dat:5250
+c -c -cx       60.40000000 111.89000000    source gaff2.dat:5427
+c -c -ha       45.40000000 115.43000000    source gaff2.dat:5539
+c -c -o        76.23000000 120.79000000    source gaff2.dat:5681
+c -c -oh       76.97000000 111.92000000    source gaff2.dat:5682
+c -cx-c        59.48000000 119.01000000    source gaff2.dat:5745
+c -cx-c6       59.29000000 117.85000000    source gaff2.dat:5746
+c -cx-ca       60.61000000 115.24000000    source gaff2.dat:5747
+c -cx-cx       59.65000000 117.99000000    source gaff2.dat:5754
+c -cx-oh       72.46000000 128.25000000    source gaff2.dat:5770
+c -cx-op       75.62000000 114.98000000    source gaff2.dat:5771
+c -oh-ho       68.46000000 106.54000000    source gaff2.dat:7101
+c -op-cx       127.58000000 57.80000000    source gaff2.dat:7102
+cx-c6-cx       59.33000000 115.85000000    source gaff2.dat:7436
+cx-c6-oh       77.37000000 108.65000000    source gaff2.dat:7446
+cx-c -cx       60.80000000 113.92000000    source gaff2.dat:7454
+cx-c -o        77.42000000 122.72000000    source gaff2.dat:7468
+cx-c -oh       78.25000000 112.58000000    source gaff2.dat:7469
+cx-c -op       98.61000000 72.05000000    source gaff2.dat:7470
+cx-cx-cx       83.51000000 60.00000000    source gaff2.dat:7485
+cx-cx-oh       75.55000000 117.53000000    source gaff2.dat:7512
+cx-cx-op       105.29000000 59.10000000    source gaff2.dat:7513
+cx-oh-ho       66.51000000 106.76000000    source gaff2.dat:7562
+cx-op-cx       119.01000000 61.76000000    source gaff2.dat:7563
+cx-op-op       143.83000000 56.13000000    source gaff2.dat:7565
+ha-c -ha       37.40000000 115.61000000    source gaff2.dat:8298
+ha-c -o        66.50000000 121.94000000    source gaff2.dat:8301
+ha-c -oh       64.60000000 111.82000000    source gaff2.dat:8302
+ho-oh-ho       55.89000000 106.57000000    source gaff2.dat:8620
+ho-oh-o        77.85000000 97.99000000    source gaff2.dat:8635
+ho-oh-oh       80.94000000 99.70000000    source gaff2.dat:8636
+o -ca-o        118.70000000 126.82000000    source gaff2.dat:10333
+o -c -o        104.94000000 130.16000000    source gaff2.dat:10336
+o -c -oh       102.03000000 122.09000000    source gaff2.dat:10337
+o -c -op       97.51000000 137.49000000    source gaff2.dat:10338
+oh-c6-oh       97.05000000 111.50000000    source gaff2.dat:10373
+oh-ca-oh       110.60000000 120.00000000    source gaff2.dat:10377
+oh-c -oh       116.30000000 110.56000000    source gaff2.dat:10381
+oh-cx-oh       116.90000000 107.85000000    source gaff2.dat:10386
+op-cx-op       124.47000000 66.60000000    source gaff2.dat:10541
+
+DIHE
+X -c -c -X        4     1.20000000   180.00000000     2.00000000    source gaff2.dat:11152
+X -c -cx-X        6     0.00000000   180.00000000     2.00000000    source gaff2.dat:11162
+X -c -ca-X        4     4.00000000   180.00000000     2.00000000    source gaff2.dat:11164
+X -c -oh-X        2     4.60000000   180.00000000     2.00000000    source gaff2.dat:11176
+X -cx-cx-X        9     1.40000000     0.00000000     3.00000000    source gaff2.dat:11315
+X -ca-ca-X        4    14.50000000   180.00000000     2.00000000    source gaff2.dat:11347
+X -ca-oh-X        2     1.80000000   180.00000000     2.00000000    source gaff2.dat:11365
+X -oh-oh-X        1     1.60000000     0.00000000     2.00000000    source gaff2.dat:11640
+o -c -c6-c6       1     0.11000000     0.00000000    -2.00000000    source gaff2.dat:11772
+o -c -c6-c6       1     0.08000000   180.00000000    -3.00000000    source gaff2.dat:11773
+o -c -c6-c6       1    11.74000000     0.00000000     1.00000000    source gaff2.dat:11774
+ca-c -ca-ca       4     5.00000000   180.00000000     2.00000000    source gaff2.dat:11791
+o -c -ca-ca       1     0.58000000   180.00000000     2.00000000    source gaff2.dat:11795
+o -c -oh-ho       1     2.30000000   180.00000000    -2.00000000    source gaff2.dat:11871
+o -c -oh-ho       1     1.90000000     0.00000000     1.00000000    source gaff2.dat:11872
+ca-ca-oh-ho       1     0.85500000   180.00000000     2.00000000    source gaff2.dat:12299
+ho-oh-oh-ho       1     1.12000000     0.00000000     2.00000000    source gaff2.dat:12875
+
+IMPROPER
+X -o -c -o     1.10000000 180.00000000 2.00000000    source gaff2.dat:12970
+X -X -c -o     10.50000000 180.00000000 2.00000000    source gaff2.dat:12971
+X -X -ca-ha    1.10000000 180.00000000 2.00000000    source gaff2.dat:12972
+ca-ca-c -oh    1.10000000 180.00000000 2.00000000    source gaff2.dat:12998
+
+NONBON
+ha             1.47350000 0.01610000    source gaff2.dat:13014
+ho             0.30190000 0.00470000    source gaff2.dat:13016
+o              1.71070000 0.14630000    source gaff2.dat:13019
+op             1.77130000 0.07260000    source gaff2.dat:13021
+oh             1.82000000 0.09300000    source gaff2.dat:13023
+cx             1.90690000 0.10780000    source gaff2.dat:13045
+c6             1.90690000 0.10780000    source gaff2.dat:13048
+c              1.86060000 0.09880000    source gaff2.dat:13049
+ca             1.86060000 0.09880000    source gaff2.dat:13051
+

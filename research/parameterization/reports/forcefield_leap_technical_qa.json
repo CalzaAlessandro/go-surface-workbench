@@ -1,0 +1,245 @@
+{
+  "scope": "Technical topology construction only; not physical force-field validation.",
+  "cases": [
+    {
+      "candidate": "amber99sb_go_analogy",
+      "model": "pyrene_COO",
+      "exit_code": 0,
+      "reported_errors": [
+        4
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "amber99sb_go_analogy",
+      "model": "pyrene_COOH",
+      "exit_code": 0,
+      "reported_errors": [
+        2
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "amber99sb_go_analogy",
+      "model": "pyrene_diol_cis",
+      "exit_code": 0,
+      "reported_errors": [
+        12
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "amber99sb_go_analogy",
+      "model": "pyrene_diol_epoxide",
+      "exit_code": 0,
+      "reported_errors": [
+        47
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "amber99sb_go_analogy",
+      "model": "pyrene_diol_trans",
+      "exit_code": 0,
+      "reported_errors": [
+        12
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "amber99sb_go_analogy",
+      "model": "pyrene_dione",
+      "exit_code": 0,
+      "reported_errors": [
+        8
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "amber99sb_go_analogy",
+      "model": "pyrene_epoxide",
+      "exit_code": 0,
+      "reported_errors": [
+        28
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "amber99sb_go_analogy",
+      "model": "pyrene_pristine",
+      "exit_code": 0,
+      "reported_errors": [
+        0
+      ],
+      "topology_present": true,
+      "passed_technical_only": true
+    },
+    {
+      "candidate": "gaff2_native",
+      "model": "pyrene_COO",
+      "exit_code": 0,
+      "reported_errors": [
+        0
+      ],
+      "topology_present": true,
+      "passed_technical_only": true
+    },
+    {
+      "candidate": "gaff2_native",
+      "model": "pyrene_COOH",
+      "exit_code": 0,
+      "reported_errors": [
+        0
+      ],
+      "topology_present": true,
+      "passed_technical_only": true
+    },
+    {
+      "candidate": "gaff2_native",
+      "model": "pyrene_diol_cis",
+      "exit_code": 0,
+      "reported_errors": [
+        39
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "gaff2_native",
+      "model": "pyrene_diol_epoxide",
+      "exit_code": 0,
+      "reported_errors": [
+        72
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "gaff2_native",
+      "model": "pyrene_diol_trans",
+      "exit_code": 0,
+      "reported_errors": [
+        39
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "gaff2_native",
+      "model": "pyrene_dione",
+      "exit_code": 0,
+      "reported_errors": [
+        0
+      ],
+      "topology_present": true,
+      "passed_technical_only": true
+    },
+    {
+      "candidate": "gaff2_native",
+      "model": "pyrene_epoxide",
+      "exit_code": 0,
+      "reported_errors": [
+        28
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "gaff2_native",
+      "model": "pyrene_pristine",
+      "exit_code": 0,
+      "reported_errors": [
+        0
+      ],
+      "topology_present": true,
+      "passed_technical_only": true
+    },
+    {
+      "candidate": "gaff_native",
+      "model": "pyrene_COO",
+      "exit_code": 0,
+      "reported_errors": [
+        0
+      ],
+      "topology_present": true,
+      "passed_technical_only": true
+    },
+    {
+      "candidate": "gaff_native",
+      "model": "pyrene_COOH",
+      "exit_code": 0,
+      "reported_errors": [
+        0
+      ],
+      "topology_present": true,
+      "passed_technical_only": true
+    },
+    {
+      "candidate": "gaff_native",
+      "model": "pyrene_diol_cis",
+      "exit_code": 0,
+      "reported_errors": [
+        0
+      ],
+      "topology_present": true,
+      "passed_technical_only": true
+    },
+    {
+      "candidate": "gaff_native",
+      "model": "pyrene_diol_epoxide",
+      "exit_code": 0,
+      "reported_errors": [
+        39
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "gaff_native",
+      "model": "pyrene_diol_trans",
+      "exit_code": 0,
+      "reported_errors": [
+        0
+      ],
+      "topology_present": true,
+      "passed_technical_only": true
+    },
+    {
+      "candidate": "gaff_native",
+      "model": "pyrene_dione",
+      "exit_code": 0,
+      "reported_errors": [
+        0
+      ],
+      "topology_present": true,
+      "passed_technical_only": true
+    },
+    {
+      "candidate": "gaff_native",
+      "model": "pyrene_epoxide",
+      "exit_code": 0,
+      "reported_errors": [
+        28
+      ],
+      "topology_present": false,
+      "passed_technical_only": false
+    },
+    {
+      "candidate": "gaff_native",
+      "model": "pyrene_pristine",
+      "exit_code": 0,
+      "reported_errors": [
+        0
+      ],
+      "topology_present": true,
+      "passed_technical_only": true
+    }
+  ]
+}

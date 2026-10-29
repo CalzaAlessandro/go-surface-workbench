@@ -1,0 +1,20 @@
+{
+  "scientific_status": "new_baseline_candidates_not_final_fitted_parameters",
+  "candidates": {
+    "gaff_native": {
+      "path": "gaff_native/candidate.frcmod",
+      "gaps": 33,
+      "status": "unfitted_baseline_not_validated_for_production"
+    },
+    "gaff2_native": {
+      "path": "gaff2_native/candidate.frcmod",
+      "gaps": 67,
+      "status": "unfitted_baseline_not_validated_for_production"
+    },
+    "amber99sb_go_analogy": {
+      "path": "amber99sb_go_analogy/candidate.frcmod",
+      "gaps": 43,
+      "status": "unfitted_baseline_not_validated_for_production"
+    }
+  }
+}

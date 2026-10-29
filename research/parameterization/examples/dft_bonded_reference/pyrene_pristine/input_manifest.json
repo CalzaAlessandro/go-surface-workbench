@@ -1,0 +1,10 @@
+{
+  "model_id": "pyrene_pristine",
+  "method": "wB97X-D/6-311++G(d,p)",
+  "scope": "Gas-phase finite-fragment geometry/Hessian/stability benchmark for bonded parameters; not new RESP or LJ model.",
+  "initial_model_sha256": "ce0f298582810b97d01c7357852e554761cf26d8389da97daa50a26434f9df61",
+  "input_sha256": "3341dd3ae7cf2d71e968f96e54dc8a6f88c0a0533bd6bbdc5ccbb9d0cf99788c",
+  "nuclear_optimization": true,
+  "normal_mode_scaling_applied": false,
+  "parameter_fit_performed": false
+}

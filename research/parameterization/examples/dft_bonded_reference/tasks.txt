@@ -1,0 +1,8 @@
+pyrene_COO
+pyrene_COOH
+pyrene_diol_cis
+pyrene_diol_epoxide
+pyrene_diol_trans
+pyrene_dione
+pyrene_epoxide
+pyrene_pristine

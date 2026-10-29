@@ -1,0 +1,63 @@
+{
+  "source": "papers/Pinto2023_SI.pdf",
+  "locator": "Table S1, page S10",
+  "rows": [
+    {
+      "nominal_C_over_O": 1.8,
+      "hydroxyl_upper": 1177,
+      "hydroxyl_lower": 1135,
+      "epoxide_upper": 1170,
+      "epoxide_lower": 1263,
+      "aromatic_carbon_count": 1362
+    },
+    {
+      "nominal_C_over_O": 2.0,
+      "hydroxyl_upper": 1048,
+      "hydroxyl_lower": 1106,
+      "epoxide_upper": 1089,
+      "epoxide_lower": 1027,
+      "aromatic_carbon_count": 2154
+    },
+    {
+      "nominal_C_over_O": 2.2,
+      "hydroxyl_upper": 953,
+      "hydroxyl_lower": 977,
+      "epoxide_upper": 994,
+      "epoxide_lower": 958,
+      "aromatic_carbon_count": 2706
+    },
+    {
+      "nominal_C_over_O": 2.4,
+      "hydroxyl_upper": 867,
+      "hydroxyl_lower": 859,
+      "epoxide_upper": 880,
+      "epoxide_lower": 953,
+      "aromatic_carbon_count": 3148
+    },
+    {
+      "nominal_C_over_O": 2.6,
+      "hydroxyl_upper": 834,
+      "hydroxyl_lower": 780,
+      "epoxide_upper": 832,
+      "epoxide_lower": 839,
+      "aromatic_carbon_count": 3584
+    },
+    {
+      "nominal_C_over_O": 2.8,
+      "hydroxyl_upper": 753,
+      "hydroxyl_lower": 779,
+      "epoxide_upper": 746,
+      "epoxide_lower": 772,
+      "aromatic_carbon_count": 3972
+    },
+    {
+      "nominal_C_over_O": 3.0,
+      "hydroxyl_upper": 718,
+      "hydroxyl_lower": 714,
+      "epoxide_upper": 698,
+      "epoxide_lower": 717,
+      "aromatic_carbon_count": 4278
+    }
+  ],
+  "note": "Functional-group counts are not O/C percentages. Each epoxide contains one O and two functionalized C atoms; each hydroxyl has one O and one functionalized C. Original periodic source-sheet family only."
+}

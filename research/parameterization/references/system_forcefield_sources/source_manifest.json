@@ -1,0 +1,54 @@
+{
+  "AMBERHOME": "/usr/local/amber24u3+at25",
+  "files": [
+    {
+      "source": "/usr/local/amber24u3+at25/dat/leap/parm/gaff.dat",
+      "copy": "gaff.dat",
+      "sha256": "21ce262ab4af254c2f2b4bf95f4413c2a6593c67faa31ffc7108b7dd07a63d09"
+    },
+    {
+      "source": "/usr/local/amber24u3+at25/dat/leap/parm/gaff2.dat",
+      "copy": "gaff2.dat",
+      "sha256": "14ad62c8e532c47e2e400e2ca6ad8052b33bda4c4b9bc6f49b6a528e527512be"
+    },
+    {
+      "source": "/usr/local/amber24u3+at25/dat/leap/parm/parm99.dat",
+      "copy": "parm99.dat",
+      "sha256": "3997101649f048522213c7ea1445c47e71830c5066eba2b4cc2c681a6248e198"
+    },
+    {
+      "source": "/usr/local/amber24u3+at25/dat/leap/parm/parm10.dat",
+      "copy": "parm10.dat",
+      "sha256": "dc0c02d28fb7ee4f04d0a5edee3cd62968ba5e9bdb69e0f728bf01d242d7d062"
+    },
+    {
+      "source": "/usr/local/amber24u3+at25/dat/leap/parm/frcmod.ff99SB",
+      "copy": "frcmod.ff99SB",
+      "sha256": "35e6013b305afdb72c5668f40f867ff0bd9587ab09128397854a5ddd2d21c56b"
+    },
+    {
+      "source": "/usr/local/amber24u3+at25/dat/leap/parm/frcmod.ff19SB",
+      "copy": "frcmod.ff19SB",
+      "sha256": "36735a8bacb9c65760422ba67d4a8681f4069259888e9daab3635b83c55be269"
+    },
+    {
+      "source": "/usr/local/amber24u3+at25/dat/leap/cmd/leaprc.gaff",
+      "copy": "leaprc.gaff",
+      "sha256": "901104629d8c7566a1179cea5f4499d69ac7d5e914d5ea30f80021393c8bcde7"
+    },
+    {
+      "source": "/usr/local/amber24u3+at25/dat/leap/cmd/leaprc.gaff2",
+      "copy": "leaprc.gaff2",
+      "sha256": "4f8f713bf7cc38d72ee0c4f2fa4178cef2a87f2a3b37abef1f77ed39e0ff94ca"
+    },
+    {
+      "source": "/usr/local/amber24u3+at25/dat/leap/cmd/leaprc.protein.ff99SB",
+      "status": "missing"
+    },
+    {
+      "source": "/usr/local/amber24u3+at25/dat/leap/cmd/leaprc.protein.ff19SB",
+      "copy": "leaprc.protein.ff19SB",
+      "sha256": "bcbfc9c1b0a2e11705f60113a654b95c89511f487c74238ec0389eea9b8741ac"
+    }
+  ]
+}

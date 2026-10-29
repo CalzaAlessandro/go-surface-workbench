@@ -1,0 +1,5865 @@
+{
+  "candidate": "gaff2_native",
+  "status": "unfitted_baseline_not_validated_for_production",
+  "base_force_field": "AMBER General Force Field for organic molecules (Version 2.2.20, March 2021)",
+  "dependencies": [
+    {
+      "file": "gaff2.dat",
+      "sha256": "14ad62c8e532c47e2e400e2ca6ad8052b33bda4c4b9bc6f49b6a528e527512be",
+      "header": "AMBER General Force Field for organic molecules (Version 2.2.20, March 2021)"
+    }
+  ],
+  "role_types": {
+    "scaffold_C": "ca",
+    "edge_C": "ca",
+    "edge_H": "ha",
+    "hydroxyl_C": "c6",
+    "hydroxyl_O": "oh",
+    "hydroxyl_H": "ho",
+    "epoxide_C": "cx",
+    "epoxide_O": "op",
+    "carbonyl_C": "c",
+    "carbonyl_O": "o",
+    "COOH_anchor": "ca",
+    "COOH_C": "c",
+    "COOH_O": "o",
+    "COOH_OH": "oh",
+    "COOH_H": "ho",
+    "COO_anchor": "ca",
+    "COO_C": "c",
+    "COO_O": "o"
+  },
+  "parameter_counts": {
+    "MASS": 9,
+    "BOND": 27,
+    "ANGLE": 84,
+    "DIHE": 17,
+    "IMPROPER": 4,
+    "NONBON": 9
+  },
+  "candidate_sha256": "52ade446b4c0eb39a13ade8f99358f0b7acf739873cd949ffaa1159c033e41df",
+  "requires_graph_specific_typing_validation": true,
+  "model_contracts": {
+    "pyrene_COO": {
+      "atoms": [
+        {
+          "atom_id": 1,
+          "element": "C",
+          "role": "COO_anchor",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 2,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 3,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 4,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 5,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 6,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 7,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 8,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 9,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 10,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 11,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 12,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 13,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 14,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 15,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 16,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 17,
+          "element": "C",
+          "role": "COO_C",
+          "atom_type": "c"
+        },
+        {
+          "atom_id": 18,
+          "element": "O",
+          "role": "COO_O",
+          "atom_type": "o"
+        },
+        {
+          "atom_id": 19,
+          "element": "O",
+          "role": "COO_O",
+          "atom_type": "o"
+        },
+        {
+          "atom_id": 20,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 21,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 22,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 23,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 24,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 25,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 26,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 27,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 28,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        }
+      ],
+      "formal_charge": -1,
+      "partial_charges": "not_assigned_by_frcmod_generation",
+      "typing_status": "declared_role_contract_requires_native_graph_typing_review",
+      "graph_term_gaps": [
+        {
+          "model_id": "pyrene_COO",
+          "section": "IMPROPER",
+          "types": [
+            "ca",
+            "ca",
+            "ca",
+            "c"
+          ],
+          "example_atom_ids": [
+            2,
+            14,
+            1,
+            17
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_COO",
+          "section": "IMPROPER",
+          "types": [
+            "ca",
+            "ca",
+            "ca",
+            "ca"
+          ],
+          "example_atom_ids": [
+            6,
+            10,
+            16,
+            15
+          ],
+          "status": "unresolved_no_numeric_padding"
+        }
+      ],
+      "improper_matching": "coverage screen permits outer permutations with center third; actual LEaP matching still required"
+    },
+    "pyrene_COOH": {
+      "atoms": [
+        {
+          "atom_id": 1,
+          "element": "C",
+          "role": "COOH_anchor",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 2,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 3,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 4,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 5,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 6,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 7,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 8,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 9,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 10,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 11,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 12,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 13,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 14,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 15,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 16,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 17,
+          "element": "C",
+          "role": "COOH_C",
+          "atom_type": "c"
+        },
+        {
+          "atom_id": 18,
+          "element": "O",
+          "role": "COOH_O",
+          "atom_type": "o"
+        },
+        {
+          "atom_id": 19,
+          "element": "O",
+          "role": "COOH_OH",
+          "atom_type": "oh"
+        },
+        {
+          "atom_id": 20,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 21,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 22,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 23,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 24,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 25,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 26,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 27,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 28,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 29,
+          "element": "H",
+          "role": "COOH_H",
+          "atom_type": "ho"
+        }
+      ],
+      "formal_charge": 0,
+      "partial_charges": "not_assigned_by_frcmod_generation",
+      "typing_status": "declared_role_contract_requires_native_graph_typing_review",
+      "graph_term_gaps": [
+        {
+          "model_id": "pyrene_COOH",
+          "section": "IMPROPER",
+          "types": [
+            "ca",
+            "ca",
+            "ca",
+            "c"
+          ],
+          "example_atom_ids": [
+            2,
+            14,
+            1,
+            17
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_COOH",
+          "section": "IMPROPER",
+          "types": [
+            "ca",
+            "ca",
+            "ca",
+            "ca"
+          ],
+          "example_atom_ids": [
+            6,
+            10,
+            16,
+            15
+          ],
+          "status": "unresolved_no_numeric_padding"
+        }
+      ],
+      "improper_matching": "coverage screen permits outer permutations with center third; actual LEaP matching still required"
+    },
+    "pyrene_diol_cis": {
+      "atoms": [
+        {
+          "atom_id": 1,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 2,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 3,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 4,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 5,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 6,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 7,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 8,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 9,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 10,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 11,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 12,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 13,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 14,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 15,
+          "element": "C",
+          "role": "hydroxyl_C",
+          "atom_type": "c6"
+        },
+        {
+          "atom_id": 16,
+          "element": "C",
+          "role": "hydroxyl_C",
+          "atom_type": "c6"
+        },
+        {
+          "atom_id": 17,
+          "element": "O",
+          "role": "hydroxyl_O",
+          "atom_type": "oh"
+        },
+        {
+          "atom_id": 18,
+          "element": "O",
+          "role": "hydroxyl_O",
+          "atom_type": "oh"
+        },
+        {
+          "atom_id": 19,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 20,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 21,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 22,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 23,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 24,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 25,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 26,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 27,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 28,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 29,
+          "element": "H",
+          "role": "hydroxyl_H",
+          "atom_type": "ho"
+        },
+        {
+          "atom_id": 30,
+          "element": "H",
+          "role": "hydroxyl_H",
+          "atom_type": "ho"
+        }
+      ],
+      "formal_charge": 0,
+      "partial_charges": "not_assigned_by_frcmod_generation",
+      "typing_status": "declared_role_contract_requires_native_graph_typing_review",
+      "graph_term_gaps": [
+        {
+          "model_id": "pyrene_diol_cis",
+          "section": "DIHE",
+          "types": [
+            "c6",
+            "c6",
+            "ca",
+            "ca"
+          ],
+          "example_atom_ids": [
+            15,
+            16,
+            10,
+            11
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_cis",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "ca",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            18,
+            16,
+            10,
+            11
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_cis",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "ca",
+            "ca"
+          ],
+          "example_atom_ids": [
+            6,
+            16,
+            10,
+            11
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_cis",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            13,
+            15,
+            16,
+            18
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_cis",
+          "section": "DIHE",
+          "types": [
+            "oh",
+            "c6",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            17,
+            15,
+            16,
+            18
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_cis",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "c6",
+            "ca"
+          ],
+          "example_atom_ids": [
+            13,
+            15,
+            16,
+            6
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_cis",
+          "section": "DIHE",
+          "types": [
+            "c6",
+            "c6",
+            "oh",
+            "ho"
+          ],
+          "example_atom_ids": [
+            15,
+            16,
+            18,
+            30
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_cis",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "oh",
+            "ho"
+          ],
+          "example_atom_ids": [
+            6,
+            16,
+            18,
+            30
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_cis",
+          "section": "IMPROPER",
+          "types": [
+            "ca",
+            "ca",
+            "ca",
+            "c6"
+          ],
+          "example_atom_ids": [
+            12,
+            14,
+            13,
+            15
+          ],
+          "status": "unresolved_no_numeric_padding"
+        }
+      ],
+      "improper_matching": "coverage screen permits outer permutations with center third; actual LEaP matching still required"
+    },
+    "pyrene_diol_epoxide": {
+      "atoms": [
+        {
+          "atom_id": 1,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 2,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 3,
+          "element": "C",
+          "role": "hydroxyl_C",
+          "atom_type": "c6"
+        },
+        {
+          "atom_id": 4,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 5,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 6,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 7,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 8,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 9,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 10,
+          "element": "C",
+          "role": "epoxide_C",
+          "atom_type": "cx"
+        },
+        {
+          "atom_id": 11,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 12,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 13,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 14,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 15,
+          "element": "C",
+          "role": "hydroxyl_C",
+          "atom_type": "c6"
+        },
+        {
+          "atom_id": 16,
+          "element": "C",
+          "role": "epoxide_C",
+          "atom_type": "cx"
+        },
+        {
+          "atom_id": 17,
+          "element": "O",
+          "role": "hydroxyl_O",
+          "atom_type": "oh"
+        },
+        {
+          "atom_id": 18,
+          "element": "O",
+          "role": "hydroxyl_O",
+          "atom_type": "oh"
+        },
+        {
+          "atom_id": 19,
+          "element": "O",
+          "role": "epoxide_O",
+          "atom_type": "op"
+        },
+        {
+          "atom_id": 20,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 21,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 22,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 23,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 24,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 25,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 26,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 27,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 28,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 29,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 30,
+          "element": "H",
+          "role": "hydroxyl_H",
+          "atom_type": "ho"
+        },
+        {
+          "atom_id": 31,
+          "element": "H",
+          "role": "hydroxyl_H",
+          "atom_type": "ho"
+        }
+      ],
+      "formal_charge": 0,
+      "partial_charges": "not_assigned_by_frcmod_generation",
+      "typing_status": "declared_role_contract_requires_native_graph_typing_review",
+      "graph_term_gaps": [
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "ANGLE",
+          "types": [
+            "c6",
+            "ca",
+            "ha"
+          ],
+          "example_atom_ids": [
+            3,
+            4,
+            22
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "ANGLE",
+          "types": [
+            "cx",
+            "ca",
+            "ha"
+          ],
+          "example_atom_ids": [
+            10,
+            11,
+            27
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "ca",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            14,
+            13,
+            15,
+            17
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "ca",
+            "ca"
+          ],
+          "example_atom_ids": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "c6",
+            "c6",
+            "ca",
+            "ca"
+          ],
+          "example_atom_ids": [
+            14,
+            13,
+            15,
+            3
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ha",
+            "ca",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            18,
+            3,
+            4,
+            22
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "ca",
+            "ha"
+          ],
+          "example_atom_ids": [
+            2,
+            3,
+            4,
+            22
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "c6",
+            "c6",
+            "ca",
+            "ha"
+          ],
+          "example_atom_ids": [
+            15,
+            3,
+            4,
+            22
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "ca",
+            "cx",
+            "cx"
+          ],
+          "example_atom_ids": [
+            10,
+            16,
+            6,
+            7
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "ca",
+            "cx",
+            "op"
+          ],
+          "example_atom_ids": [
+            19,
+            16,
+            6,
+            7
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "ca",
+            "cx",
+            "ca"
+          ],
+          "example_atom_ids": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "cx",
+            "cx",
+            "ca",
+            "ha"
+          ],
+          "example_atom_ids": [
+            16,
+            10,
+            11,
+            27
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ha",
+            "ca",
+            "cx",
+            "op"
+          ],
+          "example_atom_ids": [
+            19,
+            10,
+            11,
+            27
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "cx",
+            "ca",
+            "ha"
+          ],
+          "example_atom_ids": [
+            9,
+            10,
+            11,
+            27
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "ca",
+            "c6",
+            "cx"
+          ],
+          "example_atom_ids": [
+            14,
+            13,
+            15,
+            16
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "cx",
+            "cx",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            17,
+            15,
+            16,
+            10
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "oh",
+            "c6",
+            "cx",
+            "op"
+          ],
+          "example_atom_ids": [
+            17,
+            15,
+            16,
+            19
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "cx",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            17,
+            15,
+            16,
+            6
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "c6",
+            "c6",
+            "cx",
+            "cx"
+          ],
+          "example_atom_ids": [
+            3,
+            15,
+            16,
+            10
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "c6",
+            "c6",
+            "cx",
+            "op"
+          ],
+          "example_atom_ids": [
+            3,
+            15,
+            16,
+            19
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "c6",
+            "c6",
+            "cx",
+            "ca"
+          ],
+          "example_atom_ids": [
+            3,
+            15,
+            16,
+            6
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "cx",
+            "cx"
+          ],
+          "example_atom_ids": [
+            13,
+            15,
+            16,
+            10
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "cx",
+            "op"
+          ],
+          "example_atom_ids": [
+            13,
+            15,
+            16,
+            19
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "cx",
+            "ca"
+          ],
+          "example_atom_ids": [
+            13,
+            15,
+            16,
+            6
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "c6",
+            "cx"
+          ],
+          "example_atom_ids": [
+            16,
+            15,
+            3,
+            4
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "cx",
+            "c6",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            16,
+            15,
+            3,
+            18
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            13,
+            15,
+            3,
+            18
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "oh",
+            "c6",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            17,
+            15,
+            3,
+            18
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "c6",
+            "ca"
+          ],
+          "example_atom_ids": [
+            13,
+            15,
+            3,
+            4
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "c6",
+            "cx",
+            "ca",
+            "ca"
+          ],
+          "example_atom_ids": [
+            15,
+            16,
+            6,
+            7
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "cx",
+            "c6",
+            "oh",
+            "ho"
+          ],
+          "example_atom_ids": [
+            16,
+            15,
+            17,
+            30
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "c6",
+            "c6",
+            "oh",
+            "ho"
+          ],
+          "example_atom_ids": [
+            15,
+            3,
+            18,
+            31
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "oh",
+            "ho"
+          ],
+          "example_atom_ids": [
+            4,
+            3,
+            18,
+            31
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "cx",
+            "op",
+            "cx"
+          ],
+          "example_atom_ids": [
+            11,
+            10,
+            19,
+            16
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "DIHE",
+          "types": [
+            "c6",
+            "cx",
+            "op",
+            "cx"
+          ],
+          "example_atom_ids": [
+            15,
+            16,
+            19,
+            10
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "IMPROPER",
+          "types": [
+            "ca",
+            "ca",
+            "ca",
+            "cx"
+          ],
+          "example_atom_ids": [
+            5,
+            7,
+            6,
+            16
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_epoxide",
+          "section": "IMPROPER",
+          "types": [
+            "ca",
+            "ca",
+            "ca",
+            "c6"
+          ],
+          "example_atom_ids": [
+            12,
+            14,
+            13,
+            15
+          ],
+          "status": "unresolved_no_numeric_padding"
+        }
+      ],
+      "improper_matching": "coverage screen permits outer permutations with center third; actual LEaP matching still required"
+    },
+    "pyrene_diol_trans": {
+      "atoms": [
+        {
+          "atom_id": 1,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 2,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 3,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 4,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 5,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 6,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 7,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 8,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 9,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 10,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 11,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 12,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 13,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 14,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 15,
+          "element": "C",
+          "role": "hydroxyl_C",
+          "atom_type": "c6"
+        },
+        {
+          "atom_id": 16,
+          "element": "C",
+          "role": "hydroxyl_C",
+          "atom_type": "c6"
+        },
+        {
+          "atom_id": 17,
+          "element": "O",
+          "role": "hydroxyl_O",
+          "atom_type": "oh"
+        },
+        {
+          "atom_id": 18,
+          "element": "O",
+          "role": "hydroxyl_O",
+          "atom_type": "oh"
+        },
+        {
+          "atom_id": 19,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 20,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 21,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 22,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 23,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 24,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 25,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 26,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 27,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 28,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 29,
+          "element": "H",
+          "role": "hydroxyl_H",
+          "atom_type": "ho"
+        },
+        {
+          "atom_id": 30,
+          "element": "H",
+          "role": "hydroxyl_H",
+          "atom_type": "ho"
+        }
+      ],
+      "formal_charge": 0,
+      "partial_charges": "not_assigned_by_frcmod_generation",
+      "typing_status": "declared_role_contract_requires_native_graph_typing_review",
+      "graph_term_gaps": [
+        {
+          "model_id": "pyrene_diol_trans",
+          "section": "DIHE",
+          "types": [
+            "c6",
+            "c6",
+            "ca",
+            "ca"
+          ],
+          "example_atom_ids": [
+            15,
+            16,
+            10,
+            11
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_trans",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "ca",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            18,
+            16,
+            10,
+            11
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_trans",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "ca",
+            "ca"
+          ],
+          "example_atom_ids": [
+            6,
+            16,
+            10,
+            11
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_trans",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            13,
+            15,
+            16,
+            18
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_trans",
+          "section": "DIHE",
+          "types": [
+            "oh",
+            "c6",
+            "c6",
+            "oh"
+          ],
+          "example_atom_ids": [
+            17,
+            15,
+            16,
+            18
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_trans",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "c6",
+            "ca"
+          ],
+          "example_atom_ids": [
+            13,
+            15,
+            16,
+            6
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_trans",
+          "section": "DIHE",
+          "types": [
+            "c6",
+            "c6",
+            "oh",
+            "ho"
+          ],
+          "example_atom_ids": [
+            15,
+            16,
+            18,
+            30
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_trans",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "c6",
+            "oh",
+            "ho"
+          ],
+          "example_atom_ids": [
+            6,
+            16,
+            18,
+            30
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_diol_trans",
+          "section": "IMPROPER",
+          "types": [
+            "ca",
+            "ca",
+            "ca",
+            "c6"
+          ],
+          "example_atom_ids": [
+            12,
+            14,
+            13,
+            15
+          ],
+          "status": "unresolved_no_numeric_padding"
+        }
+      ],
+      "improper_matching": "coverage screen permits outer permutations with center third; actual LEaP matching still required"
+    },
+    "pyrene_dione": {
+      "atoms": [
+        {
+          "atom_id": 1,
+          "element": "C",
+          "role": "carbonyl_C",
+          "atom_type": "c"
+        },
+        {
+          "atom_id": 2,
+          "element": "C",
+          "role": "carbonyl_C",
+          "atom_type": "c"
+        },
+        {
+          "atom_id": 3,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 4,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 5,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 6,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 7,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 8,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 9,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 10,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 11,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 12,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 13,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 14,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 15,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 16,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 17,
+          "element": "O",
+          "role": "carbonyl_O",
+          "atom_type": "o"
+        },
+        {
+          "atom_id": 18,
+          "element": "O",
+          "role": "carbonyl_O",
+          "atom_type": "o"
+        },
+        {
+          "atom_id": 19,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 20,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 21,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 22,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 23,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 24,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 25,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 26,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        }
+      ],
+      "formal_charge": 0,
+      "partial_charges": "not_assigned_by_frcmod_generation",
+      "typing_status": "declared_role_contract_requires_native_graph_typing_review",
+      "graph_term_gaps": [
+        {
+          "model_id": "pyrene_dione",
+          "section": "IMPROPER",
+          "types": [
+            "c",
+            "ca",
+            "ca",
+            "ca"
+          ],
+          "example_atom_ids": [
+            2,
+            4,
+            3,
+            15
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_dione",
+          "section": "IMPROPER",
+          "types": [
+            "ca",
+            "ca",
+            "ca",
+            "ca"
+          ],
+          "example_atom_ids": [
+            6,
+            10,
+            16,
+            15
+          ],
+          "status": "unresolved_no_numeric_padding"
+        }
+      ],
+      "improper_matching": "coverage screen permits outer permutations with center third; actual LEaP matching still required"
+    },
+    "pyrene_epoxide": {
+      "atoms": [
+        {
+          "atom_id": 1,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 2,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 3,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 4,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 5,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 6,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 7,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 8,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 9,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 10,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 11,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 12,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 13,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 14,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 15,
+          "element": "C",
+          "role": "epoxide_C",
+          "atom_type": "cx"
+        },
+        {
+          "atom_id": 16,
+          "element": "C",
+          "role": "epoxide_C",
+          "atom_type": "cx"
+        },
+        {
+          "atom_id": 17,
+          "element": "O",
+          "role": "epoxide_O",
+          "atom_type": "op"
+        },
+        {
+          "atom_id": 18,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 19,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 20,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 21,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 22,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 23,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 24,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 25,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 26,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 27,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        }
+      ],
+      "formal_charge": 0,
+      "partial_charges": "not_assigned_by_frcmod_generation",
+      "typing_status": "declared_role_contract_requires_native_graph_typing_review",
+      "graph_term_gaps": [
+        {
+          "model_id": "pyrene_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "ca",
+            "cx",
+            "cx"
+          ],
+          "example_atom_ids": [
+            15,
+            16,
+            10,
+            11
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "ca",
+            "cx",
+            "op"
+          ],
+          "example_atom_ids": [
+            17,
+            16,
+            10,
+            11
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "ca",
+            "cx",
+            "ca"
+          ],
+          "example_atom_ids": [
+            6,
+            16,
+            10,
+            11
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_epoxide",
+          "section": "DIHE",
+          "types": [
+            "ca",
+            "cx",
+            "op",
+            "cx"
+          ],
+          "example_atom_ids": [
+            6,
+            16,
+            17,
+            15
+          ],
+          "status": "unresolved_no_numeric_padding"
+        },
+        {
+          "model_id": "pyrene_epoxide",
+          "section": "IMPROPER",
+          "types": [
+            "ca",
+            "ca",
+            "ca",
+            "cx"
+          ],
+          "example_atom_ids": [
+            12,
+            14,
+            13,
+            15
+          ],
+          "status": "unresolved_no_numeric_padding"
+        }
+      ],
+      "improper_matching": "coverage screen permits outer permutations with center third; actual LEaP matching still required"
+    },
+    "pyrene_pristine": {
+      "atoms": [
+        {
+          "atom_id": 1,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 2,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 3,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 4,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 5,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 6,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 7,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 8,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 9,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 10,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 11,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 12,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 13,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 14,
+          "element": "C",
+          "role": "edge_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 15,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 16,
+          "element": "C",
+          "role": "scaffold_C",
+          "atom_type": "ca"
+        },
+        {
+          "atom_id": 17,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 18,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 19,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 20,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 21,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 22,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 23,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 24,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 25,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        },
+        {
+          "atom_id": 26,
+          "element": "H",
+          "role": "edge_H",
+          "atom_type": "ha"
+        }
+      ],
+      "formal_charge": 0,
+      "partial_charges": "not_assigned_by_frcmod_generation",
+      "typing_status": "declared_role_contract_requires_native_graph_typing_review",
+      "graph_term_gaps": [
+        {
+          "model_id": "pyrene_pristine",
+          "section": "IMPROPER",
+          "types": [
+            "ca",
+            "ca",
+            "ca",
+            "ca"
+          ],
+          "example_atom_ids": [
+            6,
+            10,
+            16,
+            15
+          ],
+          "status": "unresolved_no_numeric_padding"
+        }
+      ],
+      "improper_matching": "coverage screen permits outer permutations with center third; actual LEaP matching still required"
+    }
+  },
+  "gaps": [
+    {
+      "model_id": "pyrene_COO",
+      "section": "IMPROPER",
+      "types": [
+        "ca",
+        "ca",
+        "ca",
+        "c"
+      ],
+      "example_atom_ids": [
+        2,
+        14,
+        1,
+        17
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_COO",
+      "section": "IMPROPER",
+      "types": [
+        "ca",
+        "ca",
+        "ca",
+        "ca"
+      ],
+      "example_atom_ids": [
+        6,
+        10,
+        16,
+        15
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_COOH",
+      "section": "IMPROPER",
+      "types": [
+        "ca",
+        "ca",
+        "ca",
+        "c"
+      ],
+      "example_atom_ids": [
+        2,
+        14,
+        1,
+        17
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_COOH",
+      "section": "IMPROPER",
+      "types": [
+        "ca",
+        "ca",
+        "ca",
+        "ca"
+      ],
+      "example_atom_ids": [
+        6,
+        10,
+        16,
+        15
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "section": "DIHE",
+      "types": [
+        "c6",
+        "c6",
+        "ca",
+        "ca"
+      ],
+      "example_atom_ids": [
+        15,
+        16,
+        10,
+        11
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "ca",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        18,
+        16,
+        10,
+        11
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "ca",
+        "ca"
+      ],
+      "example_atom_ids": [
+        6,
+        16,
+        10,
+        11
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        13,
+        15,
+        16,
+        18
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "section": "DIHE",
+      "types": [
+        "oh",
+        "c6",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        17,
+        15,
+        16,
+        18
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "c6",
+        "ca"
+      ],
+      "example_atom_ids": [
+        13,
+        15,
+        16,
+        6
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "section": "DIHE",
+      "types": [
+        "c6",
+        "c6",
+        "oh",
+        "ho"
+      ],
+      "example_atom_ids": [
+        15,
+        16,
+        18,
+        30
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "oh",
+        "ho"
+      ],
+      "example_atom_ids": [
+        6,
+        16,
+        18,
+        30
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "section": "IMPROPER",
+      "types": [
+        "ca",
+        "ca",
+        "ca",
+        "c6"
+      ],
+      "example_atom_ids": [
+        12,
+        14,
+        13,
+        15
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "ANGLE",
+      "types": [
+        "c6",
+        "ca",
+        "ha"
+      ],
+      "example_atom_ids": [
+        3,
+        4,
+        22
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "ANGLE",
+      "types": [
+        "cx",
+        "ca",
+        "ha"
+      ],
+      "example_atom_ids": [
+        10,
+        11,
+        27
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "ca",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        14,
+        13,
+        15,
+        17
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "ca",
+        "ca"
+      ],
+      "example_atom_ids": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "c6",
+        "c6",
+        "ca",
+        "ca"
+      ],
+      "example_atom_ids": [
+        14,
+        13,
+        15,
+        3
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ha",
+        "ca",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        18,
+        3,
+        4,
+        22
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "ca",
+        "ha"
+      ],
+      "example_atom_ids": [
+        2,
+        3,
+        4,
+        22
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "c6",
+        "c6",
+        "ca",
+        "ha"
+      ],
+      "example_atom_ids": [
+        15,
+        3,
+        4,
+        22
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "ca",
+        "cx",
+        "cx"
+      ],
+      "example_atom_ids": [
+        10,
+        16,
+        6,
+        7
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "ca",
+        "cx",
+        "op"
+      ],
+      "example_atom_ids": [
+        19,
+        16,
+        6,
+        7
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "ca",
+        "cx",
+        "ca"
+      ],
+      "example_atom_ids": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "cx",
+        "cx",
+        "ca",
+        "ha"
+      ],
+      "example_atom_ids": [
+        16,
+        10,
+        11,
+        27
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ha",
+        "ca",
+        "cx",
+        "op"
+      ],
+      "example_atom_ids": [
+        19,
+        10,
+        11,
+        27
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "cx",
+        "ca",
+        "ha"
+      ],
+      "example_atom_ids": [
+        9,
+        10,
+        11,
+        27
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "ca",
+        "c6",
+        "cx"
+      ],
+      "example_atom_ids": [
+        14,
+        13,
+        15,
+        16
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "cx",
+        "cx",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        17,
+        15,
+        16,
+        10
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "oh",
+        "c6",
+        "cx",
+        "op"
+      ],
+      "example_atom_ids": [
+        17,
+        15,
+        16,
+        19
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "cx",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        17,
+        15,
+        16,
+        6
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "c6",
+        "c6",
+        "cx",
+        "cx"
+      ],
+      "example_atom_ids": [
+        3,
+        15,
+        16,
+        10
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "c6",
+        "c6",
+        "cx",
+        "op"
+      ],
+      "example_atom_ids": [
+        3,
+        15,
+        16,
+        19
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "c6",
+        "c6",
+        "cx",
+        "ca"
+      ],
+      "example_atom_ids": [
+        3,
+        15,
+        16,
+        6
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "cx",
+        "cx"
+      ],
+      "example_atom_ids": [
+        13,
+        15,
+        16,
+        10
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "cx",
+        "op"
+      ],
+      "example_atom_ids": [
+        13,
+        15,
+        16,
+        19
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "cx",
+        "ca"
+      ],
+      "example_atom_ids": [
+        13,
+        15,
+        16,
+        6
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "c6",
+        "cx"
+      ],
+      "example_atom_ids": [
+        16,
+        15,
+        3,
+        4
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "cx",
+        "c6",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        16,
+        15,
+        3,
+        18
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        13,
+        15,
+        3,
+        18
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "oh",
+        "c6",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        17,
+        15,
+        3,
+        18
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "c6",
+        "ca"
+      ],
+      "example_atom_ids": [
+        13,
+        15,
+        3,
+        4
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "c6",
+        "cx",
+        "ca",
+        "ca"
+      ],
+      "example_atom_ids": [
+        15,
+        16,
+        6,
+        7
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "cx",
+        "c6",
+        "oh",
+        "ho"
+      ],
+      "example_atom_ids": [
+        16,
+        15,
+        17,
+        30
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "c6",
+        "c6",
+        "oh",
+        "ho"
+      ],
+      "example_atom_ids": [
+        15,
+        3,
+        18,
+        31
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "oh",
+        "ho"
+      ],
+      "example_atom_ids": [
+        4,
+        3,
+        18,
+        31
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "cx",
+        "op",
+        "cx"
+      ],
+      "example_atom_ids": [
+        11,
+        10,
+        19,
+        16
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "DIHE",
+      "types": [
+        "c6",
+        "cx",
+        "op",
+        "cx"
+      ],
+      "example_atom_ids": [
+        15,
+        16,
+        19,
+        10
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "IMPROPER",
+      "types": [
+        "ca",
+        "ca",
+        "ca",
+        "cx"
+      ],
+      "example_atom_ids": [
+        5,
+        7,
+        6,
+        16
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "section": "IMPROPER",
+      "types": [
+        "ca",
+        "ca",
+        "ca",
+        "c6"
+      ],
+      "example_atom_ids": [
+        12,
+        14,
+        13,
+        15
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "section": "DIHE",
+      "types": [
+        "c6",
+        "c6",
+        "ca",
+        "ca"
+      ],
+      "example_atom_ids": [
+        15,
+        16,
+        10,
+        11
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "ca",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        18,
+        16,
+        10,
+        11
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "ca",
+        "ca"
+      ],
+      "example_atom_ids": [
+        6,
+        16,
+        10,
+        11
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        13,
+        15,
+        16,
+        18
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "section": "DIHE",
+      "types": [
+        "oh",
+        "c6",
+        "c6",
+        "oh"
+      ],
+      "example_atom_ids": [
+        17,
+        15,
+        16,
+        18
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "c6",
+        "ca"
+      ],
+      "example_atom_ids": [
+        13,
+        15,
+        16,
+        6
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "section": "DIHE",
+      "types": [
+        "c6",
+        "c6",
+        "oh",
+        "ho"
+      ],
+      "example_atom_ids": [
+        15,
+        16,
+        18,
+        30
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "c6",
+        "oh",
+        "ho"
+      ],
+      "example_atom_ids": [
+        6,
+        16,
+        18,
+        30
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "section": "IMPROPER",
+      "types": [
+        "ca",
+        "ca",
+        "ca",
+        "c6"
+      ],
+      "example_atom_ids": [
+        12,
+        14,
+        13,
+        15
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_dione",
+      "section": "IMPROPER",
+      "types": [
+        "c",
+        "ca",
+        "ca",
+        "ca"
+      ],
+      "example_atom_ids": [
+        2,
+        4,
+        3,
+        15
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_dione",
+      "section": "IMPROPER",
+      "types": [
+        "ca",
+        "ca",
+        "ca",
+        "ca"
+      ],
+      "example_atom_ids": [
+        6,
+        10,
+        16,
+        15
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "ca",
+        "cx",
+        "cx"
+      ],
+      "example_atom_ids": [
+        15,
+        16,
+        10,
+        11
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "ca",
+        "cx",
+        "op"
+      ],
+      "example_atom_ids": [
+        17,
+        16,
+        10,
+        11
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "ca",
+        "cx",
+        "ca"
+      ],
+      "example_atom_ids": [
+        6,
+        16,
+        10,
+        11
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_epoxide",
+      "section": "DIHE",
+      "types": [
+        "ca",
+        "cx",
+        "op",
+        "cx"
+      ],
+      "example_atom_ids": [
+        6,
+        16,
+        17,
+        15
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_epoxide",
+      "section": "IMPROPER",
+      "types": [
+        "ca",
+        "ca",
+        "ca",
+        "cx"
+      ],
+      "example_atom_ids": [
+        12,
+        14,
+        13,
+        15
+      ],
+      "status": "unresolved_no_numeric_padding"
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "section": "IMPROPER",
+      "types": [
+        "ca",
+        "ca",
+        "ca",
+        "ca"
+      ],
+      "example_atom_ids": [
+        6,
+        10,
+        16,
+        15
+      ],
+      "status": "unresolved_no_numeric_padding"
+    }
+  ],
+  "term_provenance": {
+    "MASS": [
+      {
+        "types": [
+          "c"
+        ],
+        "values": [
+          12.01
+        ],
+        "line_number": 2,
+        "comment": "0.616 Sp2 C carbonyl group",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca"
+        ],
+        "values": [
+          12.01
+        ],
+        "line_number": 7,
+        "comment": "0.360 Sp2 C in pure aromatic systems",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx"
+        ],
+        "values": [
+          12.01
+        ],
+        "line_number": 16,
+        "comment": "0.360 Sp3 carbons in triangle systems",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6"
+        ],
+        "values": [
+          12.01
+        ],
+        "line_number": 19,
+        "comment": "0.360 Sp3 carbons in six-memberred rings",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ha"
+        ],
+        "values": [
+          1.008
+        ],
+        "line_number": 28,
+        "comment": "0.135 H bonded to aromatic carbon",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ho"
+        ],
+        "values": [
+          1.008
+        ],
+        "line_number": 31,
+        "comment": "0.135 Hydroxyl group",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o"
+        ],
+        "values": [
+          16.0
+        ],
+        "line_number": 74,
+        "comment": "0.434 Oxygen with one connected atom",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "oh"
+        ],
+        "values": [
+          16.0
+        ],
+        "line_number": 75,
+        "comment": "0.465 Oxygen in hydroxyl group",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "op"
+        ],
+        "values": [
+          16.0
+        ],
+        "line_number": 76,
+        "comment": "0.465 Oxygen in RG3",
+        "source_file": "gaff2.dat"
+      }
+    ],
+    "BOND": [
+      {
+        "types": [
+          "c6",
+          "c6"
+        ],
+        "values": [
+          226.81,
+          1.5384
+        ],
+        "line_number": 356,
+        "comment": "2021 20772 0.0060",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "ca"
+        ],
+        "values": [
+          239.73,
+          1.5203
+        ],
+        "line_number": 357,
+        "comment": "2021 2153 0.0056",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "cx"
+        ],
+        "values": [
+          234.27,
+          1.5278
+        ],
+        "line_number": 365,
+        "comment": "2021 171 0.0068",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "o"
+        ],
+        "values": [
+          440.85,
+          1.2976
+        ],
+        "line_number": 393,
+        "comment": "2021 2 0.0236",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "oh"
+        ],
+        "values": [
+          285.25,
+          1.4241
+        ],
+        "line_number": 394,
+        "comment": "2021 2105 0.0061",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "ca"
+        ],
+        "values": [
+          354.25,
+          1.3986
+        ],
+        "line_number": 405,
+        "comment": "2021 114978 0.0056",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "cx"
+        ],
+        "values": [
+          258.91,
+          1.4955
+        ],
+        "line_number": 416,
+        "comment": "2021 67 0.0051",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "ha"
+        ],
+        "values": [
+          360.69,
+          1.086
+        ],
+        "line_number": 421,
+        "comment": "2021 63960 0.0009",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "o"
+        ],
+        "values": [
+          549.99,
+          1.2377
+        ],
+        "line_number": 444,
+        "comment": "2021 12 0.0114",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "oh"
+        ],
+        "values": [
+          348.55,
+          1.3644
+        ],
+        "line_number": 445,
+        "comment": "2021 3637 0.0062",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c"
+        ],
+        "values": [
+          219.37,
+          1.5494
+        ],
+        "line_number": 464,
+        "comment": "2021 213 0.0088",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c6"
+        ],
+        "values": [
+          233.63,
+          1.5287
+        ],
+        "line_number": 468,
+        "comment": "2021 1545 0.0070",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "ca"
+        ],
+        "values": [
+          262.84,
+          1.4907
+        ],
+        "line_number": 469,
+        "comment": "2021 3861 0.0089",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "cx"
+        ],
+        "values": [
+          252.53,
+          1.5035
+        ],
+        "line_number": 528,
+        "comment": "2021 245 0.0110",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "ha"
+        ],
+        "values": [
+          368.8,
+          1.101
+        ],
+        "line_number": 661,
+        "comment": "SOURCE3 53 0.0102",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "o"
+        ],
+        "values": [
+          590.6,
+          1.219
+        ],
+        "line_number": 720,
+        "comment": "2021 23398 0.0101",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "oh"
+        ],
+        "values": [
+          359.27,
+          1.3556
+        ],
+        "line_number": 721,
+        "comment": "2021 3340 0.0056",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "op"
+        ],
+        "values": [
+          399.64,
+          1.3251
+        ],
+        "line_number": 722,
+        "comment": "2021 1 0.0000",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "cx"
+        ],
+        "values": [
+          248.86,
+          1.5082
+        ],
+        "line_number": 798,
+        "comment": "2021 1577 0.0100",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "oh"
+        ],
+        "values": [
+          311.88,
+          1.3972
+        ],
+        "line_number": 825,
+        "comment": "2021 3 0.0035",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "op"
+        ],
+        "values": [
+          273.64,
+          1.4368
+        ],
+        "line_number": 826,
+        "comment": "2021 666 0.0065",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ho",
+          "o"
+        ],
+        "values": [
+          540.3,
+          0.981
+        ],
+        "line_number": 933,
+        "comment": "SOURCE3 1",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ho",
+          "oh"
+        ],
+        "values": [
+          535.51,
+          0.9725
+        ],
+        "line_number": 934,
+        "comment": "2021 20870 0.0033",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "oh",
+          "oh"
+        ],
+        "values": [
+          145.92,
+          1.4556
+        ],
+        "line_number": 1309,
+        "comment": "2021 2 0.0004",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o",
+          "o"
+        ],
+        "values": [
+          141.4,
+          1.43
+        ],
+        "line_number": 1323,
+        "comment": "SOURCE3 2 0.0500",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o",
+          "oh"
+        ],
+        "values": [
+          116.98,
+          1.526
+        ],
+        "line_number": 1324,
+        "comment": "2021 1 0.0000",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "op",
+          "op"
+        ],
+        "values": [
+          94.61,
+          1.5968
+        ],
+        "line_number": 1332,
+        "comment": "2021 2 0.0081",
+        "source_file": "gaff2.dat"
+      }
+    ],
+    "ANGLE": [
+      {
+        "types": [
+          "c6",
+          "c6",
+          "c6"
+        ],
+        "values": [
+          60.18,
+          111.06
+        ],
+        "line_number": 4004,
+        "comment": "2021 15811 1.0416",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "c6",
+          "ca"
+        ],
+        "values": [
+          60.28,
+          111.97
+        ],
+        "line_number": 4005,
+        "comment": "2021 2187 1.2718",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "c6",
+          "cx"
+        ],
+        "values": [
+          60.28,
+          111.46
+        ],
+        "line_number": 4013,
+        "comment": "2021 112 1.2076",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "c6",
+          "o"
+        ],
+        "values": [
+          78.01,
+          113.05
+        ],
+        "line_number": 4040,
+        "comment": "2021 1 0.0000",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "c6",
+          "oh"
+        ],
+        "values": [
+          76.56,
+          110.05
+        ],
+        "line_number": 4041,
+        "comment": "2021 2881 1.3515",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "ca",
+          "ca"
+        ],
+        "values": [
+          60.66,
+          120.6
+        ],
+        "line_number": 4052,
+        "comment": "2021 4681 1.1279",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "c",
+          "c6"
+        ],
+        "values": [
+          59.34,
+          115.66
+        ],
+        "line_number": 4056,
+        "comment": "2021 142 0.8661",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "c",
+          "ca"
+        ],
+        "values": [
+          59.78,
+          116.8
+        ],
+        "line_number": 4057,
+        "comment": "2021 84 1.0356",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "c",
+          "cx"
+        ],
+        "values": [
+          60.05,
+          114.81
+        ],
+        "line_number": 4074,
+        "comment": "2021 4 0.3055",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "c",
+          "o"
+        ],
+        "values": [
+          76.56,
+          122.34
+        ],
+        "line_number": 4112,
+        "comment": "2021 1487 1.0629",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "c",
+          "oh"
+        ],
+        "values": [
+          77.16,
+          113.36
+        ],
+        "line_number": 4113,
+        "comment": "2021 117 1.4963",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "cx",
+          "c6"
+        ],
+        "values": [
+          59.9,
+          113.65
+        ],
+        "line_number": 4122,
+        "comment": "2021 15 0.9999",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "cx",
+          "ca"
+        ],
+        "values": [
+          59.37,
+          118.13
+        ],
+        "line_number": 4123,
+        "comment": "2021 1 0.0000",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "cx",
+          "cx"
+        ],
+        "values": [
+          58.71,
+          119.82
+        ],
+        "line_number": 4126,
+        "comment": "2021 266 1.9313",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "cx",
+          "op"
+        ],
+        "values": [
+          74.71,
+          115.66
+        ],
+        "line_number": 4130,
+        "comment": "2021 107 1.0364",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6",
+          "oh",
+          "ho"
+        ],
+        "values": [
+          65.23,
+          107.07
+        ],
+        "line_number": 4246,
+        "comment": "2021 1936 0.7388",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "c6",
+          "ca"
+        ],
+        "values": [
+          60.61,
+          112.1
+        ],
+        "line_number": 4414,
+        "comment": "2021 102 1.6750",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "c6",
+          "cx"
+        ],
+        "values": [
+          60.08,
+          113.53
+        ],
+        "line_number": 4420,
+        "comment": "2021 9 0.8985",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "c6",
+          "oh"
+        ],
+        "values": [
+          77.0,
+          110.34
+        ],
+        "line_number": 4438,
+        "comment": "2021 100 1.3264",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "ca",
+          "ca"
+        ],
+        "values": [
+          63.67,
+          120.02
+        ],
+        "line_number": 4444,
+        "comment": "2021 106086 0.7779",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "ca",
+          "cx"
+        ],
+        "values": [
+          61.17,
+          120.95
+        ],
+        "line_number": 4455,
+        "comment": "2021 173 2.6958",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "ca",
+          "ha"
+        ],
+        "values": [
+          44.9,
+          119.88
+        ],
+        "line_number": 4459,
+        "comment": "2021 123799 0.4470",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "ca",
+          "o"
+        ],
+        "values": [
+          80.94,
+          123.25
+        ],
+        "line_number": 4482,
+        "comment": "2021 24 1.2663",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "ca",
+          "oh"
+        ],
+        "values": [
+          78.86,
+          119.9
+        ],
+        "line_number": 4483,
+        "comment": "2021 6370 1.7863",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "c",
+          "ca"
+        ],
+        "values": [
+          60.27,
+          117.93
+        ],
+        "line_number": 4501,
+        "comment": "2021 361 1.7628",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "c",
+          "cx"
+        ],
+        "values": [
+          60.08,
+          117.66
+        ],
+        "line_number": 4534,
+        "comment": "2021 20 1.5268",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "c",
+          "ha"
+        ],
+        "values": [
+          47.2,
+          114.12
+        ],
+        "line_number": 4618,
+        "comment": "SOURCE3 1",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "c",
+          "o"
+        ],
+        "values": [
+          77.96,
+          122.6
+        ],
+        "line_number": 4628,
+        "comment": "2021 3942 1.5757",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "c",
+          "oh"
+        ],
+        "values": [
+          78.37,
+          113.45
+        ],
+        "line_number": 4629,
+        "comment": "2021 434 0.8411",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "cx",
+          "ca"
+        ],
+        "values": [
+          61.62,
+          112.09
+        ],
+        "line_number": 4652,
+        "comment": "2021 6 3.7075",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "cx",
+          "cx"
+        ],
+        "values": [
+          58.85,
+          121.84
+        ],
+        "line_number": 4653,
+        "comment": "2021 132 1.8829",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "cx",
+          "oh"
+        ],
+        "values": [
+          86.7,
+          112.93
+        ],
+        "line_number": 4663,
+        "comment": "SOURCE3 1",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "cx",
+          "op"
+        ],
+        "values": [
+          74.79,
+          118.22
+        ],
+        "line_number": 4664,
+        "comment": "2021 12 0.7181",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "oh",
+          "ho"
+        ],
+        "values": [
+          67.41,
+          108.58
+        ],
+        "line_number": 4882,
+        "comment": "2021 3573 0.7045",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c6",
+          "c"
+        ],
+        "values": [
+          59.98,
+          113.2
+        ],
+        "line_number": 5122,
+        "comment": "2021 117 1.5220",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c6",
+          "c6"
+        ],
+        "values": [
+          60.27,
+          111.43
+        ],
+        "line_number": 5123,
+        "comment": "2021 1370 1.2171",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c6",
+          "ca"
+        ],
+        "values": [
+          61.2,
+          109.36
+        ],
+        "line_number": 5124,
+        "comment": "2021 112 1.9942",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c6",
+          "cx"
+        ],
+        "values": [
+          60.64,
+          110.82
+        ],
+        "line_number": 5131,
+        "comment": "2021 13 1.3249",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c6",
+          "oh"
+        ],
+        "values": [
+          77.57,
+          108.01
+        ],
+        "line_number": 5153,
+        "comment": "2021 111 1.1194",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "ca",
+          "c"
+        ],
+        "values": [
+          64.5,
+          120.0
+        ],
+        "line_number": 5158,
+        "comment": "SOURCE3 1",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "ca",
+          "ca"
+        ],
+        "values": [
+          61.44,
+          120.33
+        ],
+        "line_number": 5159,
+        "comment": "2021 8238 1.9336",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "ca",
+          "ha"
+        ],
+        "values": [
+          46.9,
+          115.9
+        ],
+        "line_number": 5162,
+        "comment": "SOURCE3 1",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c",
+          "c"
+        ],
+        "values": [
+          58.65,
+          115.25
+        ],
+        "line_number": 5214,
+        "comment": "2021 11 4.8242",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c",
+          "c6"
+        ],
+        "values": [
+          58.95,
+          115.61
+        ],
+        "line_number": 5230,
+        "comment": "2021 6 0.7625",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c",
+          "ca"
+        ],
+        "values": [
+          58.87,
+          118.71
+        ],
+        "line_number": 5250,
+        "comment": "2021 64 1.0089",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c",
+          "cx"
+        ],
+        "values": [
+          60.4,
+          111.89
+        ],
+        "line_number": 5427,
+        "comment": "2021 5 7.1774",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c",
+          "ha"
+        ],
+        "values": [
+          45.4,
+          115.43
+        ],
+        "line_number": 5539,
+        "comment": "SOURCE2 3 0.6549",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c",
+          "o"
+        ],
+        "values": [
+          76.23,
+          120.79
+        ],
+        "line_number": 5681,
+        "comment": "2021 476 2.4846",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "c",
+          "oh"
+        ],
+        "values": [
+          76.97,
+          111.92
+        ],
+        "line_number": 5682,
+        "comment": "2021 40 0.4180",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "cx",
+          "c"
+        ],
+        "values": [
+          59.48,
+          119.01
+        ],
+        "line_number": 5745,
+        "comment": "2021 10 3.0316",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "cx",
+          "c6"
+        ],
+        "values": [
+          59.29,
+          117.85
+        ],
+        "line_number": 5746,
+        "comment": "2021 9 0.9293",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "cx",
+          "ca"
+        ],
+        "values": [
+          60.61,
+          115.24
+        ],
+        "line_number": 5747,
+        "comment": "2021 1 0.0000",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "cx",
+          "cx"
+        ],
+        "values": [
+          59.65,
+          117.99
+        ],
+        "line_number": 5754,
+        "comment": "2021 405 2.1945",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "cx",
+          "oh"
+        ],
+        "values": [
+          72.46,
+          128.25
+        ],
+        "line_number": 5770,
+        "comment": "2021 1 0.0000",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "cx",
+          "op"
+        ],
+        "values": [
+          75.62,
+          114.98
+        ],
+        "line_number": 5771,
+        "comment": "2021 121 2.4675",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "oh",
+          "ho"
+        ],
+        "values": [
+          68.46,
+          106.54
+        ],
+        "line_number": 7101,
+        "comment": "2021 2730 1.0553",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c",
+          "op",
+          "cx"
+        ],
+        "values": [
+          127.58,
+          57.8
+        ],
+        "line_number": 7102,
+        "comment": "2021 1 0.0000",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "c6",
+          "cx"
+        ],
+        "values": [
+          59.33,
+          115.85
+        ],
+        "line_number": 7436,
+        "comment": "2021 10 0.5626",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "c6",
+          "oh"
+        ],
+        "values": [
+          77.37,
+          108.65
+        ],
+        "line_number": 7446,
+        "comment": "2021 49 1.6344",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "c",
+          "cx"
+        ],
+        "values": [
+          60.8,
+          113.92
+        ],
+        "line_number": 7454,
+        "comment": "2021 7 5.3745",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "c",
+          "o"
+        ],
+        "values": [
+          77.42,
+          122.72
+        ],
+        "line_number": 7468,
+        "comment": "2021 269 2.2381",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "c",
+          "oh"
+        ],
+        "values": [
+          78.25,
+          112.58
+        ],
+        "line_number": 7469,
+        "comment": "2021 33 1.5746",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "c",
+          "op"
+        ],
+        "values": [
+          98.61,
+          72.05
+        ],
+        "line_number": 7470,
+        "comment": "2021 1 0.0000",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "cx",
+          "cx"
+        ],
+        "values": [
+          83.51,
+          60.0
+        ],
+        "line_number": 7485,
+        "comment": "2021 1689 0.8111",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "cx",
+          "oh"
+        ],
+        "values": [
+          75.55,
+          117.53
+        ],
+        "line_number": 7512,
+        "comment": "2021 4 1.0877",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "cx",
+          "op"
+        ],
+        "values": [
+          105.29,
+          59.1
+        ],
+        "line_number": 7513,
+        "comment": "2021 788 0.5911",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "oh",
+          "ho"
+        ],
+        "values": [
+          66.51,
+          106.76
+        ],
+        "line_number": 7562,
+        "comment": "2021 3 0.8687",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "op",
+          "cx"
+        ],
+        "values": [
+          119.01,
+          61.76
+        ],
+        "line_number": 7563,
+        "comment": "2021 272 0.2227",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx",
+          "op",
+          "op"
+        ],
+        "values": [
+          143.83,
+          56.13
+        ],
+        "line_number": 7565,
+        "comment": "2021 1 0.0000",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ha",
+          "c",
+          "ha"
+        ],
+        "values": [
+          37.4,
+          115.61
+        ],
+        "line_number": 8298,
+        "comment": "SOURCE3 4 0.0458",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ha",
+          "c",
+          "o"
+        ],
+        "values": [
+          66.5,
+          121.94
+        ],
+        "line_number": 8301,
+        "comment": "SOURCE3 51 2.3235",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ha",
+          "c",
+          "oh"
+        ],
+        "values": [
+          64.6,
+          111.82
+        ],
+        "line_number": 8302,
+        "comment": "SOURCE3 4 1.9375",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ho",
+          "oh",
+          "ho"
+        ],
+        "values": [
+          55.89,
+          106.57
+        ],
+        "line_number": 8620,
+        "comment": "2021 23 1.3050",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ho",
+          "oh",
+          "o"
+        ],
+        "values": [
+          77.85,
+          97.99
+        ],
+        "line_number": 8635,
+        "comment": "2021 1 0.0000",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ho",
+          "oh",
+          "oh"
+        ],
+        "values": [
+          80.94,
+          99.7
+        ],
+        "line_number": 8636,
+        "comment": "2021 4 0.0060",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o",
+          "ca",
+          "o"
+        ],
+        "values": [
+          118.7,
+          126.82
+        ],
+        "line_number": 10333,
+        "comment": "SOURCE3 1",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o",
+          "c",
+          "o"
+        ],
+        "values": [
+          104.94,
+          130.16
+        ],
+        "line_number": 10336,
+        "comment": "2021 608 1.3864",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o",
+          "c",
+          "oh"
+        ],
+        "values": [
+          102.03,
+          122.09
+        ],
+        "line_number": 10337,
+        "comment": "2021 2826 0.8341",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o",
+          "c",
+          "op"
+        ],
+        "values": [
+          97.51,
+          137.49
+        ],
+        "line_number": 10338,
+        "comment": "2021 1 0.0000",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "oh",
+          "c6",
+          "oh"
+        ],
+        "values": [
+          97.05,
+          111.5
+        ],
+        "line_number": 10373,
+        "comment": "2021 2 0.0476",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "oh",
+          "ca",
+          "oh"
+        ],
+        "values": [
+          110.6,
+          120.0
+        ],
+        "line_number": 10377,
+        "comment": "SOURCE3 1",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "oh",
+          "c",
+          "oh"
+        ],
+        "values": [
+          116.3,
+          110.56
+        ],
+        "line_number": 10381,
+        "comment": "SOURCE3 2 0.5498",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "oh",
+          "cx",
+          "oh"
+        ],
+        "values": [
+          116.9,
+          107.85
+        ],
+        "line_number": 10386,
+        "comment": "SOURCE3 1",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "op",
+          "cx",
+          "op"
+        ],
+        "values": [
+          124.47,
+          66.6
+        ],
+        "line_number": 10541,
+        "comment": "2021 1 0.0000",
+        "source_file": "gaff2.dat"
+      }
+    ],
+    "DIHE": [
+      {
+        "types": [
+          "X",
+          "c",
+          "c",
+          "X"
+        ],
+        "values": [
+          4.0,
+          1.2,
+          180.0,
+          2.0
+        ],
+        "line_number": 11152,
+        "comment": "",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "X",
+          "c",
+          "cx",
+          "X"
+        ],
+        "values": [
+          6.0,
+          0.0,
+          180.0,
+          2.0
+        ],
+        "line_number": 11162,
+        "comment": "JCC, 7, (1986), 230",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "X",
+          "c",
+          "ca",
+          "X"
+        ],
+        "values": [
+          4.0,
+          4.0,
+          180.0,
+          2.0
+        ],
+        "line_number": 11164,
+        "comment": "optimized by Junmei Wang, Jan-2013",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "X",
+          "c",
+          "oh",
+          "X"
+        ],
+        "values": [
+          2.0,
+          4.6,
+          180.0,
+          2.0
+        ],
+        "line_number": 11176,
+        "comment": "Junmei et al, 1999",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "X",
+          "cx",
+          "cx",
+          "X"
+        ],
+        "values": [
+          9.0,
+          1.4,
+          0.0,
+          3.0
+        ],
+        "line_number": 11315,
+        "comment": "same as X-c3-c3-X",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "X",
+          "ca",
+          "ca",
+          "X"
+        ],
+        "values": [
+          4.0,
+          14.5,
+          180.0,
+          2.0
+        ],
+        "line_number": 11347,
+        "comment": "intrpol.bsd.on C6H6",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "X",
+          "ca",
+          "oh",
+          "X"
+        ],
+        "values": [
+          2.0,
+          1.8,
+          180.0,
+          2.0
+        ],
+        "line_number": 11365,
+        "comment": "Junmei et al, 99",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "X",
+          "oh",
+          "oh",
+          "X"
+        ],
+        "values": [
+          1.0,
+          1.6,
+          0.0,
+          2.0
+        ],
+        "line_number": 11640,
+        "comment": "",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o",
+          "c",
+          "c6",
+          "c6"
+        ],
+        "values": [
+          1.0,
+          0.11,
+          0.0,
+          -2.0
+        ],
+        "line_number": 11772,
+        "comment": "sialic1-2021",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o",
+          "c",
+          "c6",
+          "c6"
+        ],
+        "values": [
+          1.0,
+          0.08,
+          180.0,
+          -3.0
+        ],
+        "line_number": 11773,
+        "comment": "sialic1-2021",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o",
+          "c",
+          "c6",
+          "c6"
+        ],
+        "values": [
+          1.0,
+          11.74,
+          0.0,
+          1.0
+        ],
+        "line_number": 11774,
+        "comment": "sialic1-2021",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "c",
+          "ca",
+          "ca"
+        ],
+        "values": [
+          4.0,
+          5.0,
+          180.0,
+          2.0
+        ],
+        "line_number": 11791,
+        "comment": "extra_4-2021",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o",
+          "c",
+          "ca",
+          "ca"
+        ],
+        "values": [
+          1.0,
+          0.58,
+          180.0,
+          2.0
+        ],
+        "line_number": 11795,
+        "comment": "x10-2021",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o",
+          "c",
+          "oh",
+          "ho"
+        ],
+        "values": [
+          1.0,
+          2.3,
+          180.0,
+          -2.0
+        ],
+        "line_number": 11871,
+        "comment": "Junmei et al, 1999",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o",
+          "c",
+          "oh",
+          "ho"
+        ],
+        "values": [
+          1.0,
+          1.9,
+          0.0,
+          1.0
+        ],
+        "line_number": 11872,
+        "comment": "Junmei et al, 1999",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "ca",
+          "oh",
+          "ho"
+        ],
+        "values": [
+          1.0,
+          0.855,
+          180.0,
+          2.0
+        ],
+        "line_number": 12299,
+        "comment": "c69-2021",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ho",
+          "oh",
+          "oh",
+          "ho"
+        ],
+        "values": [
+          1.0,
+          1.12,
+          0.0,
+          2.0
+        ],
+        "line_number": 12875,
+        "comment": "c177-2021",
+        "source_file": "gaff2.dat"
+      }
+    ],
+    "IMPROPER": [
+      {
+        "types": [
+          "X",
+          "o",
+          "c",
+          "o"
+        ],
+        "values": [
+          1.1,
+          180.0,
+          2.0
+        ],
+        "line_number": 12970,
+        "comment": "JCC,7,(1986),230",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "X",
+          "X",
+          "c",
+          "o"
+        ],
+        "values": [
+          10.5,
+          180.0,
+          2.0
+        ],
+        "line_number": 12971,
+        "comment": "JCC,7,(1986),230",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "X",
+          "X",
+          "ca",
+          "ha"
+        ],
+        "values": [
+          1.1,
+          180.0,
+          2.0
+        ],
+        "line_number": 12972,
+        "comment": "bsd.on C6H6 nmodes",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca",
+          "ca",
+          "c",
+          "oh"
+        ],
+        "values": [
+          1.1,
+          180.0,
+          2.0
+        ],
+        "line_number": 12998,
+        "comment": "(not used in tyr!)",
+        "source_file": "gaff2.dat"
+      }
+    ],
+    "NONBON": [
+      {
+        "types": [
+          "ha"
+        ],
+        "values": [
+          1.4735,
+          0.0161
+        ],
+        "line_number": 13014,
+        "comment": "",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ho"
+        ],
+        "values": [
+          0.3019,
+          0.0047
+        ],
+        "line_number": 13016,
+        "comment": "",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "o"
+        ],
+        "values": [
+          1.7107,
+          0.1463
+        ],
+        "line_number": 13019,
+        "comment": "",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "op"
+        ],
+        "values": [
+          1.7713,
+          0.0726
+        ],
+        "line_number": 13021,
+        "comment": "",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "oh"
+        ],
+        "values": [
+          1.82,
+          0.093
+        ],
+        "line_number": 13023,
+        "comment": "",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "cx"
+        ],
+        "values": [
+          1.9069,
+          0.1078
+        ],
+        "line_number": 13045,
+        "comment": "",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c6"
+        ],
+        "values": [
+          1.9069,
+          0.1078
+        ],
+        "line_number": 13048,
+        "comment": "",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "c"
+        ],
+        "values": [
+          1.8606,
+          0.0988
+        ],
+        "line_number": 13049,
+        "comment": "",
+        "source_file": "gaff2.dat"
+      },
+      {
+        "types": [
+          "ca"
+        ],
+        "values": [
+          1.8606,
+          0.0988
+        ],
+        "line_number": 13051,
+        "comment": "",
+        "source_file": "gaff2.dat"
+      }
+    ]
+  },
+  "notes": [
+    "Selected source terms are rematerialized controls, not newly optimized coefficients.",
+    "No partial charges assigned. Per-graph parmchk2/LEaP and QM validation required.",
+    "Role contracts do not replace native antechamber atom typing or bond-order/aromaticity review.",
+    "Missing graph paths are not filled with zero/default coefficients."
+  ]
+}

@@ -1,0 +1,8 @@
+# Preserve scientific fixed-column inputs and archived reference bytes.
+resources/reference/** -whitespace
+research/parameterization/references/** -whitespace
+*.sdf -whitespace
+*.frcmod -whitespace
+*.csv -whitespace
+# Gaussian input sections require a blank line at end of file.
+*.gjf whitespace=-blank-at-eof

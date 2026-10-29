@@ -1,0 +1,709 @@
+[
+  {
+    "model_id": "pyrene_COO",
+    "section": "ANGLE",
+    "types": [
+      "CA",
+      "C",
+      "O2"
+    ],
+    "example_atom_ids": [
+      1,
+      17,
+      19
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_COO",
+    "section": "IMPROPER",
+    "types": [
+      "CA",
+      "CA",
+      "CA",
+      "C"
+    ],
+    "example_atom_ids": [
+      2,
+      14,
+      1,
+      17
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_COO",
+    "section": "IMPROPER",
+    "types": [
+      "CA",
+      "CA",
+      "CA",
+      "CA"
+    ],
+    "example_atom_ids": [
+      6,
+      10,
+      16,
+      15
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_COOH",
+    "section": "ANGLE",
+    "types": [
+      "CA",
+      "C",
+      "O"
+    ],
+    "example_atom_ids": [
+      1,
+      17,
+      18
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_COOH",
+    "section": "IMPROPER",
+    "types": [
+      "CA",
+      "CA",
+      "CA",
+      "C"
+    ],
+    "example_atom_ids": [
+      2,
+      14,
+      1,
+      17
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_COOH",
+    "section": "IMPROPER",
+    "types": [
+      "CA",
+      "CA",
+      "CA",
+      "CA"
+    ],
+    "example_atom_ids": [
+      6,
+      10,
+      16,
+      15
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_cis",
+    "section": "ANGLE",
+    "types": [
+      "CA",
+      "CT",
+      "CA"
+    ],
+    "example_atom_ids": [
+      6,
+      16,
+      10
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_cis",
+    "section": "ANGLE",
+    "types": [
+      "CA",
+      "CT",
+      "OH"
+    ],
+    "example_atom_ids": [
+      10,
+      16,
+      18
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "ANGLE",
+    "types": [
+      "CT",
+      "CA",
+      "HA"
+    ],
+    "example_atom_ids": [
+      3,
+      4,
+      22
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "ANGLE",
+    "types": [
+      "CA",
+      "CT",
+      "CA"
+    ],
+    "example_atom_ids": [
+      2,
+      3,
+      4
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "ANGLE",
+    "types": [
+      "CA",
+      "CT",
+      "OH"
+    ],
+    "example_atom_ids": [
+      13,
+      15,
+      17
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "ANGLE",
+    "types": [
+      "GX",
+      "CA",
+      "HA"
+    ],
+    "example_atom_ids": [
+      10,
+      11,
+      27
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "CA",
+      "GX",
+      "GX"
+    ],
+    "example_atom_ids": [
+      10,
+      16,
+      6,
+      7
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "CA",
+      "GX",
+      "GO"
+    ],
+    "example_atom_ids": [
+      19,
+      16,
+      6,
+      7
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "CA",
+      "GX",
+      "CA"
+    ],
+    "example_atom_ids": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "GX",
+      "GX",
+      "CA",
+      "HA"
+    ],
+    "example_atom_ids": [
+      16,
+      10,
+      11,
+      27
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "GO",
+      "GX",
+      "CA",
+      "HA"
+    ],
+    "example_atom_ids": [
+      19,
+      10,
+      11,
+      27
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "GX",
+      "CA",
+      "HA"
+    ],
+    "example_atom_ids": [
+      9,
+      10,
+      11,
+      27
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "GX",
+      "GX",
+      "CT",
+      "OH"
+    ],
+    "example_atom_ids": [
+      17,
+      15,
+      16,
+      10
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "GO",
+      "GX",
+      "CT",
+      "OH"
+    ],
+    "example_atom_ids": [
+      17,
+      15,
+      16,
+      19
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "GX",
+      "CT",
+      "OH"
+    ],
+    "example_atom_ids": [
+      17,
+      15,
+      16,
+      6
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CT",
+      "CT",
+      "GX",
+      "GX"
+    ],
+    "example_atom_ids": [
+      3,
+      15,
+      16,
+      10
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CT",
+      "CT",
+      "GX",
+      "GO"
+    ],
+    "example_atom_ids": [
+      3,
+      15,
+      16,
+      19
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "GX",
+      "CT",
+      "CT"
+    ],
+    "example_atom_ids": [
+      3,
+      15,
+      16,
+      6
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "CT",
+      "GX",
+      "GX"
+    ],
+    "example_atom_ids": [
+      13,
+      15,
+      16,
+      10
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "CT",
+      "GX",
+      "GO"
+    ],
+    "example_atom_ids": [
+      13,
+      15,
+      16,
+      19
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "CT",
+      "GX",
+      "CA"
+    ],
+    "example_atom_ids": [
+      13,
+      15,
+      16,
+      6
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "CA",
+      "GX",
+      "CT"
+    ],
+    "example_atom_ids": [
+      15,
+      16,
+      6,
+      7
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "GX",
+      "GO",
+      "GX"
+    ],
+    "example_atom_ids": [
+      11,
+      10,
+      19,
+      16
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CT",
+      "GX",
+      "GO",
+      "GX"
+    ],
+    "example_atom_ids": [
+      15,
+      16,
+      19,
+      10
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_epoxide",
+    "section": "IMPROPER",
+    "types": [
+      "CA",
+      "CA",
+      "CA",
+      "GX"
+    ],
+    "example_atom_ids": [
+      5,
+      7,
+      6,
+      16
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_trans",
+    "section": "ANGLE",
+    "types": [
+      "CA",
+      "CT",
+      "CA"
+    ],
+    "example_atom_ids": [
+      6,
+      16,
+      10
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_diol_trans",
+    "section": "ANGLE",
+    "types": [
+      "CA",
+      "CT",
+      "OH"
+    ],
+    "example_atom_ids": [
+      10,
+      16,
+      18
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_dione",
+    "section": "ANGLE",
+    "types": [
+      "C",
+      "C",
+      "CA"
+    ],
+    "example_atom_ids": [
+      1,
+      2,
+      3
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_dione",
+    "section": "ANGLE",
+    "types": [
+      "CA",
+      "C",
+      "O"
+    ],
+    "example_atom_ids": [
+      3,
+      2,
+      18
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_dione",
+    "section": "IMPROPER",
+    "types": [
+      "C",
+      "CA",
+      "CA",
+      "CA"
+    ],
+    "example_atom_ids": [
+      2,
+      4,
+      3,
+      15
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_dione",
+    "section": "IMPROPER",
+    "types": [
+      "CA",
+      "CA",
+      "CA",
+      "CA"
+    ],
+    "example_atom_ids": [
+      6,
+      10,
+      16,
+      15
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "CA",
+      "GX",
+      "GX"
+    ],
+    "example_atom_ids": [
+      15,
+      16,
+      10,
+      11
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "CA",
+      "GX",
+      "GO"
+    ],
+    "example_atom_ids": [
+      17,
+      16,
+      10,
+      11
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "CA",
+      "GX",
+      "CA"
+    ],
+    "example_atom_ids": [
+      6,
+      16,
+      10,
+      11
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_epoxide",
+    "section": "DIHE",
+    "types": [
+      "CA",
+      "GX",
+      "GO",
+      "GX"
+    ],
+    "example_atom_ids": [
+      6,
+      16,
+      17,
+      15
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_epoxide",
+    "section": "IMPROPER",
+    "types": [
+      "CA",
+      "CA",
+      "CA",
+      "GX"
+    ],
+    "example_atom_ids": [
+      12,
+      14,
+      13,
+      15
+    ],
+    "status": "unresolved_no_numeric_padding"
+  },
+  {
+    "model_id": "pyrene_pristine",
+    "section": "IMPROPER",
+    "types": [
+      "CA",
+      "CA",
+      "CA",
+      "CA"
+    ],
+    "example_atom_ids": [
+      6,
+      10,
+      16,
+      15
+    ],
+    "status": "unresolved_no_numeric_padding"
+  }
+]
