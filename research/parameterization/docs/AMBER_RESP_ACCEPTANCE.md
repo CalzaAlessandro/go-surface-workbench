@@ -16,8 +16,8 @@ their own charge/parameter definitions unchanged.
   ESP calculation, provided both levels and the checks at each level are
   recorded. DFT geometry acceptance does not prove HF wavefunction stability.
 - Require the declared charge, multiplicity, intended chemistry, atom mapping,
-  geometry checks and electronically acceptable HF reference. An unstable
-  restricted HF solution remains diagnostic. Do not silently change spin,
+  geometry checks and explicitly assessed HF reference. A failed stability
+  probe does not by itself establish Amber incompatibility. Do not silently change spin,
   protonation, functional-group chemistry or ESP level to obtain acceptance.
 - Use external Amber RESP, retaining stage-1 qwt 0.0005 and unrestrained H,
   justified equivalences and the physical integer total. Apply the documented
@@ -28,6 +28,26 @@ their own charge/parameter definitions unchanged.
   transfer approximations, not requirements of the atomic reference fit.
   Measure their effect before choosing the library or redistribution model.
 
+### External RHF instability and the conventional RESP definition
+
+The strict research gate requires full wavefunction stability for an
+unqualified electronic reference. This is an additional project criterion,
+not a universal requirement of conventional Antechamber RESP. The default
+[Amber Gaussian input writer](https://github.com/Amber-MD/AmberClassic/blob/main/src/antechamber/gcrt.c)
+requests HF/ESP without adding a Stable analysis. A converged restricted
+HF density can therefore still define the conventional restricted-HF RESP
+control when external RHF-to-UHF instability is present. Retain the flag and
+validate its consequences rather than automatically changing the ESP level.
+
+The [Gaussian Stable manual](https://www.conflex.co.jp/gaussian_support/stable.php)
+distinguishes an internal instability within the same restrictions from an
+external instability upon allowing RHF to become UHF. The latter is not SCF
+nonconvergence, proof of a triplet ground state, or a unique prediction of
+physical spin density. Lower unrestricted HF energy alone does not establish
+a more suitable Amber charge model. A separately labeled restricted-HF branch
+can be compared without calling its strict stability gate accepted; final
+selection still requires charge/parameter validation.
+
 ## Scope of the current calculations
 
 The ongoing omegaB97X-D/6-311++G(d,p) ESP fits are DFT–RESP comparison controls.
@@ -37,9 +57,11 @@ geometries as independent evidence.
 
 The current controller couples the parent reference method to the MK method.
 A mixed-level HF-ESP-on-DFT-geometry branch still needs explicit implementation
-and validation with separate geometry and ESP provenance. This policy does
-not claim that branch has already run, or that a production selector enforces
-these requirements.
+and validation with separate geometry and ESP provenance. The additive
+`go_param.hf_fixed` helper now prepares and checks fixed-geometry HF probes
+after an independently accepted DFT parent. It does not fit RESP or claim
+HF optimization/frequency validation. No production selector currently
+enforces these requirements.
 
 ## Production acceptance
 

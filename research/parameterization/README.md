@@ -113,8 +113,9 @@ measured titration/adsorption behavior from non-unique atomic partial charges.
 
 Explicit [DFT-RESP support](docs/EXPLICIT_RESP_METHODS.md) preserves HF defaults
 and labels the selected QM method throughout the gates and fit. The actual
-pristine DFT-RESP pilot passed. At the recorded 2026-10-30 16:44 UTC check,
-five of seven controls had completion markers and two were running.
+seven-control DFT-RESP panel and independent postanalysis have completed.
+The [complete context snapshot](reports/RESP_context_DFT_seven_controls_20261030_attempt_001/README.md)
+contains seven physical contexts and 210 training ESP comparison rows.
 The [context analyzer](docs/RESP_CONTEXT_ANALYSIS.md) exports individual atom
 and group values versus scaffold graph distances, separately identifying
 interior carbons and H-terminated edges. The 39-model starting panel now has
@@ -129,10 +130,23 @@ so its count differs from the subsequent live completion count. The source
 files, actual MK SCF evidence and charge totals were checked; this is not
 transferable force-field validation.
 
-Array 1406371 schedules the eight mixed-panel RESP continuations with
+Array 1406371 schedules mixed-panel RESP continuations with
 [`aftercorr`](https://slurm.schedmd.com/sbatch.html#OPT_dependency), followed by
 an independent scientific reference gate in each worker. New calculation
 arrays and the previously pending mixed references have a five-day wall-time
-limit. Slurm denied increasing the limits of tasks already running; their
-existing eight-hour/four-hour limits remain recorded in the
-[live snapshot](reports/CHARGE_SCOPE_LIVE_STATUS_20261030_attempt_001.json).
+limit. One far-OH parent and its RESP control completed. The near-OH parent
+timed out at its original eight-hour limit; recovery job 1408584 uses a copied
+checkpoint in a new folder, recomputes frequencies and then runs gated
+DFT-RESP. Its obsolete RESP dependency task was canceled. The current
+[live snapshot](reports/CHARGE_SCOPE_LIVE_STATUS_20261030_attempt_002.json)
+records the separate original, recovered and downstream job states.
+
+The additive `go_param.hf_fixed` helper tests fixed-geometry HF evidence after
+an independently accepted DFT parent. All seven native probes completed
+Gaussian normally, with external RHF-to-UHF instability; the additional
+strict research gate therefore remains false. This is distinct from SCF
+failure or automatic Amber incompatibility. The
+[HF probe report](reports/HF_on_DFT_stability_20261030_attempt_001/README.md),
+[DFT level and stability interpretation](docs/DFT_LEVEL_AND_RHF_STABILITY.md)
+and [Amber RESP acceptance policy](docs/AMBER_RESP_ACCEPTANCE.md) preserve
+that distinction. These probes did not fit new RESP charges.

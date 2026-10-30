@@ -1,0 +1,240 @@
+{
+  "files": [
+    {
+      "path": "pyrene_pristine/geometry_model.json",
+      "sha256": "09a8f4fffb1f54baa35c9f857ed7e9ea7225857a13896199ac9b6eab9fd5ef46"
+    },
+    {
+      "path": "pyrene_pristine/DFT_GEOMETRY_GATE.json",
+      "sha256": "8bac0071331aeaec347648dc20fa556f935ec1e6007dabbbfa956413174c9232"
+    },
+    {
+      "path": "pyrene_pristine/PROBE_INPUT.json",
+      "sha256": "83ecdaf4e82e7de98e6ec4b5d4bbbf74aa39a4ec26d900a308737043cc01695b"
+    },
+    {
+      "path": "pyrene_pristine/hf_probe.gjf",
+      "sha256": "63592f19bf163062e53f6d383c2eb0631ce4af9ee1544dad4fce8613797712ba"
+    },
+    {
+      "path": "pyrene_pristine/hf_probe.log",
+      "sha256": "7694a179479e9aa41750d6db2a77adeb92074ef2f8aae3d8f5ada096da3b2ce1"
+    },
+    {
+      "path": "pyrene_pristine/hf_probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "pyrene_pristine/EXECUTION.json",
+      "sha256": "1fee1f681ea4935e46c7b56436d1bc262c2a72864229682ccde14e235516cebc"
+    },
+    {
+      "path": "pyrene_pristine/HF_REFERENCE_GATE.json",
+      "sha256": "622a1f036e324416ebced42c58dc8b243ae1637c2a9b43fc63b7ebe85590961e"
+    },
+    {
+      "path": "pyrene_diol_cis/geometry_model.json",
+      "sha256": "2f4e38a611861e7dac5f0c8a30bb758f5c0b18246e6bc1185c96185891d39a0a"
+    },
+    {
+      "path": "pyrene_diol_cis/DFT_GEOMETRY_GATE.json",
+      "sha256": "f76de2f7eee63c8e4f30b5c8ba16c6b1e53cc2c2dedcf18b9a015c46ad87a2af"
+    },
+    {
+      "path": "pyrene_diol_cis/PROBE_INPUT.json",
+      "sha256": "8db6880b0fc988b1227e984166f9635af0fc6ff60f65f69b654c8974afb6b6ad"
+    },
+    {
+      "path": "pyrene_diol_cis/hf_probe.gjf",
+      "sha256": "9e349e64b7c9c38a4e1a6e199ffe65b8c801e056e0f33eeebcd71f34ae3691cb"
+    },
+    {
+      "path": "pyrene_diol_cis/hf_probe.log",
+      "sha256": "8c7099cd014c5df8a6c68980fc05ae2d686f564ce77ab650abd989d219d2ecd1"
+    },
+    {
+      "path": "pyrene_diol_cis/hf_probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "pyrene_diol_cis/EXECUTION.json",
+      "sha256": "807fdcc93c5eb1119ac41900f14c7b982c246ca2bd0070aa40ace72a841cb49f"
+    },
+    {
+      "path": "pyrene_diol_cis/HF_REFERENCE_GATE.json",
+      "sha256": "4d7fc18fba7b6b51c4a92209a5f946ad4a57acde0ef9cc2525e13dc35dd4465c"
+    },
+    {
+      "path": "pyrene_diol_trans/geometry_model.json",
+      "sha256": "d09a5d9d7e986f64d282558641f9c0702e9d0154623db143903abb4996d5ce98"
+    },
+    {
+      "path": "pyrene_diol_trans/DFT_GEOMETRY_GATE.json",
+      "sha256": "955991595dacde7751d83c92ebd7b625b736fc11756805d008234766a6fcf218"
+    },
+    {
+      "path": "pyrene_diol_trans/PROBE_INPUT.json",
+      "sha256": "336807e931c42f2d2347e801c4600310be894fe62c044d9cd9f460d8f3fa360f"
+    },
+    {
+      "path": "pyrene_diol_trans/hf_probe.gjf",
+      "sha256": "b04bbda5c79f78c8d590cc59c7d36fc4cf930838739b8d4797de47e0ddbea871"
+    },
+    {
+      "path": "pyrene_diol_trans/hf_probe.log",
+      "sha256": "5e6e30ec631202cd1ad45df37e8f5b9fde6eb4c1531e4b7d9c963d8078f9ab4f"
+    },
+    {
+      "path": "pyrene_diol_trans/hf_probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "pyrene_diol_trans/EXECUTION.json",
+      "sha256": "92bc0c69a0afab96e102512587b5d38ae54279f41dd191e79383f00e2f90da54"
+    },
+    {
+      "path": "pyrene_diol_trans/HF_REFERENCE_GATE.json",
+      "sha256": "6a4b31ef35a66222e397b52d9ce8231c5631078700f29e35d93518d3bce682a3"
+    },
+    {
+      "path": "pyrene_diol_epoxide/geometry_model.json",
+      "sha256": "0d54a52e0d25652065f526a2b8eafb92225329ce204200404ca56cdc23538f56"
+    },
+    {
+      "path": "pyrene_diol_epoxide/DFT_GEOMETRY_GATE.json",
+      "sha256": "440c02d4bc3d55b0e73f1acf47d1b985605284bc73c30414db9c505925d2083e"
+    },
+    {
+      "path": "pyrene_diol_epoxide/PROBE_INPUT.json",
+      "sha256": "dded2425c9e480d15c185d18788aa84b61d2d5a1e49aacae3e57bda95b6b9d49"
+    },
+    {
+      "path": "pyrene_diol_epoxide/hf_probe.gjf",
+      "sha256": "9b1fac262f2581901163ef40e001ce679e0cfaf0c5de83e37e922ce43b9a8675"
+    },
+    {
+      "path": "pyrene_diol_epoxide/hf_probe.log",
+      "sha256": "438a27e4c38fa9cdeb02cf2472c54452ea5794fa2d8a08532c25b774e52d6cb3"
+    },
+    {
+      "path": "pyrene_diol_epoxide/hf_probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "pyrene_diol_epoxide/EXECUTION.json",
+      "sha256": "0150eda412b2278bb2d128fc2bc3ebba8fbe0c2e31e7860b5efc3186bca95002"
+    },
+    {
+      "path": "pyrene_diol_epoxide/HF_REFERENCE_GATE.json",
+      "sha256": "218c40ead09adec104abbdce12069dd4bb10bac6f2dee1c0180c0737d1b29a26"
+    },
+    {
+      "path": "pyrene_dione/geometry_model.json",
+      "sha256": "9f2f6a0945cb9d54fd3bffb6fe8801357b75aceaeedb808cf5a2865c637661a4"
+    },
+    {
+      "path": "pyrene_dione/DFT_GEOMETRY_GATE.json",
+      "sha256": "e457235047606f9a67655574fc2211515766d6fb756845db32ca0b341c0f7124"
+    },
+    {
+      "path": "pyrene_dione/PROBE_INPUT.json",
+      "sha256": "0d6c26c7109573a453f6b384e368c6ec657cf2edb1c0a399b17e83df1992a0c4"
+    },
+    {
+      "path": "pyrene_dione/hf_probe.gjf",
+      "sha256": "5dbd0c3e250c5ebd4a3fa93150089894b0a276c8f9d8579821bca2acbc0a3a00"
+    },
+    {
+      "path": "pyrene_dione/hf_probe.log",
+      "sha256": "dfb30a3a82dc56e9215ecabe3d8fbe4602dc7124dbbea78c3edfbe012131dd14"
+    },
+    {
+      "path": "pyrene_dione/hf_probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "pyrene_dione/EXECUTION.json",
+      "sha256": "ed761e250083cae5197ab44eb0e9a50a402e7ab9c6493b585b5636178a184817"
+    },
+    {
+      "path": "pyrene_dione/HF_REFERENCE_GATE.json",
+      "sha256": "aad125c51eb03dd0cb2f2ac33926588cd8c97c25f4bb9077962a097c234e3159"
+    },
+    {
+      "path": "pyrene_COOH/geometry_model.json",
+      "sha256": "d45163c33d7a548d7e62eaa7babaf32c81be8b706bd837c60abae46e7612cfa1"
+    },
+    {
+      "path": "pyrene_COOH/DFT_GEOMETRY_GATE.json",
+      "sha256": "72dfe4ec24738678e7f73519c813f3c327549373cbba4c0b0e0e20010d775f85"
+    },
+    {
+      "path": "pyrene_COOH/PROBE_INPUT.json",
+      "sha256": "549bb1a0639d2a117848e0365326ee56dc6a072a2356586d9d7f8da9adf38b22"
+    },
+    {
+      "path": "pyrene_COOH/hf_probe.gjf",
+      "sha256": "16e14e7fa35752b9bfa95d76ffcc8a429ff01f75552b8d05a28ee1c810dba89a"
+    },
+    {
+      "path": "pyrene_COOH/hf_probe.log",
+      "sha256": "a9860c7344ea97e545353df65d703832c959abc235128ae64a3798bf56ecd2d5"
+    },
+    {
+      "path": "pyrene_COOH/hf_probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "pyrene_COOH/EXECUTION.json",
+      "sha256": "2a304801c5c5d54d71b5c5e831c0f7a61f2887d70036d809ad572e8dd73e520c"
+    },
+    {
+      "path": "pyrene_COOH/HF_REFERENCE_GATE.json",
+      "sha256": "b1337f59e87c108fb3c85473caf2ebc4c0454f7f08c243d0b450840b6894ab06"
+    },
+    {
+      "path": "pyrene_COO/geometry_model.json",
+      "sha256": "9f5f3d0af96dc40179b0ca2fb3c287baac565da4df84ce9800696ffbe283e0b6"
+    },
+    {
+      "path": "pyrene_COO/DFT_GEOMETRY_GATE.json",
+      "sha256": "60191a730cabcc75bade65860a3ae2aa64cecf469ec7f7516f30152a50cb725b"
+    },
+    {
+      "path": "pyrene_COO/PROBE_INPUT.json",
+      "sha256": "7efae558b7625ec07ca2b116115824ef241524bc1b66cd149a1ec2f75857ed3e"
+    },
+    {
+      "path": "pyrene_COO/hf_probe.gjf",
+      "sha256": "3aaf327a3e164e2d3a1b26e4af5e7840c4aab7bee2198c668643f564f2e6e2d8"
+    },
+    {
+      "path": "pyrene_COO/hf_probe.log",
+      "sha256": "a132407d5afbcce5f5dd274da61ee87f273417ece10539402be0c61170171267"
+    },
+    {
+      "path": "pyrene_COO/hf_probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "pyrene_COO/EXECUTION.json",
+      "sha256": "2e9ee116b507ae8737d50105eca8a03f25b2d45a75b61f5ee30af5497bb0c487"
+    },
+    {
+      "path": "pyrene_COO/HF_REFERENCE_GATE.json",
+      "sha256": "902bb03cd9ae3cfd556bf76c8dc1c3765017f5214f95325f2a42ad4b8f49750f"
+    },
+    {
+      "path": "campaign/input_manifest.json",
+      "sha256": "f88efe88c6fac9b3984558d73ed22e874b5f67f2376e8ded00d9b10432e11a45"
+    },
+    {
+      "path": "campaign/DEFINITION.json",
+      "sha256": "28d97812f0a86a55106153c0524ebb7eae48aecc44ab6bcd72cfccff5fe65697"
+    },
+    {
+      "path": "campaign/SUBMISSION_RECEIPT.json",
+      "sha256": "c8d7fa82360c04c54dd698960d68e8e647f33fe385c064a30204f731a9d7ff9e"
+    }
+  ]
+}

@@ -1,0 +1,216 @@
+{
+  "status": "seven_atomic_DFT_RESP_controls_postvalidated_and_described",
+  "qm_method": "wB97XD/6-311++G(d,p)",
+  "final_parameter_validation": false,
+  "transferable_model_selected": false,
+  "validations": [
+    {
+      "model_id": "pyrene_pristine",
+      "parent_reference_accepted": true,
+      "reviewed_MK_evidence_gate_passed": true,
+      "orientation_energy_spread_hartree": 4.574199999751727e-05,
+      "orientation_energy_scope": "reported numerical rotation sensitivity, not an electronic-state proof",
+      "MK_evidence": [
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/fits/attempt_001/gaussian_logs/orientation_001.log",
+          "sha256": "33d7fc10d3c33c7cfc67307f74fa40deb68f3ad0bc075f020b7e56499dd1d807",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -615.689507235
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/fits/attempt_001/gaussian_logs/orientation_002.log",
+          "sha256": "1d7f0e7fdddb17154d11a3e55de299f422b239a0a1685f81b6dee9e7c0f6cb82",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -615.689507519
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/fits/attempt_001/gaussian_logs/orientation_003.log",
+          "sha256": "94011a9a8fbad51179ec9053ab85c4a2e9849ce3b0f81ef410832ac928d6c3c2",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -615.689552977
+        }
+      ],
+      "marker_sha256": "764660bd2d882cc5bc0a8bf8c388022ce66a4826c2ea80a01b9b44c537694a4b",
+      "fitted_artifact_hashes_verified": 21
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "parent_reference_accepted": true,
+      "reviewed_MK_evidence_gate_passed": true,
+      "orientation_energy_spread_hartree": 2.6679999791667797e-06,
+      "orientation_energy_scope": "reported numerical rotation sensitivity, not an electronic-state proof",
+      "MK_evidence": [
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_cis/attempt_001/fits/attempt_001/gaussian_logs/orientation_001.log",
+          "sha256": "dd54d6f33ee59350ef80ff3b1690057d91ec29a43cc638df46d3faa4125a60fe",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -767.221273741
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_cis/attempt_001/fits/attempt_001/gaussian_logs/orientation_002.log",
+          "sha256": "53362e36455e23cfc98930876915dda447841f4a1688a9b7793895f4365bec58",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -767.221274739
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_cis/attempt_001/fits/attempt_001/gaussian_logs/orientation_003.log",
+          "sha256": "a5822dd9fa8723efc146cb6aed792f08d66b7a0fc65ea4801e32b12ba510bd55",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -767.221276409
+        }
+      ],
+      "marker_sha256": "c5d39f1c777f0f186966f0460cfc96780fc96e67f81001b53bffa2a2348a547f",
+      "fitted_artifact_hashes_verified": 21
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "parent_reference_accepted": true,
+      "reviewed_MK_evidence_gate_passed": true,
+      "orientation_energy_spread_hartree": 1.6551000044273678e-05,
+      "orientation_energy_scope": "reported numerical rotation sensitivity, not an electronic-state proof",
+      "MK_evidence": [
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_trans/attempt_001/fits/attempt_001/gaussian_logs/orientation_001.log",
+          "sha256": "f1d597299722827cf9e4dc05d4796f20f3a5194f4c5f3bf6dc6b7c48ef6bdaff",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -767.236699561
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_trans/attempt_001/fits/attempt_001/gaussian_logs/orientation_002.log",
+          "sha256": "a5010b6828a1a777106b879689c9df6513d99bcb1686507683e6a83bd329c718",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -767.236685051
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_trans/attempt_001/fits/attempt_001/gaussian_logs/orientation_003.log",
+          "sha256": "d49c50bfc193fb3aec6bc8199ccfa254dc59dbc5884958b0f30262b663c643c7",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -767.23668301
+        }
+      ],
+      "marker_sha256": "b3597086fcbe8ac4c0215fb57fa129436d614d8a09883313f3a01d4e3d4de552",
+      "fitted_artifact_hashes_verified": 21
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "parent_reference_accepted": true,
+      "reviewed_MK_evidence_gate_passed": true,
+      "orientation_energy_spread_hartree": 1.0163999945689284e-05,
+      "orientation_energy_scope": "reported numerical rotation sensitivity, not an electronic-state proof",
+      "MK_evidence": [
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_epoxide/attempt_001/fits/attempt_001/gaussian_logs/orientation_001.log",
+          "sha256": "f8ae63571cc2cc6ea6fd372490c49f0245a4c11874ed26ddf2e1ab52757ee162",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -842.410196466
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_epoxide/attempt_001/fits/attempt_001/gaussian_logs/orientation_002.log",
+          "sha256": "27a8d0846f471900d56509aaaf983619f281a6807310ad58c4e3e4f813fef411",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -842.410198209
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_epoxide/attempt_001/fits/attempt_001/gaussian_logs/orientation_003.log",
+          "sha256": "4550e90a11560a6adeb5f5bd4344cc4e8327e62da64c5d2181987dac56e624b8",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -842.41020663
+        }
+      ],
+      "marker_sha256": "2719086d0bf3db366fa6b67109de55019bd87278a4c779321b3fc76679a2fc2f",
+      "fitted_artifact_hashes_verified": 21
+    },
+    {
+      "model_id": "pyrene_dione",
+      "parent_reference_accepted": true,
+      "reviewed_MK_evidence_gate_passed": true,
+      "orientation_energy_spread_hartree": 1.0259000077894598e-05,
+      "orientation_energy_scope": "reported numerical rotation sensitivity, not an electronic-state proof",
+      "MK_evidence": [
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_dione/attempt_001/fits/attempt_001/gaussian_logs/orientation_001.log",
+          "sha256": "5e79c9ee102d3b4ac15be630ae4e337bd340a8b905164f3290a517ae6b0bb437",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -764.885713455
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_dione/attempt_001/fits/attempt_001/gaussian_logs/orientation_002.log",
+          "sha256": "af902ceb43e612494d9f7dd53ae8a81c917781c406bab5662cc0b938fac15f5c",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -764.885723714
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_dione/attempt_001/fits/attempt_001/gaussian_logs/orientation_003.log",
+          "sha256": "a7908899407c869783a3b7b9025b2b9fdbbc8f3722ea08647952346195176759",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -764.885714747
+        }
+      ],
+      "marker_sha256": "92b9c73c2a92f5ab368101aeb7d794b1fd047c7845b895d756aa1d2710df2518",
+      "fitted_artifact_hashes_verified": 21
+    },
+    {
+      "model_id": "pyrene_COOH",
+      "parent_reference_accepted": true,
+      "reviewed_MK_evidence_gate_passed": true,
+      "orientation_energy_spread_hartree": 2.1685999968212855e-05,
+      "orientation_energy_scope": "reported numerical rotation sensitivity, not an electronic-state proof",
+      "MK_evidence": [
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COOH/attempt_001/fits/attempt_001/gaussian_logs/orientation_001.log",
+          "sha256": "508fb1bfc775fa544f03bc1f3924fefad1a37111512e267ce103d854eed02df5",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -804.267206094
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COOH/attempt_001/fits/attempt_001/gaussian_logs/orientation_002.log",
+          "sha256": "d8af176ac743f485353af01e4cab6bb000c920cbfd08e027aa4ecbefba3d2d5a",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -804.26722778
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COOH/attempt_001/fits/attempt_001/gaussian_logs/orientation_003.log",
+          "sha256": "abf8029430bba285f777ac64a1524a155ebe2066004de790fa270ade6e0178b7",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -804.267210732
+        }
+      ],
+      "marker_sha256": "1f54aa680e16c60bfd937b398de3f6a943199f378844d723861df199b4727ca4",
+      "fitted_artifact_hashes_verified": 21
+    },
+    {
+      "model_id": "pyrene_COO",
+      "parent_reference_accepted": true,
+      "reviewed_MK_evidence_gate_passed": true,
+      "orientation_energy_spread_hartree": 1.213899997765111e-05,
+      "orientation_energy_scope": "reported numerical rotation sensitivity, not an electronic-state proof",
+      "MK_evidence": [
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COO/attempt_001/fits/attempt_001/gaussian_logs/orientation_001.log",
+          "sha256": "7f4d242fa706520b23136c4b4f943f7a26c8de7b2e04ec2ed906b051e9f94e21",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -803.718923286
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COO/attempt_001/fits/attempt_001/gaussian_logs/orientation_002.log",
+          "sha256": "a9a4dbccac49ea68b8388ecad69954935238a3bc7d64bb2c1e67dff735336798",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -803.718911147
+        },
+        {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COO/attempt_001/fits/attempt_001/gaussian_logs/orientation_003.log",
+          "sha256": "4e183714de51f2e6967e21939c5a522ccfd97972a6b740d6480c6cfae77d2560",
+          "scf_energy_method": "RwB97XD",
+          "final_scf_energy_hartree": -803.718918183
+        }
+      ],
+      "marker_sha256": "e3b13b2fb9daf23a70fe900d57e603da8e9e0fd1dbc3682eaa6162f206e6353c",
+      "fitted_artifact_hashes_verified": 21
+    }
+  ],
+  "coverage": {
+    "all_models_passed_charge_identity_and_total_checks": true,
+    "all_requested_functional_group_pairs_computed": true,
+    "functional_group_pair_count": 6
+  }
+}

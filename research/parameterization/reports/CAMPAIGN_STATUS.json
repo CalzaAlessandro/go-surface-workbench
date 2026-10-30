@@ -1,5 +1,5 @@
 {
-  "verified_at_utc": "2026-10-30T16:44:16.313325+00:00",
+  "verified_at_utc": "2026-10-30T20:22:37.003293+00:00",
   "forcefield_candidates": {
     "status": "unfitted_controls_with_unresolved_gaps",
     "technical_LEaP_cases": 24,
@@ -61,13 +61,24 @@
     "edge_controls": 5,
     "first_DFT_subset_job_id": "1401678",
     "first_DFT_subset_models": 8,
-    "last_scheduler_observation": "Original first two references RUNNING at 7h23m; six references PENDING with five-day limit",
+    "last_scheduler_observation": "One original parent completed, one timed out at original 8h and is under separate recovery, two running, four pending at 5-day limit",
     "final_parameter_validation": false,
     "supplemental_isolated_initial_models": 4,
     "total_initial_models_including_isolated_controls": 43,
     "RESP_continuation_job_id": "1406371",
     "RESP_continuation_dependency": "aftercorr:1401678, followed by strict scientific gate",
-    "RESP_continuation_status": "8 tasks PENDING on corresponding parent completion"
+    "RESP_continuation_status": "One control completed; six tasks pending corresponding parents; obsolete task 1406371_0 canceled and superseded by recovery including RESP",
+    "completed_RESP_models": [
+      "C24_OH_OH_far_trans"
+    ],
+    "recovery": {
+      "job_id": "1408584",
+      "scope": "C24_OH_OH_near_trans, copied original optimized checkpoint; frequencies recomputed, then strict DFT-RESP",
+      "status": "RUNNING",
+      "wall_time_days": 5,
+      "source_originals_preserved": true,
+      "report_root": "calculations/mixed_near_OH_recovery_attempt_001"
+    }
   },
   "optional_structure_specific_charges": {
     "status": "literature_candidate_only_not_implemented",
@@ -92,27 +103,30 @@
     "pilot_job_id": "1406127",
     "pilot_status": "COMPLETED_with_actual_Gaussian_3_orientations_and_RESP",
     "remaining_array_job_id": "1406128",
-    "last_observation": "5 completion markers and 2 RUNNING; reviewed seven-model aggregate remains pending",
+    "last_observation": "All seven completed; independent reviewed aggregate completed; local context tables regenerated",
     "reviewed_postanalysis_job_id": "1406154",
-    "postanalysis_status": "scheduled afterok:1406128; aggregate marker not yet present",
+    "postanalysis_status": "COMPLETED; 147 fit artifact hashes and 21 actual MK log gates verified",
     "final_parameter_validation": false,
-    "completed_atomic_controls_at_last_check": 5,
+    "completed_atomic_controls_at_last_check": 7,
     "completed_models_at_last_check": [
       "pyrene_pristine",
       "pyrene_diol_cis",
       "pyrene_diol_trans",
       "pyrene_diol_epoxide",
-      "pyrene_dione"
+      "pyrene_dione",
+      "pyrene_COOH",
+      "pyrene_COO"
     ],
     "failed_models_at_last_check": [],
     "locally_reviewed_partial_contexts": 4,
-    "partial_report": "RESP_context_DFT_partial_20261030_attempt_001/README.md"
+    "partial_report": "RESP_context_DFT_partial_20261030_attempt_001/README.md",
+    "complete_report": "RESP_context_DFT_seven_controls_20261030_attempt_001/README.md"
   },
   "bonded_parameter_derivation": "Deferred by user; no source frcmod modified",
   "isolated_controls_DFT_RESP": {
     "job_id": "1406363",
     "models": 4,
-    "status": "C24 pristine and single EPX RUNNING; corresponding C54 controls PENDING",
+    "status": "Two C24 references RUNNING, two C54 references PENDING; none completed",
     "wall_time_days": 5,
     "max_concurrent_tasks": 2,
     "final_parameter_validation": false
@@ -125,19 +139,38 @@
     "new_bonded_fitting": false
   },
   "verification_this_update": {
-    "research_test_suite": "207 passed in 8.47 s",
-    "local_snapshot_files_hashed": 100,
-    "local_recomputed_training_ESP_rows": 120,
-    "physical_contexts_in_partial_report": 4,
-    "MK_log_evidence_checks": 12,
+    "research_test_suite": "218 passed in 9.38 s",
+    "full_DFT_dataset_metadata_files_hashed": 62,
+    "DFT_fit_artifacts_independently_verified": 147,
+    "DFT_MK_logs_independently_gated": 21,
+    "DFT_training_ESP_rows": 210,
+    "native_HF_probe_logs_rechecked": 7,
+    "HF_source_files_hashed": 59,
     "final_parameter_validation": false
   },
   "new_RESP_acceptance_policy": {
     "canonical_ESP_target": "gas-phase HF/6-31G* MK ESP + Amber RESP",
     "DFT_RESP": "comparison controls, not automatically selected",
     "geometry_optimization_may_use_DFT": true,
-    "HF_on_DFT_controller_status": "not yet implemented; separate electronic-state evidence required",
+    "HF_on_DFT_controller_status": "Fixed-geometry HF probe helper implemented and run; mixed-level RESP fitting controller not yet implemented",
     "reference": "docs/AMBER_RESP_ACCEPTANCE.md",
-    "production_validation": false
+    "production_validation": false,
+    "electronic_stability_scope": "Full stability is an additional strict research criterion. Retain conventional restricted-HF controls with explicit external-instability flag; no automatic UHF/DFT substitution."
+  },
+  "HF_on_DFT_probes": {
+    "job_id": "1408585",
+    "models": 7,
+    "geometry_method": "wB97XD/6-311++G(d,p)",
+    "probe_method": "HF/6-31G*",
+    "gaussian_completed_normally": 7,
+    "gaussian_exit_code": 0,
+    "external_RHF_to_UHF_instability": 7,
+    "worker_exit_code_for_strict_gate": 4,
+    "interpretation": "additional strict research gate, not SCF failure or automatic Amber incompatibility",
+    "RESP_fit_performed": false,
+    "source_files_hashed_locally": 59,
+    "actual_logs_rechecked_locally": 7,
+    "report": "HF_on_DFT_stability_20261030_attempt_001/README.md",
+    "final_parameter_validation": false
   }
 }

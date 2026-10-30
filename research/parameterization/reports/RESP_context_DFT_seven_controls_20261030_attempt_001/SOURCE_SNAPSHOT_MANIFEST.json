@@ -1,0 +1,318 @@
+{
+  "created_at_utc": "2026-10-30T20:13:46.826417+00:00",
+  "models": 7,
+  "final_parameter_validation": false,
+  "scope": "completed seven-control DFT-RESP dataset; independent reviewed MK evidence included",
+  "files": [
+    {
+      "path": "reviewed/DFT_RESP_CONTEXT_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_context_reviewed_attempt_001/DFT_RESP_CONTEXT_COMPLETE.json",
+      "sha256": "b0229799ea2c47d78bb22dff6299e402236dd018faf55d41b413b97088a2d61b"
+    },
+    {
+      "path": "reviewed/background_carbon_distance_charges.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_context_reviewed_attempt_001/outputs/background_carbon_distance_charges.csv",
+      "sha256": "43abfb2ab2e5223a233319c52123fe2a1e0a51fde17acd4b55c24aab0549371e"
+    },
+    {
+      "path": "reviewed/context_analysis.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_context_reviewed_attempt_001/outputs/context_analysis.json",
+      "sha256": "4e48c291b22b7d6256018f422fa1240361bf57fc78a6f2cc99cd813a9812e7d3"
+    },
+    {
+      "path": "reviewed/functional_group_charges.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_context_reviewed_attempt_001/outputs/functional_group_charges.csv",
+      "sha256": "e984bcf81006d3fc9239261862e3de719a05479a36560b9569cd38134e2312b4"
+    },
+    {
+      "path": "reviewed/functional_group_pairs.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_context_reviewed_attempt_001/outputs/functional_group_pairs.csv",
+      "sha256": "1da1d5f13df1763e50ebaf6fb412a9ed2a87678572473e8c01c5dfa3bb7f6509"
+    },
+    {
+      "path": "reviewed/per_atom_charges.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_context_reviewed_attempt_001/outputs/per_atom_charges.csv",
+      "sha256": "bc5168ab2f4e7463d728edd56a7cd6ec75c912118174a69c5116a328a0b62c22"
+    },
+    {
+      "path": "pyrene_pristine/fit/model.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/fits/attempt_001/model.json",
+      "sha256": "09a8f4fffb1f54baa35c9f857ed7e9ea7225857a13896199ac9b6eab9fd5ef46"
+    },
+    {
+      "path": "pyrene_pristine/fit/charges.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/fits/attempt_001/charges.json",
+      "sha256": "68b606061ff8aa9a0d5d82f5fc286c1b331c839cffcfef7a3d0b06b5fce3dae0"
+    },
+    {
+      "path": "pyrene_pristine/fit/charges.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/fits/attempt_001/charges.csv",
+      "sha256": "cba6d6e2c86fb028decc71bf537c80b4299d42749806d9fbb1c14897f6f56dd0"
+    },
+    {
+      "path": "pyrene_pristine/fit/FIT_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/fits/attempt_001/FIT_COMPLETE.json",
+      "sha256": "cb5a885ab29971cf2aad2548966325a93ae07287ef141cd2f88d3714a6765b9d"
+    },
+    {
+      "path": "pyrene_pristine/POSTPROCESS_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/POSTPROCESS_COMPLETE.json",
+      "sha256": "764660bd2d882cc5bc0a8bf8c388022ce66a4826c2ea80a01b9b44c537694a4b"
+    },
+    {
+      "path": "pyrene_pristine/charge_comparison.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/charge_comparison.json",
+      "sha256": "5b452932b14bf539896d32d57ca34ddda550a1e2d46a2ef2f09c460bb9abd4fd"
+    },
+    {
+      "path": "pyrene_pristine/charge_comparison.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/charge_comparison.csv",
+      "sha256": "186335b62f82cba23afc34ad513fa1883672d48efe7a1190aad1e1bed926e67c"
+    },
+    {
+      "path": "pyrene_pristine/reference_gate.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/reference_gate.json",
+      "sha256": "8bac0071331aeaec347648dc20fa556f935ec1e6007dabbbfa956413174c9232"
+    },
+    {
+      "path": "pyrene_diol_cis/fit/model.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_cis/attempt_001/fits/attempt_001/model.json",
+      "sha256": "2f4e38a611861e7dac5f0c8a30bb758f5c0b18246e6bc1185c96185891d39a0a"
+    },
+    {
+      "path": "pyrene_diol_cis/fit/charges.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_cis/attempt_001/fits/attempt_001/charges.json",
+      "sha256": "51e88ebe6b3c7c389d5bfd454de90343534142d1ab44ba5b07184de4a6eee337"
+    },
+    {
+      "path": "pyrene_diol_cis/fit/charges.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_cis/attempt_001/fits/attempt_001/charges.csv",
+      "sha256": "29e0cd3bab88bfb4360fe17ef9302ed9fa211948dc5f31e6032bc2568cf98b7a"
+    },
+    {
+      "path": "pyrene_diol_cis/fit/FIT_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_cis/attempt_001/fits/attempt_001/FIT_COMPLETE.json",
+      "sha256": "c691084dabc9866dc0d28b149874a6e02baa149a253c870eb8f80528c113f9aa"
+    },
+    {
+      "path": "pyrene_diol_cis/POSTPROCESS_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_cis/attempt_001/POSTPROCESS_COMPLETE.json",
+      "sha256": "c5d39f1c777f0f186966f0460cfc96780fc96e67f81001b53bffa2a2348a547f"
+    },
+    {
+      "path": "pyrene_diol_cis/charge_comparison.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_cis/attempt_001/charge_comparison.json",
+      "sha256": "df0088be7d84a766028ceb17dbe851f3dd3a93d8b12a91d7a32ce8407e3b0953"
+    },
+    {
+      "path": "pyrene_diol_cis/charge_comparison.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_cis/attempt_001/charge_comparison.csv",
+      "sha256": "308d9d23e3f2e6447752ac50816733b85a163adca929edef92863aae6f4c9c69"
+    },
+    {
+      "path": "pyrene_diol_cis/reference_gate.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_cis/attempt_001/reference_gate.json",
+      "sha256": "f76de2f7eee63c8e4f30b5c8ba16c6b1e53cc2c2dedcf18b9a015c46ad87a2af"
+    },
+    {
+      "path": "pyrene_diol_trans/fit/model.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_trans/attempt_001/fits/attempt_001/model.json",
+      "sha256": "d09a5d9d7e986f64d282558641f9c0702e9d0154623db143903abb4996d5ce98"
+    },
+    {
+      "path": "pyrene_diol_trans/fit/charges.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_trans/attempt_001/fits/attempt_001/charges.json",
+      "sha256": "217b9edf895476adb182b44d7c464bfa34f7c1163f6aea5f40424cd6a355a1ae"
+    },
+    {
+      "path": "pyrene_diol_trans/fit/charges.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_trans/attempt_001/fits/attempt_001/charges.csv",
+      "sha256": "0fd460d147fe1274077982da696815512f23b5b1d5a8caba015552a760c5cef7"
+    },
+    {
+      "path": "pyrene_diol_trans/fit/FIT_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_trans/attempt_001/fits/attempt_001/FIT_COMPLETE.json",
+      "sha256": "4e8a56d25678ddae500820ed7adcf1639612746ce1d26f494f3791cce59a7479"
+    },
+    {
+      "path": "pyrene_diol_trans/POSTPROCESS_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_trans/attempt_001/POSTPROCESS_COMPLETE.json",
+      "sha256": "b3597086fcbe8ac4c0215fb57fa129436d614d8a09883313f3a01d4e3d4de552"
+    },
+    {
+      "path": "pyrene_diol_trans/charge_comparison.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_trans/attempt_001/charge_comparison.json",
+      "sha256": "2d77f679f3428f76ace5e1876863e426e75be6a2e27780ca57f9d63fad031a35"
+    },
+    {
+      "path": "pyrene_diol_trans/charge_comparison.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_trans/attempt_001/charge_comparison.csv",
+      "sha256": "cebc7f6ffdc520f821231c4c5e3e68f5f572477324ff82eaabb8548c96c06f99"
+    },
+    {
+      "path": "pyrene_diol_trans/reference_gate.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_trans/attempt_001/reference_gate.json",
+      "sha256": "955991595dacde7751d83c92ebd7b625b736fc11756805d008234766a6fcf218"
+    },
+    {
+      "path": "pyrene_diol_epoxide/fit/model.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_epoxide/attempt_001/fits/attempt_001/model.json",
+      "sha256": "0d54a52e0d25652065f526a2b8eafb92225329ce204200404ca56cdc23538f56"
+    },
+    {
+      "path": "pyrene_diol_epoxide/fit/charges.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_epoxide/attempt_001/fits/attempt_001/charges.json",
+      "sha256": "2f81ab34bb7e9b424a4d4369c58dd39178f0d364e926474206e55f05e53dbd12"
+    },
+    {
+      "path": "pyrene_diol_epoxide/fit/charges.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_epoxide/attempt_001/fits/attempt_001/charges.csv",
+      "sha256": "a09fb33b2cc6c988e2c13b150838093f5655a46fade2bc35975aa0531c619980"
+    },
+    {
+      "path": "pyrene_diol_epoxide/fit/FIT_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_epoxide/attempt_001/fits/attempt_001/FIT_COMPLETE.json",
+      "sha256": "d5b42e994648eff997b3c8011ebbf1d6c3bc311aa9b4dc3ba5df3ca477288a02"
+    },
+    {
+      "path": "pyrene_diol_epoxide/POSTPROCESS_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_epoxide/attempt_001/POSTPROCESS_COMPLETE.json",
+      "sha256": "2719086d0bf3db366fa6b67109de55019bd87278a4c779321b3fc76679a2fc2f"
+    },
+    {
+      "path": "pyrene_diol_epoxide/charge_comparison.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_epoxide/attempt_001/charge_comparison.json",
+      "sha256": "69f0de81f79c98288b2bfaf69854d9cec481b2e1402abfba2db1aa59088864d6"
+    },
+    {
+      "path": "pyrene_diol_epoxide/charge_comparison.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_epoxide/attempt_001/charge_comparison.csv",
+      "sha256": "d3b9e4a263926ad430146f8870c6d1c9a3bc9575b0a2126b6a16a8b5ae46d41d"
+    },
+    {
+      "path": "pyrene_diol_epoxide/reference_gate.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_epoxide/attempt_001/reference_gate.json",
+      "sha256": "440c02d4bc3d55b0e73f1acf47d1b985605284bc73c30414db9c505925d2083e"
+    },
+    {
+      "path": "pyrene_dione/fit/model.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_dione/attempt_001/fits/attempt_001/model.json",
+      "sha256": "9f2f6a0945cb9d54fd3bffb6fe8801357b75aceaeedb808cf5a2865c637661a4"
+    },
+    {
+      "path": "pyrene_dione/fit/charges.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_dione/attempt_001/fits/attempt_001/charges.json",
+      "sha256": "67e07eeb66aadbe4d0b896504094c31b0efff5376af98ad72f1c517e4c3f3fb4"
+    },
+    {
+      "path": "pyrene_dione/fit/charges.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_dione/attempt_001/fits/attempt_001/charges.csv",
+      "sha256": "f951179bf9da08f0f93f501e55a7e34fb9245d313bf2797e1db9104af5b420aa"
+    },
+    {
+      "path": "pyrene_dione/fit/FIT_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_dione/attempt_001/fits/attempt_001/FIT_COMPLETE.json",
+      "sha256": "3ea3378a0de6c802cca4a1e31d54dcb471c54662ca7e5e8022998ae34ae1d160"
+    },
+    {
+      "path": "pyrene_dione/POSTPROCESS_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_dione/attempt_001/POSTPROCESS_COMPLETE.json",
+      "sha256": "92b9c73c2a92f5ab368101aeb7d794b1fd047c7845b895d756aa1d2710df2518"
+    },
+    {
+      "path": "pyrene_dione/charge_comparison.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_dione/attempt_001/charge_comparison.json",
+      "sha256": "ecc84b235ec8d991fb56b5da0fe3592b5e97b2e435ff2947934c57fb0ce3e715"
+    },
+    {
+      "path": "pyrene_dione/charge_comparison.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_dione/attempt_001/charge_comparison.csv",
+      "sha256": "247d520ccf52cc928076236a999dad6e02072a4186dd5a8e0ec4f93fa9fbf5dc"
+    },
+    {
+      "path": "pyrene_dione/reference_gate.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_dione/attempt_001/reference_gate.json",
+      "sha256": "e457235047606f9a67655574fc2211515766d6fb756845db32ca0b341c0f7124"
+    },
+    {
+      "path": "pyrene_COOH/fit/model.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COOH/attempt_001/fits/attempt_001/model.json",
+      "sha256": "d45163c33d7a548d7e62eaa7babaf32c81be8b706bd837c60abae46e7612cfa1"
+    },
+    {
+      "path": "pyrene_COOH/fit/charges.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COOH/attempt_001/fits/attempt_001/charges.json",
+      "sha256": "43cf10b03bc1a474bf3d936ed5396a8e552a8ef9d80ee8282aa97c56decbef66"
+    },
+    {
+      "path": "pyrene_COOH/fit/charges.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COOH/attempt_001/fits/attempt_001/charges.csv",
+      "sha256": "acf335f2b604aaa8dba8151d0568150d1fbf66ea2d3b77476898134dce78eead"
+    },
+    {
+      "path": "pyrene_COOH/fit/FIT_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COOH/attempt_001/fits/attempt_001/FIT_COMPLETE.json",
+      "sha256": "6e7d5db63f99f2acee81221177988ea8a93ca596f026e36a416c3943f77ba7bb"
+    },
+    {
+      "path": "pyrene_COOH/POSTPROCESS_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COOH/attempt_001/POSTPROCESS_COMPLETE.json",
+      "sha256": "1f54aa680e16c60bfd937b398de3f6a943199f378844d723861df199b4727ca4"
+    },
+    {
+      "path": "pyrene_COOH/charge_comparison.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COOH/attempt_001/charge_comparison.json",
+      "sha256": "b871738a1ad29fc8f31e5387c1e1413a3c8cc311d37c3e1e978b7a33ce9344d0"
+    },
+    {
+      "path": "pyrene_COOH/charge_comparison.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COOH/attempt_001/charge_comparison.csv",
+      "sha256": "6d6c781a2d58093a5c2dc13c044cc67026c1237596b28826dd829641f443c2cf"
+    },
+    {
+      "path": "pyrene_COOH/reference_gate.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COOH/attempt_001/reference_gate.json",
+      "sha256": "72dfe4ec24738678e7f73519c813f3c327549373cbba4c0b0e0e20010d775f85"
+    },
+    {
+      "path": "pyrene_COO/fit/model.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COO/attempt_001/fits/attempt_001/model.json",
+      "sha256": "9f5f3d0af96dc40179b0ca2fb3c287baac565da4df84ce9800696ffbe283e0b6"
+    },
+    {
+      "path": "pyrene_COO/fit/charges.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COO/attempt_001/fits/attempt_001/charges.json",
+      "sha256": "da42814891b37b219efd02604e07c7b9d864b3ec270b6a5455806a58aaabf5d6"
+    },
+    {
+      "path": "pyrene_COO/fit/charges.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COO/attempt_001/fits/attempt_001/charges.csv",
+      "sha256": "1a6003459311550a930b140e8464873fbbe9b56afd7a2041f159cb511eb789c3"
+    },
+    {
+      "path": "pyrene_COO/fit/FIT_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COO/attempt_001/fits/attempt_001/FIT_COMPLETE.json",
+      "sha256": "82228d388eb8389201a8983065179f37410db1f37728bbff9d8c51a10696385c"
+    },
+    {
+      "path": "pyrene_COO/POSTPROCESS_COMPLETE.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COO/attempt_001/POSTPROCESS_COMPLETE.json",
+      "sha256": "e3b13b2fb9daf23a70fe900d57e603da8e9e0fd1dbc3682eaa6162f206e6353c"
+    },
+    {
+      "path": "pyrene_COO/charge_comparison.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COO/attempt_001/charge_comparison.json",
+      "sha256": "42c4c3b79910e62615f91c156ef002ca15d628733d7cbbdc245755a89871cdb2"
+    },
+    {
+      "path": "pyrene_COO/charge_comparison.csv",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COO/attempt_001/charge_comparison.csv",
+      "sha256": "8708324ce2be3621fe1e2680b5b167c563ac39ee2a0c4b84a6abfa3b0df30600"
+    },
+    {
+      "path": "pyrene_COO/reference_gate.json",
+      "source": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_COO/attempt_001/reference_gate.json",
+      "sha256": "60191a730cabcc75bade65860a3ae2aa64cecf469ec7f7516f30152a50cb725b"
+    }
+  ]
+}

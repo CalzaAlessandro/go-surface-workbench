@@ -1,0 +1,8 @@
+model_id,gaussian_exit_code,gaussian_completed_normally,strict_stability_gate_accepted,classification,RESP_fit_performed,final_parameter_validation
+pyrene_pristine,0,True,False,external_RHF_to_UHF_instability_only,False,False
+pyrene_diol_cis,0,True,False,external_RHF_to_UHF_instability_only,False,False
+pyrene_diol_trans,0,True,False,external_RHF_to_UHF_instability_only,False,False
+pyrene_diol_epoxide,0,True,False,external_RHF_to_UHF_instability_only,False,False
+pyrene_dione,0,True,False,external_RHF_to_UHF_instability_only,False,False
+pyrene_COOH,0,True,False,external_RHF_to_UHF_instability_only,False,False
+pyrene_COO,0,True,False,external_RHF_to_UHF_instability_only,False,False

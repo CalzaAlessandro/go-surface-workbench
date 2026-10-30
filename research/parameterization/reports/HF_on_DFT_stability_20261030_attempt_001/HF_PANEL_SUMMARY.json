@@ -1,0 +1,91 @@
+{
+  "verified_at_utc": "2026-10-30T20:21:53.288365+00:00",
+  "models": [
+    {
+      "model_id": "pyrene_pristine",
+      "gaussian_exit_code": 0,
+      "gaussian_completed_normally": true,
+      "strict_stability_gate_accepted": false,
+      "classification": "external_RHF_to_UHF_instability_only",
+      "stability_messages": [
+        "The wavefunction has an RHF -> UHF instability."
+      ],
+      "RESP_fit_performed": false,
+      "final_parameter_validation": false
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "gaussian_exit_code": 0,
+      "gaussian_completed_normally": true,
+      "strict_stability_gate_accepted": false,
+      "classification": "external_RHF_to_UHF_instability_only",
+      "stability_messages": [
+        "The wavefunction has an RHF -> UHF instability."
+      ],
+      "RESP_fit_performed": false,
+      "final_parameter_validation": false
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "gaussian_exit_code": 0,
+      "gaussian_completed_normally": true,
+      "strict_stability_gate_accepted": false,
+      "classification": "external_RHF_to_UHF_instability_only",
+      "stability_messages": [
+        "The wavefunction has an RHF -> UHF instability."
+      ],
+      "RESP_fit_performed": false,
+      "final_parameter_validation": false
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "gaussian_exit_code": 0,
+      "gaussian_completed_normally": true,
+      "strict_stability_gate_accepted": false,
+      "classification": "external_RHF_to_UHF_instability_only",
+      "stability_messages": [
+        "The wavefunction has an RHF -> UHF instability."
+      ],
+      "RESP_fit_performed": false,
+      "final_parameter_validation": false
+    },
+    {
+      "model_id": "pyrene_dione",
+      "gaussian_exit_code": 0,
+      "gaussian_completed_normally": true,
+      "strict_stability_gate_accepted": false,
+      "classification": "external_RHF_to_UHF_instability_only",
+      "stability_messages": [
+        "The wavefunction has an RHF -> UHF instability."
+      ],
+      "RESP_fit_performed": false,
+      "final_parameter_validation": false
+    },
+    {
+      "model_id": "pyrene_COOH",
+      "gaussian_exit_code": 0,
+      "gaussian_completed_normally": true,
+      "strict_stability_gate_accepted": false,
+      "classification": "external_RHF_to_UHF_instability_only",
+      "stability_messages": [
+        "The wavefunction has an RHF -> UHF instability."
+      ],
+      "RESP_fit_performed": false,
+      "final_parameter_validation": false
+    },
+    {
+      "model_id": "pyrene_COO",
+      "gaussian_exit_code": 0,
+      "gaussian_completed_normally": true,
+      "strict_stability_gate_accepted": false,
+      "classification": "external_RHF_to_UHF_instability_only",
+      "stability_messages": [
+        "The wavefunction has an RHF -> UHF instability."
+      ],
+      "RESP_fit_performed": false,
+      "final_parameter_validation": false
+    }
+  ],
+  "scope": "seven RHF/6-31G* fixed-DFT-geometry probes; strict gate is an additional project criterion, not Amber file-format compatibility",
+  "final_parameter_validation": false
+}
