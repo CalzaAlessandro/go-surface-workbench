@@ -1,0 +1,49 @@
+{
+  "status": "FOUR_COMPLETED_DFT_CONTROLS_LOCALLY_POSTVALIDATED",
+  "captured_models": 4,
+  "target_controls": 7,
+  "method": "wB97XD/6-311++G(d,p)",
+  "snapshot_sha256": "6ec622c478c71d7abee9fa8a581fa60d540f7ef4ac7fa4a6adf2623e77bf4b16",
+  "downloaded_files_hash_verified": 100,
+  "validations": [
+    {
+      "model_id": "pyrene_pristine",
+      "accepted_parent": true,
+      "stable_parent": true,
+      "reviewed_MK_gate": "PASS",
+      "recomputed_training_comparison_rows": 30,
+      "orientation_energy_spread_hartree": 4.574199999751727e-05,
+      "final_parameter_validation": false
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "accepted_parent": true,
+      "stable_parent": true,
+      "reviewed_MK_gate": "PASS",
+      "recomputed_training_comparison_rows": 30,
+      "orientation_energy_spread_hartree": 2.6679999791667797e-06,
+      "final_parameter_validation": false
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "accepted_parent": true,
+      "stable_parent": true,
+      "reviewed_MK_gate": "PASS",
+      "recomputed_training_comparison_rows": 30,
+      "orientation_energy_spread_hartree": 1.6551000044273678e-05,
+      "final_parameter_validation": false
+    },
+    {
+      "model_id": "pyrene_dione",
+      "accepted_parent": true,
+      "stable_parent": true,
+      "reviewed_MK_gate": "PASS",
+      "recomputed_training_comparison_rows": 30,
+      "orientation_energy_spread_hartree": 1.0259000077894598e-05,
+      "final_parameter_validation": false
+    }
+  ],
+  "training_ESP_is_held_out_validation": false,
+  "transferable_model_selected": false,
+  "final_parameter_validation": false
+}

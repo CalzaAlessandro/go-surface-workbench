@@ -1,5 +1,5 @@
 {
-  "verified_at_utc": "2026-10-30T16:20:04.083257+00:00",
+  "verified_at_utc": "2026-10-30T16:44:16.313325+00:00",
   "forcefield_candidates": {
     "status": "unfitted_controls_with_unresolved_gaps",
     "technical_LEaP_cases": 24,
@@ -61,10 +61,13 @@
     "edge_controls": 5,
     "first_DFT_subset_job_id": "1401678",
     "first_DFT_subset_models": 8,
-    "last_scheduler_observation": "2 RUNNING and 6 PENDING; not completed",
+    "last_scheduler_observation": "Original first two references RUNNING at 7h23m; six references PENDING with five-day limit",
     "final_parameter_validation": false,
     "supplemental_isolated_initial_models": 4,
-    "total_initial_models_including_isolated_controls": 43
+    "total_initial_models_including_isolated_controls": 43,
+    "RESP_continuation_job_id": "1406371",
+    "RESP_continuation_dependency": "aftercorr:1401678, followed by strict scientific gate",
+    "RESP_continuation_status": "8 tasks PENDING on corresponding parent completion"
   },
   "optional_structure_specific_charges": {
     "status": "literature_candidate_only_not_implemented",
@@ -89,11 +92,44 @@
     "pilot_job_id": "1406127",
     "pilot_status": "COMPLETED_with_actual_Gaussian_3_orientations_and_RESP",
     "remaining_array_job_id": "1406128",
-    "last_observation": "3 complete including pilot, 2 RUNNING, 2 PENDING; reviewed aggregate not completed",
+    "last_observation": "5 completion markers and 2 RUNNING; reviewed seven-model aggregate remains pending",
     "reviewed_postanalysis_job_id": "1406154",
-    "postanalysis_status": "scheduled afterok:1406128 with input artifact and corrected MK SCF evidence gates",
+    "postanalysis_status": "scheduled afterok:1406128; aggregate marker not yet present",
     "final_parameter_validation": false,
-    "completed_atomic_controls_at_last_check": 3
+    "completed_atomic_controls_at_last_check": 5,
+    "completed_models_at_last_check": [
+      "pyrene_pristine",
+      "pyrene_diol_cis",
+      "pyrene_diol_trans",
+      "pyrene_diol_epoxide",
+      "pyrene_dione"
+    ],
+    "failed_models_at_last_check": [],
+    "locally_reviewed_partial_contexts": 4,
+    "partial_report": "RESP_context_DFT_partial_20261030_attempt_001/README.md"
   },
-  "bonded_parameter_derivation": "Deferred by user; no source frcmod modified"
+  "bonded_parameter_derivation": "Deferred by user; no source frcmod modified",
+  "isolated_controls_DFT_RESP": {
+    "job_id": "1406363",
+    "models": 4,
+    "status": "C24 pristine and single EPX RUNNING; corresponding C54 controls PENDING",
+    "wall_time_days": 5,
+    "max_concurrent_tasks": 2,
+    "final_parameter_validation": false
+  },
+  "wall_time_policy": {
+    "new_QM_and_RESP_calculations": "5-00:00:00 as requested by user",
+    "previously_pending_mixed_references": "updated to 5-00:00:00",
+    "already_running_legacy_tasks": "Slurm denied limit increase; original limits retained",
+    "site_worker_receipts": "isolated_controls_dft_resp_attempt_001 and mixed_panel_dft_resp_attempt_001",
+    "new_bonded_fitting": false
+  },
+  "verification_this_update": {
+    "research_test_suite": "207 passed in 8.47 s",
+    "local_snapshot_files_hashed": 100,
+    "local_recomputed_training_ESP_rows": 120,
+    "physical_contexts_in_partial_report": 4,
+    "MK_log_evidence_checks": 12,
+    "final_parameter_validation": false
+  }
 }

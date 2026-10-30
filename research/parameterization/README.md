@@ -8,11 +8,13 @@ are preserved. Gaussian and AmberTools are system installations.
 
 Eight explicit finite pyrene-based models cover pristine scaffold, epoxide,
 paired OH (cis/trans), paired carbonyl, COOH, COO− and mixed diol/epoxide.
-Initial coordinates are force-field geometries, not QM results. The campaign
-runs HF/6-31G* optimization, frequencies and wavefunction stability before
-three rigid-orientation MK single points, atomic RESP and matched-grid charge
-controls. These include atomic references and a limited-context shared-block
-pilot. Held-out validation and full force-field comparison remain pending.
+Initial coordinates are force-field geometries, not QM results. The initial
+HF/6-31G* branch remains diagnostic because of electronic instability. An
+explicit ωB97X-D/6-311++G(d,p) branch supplies accepted-parent DFT–RESP controls,
+with geometry, frequency and stability gates before three rigid MK
+orientations, atomic RESP and matched-grid charge comparisons. The separate
+limited-context shared-block pilot is still diagnostic. Held-out validation
+and full force-field comparison remain pending.
 
 The pristine pilot has a restricted-surface minimum with positive frequencies
 but an RHF→UHF instability. Strict acceptance remains false. Its RHF-RESP path
@@ -36,7 +38,7 @@ Run the accepted-reference postprocessing locally, in an initialized molecular
 software environment, using a fresh output directory:
 
 ```bash
-uv run python 02_fit_and_compare.py --model models/pyrene_epoxide/model.json --log /path/to/gaussian.log --output-dir results/epoxide/attempt_001
+uv run python 02_fit_and_compare.py --method 'wB97XD/6-311++G(d,p)' --model models/pyrene_diol_trans/model.json --log /path/to/accepted_DFT_parent.log --output-dir results/diol_trans/attempt_001
 ```
 
 Append `--slurm --partition ciamician_cpu --modules gaussian/16 amber/25`
@@ -111,9 +113,26 @@ measured titration/adsorption behavior from non-unique atomic partial charges.
 
 Explicit [DFT-RESP support](docs/EXPLICIT_RESP_METHODS.md) preserves HF defaults
 and labels the selected QM method throughout the gates and fit. The actual
-pristine DFT-RESP pilot passed and six further controls are running/queued.
+pristine DFT-RESP pilot passed. At the recorded 2026-10-30 16:44 UTC check,
+five of seven controls had completion markers and two were running.
 The [context analyzer](docs/RESP_CONTEXT_ANALYSIS.md) exports individual atom
 and group values versus scaffold graph distances, separately identifying
 interior carbons and H-terminated edges. The 39-model starting panel now has
-[four supplementary isolated controls](docs/ISOLATED_CONTROLS.md); these four
-are prepared inputs, not completed QM references.
+[four supplementary isolated controls](docs/ISOLATED_CONTROLS.md). Their
+QM→RESP sequence is now submitted as array 1406363: the two C₂₄ controls are
+running and the two C₅₄ controls are queued. They are not completed references.
+
+The [interim four-structure report](reports/RESP_context_DFT_partial_20261030_attempt_001/README.md)
+contains individually resolved atom/group charges and 120 locally reproduced
+training ESP comparisons. It is a fixed snapshot of four completed structures,
+so its count differs from the subsequent live completion count. The source
+files, actual MK SCF evidence and charge totals were checked; this is not
+transferable force-field validation.
+
+Array 1406371 schedules the eight mixed-panel RESP continuations with
+[`aftercorr`](https://slurm.schedmd.com/sbatch.html#OPT_dependency), followed by
+an independent scientific reference gate in each worker. New calculation
+arrays and the previously pending mixed references have a five-day wall-time
+limit. Slurm denied increasing the limits of tasks already running; their
+existing eight-hour/four-hour limits remain recorded in the
+[live snapshot](reports/CHARGE_SCOPE_LIVE_STATUS_20261030_attempt_001.json).

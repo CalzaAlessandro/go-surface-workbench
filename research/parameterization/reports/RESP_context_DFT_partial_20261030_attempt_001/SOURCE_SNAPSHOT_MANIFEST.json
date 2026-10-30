@@ -1,0 +1,534 @@
+{
+  "collected_at_utc": "2026-10-30T16:37:14.383296+00:00",
+  "status": "PARTIAL_COMPLETED_CONTROLS_SNAPSHOT",
+  "method": "wB97XD/6-311++G(d,p)",
+  "final_parameter_validation": false,
+  "models": [
+    {
+      "model_id": "pyrene_pristine",
+      "all_fit_artifacts_verified": 21,
+      "source_marker": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/POSTPROCESS_COMPLETE.json",
+      "source_marker_sha256": "764660bd2d882cc5bc0a8bf8c388022ce66a4826c2ea80a01b9b44c537694a4b"
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "all_fit_artifacts_verified": 21,
+      "source_marker": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_cis/attempt_001/POSTPROCESS_COMPLETE.json",
+      "source_marker_sha256": "c5d39f1c777f0f186966f0460cfc96780fc96e67f81001b53bffa2a2348a547f"
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "all_fit_artifacts_verified": 21,
+      "source_marker": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_diol_trans/attempt_001/POSTPROCESS_COMPLETE.json",
+      "source_marker_sha256": "b3597086fcbe8ac4c0215fb57fa129436d614d8a09883313f3a01d4e3d4de552"
+    },
+    {
+      "model_id": "pyrene_dione",
+      "all_fit_artifacts_verified": 21,
+      "source_marker": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_dione/attempt_001/POSTPROCESS_COMPLETE.json",
+      "source_marker_sha256": "92b9c73c2a92f5ab368101aeb7d794b1fd047c7845b895d756aa1d2710df2518"
+    }
+  ],
+  "files": [
+    {
+      "path": "pyrene_pristine/fit/charges.csv",
+      "sha256": "cba6d6e2c86fb028decc71bf537c80b4299d42749806d9fbb1c14897f6f56dd0",
+      "bytes": 809
+    },
+    {
+      "path": "pyrene_pristine/fit/charges.json",
+      "sha256": "68b606061ff8aa9a0d5d82f5fc286c1b331c839cffcfef7a3d0b06b5fce3dae0",
+      "bytes": 5497
+    },
+    {
+      "path": "pyrene_pristine/fit/commands.jsonl",
+      "sha256": "9befec335b84cc154b4cfeb4fa3a6be8d4fb53af666db9be8513957bc5dfb2c7",
+      "bytes": 1215
+    },
+    {
+      "path": "pyrene_pristine/fit/espgen_001.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "pyrene_pristine/fit/espgen_002.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "pyrene_pristine/fit/espgen_003.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "pyrene_pristine/fit/gaussian_logs/orientation_001.log",
+      "sha256": "33d7fc10d3c33c7cfc67307f74fa40deb68f3ad0bc075f020b7e56499dd1d807",
+      "bytes": 5276005
+    },
+    {
+      "path": "pyrene_pristine/fit/gaussian_logs/orientation_002.log",
+      "sha256": "1d7f0e7fdddb17154d11a3e55de299f422b239a0a1685f81b6dee9e7c0f6cb82",
+      "bytes": 5271981
+    },
+    {
+      "path": "pyrene_pristine/fit/gaussian_logs/orientation_003.log",
+      "sha256": "94011a9a8fbad51179ec9053ab85c4a2e9849ce3b0f81ef410832ac928d6c3c2",
+      "bytes": 5273551
+    },
+    {
+      "path": "pyrene_pristine/fit/model.json",
+      "sha256": "09a8f4fffb1f54baa35c9f857ed7e9ea7225857a13896199ac9b6eab9fd5ef46",
+      "bytes": 12255
+    },
+    {
+      "path": "pyrene_pristine/fit/orientation_001.esp",
+      "sha256": "f7b71741799edbf1e23489c8cfd25bd289f51dd273d4c6124affa8eb2ac18db0",
+      "bytes": 3848276
+    },
+    {
+      "path": "pyrene_pristine/fit/orientation_002.esp",
+      "sha256": "9eb8b822e72f60b6e40b05e4daf6e1b47c9a42b5dbe636a1ce991528096b069f",
+      "bytes": 3845156
+    },
+    {
+      "path": "pyrene_pristine/fit/orientation_003.esp",
+      "sha256": "fa60ac6ac86ceb84e0b7a7247364427f97bb28bd1a418b54cbd7ddc5bac26934",
+      "bytes": 3846391
+    },
+    {
+      "path": "pyrene_pristine/fit/resp1.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "pyrene_pristine/fit/stage1.charges",
+      "sha256": "1539ac6ceb427b142e7810dcf58f61fa086983e29048300fb7bb9f1424030c7f",
+      "bytes": 790
+    },
+    {
+      "path": "pyrene_pristine/fit/stage1.in",
+      "sha256": "f733d3677040f16c9f8674cb6f04657d80e6995015849fab8f1ac24ef32b2d22",
+      "bytes": 1526
+    },
+    {
+      "path": "pyrene_pristine/fit/stage1.out",
+      "sha256": "95b954e46b634a1b6459938ab8703aa6a6f10d73f912dd52639921dbcc9fdfd2",
+      "bytes": 14212
+    },
+    {
+      "path": "pyrene_pristine/fit/stage1.punch",
+      "sha256": "838f296780be959524b5430d2e04fcd14504610895a4e49c824464275de97a63",
+      "bytes": 5029
+    },
+    {
+      "path": "pyrene_pristine/fit/stage2.in",
+      "sha256": "a3da14d04c73e4d23fdd07db1eb5ebc89585367d916f709d2021902d9f0dc9d7",
+      "bytes": 1093
+    },
+    {
+      "path": "pyrene_pristine/POSTPROCESS_COMPLETE.json",
+      "sha256": "764660bd2d882cc5bc0a8bf8c388022ce66a4826c2ea80a01b9b44c537694a4b",
+      "bytes": 8926
+    },
+    {
+      "path": "pyrene_pristine/reference_gate.json",
+      "sha256": "8bac0071331aeaec347648dc20fa556f935ec1e6007dabbbfa956413174c9232",
+      "bytes": 30213
+    },
+    {
+      "path": "pyrene_pristine/execution_scope.json",
+      "sha256": "ab05a6b8fbf46a0a71cde44e21ac8cb810c9d40b3188399d09504ad6b7fb747b",
+      "bytes": 219
+    },
+    {
+      "path": "pyrene_pristine/charge_comparison.json",
+      "sha256": "5b452932b14bf539896d32d57ca34ddda550a1e2d46a2ef2f09c460bb9abd4fd",
+      "bytes": 22866
+    },
+    {
+      "path": "pyrene_pristine/charge_comparison.csv",
+      "sha256": "186335b62f82cba23afc34ad513fa1883672d48efe7a1190aad1e1bed926e67c",
+      "bytes": 3941
+    },
+    {
+      "path": "pyrene_pristine/fit/FIT_COMPLETE.json",
+      "sha256": "cb5a885ab29971cf2aad2548966325a93ae07287ef141cd2f88d3714a6765b9d",
+      "bytes": 7827
+    },
+    {
+      "path": "pyrene_diol_cis/fit/charges.csv",
+      "sha256": "29e0cd3bab88bfb4360fe17ef9302ed9fa211948dc5f31e6032bc2568cf98b7a",
+      "bytes": 943
+    },
+    {
+      "path": "pyrene_diol_cis/fit/charges.json",
+      "sha256": "51e88ebe6b3c7c389d5bfd454de90343534142d1ab44ba5b07184de4a6eee337",
+      "bytes": 6371
+    },
+    {
+      "path": "pyrene_diol_cis/fit/commands.jsonl",
+      "sha256": "3755c503192e767ef9eb51eb790e914de0bc00d4f68f5a0b2a7f681fef6d1d7f",
+      "bytes": 1215
+    },
+    {
+      "path": "pyrene_diol_cis/fit/espgen_001.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "pyrene_diol_cis/fit/espgen_002.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "pyrene_diol_cis/fit/espgen_003.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "pyrene_diol_cis/fit/gaussian_logs/orientation_001.log",
+      "sha256": "dd54d6f33ee59350ef80ff3b1690057d91ec29a43cc638df46d3faa4125a60fe",
+      "bytes": 5562755
+    },
+    {
+      "path": "pyrene_diol_cis/fit/gaussian_logs/orientation_002.log",
+      "sha256": "53362e36455e23cfc98930876915dda447841f4a1688a9b7793895f4365bec58",
+      "bytes": 5558433
+    },
+    {
+      "path": "pyrene_diol_cis/fit/gaussian_logs/orientation_003.log",
+      "sha256": "a5822dd9fa8723efc146cb6aed792f08d66b7a0fc65ea4801e32b12ba510bd55",
+      "bytes": 5558567
+    },
+    {
+      "path": "pyrene_diol_cis/fit/model.json",
+      "sha256": "2f4e38a611861e7dac5f0c8a30bb758f5c0b18246e6bc1185c96185891d39a0a",
+      "bytes": 14151
+    },
+    {
+      "path": "pyrene_diol_cis/fit/orientation_001.esp",
+      "sha256": "53b06f8a50d8c0cb261b0ebfce89ef7d83b180b9a7ff190b82714cbe0dbb392c",
+      "bytes": 4049711
+    },
+    {
+      "path": "pyrene_diol_cis/fit/orientation_002.esp",
+      "sha256": "aec2e2f21ae4bc26c919e6185d27579992179ad8179d6a7276ac7a05297c9836",
+      "bytes": 4046331
+    },
+    {
+      "path": "pyrene_diol_cis/fit/orientation_003.esp",
+      "sha256": "75a95f5910591e0da823035900cf3f4b7ee3be6ce92747e3a62288e6c26193fd",
+      "bytes": 4046461
+    },
+    {
+      "path": "pyrene_diol_cis/fit/resp1.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "pyrene_diol_cis/fit/stage1.charges",
+      "sha256": "98b087488fb831e8cbd0909b06e9f3f440abd12e3393eafdfd5e8eb938377cf7",
+      "bytes": 912
+    },
+    {
+      "path": "pyrene_diol_cis/fit/stage1.in",
+      "sha256": "e01e090a4fee4bfe79d284210a555ef4b6f91a9c72b28c15c4bc24d9a72ba7a8",
+      "bytes": 2846
+    },
+    {
+      "path": "pyrene_diol_cis/fit/stage1.out",
+      "sha256": "f25e851f5cf6eb2e08b6cd6bd8f95aaceabd21a9026da59dae4efb9669e81186",
+      "bytes": 16852
+    },
+    {
+      "path": "pyrene_diol_cis/fit/stage1.punch",
+      "sha256": "5394c17252c7be2a0058bc176ed1bc4694e51ca3da8845ccaba1b1a3cb076246",
+      "bytes": 5701
+    },
+    {
+      "path": "pyrene_diol_cis/fit/stage2.in",
+      "sha256": "6af44a35e4b3caabac37a40961dce135da3bb6793b9fcf6c226be715d803e57f",
+      "bytes": 1225
+    },
+    {
+      "path": "pyrene_diol_cis/POSTPROCESS_COMPLETE.json",
+      "sha256": "c5d39f1c777f0f186966f0460cfc96780fc96e67f81001b53bffa2a2348a547f",
+      "bytes": 8873
+    },
+    {
+      "path": "pyrene_diol_cis/reference_gate.json",
+      "sha256": "f76de2f7eee63c8e4f30b5c8ba16c6b1e53cc2c2dedcf18b9a015c46ad87a2af",
+      "bytes": 35831
+    },
+    {
+      "path": "pyrene_diol_cis/execution_scope.json",
+      "sha256": "ab05a6b8fbf46a0a71cde44e21ac8cb810c9d40b3188399d09504ad6b7fb747b",
+      "bytes": 219
+    },
+    {
+      "path": "pyrene_diol_cis/charge_comparison.json",
+      "sha256": "df0088be7d84a766028ceb17dbe851f3dd3a93d8b12a91d7a32ce8407e3b0953",
+      "bytes": 22517
+    },
+    {
+      "path": "pyrene_diol_cis/charge_comparison.csv",
+      "sha256": "308d9d23e3f2e6447752ac50816733b85a163adca929edef92863aae6f4c9c69",
+      "bytes": 3913
+    },
+    {
+      "path": "pyrene_diol_cis/fit/FIT_COMPLETE.json",
+      "sha256": "c691084dabc9866dc0d28b149874a6e02baa149a253c870eb8f80528c113f9aa",
+      "bytes": 7775
+    },
+    {
+      "path": "pyrene_diol_trans/fit/charges.csv",
+      "sha256": "0fd460d147fe1274077982da696815512f23b5b1d5a8caba015552a760c5cef7",
+      "bytes": 947
+    },
+    {
+      "path": "pyrene_diol_trans/fit/charges.json",
+      "sha256": "217b9edf895476adb182b44d7c464bfa34f7c1163f6aea5f40424cd6a355a1ae",
+      "bytes": 6377
+    },
+    {
+      "path": "pyrene_diol_trans/fit/commands.jsonl",
+      "sha256": "22bc3ab8e188b7ba655588a1429a72e3c38c6611ab70ca226c7cebb098b3edf0",
+      "bytes": 1215
+    },
+    {
+      "path": "pyrene_diol_trans/fit/espgen_001.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "pyrene_diol_trans/fit/espgen_002.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "pyrene_diol_trans/fit/espgen_003.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "pyrene_diol_trans/fit/gaussian_logs/orientation_001.log",
+      "sha256": "f1d597299722827cf9e4dc05d4796f20f3a5194f4c5f3bf6dc6b7c48ef6bdaff",
+      "bytes": 5553015
+    },
+    {
+      "path": "pyrene_diol_trans/fit/gaussian_logs/orientation_002.log",
+      "sha256": "a5010b6828a1a777106b879689c9df6513d99bcb1686507683e6a83bd329c718",
+      "bytes": 5560803
+    },
+    {
+      "path": "pyrene_diol_trans/fit/gaussian_logs/orientation_003.log",
+      "sha256": "d49c50bfc193fb3aec6bc8199ccfa254dc59dbc5884958b0f30262b663c643c7",
+      "bytes": 5553007
+    },
+    {
+      "path": "pyrene_diol_trans/fit/model.json",
+      "sha256": "d09a5d9d7e986f64d282558641f9c0702e9d0154623db143903abb4996d5ce98",
+      "bytes": 14152
+    },
+    {
+      "path": "pyrene_diol_trans/fit/orientation_001.esp",
+      "sha256": "fa4a461579c902231cca71ace64636faa0de3a953b2539dd9c58c399edf7fdb9",
+      "bytes": 4043471
+    },
+    {
+      "path": "pyrene_diol_trans/fit/orientation_002.esp",
+      "sha256": "b6c4f9e2acb7a507e120ad20d7efe81d956e14f96627866bad734ea77aaaffb4",
+      "bytes": 4049256
+    },
+    {
+      "path": "pyrene_diol_trans/fit/orientation_003.esp",
+      "sha256": "082a1a701f194eadf6664666e50b5ff71016c32d88e7100978a9daad24756522",
+      "bytes": 4043471
+    },
+    {
+      "path": "pyrene_diol_trans/fit/resp1.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "pyrene_diol_trans/fit/stage1.charges",
+      "sha256": "249b76cb903f756aed7eeaebedabe9c7b3fc5c58243ed4df77130d2ea0de8e85",
+      "bytes": 912
+    },
+    {
+      "path": "pyrene_diol_trans/fit/stage1.in",
+      "sha256": "97f1debeb5a8a9de459e27c211da5a4c4b8c6c19b2119f91a6c4830453a9c37e",
+      "bytes": 2036
+    },
+    {
+      "path": "pyrene_diol_trans/fit/stage1.out",
+      "sha256": "ebcd1bbd8734178f6e2c8b545fbdd03ae34a27a0065990a3e9fbd24820b2ac91",
+      "bytes": 16192
+    },
+    {
+      "path": "pyrene_diol_trans/fit/stage1.punch",
+      "sha256": "4e8078daa559c9dcb64726cf88b1233d4b910a7e9f942345d574b04d83cc4519",
+      "bytes": 5701
+    },
+    {
+      "path": "pyrene_diol_trans/fit/stage2.in",
+      "sha256": "4b4462a204f3fce1b9babcb4d6b494cacd422217bf13f10702ecf502b3f28249",
+      "bytes": 1225
+    },
+    {
+      "path": "pyrene_diol_trans/POSTPROCESS_COMPLETE.json",
+      "sha256": "b3597086fcbe8ac4c0215fb57fa129436d614d8a09883313f3a01d4e3d4de552",
+      "bytes": 8923
+    },
+    {
+      "path": "pyrene_diol_trans/reference_gate.json",
+      "sha256": "955991595dacde7751d83c92ebd7b625b736fc11756805d008234766a6fcf218",
+      "bytes": 34963
+    },
+    {
+      "path": "pyrene_diol_trans/execution_scope.json",
+      "sha256": "ab05a6b8fbf46a0a71cde44e21ac8cb810c9d40b3188399d09504ad6b7fb747b",
+      "bytes": 219
+    },
+    {
+      "path": "pyrene_diol_trans/charge_comparison.json",
+      "sha256": "2d77f679f3428f76ace5e1876863e426e75be6a2e27780ca57f9d63fad031a35",
+      "bytes": 22618
+    },
+    {
+      "path": "pyrene_diol_trans/charge_comparison.csv",
+      "sha256": "cebc7f6ffdc520f821231c4c5e3e68f5f572477324ff82eaabb8548c96c06f99",
+      "bytes": 3992
+    },
+    {
+      "path": "pyrene_diol_trans/fit/FIT_COMPLETE.json",
+      "sha256": "4e8a56d25678ddae500820ed7adcf1639612746ce1d26f494f3791cce59a7479",
+      "bytes": 7821
+    },
+    {
+      "path": "pyrene_dione/fit/charges.csv",
+      "sha256": "f951179bf9da08f0f93f501e55a7e34fb9245d313bf2797e1db9104af5b420aa",
+      "bytes": 827
+    },
+    {
+      "path": "pyrene_dione/fit/charges.json",
+      "sha256": "67e07eeb66aadbe4d0b896504094c31b0efff5376af98ad72f1c517e4c3f3fb4",
+      "bytes": 5564
+    },
+    {
+      "path": "pyrene_dione/fit/commands.jsonl",
+      "sha256": "675c63c5aa8295178acf55021c5e7abafe4901cedba8cc67063a527a3003f359",
+      "bytes": 1215
+    },
+    {
+      "path": "pyrene_dione/fit/espgen_001.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "pyrene_dione/fit/espgen_002.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "pyrene_dione/fit/espgen_003.log",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    {
+      "path": "pyrene_dione/fit/gaussian_logs/orientation_001.log",
+      "sha256": "5e79c9ee102d3b4ac15be630ae4e337bd340a8b905164f3290a517ae6b0bb437",
+      "bytes": 5543500
+    },
+    {
+      "path": "pyrene_dione/fit/gaussian_logs/orientation_002.log",
+      "sha256": "af902ceb43e612494d9f7dd53ae8a81c917781c406bab5662cc0b938fac15f5c",
+      "bytes": 5538968
+    },
+    {
+      "path": "pyrene_dione/fit/gaussian_logs/orientation_003.log",
+      "sha256": "a7908899407c869783a3b7b9025b2b9fdbbc8f3722ea08647952346195176759",
+      "bytes": 5532668
+    },
+    {
+      "path": "pyrene_dione/fit/model.json",
+      "sha256": "9f2f6a0945cb9d54fd3bffb6fe8801357b75aceaeedb808cf5a2865c637661a4",
+      "bytes": 12317
+    },
+    {
+      "path": "pyrene_dione/fit/orientation_001.esp",
+      "sha256": "6492fd2b8a145ed8c93df6401f22736f02f2b7dfca93cb860ffa8c7131fd0d54",
+      "bytes": 4042236
+    },
+    {
+      "path": "pyrene_dione/fit/orientation_002.esp",
+      "sha256": "586c5573e09c2b8ddaab3b0609b03e9a54ed6064ebd834d70c1a6c419805d0d0",
+      "bytes": 4038921
+    },
+    {
+      "path": "pyrene_dione/fit/orientation_003.esp",
+      "sha256": "7aad70dab02bb6ea9edaf8aca3a1e1768419b9eb14691fd9667c24bff0a36be0",
+      "bytes": 4034306
+    },
+    {
+      "path": "pyrene_dione/fit/resp1.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "pyrene_dione/fit/stage1.charges",
+      "sha256": "391a2389384821f2b3f2473d987acec0247b7adf4e3d81c7f05382541a21e6e1",
+      "bytes": 790
+    },
+    {
+      "path": "pyrene_dione/fit/stage1.in",
+      "sha256": "753c853017c8f09f3e8d453acf801fd3fe354f92927476d6961c21bdfbd6e81f",
+      "bytes": 2498
+    },
+    {
+      "path": "pyrene_dione/fit/stage1.out",
+      "sha256": "19cb7c6439ef8c9d06cf8b0a136ea55b1e28cc44b3a198ae823788fc3ed54a86",
+      "bytes": 14968
+    },
+    {
+      "path": "pyrene_dione/fit/stage1.punch",
+      "sha256": "25dc1dbbe88f89e86973d5d941eb3f5954cf772ce7592f41b56b2920ae888b5c",
+      "bytes": 5029
+    },
+    {
+      "path": "pyrene_dione/fit/stage2.in",
+      "sha256": "5827e1d9684ec560dacf8e92c0714765dded10a2db5b2a3ef0737f4733ebc386",
+      "bytes": 1093
+    },
+    {
+      "path": "pyrene_dione/POSTPROCESS_COMPLETE.json",
+      "sha256": "92b9c73c2a92f5ab368101aeb7d794b1fd047c7845b895d756aa1d2710df2518",
+      "bytes": 8845
+    },
+    {
+      "path": "pyrene_dione/reference_gate.json",
+      "sha256": "e457235047606f9a67655574fc2211515766d6fb756845db32ca0b341c0f7124",
+      "bytes": 30331
+    },
+    {
+      "path": "pyrene_dione/execution_scope.json",
+      "sha256": "ab05a6b8fbf46a0a71cde44e21ac8cb810c9d40b3188399d09504ad6b7fb747b",
+      "bytes": 219
+    },
+    {
+      "path": "pyrene_dione/charge_comparison.json",
+      "sha256": "ecc84b235ec8d991fb56b5da0fe3592b5e97b2e435ff2947934c57fb0ce3e715",
+      "bytes": 21404
+    },
+    {
+      "path": "pyrene_dione/charge_comparison.csv",
+      "sha256": "247d520ccf52cc928076236a999dad6e02072a4186dd5a8e0ec4f93fa9fbf5dc",
+      "bytes": 3435
+    },
+    {
+      "path": "pyrene_dione/fit/FIT_COMPLETE.json",
+      "sha256": "3ea3378a0de6c802cca4a1e31d54dcb471c54662ca7e5e8022998ae34ae1d160",
+      "bytes": 7752
+    }
+  ]
+}
