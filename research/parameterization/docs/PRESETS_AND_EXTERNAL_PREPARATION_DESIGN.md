@@ -5,12 +5,17 @@ not claim a new importer, charge-correction CLI or final parameter release.
 
 ## Three separate choices with compatibility checks
 
-- **Material recipe:** four LayerOne examples/quick creations plus custom
-  geometry and group counts. A preset records its XPS/source assumptions,
-  reference dimensions, composition and protonation. It is not a universal
-  unique atomistic reconstruction of an XPS spectrum. The existing provisional
-  presets and the unresolved dense P935 placement remain explicit; definitive
-  rebuilding is deferred until parameter selection.
+- **Material composition:** the four LayerOne presets specify functional-group
+  proportions/composition and documented protonation assumptions. They do not
+  select sheet size: dimensions are always supplied by the user. Derive integer
+  group counts for that chosen graph, report rounding/actual composition and
+  retain random placement unless sites are explicit. Reference example dimensions
+  are provenance only, never implicit user dimensions. XPS does not identify a
+  unique spatial arrangement. Check available basal/edge sites: an unattainable
+  composition must be reported, without silently shrinking the sheet or changing
+  the recipe. Existing fixed-size examples are legacy/provisional references;
+  adapting their preset resolver remains implementation work. Definitive
+  material rebuilding is deferred until parameter selection.
 - **Charge assignment:** the standard reusable block library is the default.
   An optional, separately recorded structure-specific step can redistribute
   those charges after construction. Current, OLD and new/published controls

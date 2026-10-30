@@ -1,0 +1,51 @@
+{
+  "source_summary_sha256": "a7e5e56c89afac19d2131547f0523b4eeb9ef4acf01086ba69d2edd4a06ffd48",
+  "source": "https://github.com/arvpinto/GO_sheets",
+  "doi": "10.1021/acs.jpcb.2c06037",
+  "method": "DDEC6 charges averaged over local environment classes; coupled AIM Lennard-Jones terms",
+  "ranges": [
+    {
+      "group": "unoxygenated_sp2_carbon",
+      "prefix": "ca",
+      "minimum_e": -0.118556304728,
+      "maximum_e": 0.011644585366,
+      "scope": "Only observed environment classes in the two inspected published sheets, nominal C/O 1.8 and 3.0"
+    },
+    {
+      "group": "epoxide_carbon",
+      "prefix": "cx",
+      "minimum_e": 0.065585035309,
+      "maximum_e": 0.142348022794,
+      "scope": "Only observed environment classes in the two inspected published sheets, nominal C/O 1.8 and 3.0"
+    },
+    {
+      "group": "hydroxyl_carbon",
+      "prefix": "c3",
+      "minimum_e": 0.114882364666,
+      "maximum_e": 0.203912532376,
+      "scope": "Only observed environment classes in the two inspected published sheets, nominal C/O 1.8 and 3.0"
+    },
+    {
+      "group": "epoxide_oxygen",
+      "prefix": "os",
+      "minimum_e": -0.253457670505,
+      "maximum_e": -0.215339624362,
+      "scope": "Only observed environment classes in the two inspected published sheets, nominal C/O 1.8 and 3.0"
+    },
+    {
+      "group": "hydroxyl_oxygen",
+      "prefix": "oh",
+      "minimum_e": -0.488695523352,
+      "maximum_e": -0.461103035122,
+      "scope": "Only observed environment classes in the two inspected published sheets, nominal C/O 1.8 and 3.0"
+    },
+    {
+      "group": "hydroxyl_hydrogen",
+      "prefix": "ho",
+      "minimum_e": 0.364197532376,
+      "maximum_e": 0.372602120404,
+      "scope": "Only observed environment classes in the two inspected published sheets, nominal C/O 1.8 and 3.0"
+    }
+  ],
+  "uncovered": "No generic finite-edge/carboxyl/carboxylate/carbonyl assignment is established by these published basal sheets."
+}
