@@ -16,6 +16,7 @@ import subprocess
 import sys
 
 from .compare import CANDIDATES, compare_esp
+from .protocols import HF_METHOD, DFT_METHOD, RESP_METHODS, require_method
 from .qm import inspect_reference, prepare_orientations
 from .resp import BOHR_ANGSTROM, fit_atomic, read_esp
 
@@ -36,11 +37,14 @@ def _portable_evidence(value):
     return value
 
 
-def run(model_path, log_path, output_dir, *, cpus=8, mem_gb=6, gaussian='g16', rhf_diagnostic=False):
+def run(model_path, log_path, output_dir, *, cpus=8, mem_gb=6, gaussian='g16', rhf_diagnostic=False, method=HF_METHOD):
+    require_method(method)
+    if rhf_diagnostic and method != HF_METHOD:
+        raise ValueError('RHF instability diagnostic is HF-only (HF/6-31G*)')
     output = Path(output_dir).resolve()
     output.mkdir(parents=True, exist_ok=False)
     try:
-        gate = inspect_reference(model_path, log_path)
+        gate = inspect_reference(model_path, log_path, method)
         write_json(output/'reference_gate.json', _portable_evidence(gate))
         diagnostic_bypass = (rhf_diagnostic and gate['issues'] == ['stability_not_confirmed']
                              and 'The wavefunction has an RHF -> UHF instability.' in
@@ -50,11 +54,13 @@ def run(model_path, log_path, output_dir, *, cpus=8, mem_gb=6, gaussian='g16', r
         diagnostic = bool(rhf_diagnostic)
         scope = {'rhf_diagnostic_requested': bool(rhf_diagnostic),
                  'reference_accepted': gate['accepted'], 'diagnostic_rejection_bypass': bool(diagnostic_bypass),
-                 'scope': 'rhf_instability_diagnostic_control' if diagnostic else 'strict_atomic_reference',
+                 'scope': ('rhf_instability_diagnostic_control' if diagnostic else
+                           'dft_resp_control' if method == DFT_METHOD else 'strict_atomic_reference'),
+                 'qm_method': method,
                  'final_parameter_validation': False}
         write_json(output/'execution_scope.json', scope)
         manifest = prepare_orientations(model_path, log_path, output/'orientations', cpus=cpus, mem_gb=mem_gb,
-                                        allow_rhf_instability_diagnostic=bool(diagnostic_bypass))
+                                        allow_rhf_instability_diagnostic=bool(diagnostic_bypass), method=method)
         logs = []
         for entry in manifest['orientations']:
             folder = Path(entry['input_path']).parent
@@ -65,7 +71,7 @@ def run(model_path, log_path, output_dir, *, cpus=8, mem_gb=6, gaussian='g16', r
             if result.returncode:
                 raise RuntimeError(f'Gaussian orientation failed ({result.returncode}): {folder}')
             logs.append(log)
-        fit = fit_atomic(manifest['optimized_model_path'], logs, output/'fits')
+        fit = fit_atomic(manifest['optimized_model_path'], logs, output/'fits', method=method)
         fitted = json.loads(Path(fit['charges_json']).read_text())
         candidate = {'candidate': 'new_atomic_resp_reference', 'atoms': fitted['atoms'], 'coverage': {'complete': True}}
         original_model = json.loads(Path(manifest['optimized_model_path']).read_text())
@@ -88,16 +94,18 @@ def run(model_path, log_path, output_dir, *, cpus=8, mem_gb=6, gaussian='g16', r
             if len(fitted_rows) != 1 or fitted_rows[0]['status'] != 'matched_charge_control':
                 raise ValueError('The fitted atomic RESP candidate was not scored on the matched ESP grid')
             result['orientation'] = index
+            result['qm_method'] = method
             scores.append(result)
         write_json(output/'charge_comparison.json', scores)
-        fields = ['model_id', 'orientation', 'candidate', 'status', 'reason', 'rmse_au', 'relative_rmse', 'mae_au', 'charge_error_e']
+        fields = ['model_id', 'qm_method', 'orientation', 'candidate', 'status', 'reason', 'rmse_au', 'relative_rmse', 'mae_au', 'charge_error_e']
         with (output/'charge_comparison.csv').open('x', newline='') as handle:
             writer = csv.DictWriter(handle, fieldnames=fields, extrasaction='ignore')
             writer.writeheader()
             for score in scores:
                 for row in score['results']:
-                    writer.writerow(dict(row, model_id=model['model_id'], orientation=score['orientation']))
+                    writer.writerow(dict(row, model_id=model['model_id'], qm_method=method, orientation=score['orientation']))
         result = {'status': ('RHF_INSTABILITY_DIAGNOSTIC_ATOMIC_RESP_AND_TRAINING_ESP_COMPLETE' if diagnostic
+                             else 'DFT_RESP_CONTROL_AND_TRAINING_ESP_CONTROLS_COMPLETE' if method == DFT_METHOD
                              else 'ATOMIC_REFERENCE_AND_TRAINING_ESP_CONTROLS_COMPLETE'),
                   'scope': scope, 'charge_tolerance_e': rounding_tolerance,
                   'model_id': model['model_id'], 'fit': fit, 'comparison_json': str(output/'charge_comparison.json'),
@@ -115,6 +123,7 @@ def run(model_path, log_path, output_dir, *, cpus=8, mem_gb=6, gaussian='g16', r
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--method', choices=RESP_METHODS, default=HF_METHOD)
     parser.add_argument('--model', required=True)
     parser.add_argument('--log', required=True)
     parser.add_argument('--output-dir', required=True)
@@ -128,6 +137,8 @@ def main(argv=None):
     parser.add_argument('--dependency')
     parser.add_argument('--modules', nargs='*', default=['gaussian/16', 'amber/25'])
     args = parser.parse_args(argv)
+    if args.rhf_diagnostic and args.method != HF_METHOD:
+        parser.error('--rhf-diagnostic is HF-only (HF/6-31G*)')
     if args.cpus < 1 or args.mem_gb < 1:
         parser.error('CPU and memory requests must be positive')
     if args.slurm:
@@ -136,7 +147,8 @@ def main(argv=None):
         worker = output.with_name(output.name+'_worker.slurm')
         command = ['python', '-m', 'go_param.pipeline', '--model', str(Path(args.model).resolve()),
                    '--log', str(Path(args.log).resolve()), '--output-dir', str(output),
-                   '--cpus', str(args.cpus), '--mem-gb', str(args.mem_gb), '--gaussian', args.gaussian]
+                   '--cpus', str(args.cpus), '--mem-gb', str(args.mem_gb), '--gaussian', args.gaussian,
+                   '--method', args.method]
         if args.rhf_diagnostic:
             command += ['--rhf-diagnostic']
         body = ['#!/bin/bash -l', 'set -eo pipefail']
@@ -158,7 +170,7 @@ def main(argv=None):
         write_json(worker.with_suffix('.receipt.json'), {'job_id': receipt.stdout.strip(), 'command': cmd+[str(worker)], 'status': 'SUBMITTED'})
         print(receipt.stdout.strip())
     else:
-        result = run(args.model, args.log, args.output_dir, cpus=args.cpus, mem_gb=args.mem_gb, gaussian=args.gaussian, rhf_diagnostic=args.rhf_diagnostic)
+        result = run(args.model, args.log, args.output_dir, cpus=args.cpus, mem_gb=args.mem_gb, gaussian=args.gaussian, rhf_diagnostic=args.rhf_diagnostic, method=args.method)
         print(json.dumps({'status': result['status'], 'model_id': result['model_id']}, indent=2))
 
 

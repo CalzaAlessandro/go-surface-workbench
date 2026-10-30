@@ -7,6 +7,11 @@ Lo studio dei metodi di carica e dei tre candidati di force field è in
 [research/parameterization](research/parameterization/README.md); i nuovi
 parametri restano separati dalle librerie usate nelle campagne esistenti.
 
+Il [catalogo dei preset di carica](docs/CHARGE_PRESETS.md) include ora il
+riferimento pubblicato GAFF2–AIM con cariche e Lennard-Jones originali, oltre
+alle librerie correnti e al riferimento HierGO/OPLS. La nuova derivazione
+resta RESP; l'assegnazione generale di tutti i preset è ancora da completare.
+
 > **Private development snapshot.** This repository is a source snapshot of the
 > GO Builder workbench, not a complete software bundle or a release. Executables,
 > software archives, virtual environments, and validation campaign outputs were

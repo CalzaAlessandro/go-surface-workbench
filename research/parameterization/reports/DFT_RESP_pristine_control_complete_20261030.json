@@ -1,0 +1,182 @@
+{
+  "status": "DFT_RESP_CONTROL_AND_TRAINING_ESP_CONTROLS_COMPLETE",
+  "scope": {
+    "rhf_diagnostic_requested": false,
+    "reference_accepted": true,
+    "diagnostic_rejection_bypass": false,
+    "scope": "dft_resp_control",
+    "qm_method": "wB97XD/6-311++G(d,p)",
+    "final_parameter_validation": false
+  },
+  "charge_tolerance_e": 1.526e-05,
+  "model_id": "pyrene_pristine",
+  "fit": {
+    "schema_version": 1,
+    "status": "atomic_resp_fit_completed",
+    "model_id": "pyrene_pristine",
+    "attempt_dir": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/fits/attempt_001",
+    "charges_csv": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/fits/attempt_001/charges.csv",
+    "charges_json": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/fits/attempt_001/charges.json",
+    "charge_sum_e": 1.6653345369377348e-16,
+    "formal_charge": 0,
+    "stage2": {
+      "status": "noop_no_methyl_methylene",
+      "groups_atom_ids": [],
+      "max_abs_change_e": 0.0,
+      "explanation": "All charges retained from stage 1; stage2.in is audit only and was not executed."
+    },
+    "orientation_weights": [
+      0.99978,
+      1.00019,
+      1.00003
+    ],
+    "metrics": [
+      {
+        "grid_points": 59178,
+        "esp_rmse_au": 0.001035295235297515,
+        "esp_rrms": 0.10971181579555468,
+        "dipole": {
+          "vector_debye": [
+            -8.701880279856391e-07,
+            -5.440291653043371e-06,
+            -4.240645468332071e-06
+          ],
+          "magnitude_debye": 6.952486926439217e-06,
+          "origin_angstrom": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "frame": "this Gaussian MK orientation; coordinate origin, not center of mass",
+          "origin_dependent_for_ions": false
+        },
+        "orientation": 1
+      },
+      {
+        "grid_points": 59130,
+        "esp_rmse_au": 0.0010594026662997405,
+        "esp_rrms": 0.1122938985640682,
+        "dipole": {
+          "vector_debye": [
+            8.78257031020854e-07,
+            -2.6400815593558517e-06,
+            -5.458446227229503e-06
+          ],
+          "magnitude_debye": 6.126663143028543e-06,
+          "origin_angstrom": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "frame": "this Gaussian MK orientation; coordinate origin, not center of mass",
+          "origin_dependent_for_ions": false
+        },
+        "orientation": 2
+      },
+      {
+        "grid_points": 59149,
+        "esp_rmse_au": 0.001019630713764376,
+        "esp_rrms": 0.10805491849327015,
+        "dipole": {
+          "vector_debye": [
+            -1.1002688235263886e-06,
+            3.7456706014198073e-06,
+            3.049131414978319e-07
+          ],
+          "magnitude_debye": 3.915815593490434e-06,
+          "origin_angstrom": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "frame": "this Gaussian MK orientation; coordinate origin, not center of mass",
+          "origin_dependent_for_ions": false
+        },
+        "orientation": 3
+      }
+    ],
+    "final_parameter_validation": false,
+    "protocol": {
+      "method": "wB97XD/6-311++G(d,p) MK ESP; Amber hyperbolic RESP",
+      "qm_method": "wB97XD/6-311++G(d,p)",
+      "stage1_qwt": 0.0005,
+      "stage2_qwt": 0.001,
+      "ihfree": 1,
+      "physical_conformers": 1,
+      "orientations": 3,
+      "mean_grid_points": 59152.333333333336,
+      "parent_qm_optimization_frequencies_stability": "must be approved upstream; not inferred from MK logs",
+      "scope": "DFT-RESP control; finite whole-model atomic reference; no bulk or modular-transfer validation"
+    },
+    "provenance": {
+      "qm_method": "wB97XD/6-311++G(d,p)",
+      "model_source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/orientations/model.json",
+      "model_sha256": "09a8f4fffb1f54baa35c9f857ed7e9ea7225857a13896199ac9b6eab9fd5ef46",
+      "gaussian_logs": [
+        {
+          "qm_method": "wB97XD/6-311++G(d,p)",
+          "source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/orientations/orientation_01/gaussian.log",
+          "snapshot": "gaussian_logs/orientation_001.log",
+          "sha256": "33d7fc10d3c33c7cfc67307f74fa40deb68f3ad0bc075f020b7e56499dd1d807",
+          "esp_sha256": "f7b71741799edbf1e23489c8cfd25bd289f51dd273d4c6124affa8eb2ac18db0",
+          "grid_points": 59178
+        },
+        {
+          "qm_method": "wB97XD/6-311++G(d,p)",
+          "source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/orientations/orientation_02/gaussian.log",
+          "snapshot": "gaussian_logs/orientation_002.log",
+          "sha256": "1d7f0e7fdddb17154d11a3e55de299f422b239a0a1685f81b6dee9e7c0f6cb82",
+          "esp_sha256": "9eb8b822e72f60b6e40b05e4daf6e1b47c9a42b5dbe636a1ce991528096b069f",
+          "grid_points": 59130
+        },
+        {
+          "qm_method": "wB97XD/6-311++G(d,p)",
+          "source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/orientations/orientation_03/gaussian.log",
+          "snapshot": "gaussian_logs/orientation_003.log",
+          "sha256": "94011a9a8fbad51179ec9053ab85c4a2e9849ce3b0f81ef410832ac928d6c3c2",
+          "esp_sha256": "fa60ac6ac86ceb84e0b7a7247364427f97bb28bd1a418b54cbd7ddc5bac26934",
+          "grid_points": 59149
+        }
+      ],
+      "executables": {
+        "espgen": {
+          "path": "/usr/local/amber24u3+at25/bin/espgen",
+          "sha256": "84ef419a4adbcefb2c9131a7761527b841a1a789783f36c0fc0eb6f4064fb8f1"
+        },
+        "resp": {
+          "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/external_resp_capacity_attempt_003/maxq_1024/resp",
+          "sha256": "092cb112fdbf0f7476bd78e77b498f0abcdf5ffce561616aac3faa4a02634762"
+        }
+      },
+      "fit_code_sha256": "b6eead7adcec3a7d6bf24338f55fc7133478a64dd432b79ccd2c838b8b777b11"
+    },
+    "artifacts_sha256": {
+      "all.esp": "696fad16374e1904e37da787d02689fecb7c53326ce51face7519459fd6808aa",
+      "charges.csv": "cba6d6e2c86fb028decc71bf537c80b4299d42749806d9fbb1c14897f6f56dd0",
+      "charges.json": "68b606061ff8aa9a0d5d82f5fc286c1b331c839cffcfef7a3d0b06b5fce3dae0",
+      "commands.jsonl": "9befec335b84cc154b4cfeb4fa3a6be8d4fb53af666db9be8513957bc5dfb2c7",
+      "espgen_001.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "espgen_002.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "espgen_003.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "gaussian_logs/orientation_001.log": "33d7fc10d3c33c7cfc67307f74fa40deb68f3ad0bc075f020b7e56499dd1d807",
+      "gaussian_logs/orientation_002.log": "1d7f0e7fdddb17154d11a3e55de299f422b239a0a1685f81b6dee9e7c0f6cb82",
+      "gaussian_logs/orientation_003.log": "94011a9a8fbad51179ec9053ab85c4a2e9849ce3b0f81ef410832ac928d6c3c2",
+      "model.json": "09a8f4fffb1f54baa35c9f857ed7e9ea7225857a13896199ac9b6eab9fd5ef46",
+      "orientation_001.esp": "f7b71741799edbf1e23489c8cfd25bd289f51dd273d4c6124affa8eb2ac18db0",
+      "orientation_002.esp": "9eb8b822e72f60b6e40b05e4daf6e1b47c9a42b5dbe636a1ce991528096b069f",
+      "orientation_003.esp": "fa60ac6ac86ceb84e0b7a7247364427f97bb28bd1a418b54cbd7ddc5bac26934",
+      "resp1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stage1.charges": "1539ac6ceb427b142e7810dcf58f61fa086983e29048300fb7bb9f1424030c7f",
+      "stage1.esout": "db3edb3d48ad96b80d7f34bdbe3c1beadbdd4883c617e732fb747fc1b4d590fd",
+      "stage1.in": "f733d3677040f16c9f8674cb6f04657d80e6995015849fab8f1ac24ef32b2d22",
+      "stage1.out": "95b954e46b634a1b6459938ab8703aa6a6f10d73f912dd52639921dbcc9fdfd2",
+      "stage1.punch": "838f296780be959524b5430d2e04fcd14504610895a4e49c824464275de97a63",
+      "stage2.in": "a3da14d04c73e4d23fdd07db1eb5ebc89585367d916f709d2021902d9f0dc9d7"
+    }
+  },
+  "comparison_json": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/dft_resp_control_attempt_001/outputs/pyrene_pristine/attempt_001/charge_comparison.json",
+  "limitations": [
+    "Finite-model atomic fit; transferable block fit not completed.",
+    "Training ESP comparisons are not held-out adsorption or full force-field validation."
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "verified_at_utc": "2026-10-30T14:38:13.087216+00:00",
+  "verified_at_utc": "2026-10-30T16:20:04.083257+00:00",
   "forcefield_candidates": {
     "status": "unfitted_controls_with_unresolved_gaps",
     "technical_LEaP_cases": 24,
@@ -62,11 +62,38 @@
     "first_DFT_subset_job_id": "1401678",
     "first_DFT_subset_models": 8,
     "last_scheduler_observation": "2 RUNNING and 6 PENDING; not completed",
-    "final_parameter_validation": false
+    "final_parameter_validation": false,
+    "supplemental_isolated_initial_models": 4,
+    "total_initial_models_including_isolated_controls": 43
   },
   "optional_structure_specific_charges": {
     "status": "literature_candidate_only_not_implemented",
     "first_candidate_for_benchmark": "SQE+qp / ChargeFW2",
-    "parameterization_warning": "Published example targets NPA; current GO RESP charges cannot be substituted without calibration/validation."
-  }
+    "parameterization_warning": "Published example targets NPA; current GO RESP charges cannot be substituted without calibration/validation.",
+    "decision": "Not preselected; compare context lookup, fitted rule and published methods after RESP context data"
+  },
+  "current_scope": "RESP charge derivation/context analysis and coupled charge-LJ evaluation; new bonded/frcmod fitting deferred",
+  "charge_preset_catalog": "resources/charge_presets.json in workbench; source presets preserved unchanged",
+  "RESP_context_analysis": {
+    "tool": "go_param.context",
+    "HF_contexts": 7,
+    "HF_scope": "RHF-instability diagnostic only",
+    "functional_group_pairs": 6,
+    "background": "interior scaffold and hydrogen-terminated edge separate",
+    "report": "RESP_context_HF_diagnostic_20261030_attempt_002/context_analysis.json"
+  },
+  "DFT_RESP_controls": {
+    "method": "wB97XD/6-311++G(d,p) MK + Amber RESP",
+    "selected_parent_models": 7,
+    "all_seven_parent_references_passed_strict_gate": true,
+    "pilot_job_id": "1406127",
+    "pilot_status": "COMPLETED_with_actual_Gaussian_3_orientations_and_RESP",
+    "remaining_array_job_id": "1406128",
+    "last_observation": "3 complete including pilot, 2 RUNNING, 2 PENDING; reviewed aggregate not completed",
+    "reviewed_postanalysis_job_id": "1406154",
+    "postanalysis_status": "scheduled afterok:1406128 with input artifact and corrected MK SCF evidence gates",
+    "final_parameter_validation": false,
+    "completed_atomic_controls_at_last_check": 3
+  },
+  "bonded_parameter_derivation": "Deferred by user; no source frcmod modified"
 }

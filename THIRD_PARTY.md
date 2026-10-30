@@ -14,6 +14,18 @@ GPL-3.0. `PROVENANCE.json` records exact upstream paths, URLs, and SHA-256
 hashes. The charge audit reads the reference table; this snapshot does not run
 the upstream programs.
 
+## GAFF2–AIM reference preset
+
+The published subset under `resources/reference/gaff2_aim/` is copied byte for
+byte from the archived `arvpinto/GO_sheets` source at commit
+`1e59f43bd6c4d8c19d0a2a208edf53ce11e00bc5`. It retains the upstream GPL-3.0
+license, topology/coordinate files for C/O 1.8 and 3.0, associated force-field
+files and source documentation. `PROVENANCE.json` records download URLs and
+SHA-256 checksums. Cite Pinto et al., DOI `10.1021/acs.jpcb.2c06037`.
+This is a published reference preset, not a validated generic assignment to
+arbitrary finite GO sheets. Its charge and AIM Lennard-Jones coefficients
+remain paired and unchanged.
+
 ## Current parameter libraries
 
 The files under `resources/reference/current/` are user-supplied Amber/GAFF2

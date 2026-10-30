@@ -47,6 +47,7 @@ def gaussian_text(model, coords, esp):
             + ''.join(f" {i} {numbers[a['element']]} 0 {x[0]:.8f} {x[1]:.8f} {x[2]:.8f}\n"
                       for i, (a, x) in enumerate(zip(model['atoms'], coords), 1))
             + ' ---------------------------------------------------------------------\n'
+            + ' SCF Done:  E(RHF) =  -188.123456789 A.U. after 12 cycles\n'
             + ''.join(f' Atomic Center {i} is at {x[0]:.8f} {x[1]:.8f} {x[2]:.8f}\n'
                       for i, x in enumerate(coords, 1))
             + f' TEST_ESP_SOURCE: {esp}\n Normal termination of Gaussian 16\n')

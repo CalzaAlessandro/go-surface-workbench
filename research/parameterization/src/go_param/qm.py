@@ -11,6 +11,8 @@ import math
 from pathlib import Path
 import re
 
+from .protocols import HF_METHOD, DFT_METHOD, RESP_METHODS, require_method, route_matches_method, energy_matches_method
+
 ATOMIC_NUMBERS = {'H': 1, 'C': 6, 'N': 7, 'O': 8, 'F': 9, 'S': 16, 'Cl': 17}
 COVALENT_RADII = {'H': .31, 'C': .76, 'N': .71, 'O': .66, 'F': .57, 'S': 1.05, 'Cl': 1.02}
 ROTATIONS_DEGREES = ((17., 31., 47.), (-29., 13., 71.), (43., -37., 19.))
@@ -65,20 +67,23 @@ def _check_model(record):
         raise ValueError('Charge/electron count and multiplicity parity mismatch')
 
 
-def gaussian_input(model_record, cpus=8, mem_gb=6):
-    """Two-link HF/6-31G* Opt/Freq/MK then wavefunction stability check."""
+def gaussian_input(model_record, cpus=8, mem_gb=6, *, method=HF_METHOD):
+    """Two-link explicit-method Opt/Freq/MK then wavefunction stability check."""
+    require_method(method)
     record = _model(model_record)
     _check_model(record)
     if not isinstance(cpus, int) or cpus < 1 or not isinstance(mem_gb, int) or mem_gb < 1:
         raise ValueError('cpus and mem_gb must be positive integers')
+    integration = ' Integral=UltraFine' if method == DFT_METHOD else ''
+    reference_label = 'HF' if method == HF_METHOD else method
     lines = [f'%NProcShared={cpus}', f'%Mem={mem_gb}GB', '%Chk=reference.chk',
-             '#P HF/6-31G* Opt=(Tight,CalcFC,MaxCycles=200) Freq Pop=MK SCF=(Tight,XQC) Symmetry=None IOp(6/33=2,6/41=10,6/42=17)',
-             '', f'{record["model_id"]}: HF reference optimization, frequency and MK evidence', '',
+             f'#P {method} Opt=(Tight,CalcFC,MaxCycles=200) Freq Pop=MK SCF=(Tight,XQC) Symmetry=None{integration} IOp(6/33=2,6/41=10,6/42=17)',
+             '', f'{record["model_id"]}: {reference_label} reference optimization, frequency and MK evidence', '',
              f'{record["formal_charge"]} {record["multiplicity"]}']
     for a in record['atoms']:
         lines.append(f'{a["element"]:2s} '+ ' '.join(f'{x:.12f}' for x in a['position']))
     lines += ['', '--Link1--', f'%NProcShared={cpus}', f'%Mem={mem_gb}GB', '%Chk=reference.chk',
-              '#P HF/6-31G* Geom=AllCheck Guess=Read Stable Symmetry=None SCF=(Tight,XQC)', '', '']
+              f'#P {method} Geom=AllCheck Guess=Read Stable Symmetry=None SCF=(Tight,XQC){integration}', '', '']
     return '\n'.join(lines)
 
 
@@ -124,7 +129,9 @@ def parse_gaussian_log(log):
     frequency_text = text[harmonic_headers[-1].start():] if harmonic_headers else text
     frequencies = [_number(x) for row in re.findall(r'^\s*Frequencies\s+--\s*(.*)$', frequency_text, flags=re.M)
                    for x in row.split()]
-    hf_energies = [_number(x) for x in re.findall(r'SCF Done:\s+E\((?:RHF|UHF|ROHF)\)\s*=\s*(\S+)', text, flags=re.I)]
+    energies = [{'method': label, 'energy_hartree': _number(value)}
+                for label, value in re.findall(r'SCF Done:\s+E\(([^)]+)\)\s*=\s*(\S+)', text, flags=re.I)]
+    hf_energies = [entry['energy_hartree'] for entry in energies if energy_matches_method(entry['method'], HF_METHOD)]
     charge_spin = [(int(c), int(m)) for c, m in re.findall(r'Charge\s*=\s*(-?\d+)\s+Multiplicity\s*=\s*(\d+)', text)]
     error_lines = [line.strip() for line in lines if re.search(
         r'Error termination|Convergence failure|Optimization stopped|SCF has not converged|Error in internal coordinate|Erroneous write', line, flags=re.I)]
@@ -133,6 +140,7 @@ def parse_gaussian_log(log):
     return {'normal_terminations': len(re.findall(r'Normal termination of Gaussian', text)),
             'error_lines': error_lines, 'optimization_completed': 'Optimization completed.' in text,
             'final_hf_energy_hartree': hf_energies[-1] if hf_energies else None,
+            'scf_energies': energies,
             'frequencies_cm1': frequencies,
             'wavefunction_stable': bool(stability_messages and re.search(
                 r'The wavefunction is stable under the perturbations considered\.', stability_messages[-1], flags=re.I)),
@@ -167,26 +175,26 @@ def _topology(record, positions):
             'novel_pair_radius_factor': 1.20, 'radii_angstrom': COVALENT_RADII}
 
 
-def validate_gaussian_log(model_record, log):
+def validate_gaussian_log(model_record, log, method=HF_METHOD):
     """Accept only complete optimization/frequency/stability/identity evidence.
 
     Negative modes in [−20, 0) cm⁻¹ require manual review and do not auto-pass.
     The fragment catalog is nonlinear: exactly 3N−6 frequencies are required.
     """
+    require_method(method)
     record = _model(model_record)
     _check_model(record)
     parsed = parse_gaussian_log(log)
     issues = []
     routes = parsed['routes']
     relevant = [r for r in routes if re.search(r'\b(?:Opt|Freq|Stable)\b', r, re.I)]
-    method = re.compile(r'(?<![A-Za-z])R?HF\s*/\s*6-\s*31G(?:\*|\(d\))', re.I)
     symmetry_off = re.compile(r'\b(?:NoSymm(?:etry)?|Symmetry\s*=\s*None)\b', re.I)
     opt_freq = [r for r in relevant if re.search(r'\bOpt\s*=', r, re.I) and re.search(r'\bFreq\b', r, re.I)]
     stable_routes = [r for r in relevant if re.search(r'\bStable\b', r, re.I)]
-    bad_route = False
+    bad_route = any(not route_matches_method(r, method) for r in routes)
     preceding_explicit = None
     for route in relevant:
-        if not method.search(route):
+        if not route_matches_method(route, method):
             bad_route = True
         if symmetry_off.search(route):
             preceding_explicit = route
@@ -194,13 +202,15 @@ def validate_gaussian_log(model_record, log):
         # Gaussian splits an explicit Opt+Freq into an internal checkpoint-based
         # frequency job. Its printed route omits inherited symmetry settings.
         # Exempt only the observed internal signature, backed by a preceding
-        # explicit HF Opt+Freq route whose method and symmetry pass independently.
+        # explicit matching-method Opt+Freq route whose method and symmetry pass independently.
+        # Observed HF internal jobs include Test; the verified DFT jobs omit it.
         internal_frequency = (re.search(r'\bFreq\b', route, re.I)
                               and not re.search(r'\b(?:Opt|Stable)\b', route, re.I)
                               and all(re.search(pattern, route, re.I) for pattern in (
                                   r'\bGeom\s*=\s*AllCheck\b', r'\bGuess\s*=\s*TCheck\b',
-                                  r'\bSCRF\s*=\s*Check\b', r'\bTest\b', r'\bGenChk\b')))
-        parent_opt_freq = (preceding_explicit is not None and method.search(preceding_explicit)
+                                  r'\bSCRF\s*=\s*Check\b', r'\bGenChk\b'))
+                              and (method == DFT_METHOD or re.search(r'\bTest\b', route, re.I)))
+        parent_opt_freq = (preceding_explicit is not None and route_matches_method(preceding_explicit, method)
                            and re.search(r'\bOpt\s*=', preceding_explicit, re.I)
                            and re.search(r'\bFreq\b', preceding_explicit, re.I))
         if not internal_frequency or not parent_opt_freq:
@@ -214,9 +224,13 @@ def validate_gaussian_log(model_record, log):
         issues.append('gaussian_errors_present')
     if not parsed['optimization_completed']:
         issues.append('optimization_not_completed')
-    energy = parsed['final_hf_energy_hartree']
+    energies = parsed['scf_energies']
+    final_energy = energies[-1] if energies else None
+    energy = final_energy['energy_hartree'] if final_energy else None
     if energy is None or not math.isfinite(energy):
-        issues.append('finite_final_hf_energy_missing')
+        issues.append('finite_final_hf_energy_missing' if method == HF_METHOD else 'finite_final_scf_energy_missing')
+    if any(not energy_matches_method(entry['method'], method) for entry in energies):
+        issues.append('scf_energy_method_provenance_mismatch')
     frequencies = parsed['frequencies_cm1']
     if len(frequencies) != 3*len(record['atoms'])-6:
         issues.append('frequency_count_mismatch')
@@ -253,7 +267,11 @@ def validate_gaussian_log(model_record, log):
     return {'accepted': not issues, 'issues': issues, 'manual_review_required': manual_review,
             'model_id': record['model_id'], 'normal_terminations': parsed['normal_terminations'],
             'error_lines': parsed['error_lines'], 'optimization_completed': parsed['optimization_completed'],
-            'final_hf_energy_hartree': energy, 'frequencies_cm1': frequencies,
+            'qm_method': method,
+            'final_hf_energy_hartree': parsed['final_hf_energy_hartree'],
+            'final_scf_energy_hartree': energy,
+            'final_scf_energy_method': final_energy['method'] if final_energy else None,
+            'scf_energies': energies, 'frequencies_cm1': frequencies,
             'wavefunction_stable': parsed['wavefunction_stable'],
             'charge_multiplicity_records': parsed['charge_multiplicity_records'],
             'routes': routes,
@@ -271,16 +289,18 @@ def _rotate(position, center, angles):
     return [x+center[0], y+center[1], z+center[2]]
 
 
-def inspect_reference(model_record, log):
+def inspect_reference(model_record, log, method=HF_METHOD):
     """Controller API: validated evidence plus optimized model only if accepted."""
     record = _model(model_record)
-    report = validate_gaussian_log(record, log)
+    report = validate_gaussian_log(record, log, method=method)
     report['optimized_model'] = None
     if report['accepted']:
         optimized = copy.deepcopy(record)
         optimized['atoms'] = report['optimized_atoms']
         optimized.setdefault('metadata', {}).update(
-            geometry_status='HF_6-31Gstar_optimized_frequency_and_stability_validated',
+            geometry_status=('HF_6-31Gstar_optimized_frequency_and_stability_validated' if method == HF_METHOD
+                             else 'wB97XD_6-311++G(d,p)_optimized_frequency_and_stability_validated'),
+            qm_method=method,
             wavefunction_stability_validated=True,
             coordinate_units='angstrom', source_log_sha256=_source_log_hash(log),
             topology_validation='distance_screen_only_not_bond_order_or_stereochemical_validation')
@@ -293,15 +313,18 @@ def _same_element_cloud(a, b, tolerance=1e-7):
 
 
 def prepare_orientations(model_record, log, output_dir, *, cpus=8, mem_gb=6,
-                         allow_rhf_instability_diagnostic=False):
+                         allow_rhf_instability_diagnostic=False, method=HF_METHOD):
     """Gate, preserve optimized geometry, then prepare three generic MK rotations.
 
     An existing output directory is rejected. This writes inputs only, never runs
     Gaussian. Non-equivalence checks element-resolved coordinate clouds without
     rotational alignment, since these are orientation controls, not conformers.
     """
+    require_method(method)
+    if allow_rhf_instability_diagnostic and method != HF_METHOD:
+        raise ValueError('RHF instability diagnostic is HF-only (HF/6-31G*)')
     record = _model(model_record)
-    validation = inspect_reference(record, log)
+    validation = inspect_reference(record, log, method=method)
     diagnostic = (allow_rhf_instability_diagnostic and
                   validation['issues'] == ['stability_not_confirmed'] and
                   bool(re.search(r'^\s*The wavefunction has an RHF -> UHF instability\.\s*$',
@@ -309,12 +332,13 @@ def prepare_orientations(model_record, log, output_dir, *, cpus=8, mem_gb=6,
     if not validation['accepted'] and not diagnostic:
         raise ValueError('Gaussian reference not accepted: '+', '.join(validation['issues']))
     # Validate resources before creating any output directory.
-    gaussian_input(record, cpus=cpus, mem_gb=mem_gb)
+    gaussian_input(record, cpus=cpus, mem_gb=mem_gb, method=method)
     if diagnostic:
         optimized = copy.deepcopy(record)
         optimized['atoms'] = validation['optimized_atoms']
         optimized.setdefault('metadata', {}).update(
             geometry_status='RHF_6-31Gstar_constrained_geometry_DIAGNOSTIC_external_instability',
+            qm_method=method,
             wavefunction_stability_validated=False,
             scope='rhf_instability_diagnostic_control',
             scientific_status='diagnostic_control_only_not_validated_final_parameters',
@@ -341,20 +365,23 @@ def prepare_orientations(model_record, log, output_dir, *, cpus=8, mem_gb=6,
     (output/'validation.json').write_text(_json_text(validation))
     original_bytes = Path(model_record).read_bytes() if isinstance(model_record, (str, Path)) else _json_text(record).encode()
     manifest = {'schema_version': 1, 'status': 'prepared_inputs_only_not_executed',
-                'scope': 'rhf_instability_diagnostic_control' if diagnostic else 'stable_reference',
+                'scope': ('rhf_instability_diagnostic_control' if diagnostic else
+                          'dft_resp_control' if method == DFT_METHOD else 'stable_reference'),
+                'qm_method': method,
                 'reference_accepted': validation['accepted'],
                 'final_parameter_validation': False,
                 'model_id': record['model_id'], 'source_model_sha256': _hash_bytes(original_bytes),
                 'source_log_sha256': _source_log_hash(log), 'optimized_model_sha256': _hash_bytes(optimized_text.encode()),
                 'optimized_model_path': str((output/'model.json').resolve()),
-                'method': 'HF/6-31G* MK single points; fixed geometry, Symmetry=None', 'orientations': []}
+                'method': f'{method} MK single points; fixed geometry, Symmetry=None', 'orientations': []}
+    integration = ' Integral=UltraFine' if method == DFT_METHOD else ''
     for index, rotated in enumerate(orientations, 1):
         folder = output/f'orientation_{index:02d}'
         folder.mkdir()
         model_text = _json_text(rotated)
         (folder/'model.json').write_text(model_text)
         lines = [f'%NProcShared={cpus}', f'%Mem={mem_gb}GB', '%Chk=mk.chk',
-                 '#P HF/6-31G* Pop=MK SCF=(Tight,XQC) Symmetry=None IOp(6/33=2,6/41=10,6/42=17)', '',
+                 f'#P {method} Pop=MK SCF=(Tight,XQC) Symmetry=None{integration} IOp(6/33=2,6/41=10,6/42=17)', '',
                  f'{record["model_id"]}: rigid MK orientation {index}', '',
                  f'{record["formal_charge"]} {record["multiplicity"]}']
         lines += [f'{a["element"]:2s} '+' '.join(f'{x:.12f}' for x in a['position']) for a in rotated['atoms']]
@@ -384,21 +411,23 @@ def main(argv=None):
     inspect = commands.add_parser('inspect')
     inspect.add_argument('model', type=Path)
     inspect.add_argument('log', type=Path)
+    inspect.add_argument('--method', choices=RESP_METHODS, default=HF_METHOD)
     prepare = commands.add_parser('prepare-orientations')
     prepare.add_argument('model', type=Path)
     prepare.add_argument('log', type=Path)
     prepare.add_argument('output_dir', type=Path)
+    prepare.add_argument('--method', choices=RESP_METHODS, default=HF_METHOD)
     prepare.add_argument('--cpus', type=int, default=8)
     prepare.add_argument('--mem-gb', type=int, default=6)
     prepare.add_argument('--rhf-diagnostic', action='store_true',
                          help='Explicit constrained-RHF control only; never validates an unstable reference')
     args = parser.parse_args(argv)
     if args.command == 'inspect':
-        report = inspect_reference(args.model, args.log)
+        report = inspect_reference(args.model, args.log, method=args.method)
         print(_json_text(_safe_report(report)), end='')
         return 0 if report['accepted'] else 2
     report = prepare_orientations(args.model, args.log, args.output_dir, cpus=args.cpus, mem_gb=args.mem_gb,
-                                  allow_rhf_instability_diagnostic=args.rhf_diagnostic)
+                                  allow_rhf_instability_diagnostic=args.rhf_diagnostic, method=args.method)
     print(_json_text(report), end='')
     return 0
 

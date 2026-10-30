@@ -1,0 +1,68 @@
+{
+  "repository": "https://github.com/arvpinto/GO_sheets",
+  "commit": "1e59f43bd6c4d8c19d0a2a208edf53ce11e00bc5",
+  "doi": "10.1021/acs.jpcb.2c06037",
+  "copy_scope": "Byte-preserved published reference subset; not a generic finite-GO assignment implementation",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "upstream_url": "https://raw.githubusercontent.com/arvpinto/GO_sheets/1e59f43bd6c4d8c19d0a2a208edf53ce11e00bc5/LICENSE",
+      "upstream_path": "LICENSE"
+    },
+    {
+      "path": "README.md",
+      "sha256": "144000fd34377f9aaf68a35d9664c6ac4de8ec77ae1862fbb9951d3ca18def29",
+      "upstream_url": "https://raw.githubusercontent.com/arvpinto/GO_sheets/1e59f43bd6c4d8c19d0a2a208edf53ce11e00bc5/README.md",
+      "upstream_path": "README.md"
+    },
+    {
+      "path": "index.md",
+      "sha256": "3703f2b96b1e519a8d354c9b1d6babfef0dcbe1f5ce1e0a14a6c2149224e5704",
+      "upstream_url": "https://raw.githubusercontent.com/arvpinto/GO_sheets/1e59f43bd6c4d8c19d0a2a208edf53ce11e00bc5/index.md",
+      "upstream_path": "index.md"
+    },
+    {
+      "path": "amber99sb-ildn.ff-modified/ffbonded.itp",
+      "sha256": "4fae1697557cff16fdf718b9b48a8ce3b02e83e97b37939d89fdd707e4599217",
+      "upstream_url": "https://raw.githubusercontent.com/arvpinto/GO_sheets/1e59f43bd6c4d8c19d0a2a208edf53ce11e00bc5/amber99sb-ildn.ff-modified/ffbonded.itp",
+      "upstream_path": "amber99sb-ildn.ff-modified/ffbonded.itp"
+    },
+    {
+      "path": "amber99sb-ildn.ff-modified/ffnonbonded.itp",
+      "sha256": "fff92259ce2fb914235bd996cd856071074604756120f412968a47909d8cb03f",
+      "upstream_url": "https://raw.githubusercontent.com/arvpinto/GO_sheets/1e59f43bd6c4d8c19d0a2a208edf53ce11e00bc5/amber99sb-ildn.ff-modified/ffnonbonded.itp",
+      "upstream_path": "amber99sb-ildn.ff-modified/ffnonbonded.itp"
+    },
+    {
+      "path": "amber99sb-ildn.ff-modified/forcefield.itp",
+      "sha256": "a73df8ee82c58f106364276622f7bfab8130cdc2cb698342030ef84545569d0b",
+      "upstream_url": "https://raw.githubusercontent.com/arvpinto/GO_sheets/1e59f43bd6c4d8c19d0a2a208edf53ce11e00bc5/amber99sb-ildn.ff-modified/forcefield.itp",
+      "upstream_path": "amber99sb-ildn.ff-modified/forcefield.itp"
+    },
+    {
+      "path": "GO_18/GO_sheet_1_8.top",
+      "sha256": "55aae42235dd146259aeb1f425e42980b2966d846e643d502ccd00f82a1ff124",
+      "upstream_url": "https://raw.githubusercontent.com/arvpinto/GO_sheets/1e59f43bd6c4d8c19d0a2a208edf53ce11e00bc5/GO_18/GO_sheet_1_8.top",
+      "upstream_path": "GO_18/GO_sheet_1_8.top"
+    },
+    {
+      "path": "GO_18/GO_sheet_1_8.gro",
+      "sha256": "0c52c70641b24827c2af5336c97f0b0f04585ab09573ea446cd96a46ddeebb09",
+      "upstream_url": "https://raw.githubusercontent.com/arvpinto/GO_sheets/1e59f43bd6c4d8c19d0a2a208edf53ce11e00bc5/GO_18/GO_sheet_1_8.gro",
+      "upstream_path": "GO_18/GO_sheet_1_8.gro"
+    },
+    {
+      "path": "GO_30/GO_sheet_3_0.gro",
+      "sha256": "42937f858845211f9a8357637f8db50f8ed29cc4ace979b9b2fa9fd51572f352",
+      "upstream_url": "https://raw.githubusercontent.com/arvpinto/GO_sheets/1e59f43bd6c4d8c19d0a2a208edf53ce11e00bc5/GO_30/GO_sheet_3_0.gro",
+      "upstream_path": "GO_30/GO_sheet_3_0.gro"
+    },
+    {
+      "path": "GO_30/GO_sheet_3_0.top",
+      "sha256": "dd0b082236f55891780c8eda75c3e24b9c7b7015ace27cdb5656ad7db6d68c94",
+      "upstream_url": "https://raw.githubusercontent.com/arvpinto/GO_sheets/1e59f43bd6c4d8c19d0a2a208edf53ce11e00bc5/GO_30/GO_sheet_3_0.top",
+      "upstream_path": "GO_30/GO_sheet_3_0.top"
+    }
+  ]
+}

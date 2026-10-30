@@ -19,6 +19,8 @@ import subprocess
 
 import numpy as np
 
+from .protocols import HF_METHOD, DFT_METHOD, RESP_METHODS, require_method, route_matches_method, energy_matches_method
+
 BOHR_ANGSTROM = 0.529177210903
 E_ANGSTROM_DEBYE = 4.80320471257
 # Deliberately limited to the campaign's explicit C/H/O chemistry.
@@ -209,7 +211,8 @@ def _orientation_table(text, before):
     return rows
 
 
-def _gaussian_geometry(text, model):
+def _gaussian_geometry(text, model, *, method=HF_METHOD):
+    require_method(method)
     if re.search(r'Error termination|Convergence failure|SCF has not converged', text, re.I):
         raise ValueError('Gaussian error/nonconvergence in supplied log')
     if not re.search(r'Normal termination of Gaussian[^\n]*\s*\Z', text):
@@ -219,10 +222,22 @@ def _gaussian_geometry(text, model):
         raise ValueError('Gaussian route missing')
     # Collecting until the separator tolerates Gaussian route line wrapping.
     route = ' '.join(routes[-1].split())
-    if not re.search(r'\b(?:R?HF)/6-31G(?:\*|\(d\))', route, re.I):
-        raise ValueError('Atomic RESP protocol requires HF/6-31G*')
+    if any(not route_matches_method(' '.join(r.split()), method) for r in routes):
+        raise ValueError(f'Atomic RESP protocol requires the selected method {method} in every Gaussian route')
     if not re.search(r'\b(?:NoSymm(?:etry)?|Symmetry\s*=\s*None)\b', route, re.I) or not re.search(r'\b(?:Pop(?:ulation)?\s*=\s*\(?\s*MK|Pop\s*\(\s*MK)', route, re.I):
         raise ValueError('Gaussian route must request NoSymm or Symmetry=None, and Pop=MK')
+    energies = re.findall(r'SCF Done:\s+E\(([^)]+)\)\s*=\s*(\S+)', text, re.I)
+    if not energies or len(energies) != len(re.findall(r'SCF Done:', text, re.I)):
+        raise ValueError('Gaussian MK SCF energy evidence missing or malformed')
+    for label, value in energies:
+        if not energy_matches_method(label, method):
+            raise ValueError(f'Gaussian MK SCF energy method differs from selected method {method}')
+        try:
+            energy = _float(value)
+        except ValueError as exc:
+            raise ValueError('Gaussian MK SCF energy is malformed') from exc
+        if not math.isfinite(energy):
+            raise ValueError('Gaussian MK SCF energy must be finite')
     charges = re.findall(r'Charge\s*=\s*(-?\d+)\s+Multiplicity\s*=\s*(\d+)', text)
     if not charges or tuple(map(int, charges[-1])) != (model['formal_charge'], model['multiplicity']):
         raise ValueError('Gaussian charge/multiplicity differs from model')
@@ -366,13 +381,14 @@ def _new_attempt(output_dir):
             return path
 
 
-def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', resp='resp') -> dict:
+def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', resp='resp', method=HF_METHOD) -> dict:
     """Fit one atomic reference; supplied logs are rigid orientations, not conformers.
 
     A fresh attempt is always retained, including failure evidence. Success writes
     charges.csv, charges.json, FIT_COMPLETE.json inside result['attempt_dir'].
     No parameter library or topology is published by this function.
     """
+    require_method(method)
     out = _new_attempt(output_dir)
     try:
         model_path = Path(model_path).resolve()
@@ -380,6 +396,9 @@ def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', 
         (out/'model.json').write_bytes(model_bytes)
         model = json.loads(model_bytes)
         _validate_model(model)
+        model_method = model.get('metadata', {}).get('qm_method')
+        if model_method is not None and model_method != method:
+            raise ValueError('Optimized model QM method differs from selected RESP method')
         if not gaussian_logs:
             raise ValueError('At least one Gaussian MK log is required')
         logs = [Path(p).resolve() for p in gaussian_logs]
@@ -396,7 +415,7 @@ def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', 
             if sha in digests:
                 raise ValueError('Duplicate Gaussian log content would bias orientation weighting')
             digests.add(sha)
-            geometry = _gaussian_geometry(snapshot.read_text(), model)
+            geometry = _gaussian_geometry(snapshot.read_text(), model, method=method)
             if coords:
                 d1 = np.linalg.norm(coords[0][:, None, :] - coords[0][None, :, :], axis=2)
                 d2 = np.linalg.norm(geometry[:, None, :] - geometry[None, :, :], axis=2)
@@ -409,7 +428,7 @@ def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', 
                 if not np.allclose(a @ rotation, b, atol=5e-5, rtol=0):
                     raise ValueError('Orientation is a reflection or atom mapping changed')
             coords.append(geometry)
-            evidence.append({'source_path': str(path), 'snapshot': str(snapshot.relative_to(out)), 'sha256': sha})
+            evidence.append({'qm_method': method, 'source_path': str(path), 'snapshot': str(snapshot.relative_to(out)), 'sha256': sha})
         programs = {'espgen': _executable(espgen), 'resp': _executable(resp)}
         for i, (geometry, entry) in enumerate(zip(coords, evidence), 1):
             esp = out/f'orientation_{i:03d}.esp'
@@ -453,12 +472,13 @@ def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', 
                   'attempt_dir': str(out), 'charges_csv': str(out/'charges.csv'), 'charges_json': str(out/'charges.json'),
                   'charge_sum_e': float(q[0].sum()), 'formal_charge': model['formal_charge'],
                   'stage2': second, 'orientation_weights': weights, 'metrics': metrics,
-                  'protocol': {'method': 'HF/6-31G* MK ESP; Amber hyperbolic RESP', 'stage1_qwt': .0005,
+                  'final_parameter_validation': False,
+                  'protocol': {'method': f'{method} MK ESP; Amber hyperbolic RESP', 'qm_method': method, 'stage1_qwt': .0005,
                                'stage2_qwt': .001, 'ihfree': 1, 'physical_conformers': 1,
                                'orientations': len(datasets), 'mean_grid_points': nref,
                                'parent_qm_optimization_frequencies_stability': 'must be approved upstream; not inferred from MK logs',
-                               'scope': 'finite whole-model atomic reference; no bulk or modular-transfer validation'},
-                  'provenance': {'model_source_path': str(model_path), 'model_sha256': _digest(out/'model.json'),
+                               'scope': ('DFT-RESP control; ' if method == DFT_METHOD else '') + 'finite whole-model atomic reference; no bulk or modular-transfer validation'},
+                  'provenance': {'qm_method': method, 'model_source_path': str(model_path), 'model_sha256': _digest(out/'model.json'),
                                  'gaussian_logs': evidence, 'executables': programs,
                                  'fit_code_sha256': _digest(Path(__file__))}}
         result['artifacts_sha256'] = {str(p.relative_to(out)): _digest(p) for p in sorted(out.rglob('*'))
@@ -470,15 +490,16 @@ def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', 
         raise
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--method', choices=RESP_METHODS, default=HF_METHOD)
     parser.add_argument('--model', required=True)
     parser.add_argument('--logs', nargs='+', required=True)
     parser.add_argument('--output-dir', required=True)
     parser.add_argument('--espgen', default='espgen')
     parser.add_argument('--resp', default='resp')
-    args = parser.parse_args()
-    result = fit_atomic(args.model, args.logs, args.output_dir, espgen=args.espgen, resp=args.resp)
+    args = parser.parse_args(argv)
+    result = fit_atomic(args.model, args.logs, args.output_dir, espgen=args.espgen, resp=args.resp, method=args.method)
     print(json.dumps(result, indent=2, allow_nan=False))
 
 

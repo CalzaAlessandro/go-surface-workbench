@@ -102,3 +102,18 @@ An optional fixed-charge redistribution mode is a proposal, not implemented.
 [SQE+qp method selection](docs/STATIC_CHARGE_METHOD_SELECTION.md) records the
 published solver candidate, existing local implementation and NPA/RESP/GO
 validation limits.
+
+Current priority is RESP context data and coherent charge/Lennard-Jones
+comparisons; deriving new bonded/frcmod coefficients is deferred. The
+[experimental charge constraints](docs/EXPERIMENTAL_CHARGE_CONSTRAINTS.md) and
+[nonbonded benchmarks](docs/EXPERIMENTAL_NONBONDED_BENCHMARKS.md) distinguish
+measured titration/adsorption behavior from non-unique atomic partial charges.
+
+Explicit [DFT-RESP support](docs/EXPLICIT_RESP_METHODS.md) preserves HF defaults
+and labels the selected QM method throughout the gates and fit. The actual
+pristine DFT-RESP pilot passed and six further controls are running/queued.
+The [context analyzer](docs/RESP_CONTEXT_ANALYSIS.md) exports individual atom
+and group values versus scaffold graph distances, separately identifying
+interior carbons and H-terminated edges. The 39-model starting panel now has
+[four supplementary isolated controls](docs/ISOLATED_CONTROLS.md); these four
+are prepared inputs, not completed QM references.

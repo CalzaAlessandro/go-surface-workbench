@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "primary_derivation": "RESP on isolated/mixed GO fragments; lookup/rule/published-method calibration selected after independent context validation",
+  "fixed_charge_MD": true,
+  "preserve_published_coefficients": true,
+  "presets": [
+    {
+      "id": "resp-current",
+      "label": "Current user RESP block libraries",
+      "charge_method": "RESP (user-reported HF/6-31G* fragment protocol)",
+      "mode": "fixed_library",
+      "status": "legacy_reference_not_newly_validated",
+      "source": "resources/reference/current",
+      "paired_parameters": "existing current GAFF2 source preset; unchanged"
+    },
+    {
+      "id": "resp-go-new",
+      "label": "New GO RESP library",
+      "charge_method": "RESP",
+      "mode": "under_derivation",
+      "status": "not_selectable_for_production",
+      "selection_pending": [
+        "constant_blocks",
+        "distance_context_table",
+        "regularized_context_rule",
+        "published_redistribution_model_calibrated_to_RESP"
+      ]
+    },
+    {
+      "id": "gaff2-aim",
+      "label": "Published GAFF2-AIM",
+      "charge_method": "DDEC6 environment-class averages",
+      "mode": "published_charge_LJ_pair",
+      "status": "published_reference_subset",
+      "source": "resources/reference/gaff2_aim",
+      "provenance": "resources/reference/gaff2_aim/PROVENANCE.json",
+      "requires_original_AIM_LJ": true,
+      "bonded_family": "published GAFF2",
+      "source_variants": [
+        {
+          "nominal_C_over_O": 1.8,
+          "topology": "resources/reference/gaff2_aim/GO_18/GO_sheet_1_8.top",
+          "coordinates": "resources/reference/gaff2_aim/GO_18/GO_sheet_1_8.gro"
+        },
+        {
+          "nominal_C_over_O": 3.0,
+          "topology": "resources/reference/gaff2_aim/GO_30/GO_sheet_3_0.top",
+          "coordinates": "resources/reference/gaff2_aim/GO_30/GO_sheet_3_0.gro"
+        }
+      ],
+      "scope": [
+        "published periodic basal OH/epoxide environments"
+      ],
+      "unmapped": [
+        "finite edges",
+        "EPH/EPT termini",
+        "carbonyl",
+        "COOH",
+        "COO-",
+        "new grafting chemistry"
+      ],
+      "generic_assignment_status": "not_implemented_no_automatic_charge_renormalization_or_mix_with_other_LJ"
+    },
+    {
+      "id": "opls-hiergo",
+      "label": "Published HierGO OPLS reference",
+      "charge_method": "published OPLS charge table",
+      "mode": "published_force_field_pair",
+      "status": "published_reference",
+      "source": "resources/reference/opls",
+      "provenance": "resources/reference/opls/PROVENANCE.json",
+      "paired_parameters": "original HierGO/OPLS conventions; unchanged",
+      "generic_assignment_status": "cross-format generic assignment and complete Amber conversion still require validation"
+    }
+  ],
+  "charge_preset_changes_model_dimensions": false,
+  "bonded_parameter_derivation_status": "deferred_by_user_current_focus_charges_and_charge_LJ_pairs"
+}
