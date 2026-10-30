@@ -24,7 +24,11 @@
         "distance_context_table",
         "regularized_context_rule",
         "published_redistribution_model_calibrated_to_RESP"
-      ]
+      ],
+      "canonical_ESP_target": "gas-phase HF/6-31G* Merz-Kollman ESP with Amber RESP fitting",
+      "DFT_RESP_scope": "separate comparison control; no automatic promotion to canonical preset",
+      "acceptance_policy": "research/parameterization/docs/AMBER_RESP_ACCEPTANCE.md",
+      "policy_enforcement_status": "documented selection requirements; generic production selector not implemented"
     },
     {
       "id": "gaff2-aim",

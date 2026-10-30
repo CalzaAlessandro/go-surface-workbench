@@ -27,6 +27,13 @@ rule, and a suitable published redistribution method recalibrated to RESP.
 Existing NPA/AM1-BCC tools remain comparison controls rather than default new
 charge derivations. Source presets are not refitted.
 
+For the new Amber-oriented preset, the canonical reference target is gas-phase
+HF/6-31G* MK ESP with Amber RESP fitting. Current DFT–RESP fits are separate
+comparison controls. DFT-optimized geometries can support a future HF ESP
+branch with distinct provenance and stability checks; that mixed-level
+controller is not yet implemented. The [Amber RESP acceptance policy](../research/parameterization/docs/AMBER_RESP_ACCEPTANCE.md)
+records this requirement and the outstanding force-field validation.
+
 Current execution and scientific limits are recorded under
 `research/parameterization/reports/CAMPAIGN_STATUS.json`. Experimental constraints
 and the role of coupled LJ terms are discussed in
