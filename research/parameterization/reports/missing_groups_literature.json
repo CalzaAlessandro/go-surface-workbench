@@ -1,0 +1,177 @@
+{
+  "date": "2026-10-30",
+  "status": "focused_primary_literature_review_not_parameterization",
+  "current_indexed_units": [
+    "GGG",
+    "GRT",
+    "HYD",
+    "EPX",
+    "EPH",
+    "EPT",
+    "CAB",
+    "CBX",
+    "CBD"
+  ],
+  "sources": [
+    {
+      "id": "G09",
+      "doi": "10.1038/nchem.281",
+      "year": 2009,
+      "primary": true,
+      "access": "author_uploaded_full_text",
+      "url": "https://www.researchgate.net/publication/50290049_New_Insights_into_the_Structure_and_Reduction_of_Graphite_Oxide",
+      "locators": [
+        "Results: chemical composition",
+        "Figure 1",
+        "Methods"
+      ],
+      "supported_scope": "modified-Hummers peripheral lactol assignment; proposed ester/occasional anhydride structures"
+    },
+    {
+      "id": "B10",
+      "doi": "10.1038/nchem.686",
+      "year": 2010,
+      "primary": true,
+      "access": "publisher_abstract",
+      "url": "https://www.nature.com/articles/nchem.686",
+      "locators": [
+        "Abstract"
+      ],
+      "supported_scope": "stable ether/carbonyl formation during annealing; detailed temperatures not checked"
+    },
+    {
+      "id": "A19",
+      "doi": "10.3390/nano9081180",
+      "year": 2019,
+      "primary": true,
+      "access": "full_primary_paper_pdf",
+      "url": "https://pdfs.semanticscholar.org/d6cf/ba94e85930d5aa1a2bb85ed234439a451d55.pdf",
+      "locators": [
+        "printed pp.3 preparation",
+        "printed pp.7-9 spectroscopy/titration",
+        "printed pp.12-13 conclusions"
+      ],
+      "supported_scope": "reported phenolic/lactonic/quinone assignments in GO and fractions; lactol/lactone terminology ambiguous"
+    },
+    {
+      "id": "T13",
+      "doi": "10.1021/cm401922e",
+      "year": 2013,
+      "primary": true,
+      "access": "institutional_full_primary_paper_pdf",
+      "url": "https://wrap.warwick.ac.uk/id/eprint/61791/1/WRAP_cm401922e.pdf",
+      "locators": [
+        "printed p.3584 oxidation-debris NMR"
+      ],
+      "supported_scope": "unresolved ester/lactone/acid envelope in extracted oxidative debris; not intact-sheet lactone density"
+    },
+    {
+      "id": "E13",
+      "doi": "10.1002/chem.201300387",
+      "year": 2013,
+      "primary": true,
+      "access": "publisher_abstract",
+      "url": "https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/chem.201300387",
+      "locators": [
+        "Abstract"
+      ],
+      "supported_scope": "covalent organosulfate in Hummers GO after aqueous workup; distinct from inorganic sulfate/sulfonic groups"
+    },
+    {
+      "id": "D13",
+      "doi": "10.1021/nn3047378",
+      "year": 2013,
+      "primary": true,
+      "access": "primary_abstract_only",
+      "url": "https://www.researchgate.net/publication/233873423_Graphene_Oxide_Origin_of_Acidity_Its_Instability_in_Water_and_a_New_Dynamic_Structural_Model",
+      "locators": [
+        "Abstract"
+      ],
+      "supported_scope": "water-dependent structural changes; full primary gem-diol assignment NOT independently verified"
+    }
+  ],
+  "missing_or_incomplete_classes": [
+    {
+      "motif": "non_epoxide_ether",
+      "source_ids": [
+        "B10"
+      ],
+      "evidence_status": "reported annealing-related motif",
+      "priority": "high for aged/reduced material"
+    },
+    {
+      "motif": "phenolic_OH",
+      "source_ids": [
+        "A19"
+      ],
+      "evidence_status": "reported context-dependent assignment",
+      "priority": "high if aromatic hydroxyl target supported"
+    },
+    {
+      "motif": "lactol",
+      "source_ids": [
+        "G09"
+      ],
+      "evidence_status": "NMR-based structural assignment",
+      "priority": "explicit candidate with uncertainty"
+    },
+    {
+      "motif": "lactone",
+      "source_ids": [
+        "A19",
+        "T13"
+      ],
+      "evidence_status": "operational/reported, no uniquely resolved intact-sheet population established",
+      "priority": "conditional separate cyclic-ester candidate"
+    },
+    {
+      "motif": "ester_linkage",
+      "source_ids": [
+        "G09"
+      ],
+      "evidence_status": "proposed interpretation",
+      "priority": "conditional"
+    },
+    {
+      "motif": "quinone_context",
+      "source_ids": [
+        "A19",
+        "G09"
+      ],
+      "evidence_status": "reported/proposed carbonyl context, CAB local coverage incomplete",
+      "priority": "extend held-out carbonyl contexts"
+    },
+    {
+      "motif": "gem_diol",
+      "source_ids": [
+        "D13"
+      ],
+      "evidence_status": "uncertain candidate; full primary motif assignment unverified",
+      "priority": "follow-up primary verification"
+    },
+    {
+      "motif": "anhydride",
+      "source_ids": [
+        "G09"
+      ],
+      "evidence_status": "suggested occasional peripheral motif",
+      "priority": "lower priority conditional"
+    },
+    {
+      "motif": "organosulfate",
+      "source_ids": [
+        "E13"
+      ],
+      "evidence_status": "primary experimental evidence conditional on Hummers sulfur retention",
+      "priority": "conditional on target synthesis and sulfur analysis"
+    }
+  ],
+  "constraints": [
+    "Lactone and lactol are chemically distinct",
+    "XPS envelopes do not uniquely identify motif connectivity",
+    "No concentrations or force-field parameters derived",
+    "No model/library changes",
+    "Assistant inspected; independent human verification pending"
+  ],
+  "strong_lactone_limit": "No uniquely resolved intact-sheet lactone population established in inspected primary texts; original GO-specific operational evidence exists."
+}

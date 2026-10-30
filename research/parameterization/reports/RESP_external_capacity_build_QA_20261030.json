@@ -1,0 +1,25 @@
+{
+  "status": "both_capacity_variants_match_installed_two_model_pilot_at_output_precision",
+  "upstream_commit": "76b00b2e9d7dc41ab1ce7c7aa2fe52b3608ec002",
+  "compiler": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+  "flags": "-O2 -std=legacy -fallow-argument-mismatch -cpp",
+  "between_build_source_changes": [
+    "active maxq constant 500 to 1024 in limits.h",
+    "reporting only: evlchi receives weighted bwt/awt consistently with weighted ssvpot; solver untouched"
+  ],
+  "pilots": {
+    "500": {
+      "max_absolute_charge_difference_from_installed_e": 0.0,
+      "convergence_iterations": 2,
+      "executable_sha256": "69b9de4ee3bfe43b90cf54a144c686714dca0c93b5a6fd7df9cebc5bda358da5",
+      "executable_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/external_resp_capacity_attempt_003/maxq_500/resp"
+    },
+    "1024": {
+      "max_absolute_charge_difference_from_installed_e": 0.0,
+      "convergence_iterations": 2,
+      "executable_sha256": "092cb112fdbf0f7476bd78e77b498f0abcdf5ffce561616aac3faa4a02634762",
+      "executable_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/external_resp_capacity_attempt_003/maxq_1024/resp"
+    }
+  },
+  "limits": "agreement on this pilot is an execution regression gate, not proof of final force-field accuracy"
+}

@@ -1,5 +1,5 @@
 {
-  "verified_at_utc": "2026-10-29T20:23:18.940217+00:00",
+  "verified_at_utc": "2026-10-30T14:38:13.087216+00:00",
   "forcefield_candidates": {
     "status": "unfitted_controls_with_unresolved_gaps",
     "technical_LEaP_cases": 24,
@@ -30,8 +30,43 @@
     "method": "wB97X-D/6-311++G(d,p)",
     "models": 8,
     "max_concurrent_tasks": 2,
-    "status": "RUNNING_AND_PENDING_NOT_COMPLETED"
+    "status": "EIGHT_FINISHED_SEVEN_PRELIMINARY_GEOMETRY_FREQUENCY_STABILITY_PASSED",
+    "preliminary_pass": 7,
+    "rejected_model": "pyrene_epoxide",
+    "qa_report": "dft_bonded_reference_QA_20261030.json",
+    "parameter_fit_performed": false
   },
   "final_parameter_set_selected": false,
-  "definitive_four_material_rebuild": "deferred_until_parameterization_selected"
+  "definitive_four_material_rebuild": "deferred_until_parameterization_selected",
+  "modular_RESP": {
+    "status": "COMPLETED_LIMITED_DIAGNOSTIC_PILOT",
+    "models": 7,
+    "orientations_per_model": 3,
+    "shared_fitted_roles": 17,
+    "independent_block_constraints": 6,
+    "final_parameter_validation": false,
+    "job_id": "1401803",
+    "engine_scope": "Separate calculation-only external AmberClassic RESP; maxq1024 and reporting-only weighted-SSE correction; system installation unchanged.",
+    "report": "modular_RESP_seven_model_diagnostic_pilot.json"
+  },
+  "AM1_BCC_block_projection": {
+    "models": 6,
+    "method": "constrained_L2_projection_NOT_native_AM1_BCC",
+    "report": "modular_AM1_BCC_six_model_projection.json",
+    "final_parameter_validation": false
+  },
+  "mixed_panel": {
+    "initial_models": 39,
+    "paired_distance_face_size_cases": 34,
+    "edge_controls": 5,
+    "first_DFT_subset_job_id": "1401678",
+    "first_DFT_subset_models": 8,
+    "last_scheduler_observation": "2 RUNNING and 6 PENDING; not completed",
+    "final_parameter_validation": false
+  },
+  "optional_structure_specific_charges": {
+    "status": "literature_candidate_only_not_implemented",
+    "first_candidate_for_benchmark": "SQE+qp / ChargeFW2",
+    "parameterization_warning": "Published example targets NPA; current GO RESP charges cannot be substituted without calibration/validation."
+  }
 }

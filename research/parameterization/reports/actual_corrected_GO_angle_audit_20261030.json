@@ -1,0 +1,1893 @@
+{
+  "scope": "Read-only actual-topology parameter-context audit; no trajectory coordinates or measured angle distributions inspected.",
+  "source_remote": "/export/scratch/alessandro.calza3/HPC_POLL/PRIORITY_GOX935_4nm_corrected/ACETAMINOPHEN/GAFF2/N/1/U/complex_bottom_10/compl.parm7",
+  "source_sha256": "8431f7e939ea03a6ed31fa6dbfa53036f47068d2d9356604dfd9b1b81bac82b1",
+  "GO_residue_mask": ":1-494",
+  "GO_atom_count": 1007,
+  "cx_cx_cx_count": 125,
+  "non_carbon_triangle_count": 125,
+  "terms": [
+    {
+      "atoms_1based": [
+        374,
+        373,
+        444
+      ],
+      "residues_1based": [
+        300,
+        300,
+        320
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        373,
+        444,
+        443
+      ],
+      "residues_1based": [
+        300,
+        320,
+        320
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        386,
+        385,
+        836
+      ],
+      "residues_1based": [
+        304,
+        304,
+        441
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        385,
+        836,
+        837
+      ],
+      "residues_1based": [
+        304,
+        441,
+        441
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        431,
+        430,
+        598
+      ],
+      "residues_1based": [
+        316,
+        316,
+        366
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        430,
+        598,
+        597
+      ],
+      "residues_1based": [
+        316,
+        366,
+        366
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        430,
+        598,
+        698
+      ],
+      "residues_1based": [
+        316,
+        366,
+        397
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        434,
+        433,
+        685
+      ],
+      "residues_1based": [
+        317,
+        317,
+        393
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        434,
+        433,
+        787
+      ],
+      "residues_1based": [
+        317,
+        317,
+        426
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        433,
+        685,
+        684
+      ],
+      "residues_1based": [
+        317,
+        393,
+        393
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        433,
+        787,
+        788
+      ],
+      "residues_1based": [
+        317,
+        426,
+        426
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        433,
+        787,
+        660
+      ],
+      "residues_1based": [
+        317,
+        426,
+        385
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        437,
+        436,
+        543
+      ],
+      "residues_1based": [
+        318,
+        318,
+        349
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        436,
+        543,
+        542
+      ],
+      "residues_1based": [
+        318,
+        349,
+        349
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        441,
+        440,
+        981
+      ],
+      "residues_1based": [
+        319,
+        319,
+        486
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        441,
+        440,
+        728
+      ],
+      "residues_1based": [
+        319,
+        319,
+        407
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        440,
+        981,
+        982
+      ],
+      "residues_1based": [
+        319,
+        486,
+        486
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        440,
+        728,
+        729
+      ],
+      "residues_1based": [
+        319,
+        407,
+        407
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        444,
+        443,
+        729
+      ],
+      "residues_1based": [
+        320,
+        320,
+        407
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        443,
+        729,
+        728
+      ],
+      "residues_1based": [
+        320,
+        407,
+        407
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        461,
+        460,
+        463
+      ],
+      "residues_1based": [
+        325,
+        325,
+        326
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        460,
+        463,
+        464
+      ],
+      "residues_1based": [
+        325,
+        326,
+        326
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        460,
+        463,
+        769
+      ],
+      "residues_1based": [
+        325,
+        326,
+        420
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        464,
+        463,
+        769
+      ],
+      "residues_1based": [
+        326,
+        326,
+        420
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        463,
+        769,
+        770
+      ],
+      "residues_1based": [
+        326,
+        420,
+        420
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        477,
+        476,
+        591
+      ],
+      "residues_1based": [
+        330,
+        330,
+        364
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        476,
+        591,
+        590
+      ],
+      "residues_1based": [
+        330,
+        364,
+        364
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        488,
+        846,
+        845
+      ],
+      "residues_1based": [
+        333,
+        444,
+        444
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        488,
+        846,
+        590
+      ],
+      "residues_1based": [
+        333,
+        444,
+        364
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        488,
+        973,
+        972
+      ],
+      "residues_1based": [
+        333,
+        483,
+        483
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        487,
+        488,
+        846
+      ],
+      "residues_1based": [
+        333,
+        333,
+        444
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        487,
+        488,
+        973
+      ],
+      "residues_1based": [
+        333,
+        333,
+        483
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        506,
+        505,
+        882
+      ],
+      "residues_1based": [
+        338,
+        338,
+        455
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        505,
+        882,
+        881
+      ],
+      "residues_1based": [
+        338,
+        455,
+        455
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        527,
+        526,
+        746
+      ],
+      "residues_1based": [
+        344,
+        344,
+        413
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        526,
+        746,
+        747
+      ],
+      "residues_1based": [
+        344,
+        413,
+        413
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        533,
+        532,
+        834
+      ],
+      "residues_1based": [
+        346,
+        346,
+        440
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        533,
+        532,
+        575
+      ],
+      "residues_1based": [
+        346,
+        346,
+        359
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        532,
+        834,
+        833
+      ],
+      "residues_1based": [
+        346,
+        440,
+        440
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        532,
+        834,
+        601
+      ],
+      "residues_1based": [
+        346,
+        440,
+        367
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        532,
+        575,
+        576
+      ],
+      "residues_1based": [
+        346,
+        359,
+        359
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        536,
+        535,
+        824
+      ],
+      "residues_1based": [
+        347,
+        347,
+        437
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        535,
+        824,
+        825
+      ],
+      "residues_1based": [
+        347,
+        437,
+        437
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        540,
+        539,
+        906
+      ],
+      "residues_1based": [
+        348,
+        348,
+        462
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        540,
+        539,
+        972
+      ],
+      "residues_1based": [
+        348,
+        348,
+        483
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        539,
+        906,
+        907
+      ],
+      "residues_1based": [
+        348,
+        462,
+        462
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        539,
+        906,
+        867
+      ],
+      "residues_1based": [
+        348,
+        462,
+        451
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        539,
+        972,
+        973
+      ],
+      "residues_1based": [
+        348,
+        483,
+        483
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        539,
+        972,
+        926
+      ],
+      "residues_1based": [
+        348,
+        483,
+        468
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        543,
+        542,
+        633
+      ],
+      "residues_1based": [
+        349,
+        349,
+        378
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        542,
+        633,
+        634
+      ],
+      "residues_1based": [
+        349,
+        378,
+        378
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        542,
+        633,
+        827
+      ],
+      "residues_1based": [
+        349,
+        378,
+        438
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        567,
+        566,
+        644
+      ],
+      "residues_1based": [
+        356,
+        356,
+        381
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        566,
+        644,
+        643
+      ],
+      "residues_1based": [
+        356,
+        381,
+        381
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        575,
+        532,
+        834
+      ],
+      "residues_1based": [
+        359,
+        346,
+        440
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        582,
+        581,
+        910
+      ],
+      "residues_1based": [
+        361,
+        361,
+        463
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        581,
+        910,
+        911
+      ],
+      "residues_1based": [
+        361,
+        463,
+        463
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        581,
+        910,
+        820
+      ],
+      "residues_1based": [
+        361,
+        463,
+        436
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        591,
+        590,
+        846
+      ],
+      "residues_1based": [
+        364,
+        364,
+        444
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        590,
+        846,
+        845
+      ],
+      "residues_1based": [
+        364,
+        444,
+        444
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        594,
+        593,
+        716
+      ],
+      "residues_1based": [
+        365,
+        365,
+        403
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        593,
+        716,
+        715
+      ],
+      "residues_1based": [
+        365,
+        403,
+        403
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        598,
+        698,
+        697
+      ],
+      "residues_1based": [
+        366,
+        397,
+        397
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        598,
+        698,
+        622
+      ],
+      "residues_1based": [
+        366,
+        397,
+        374
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        597,
+        598,
+        698
+      ],
+      "residues_1based": [
+        366,
+        366,
+        397
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        601,
+        834,
+        833
+      ],
+      "residues_1based": [
+        367,
+        440,
+        440
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        601,
+        713,
+        712
+      ],
+      "residues_1based": [
+        367,
+        402,
+        402
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        600,
+        601,
+        834
+      ],
+      "residues_1based": [
+        367,
+        367,
+        440
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        600,
+        601,
+        713
+      ],
+      "residues_1based": [
+        367,
+        367,
+        402
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        610,
+        782,
+        781
+      ],
+      "residues_1based": [
+        370,
+        424,
+        424
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        609,
+        610,
+        782
+      ],
+      "residues_1based": [
+        370,
+        370,
+        424
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        622,
+        698,
+        697
+      ],
+      "residues_1based": [
+        374,
+        397,
+        397
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        621,
+        622,
+        698
+      ],
+      "residues_1based": [
+        374,
+        374,
+        397
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        631,
+        630,
+        722
+      ],
+      "residues_1based": [
+        377,
+        377,
+        405
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        630,
+        722,
+        723
+      ],
+      "residues_1based": [
+        377,
+        405,
+        405
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        634,
+        633,
+        827
+      ],
+      "residues_1based": [
+        378,
+        378,
+        438
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        633,
+        827,
+        828
+      ],
+      "residues_1based": [
+        378,
+        438,
+        438
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        640,
+        639,
+        652
+      ],
+      "residues_1based": [
+        380,
+        380,
+        383
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        639,
+        652,
+        653
+      ],
+      "residues_1based": [
+        380,
+        383,
+        383
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        661,
+        660,
+        787
+      ],
+      "residues_1based": [
+        385,
+        385,
+        426
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        660,
+        787,
+        788
+      ],
+      "residues_1based": [
+        385,
+        426,
+        426
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        667,
+        666,
+        776
+      ],
+      "residues_1based": [
+        387,
+        387,
+        422
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        666,
+        776,
+        775
+      ],
+      "residues_1based": [
+        387,
+        422,
+        422
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        676,
+        955,
+        954
+      ],
+      "residues_1based": [
+        390,
+        477,
+        477
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        675,
+        676,
+        955
+      ],
+      "residues_1based": [
+        390,
+        390,
+        477
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        685,
+        684,
+        718
+      ],
+      "residues_1based": [
+        393,
+        393,
+        404
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        685,
+        684,
+        731
+      ],
+      "residues_1based": [
+        393,
+        393,
+        408
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        685,
+        433,
+        787
+      ],
+      "residues_1based": [
+        393,
+        317,
+        426
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        684,
+        718,
+        719
+      ],
+      "residues_1based": [
+        393,
+        404,
+        404
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        684,
+        731,
+        732
+      ],
+      "residues_1based": [
+        393,
+        408,
+        408
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        684,
+        731,
+        788
+      ],
+      "residues_1based": [
+        393,
+        408,
+        426
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        707,
+        979,
+        978
+      ],
+      "residues_1based": [
+        400,
+        485,
+        485
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        706,
+        707,
+        979
+      ],
+      "residues_1based": [
+        400,
+        400,
+        485
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        713,
+        601,
+        834
+      ],
+      "residues_1based": [
+        402,
+        367,
+        440
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        718,
+        684,
+        731
+      ],
+      "residues_1based": [
+        404,
+        393,
+        408
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        728,
+        440,
+        981
+      ],
+      "residues_1based": [
+        407,
+        319,
+        486
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        732,
+        731,
+        788
+      ],
+      "residues_1based": [
+        408,
+        408,
+        426
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        731,
+        788,
+        787
+      ],
+      "residues_1based": [
+        408,
+        426,
+        426
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        753,
+        752,
+        904
+      ],
+      "residues_1based": [
+        415,
+        415,
+        461
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        752,
+        904,
+        903
+      ],
+      "residues_1based": [
+        415,
+        461,
+        461
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        763,
+        762,
+        806
+      ],
+      "residues_1based": [
+        418,
+        418,
+        432
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        762,
+        806,
+        807
+      ],
+      "residues_1based": [
+        418,
+        432,
+        432
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        794,
+        793,
+        982
+      ],
+      "residues_1based": [
+        428,
+        428,
+        486
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        793,
+        982,
+        981
+      ],
+      "residues_1based": [
+        428,
+        486,
+        486
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        817,
+        816,
+        967
+      ],
+      "residues_1based": [
+        435,
+        435,
+        481
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        816,
+        967,
+        966
+      ],
+      "residues_1based": [
+        435,
+        481,
+        481
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        821,
+        820,
+        910
+      ],
+      "residues_1based": [
+        436,
+        436,
+        463
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        820,
+        910,
+        911
+      ],
+      "residues_1based": [
+        436,
+        463,
+        463
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        846,
+        845,
+        926
+      ],
+      "residues_1based": [
+        444,
+        444,
+        468
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        846,
+        488,
+        973
+      ],
+      "residues_1based": [
+        444,
+        333,
+        483
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        845,
+        926,
+        927
+      ],
+      "residues_1based": [
+        444,
+        468,
+        468
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        845,
+        926,
+        972
+      ],
+      "residues_1based": [
+        444,
+        468,
+        483
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        861,
+        860,
+        936
+      ],
+      "residues_1based": [
+        449,
+        449,
+        471
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        860,
+        936,
+        935
+      ],
+      "residues_1based": [
+        449,
+        471,
+        471
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        865,
+        864,
+        887
+      ],
+      "residues_1based": [
+        450,
+        450,
+        456
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        864,
+        887,
+        886
+      ],
+      "residues_1based": [
+        450,
+        456,
+        456
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        868,
+        867,
+        906
+      ],
+      "residues_1based": [
+        451,
+        451,
+        462
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        867,
+        906,
+        907
+      ],
+      "residues_1based": [
+        451,
+        462,
+        462
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        882,
+        881,
+        898
+      ],
+      "residues_1based": [
+        455,
+        455,
+        459
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        881,
+        898,
+        897
+      ],
+      "residues_1based": [
+        455,
+        459,
+        459
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        907,
+        927,
+        926
+      ],
+      "residues_1based": [
+        462,
+        468,
+        468
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        906,
+        907,
+        927
+      ],
+      "residues_1based": [
+        462,
+        462,
+        468
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        906,
+        539,
+        972
+      ],
+      "residues_1based": [
+        462,
+        348,
+        483
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        927,
+        926,
+        972
+      ],
+      "residues_1based": [
+        468,
+        468,
+        483
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    },
+    {
+      "atoms_1based": [
+        926,
+        972,
+        973
+      ],
+      "residues_1based": [
+        468,
+        483,
+        483
+      ],
+      "equilibrium_degrees": 60.00002571454079,
+      "K_kcal_mol_rad2": 83.51,
+      "outer_atoms_bonded": false
+    }
+  ],
+  "interpretation": "The 60-degree native small-ring angle is applied to carbon paths not closing a C-C-C triangle; requires chemical-context-specific typing/refit. This audit does not infer actual trajectory angle values or invalidate all prior adsorption conclusions.",
+  "REGOX_matched_control": {
+    "source_remote": "/export/scratch/alessandro.calza3/HPC_POLL/PRIORITY_REGOX980_4nm_corrected/ACETAMINOPHEN/GAFF2/N/1/U/complex_bottom_10/compl.parm7",
+    "source_sha256": "4a7fcf50f0b7ff7071c6b56e3b606e5a157a2e90e30fcf7af00e9c330076eabe",
+    "mask": ":1-628",
+    "cx_cx_cx_count": 0
+  }
+}

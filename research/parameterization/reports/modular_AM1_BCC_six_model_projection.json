@@ -1,0 +1,2472 @@
+{
+  "status": "PILOT_LIMITED_CONTEXT",
+  "method": "AM1_BCC_constrained_L2_block_projection_NOT_native_AM1_BCC",
+  "objective": "equal-model mean squared atomic charge deviations; background fixed zero contributes constant loss",
+  "raw_evidence": {
+    "pyrene_pristine": {
+      "status": "raw_native_AM1_BCC_diagnostic",
+      "candidate": "raw_native_am1_bcc",
+      "model_id": "pyrene_pristine",
+      "coverage": {
+        "complete": true
+      },
+      "final_parameter_validation": false,
+      "atoms": [
+        {
+          "atom_id": 1,
+          "name": "C001",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.127
+        },
+        {
+          "atom_id": 2,
+          "name": "C002",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.114
+        },
+        {
+          "atom_id": 3,
+          "name": "C003",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.033
+        },
+        {
+          "atom_id": 4,
+          "name": "C004",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.115
+        },
+        {
+          "atom_id": 5,
+          "name": "C005",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.115
+        },
+        {
+          "atom_id": 6,
+          "name": "C006",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.033
+        },
+        {
+          "atom_id": 7,
+          "name": "C007",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.114
+        },
+        {
+          "atom_id": 8,
+          "name": "C008",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.127
+        },
+        {
+          "atom_id": 9,
+          "name": "C009",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.114
+        },
+        {
+          "atom_id": 10,
+          "name": "C010",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.033
+        },
+        {
+          "atom_id": 11,
+          "name": "C011",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.115
+        },
+        {
+          "atom_id": 12,
+          "name": "C012",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.115
+        },
+        {
+          "atom_id": 13,
+          "name": "C013",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.033
+        },
+        {
+          "atom_id": 14,
+          "name": "C014",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.114
+        },
+        {
+          "atom_id": 15,
+          "name": "C015",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.015
+        },
+        {
+          "atom_id": 16,
+          "name": "C016",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.015
+        },
+        {
+          "atom_id": 17,
+          "name": "H017",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.133
+        },
+        {
+          "atom_id": 18,
+          "name": "H018",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.134
+        },
+        {
+          "atom_id": 19,
+          "name": "H019",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.133
+        },
+        {
+          "atom_id": 20,
+          "name": "H020",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.133
+        },
+        {
+          "atom_id": 21,
+          "name": "H021",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.134
+        },
+        {
+          "atom_id": 22,
+          "name": "H022",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.133
+        },
+        {
+          "atom_id": 23,
+          "name": "H023",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.134
+        },
+        {
+          "atom_id": 24,
+          "name": "H024",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.133
+        },
+        {
+          "atom_id": 25,
+          "name": "H025",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.133
+        },
+        {
+          "atom_id": 26,
+          "name": "H026",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.134
+        }
+      ],
+      "charge_sum_e": 0.0020000000000000295,
+      "formal_charge": 0,
+      "bcc_evidence": {
+        "native_BCC_verified": true,
+        "parameterized_bonds": 29,
+        "nonzero_BCC_bonds": 0,
+        "max_abs_BCC_delta_e": 0.0,
+        "source_mulliken_decimals": 3,
+        "raw_mulliken_sum_e": 0.0020000000000000295,
+        "pre_BCC_sum_e": 0.0020000000000000295,
+        "post_BCC_sum_e": 0.0020000000000000295,
+        "parameter_sha256": "05f034901d058ad9331325b6ee3fafa25c75b1ce4f52839fe85032eb92941276"
+      },
+      "source_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/am1_bcc/pyrene_pristine/attempt_004/raw_am1_bcc.json",
+      "source_sha256": "b063c6073d12342d2aa38c7accba3e1f5429b69b4e348d753a82843dd10b7de2"
+    },
+    "pyrene_diol_cis": {
+      "status": "raw_native_AM1_BCC_diagnostic",
+      "candidate": "raw_native_am1_bcc",
+      "model_id": "pyrene_diol_cis",
+      "coverage": {
+        "complete": true
+      },
+      "final_parameter_validation": false,
+      "atoms": [
+        {
+          "atom_id": 1,
+          "name": "C001",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.124
+        },
+        {
+          "atom_id": 2,
+          "name": "C002",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.107
+        },
+        {
+          "atom_id": 3,
+          "name": "C003",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.08145
+        },
+        {
+          "atom_id": 4,
+          "name": "C004",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.1125
+        },
+        {
+          "atom_id": 5,
+          "name": "C005",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.1125
+        },
+        {
+          "atom_id": 6,
+          "name": "C006",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.08145
+        },
+        {
+          "atom_id": 7,
+          "name": "C007",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.107
+        },
+        {
+          "atom_id": 8,
+          "name": "C008",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.124
+        },
+        {
+          "atom_id": 9,
+          "name": "C009",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.107
+        },
+        {
+          "atom_id": 10,
+          "name": "C010",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.08145
+        },
+        {
+          "atom_id": 11,
+          "name": "C011",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.1125
+        },
+        {
+          "atom_id": 12,
+          "name": "C012",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.1125
+        },
+        {
+          "atom_id": 13,
+          "name": "C013",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.08145
+        },
+        {
+          "atom_id": 14,
+          "name": "C014",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.107
+        },
+        {
+          "atom_id": 15,
+          "name": "C015",
+          "element": "C",
+          "role": "hydroxyl_C",
+          "charge_e": 0.2247
+        },
+        {
+          "atom_id": 16,
+          "name": "C016",
+          "element": "C",
+          "role": "hydroxyl_C",
+          "charge_e": 0.2247
+        },
+        {
+          "atom_id": 17,
+          "name": "O017",
+          "element": "O",
+          "role": "hydroxyl_O",
+          "charge_e": -0.5923
+        },
+        {
+          "atom_id": 18,
+          "name": "O018",
+          "element": "O",
+          "role": "hydroxyl_O",
+          "charge_e": -0.5923
+        },
+        {
+          "atom_id": 19,
+          "name": "H019",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.1355
+        },
+        {
+          "atom_id": 20,
+          "name": "H020",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.1335
+        },
+        {
+          "atom_id": 21,
+          "name": "H021",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.135
+        },
+        {
+          "atom_id": 22,
+          "name": "H022",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.135
+        },
+        {
+          "atom_id": 23,
+          "name": "H023",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.1335
+        },
+        {
+          "atom_id": 24,
+          "name": "H024",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.1355
+        },
+        {
+          "atom_id": 25,
+          "name": "H025",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.1335
+        },
+        {
+          "atom_id": 26,
+          "name": "H026",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.135
+        },
+        {
+          "atom_id": 27,
+          "name": "H027",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.135
+        },
+        {
+          "atom_id": 28,
+          "name": "H028",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.1335
+        },
+        {
+          "atom_id": 29,
+          "name": "H029",
+          "element": "H",
+          "role": "hydroxyl_H",
+          "charge_e": 0.42
+        },
+        {
+          "atom_id": 30,
+          "name": "H030",
+          "element": "H",
+          "role": "hydroxyl_H",
+          "charge_e": 0.42
+        }
+      ],
+      "charge_sum_e": -0.0020000000000000018,
+      "formal_charge": 0,
+      "bcc_evidence": {
+        "native_BCC_verified": true,
+        "parameterized_bonds": 33,
+        "nonzero_BCC_bonds": 8,
+        "max_abs_BCC_delta_e": 0.27280000000000004,
+        "source_mulliken_decimals": 3,
+        "raw_mulliken_sum_e": -0.0019999999999999463,
+        "pre_BCC_sum_e": -0.0019999999999999463,
+        "post_BCC_sum_e": -0.0020000000000000018,
+        "parameter_sha256": "05f034901d058ad9331325b6ee3fafa25c75b1ce4f52839fe85032eb92941276"
+      },
+      "source_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/am1_bcc/pyrene_diol_cis/attempt_003/raw_am1_bcc.json",
+      "source_sha256": "81c93a80c55f4f8cd880a094641a0fc1bbc8ca2c76c115337dd64ae666f3f47e"
+    },
+    "pyrene_diol_trans": {
+      "status": "raw_native_AM1_BCC_diagnostic",
+      "candidate": "raw_native_am1_bcc",
+      "model_id": "pyrene_diol_trans",
+      "coverage": {
+        "complete": true
+      },
+      "final_parameter_validation": false,
+      "atoms": [
+        {
+          "atom_id": 1,
+          "name": "C001",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.1225
+        },
+        {
+          "atom_id": 2,
+          "name": "C002",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.10325
+        },
+        {
+          "atom_id": 3,
+          "name": "C003",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.0827
+        },
+        {
+          "atom_id": 4,
+          "name": "C004",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.11175
+        },
+        {
+          "atom_id": 5,
+          "name": "C005",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.11175
+        },
+        {
+          "atom_id": 6,
+          "name": "C006",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.0827
+        },
+        {
+          "atom_id": 7,
+          "name": "C007",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.10325
+        },
+        {
+          "atom_id": 8,
+          "name": "C008",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.1225
+        },
+        {
+          "atom_id": 9,
+          "name": "C009",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.10325
+        },
+        {
+          "atom_id": 10,
+          "name": "C010",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.0827
+        },
+        {
+          "atom_id": 11,
+          "name": "C011",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.11175
+        },
+        {
+          "atom_id": 12,
+          "name": "C012",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.11175
+        },
+        {
+          "atom_id": 13,
+          "name": "C013",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.0827
+        },
+        {
+          "atom_id": 14,
+          "name": "C014",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.10325
+        },
+        {
+          "atom_id": 15,
+          "name": "C015",
+          "element": "C",
+          "role": "hydroxyl_C",
+          "charge_e": 0.2087
+        },
+        {
+          "atom_id": 16,
+          "name": "C016",
+          "element": "C",
+          "role": "hydroxyl_C",
+          "charge_e": 0.2087
+        },
+        {
+          "atom_id": 17,
+          "name": "O017",
+          "element": "O",
+          "role": "hydroxyl_O",
+          "charge_e": -0.5703
+        },
+        {
+          "atom_id": 18,
+          "name": "O018",
+          "element": "O",
+          "role": "hydroxyl_O",
+          "charge_e": -0.5703
+        },
+        {
+          "atom_id": 19,
+          "name": "H019",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.134
+        },
+        {
+          "atom_id": 20,
+          "name": "H020",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.13325
+        },
+        {
+          "atom_id": 21,
+          "name": "H021",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.13575
+        },
+        {
+          "atom_id": 22,
+          "name": "H022",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.13575
+        },
+        {
+          "atom_id": 23,
+          "name": "H023",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.13325
+        },
+        {
+          "atom_id": 24,
+          "name": "H024",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.134
+        },
+        {
+          "atom_id": 25,
+          "name": "H025",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.13325
+        },
+        {
+          "atom_id": 26,
+          "name": "H026",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.13575
+        },
+        {
+          "atom_id": 27,
+          "name": "H027",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.13575
+        },
+        {
+          "atom_id": 28,
+          "name": "H028",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.13325
+        },
+        {
+          "atom_id": 29,
+          "name": "H029",
+          "element": "H",
+          "role": "hydroxyl_H",
+          "charge_e": 0.4075
+        },
+        {
+          "atom_id": 30,
+          "name": "H030",
+          "element": "H",
+          "role": "hydroxyl_H",
+          "charge_e": 0.4075
+        }
+      ],
+      "charge_sum_e": 0.0,
+      "formal_charge": 0,
+      "bcc_evidence": {
+        "native_BCC_verified": true,
+        "parameterized_bonds": 33,
+        "nonzero_BCC_bonds": 8,
+        "max_abs_BCC_delta_e": 0.27280000000000004,
+        "source_mulliken_decimals": 3,
+        "raw_mulliken_sum_e": 9.71445146547012e-17,
+        "pre_BCC_sum_e": 1.1102230246251565e-16,
+        "post_BCC_sum_e": 0.0,
+        "parameter_sha256": "05f034901d058ad9331325b6ee3fafa25c75b1ce4f52839fe85032eb92941276"
+      },
+      "source_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/am1_bcc/pyrene_diol_trans/attempt_003/raw_am1_bcc.json",
+      "source_sha256": "30bc45f3634958a96f6da4287f3c870006d8786e982c39cbe9e2e0e0bdfbffb2"
+    },
+    "pyrene_diol_epoxide": {
+      "status": "raw_native_AM1_BCC_diagnostic",
+      "candidate": "raw_native_am1_bcc",
+      "model_id": "pyrene_diol_epoxide",
+      "coverage": {
+        "complete": true
+      },
+      "final_parameter_validation": false,
+      "atoms": [
+        {
+          "atom_id": 1,
+          "name": "C001",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.132
+        },
+        {
+          "atom_id": 2,
+          "name": "C002",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.1692
+        },
+        {
+          "atom_id": 3,
+          "name": "C003",
+          "element": "C",
+          "role": "hydroxyl_C",
+          "charge_e": 0.2462
+        },
+        {
+          "atom_id": 4,
+          "name": "C004",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.1282
+        },
+        {
+          "atom_id": 5,
+          "name": "C005",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.117
+        },
+        {
+          "atom_id": 6,
+          "name": "C006",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.0462
+        },
+        {
+          "atom_id": 7,
+          "name": "C007",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.11
+        },
+        {
+          "atom_id": 8,
+          "name": "C008",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.11
+        },
+        {
+          "atom_id": 9,
+          "name": "C009",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.1412
+        },
+        {
+          "atom_id": 10,
+          "name": "C010",
+          "element": "C",
+          "role": "epoxide_C",
+          "charge_e": 0.1362
+        },
+        {
+          "atom_id": 11,
+          "name": "C011",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.1542
+        },
+        {
+          "atom_id": 12,
+          "name": "C012",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.106
+        },
+        {
+          "atom_id": 13,
+          "name": "C013",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.1222
+        },
+        {
+          "atom_id": 14,
+          "name": "C014",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.092
+        },
+        {
+          "atom_id": 15,
+          "name": "C015",
+          "element": "C",
+          "role": "hydroxyl_C",
+          "charge_e": 0.212
+        },
+        {
+          "atom_id": 16,
+          "name": "C016",
+          "element": "C",
+          "role": "epoxide_C",
+          "charge_e": 0.103
+        },
+        {
+          "atom_id": 17,
+          "name": "O017",
+          "element": "O",
+          "role": "hydroxyl_O",
+          "charge_e": -0.5888
+        },
+        {
+          "atom_id": 18,
+          "name": "O018",
+          "element": "O",
+          "role": "hydroxyl_O",
+          "charge_e": -0.5758
+        },
+        {
+          "atom_id": 19,
+          "name": "O019",
+          "element": "O",
+          "role": "epoxide_O",
+          "charge_e": -0.3586
+        },
+        {
+          "atom_id": 20,
+          "name": "H020",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.137
+        },
+        {
+          "atom_id": 21,
+          "name": "H021",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.142
+        },
+        {
+          "atom_id": 22,
+          "name": "H022",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.145
+        },
+        {
+          "atom_id": 23,
+          "name": "H023",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.137
+        },
+        {
+          "atom_id": 24,
+          "name": "H024",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.138
+        },
+        {
+          "atom_id": 25,
+          "name": "H025",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.137
+        },
+        {
+          "atom_id": 26,
+          "name": "H026",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.143
+        },
+        {
+          "atom_id": 27,
+          "name": "H027",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.148
+        },
+        {
+          "atom_id": 28,
+          "name": "H028",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.141
+        },
+        {
+          "atom_id": 29,
+          "name": "H029",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.136
+        },
+        {
+          "atom_id": 30,
+          "name": "H030",
+          "element": "H",
+          "role": "hydroxyl_H",
+          "charge_e": 0.428
+        },
+        {
+          "atom_id": 31,
+          "name": "H031",
+          "element": "H",
+          "role": "hydroxyl_H",
+          "charge_e": 0.423
+        }
+      ],
+      "charge_sum_e": 0.0010000000000000078,
+      "formal_charge": 0,
+      "bcc_evidence": {
+        "native_BCC_verified": true,
+        "parameterized_bonds": 35,
+        "nonzero_BCC_bonds": 12,
+        "max_abs_BCC_delta_e": 0.27280000000000004,
+        "source_mulliken_decimals": 3,
+        "raw_mulliken_sum_e": 0.0010000000000000182,
+        "pre_BCC_sum_e": 0.0010000000000000182,
+        "post_BCC_sum_e": 0.0010000000000000078,
+        "parameter_sha256": "05f034901d058ad9331325b6ee3fafa25c75b1ce4f52839fe85032eb92941276"
+      },
+      "source_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/am1_bcc/pyrene_diol_epoxide/attempt_003/raw_am1_bcc.json",
+      "source_sha256": "f9b28c410eff8d1b361304ad008999dd513be5dbb5d62623d4004e001256ec12"
+    },
+    "pyrene_COOH": {
+      "status": "raw_native_AM1_BCC_diagnostic",
+      "candidate": "raw_native_am1_bcc",
+      "model_id": "pyrene_COOH",
+      "coverage": {
+        "complete": true
+      },
+      "final_parameter_validation": false,
+      "atoms": [
+        {
+          "atom_id": 1,
+          "name": "C001",
+          "element": "C",
+          "role": "COOH_anchor",
+          "charge_e": -0.1346
+        },
+        {
+          "atom_id": 2,
+          "name": "C002",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.0565
+        },
+        {
+          "atom_id": 3,
+          "name": "C003",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.0495
+        },
+        {
+          "atom_id": 4,
+          "name": "C004",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.11
+        },
+        {
+          "atom_id": 5,
+          "name": "C005",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.114
+        },
+        {
+          "atom_id": 6,
+          "name": "C006",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.0265
+        },
+        {
+          "atom_id": 7,
+          "name": "C007",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.115
+        },
+        {
+          "atom_id": 8,
+          "name": "C008",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.12
+        },
+        {
+          "atom_id": 9,
+          "name": "C009",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.115
+        },
+        {
+          "atom_id": 10,
+          "name": "C010",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.0265
+        },
+        {
+          "atom_id": 11,
+          "name": "C011",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.114
+        },
+        {
+          "atom_id": 12,
+          "name": "C012",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.11
+        },
+        {
+          "atom_id": 13,
+          "name": "C013",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.0495
+        },
+        {
+          "atom_id": 14,
+          "name": "C014",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.0565
+        },
+        {
+          "atom_id": 15,
+          "name": "C015",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": 0.011
+        },
+        {
+          "atom_id": 16,
+          "name": "C016",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.026
+        },
+        {
+          "atom_id": 17,
+          "name": "C017",
+          "element": "C",
+          "role": "COOH_C",
+          "charge_e": 0.6517
+        },
+        {
+          "atom_id": 18,
+          "name": "O018",
+          "element": "O",
+          "role": "COOH_O",
+          "charge_e": -0.554
+        },
+        {
+          "atom_id": 19,
+          "name": "O019",
+          "element": "O",
+          "role": "COOH_OH",
+          "charge_e": -0.6081
+        },
+        {
+          "atom_id": 20,
+          "name": "H020",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.159
+        },
+        {
+          "atom_id": 21,
+          "name": "H021",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.1385
+        },
+        {
+          "atom_id": 22,
+          "name": "H022",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.1365
+        },
+        {
+          "atom_id": 23,
+          "name": "H023",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.1365
+        },
+        {
+          "atom_id": 24,
+          "name": "H024",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.136
+        },
+        {
+          "atom_id": 25,
+          "name": "H025",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.1365
+        },
+        {
+          "atom_id": 26,
+          "name": "H026",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.1365
+        },
+        {
+          "atom_id": 27,
+          "name": "H027",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.1385
+        },
+        {
+          "atom_id": 28,
+          "name": "H028",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.159
+        },
+        {
+          "atom_id": 29,
+          "name": "H029",
+          "element": "H",
+          "role": "COOH_H",
+          "charge_e": 0.447
+        }
+      ],
+      "charge_sum_e": 0.000999999999999994,
+      "formal_charge": 0,
+      "bcc_evidence": {
+        "native_BCC_verified": true,
+        "parameterized_bonds": 32,
+        "nonzero_BCC_bonds": 4,
+        "max_abs_BCC_delta_e": 0.2997,
+        "source_mulliken_decimals": 3,
+        "raw_mulliken_sum_e": 0.0010000000000000356,
+        "pre_BCC_sum_e": 0.0010000000000000356,
+        "post_BCC_sum_e": 0.000999999999999994,
+        "parameter_sha256": "05f034901d058ad9331325b6ee3fafa25c75b1ce4f52839fe85032eb92941276"
+      },
+      "source_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/am1_bcc/pyrene_COOH/attempt_003/raw_am1_bcc.json",
+      "source_sha256": "59651ace21483fab9c0ec9b48f2c90ce9ceaf48d961cebd519a1160cb428ecb1"
+    },
+    "pyrene_COO": {
+      "status": "raw_native_AM1_BCC_diagnostic",
+      "candidate": "raw_native_am1_bcc",
+      "model_id": "pyrene_COO",
+      "coverage": {
+        "complete": true
+      },
+      "final_parameter_validation": false,
+      "atoms": [
+        {
+          "atom_id": 1,
+          "name": "C001",
+          "element": "C",
+          "role": "COO_anchor",
+          "charge_e": -0.1356
+        },
+        {
+          "atom_id": 2,
+          "name": "C002",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.066
+        },
+        {
+          "atom_id": 3,
+          "name": "C003",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.082
+        },
+        {
+          "atom_id": 4,
+          "name": "C004",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.078
+        },
+        {
+          "atom_id": 5,
+          "name": "C005",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.166
+        },
+        {
+          "atom_id": 6,
+          "name": "C006",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.017
+        },
+        {
+          "atom_id": 7,
+          "name": "C007",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.145
+        },
+        {
+          "atom_id": 8,
+          "name": "C008",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.135
+        },
+        {
+          "atom_id": 9,
+          "name": "C009",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.145
+        },
+        {
+          "atom_id": 10,
+          "name": "C010",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.017
+        },
+        {
+          "atom_id": 11,
+          "name": "C011",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.166
+        },
+        {
+          "atom_id": 12,
+          "name": "C012",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.078
+        },
+        {
+          "atom_id": 13,
+          "name": "C013",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.082
+        },
+        {
+          "atom_id": 14,
+          "name": "C014",
+          "element": "C",
+          "role": "edge_C",
+          "charge_e": -0.066
+        },
+        {
+          "atom_id": 15,
+          "name": "C015",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.019
+        },
+        {
+          "atom_id": 16,
+          "name": "C016",
+          "element": "C",
+          "role": "scaffold_C",
+          "charge_e": -0.015
+        },
+        {
+          "atom_id": 17,
+          "name": "C017",
+          "element": "C",
+          "role": "COO_C",
+          "charge_e": 0.9092
+        },
+        {
+          "atom_id": 18,
+          "name": "O018",
+          "element": "O",
+          "role": "COO_O",
+          "charge_e": -0.8253
+        },
+        {
+          "atom_id": 19,
+          "name": "O019",
+          "element": "O",
+          "role": "COO_O",
+          "charge_e": -0.8253
+        },
+        {
+          "atom_id": 20,
+          "name": "H020",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.159
+        },
+        {
+          "atom_id": 21,
+          "name": "H021",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.126
+        },
+        {
+          "atom_id": 22,
+          "name": "H022",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.116
+        },
+        {
+          "atom_id": 23,
+          "name": "H023",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.118
+        },
+        {
+          "atom_id": 24,
+          "name": "H024",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.114
+        },
+        {
+          "atom_id": 25,
+          "name": "H025",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.118
+        },
+        {
+          "atom_id": 26,
+          "name": "H026",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.116
+        },
+        {
+          "atom_id": 27,
+          "name": "H027",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.126
+        },
+        {
+          "atom_id": 28,
+          "name": "H028",
+          "element": "H",
+          "role": "edge_H",
+          "charge_e": 0.159
+        }
+      ],
+      "charge_sum_e": -1.002,
+      "formal_charge": -1,
+      "bcc_evidence": {
+        "native_BCC_verified": true,
+        "parameterized_bonds": 31,
+        "nonzero_BCC_bonds": 3,
+        "max_abs_BCC_delta_e": 0.5511999999999999,
+        "source_mulliken_decimals": 3,
+        "raw_mulliken_sum_e": -1.0020000000000002,
+        "pre_BCC_sum_e": -1.0020000000000002,
+        "post_BCC_sum_e": -1.002,
+        "parameter_sha256": "05f034901d058ad9331325b6ee3fafa25c75b1ce4f52839fe85032eb92941276"
+      },
+      "source_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/am1_bcc/pyrene_COO/attempt_003/raw_am1_bcc.json",
+      "source_sha256": "eb71675c9e084561856abb387a616d6353ef31db0cd627a8a4ecd5a12800c0e8"
+    }
+  },
+  "shared_role_charges_e": {
+    "scaffold_C": 0.0,
+    "COOH_C": 0.6912999999999999,
+    "COOH_H": 0.48660000000000003,
+    "COOH_O": -0.5144000000000001,
+    "COOH_OH": -0.5685,
+    "COOH_anchor": -0.09499999999999999,
+    "COO_C": 0.8784500000000002,
+    "COO_O": -0.85605,
+    "COO_anchor": -0.16635,
+    "edge_C": -0.12468595057566234,
+    "edge_H": 0.12468595057566234,
+    "epoxide_C": 0.1594,
+    "epoxide_O": -0.3188,
+    "hydroxyl_C": 0.20184384057971014,
+    "hydroxyl_H": 0.398681884057971,
+    "hydroxyl_O": -0.6005257246376812
+  },
+  "evaluation": {
+    "groups": [
+      {
+        "model_id": "pyrene_pristine",
+        "block_type": "GRT",
+        "atom_ids": [
+          1,
+          17
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "block_type": "GRT",
+        "atom_ids": [
+          2,
+          18
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "block_type": "GRT",
+        "atom_ids": [
+          4,
+          19
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "block_type": "GRT",
+        "atom_ids": [
+          5,
+          20
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "block_type": "GRT",
+        "atom_ids": [
+          7,
+          21
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "block_type": "GRT",
+        "atom_ids": [
+          8,
+          22
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "block_type": "GRT",
+        "atom_ids": [
+          9,
+          23
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "block_type": "GRT",
+        "atom_ids": [
+          11,
+          24
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "block_type": "GRT",
+        "atom_ids": [
+          12,
+          25
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "block_type": "GRT",
+        "atom_ids": [
+          14,
+          26
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "block_type": "OH",
+        "atom_ids": [
+          15,
+          17,
+          29
+        ],
+        "roles": [
+          "hydroxyl_C",
+          "hydroxyl_O",
+          "hydroxyl_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": -2.7755575615628914e-17,
+        "charge_error_e": -2.7755575615628914e-17
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "block_type": "OH",
+        "atom_ids": [
+          16,
+          18,
+          30
+        ],
+        "roles": [
+          "hydroxyl_C",
+          "hydroxyl_O",
+          "hydroxyl_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": -2.7755575615628914e-17,
+        "charge_error_e": -2.7755575615628914e-17
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "block_type": "GRT",
+        "atom_ids": [
+          1,
+          19
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "block_type": "GRT",
+        "atom_ids": [
+          2,
+          20
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "block_type": "GRT",
+        "atom_ids": [
+          4,
+          21
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "block_type": "GRT",
+        "atom_ids": [
+          5,
+          22
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "block_type": "GRT",
+        "atom_ids": [
+          7,
+          23
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "block_type": "GRT",
+        "atom_ids": [
+          8,
+          24
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "block_type": "GRT",
+        "atom_ids": [
+          9,
+          25
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "block_type": "GRT",
+        "atom_ids": [
+          11,
+          26
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "block_type": "GRT",
+        "atom_ids": [
+          12,
+          27
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "block_type": "GRT",
+        "atom_ids": [
+          14,
+          28
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "block_type": "OH",
+        "atom_ids": [
+          15,
+          17,
+          29
+        ],
+        "roles": [
+          "hydroxyl_C",
+          "hydroxyl_O",
+          "hydroxyl_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": -2.7755575615628914e-17,
+        "charge_error_e": -2.7755575615628914e-17
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "block_type": "OH",
+        "atom_ids": [
+          16,
+          18,
+          30
+        ],
+        "roles": [
+          "hydroxyl_C",
+          "hydroxyl_O",
+          "hydroxyl_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": -2.7755575615628914e-17,
+        "charge_error_e": -2.7755575615628914e-17
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "block_type": "GRT",
+        "atom_ids": [
+          1,
+          19
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "block_type": "GRT",
+        "atom_ids": [
+          2,
+          20
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "block_type": "GRT",
+        "atom_ids": [
+          4,
+          21
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "block_type": "GRT",
+        "atom_ids": [
+          5,
+          22
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "block_type": "GRT",
+        "atom_ids": [
+          7,
+          23
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "block_type": "GRT",
+        "atom_ids": [
+          8,
+          24
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "block_type": "GRT",
+        "atom_ids": [
+          9,
+          25
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "block_type": "GRT",
+        "atom_ids": [
+          11,
+          26
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "block_type": "GRT",
+        "atom_ids": [
+          12,
+          27
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "block_type": "GRT",
+        "atom_ids": [
+          14,
+          28
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "OH",
+        "atom_ids": [
+          15,
+          17,
+          30
+        ],
+        "roles": [
+          "hydroxyl_C",
+          "hydroxyl_O",
+          "hydroxyl_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": -2.7755575615628914e-17,
+        "charge_error_e": -2.7755575615628914e-17
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "OH",
+        "atom_ids": [
+          3,
+          18,
+          31
+        ],
+        "roles": [
+          "hydroxyl_C",
+          "hydroxyl_O",
+          "hydroxyl_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": -2.7755575615628914e-17,
+        "charge_error_e": -2.7755575615628914e-17
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "EPX",
+        "atom_ids": [
+          10,
+          16,
+          19
+        ],
+        "roles": [
+          "epoxide_C",
+          "epoxide_C",
+          "epoxide_O"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "GRT",
+        "atom_ids": [
+          1,
+          20
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "GRT",
+        "atom_ids": [
+          2,
+          21
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "GRT",
+        "atom_ids": [
+          4,
+          22
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "GRT",
+        "atom_ids": [
+          5,
+          23
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "GRT",
+        "atom_ids": [
+          7,
+          24
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "GRT",
+        "atom_ids": [
+          8,
+          25
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "GRT",
+        "atom_ids": [
+          9,
+          26
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "GRT",
+        "atom_ids": [
+          11,
+          27
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "GRT",
+        "atom_ids": [
+          12,
+          28
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "block_type": "GRT",
+        "atom_ids": [
+          14,
+          29
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "block_type": "COOH",
+        "atom_ids": [
+          1,
+          17,
+          18,
+          19,
+          29
+        ],
+        "roles": [
+          "COOH_anchor",
+          "COOH_C",
+          "COOH_O",
+          "COOH_OH",
+          "COOH_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": -1.249000902703301e-16,
+        "charge_error_e": -1.249000902703301e-16
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "block_type": "GRT",
+        "atom_ids": [
+          2,
+          20
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "block_type": "GRT",
+        "atom_ids": [
+          4,
+          21
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "block_type": "GRT",
+        "atom_ids": [
+          5,
+          22
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "block_type": "GRT",
+        "atom_ids": [
+          7,
+          23
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "block_type": "GRT",
+        "atom_ids": [
+          8,
+          24
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "block_type": "GRT",
+        "atom_ids": [
+          9,
+          25
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "block_type": "GRT",
+        "atom_ids": [
+          11,
+          26
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "block_type": "GRT",
+        "atom_ids": [
+          12,
+          27
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "block_type": "GRT",
+        "atom_ids": [
+          14,
+          28
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COO",
+        "block_type": "COO",
+        "atom_ids": [
+          1,
+          17,
+          18,
+          19
+        ],
+        "roles": [
+          "COO_anchor",
+          "COO_C",
+          "COO_O",
+          "COO_O"
+        ],
+        "target_charge_e": -1.0,
+        "charge_sum_e": -0.9999999999999998,
+        "charge_error_e": 2.220446049250313e-16
+      },
+      {
+        "model_id": "pyrene_COO",
+        "block_type": "GRT",
+        "atom_ids": [
+          2,
+          20
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COO",
+        "block_type": "GRT",
+        "atom_ids": [
+          4,
+          21
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COO",
+        "block_type": "GRT",
+        "atom_ids": [
+          5,
+          22
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COO",
+        "block_type": "GRT",
+        "atom_ids": [
+          7,
+          23
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COO",
+        "block_type": "GRT",
+        "atom_ids": [
+          8,
+          24
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COO",
+        "block_type": "GRT",
+        "atom_ids": [
+          9,
+          25
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COO",
+        "block_type": "GRT",
+        "atom_ids": [
+          11,
+          26
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COO",
+        "block_type": "GRT",
+        "atom_ids": [
+          12,
+          27
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_COO",
+        "block_type": "GRT",
+        "atom_ids": [
+          14,
+          28
+        ],
+        "roles": [
+          "edge_C",
+          "edge_H"
+        ],
+        "target_charge_e": 0.0,
+        "charge_sum_e": 0.0,
+        "charge_error_e": 0.0
+      }
+    ],
+    "models": [
+      {
+        "model_id": "pyrene_pristine",
+        "charge_sum_e": 0.0,
+        "formal_charge_e": 0,
+        "charge_error_e": 0.0
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "charge_sum_e": -5.551115123125783e-17,
+        "formal_charge_e": 0,
+        "charge_error_e": -5.551115123125783e-17
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "charge_sum_e": -5.551115123125783e-17,
+        "formal_charge_e": 0,
+        "charge_error_e": -5.551115123125783e-17
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "charge_sum_e": -5.551115123125783e-17,
+        "formal_charge_e": 0,
+        "charge_error_e": -5.551115123125783e-17
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "charge_sum_e": -1.249000902703301e-16,
+        "formal_charge_e": 0,
+        "charge_error_e": -1.249000902703301e-16
+      },
+      {
+        "model_id": "pyrene_COO",
+        "charge_sum_e": -0.9999999999999998,
+        "formal_charge_e": -1,
+        "charge_error_e": 2.220446049250313e-16
+      }
+    ]
+  },
+  "comparison_scope": "Six-model overlap only; CAB missing from AM1-BCC due incomplete native BCC coverage; standalone epoxide geometry excluded from matched RESP reference.",
+  "final_parameter_validation": false
+}

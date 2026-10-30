@@ -1,0 +1,6 @@
+{
+  "max_absolute_charge_change_from_unpatched_full_e": 0.0,
+  "independently_recomputed_weighted_ESP_SSE": 30.433619279710822,
+  "patched_RESP_reported_SSE_rounded_3dp": 30.434,
+  "scope": "reporting consistency fix only; same fitted charges as unpatched executable"
+}

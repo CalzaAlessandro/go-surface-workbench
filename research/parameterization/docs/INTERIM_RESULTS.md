@@ -23,3 +23,27 @@ bonded/LJ/1–4 terms and matched external validation.
 
 See the adjacent report JSON files for the numerical diagnostic evidence.
 Raw logs/checkpoints remain in the isolated local/Slurm study archive.
+
+## Update, 30 October 2026
+
+The seven-model joint L0 block fit now completed with frozen-zero scaffold,
+17 fitted shared roles and six independent block constraints. Its HF input
+references remain electronically diagnostic. Terminal EPH/EPT are registered
+but unfitted in that pilot. A six-model AM1-BCC constrained block projection is
+a separately named comparator, not native AM1-BCC.
+
+The installed RESP binary has a 500-center capacity. A separate, calculation-
+only upstream AmberClassic build was checked against the installed two-model
+pilot, with identical charges at output precision. Increasing capacity to1024
+retains all 21 ESP datasets. A reporting-only weighted-SSE correction leaves
+the complete fitted-charge vector unchanged; independent SSE is 30.43361928,
+matching the corrected report's rounded 30.434. The original program combined
+weighted and unweighted statistics. System Amber was not replaced, and no
+Amber executable/source bundle is included in this repository.
+
+All eight original ωB97X-D references finished; seven pass preliminary
+identity/connectivity/frequency/stability gates. Pyrene epoxide retains its
+connectivity failure. The 39-model initial mixed/edge panel is prepared, with
+eight selected DFT calculations submitted as job 1401678 (two running, six
+pending at the latest check). This is not completion of the new panel or a
+final parameter set.

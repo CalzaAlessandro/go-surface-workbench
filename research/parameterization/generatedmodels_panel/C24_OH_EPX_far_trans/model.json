@@ -1,0 +1,1144 @@
+{
+  "schema_version": 1,
+  "model_id": "C24_OH_EPX_far_trans",
+  "formula": "C24H14O3",
+  "formal_charge": 0,
+  "multiplicity": 1,
+  "electron_count": 182,
+  "atoms": [
+    {
+      "id": 1,
+      "name": "C1",
+      "element": "C",
+      "position": [
+        -1.2608447139632772,
+        -3.4698666036237675,
+        -0.17917160883289895
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 22,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 2,
+      "name": "C2",
+      "element": "C",
+      "position": [
+        1.2769454099802815,
+        -3.470422544202171,
+        -0.15958803420455825
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 21,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 3,
+      "name": "C3",
+      "element": "C",
+      "position": [
+        -2.4011695748573927,
+        -2.7821336690889353,
+        -0.3647877373101115
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 18,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 4,
+      "name": "C4",
+      "element": "C",
+      "position": [
+        0.00401519118878223,
+        -2.8629068107753803,
+        0.3697465377623018
+      ],
+      "role": "hydroxyl_C",
+      "roles": [
+        "hydroxyl_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 37,
+      "chiral_tag": "CHI_TETRAHEDRAL_CW",
+      "cip_code": "R"
+    },
+    {
+      "id": 5,
+      "name": "C5",
+      "element": "C",
+      "position": [
+        2.414155153352186,
+        -2.78390779481443,
+        -0.36727888272098214
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 17,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 6,
+      "name": "C6",
+      "element": "C",
+      "position": [
+        -2.4612515732595406,
+        -1.327909621676025,
+        -0.19506582516852117
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 29,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 7,
+      "name": "C7",
+      "element": "C",
+      "position": [
+        0.010111092254406154,
+        -1.2833922466046,
+        0.3922198031622087
+      ],
+      "role": "hydroxyl_C",
+      "roles": [
+        "hydroxyl_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 39,
+      "chiral_tag": "CHI_TETRAHEDRAL_CCW",
+      "cip_code": "S"
+    },
+    {
+      "id": 8,
+      "name": "C8",
+      "element": "C",
+      "position": [
+        2.4727504935118123,
+        -1.3270935101827677,
+        -0.2326277048790021
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 30,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 9,
+      "name": "C9",
+      "element": "C",
+      "position": [
+        -3.669994737132014,
+        -0.6202376907983861,
+        -0.24187263352098695
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 25,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 10,
+      "name": "C10",
+      "element": "C",
+      "position": [
+        -1.2750949428420653,
+        -0.6111490949520237,
+        -0.052476785011220904
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 33,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 11,
+      "name": "C11",
+      "element": "C",
+      "position": [
+        1.287342094327899,
+        -0.610576607139254,
+        -0.08470260069448529
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 34,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 12,
+      "name": "C12",
+      "element": "C",
+      "position": [
+        3.6790733685928445,
+        -0.6177860663670635,
+        -0.2989303445960502
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 26,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 13,
+      "name": "C13",
+      "element": "C",
+      "position": [
+        -3.6914101701637034,
+        0.7827928396404947,
+        -0.1300700092141741
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 27,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 14,
+      "name": "C14",
+      "element": "C",
+      "position": [
+        -1.2844318168055548,
+        0.7946594577667486,
+        -0.15653314915181626
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 35,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 15,
+      "name": "C15",
+      "element": "C",
+      "position": [
+        1.291976377534122,
+        0.7953989016396243,
+        -0.18728412932340713
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 36,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 16,
+      "name": "C16",
+      "element": "C",
+      "position": [
+        3.6992058961782073,
+        0.7860244832385452,
+        -0.19586303817229428
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 28,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 17,
+      "name": "C17",
+      "element": "C",
+      "position": [
+        -2.4963456070487826,
+        1.5034629297232744,
+        -0.09586185650381619
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 31,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 18,
+      "name": "C18",
+      "element": "C",
+      "position": [
+        0.00031933461088355647,
+        1.5192535369131055,
+        -0.43200246561952604
+      ],
+      "role": "epoxide_C",
+      "roles": [
+        "epoxide_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 40,
+      "chiral_tag": "CHI_TETRAHEDRAL_CCW",
+      "cip_code": "S"
+    },
+    {
+      "id": 19,
+      "name": "C19",
+      "element": "C",
+      "position": [
+        2.5038055775377255,
+        1.5055415754312087,
+        -0.14607154450805182
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 32,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 20,
+      "name": "C20",
+      "element": "C",
+      "position": [
+        -2.442677587322063,
+        2.9795672016811126,
+        0.04551957638968949
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 20,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 21,
+      "name": "C21",
+      "element": "C",
+      "position": [
+        -0.0014084800935890334,
+        3.0319279877144,
+        -0.5129669068113643
+      ],
+      "role": "epoxide_C",
+      "roles": [
+        "epoxide_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 38,
+      "chiral_tag": "CHI_TETRAHEDRAL_CW",
+      "cip_code": "R"
+    },
+    {
+      "id": 22,
+      "name": "C22",
+      "element": "C",
+      "position": [
+        2.451256890750408,
+        2.981507226351575,
+        -0.004165545532462758
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 19,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 23,
+      "name": "C23",
+      "element": "C",
+      "position": [
+        -1.2822040920200122,
+        3.662863543118788,
+        -0.0955458864038946
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 24,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 24,
+      "name": "C24",
+      "element": "C",
+      "position": [
+        1.2874846838233658,
+        3.663633792618903,
+        -0.12195377512720772
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 23,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 25,
+      "name": "O25",
+      "element": "O",
+      "position": [
+        -0.0044526046860338874,
+        -3.3307969189482973,
+        1.7424058062231813
+      ],
+      "role": "hydroxyl_O",
+      "roles": [
+        "hydroxyl_O"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 14,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 26,
+      "name": "O26",
+      "element": "O",
+      "position": [
+        0.0010450893820685254,
+        -0.9714876543171709,
+        1.8348687538886654
+      ],
+      "role": "hydroxyl_O",
+      "roles": [
+        "hydroxyl_O"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 15,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 27,
+      "name": "O27",
+      "element": "O",
+      "position": [
+        -0.013496986512272125,
+        2.2237894943494734,
+        -1.7037277303085987
+      ],
+      "role": "epoxide_O",
+      "roles": [
+        "epoxide_O"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 16,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 28,
+      "name": "H28",
+      "element": "H",
+      "position": [
+        -1.2737762230045344,
+        -4.54781032719876,
+        -0.316998726094932
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 7,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 29,
+      "name": "H29",
+      "element": "H",
+      "position": [
+        1.295963472498078,
+        -4.551731644856261,
+        -0.2692301045827234
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 6,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 30,
+      "name": "H30",
+      "element": "H",
+      "position": [
+        -3.3037648420706476,
+        -3.292355522771386,
+        -0.688273524708514
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 3,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 31,
+      "name": "H31",
+      "element": "H",
+      "position": [
+        3.31675163873714,
+        -3.301785804539381,
+        -0.6789649608783694
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 2,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 32,
+      "name": "H32",
+      "element": "H",
+      "position": [
+        -4.613589184420369,
+        -1.1535940431065892,
+        -0.3342601803804799
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 10,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 33,
+      "name": "H33",
+      "element": "H",
+      "position": [
+        4.62294745519667,
+        -1.1498936078014728,
+        -0.39896568994795384
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 11,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 34,
+      "name": "H34",
+      "element": "H",
+      "position": [
+        -4.647365357718428,
+        1.2995464033325195,
+        -0.10972349623126275
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 12,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 35,
+      "name": "H35",
+      "element": "H",
+      "position": [
+        4.654722539105104,
+        1.3045991603855567,
+        -0.19243032794791579
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 13,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 36,
+      "name": "H36",
+      "element": "H",
+      "position": [
+        -3.3632630133914154,
+        3.4940875657701316,
+        0.30017146894706437
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 5,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 37,
+      "name": "H37",
+      "element": "H",
+      "position": [
+        3.3760050792159704,
+        3.4983030234932397,
+        0.2303817959898782
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 4,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 38,
+      "name": "H38",
+      "element": "H",
+      "position": [
+        -1.2910097439814945,
+        4.741159997166838,
+        0.03277830384506374
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 9,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 39,
+      "name": "H39",
+      "element": "H",
+      "position": [
+        1.2975975737225252,
+        4.742169773839033,
+        0.0049763784832953335
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 8,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 40,
+      "name": "H40",
+      "element": "H",
+      "position": [
+        -0.49545179803621936,
+        -2.636527460782452,
+        2.22918481217673
+      ],
+      "role": "hydroxyl_H",
+      "roles": [
+        "hydroxyl_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 0,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 41,
+      "name": "H41",
+      "element": "H",
+      "position": [
+        0.9179998781411708,
+        -1.108172856626042,
+        2.1404536973496517
+      ],
+      "role": "hydroxyl_H",
+      "roles": [
+        "hydroxyl_H"
+      ],
+      "formal_charge": 0,
+      "charge": null,
+      "symmetry_class": 1,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    }
+  ],
+  "bonds": [
+    {
+      "a": 1,
+      "b": 3,
+      "order": 2.0
+    },
+    {
+      "a": 1,
+      "b": 4,
+      "order": 1.0
+    },
+    {
+      "a": 2,
+      "b": 4,
+      "order": 1.0
+    },
+    {
+      "a": 2,
+      "b": 5,
+      "order": 2.0
+    },
+    {
+      "a": 3,
+      "b": 6,
+      "order": 1.0
+    },
+    {
+      "a": 4,
+      "b": 7,
+      "order": 1.0
+    },
+    {
+      "a": 5,
+      "b": 8,
+      "order": 1.0
+    },
+    {
+      "a": 6,
+      "b": 9,
+      "order": 1.5
+    },
+    {
+      "a": 6,
+      "b": 10,
+      "order": 1.5
+    },
+    {
+      "a": 7,
+      "b": 10,
+      "order": 1.0
+    },
+    {
+      "a": 7,
+      "b": 11,
+      "order": 1.0
+    },
+    {
+      "a": 8,
+      "b": 11,
+      "order": 1.5
+    },
+    {
+      "a": 8,
+      "b": 12,
+      "order": 1.5
+    },
+    {
+      "a": 9,
+      "b": 13,
+      "order": 1.5
+    },
+    {
+      "a": 10,
+      "b": 14,
+      "order": 1.5
+    },
+    {
+      "a": 11,
+      "b": 15,
+      "order": 1.5
+    },
+    {
+      "a": 12,
+      "b": 16,
+      "order": 1.5
+    },
+    {
+      "a": 13,
+      "b": 17,
+      "order": 1.5
+    },
+    {
+      "a": 14,
+      "b": 17,
+      "order": 1.5
+    },
+    {
+      "a": 14,
+      "b": 18,
+      "order": 1.0
+    },
+    {
+      "a": 15,
+      "b": 18,
+      "order": 1.0
+    },
+    {
+      "a": 15,
+      "b": 19,
+      "order": 1.5
+    },
+    {
+      "a": 16,
+      "b": 19,
+      "order": 1.5
+    },
+    {
+      "a": 17,
+      "b": 20,
+      "order": 1.0
+    },
+    {
+      "a": 18,
+      "b": 21,
+      "order": 1.0
+    },
+    {
+      "a": 19,
+      "b": 22,
+      "order": 1.0
+    },
+    {
+      "a": 20,
+      "b": 23,
+      "order": 2.0
+    },
+    {
+      "a": 21,
+      "b": 23,
+      "order": 1.0
+    },
+    {
+      "a": 21,
+      "b": 24,
+      "order": 1.0
+    },
+    {
+      "a": 22,
+      "b": 24,
+      "order": 2.0
+    },
+    {
+      "a": 4,
+      "b": 25,
+      "order": 1.0
+    },
+    {
+      "a": 7,
+      "b": 26,
+      "order": 1.0
+    },
+    {
+      "a": 18,
+      "b": 27,
+      "order": 1.0
+    },
+    {
+      "a": 21,
+      "b": 27,
+      "order": 1.0
+    },
+    {
+      "a": 1,
+      "b": 28,
+      "order": 1.0
+    },
+    {
+      "a": 2,
+      "b": 29,
+      "order": 1.0
+    },
+    {
+      "a": 3,
+      "b": 30,
+      "order": 1.0
+    },
+    {
+      "a": 5,
+      "b": 31,
+      "order": 1.0
+    },
+    {
+      "a": 9,
+      "b": 32,
+      "order": 1.0
+    },
+    {
+      "a": 12,
+      "b": 33,
+      "order": 1.0
+    },
+    {
+      "a": 13,
+      "b": 34,
+      "order": 1.0
+    },
+    {
+      "a": 16,
+      "b": 35,
+      "order": 1.0
+    },
+    {
+      "a": 20,
+      "b": 36,
+      "order": 1.0
+    },
+    {
+      "a": 22,
+      "b": 37,
+      "order": 1.0
+    },
+    {
+      "a": 23,
+      "b": 38,
+      "order": 1.0
+    },
+    {
+      "a": 24,
+      "b": 39,
+      "order": 1.0
+    },
+    {
+      "a": 25,
+      "b": 40,
+      "order": 1.0
+    },
+    {
+      "a": 26,
+      "b": 41,
+      "order": 1.0
+    }
+  ],
+  "metadata": {
+    "parent_name": "coronene",
+    "parent_carbon_count": 24,
+    "parent_formula": "C24H12",
+    "scaffold_definition": "union of hexagonal honeycomb cells of axial radius shell-1",
+    "scaffold_carbon_ids": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "shell": 2,
+    "category": "OH_EPX",
+    "functional_groups": [
+      {
+        "type": "OH",
+        "carbon_ids": [
+          4
+        ],
+        "oxygen_id": 25,
+        "requested_face": 1,
+        "oxygen_plane_height_angstrom": 2.009118335196483
+      },
+      {
+        "type": "OH",
+        "carbon_ids": [
+          7
+        ],
+        "oxygen_id": 26,
+        "requested_face": 1,
+        "oxygen_plane_height_angstrom": 2.0295316506153616
+      },
+      {
+        "type": "EPX",
+        "carbon_ids": [
+          18,
+          21
+        ],
+        "oxygen_id": 27,
+        "requested_face": -1,
+        "oxygen_plane_height_angstrom": -1.6049956909709329
+      }
+    ],
+    "measured_pair_motif_indices": [
+      0,
+      2
+    ],
+    "relative_face": "trans",
+    "observed_relative_face": "trans",
+    "face_reference": "least-squares unfunctionalized scaffold carbon plane, normal toward +z",
+    "pair_graph_distance": 4,
+    "graph_distance_definition": "minimum number of original scaffold C-C edges between motif carbon sets",
+    "pair_centroid_distance_angstrom": 5.2070655397001735,
+    "pair_oxygen_distance_angstrom": 6.536768955320651,
+    "coordinate_units": "angstrom",
+    "geometry_status": "initial_constrained_force_field_geometry_not_QM_optimized",
+    "initial_geometry_method": "analytic honeycomb + MMFF94 with carbon/oxygen position constraints",
+    "position_constraints": {
+      "carbon_max_displacement_angstrom": 0.35,
+      "oxygen_max_displacement_angstrom": 0.4,
+      "force_constant_kcal_mol_A2": 100.0
+    },
+    "optimization_status": "converged",
+    "seed": 30102026,
+    "seed_usage": "provenance only; geometry and matching are deterministic without random sampling",
+    "rdkit_version": "2026.09.1",
+    "pi_matching_complete": true,
+    "removed_site_sublattice_imbalance": 0,
+    "multiplicity_basis": "closed-shell singlet starting ansatz; QM wavefunction stability unverified",
+    "charge_status": "formal integer charges only; no fitted partial charges",
+    "boundary": "finite hydrogen-terminated PAH with intrinsic edge hydrogens",
+    "stereo_status": "assigned from constrained initial coordinates",
+    "interpretation_limit": "context-dependence test only; finite-size/edge/loading effects and constrained geometry need QM validation",
+    "distance_bin": "far",
+    "dataset_split": "held_out_size",
+    "paired_face_comparison_key": "2_OH_EPX_far"
+  }
+}

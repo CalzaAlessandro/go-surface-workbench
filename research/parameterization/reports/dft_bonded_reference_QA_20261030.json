@@ -1,0 +1,313 @@
+{
+  "verified_at_utc": "2026-10-30T09:23:48.847386+00:00",
+  "method": "wB97X-D/6-311++G(d,p)",
+  "source_job_id": "1392558",
+  "models": [
+    {
+      "model_id": "pyrene_COO",
+      "preliminary_geometry_frequency_stability_pass": true,
+      "normal_terminations": 3,
+      "atom_identity_pass": true,
+      "frequencies_count": 78,
+      "minimum_frequency_cm_1": 49.252,
+      "wavefunction_stable": true,
+      "topology_distance_screen": {
+        "passed": true,
+        "lost_bonds": [],
+        "too_short_bonds": [],
+        "novel_close_pairs": [],
+        "method": "covalent-radius distance screen; does not validate bond order",
+        "bond_min_radius_factor": 0.65,
+        "bond_max_radius_factor": 1.3,
+        "novel_pair_radius_factor": 1.2,
+        "radii_angstrom": {
+          "H": 0.31,
+          "C": 0.76,
+          "N": 0.71,
+          "O": 0.66,
+          "F": 0.57,
+          "S": 1.05,
+          "Cl": 1.02
+        }
+      },
+      "cartesian_hessian_present": true,
+      "artifact_sha256": {
+        "gaussian.log": "29edbf0b87f46d6cde6ccdd10a25d5cf23432b8e8c4fe612f1f40db48d19062b",
+        "harmonic.fchk": "fc6b66603f2896eb1f3ddfba80e3a344cd9d570afe6d3bdcc990e98c5b766a19",
+        "stability.fchk": "23223182f8f0870de48087923d99ca20b8c078a05468931f1a9f09c73f8348a7",
+        "reference.gjf": "7da03d8635e6909c5204fd4813d7c450082d3d50c5731a9175f97bf0c1d4ef3a",
+        "input_manifest.json": "b43dd2723b4884b98b13cb640a5fed7d4c06850c6883101a5a01d9f7e0425160"
+      },
+      "scope": "Preliminary geometry/electronic-state/Hessian evidence only; no fitted force constants, charges or torsion surfaces."
+    },
+    {
+      "model_id": "pyrene_COOH",
+      "preliminary_geometry_frequency_stability_pass": true,
+      "normal_terminations": 3,
+      "atom_identity_pass": true,
+      "frequencies_count": 81,
+      "minimum_frequency_cm_1": 52.8834,
+      "wavefunction_stable": true,
+      "topology_distance_screen": {
+        "passed": true,
+        "lost_bonds": [],
+        "too_short_bonds": [],
+        "novel_close_pairs": [],
+        "method": "covalent-radius distance screen; does not validate bond order",
+        "bond_min_radius_factor": 0.65,
+        "bond_max_radius_factor": 1.3,
+        "novel_pair_radius_factor": 1.2,
+        "radii_angstrom": {
+          "H": 0.31,
+          "C": 0.76,
+          "N": 0.71,
+          "O": 0.66,
+          "F": 0.57,
+          "S": 1.05,
+          "Cl": 1.02
+        }
+      },
+      "cartesian_hessian_present": true,
+      "artifact_sha256": {
+        "gaussian.log": "ebc169280e8748a6d94554f11ed3a7368c72adcf3d7eb2d9b88bb3b59a5b427f",
+        "harmonic.fchk": "81ce850b8b6ce4dbd51cf6685f5da4eccef272a3d2a7cdfe76409bde30418f91",
+        "stability.fchk": "0826a1b6c630877fb16ac11ae733879bd03c0d445ea3e7c7f793574f842acfb3",
+        "reference.gjf": "3237dbfc1c34766c41beff3e9666bb36b131dba565911efd5fbcc05d22fc2142",
+        "input_manifest.json": "e66367e0e0f4aa3d87c0ab30e5fe0b75309194b8a14b93319a5cee42b5f9218b"
+      },
+      "scope": "Preliminary geometry/electronic-state/Hessian evidence only; no fitted force constants, charges or torsion surfaces."
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "preliminary_geometry_frequency_stability_pass": true,
+      "normal_terminations": 3,
+      "atom_identity_pass": true,
+      "frequencies_count": 84,
+      "minimum_frequency_cm_1": 74.8058,
+      "wavefunction_stable": true,
+      "topology_distance_screen": {
+        "passed": true,
+        "lost_bonds": [],
+        "too_short_bonds": [],
+        "novel_close_pairs": [],
+        "method": "covalent-radius distance screen; does not validate bond order",
+        "bond_min_radius_factor": 0.65,
+        "bond_max_radius_factor": 1.3,
+        "novel_pair_radius_factor": 1.2,
+        "radii_angstrom": {
+          "H": 0.31,
+          "C": 0.76,
+          "N": 0.71,
+          "O": 0.66,
+          "F": 0.57,
+          "S": 1.05,
+          "Cl": 1.02
+        }
+      },
+      "cartesian_hessian_present": true,
+      "artifact_sha256": {
+        "gaussian.log": "ef524fa94828458f84f36d4b41bd0342e5edd10d23c8fc94b539f1e7a548a79c",
+        "harmonic.fchk": "e7d811339bdf4cc904bb0032f89003daf2dd2525f2b18241b23f3decb83962a1",
+        "stability.fchk": "8728e7d791fdfc5f4fdcc7daba32e3b7b827c181b73d39e993f59e5bf240b635",
+        "reference.gjf": "b2c15b06101546574023f7fc283dd84b60e21315571376a15b58a6d8fa8911df",
+        "input_manifest.json": "8ff48abdbb4ab0d1c88136081a35f2223b4ecfcf57bd95a6fa4b9297a12abfe1"
+      },
+      "scope": "Preliminary geometry/electronic-state/Hessian evidence only; no fitted force constants, charges or torsion surfaces."
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "preliminary_geometry_frequency_stability_pass": true,
+      "normal_terminations": 3,
+      "atom_identity_pass": true,
+      "frequencies_count": 87,
+      "minimum_frequency_cm_1": 52.4676,
+      "wavefunction_stable": true,
+      "topology_distance_screen": {
+        "passed": true,
+        "lost_bonds": [],
+        "too_short_bonds": [],
+        "novel_close_pairs": [],
+        "method": "covalent-radius distance screen; does not validate bond order",
+        "bond_min_radius_factor": 0.65,
+        "bond_max_radius_factor": 1.3,
+        "novel_pair_radius_factor": 1.2,
+        "radii_angstrom": {
+          "H": 0.31,
+          "C": 0.76,
+          "N": 0.71,
+          "O": 0.66,
+          "F": 0.57,
+          "S": 1.05,
+          "Cl": 1.02
+        }
+      },
+      "cartesian_hessian_present": true,
+      "artifact_sha256": {
+        "gaussian.log": "0fd298b7a39bbf67b8b2f41e1a12ebd5ccad41689d4d3fd8266477cfa91b0964",
+        "harmonic.fchk": "9b503d5639b654514295726d35f00cd574cdcd3a5137681079cbe478a62332c1",
+        "stability.fchk": "5bfc205976fc579431a0c07042fe3879d87202087e6a528da7e0593e8482cdfa",
+        "reference.gjf": "5c2658616da0c9a06c851b9d8c812a48b20da8d431fba7f06ee1913d2be69443",
+        "input_manifest.json": "e5aaef0408dbd9a2df6d04d04932e269e33f8b33f33175981f1995fe5abbf845"
+      },
+      "scope": "Preliminary geometry/electronic-state/Hessian evidence only; no fitted force constants, charges or torsion surfaces."
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "preliminary_geometry_frequency_stability_pass": true,
+      "normal_terminations": 3,
+      "atom_identity_pass": true,
+      "frequencies_count": 84,
+      "minimum_frequency_cm_1": 88.4774,
+      "wavefunction_stable": true,
+      "topology_distance_screen": {
+        "passed": true,
+        "lost_bonds": [],
+        "too_short_bonds": [],
+        "novel_close_pairs": [],
+        "method": "covalent-radius distance screen; does not validate bond order",
+        "bond_min_radius_factor": 0.65,
+        "bond_max_radius_factor": 1.3,
+        "novel_pair_radius_factor": 1.2,
+        "radii_angstrom": {
+          "H": 0.31,
+          "C": 0.76,
+          "N": 0.71,
+          "O": 0.66,
+          "F": 0.57,
+          "S": 1.05,
+          "Cl": 1.02
+        }
+      },
+      "cartesian_hessian_present": true,
+      "artifact_sha256": {
+        "gaussian.log": "834548c9037abe966ccc56f9c900eec7629b555c024a09f1eaa83d7cd8399c2c",
+        "harmonic.fchk": "52116b186be0a10b8aa5ef7dcfba48b403b61b9f1d496d17a123bc6619eaf123",
+        "stability.fchk": "8f9133cac1ed004111a5c4a8ba32a444349196b3c2b628529ee395f0a5e50a07",
+        "reference.gjf": "08c13e4b292b75c5d2f93c7c8091b3d956d2912d0608c0af81a7a1190b7924b6",
+        "input_manifest.json": "fc6cef58d7d5840403add08e937f7a57e72fd3f181005bef35c34b7a9aa7a871"
+      },
+      "scope": "Preliminary geometry/electronic-state/Hessian evidence only; no fitted force constants, charges or torsion surfaces."
+    },
+    {
+      "model_id": "pyrene_dione",
+      "preliminary_geometry_frequency_stability_pass": true,
+      "normal_terminations": 3,
+      "atom_identity_pass": true,
+      "frequencies_count": 72,
+      "minimum_frequency_cm_1": 42.6203,
+      "wavefunction_stable": true,
+      "topology_distance_screen": {
+        "passed": true,
+        "lost_bonds": [],
+        "too_short_bonds": [],
+        "novel_close_pairs": [],
+        "method": "covalent-radius distance screen; does not validate bond order",
+        "bond_min_radius_factor": 0.65,
+        "bond_max_radius_factor": 1.3,
+        "novel_pair_radius_factor": 1.2,
+        "radii_angstrom": {
+          "H": 0.31,
+          "C": 0.76,
+          "N": 0.71,
+          "O": 0.66,
+          "F": 0.57,
+          "S": 1.05,
+          "Cl": 1.02
+        }
+      },
+      "cartesian_hessian_present": true,
+      "artifact_sha256": {
+        "gaussian.log": "38573717d6e85fd2ede734bf80c0a665eae2c70ca5a4c3d3f95a903b41c21476",
+        "harmonic.fchk": "5ef1f7dc683b610f3e60d758bccf2fd9eb4458ab163bff259d31f5f59eb1dbf2",
+        "stability.fchk": "4da0247b16ee0db5d3ef160ae6fa0045aa3ca600ca360ee5ada52f42fa0902f0",
+        "reference.gjf": "e083e9837833627afb2741522eb2d1d37c7f4de4e289eecbbaa5bc22553cba19",
+        "input_manifest.json": "2f428a67ac1492f590756fe649997d48ce554ccf9168002083040801433610fe"
+      },
+      "scope": "Preliminary geometry/electronic-state/Hessian evidence only; no fitted force constants, charges or torsion surfaces."
+    },
+    {
+      "model_id": "pyrene_epoxide",
+      "preliminary_geometry_frequency_stability_pass": false,
+      "normal_terminations": 3,
+      "atom_identity_pass": true,
+      "frequencies_count": 75,
+      "minimum_frequency_cm_1": 90.6131,
+      "wavefunction_stable": true,
+      "topology_distance_screen": {
+        "passed": false,
+        "lost_bonds": [
+          {
+            "atom_ids": [
+              15,
+              16
+            ],
+            "distance_angstrom": 2.1104719772444267
+          }
+        ],
+        "too_short_bonds": [],
+        "novel_close_pairs": [],
+        "method": "covalent-radius distance screen; does not validate bond order",
+        "bond_min_radius_factor": 0.65,
+        "bond_max_radius_factor": 1.3,
+        "novel_pair_radius_factor": 1.2,
+        "radii_angstrom": {
+          "H": 0.31,
+          "C": 0.76,
+          "N": 0.71,
+          "O": 0.66,
+          "F": 0.57,
+          "S": 1.05,
+          "Cl": 1.02
+        }
+      },
+      "cartesian_hessian_present": true,
+      "artifact_sha256": {
+        "gaussian.log": "60ff04e5dd3cada3bf05702837143fb38903490cf25b9dea5c3f85d16906b1c8",
+        "harmonic.fchk": "dfa638245aef4e33314193c3c38bfdb24d8b6652228b0d5ccfad89d9a9c94ce8",
+        "stability.fchk": "1f18ce57851d874bed8e25416fbd851f9ad3ba3c5bdfa32cd65df93b7a874b9a",
+        "reference.gjf": "dba893db20699c868edafa6d8e0e032452d3d48447fcfabb48861125f684909e",
+        "input_manifest.json": "5de052afc96d5e3ecf2491053ab47253a37ccf614ab8b3113aae394cd3e88a96"
+      },
+      "scope": "Preliminary geometry/electronic-state/Hessian evidence only; no fitted force constants, charges or torsion surfaces."
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "preliminary_geometry_frequency_stability_pass": true,
+      "normal_terminations": 3,
+      "atom_identity_pass": true,
+      "frequencies_count": 72,
+      "minimum_frequency_cm_1": 97.409,
+      "wavefunction_stable": true,
+      "topology_distance_screen": {
+        "passed": true,
+        "lost_bonds": [],
+        "too_short_bonds": [],
+        "novel_close_pairs": [],
+        "method": "covalent-radius distance screen; does not validate bond order",
+        "bond_min_radius_factor": 0.65,
+        "bond_max_radius_factor": 1.3,
+        "novel_pair_radius_factor": 1.2,
+        "radii_angstrom": {
+          "H": 0.31,
+          "C": 0.76,
+          "N": 0.71,
+          "O": 0.66,
+          "F": 0.57,
+          "S": 1.05,
+          "Cl": 1.02
+        }
+      },
+      "cartesian_hessian_present": true,
+      "artifact_sha256": {
+        "gaussian.log": "0214414ceaf254ec15ec52ca5ecf0de712023e877fd98fb92f50eafc65860584",
+        "harmonic.fchk": "3b22092121949fbc27aa628f8b1d1b6dcba317379384aaf38a57fbb88ffe5a21",
+        "stability.fchk": "80ba15227a13b575fb625a81c33aaf5f2a9e63427927879593c730e1bb145d41",
+        "reference.gjf": "3341dd3ae7cf2d71e968f96e54dc8a6f88c0a0533bd6bbdc5ccbb9d0cf99788c",
+        "input_manifest.json": "88eac8cf5bc9c210429349dde629f13fe4b0c9808fd980b4ff5bae9b8e9c491d"
+      },
+      "scope": "Preliminary geometry/electronic-state/Hessian evidence only; no fitted force constants, charges or torsion surfaces."
+    }
+  ],
+  "preliminary_pass_count": 7,
+  "final_parameter_validation": false
+}
