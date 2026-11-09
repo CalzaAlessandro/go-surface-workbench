@@ -1,0 +1,52 @@
+{
+  "status": "SQE_RESP_CALIBRATION_COMPLETE",
+  "completed_utc": "2026-11-04T14:40:19.845831+00:00",
+  "default_parameters_declared_before_test": {
+    "hardness": 4.0,
+    "bond_hardness": 10.0,
+    "width_scale": 1.0,
+    "ridge": 0.0001
+  },
+  "default_fit_modes": [
+    "default_C16_training",
+    "default_all16_training"
+  ],
+  "physical_reference_contexts": 16,
+  "C16_training_contexts": 7,
+  "supported_C24_held_out_contexts": 7,
+  "unsupported_C24_roles_not_filled": true,
+  "calibration_target": "Conventional HF/6-31G* molecular Amber RESP on DFT geometries",
+  "baseline": "Current user block-library vector; not the constrained new L0 target",
+  "response_equation": "Published SQE initial-charge equation; reference partial charges fixed; invariant chemical role coefficients fitted",
+  "role_electronegativities_fitted": true,
+  "hardness_and_widths_fitted": false,
+  "C24_used_for_default_hyperparameter_selection": false,
+  "sensitivity_grid_is_exploratory": true,
+  "HF_reference_wavefunction_stability_validated": false,
+  "new_QM_or_RESP_fit": false,
+  "published_NPA_coefficients_used": false,
+  "new_bonded_or_LJ_parameters": false,
+  "production_parameter_validation": false,
+  "COOH_COO_independent_transfer_validation": false,
+  "median_C24_charge_RMS_difference_e": 0.12155713336855961,
+  "median_C24_baseline_charge_RMS_difference_e": 0.16205507685777196,
+  "input_SHA256": "0c914aa9b17859ab27748a52db71aa3d82713cae3f9ce16f5d5aa3e4f2328bf7",
+  "worker_SHA256": "d0d71c815eb1e1af583e0f43731514be1419a54d1070fb07976e7306c1c67d7b",
+  "artifacts_SHA256": {
+    "sensitivity_00_C16_training.fit.json": "023825e608f0824a431e5df61489dde26834f06ed2396be19483a91f5322f5e1",
+    "sensitivity_01_C16_training.fit.json": "00afe67c04a33bd0d7a7d9947fab27ddc1ce35e66af1fe2253fbe607b95208b8",
+    "sensitivity_02_C16_training.fit.json": "34915ebe935f830cd3c74ce36bbc2aa4c6bdc6a0aafdbc7890331c2e92406b77",
+    "sensitivity_03_C16_training.fit.json": "a33ef5c15db9cddb145603396e52251a56db796e6042e1888d71cc450abf81fa",
+    "default_C16_training.fit.json": "8d5fa3a9fa94ac7ff838b564cc23f5f69e0514d4801be8c233e48ceda0a5aac3",
+    "default_all16_training.fit.json": "c74db645c8bbba826fbd27ca74ee8b11dbf722386347fbfab0f2f5978caedbb8",
+    "sensitivity_05_C16_training.fit.json": "149781d118d5b6b2a34bcf84114606bbcb41d112cae6d681bd8d9fdb3b3abc4e",
+    "sensitivity_06_C16_training.fit.json": "a082036289a0aaf7e5ed07144a938fd2be7a556c283c7af0f377261eacf0d625",
+    "sensitivity_07_C16_training.fit.json": "075084e15a179d9ed0c36994201ccaa687fdb6713dd6a0beb7ece7364725f04a",
+    "sensitivity_08_C16_training.fit.json": "dc24fe5c4b7a923bcad5a12dba4df0fc526d8b45b19d630189f438ec390b7ef8",
+    "sensitivity_09_C16_training.fit.json": "0105e2a40be91a32ddbc1b6c278962ca8db5d5f475512f5ed07603cc705a44e0",
+    "sensitivity_10_C16_training.fit.json": "81ab135f467be8b6e1046f1ad1cd9f0aaa6ad8c91a00a8b809bca542fae2eb0b",
+    "per_context_charge_scores.csv": "eaf97bd9f15b1a0ab0099fa15920e3332362f18ca2b47ecb585e5e7b6ead7678",
+    "default_per_atom_charges.csv": "611d54efa998bba76e2891964ec6e3befc8aae2fbbf636aaa62f52ae40a7b68f",
+    "HF_ESP_scores.csv": "61c131ed00eae648be6dd943bde285149f8f347069ae0438079ac48f1a9070a9"
+  }
+}

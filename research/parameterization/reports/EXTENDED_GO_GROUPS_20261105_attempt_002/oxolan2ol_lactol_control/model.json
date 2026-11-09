@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "model_id": "oxolan2ol_lactol_control",
+  "formula": "C4H8O2",
+  "formal_charge": 0,
+  "multiplicity": 1,
+  "electron_count": 48,
+  "atoms": [
+    {
+      "id": 1,
+      "name": "O1",
+      "element": "O",
+      "position": [
+        -1.8089574327160693,
+        -0.4161424709895274,
+        -0.821039962564727
+      ],
+      "role": "extended_lactol_O",
+      "roles": [
+        "extended_lactol_O"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 8,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 2,
+      "name": "C2",
+      "element": "C",
+      "position": [
+        -0.7436535949056373,
+        0.5102061832680195,
+        -0.7304214100424993
+      ],
+      "role": "extended_lactol_C",
+      "roles": [
+        "extended_lactol_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 13,
+      "chiral_tag": "CHI_TETRAHEDRAL_CW",
+      "cip_code": "R"
+    },
+    {
+      "id": 3,
+      "name": "C3",
+      "element": "C",
+      "position": [
+        -0.3953053417470763,
+        0.7442435489246924,
+        0.7254699960681085
+      ],
+      "role": "extended_background_C",
+      "roles": [
+        "extended_background_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 12,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 4,
+      "name": "C4",
+      "element": "C",
+      "position": [
+        0.5211555599888077,
+        -0.4211436229054429,
+        1.0105169222698263
+      ],
+      "role": "extended_background_C",
+      "roles": [
+        "extended_background_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 11,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 5,
+      "name": "C5",
+      "element": "C",
+      "position": [
+        1.2662241257772118,
+        -0.5649724454763857,
+        -0.29946599829335696
+      ],
+      "role": "extended_background_C",
+      "roles": [
+        "extended_background_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 10,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 6,
+      "name": "O6",
+      "element": "O",
+      "position": [
+        0.40704050522103996,
+        -0.07165857525191259,
+        -1.3375182697416739
+      ],
+      "role": "extended_lactol_O",
+      "roles": [
+        "extended_lactol_O"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 9,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 7,
+      "name": "H7",
+      "element": "H",
+      "position": [
+        -1.9566772787227236,
+        -0.5203614314713292,
+        -1.7757287838299367
+      ],
+      "role": "extended_H_on_lactol_O",
+      "roles": [
+        "extended_H_on_lactol_O"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 0,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 8,
+      "name": "H8",
+      "element": "H",
+      "position": [
+        -1.02460350244269,
+        1.4330094249216654,
+        -1.2467814547128804
+      ],
+      "role": "extended_H_on_lactol_C",
+      "roles": [
+        "extended_H_on_lactol_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 7,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 9,
+      "name": "H9",
+      "element": "H",
+      "position": [
+        0.16502312374811012,
+        1.6801613593573614,
+        0.8335053873777262
+      ],
+      "role": "extended_H_on_background_C",
+      "roles": [
+        "extended_H_on_background_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 5,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 10,
+      "name": "H10",
+      "element": "H",
+      "position": [
+        -1.264423304400084,
+        0.7675432417554664,
+        1.3885718621539012
+      ],
+      "role": "extended_H_on_background_C",
+      "roles": [
+        "extended_H_on_background_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 5,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 11,
+      "name": "H11",
+      "element": "H",
+      "position": [
+        1.1854808382688686,
+        -0.2600051385287347,
+        1.8636251511449298
+      ],
+      "role": "extended_H_on_background_C",
+      "roles": [
+        "extended_H_on_background_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 3,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 12,
+      "name": "H12",
+      "element": "H",
+      "position": [
+        -0.06972981126820094,
+        -1.3238220398065035,
+        1.2061528180547538
+      ],
+      "role": "extended_H_on_background_C",
+      "roles": [
+        "extended_H_on_background_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 3,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 13,
+      "name": "H13",
+      "element": "H",
+      "position": [
+        1.542462571938972,
+        -1.601727371497036,
+        -0.5119008079964452
+      ],
+      "role": "extended_H_on_background_C",
+      "roles": [
+        "extended_H_on_background_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 1,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 14,
+      "name": "H14",
+      "element": "H",
+      "position": [
+        2.1759635412602107,
+        0.044669337699779155,
+        -0.30498544988768006
+      ],
+      "role": "extended_H_on_background_C",
+      "roles": [
+        "extended_H_on_background_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 1,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    }
+  ],
+  "bonds": [
+    {
+      "a": 1,
+      "b": 2,
+      "order": 1.0
+    },
+    {
+      "a": 2,
+      "b": 3,
+      "order": 1.0
+    },
+    {
+      "a": 3,
+      "b": 4,
+      "order": 1.0
+    },
+    {
+      "a": 4,
+      "b": 5,
+      "order": 1.0
+    },
+    {
+      "a": 5,
+      "b": 6,
+      "order": 1.0
+    },
+    {
+      "a": 6,
+      "b": 2,
+      "order": 1.0
+    },
+    {
+      "a": 1,
+      "b": 7,
+      "order": 1.0
+    },
+    {
+      "a": 2,
+      "b": 8,
+      "order": 1.0
+    },
+    {
+      "a": 3,
+      "b": 9,
+      "order": 1.0
+    },
+    {
+      "a": 3,
+      "b": 10,
+      "order": 1.0
+    },
+    {
+      "a": 4,
+      "b": 11,
+      "order": 1.0
+    },
+    {
+      "a": 4,
+      "b": 12,
+      "order": 1.0
+    },
+    {
+      "a": 5,
+      "b": 13,
+      "order": 1.0
+    },
+    {
+      "a": 5,
+      "b": 14,
+      "order": 1.0
+    }
+  ],
+  "metadata": {
+    "model_id": "oxolan2ol_lactol_control",
+    "name": "oxolan-2-ol",
+    "smiles": "OC1CCCO1",
+    "motif": "lactol",
+    "ring_size": 5,
+    "formula": "C4H8O2",
+    "inchikey": "JNODDICFTDYODH-UHFFFAOYSA-N",
+    "source": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=200907060640520321",
+    "reference_scope": "aliphatic_connectivity_control",
+    "source_access_date": "2026-11-05",
+    "source_identity_verification": "exact formula and nonstereospecific InChIKey from documented SMILES before embedding",
+    "parameter_status": "UNPARAMETERIZED_RESEARCH_REFERENCE",
+    "modular_partition_supported": false,
+    "builder_assignment_supported": false,
+    "geometry_status": "MMFF94s_starting_geometry_not_QM_accepted",
+    "initial_geometry_method": "ETKDGv3 + MMFF94s",
+    "optimization_status": "initial_force_field_minimization_converged",
+    "coordinate_units": "angstrom",
+    "seed": 20261105,
+    "rdkit_version": "2026.03.6",
+    "motif_graph_gate": {
+      "passed": true,
+      "motif": "lactol",
+      "ring_size": 5,
+      "matches_atom_ids": [
+        [
+          2,
+          1,
+          6
+        ]
+      ],
+      "carbonyl_carbon_atom_ids": []
+    },
+    "canonical_isomeric_SMILES": "O[C@H]1CCCO1",
+    "charge_status": "formal integers only; no fitted partial charges",
+    "wavefunction_stability_validated": false,
+    "multiplicity_basis": "neutral zero-radical even-electron graph; closed-shell singlet starting ansatz, not ground-state validation",
+    "stereo_status": "input unspecified where applicable; one deterministic 3D stereoisomer recorded, no population claim",
+    "scope": "unparameterized_small_molecule_reference_not_full_sheet_or_size_transfer_validation",
+    "size_transfer_requirement": "preserve graph classes and molecular/group charge constraints from about 4 nm to about 10 nm; held-out larger-sheet validation required; no whole-sheet QM required for each production size",
+    "experimental_presence_or_abundance_claimed": false
+  }
+}

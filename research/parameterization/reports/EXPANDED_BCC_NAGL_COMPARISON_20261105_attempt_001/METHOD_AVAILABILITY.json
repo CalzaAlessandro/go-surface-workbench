@@ -1,0 +1,57 @@
+[
+  {
+    "method": "Amber AM1-BCC",
+    "status": "12/16 coperti; 5 C24 confrontabili",
+    "meaning": "Native correzioni BCC classiche sulle popolazioni AM1 archiviate."
+  },
+  {
+    "method": "ABCG2 / AM1-BCC-GAFF2",
+    "status": "12/16 coperti; stessi 5 C24",
+    "meaning": "Native correzioni ABCG2 sullo stesso AM1. Tabella identificata da hash; non assunta equivalente a ogni revisione pubblicata."
+  },
+  {
+    "method": "OpenEye AM1-BCC Sym",
+    "status": "Non eseguito: licenza assente",
+    "meaning": "Variante nativa Quacpac con simmetrizzazione."
+  },
+  {
+    "method": "OpenEye AM1-BCC NoSym",
+    "status": "Non eseguito: licenza assente",
+    "meaning": "Variante nativa senza simmetrizzazione."
+  },
+  {
+    "method": "OpenEye AM1-BCC SymSPt",
+    "status": "Non eseguito: licenza assente",
+    "meaning": "Variante nativa single point con simmetrizzazione."
+  },
+  {
+    "method": "OpenEye AM1-BCC NoSymSPt",
+    "status": "Non eseguito: licenza assente",
+    "meaning": "Variante nativa single point senza simmetrizzazione."
+  },
+  {
+    "method": "OpenEye AM1-BCC ELF10",
+    "status": "Non eseguito: licenza assente",
+    "meaning": "Selezione e media su conformeri; non ricostruito mediante un surrogato ML."
+  },
+  {
+    "method": "NAGL openff-gnn-am1bcc-1.0.0",
+    "status": "16/16 controlli tecnici superati",
+    "meaning": "Predittore ML di cariche tipo ELF10. Nessun fit ai nostri frammenti."
+  },
+  {
+    "method": "EspalomaCharge",
+    "status": "Controllo già eseguito, riportato",
+    "meaning": "Altro surrogato AM1-BCC ELF10; distinto da NAGL e da ABCG2."
+  },
+  {
+    "method": "Stauffer modified AM1-BCC",
+    "status": "Solo valori di motivi pubblicati",
+    "meaning": "Procedura YASARA; non eseguita come metodo completo sui nostri frammenti."
+  },
+  {
+    "method": "AM1-BCC2 / BCC-GAFF",
+    "status": "Nome da disambiguare",
+    "meaning": "Nessuna riga numerica duplicata senza una distinta implementazione e tabella. -at gaff2 non seleziona ABCG2."
+  }
+]

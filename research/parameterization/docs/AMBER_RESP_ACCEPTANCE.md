@@ -5,6 +5,13 @@ in addition to readable Amber topology/library files. This policy applies to
 the new RESP-derived preset. Published GAFF2–AIM and OPLS source presets retain
 their own charge/parameter definitions unchanged.
 
+This policy defines the conventional HF–RESP branch. It does not establish HF
+as the best electronic reference for GO. The independent benchmark and fixed-MD
+reference recommendation are described in
+[DFT reference and fixed charges](DFT_REFERENCE_FIXED_CHARGES_20261104.md).
+Changing the reference defines a separately identified model requiring its own
+charge/LJ validation; it does not change the ability to store fixed charges in Amber.
+
 ## Canonical reference branch
 
 - The reference charge target for the new conventional RESP/GAFF-family branch

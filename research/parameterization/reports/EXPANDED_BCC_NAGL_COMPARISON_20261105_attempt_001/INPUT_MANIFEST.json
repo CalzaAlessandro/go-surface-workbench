@@ -1,0 +1,8 @@
+{
+  "calculations/BCC_NAGL_20261105_snapshot_001/calculations/nagl_benchmark_20261105_attempt_001/results/COMPLETE.json": "ae5857c2aa52323ebf6d0e7ab75eef55d1782c555325e263f06d359c445d5ae4",
+  "calculations/BCC_NAGL_20261105_snapshot_001/calculations/bcc_family_benchmark_20261105_attempt_001/results/COMPLETE.json": "f4e41ded2598b3ec9d100fa10b2f07086510bb5c446e5ee1a7a5316fef1a74d7",
+  "reports/DIRECT_QM_ESP_LITERATURE_20261104_attempt_001/context_scores.csv": "a23edb736de2a315e69391f01e166653efede9908eca94e5f9303907c082f065",
+  "reports/AMBERGO_QM_BENCHMARK_20261104_attempt_001/context_scores.csv": "99d934a6fdc609e0faab17345b79ced1c554eb30bd1dcabef3d284bf689117b9",
+  "calculations/BCC_NAGL_20261105_snapshot_001/calculations/nagl_benchmark_20261105_attempt_001/results/QM_context_scores.csv": "c409118736bac7e6dfc524bbcd0f9891073072f077c7b91eb167e8d7c3c9cc3f",
+  "calculations/BCC_NAGL_20261105_snapshot_001/calculations/bcc_family_benchmark_20261105_attempt_001/results/QM_context_scores.csv": "7c71fb43b1421ae0cb5ca603fbe341c3d99c2fa7bf0d9262cf14a5c8b0f80e66"
+}

@@ -1,0 +1,13 @@
+model,method,test,RMS_difference_e,max_atomic_difference_e
+GOX935,espaloma,Alternative maximum-valence assignment,0.05413269563498687,0.415164053440094
+GOX935,espaloma,COO resonance-only swap,0.0060846474705468605,0.04175412654876709
+GOX935,sqeq0,Alternative maximum-valence assignment,0.012445891577764854,0.13171739192785392
+GOX935,sqeq0,COO resonance-only swap,0.11549592679303707,0.6508808003628286
+GOX935,sqeqp,Alternative maximum-valence assignment,0.017431702422729352,0.14835520216309767
+GOX935,sqeqp,COO resonance-only swap,0.038273274093333635,0.2409991542090742
+REGOX980,espaloma,Alternative maximum-valence assignment,0.08745536849845013,0.4841669797897339
+REGOX980,espaloma,COO resonance-only swap,0.003990770526091561,0.04311704635620117
+REGOX980,sqeq0,Alternative maximum-valence assignment,0.015244639653894708,0.16940808909348776
+REGOX980,sqeq0,COO resonance-only swap,0.07418844190849057,0.6486790641507008
+REGOX980,sqeqp,Alternative maximum-valence assignment,0.022014653172164122,0.19185307619240116
+REGOX980,sqeqp,COO resonance-only swap,0.024753141751977747,0.227111317001219

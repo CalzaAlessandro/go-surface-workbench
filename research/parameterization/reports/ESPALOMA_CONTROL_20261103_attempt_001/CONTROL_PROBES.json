@@ -1,0 +1,23 @@
+[
+  {
+    "smiles": "CO",
+    "formal_charge": 0,
+    "sum_charge_e": -1.862645149230957e-08,
+    "unadapted_API_sum_charge_e": -2.9802322387695312e-08,
+    "unadapted_API_vs_benchmark_max_difference_e": 0.0
+  },
+  {
+    "smiles": "CC(=O)[O-]",
+    "formal_charge": -1,
+    "sum_charge_e": -0.9999999180436134,
+    "unadapted_API_sum_charge_e": -8.940696716308594e-08,
+    "unadapted_API_vs_benchmark_max_difference_e": 0.2952688932418823
+  },
+  {
+    "smiles": "N#N",
+    "formal_charge": 0,
+    "sum_charge_e": 0.0,
+    "unadapted_API_sum_charge_e": 0.0,
+    "unadapted_API_vs_benchmark_max_difference_e": 0.0
+  }
+]

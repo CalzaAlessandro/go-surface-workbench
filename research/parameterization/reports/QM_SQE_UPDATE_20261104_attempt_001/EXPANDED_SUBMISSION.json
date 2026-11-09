@@ -1,0 +1,31 @@
+{
+  "recorded_at_utc": "2026-11-04T18:37:31.446303+00:00",
+  "job_id": "1468993",
+  "array": "0-54%4",
+  "wall_time": "5-00:00:00",
+  "partition": "ciamician_cpu",
+  "qos": "ciamician_cpu_caps",
+  "cpus_per_task": 16,
+  "memory_per_task_GB": 32,
+  "remote_directory": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001",
+  "input_archive_SHA256": "074f21974bad90abd67566f940b842c2ea31415f4565c33878f32cdc3dce2677",
+  "verified_frozen_input_files": 248,
+  "requested_cases": 56,
+  "prepared_cases": 55,
+  "C24_cases": 27,
+  "C54_cases": 28,
+  "initial_geometry_QA": {
+    "connected_radical_free_graphs": 55,
+    "partitionable_into_exact_GO_blocks": 55,
+    "constrained_MMFF_converged": 55,
+    "smallest_nonbonded_distance_A": 1.4940401177459204,
+    "total_charge_counts": {
+      "0": 37,
+      "-1": 14,
+      "-2": 4
+    }
+  },
+  "status": "SUBMITTED_AND_FIRST_FOUR_GAUSSIAN_TASKS_STARTED",
+  "RESP_results_completed_at_submission": 0,
+  "production_parameter_validation": false
+}

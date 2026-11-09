@@ -1,0 +1,137 @@
+{
+  "job_id": "1469243",
+  "native_Amber_RESP_fits": [
+    {
+      "candidate": "C16_only_L0",
+      "training_models": 7,
+      "fitted_classes": 17,
+      "constraint_rank": 6,
+      "free_dimensions": 11,
+      "RESP_atom_copies": 600
+    },
+    {
+      "candidate": "C16_only_L1",
+      "training_models": 7,
+      "fitted_classes": 26,
+      "constraint_rank": 9,
+      "free_dimensions": 17,
+      "RESP_atom_copies": 600
+    },
+    {
+      "candidate": "C16_plus_loading_L0",
+      "training_models": 9,
+      "fitted_classes": 17,
+      "constraint_rank": 6,
+      "free_dimensions": 11,
+      "RESP_atom_copies": 837
+    },
+    {
+      "candidate": "C16_plus_loading_L1",
+      "training_models": 9,
+      "fitted_classes": 34,
+      "constraint_rank": 12,
+      "free_dimensions": 22,
+      "RESP_atom_copies": 837
+    }
+  ],
+  "raw_grids_verified": 81,
+  "previous_L0_reproduction_max_diff_e": 0.0,
+  "coverage": [
+    {
+      "training": "C16_only",
+      "method": "L0",
+      "supported_original_C24_models": 7,
+      "original_C24_models": 9
+    },
+    {
+      "training": "C16_only",
+      "method": "L1",
+      "supported_original_C24_models": 2,
+      "original_C24_models": 9
+    },
+    {
+      "training": "C16_plus_loading",
+      "method": "L0",
+      "supported_original_C24_models": 7,
+      "original_C24_models": 9
+    },
+    {
+      "training": "C16_plus_loading",
+      "method": "L1",
+      "supported_original_C24_models": 4,
+      "original_C24_models": 9
+    }
+  ],
+  "matched_scores": [
+    {
+      "training": "C16_only",
+      "method": "L0",
+      "QM_reference": "HF",
+      "N_matched_models": 2,
+      "model_ids": "C24_OH_OH_near_trans|C24_pristine_parent_reference",
+      "median_ESP_RRMS": 0.18490487621110416
+    },
+    {
+      "training": "C16_only",
+      "method": "L0",
+      "QM_reference": "DFT",
+      "N_matched_models": 2,
+      "model_ids": "C24_OH_OH_near_trans|C24_pristine_parent_reference",
+      "median_ESP_RRMS": 0.2527905326184922
+    },
+    {
+      "training": "C16_only",
+      "method": "L1",
+      "QM_reference": "HF",
+      "N_matched_models": 2,
+      "model_ids": "C24_OH_OH_near_trans|C24_pristine_parent_reference",
+      "median_ESP_RRMS": 0.1851891426600253
+    },
+    {
+      "training": "C16_only",
+      "method": "L1",
+      "QM_reference": "DFT",
+      "N_matched_models": 2,
+      "model_ids": "C24_OH_OH_near_trans|C24_pristine_parent_reference",
+      "median_ESP_RRMS": 0.25701604635634007
+    },
+    {
+      "training": "C16_plus_loading",
+      "method": "L0",
+      "QM_reference": "HF",
+      "N_matched_models": 4,
+      "model_ids": "C24_OH_OH_far_trans|C24_OH_OH_near_trans|C24_pristine_parent_reference|C24_single_basal_EPX_control",
+      "median_ESP_RRMS": 0.183586159111836
+    },
+    {
+      "training": "C16_plus_loading",
+      "method": "L0",
+      "QM_reference": "DFT",
+      "N_matched_models": 4,
+      "model_ids": "C24_OH_OH_far_trans|C24_OH_OH_near_trans|C24_pristine_parent_reference|C24_single_basal_EPX_control",
+      "median_ESP_RRMS": 0.25848793636470696
+    },
+    {
+      "training": "C16_plus_loading",
+      "method": "L1",
+      "QM_reference": "HF",
+      "N_matched_models": 4,
+      "model_ids": "C24_OH_OH_far_trans|C24_OH_OH_near_trans|C24_pristine_parent_reference|C24_single_basal_EPX_control",
+      "median_ESP_RRMS": 0.2116055205350031
+    },
+    {
+      "training": "C16_plus_loading",
+      "method": "L1",
+      "QM_reference": "DFT",
+      "N_matched_models": 4,
+      "model_ids": "C24_OH_OH_far_trans|C24_OH_OH_near_trans|C24_pristine_parent_reference|C24_single_basal_EPX_control",
+      "median_ESP_RRMS": 0.29264261984760254
+    }
+  ],
+  "L1_outperforms_L0_on_this_matched_panel": false,
+  "reference_or_production_validated": false,
+  "unknown_classes_not_filled": true,
+  "comparison_is_retrospective_not_blind": true,
+  "new_loading_cases_are_not_original_C24_test_cases": true,
+  "size_and_oxidation_acceptance": "../../docs/SCALABILITY_ACCEPTANCE_20261105.md"
+}

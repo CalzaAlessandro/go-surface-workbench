@@ -1,0 +1,33 @@
+{
+  "generated_at_utc": "2026-11-04T21:05:31.965225+00:00",
+  "files_SHA256": {
+    "GAFF2_AIM_NATIVE_PARAMETERS.csv": "e1f0d97d3b77848f2235aacc71ee42294f8e382d285685be753b0d4e59cabda0",
+    "GAFF2_AIM_NATIVE_PROVENANCE.json": "6026adac7fb48c4cfb61dfba9efb37e20825624f75d3b78453bdee03143b5c95",
+    "SUMMARY.json": "230d8fce610e54cb4039fee6d2d09eae4b78611c300904f54619687fa121f7b6",
+    "QM_SOURCE_EVIDENCE.json": "82abeaa624fc73a002a9e1778ec38dd251188c0c0ecc82c76df81fe3367091e8",
+    "LITERATURE_COVERAGE.json": "381799ae26566e19ff08a04dce780e80d37448265a710f62de05ba7c5666a6bf",
+    "GAFF2_AIM_native_types.png": "506a3b28810e81f2885ab106ab5ec34bcc87d96ccfe854f517f84a7819537ad2",
+    "GAFF2_AIM_native_types.svg": "b54ebc8f20b51425ec438fc41d71b7b8bd184274e59a2b4c1bd714417e8cf26a",
+    "context_scores.csv": "a23edb736de2a315e69391f01e166653efede9908eca94e5f9303907c082f065",
+    "build_report.py": "c255d2f20c2a4fd5eb1d584b38940bb7bfac509d1193498002166c9ea271c546",
+    "aggregate_scores.csv": "8eda3c8803310211ead7dcf24ee46f75b90e0484714032e0f9fa344f4c131505",
+    "comparison.html": "71b2fdba52f905e5b0d747eadc18d6fd6306fb7c5bd72f903af329eded3ddd6c",
+    "orientation_scores.csv": "64ff5833e2be0deead6a5618cf484e1d349bb2bb1075f6785c6da2844ef16aa2",
+    "DFT_ESP_matched5.svg": "31a4bf1244f04674ed32ca7a9c5f42bc179de47a4f43068dfb58c03d20861b70",
+    "COMPLETE.json": "a9a2233f7a5ea9d37e39d7314ef14bcca3c15578d6e84a5bdb6423bddf605079",
+    "BCC_CHARGE_POLICIES.json": "d7650e7247ded324550b166337301e8783d0731f32327ef4076b13102a8e7cda",
+    "REPORT.html": "983b9d69dada0aaa8f256ee79cb04539980c7cd65756698f0551edf59bd12458",
+    "GAFF2_AIM_FAMILY_SUMMARY.csv": "d83eb283e858d43c33398f85004e45b066edbc2d0d2692454d090ad7715be6e5",
+    "DFT_ESP_matched5.png": "66090e942633b425e6031fcc5c7de0eea3aeac662fbc87cfeecf66d9f5290751"
+  },
+  "source_complete_SHA256": "a9a2233f7a5ea9d37e39d7314ef14bcca3c15578d6e84a5bdb6423bddf605079",
+  "input_SHA256": "7ad3e4b07a17eb3b0b7c76f8baede09929c1a5e1755e01542326199ffe1fb861",
+  "literature_source_SHA256": {
+    "hiergo_17_charge_rows.json": "dc0cd6749e765478c2b06631508da06eea337da86ce062333e89f9b62e34c582",
+    "stauffer2014_table_I_GO_charges.json": "6327f3e2cfad6646907fd62e5bf9ad3d83b4e00230f343e2b345bc31c5d6250b",
+    "gaff2_aim_source_parameters.json": "a7e5e56c89afac19d2131547f0523b4eeb9ef4acf01086ba69d2edd4a06ffd48"
+  },
+  "presentation": "tables_only; previous figure artifacts retained but not embedded",
+  "mixture_selection": "fixed 50:50 diagnostic, not fitted or selected on the test",
+  "production_validation": false
+}

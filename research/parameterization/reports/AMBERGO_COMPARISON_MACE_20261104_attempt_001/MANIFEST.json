@@ -1,0 +1,8 @@
+{
+  "scope": "Charge assignments and methodological assessment; no parameter changes or MACE/SQE training performed",
+  "files_sha256": {
+    "build_report.py": "073400b4cfe8cf2af03d8e5ef19bd479f8e8e36e4783f0a6fa5b59bc34c548a5",
+    "DATA.json": "96bf1ffcb0f81ddeafb7006f9c4d9c2553f45558232504776bbad64366e04f32",
+    "REPORT.html": "f59d7215aeaa5eee3b646a9702cb5207b0f6f33a991cbc73204d61984f0eadbf"
+  }
+}

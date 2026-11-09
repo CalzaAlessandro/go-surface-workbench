@@ -1,0 +1,876 @@
+{
+  "algorithm": "SHA-256",
+  "sources": [
+    {
+      "path": "PARAMETERIZATION/docs/RESP_CONTEXT_ANALYSIS.md",
+      "kind": "schema_and_scope_documentation",
+      "sha256": "6d29059057b211e5da6d6826fe1c0c97191e5722e9bdc1741f8272c90afdff2f",
+      "bytes": 5493
+    },
+    {
+      "path": "PARAMETERIZATION/reports/RESP_ASSUMPTIONS_20261105_attempt_001/build_report.py",
+      "kind": "analysis_script",
+      "sha256": "f2a3fd923e72a9d1113f84426ded85088d2398eed3b8d3fa7bb9dbed51325337",
+      "bytes": 32880
+    },
+    {
+      "path": "PARAMETERIZATION/reports/CHARGE_COMPARISON_20261103_attempt_001/context_HF_16/context_analysis.json",
+      "kind": "context_analysis",
+      "sha256": "0e544f59cecdda784f52148868a4c00b503bc54c6532151b6edf86d1db7d0dd6",
+      "bytes": 669862,
+      "method": "HF"
+    },
+    {
+      "path": "PARAMETERIZATION/reports/CHARGE_CONTROLS_UPDATE_20261103_attempt_001/context_DFT_19/context_analysis.json",
+      "kind": "context_analysis",
+      "sha256": "4cce7eed7df35df035fec0f0577c9f8f40fcd1c2fa11872b3ec892440c882e30",
+      "bytes": 878255,
+      "method": "DFT"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_pristine/HF/model.json",
+      "kind": "model",
+      "sha256": "94ccc54d707ea050853749d60f1b933de74ac3af13fefd708243e1f94c61a57e",
+      "bytes": 12518,
+      "method": "HF",
+      "model_id": "pyrene_pristine"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_pristine/HF/charges.json",
+      "kind": "charges",
+      "sha256": "3e89208284ce46df7fb1ebddce03477909f5c481720458a14ffa8bb192d04f50",
+      "bytes": 5497,
+      "method": "HF",
+      "model_id": "pyrene_pristine"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_pristine/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "69bbb62a2255ad32890635e2ee6312fb1df6933eeb037fd81f92fc4250f9cdb2",
+      "bytes": 8146,
+      "method": "HF",
+      "model_id": "pyrene_pristine"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_cis/HF/model.json",
+      "kind": "model",
+      "sha256": "0b0fc88501b1b710d002f64883bec98b4e18abe87d07ff116d2eb3c36a75bde9",
+      "bytes": 14414,
+      "method": "HF",
+      "model_id": "pyrene_diol_cis"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_cis/HF/charges.json",
+      "kind": "charges",
+      "sha256": "d7dc52a117dcb1324e88af897608bd96cee4ddc19890d447d2106c33d49161f1",
+      "bytes": 6372,
+      "method": "HF",
+      "model_id": "pyrene_diol_cis"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_cis/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "b6b8115e110b448cfeb49d3d4145bef4786eb39e4674e9d710436ff9688f1f8e",
+      "bytes": 8093,
+      "method": "HF",
+      "model_id": "pyrene_diol_cis"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_trans/HF/model.json",
+      "kind": "model",
+      "sha256": "cff15636cb9df21725c2267d67e602bd0c3ab2330b32aef51b1921d31dad1b1c",
+      "bytes": 14415,
+      "method": "HF",
+      "model_id": "pyrene_diol_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_trans/HF/charges.json",
+      "kind": "charges",
+      "sha256": "cd81f40679ef2a4ea8f9ca7bec49c2bb6bcd9ae82ec99f45ffbdb88ae9725ce7",
+      "bytes": 6377,
+      "method": "HF",
+      "model_id": "pyrene_diol_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_trans/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "b391ae939f6d069f677ed5117db1ee4253ce0ab6ebac036d86e542a3a1b74183",
+      "bytes": 8138,
+      "method": "HF",
+      "model_id": "pyrene_diol_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_epoxide/HF/model.json",
+      "kind": "model",
+      "sha256": "5b0934056bcee328b53152869c6c18116b9a0b4bb6a7f138157c12057b56fa0f",
+      "bytes": 14937,
+      "method": "HF",
+      "model_id": "pyrene_diol_epoxide"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_epoxide/HF/charges.json",
+      "kind": "charges",
+      "sha256": "ecbd167edcb5642c1767e601d526fc9f5aa8b1f28fe568f360adadb259223ea2",
+      "bytes": 6623,
+      "method": "HF",
+      "model_id": "pyrene_diol_epoxide"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_epoxide/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "4a3de70a7345b32681827ed35eb7a2b2201b14a52adbde02889f4d242b5fabdd",
+      "bytes": 8129,
+      "method": "HF",
+      "model_id": "pyrene_diol_epoxide"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_dione/HF/model.json",
+      "kind": "model",
+      "sha256": "54da9617a679a2a630994e8499475a76472685d747b645b989edcc44d50e997d",
+      "bytes": 12580,
+      "method": "HF",
+      "model_id": "pyrene_dione"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_dione/HF/charges.json",
+      "kind": "charges",
+      "sha256": "3ea42554b297f9747ac121988644d9ba4640e97e6cd22011bc819a42de50c9a5",
+      "bytes": 5565,
+      "method": "HF",
+      "model_id": "pyrene_dione"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_dione/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "703f8d31ad10e41354b9bf3689c627bba79bacf689c91f2fad4dbfefa89fbc85",
+      "bytes": 8074,
+      "method": "HF",
+      "model_id": "pyrene_dione"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COOH/HF/model.json",
+      "kind": "model",
+      "sha256": "2d7d5d430b3a27d6efc4b48aecd1704c204e3c896029f1f5062a4b250bc4de8d",
+      "bytes": 13748,
+      "method": "HF",
+      "model_id": "pyrene_COOH"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COOH/HF/charges.json",
+      "kind": "charges",
+      "sha256": "91fffba4d132d0d458c60fca17623942da09b2d5f80c67326adae1ee5979a6b9",
+      "bytes": 6125,
+      "method": "HF",
+      "model_id": "pyrene_COOH"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COOH/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "7bfd569fa4939a6a134a1302b0257adf1b775448c62b79a0731d2de4fa588dec",
+      "bytes": 8060,
+      "method": "HF",
+      "model_id": "pyrene_COOH"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COO/HF/model.json",
+      "kind": "model",
+      "sha256": "9a49a9990ea0b69f0182cd5d97e17ee555536236be38b47a73594e950449f54c",
+      "bytes": 13356,
+      "method": "HF",
+      "model_id": "pyrene_COO"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COO/HF/charges.json",
+      "kind": "charges",
+      "sha256": "8ef6a29391946efb4f48553f36e8d5a12debc321df6b6f30284ab48e7c1e1855",
+      "bytes": 5911,
+      "method": "HF",
+      "model_id": "pyrene_COO"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COO/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "1e110610ab03cd40cb4410c9bce60bca15e59298445f56d33fae49cf4274e2d5",
+      "bytes": 8056,
+      "method": "HF",
+      "model_id": "pyrene_COO"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_pristine_parent_reference/HF/model.json",
+      "kind": "model",
+      "sha256": "aa3fbd19c298748fad8279481eefd2a146cf96d4b4f6fb217814141592a0b940",
+      "bytes": 18399,
+      "method": "HF",
+      "model_id": "C24_pristine_parent_reference"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_pristine_parent_reference/HF/charges.json",
+      "kind": "charges",
+      "sha256": "a2066493480ea46f5c177a5ad3d3d560b7bb628d0c37087d5ec3ee92ef3577bd",
+      "bytes": 7589,
+      "method": "HF",
+      "model_id": "C24_pristine_parent_reference"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_pristine_parent_reference/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "4d8acfe57c19255d2594e9a8232b1ca80bf97cd6ce0fa8506af1c3cb09e31a6b",
+      "bytes": 8241,
+      "method": "HF",
+      "model_id": "C24_pristine_parent_reference"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_single_basal_EPX_control/HF/model.json",
+      "kind": "model",
+      "sha256": "f9c599ff62fe4e51667c530e5654471d813750a8dc11cdc764a63021c9489cfc",
+      "bytes": 19186,
+      "method": "HF",
+      "model_id": "C24_single_basal_EPX_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_single_basal_EPX_control/HF/charges.json",
+      "kind": "charges",
+      "sha256": "529fb11453b2cba9bbd7f9a0774e2bf59e81a09eb0d8aa05d6931e8bdc317eb0",
+      "bytes": 7838,
+      "method": "HF",
+      "model_id": "C24_single_basal_EPX_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_single_basal_EPX_control/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "bf2bffbecd502c5f1f18c73a97672ba5ffd35887b4dec6b646cc7927df4244bc",
+      "bytes": 8206,
+      "method": "HF",
+      "model_id": "C24_single_basal_EPX_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPH_edge_control/HF/model.json",
+      "kind": "model",
+      "sha256": "81cd1a718194aaa6a91f0164d9ea3e919fa21aaf3de6ed7c126872d6319ea669",
+      "bytes": 19308,
+      "method": "HF",
+      "model_id": "C24_EPH_edge_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPH_edge_control/HF/charges.json",
+      "kind": "charges",
+      "sha256": "160163653396fc271cd60f852c2d765f0b9c1fa2c4d6bdd926cd34b63ee2d5ea",
+      "bytes": 7814,
+      "method": "HF",
+      "model_id": "C24_EPH_edge_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPH_edge_control/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "02f17043298bbfd118a3b968de1231088ce6d0fd8a47bbd2181795f329fe9eab",
+      "bytes": 8139,
+      "method": "HF",
+      "model_id": "C24_EPH_edge_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPT_edge_control/HF/model.json",
+      "kind": "model",
+      "sha256": "5209c9489e6740573a12964d684e53072301952ff0a8246aa4bc3e52d8ab815e",
+      "bytes": 19298,
+      "method": "HF",
+      "model_id": "C24_EPT_edge_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPT_edge_control/HF/charges.json",
+      "kind": "charges",
+      "sha256": "46c51be14908906e4e9640932ce54234148574f324674dd875ff1fe152f5c01e",
+      "bytes": 7814,
+      "method": "HF",
+      "model_id": "C24_EPT_edge_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPT_edge_control/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "f956369ca2b2e95e5624d2ad695924a410be0e8b7c56f4192283f320ee8b5d28",
+      "bytes": 8143,
+      "method": "HF",
+      "model_id": "C24_EPT_edge_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_near_trans/HF/model.json",
+      "kind": "model",
+      "sha256": "3efa786a42d346860d9d5139151083f687d5c68de4fc548107f8da783f590ac6",
+      "bytes": 21063,
+      "method": "HF",
+      "model_id": "C24_OH_OH_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_near_trans/HF/charges.json",
+      "kind": "charges",
+      "sha256": "9898ce53ad9c24ccb6a1b08562e02eeea63509732c63e2b9d87409a77661945e",
+      "bytes": 8464,
+      "method": "HF",
+      "model_id": "C24_OH_OH_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_near_trans/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "3c93d39714f750ad457763d3d83095270cfe2df024b861005abfd3c0d0e90170",
+      "bytes": 8148,
+      "method": "HF",
+      "model_id": "C24_OH_OH_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_far_trans/HF/model.json",
+      "kind": "model",
+      "sha256": "75c74de35baa4e502708d76749af1f2e1c609dfe23566e1718321b886ba4506d",
+      "bytes": 21040,
+      "method": "HF",
+      "model_id": "C24_OH_OH_far_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_far_trans/HF/charges.json",
+      "kind": "charges",
+      "sha256": "e8d1a2863ff689eb941753c04fd4a2d34af998ff2fb3070ad0aa7602be78a1d1",
+      "bytes": 8449,
+      "method": "HF",
+      "model_id": "C24_OH_OH_far_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_far_trans/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "ce908877c9d4e27c7f5bafbd3162474f9ce3d299494d061cc31f1c501ce1c83d",
+      "bytes": 8170,
+      "method": "HF",
+      "model_id": "C24_OH_OH_far_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPX_EPX_near_trans/HF/model.json",
+      "kind": "model",
+      "sha256": "d5ce4a76dd78207ff7df77e8fa7773c2d9d7d519886bd5822b092937ea4b771f",
+      "bytes": 20392,
+      "method": "HF",
+      "model_id": "C24_EPX_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPX_EPX_near_trans/HF/charges.json",
+      "kind": "charges",
+      "sha256": "96c770083fb0a16c20feeaf12e7551967f31e342fa802ec3d25f09e0957d32a9",
+      "bytes": 8082,
+      "method": "HF",
+      "model_id": "C24_EPX_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPX_EPX_near_trans/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "4851a7e8665d6ffa7f11d6ec7cf5bda1d1d3d518486c2a6575df99efb924c42b",
+      "bytes": 8173,
+      "method": "HF",
+      "model_id": "C24_EPX_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_near_trans/HF/model.json",
+      "kind": "model",
+      "sha256": "c3348d454f29649d6e3aed85616de051e95e7701a8c72651b3154b7b13173be5",
+      "bytes": 21830,
+      "method": "HF",
+      "model_id": "C24_OH_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_near_trans/HF/charges.json",
+      "kind": "charges",
+      "sha256": "5e99041a8f7f86cb3640c071ec122511a55c2ed169e4674e12d963b6064c2741",
+      "bytes": 8708,
+      "method": "HF",
+      "model_id": "C24_OH_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_near_trans/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "f852a04743a231775442fee14a71e3e4d122b87a8ba71ebc4eedb523a33b306a",
+      "bytes": 8154,
+      "method": "HF",
+      "model_id": "C24_OH_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_far_trans/HF/model.json",
+      "kind": "model",
+      "sha256": "6b1ae0665d41c408f64f49bcd81ffa2ebf5baf2e7221ea983b2f4d62a9bb8a4d",
+      "bytes": 21816,
+      "method": "HF",
+      "model_id": "C24_OH_EPX_far_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_far_trans/HF/charges.json",
+      "kind": "charges",
+      "sha256": "d482bbf31451ccad3ae2a70ebc10b188ae9ba8697670d319123b8bd5675c27ca",
+      "bytes": 8706,
+      "method": "HF",
+      "model_id": "C24_OH_EPX_far_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_far_trans/HF/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "3087ccfae60fe3f22404e784daace7943ee4259fcfe7252224f48c99e7193bfe",
+      "bytes": 8144,
+      "method": "HF",
+      "model_id": "C24_OH_EPX_far_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPH_edge_control/DFT/model.json",
+      "kind": "model",
+      "sha256": "bf2a36faac877aeaa2390d666cb0dc81b380cdfa830d8ec8d775b7d127c2bcd4",
+      "bytes": 19045,
+      "method": "DFT",
+      "model_id": "C24_EPH_edge_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPH_edge_control/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "17f2edb7b0f83b7a4eea569829de56446dd099c21d258238e0bfbc7b31a588cb",
+      "bytes": 7814,
+      "method": "DFT",
+      "model_id": "C24_EPH_edge_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPH_edge_control/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "c923082590a873702b3562c10f8907c8a28aafd0e42d2be84f4a88dcd9bcc473",
+      "bytes": 7859,
+      "method": "DFT",
+      "model_id": "C24_EPH_edge_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPT_edge_control/DFT/model.json",
+      "kind": "model",
+      "sha256": "bfde90ba0f5d17de19ecc302a869e04191c7d2c2dc4d4a77a2e70e0a853def53",
+      "bytes": 19035,
+      "method": "DFT",
+      "model_id": "C24_EPT_edge_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPT_edge_control/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "6f33df8774c8a7878f0a70293c568b11626597f622fdd2112eccdaadfac47022",
+      "bytes": 7810,
+      "method": "DFT",
+      "model_id": "C24_EPT_edge_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPT_edge_control/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "6a235d79a101f4a5b9dca7c97b187c728fe0fe562c2a77f59d943ba79c1c37d5",
+      "bytes": 7857,
+      "method": "DFT",
+      "model_id": "C24_EPT_edge_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPX_EPX_near_trans/DFT/model.json",
+      "kind": "model",
+      "sha256": "df87a71babfbde2e365206441d44530fb45275238055ea5112479fa94a73f736",
+      "bytes": 20129,
+      "method": "DFT",
+      "model_id": "C24_EPX_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPX_EPX_near_trans/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "c5c345d866c9a941d2a1b8473e080a9b27b935abc452e9ff304cd94ae5592614",
+      "bytes": 8080,
+      "method": "DFT",
+      "model_id": "C24_EPX_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPX_EPX_near_trans/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "311b4a54c46341297ca67bb628c4afca255a3c7bcef33e7638824ea528940d53",
+      "bytes": 7882,
+      "method": "DFT",
+      "model_id": "C24_EPX_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_far_trans/DFT/model.json",
+      "kind": "model",
+      "sha256": "9e5f67308c40d413bc5fdfc787dee37e7f3e1c05ff49eac67d4024b1e6c776a9",
+      "bytes": 21553,
+      "method": "DFT",
+      "model_id": "C24_OH_EPX_far_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_far_trans/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "903cc6da7342a6f41a7114f243c5cc4cf4cd097f915b0c5c69eda0d6b4a14314",
+      "bytes": 8708,
+      "method": "DFT",
+      "model_id": "C24_OH_EPX_far_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_far_trans/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "5ef69ffb130a1bbe3517595486fc291f1f8cef92714dea2af605eccd21ea2ee4",
+      "bytes": 7862,
+      "method": "DFT",
+      "model_id": "C24_OH_EPX_far_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_near_trans/DFT/model.json",
+      "kind": "model",
+      "sha256": "dc166709da22689e9c5d027df0ff360608a2343559fa2dc50d0b354a21390d23",
+      "bytes": 21567,
+      "method": "DFT",
+      "model_id": "C24_OH_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_near_trans/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "7711e8c661dc69c429aef28535fca27a749f824476ee1c81ba6b007578a30904",
+      "bytes": 8711,
+      "method": "DFT",
+      "model_id": "C24_OH_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_near_trans/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "beabc2e7fa01ea5889c52e653392f85d9b40f8bf73c2839f1463783207dfc726",
+      "bytes": 7864,
+      "method": "DFT",
+      "model_id": "C24_OH_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_far_trans/DFT/model.json",
+      "kind": "model",
+      "sha256": "0cba816fc5e26877fb60c2b2ed4067a1c514151bf19b1744570e169596efbb5e",
+      "bytes": 20777,
+      "method": "DFT",
+      "model_id": "C24_OH_OH_far_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_far_trans/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "cccbeb367990d130f7da92d96e3d6eb667657282445e5b722abc454a48455f65",
+      "bytes": 8459,
+      "method": "DFT",
+      "model_id": "C24_OH_OH_far_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_far_trans/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "9d14a636948744a87f322787ed4634034b80dbba6a1e7fb9b425a4003a4de89e",
+      "bytes": 7880,
+      "method": "DFT",
+      "model_id": "C24_OH_OH_far_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_near_trans/DFT/model.json",
+      "kind": "model",
+      "sha256": "681e8038d5f2afd7929452d5cb44958cbc861dcc59799b851e142232d2ae8cb1",
+      "bytes": 20800,
+      "method": "DFT",
+      "model_id": "C24_OH_OH_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_near_trans/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "5664eb0978982682febde83690cccca50afa5a42a19678568b2e9eed840fad47",
+      "bytes": 8460,
+      "method": "DFT",
+      "model_id": "C24_OH_OH_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_near_trans/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "8480a9716f5645a3866bc40cea227c6eb6bba4ed44c1ad081f0dfb1db9666c94",
+      "bytes": 7737,
+      "method": "DFT",
+      "model_id": "C24_OH_OH_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_pristine_parent_reference/DFT/model.json",
+      "kind": "model",
+      "sha256": "901b633574a47ed578a7b7edb94f43938604ee9ddb46e9ddf3c54fb0c46f17ee",
+      "bytes": 18136,
+      "method": "DFT",
+      "model_id": "C24_pristine_parent_reference"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_pristine_parent_reference/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "bb160b6098f2711a140e08e44d099347d189239211919b3e00ac0f51db06680d",
+      "bytes": 7601,
+      "method": "DFT",
+      "model_id": "C24_pristine_parent_reference"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_pristine_parent_reference/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "8c416ee623e17063a48afd271fc1ef79f93e8dcd3bfa5d5de3a93d38db83df9f",
+      "bytes": 7957,
+      "method": "DFT",
+      "model_id": "C24_pristine_parent_reference"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_single_basal_EPX_control/DFT/model.json",
+      "kind": "model",
+      "sha256": "cfaf89316bdd302ec57f5048483bda92040194ded8cf8804549ba5276111f6bc",
+      "bytes": 18923,
+      "method": "DFT",
+      "model_id": "C24_single_basal_EPX_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_single_basal_EPX_control/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "886ce2a9940fd4915a18c1ac1ae1444c32964a82d2fe754809cf535f3d3523b6",
+      "bytes": 7844,
+      "method": "DFT",
+      "model_id": "C24_single_basal_EPX_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_single_basal_EPX_control/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "da42980a04fb6d1d777ad8eaa37c76c2ae1d98f702a381445873ea647caa1a3c",
+      "bytes": 7962,
+      "method": "DFT",
+      "model_id": "C24_single_basal_EPX_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COO/DFT/model.json",
+      "kind": "model",
+      "sha256": "9f5f3d0af96dc40179b0ca2fb3c287baac565da4df84ce9800696ffbe283e0b6",
+      "bytes": 13093,
+      "method": "DFT",
+      "model_id": "pyrene_COO"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COO/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "da42814891b37b219efd02604e07c7b9d864b3ec270b6a5455806a58aaabf5d6",
+      "bytes": 5915,
+      "method": "DFT",
+      "model_id": "pyrene_COO"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COO/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "82228d388eb8389201a8983065179f37410db1f37728bbff9d8c51a10696385c",
+      "bytes": 7734,
+      "method": "DFT",
+      "model_id": "pyrene_COO"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COOH/DFT/model.json",
+      "kind": "model",
+      "sha256": "d45163c33d7a548d7e62eaa7babaf32c81be8b706bd837c60abae46e7612cfa1",
+      "bytes": 13485,
+      "method": "DFT",
+      "model_id": "pyrene_COOH"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COOH/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "43cf10b03bc1a474bf3d936ed5396a8e552a8ef9d80ee8282aa97c56decbef66",
+      "bytes": 6124,
+      "method": "DFT",
+      "model_id": "pyrene_COOH"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COOH/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "6e7d5db63f99f2acee81221177988ea8a93ca596f026e36a416c3943f77ba7bb",
+      "bytes": 7741,
+      "method": "DFT",
+      "model_id": "pyrene_COOH"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_cis/DFT/model.json",
+      "kind": "model",
+      "sha256": "2f4e38a611861e7dac5f0c8a30bb758f5c0b18246e6bc1185c96185891d39a0a",
+      "bytes": 14151,
+      "method": "DFT",
+      "model_id": "pyrene_diol_cis"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_cis/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "51e88ebe6b3c7c389d5bfd454de90343534142d1ab44ba5b07184de4a6eee337",
+      "bytes": 6371,
+      "method": "DFT",
+      "model_id": "pyrene_diol_cis"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_cis/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "c691084dabc9866dc0d28b149874a6e02baa149a253c870eb8f80528c113f9aa",
+      "bytes": 7775,
+      "method": "DFT",
+      "model_id": "pyrene_diol_cis"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_epoxide/DFT/model.json",
+      "kind": "model",
+      "sha256": "0d54a52e0d25652065f526a2b8eafb92225329ce204200404ca56cdc23538f56",
+      "bytes": 14674,
+      "method": "DFT",
+      "model_id": "pyrene_diol_epoxide"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_epoxide/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "2f81ab34bb7e9b424a4d4369c58dd39178f0d364e926474206e55f05e53dbd12",
+      "bytes": 6622,
+      "method": "DFT",
+      "model_id": "pyrene_diol_epoxide"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_epoxide/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "d5b42e994648eff997b3c8011ebbf1d6c3bc311aa9b4dc3ba5df3ca477288a02",
+      "bytes": 7817,
+      "method": "DFT",
+      "model_id": "pyrene_diol_epoxide"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_trans/DFT/model.json",
+      "kind": "model",
+      "sha256": "d09a5d9d7e986f64d282558641f9c0702e9d0154623db143903abb4996d5ce98",
+      "bytes": 14152,
+      "method": "DFT",
+      "model_id": "pyrene_diol_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_trans/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "217b9edf895476adb182b44d7c464bfa34f7c1163f6aea5f40424cd6a355a1ae",
+      "bytes": 6377,
+      "method": "DFT",
+      "model_id": "pyrene_diol_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_trans/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "4e8a56d25678ddae500820ed7adcf1639612746ce1d26f494f3791cce59a7479",
+      "bytes": 7821,
+      "method": "DFT",
+      "model_id": "pyrene_diol_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_dione/DFT/model.json",
+      "kind": "model",
+      "sha256": "9f2f6a0945cb9d54fd3bffb6fe8801357b75aceaeedb808cf5a2865c637661a4",
+      "bytes": 12317,
+      "method": "DFT",
+      "model_id": "pyrene_dione"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_dione/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "67e07eeb66aadbe4d0b896504094c31b0efff5376af98ad72f1c517e4c3f3fb4",
+      "bytes": 5564,
+      "method": "DFT",
+      "model_id": "pyrene_dione"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_dione/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "3ea3378a0de6c802cca4a1e31d54dcb471c54662ca7e5e8022998ae34ae1d160",
+      "bytes": 7752,
+      "method": "DFT",
+      "model_id": "pyrene_dione"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_pristine/DFT/model.json",
+      "kind": "model",
+      "sha256": "09a8f4fffb1f54baa35c9f857ed7e9ea7225857a13896199ac9b6eab9fd5ef46",
+      "bytes": 12255,
+      "method": "DFT",
+      "model_id": "pyrene_pristine"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_pristine/DFT/charges.json",
+      "kind": "charges",
+      "sha256": "68b606061ff8aa9a0d5d82f5fc286c1b331c839cffcfef7a3d0b06b5fce3dae0",
+      "bytes": 5497,
+      "method": "DFT",
+      "model_id": "pyrene_pristine"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_pristine/DFT/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "cb5a885ab29971cf2aad2548966325a93ae07287ef141cd2f88d3714a6765b9d",
+      "bytes": 7827,
+      "method": "DFT",
+      "model_id": "pyrene_pristine"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/c54_recovered_results_snapshot_20261103_attempt_001/outputs/C54_EPX_EPX_near_trans/fits/attempt_001/model.json",
+      "kind": "model",
+      "sha256": "c279540534cfc9c62fdae81dff437bca545f57485f18cc48643ff718479814b6",
+      "bytes": 36709,
+      "method": "DFT",
+      "model_id": "C54_EPX_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/c54_recovered_results_snapshot_20261103_attempt_001/outputs/C54_EPX_EPX_near_trans/fits/attempt_001/charges.json",
+      "kind": "charges",
+      "sha256": "0ce94b46484d5e7aeb31d17d46dce1bc808e125e469d29809b2e955f76dd38ed",
+      "bytes": 15584,
+      "method": "DFT",
+      "model_id": "C54_EPX_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/c54_recovered_results_snapshot_20261103_attempt_001/outputs/C54_EPX_EPX_near_trans/fits/attempt_001/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "6e0b0e191845b3b8d05deb23d4b9a606177984167ad1926651178faf9c2c1983",
+      "bytes": 7874,
+      "method": "DFT",
+      "model_id": "C54_EPX_EPX_near_trans"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/c54_recovered_results_snapshot_20261103_attempt_001/outputs/C54_pristine_parent_reference/fits/attempt_001/model.json",
+      "kind": "model",
+      "sha256": "4ea6227e27b6997233b569c2af630005fbf411a119b8870eebb4497a0f9debeb",
+      "bytes": 34718,
+      "method": "DFT",
+      "model_id": "C54_pristine_parent_reference"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/c54_recovered_results_snapshot_20261103_attempt_001/outputs/C54_pristine_parent_reference/fits/attempt_001/charges.json",
+      "kind": "charges",
+      "sha256": "e6104347fc67b856e61757aca8c7e7c91719eab4d44e69d21f8330f7c41db6c3",
+      "bytes": 15095,
+      "method": "DFT",
+      "model_id": "C54_pristine_parent_reference"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/c54_recovered_results_snapshot_20261103_attempt_001/outputs/C54_pristine_parent_reference/fits/attempt_001/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "031ffd40bac47ebcad4eeaf70b6e766de18024207a6679f86ec138632e847f5e",
+      "bytes": 7983,
+      "method": "DFT",
+      "model_id": "C54_pristine_parent_reference"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/c54_single_results_20261103_snapshot_001/fits/attempt_001/model.json",
+      "kind": "model",
+      "sha256": "b1a8c95d3940ef3985a8cd36c2edec7853b8d43d344e6546ea8617f1f3486f0c",
+      "bytes": 35507,
+      "method": "DFT",
+      "model_id": "C54_single_basal_EPX_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/c54_single_results_20261103_snapshot_001/fits/attempt_001/charges.json",
+      "kind": "charges",
+      "sha256": "d57d3aac7256c7642db85f49a68ce28c362624237f5a4601f3777ae207f55d72",
+      "bytes": 15345,
+      "method": "DFT",
+      "model_id": "C54_single_basal_EPX_control"
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/c54_single_results_20261103_snapshot_001/fits/attempt_001/FIT_COMPLETE.json",
+      "kind": "fit_evidence",
+      "sha256": "e488b23e2f66ef0599f609ae8562f1ab3a185ff0321f031cacc6169bc24258e5",
+      "bytes": 7831,
+      "method": "DFT",
+      "model_id": "C54_single_basal_EPX_control"
+    }
+  ],
+  "memory_used_for_workflow_only": {
+    "file": "MEMORY.md",
+    "lines": "96-110",
+    "rollout_id": "01a07be4-18ac-7111-bcc4-ab20caec3b9d"
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "summary": {
+    "model_id": "pyrene_dione",
+    "status": "technical_gates_passed",
+    "atoms": 26,
+    "formal_charge": 0,
+    "Espaloma_charge_sum_e": -1.5273690223693848e-07,
+    "repeat_max_difference_e": 0.0,
+    "permutation_max_difference_e": 0.0,
+    "inference_seconds": 0.0037404056638479233,
+    "native_BCC_primary_available": false,
+    "native_BCC_exclusion": {
+      "reason": "BCC parameter missing for native types 16-12-2",
+      "candidate_available": false,
+      "missing_parameters_not_imputed": true
+    },
+    "comparisons": {
+      "espaloma__current_library": {
+        "charge_RMS_difference_e": 0.07719614744232302,
+        "charge_MAE_e": 0.0612622320571771,
+        "max_absolute_difference_e": 0.22494298815727234
+      },
+      "espaloma__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.12659445491682178,
+        "charge_MAE_e": 0.09199172471755286,
+        "max_absolute_difference_e": 0.333685158747673
+      },
+      "current_library__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.13328463207708185,
+        "charge_MAE_e": 0.09574469230769228,
+        "max_absolute_difference_e": 0.423061
+      }
+    },
+    "canonical_isomeric_SMILES": "[H]c1c([H])c2c([H])c([H])c3c([H])c(=O)c(=O)c4c([H])c([H])c(c1[H])c2c34",
+    "stereo_metadata_discrepancies": [],
+    "stereochemical_validation_claimed": false,
+    "final_parameter_validation": false
+  },
+  "atoms": [
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 1,
+      "element": "C",
+      "role": "carbonyl_C",
+      "espaloma_charge_e": 0.5628942847251892,
+      "current_library_charge_e": 0.581,
+      "molecular_HF_RESP_charge_e": 0.637564,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 2,
+      "element": "C",
+      "role": "carbonyl_C",
+      "espaloma_charge_e": 0.5642894506454468,
+      "current_library_charge_e": 0.581,
+      "molecular_HF_RESP_charge_e": 0.454363,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 3,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.08718465268611908,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.056737,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 4,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.11276758462190628,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.124459,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 5,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.1740311235189438,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.285308,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 6,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.11634115874767303,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.217344,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 7,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.159512460231781,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.294682,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 8,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.15625613927841187,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.090429,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 9,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.159512460231781,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.259806,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 10,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.11634118854999542,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.151616,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 11,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.1587911993265152,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.199344,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 12,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.21007397770881653,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.243787,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 13,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.018933411687612534,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.291384,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 14,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.37494298815727234,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.573061,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 15,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.06276211142539978,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.10532,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 16,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.01690995693206787,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.043524,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 17,
+      "element": "O",
+      "role": "carbonyl_O",
+      "espaloma_charge_e": -0.5242879986763,
+      "current_library_charge_e": -0.581,
+      "molecular_HF_RESP_charge_e": -0.510762,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 18,
+      "element": "O",
+      "role": "carbonyl_O",
+      "espaloma_charge_e": -0.5151612758636475,
+      "current_library_charge_e": -0.581,
+      "molecular_HF_RESP_charge_e": -0.476134,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 19,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.2227708399295807,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.177978,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 20,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22540375590324402,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.180702,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 21,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22726716101169586,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.178465,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 22,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.24166007339954376,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.154038,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 23,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22726716101169586,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.174703,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 24,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22540375590324402,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.163657,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 25,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22540375590324402,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.166765,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "pyrene_dione",
+      "atom_id": 26,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.2414492964744568,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.227724,
+      "native_AM1_BCC_charge_e": null
+    }
+  ],
+  "source_SHA256": {
+    "PARAMETERIZATION/calculations/am1_bcc_native_snapshot_20261103_attempt_001/pyrene_dione/model.json": "797b04473691b572a9fe801720efde371d7792c20fa811c338227e63790eacea",
+    "PARAMETERIZATION/calculations/am1_bcc_native_snapshot_20261103_attempt_001/pyrene_dione/am1_bcc.mol2": "1c5eb404858dabbc743f84748bf5e542487f185ba075f3484229ba11c67de743",
+    "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_dione/HF/charges.json": "3ea42554b297f9747ac121988644d9ba4640e97e6cd22011bc819a42de50c9a5",
+    "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_dione/HF/FIT_COMPLETE.json": "703f8d31ad10e41354b9bf3689c627bba79bacf689c91f2fad4dbfefa89fbc85"
+  }
+}

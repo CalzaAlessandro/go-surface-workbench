@@ -1,0 +1,79 @@
+{
+  "verified_at_utc": "2026-11-04T19:45:16.677100+00:00",
+  "queue": "1468993_[4-54%4]|PENDING|0:00|(JobArrayTaskLimit)\n1468880_[2-3%2]|PENDING|0:00|(JobArrayTaskLimit)\n1468993_1|RUNNING|1:09:16|ciamician-02\n1468993_2|RUNNING|1:09:16|ciamician-02\n1468993_3|RUNNING|1:09:16|ciamician-07\n1468993_0|RUNNING|1:09:17|ciamician-02\n1468880_0|RUNNING|4:59:48|ciamician-02\n1468880_1|RUNNING|4:59:48|ciamician-07\n",
+  "accounting": "JobID|State|ExitCode|Elapsed\n1468875_0|OUT_OF_MEMORY|0:125|00:01:04\n1468875_1|OUT_OF_MEMORY|0:125|00:00:19\n1468875_2|OUT_OF_MEMORY|0:125|00:00:23\n1468875_3|OUT_OF_MEMORY|0:125|00:00:22\n1468879|COMPLETED|0:0|00:00:42\n1468880_0|RUNNING|0:0|04:59:48\n1468880_1|RUNNING|0:0|04:59:48\n1468880_[2-3%2]|PENDING|0:0|00:00:00\n1468993_0|RUNNING|0:0|01:09:17\n1468993_1|RUNNING|0:0|01:09:16\n1468993_2|RUNNING|0:0|01:09:16\n1468993_3|RUNNING|0:0|01:09:16\n1468993_[4-54%4]|PENDING|0:0|00:00:00\n",
+  "whole_sheet": [
+    {
+      "case": "GOX935_M2_CPCM_water",
+      "log_exists": true,
+      "last_SCF_iteration": 7,
+      "last_SCF_energy_Eh": -42377.0457060677,
+      "SCF_convergence_marker_present": false,
+      "normal_termination_marker_present": false,
+      "tail": "Iteration    Energy (Eh)           Delta-E    RMSDP     MaxDP     DIISErr   Damp  Time(sec)\n-------------------------------------------------------------------------------------------\n               ***  Starting incremental Fock matrix formation  ***\n    1    -42328.3586465124972165     0.00e+00  1.45e+03  6.75e+04  1.73e-01  0.850 1996.6\nWarning: op=0 Small HOMO/LUMO gap (  -0.298) - skipping pre-diagonalization\n         LevelShift set to 0.398 Eh\n         Will do a full diagonalization\n    2    -42344.8528793908189982    -1.65e+01  1.23e+03  5.75e+04  1.19e-01  0.850 2840.4\n                               ***Turning on AO-DIIS***\n    3    -42354.5121734982822090    -9.66e+00  1.05e+03  4.91e+04  9.09e-02  0.850 2116.2\n    4    -42361.6502417904557660    -7.14e+00  8.88e+02  4.20e+04  4.23e-02  0.850 2137.8\n    5    -42367.5406033825129271    -5.89e+00  7.54e+02  3.59e+04  4.23e-02  0.850 2202.4\n    6    -42372.6406643080990762    -5.10e+00  6.41e+02  3.03e+04  3.69e-02  0.850 2306.7\n    7    -42377.0457060676999390    -4.41e+00  5.45e+02  2.57e+04  2.63e-02  0.850 2188.9",
+      "scientific_acceptance_not_inferred_from_job_state": true
+    },
+    {
+      "case": "GOX935_M4_CPCM_water",
+      "log_exists": false,
+      "last_SCF_iteration": null,
+      "last_SCF_energy_Eh": null,
+      "SCF_convergence_marker_present": false,
+      "normal_termination_marker_present": false,
+      "tail": "",
+      "scientific_acceptance_not_inferred_from_job_state": true
+    },
+    {
+      "case": "REGOX980_M1_CPCM_water",
+      "log_exists": true,
+      "last_SCF_iteration": 9,
+      "last_SCF_energy_Eh": -33714.59718063142,
+      "SCF_convergence_marker_present": false,
+      "normal_termination_marker_present": false,
+      "tail": "               ***  Starting incremental Fock matrix formation  ***\n    1    -33690.0650706444284879     0.00e+00  1.23e+03  5.44e+04  1.70e-01  0.850 1570.5\nWarning: op=0 Small HOMO/LUMO gap (  -0.196) - skipping pre-diagonalization\n         LevelShift set to 0.296 Eh\n         Will do a full diagonalization\n    2    -33697.0752204682794400    -7.01e+00  1.04e+03  4.63e+04  1.19e-01  0.850 2097.7\n                               ***Turning on AO-DIIS***\n    3    -33701.2034517502179369    -4.13e+00  8.85e+02  3.95e+04  7.10e-02  0.850 1515.4\n    4    -33704.6492733004270121    -3.45e+00  7.52e+02  3.37e+04  4.46e-02  0.850 1518.9\n    5    -33707.4206902172882110    -2.77e+00  6.40e+02  2.88e+04  3.45e-02  0.850 1598.4\n    6    -33709.7158263614401221    -2.30e+00  5.45e+02  2.46e+04  3.42e-02  0.850 1601.8\n    7    -33711.6358880464686081    -1.92e+00  4.64e+02  2.10e+04  3.02e-02  0.850 1571.4\n    8    -33713.2479962517973036    -1.61e+00  3.95e+02  1.80e+04  2.12e-02  0.850 1569.4\n    9    -33714.5971806314191781    -1.35e+00  2.25e+03  1.03e+05  1.62e-02  0.000 1743.1",
+      "scientific_acceptance_not_inferred_from_job_state": true
+    },
+    {
+      "case": "REGOX980_M3_CPCM_water",
+      "log_exists": false,
+      "last_SCF_iteration": null,
+      "last_SCF_energy_Eh": null,
+      "SCF_convergence_marker_present": false,
+      "normal_termination_marker_present": false,
+      "tail": "",
+      "scientific_acceptance_not_inferred_from_job_state": true
+    }
+  ],
+  "expanded_RESP": {
+    "counts": {
+      "prepared": 55,
+      "reference_logs_started": 4,
+      "reference_executions_finished": 0,
+      "reference_executions_failed": 0,
+      "HF_RESP_complete": 0,
+      "HF_RESP_failed_or_rejected": 0
+    },
+    "started_reference_logs": [
+      {
+        "case": "C24_OH2_loading_s20261304",
+        "log_bytes": 72584,
+        "last_lines": "    117 vectors produced by pass  1 Test12= 4.93D-14 1.00D-09 XBig12= 1.22D-02 3.04D-02.\n    117 vectors produced by pass  2 Test12= 4.93D-14 1.00D-09 XBig12= 5.04D-04 3.86D-03.\n    117 vectors produced by pass  3 Test12= 4.93D-14 1.00D-09 XBig12= 6.87D-06 3.94D-04.\n    117 vectors produced by pass  4 Test12= 4.93D-14 1.00D-09 XBig12= 6.88D-08 2.86D-05.\n    117 vectors produced by pass  5 Test12= 4.93D-14 1.00D-09 XBig12= 6.71D-10 2.31D-06."
+      },
+      {
+        "case": "C24_OH4_loading_s20261305",
+        "log_bytes": 78173,
+        "last_lines": "          There are   135 degrees of freedom in the 1st order CPHF.  IDoFFX=6 NUNeed=     0.\n    129 vectors produced by pass  0 Test12= 5.93D-14 1.00D-09 XBig12= 3.03D-01 7.04D-02.\n AX will form   129 AO Fock derivatives at one time.\n    129 vectors produced by pass  1 Test12= 5.93D-14 1.00D-09 XBig12= 1.37D-02 2.86D-02.\n    129 vectors produced by pass  2 Test12= 5.93D-14 1.00D-09 XBig12= 6.06D-04 7.08D-03."
+      },
+      {
+        "case": "C24_OH6_loading_s20261306",
+        "log_bytes": 85378,
+        "last_lines": " Symmetry not used in FoFCou.\n          There are   147 degrees of freedom in the 1st order CPHF.  IDoFFX=6 NUNeed=     0.\n    141 vectors produced by pass  0 Test12= 7.01D-14 1.00D-09 XBig12= 3.09D-01 5.46D-02.\n AX will form   141 AO Fock derivatives at one time.\n    141 vectors produced by pass  1 Test12= 7.01D-14 1.00D-09 XBig12= 2.05D-02 1.96D-02."
+      },
+      {
+        "case": "C24_EPX3_loading_s20261308",
+        "log_bytes": 75534,
+        "last_lines": "    114 vectors produced by pass  3 Test12= 5.19D-14 1.00D-09 XBig12= 1.16D-05 3.79D-04.\n    114 vectors produced by pass  4 Test12= 5.19D-14 1.00D-09 XBig12= 1.21D-07 5.12D-05.\n    114 vectors produced by pass  5 Test12= 5.19D-14 1.00D-09 XBig12= 1.17D-09 3.98D-06.\n    114 vectors produced by pass  6 Test12= 5.19D-14 1.00D-09 XBig12= 9.28D-12 2.08D-07.\n     84 vectors produced by pass  7 Test12= 5.19D-14 1.00D-09 XBig12= 6.56D-14 1.72D-08."
+      }
+    ]
+  }
+}

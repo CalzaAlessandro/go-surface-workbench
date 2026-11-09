@@ -1,16 +1,22 @@
 # Proposed RESP calibration of optional static redistribution
 
-This is a calibration design, not a fitted SQE-GO model. Standard modular
-charges remain the default; final charges from the optional mode stay fixed
-throughout MD and are inherited by MM/GBSA subsets.
+This is a calibration design, not a fitted SQE-GO model. Update 2026-11-03:
+HF–RESP is the primary reference; DFT–RESP and AM1-BCC remain controls. Fixed
+modular, context-library and static redistribution candidates remain under
+comparison. The final integer charge follows the product's composition and
+protonation and is not forced to zero. Charges stay fixed throughout MD and
+are inherited by MM/GBSA subsets. See the current
+[strategy benchmark](CHARGE_STRATEGY_BENCHMARK_20261103.md).
 
 ## Baseline and training references
 
 Retain the new jointly constrained modular RESP library as an L0 candidate,
-with each source/state/fit scope explicit. The currently completed HF controls
-remain diagnostic because of electronic instability; they are not yet accepted
-final calibration references. Select electronically defensible QM references
-before choosing final charge parameters.
+with each source/state/fit scope explicit. Sixteen conventional restricted-HF
+RESP references on accepted DFT geometries are now available; they do not
+claim wavefunction-stability validation. The earlier instability diagnostic
+and the conventional reference definition remain separate scopes under
+[AMBER_RESP_ACCEPTANCE.md](AMBER_RESP_ACCEPTANCE.md). No production parameters
+are selected merely because a fit completed.
 
 Build target data on mixed, terminal and differently sized fragments. Use
 whole-fragment RESP targets with correct total charge and justified equivalences,

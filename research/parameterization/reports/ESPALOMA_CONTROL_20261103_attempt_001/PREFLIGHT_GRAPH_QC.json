@@ -1,0 +1,117 @@
+{
+  "graphs_passing_atom_order_composition_charge_valence_connectivity": 16,
+  "stereo_metadata_discrepancies": {
+    "pyrene_diol_cis": [
+      {
+        "atom_id": 15,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": "S"
+      },
+      {
+        "atom_id": 16,
+        "stored_CIP": "S",
+        "coordinate_derived_CIP": "R"
+      }
+    ],
+    "pyrene_diol_trans": [
+      {
+        "atom_id": 15,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": "S"
+      },
+      {
+        "atom_id": 16,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": "S"
+      }
+    ],
+    "pyrene_diol_epoxide": [
+      {
+        "atom_id": 15,
+        "stored_CIP": "S",
+        "coordinate_derived_CIP": "R"
+      },
+      {
+        "atom_id": 16,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": "S"
+      }
+    ],
+    "C24_EPT_edge_control": [
+      {
+        "atom_id": 1,
+        "stored_CIP": "S",
+        "coordinate_derived_CIP": "R"
+      },
+      {
+        "atom_id": 3,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": "S"
+      }
+    ],
+    "C24_OH_OH_far_trans": [
+      {
+        "atom_id": 4,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": null
+      },
+      {
+        "atom_id": 21,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": null
+      }
+    ],
+    "C24_EPX_EPX_near_trans": [
+      {
+        "atom_id": 7,
+        "stored_CIP": "S",
+        "coordinate_derived_CIP": "R"
+      },
+      {
+        "atom_id": 18,
+        "stored_CIP": "S",
+        "coordinate_derived_CIP": "R"
+      }
+    ],
+    "C24_OH_EPX_near_trans": [
+      {
+        "atom_id": 7,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": "S"
+      },
+      {
+        "atom_id": 10,
+        "stored_CIP": "S",
+        "coordinate_derived_CIP": "R"
+      },
+      {
+        "atom_id": 18,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": "S"
+      }
+    ],
+    "C24_OH_EPX_far_trans": [
+      {
+        "atom_id": 4,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": null
+      },
+      {
+        "atom_id": 7,
+        "stored_CIP": "S",
+        "coordinate_derived_CIP": null
+      },
+      {
+        "atom_id": 18,
+        "stored_CIP": "S",
+        "coordinate_derived_CIP": null
+      },
+      {
+        "atom_id": 21,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": null
+      }
+    ]
+  },
+  "stereochemical_validation_claimed": false
+}

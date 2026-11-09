@@ -1,0 +1,10 @@
+{
+  "SUMMARY.json": "6b3c4005dcdfb0a8f1ee567dcc84852ce6007515b1e0ba77c305b776ee194bdc",
+  "INPUT_MANIFEST.json": "1c18786fb5959c45d8c216b945e9d6d07caf3633d642e38068c32aa2fb6b68d6",
+  "small_molecules_comparison.html": "5a66ec37b2305cd68081223d41c3f233ec8fbb3adea6e7e836f67149c8a66c92",
+  "context_scores.csv": "595c9342f670c9e4a4b16c28c35e20c915f79ade77c8a0c06b40b41049960756",
+  "build_report.py": "6fe8cb8faee4d29312fba6f8a49f382fbb8b52c8f0640d85b2eb758e8da97d9a",
+  "aggregate_scores.csv": "3fc660aa4cc1c3e76be62b075443051dd41bd9b46ff1d9d3241a75cb1c5fd301",
+  "REPORT.html": "5f779ef62214340b1083ff0238243dfd43885e3a6b21e843910c5bfdda1d8466",
+  "METHOD_AVAILABILITY.json": "4034887537d1c4b4bfdd78608d4ac293455c54289f787d804e8e6f30a245b284"
+}

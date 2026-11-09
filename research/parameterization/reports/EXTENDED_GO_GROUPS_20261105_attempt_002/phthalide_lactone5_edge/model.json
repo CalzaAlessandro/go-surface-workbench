@@ -1,0 +1,430 @@
+{
+  "schema_version": 1,
+  "model_id": "phthalide_lactone5_edge",
+  "formula": "C8H6O2",
+  "formal_charge": 0,
+  "multiplicity": 1,
+  "electron_count": 70,
+  "atoms": [
+    {
+      "id": 1,
+      "name": "O1",
+      "element": "O",
+      "position": [
+        -1.4438641947954893,
+        2.8448448116204155,
+        0.02420999597820444
+      ],
+      "role": "extended_lactone_carbonyl_O",
+      "roles": [
+        "extended_lactone_carbonyl_O"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 6,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 2,
+      "name": "C2",
+      "element": "C",
+      "position": [
+        -1.3854098558445267,
+        1.6320043281138936,
+        0.015247936255454085
+      ],
+      "role": "extended_lactone_carbonyl_C",
+      "roles": [
+        "extended_lactone_carbonyl_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 8,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 3,
+      "name": "O3",
+      "element": "O",
+      "position": [
+        -2.4407539258135906,
+        0.762375699616725,
+        0.011542407106935862
+      ],
+      "role": "extended_lactone_ring_O",
+      "roles": [
+        "extended_lactone_ring_O"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 7,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 4,
+      "name": "C4",
+      "element": "C",
+      "position": [
+        -2.008558367189759,
+        -0.6157066107718666,
+        0.0004864130876435088
+      ],
+      "role": "extended_background_C",
+      "roles": [
+        "extended_background_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 15,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 5,
+      "name": "C5",
+      "element": "C",
+      "position": [
+        -0.5368317329491332,
+        -0.5121990551806916,
+        -0.0024078506451683727
+      ],
+      "role": "extended_aromatic_C",
+      "roles": [
+        "extended_aromatic_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 14,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 6,
+      "name": "C6",
+      "element": "C",
+      "position": [
+        0.43096104731549734,
+        -1.5014612355569443,
+        -0.011959824444454472
+      ],
+      "role": "extended_aromatic_C",
+      "roles": [
+        "extended_aromatic_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 12,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 7,
+      "name": "C7",
+      "element": "C",
+      "position": [
+        1.7747442367888329,
+        -1.1109378596299888,
+        -0.012423291115257532
+      ],
+      "role": "extended_aromatic_C",
+      "roles": [
+        "extended_aromatic_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 10,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 8,
+      "name": "C8",
+      "element": "C",
+      "position": [
+        2.1295385105309057,
+        0.24954429877471193,
+        -0.003438979863940149
+      ],
+      "role": "extended_aromatic_C",
+      "roles": [
+        "extended_aromatic_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 9,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 9,
+      "name": "C9",
+      "element": "C",
+      "position": [
+        1.1428280705491651,
+        1.2361369674437552,
+        0.006126338795521408
+      ],
+      "role": "extended_aromatic_C",
+      "roles": [
+        "extended_aromatic_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 11,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 10,
+      "name": "C10",
+      "element": "C",
+      "position": [
+        -0.17676070328255605,
+        0.819461700598059,
+        0.0063570015991871245
+      ],
+      "role": "extended_aromatic_C",
+      "roles": [
+        "extended_aromatic_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 13,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 11,
+      "name": "H11",
+      "element": "H",
+      "position": [
+        -2.393046727738454,
+        -1.0972226558854987,
+        -0.9027531057419238
+      ],
+      "role": "extended_H_on_background_C",
+      "roles": [
+        "extended_H_on_background_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 4,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 12,
+      "name": "H12",
+      "element": "H",
+      "position": [
+        -2.388576809252531,
+        -1.1102705007868052,
+        0.8985530918165194
+      ],
+      "role": "extended_H_on_background_C",
+      "roles": [
+        "extended_H_on_background_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 4,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 13,
+      "name": "H13",
+      "element": "H",
+      "position": [
+        0.16381814599115566,
+        -2.553953901234291,
+        -0.018929038326905928
+      ],
+      "role": "extended_H_on_aromatic_C",
+      "roles": [
+        "extended_H_on_aromatic_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 3,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 14,
+      "name": "H14",
+      "element": "H",
+      "position": [
+        2.5568422638136012,
+        -1.8678389042199928,
+        -0.01981382892205321
+      ],
+      "role": "extended_H_on_aromatic_C",
+      "roles": [
+        "extended_H_on_aromatic_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 1,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 15,
+      "name": "H15",
+      "element": "H",
+      "position": [
+        3.179681896218567,
+        0.5335493694037081,
+        -0.003949324553702601
+      ],
+      "role": "extended_H_on_aromatic_C",
+      "roles": [
+        "extended_H_on_aromatic_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 0,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 16,
+      "name": "H16",
+      "element": "H",
+      "position": [
+        1.3953881456583537,
+        2.291673547694863,
+        0.013152058973918407
+      ],
+      "role": "extended_H_on_aromatic_C",
+      "roles": [
+        "extended_H_on_aromatic_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 2,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    }
+  ],
+  "bonds": [
+    {
+      "a": 1,
+      "b": 2,
+      "order": 2.0
+    },
+    {
+      "a": 2,
+      "b": 3,
+      "order": 1.0
+    },
+    {
+      "a": 3,
+      "b": 4,
+      "order": 1.0
+    },
+    {
+      "a": 4,
+      "b": 5,
+      "order": 1.0
+    },
+    {
+      "a": 5,
+      "b": 6,
+      "order": 1.5
+    },
+    {
+      "a": 6,
+      "b": 7,
+      "order": 1.5
+    },
+    {
+      "a": 7,
+      "b": 8,
+      "order": 1.5
+    },
+    {
+      "a": 8,
+      "b": 9,
+      "order": 1.5
+    },
+    {
+      "a": 9,
+      "b": 10,
+      "order": 1.5
+    },
+    {
+      "a": 10,
+      "b": 2,
+      "order": 1.0
+    },
+    {
+      "a": 10,
+      "b": 5,
+      "order": 1.5
+    },
+    {
+      "a": 4,
+      "b": 11,
+      "order": 1.0
+    },
+    {
+      "a": 4,
+      "b": 12,
+      "order": 1.0
+    },
+    {
+      "a": 6,
+      "b": 13,
+      "order": 1.0
+    },
+    {
+      "a": 7,
+      "b": 14,
+      "order": 1.0
+    },
+    {
+      "a": 8,
+      "b": 15,
+      "order": 1.0
+    },
+    {
+      "a": 9,
+      "b": 16,
+      "order": 1.0
+    }
+  ],
+  "metadata": {
+    "model_id": "phthalide_lactone5_edge",
+    "name": "phthalide",
+    "smiles": "O=C1OCc2ccccc21",
+    "motif": "lactone",
+    "ring_size": 5,
+    "formula": "C8H6O2",
+    "inchikey": "WNZQDUSMALZDQF-UHFFFAOYSA-N",
+    "source": "https://www.ebi.ac.uk/chebi/CHEBI:38085",
+    "reference_scope": "fused_aromatic_edge_motif_reference",
+    "source_access_date": "2026-11-05",
+    "source_identity_verification": "exact formula and nonstereospecific InChIKey from documented SMILES before embedding",
+    "parameter_status": "UNPARAMETERIZED_RESEARCH_REFERENCE",
+    "modular_partition_supported": false,
+    "builder_assignment_supported": false,
+    "geometry_status": "MMFF94s_starting_geometry_not_QM_accepted",
+    "initial_geometry_method": "ETKDGv3 + MMFF94s",
+    "optimization_status": "initial_force_field_minimization_converged",
+    "coordinate_units": "angstrom",
+    "seed": 20261105,
+    "rdkit_version": "2026.03.6",
+    "motif_graph_gate": {
+      "passed": true,
+      "motif": "lactone",
+      "ring_size": 5,
+      "matches_atom_ids": [
+        [
+          2,
+          1,
+          3
+        ]
+      ],
+      "carbonyl_carbon_atom_ids": [
+        2
+      ]
+    },
+    "canonical_isomeric_SMILES": "O=C1OCc2ccccc21",
+    "charge_status": "formal integers only; no fitted partial charges",
+    "wavefunction_stability_validated": false,
+    "multiplicity_basis": "neutral zero-radical even-electron graph; closed-shell singlet starting ansatz, not ground-state validation",
+    "stereo_status": "input unspecified where applicable; one deterministic 3D stereoisomer recorded, no population claim",
+    "scope": "unparameterized_small_molecule_reference_not_full_sheet_or_size_transfer_validation",
+    "size_transfer_requirement": "preserve graph classes and molecular/group charge constraints from about 4 nm to about 10 nm; held-out larger-sheet validation required; no whole-sheet QM required for each production size",
+    "experimental_presence_or_abundance_claimed": false
+  }
+}

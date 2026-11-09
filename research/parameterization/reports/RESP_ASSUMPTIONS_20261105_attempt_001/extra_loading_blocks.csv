@@ -1,0 +1,6 @@
+method,model_id,scaffold_C,group_id,block_type,atom_ids,roles,net_charge_e,target_formal_charge_e,scaffold_carbon_anchor_ids,scaffold_anchor_source,scaffold_anchor_charge_e_sum,carbon_atom_ids_for_centroid,carbon_centroid_angstrom
+HF_extra_loading,C24_EPX3_loading_s20261308,24,EPX:1,EPX,"[18, 21, 25]","[""epoxide_C"", ""epoxide_O""]",0.27856,0.0,"[18, 21]",group scaffold carbons,0.594545,"[18, 21]","[-0.024008, 2.209098, 0.36779249999999997]"
+HF_extra_loading,C24_EPX3_loading_s20261308,24,EPX:2,EPX,"[7, 10, 26]","[""epoxide_C"", ""epoxide_O""]",0.461762,0.0,"[7, 10]",group scaffold carbons,0.905476,"[7, 10]","[-0.6037520000000001, -1.045638, -0.21721449999999998]"
+HF_extra_loading,C24_EPX3_loading_s20261308,24,EPX:3,EPX,"[15, 19, 27]","[""epoxide_C"", ""epoxide_O""]",0.278152,0.0,"[15, 19]",group scaffold carbons,0.594538,"[15, 19]","[1.925199, 1.0838155, 0.3678085]"
+HF_extra_loading,C24_OH2_loading_s20261304,24,OH:1,OH,"[4, 25, 39]","[""hydroxyl_C"", ""hydroxyl_H"", ""hydroxyl_O""]",0.3623450000000001,0.0,[4],group scaffold carbons,0.660051,[4],"[-0.052434, -2.668323, 0.486794]"
+HF_extra_loading,C24_OH2_loading_s20261304,24,OH:2,OH,"[8, 26, 40]","[""hydroxyl_C"", ""hydroxyl_H"", ""hydroxyl_O""]",0.3623450000000001,0.0,[8],group scaffold carbons,0.660051,[8],"[2.393685, -1.262769, -0.511117]"

@@ -1,0 +1,2189 @@
+{
+  "status": "BENCHMARK_COMPLETE",
+  "completed_utc": "2026-11-03T21:47:05.117830+00:00",
+  "input_contexts": 19,
+  "primary_matched_panel_contexts": 16,
+  "methods": {
+    "sqe": "SQE_Schindler2021_CCD_gen",
+    "sqeq0": "SQEq0_Schindler2021_CCD_gen",
+    "sqeqp": "SQEqp_Schindler2021_CCD_gen"
+  },
+  "aggregate": {
+    "sqe": {
+      "successful_contexts": 18,
+      "comparisons": {
+        "molecular_HF_RESP": {
+          "contexts": 15,
+          "median_context_charge_RMS_difference_e": 0.11370160271749785,
+          "min_e": 0.0664588944983778,
+          "max_e": 0.20435178409796997
+        },
+        "native_AM1_BCC": {
+          "contexts": 11,
+          "median_context_charge_RMS_difference_e": 0.08464503287829855,
+          "min_e": 0.07050286666327954,
+          "max_e": 0.10040084826395389
+        },
+        "current_library": {
+          "contexts": 15,
+          "median_context_charge_RMS_difference_e": 0.06286043257410741,
+          "min_e": 0.0467341192754014,
+          "max_e": 0.07895323100140754
+        },
+        "espaloma": {
+          "contexts": 15,
+          "median_context_charge_RMS_difference_e": 0.08478003916530372,
+          "min_e": 0.059800382151962414,
+          "max_e": 0.15194673981317533
+        }
+      },
+      "max_total_charge_error_e": 3.885780586188048e-16,
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 6.106226635438361e-16,
+      "alternative_Kekule_max_difference_e": 0.05802710296623187
+    },
+    "sqeq0": {
+      "successful_contexts": 19,
+      "comparisons": {
+        "molecular_HF_RESP": {
+          "contexts": 16,
+          "median_context_charge_RMS_difference_e": 0.12146472610522754,
+          "min_e": 0.06976367895717661,
+          "max_e": 0.20300637028999266
+        },
+        "native_AM1_BCC": {
+          "contexts": 12,
+          "median_context_charge_RMS_difference_e": 0.08876430755544831,
+          "min_e": 0.06892841636225522,
+          "max_e": 0.11725491535510149
+        },
+        "current_library": {
+          "contexts": 16,
+          "median_context_charge_RMS_difference_e": 0.061140464722797244,
+          "min_e": 0.04597061505346577,
+          "max_e": 0.10423053728857674
+        },
+        "espaloma": {
+          "contexts": 16,
+          "median_context_charge_RMS_difference_e": 0.0879824261648326,
+          "min_e": 0.05584144198374144,
+          "max_e": 0.1521736046513062
+        }
+      },
+      "max_total_charge_error_e": 3.3306690738754696e-16,
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 3.885780586188048e-16,
+      "alternative_Kekule_max_difference_e": 0.045118842900216616
+    },
+    "sqeqp": {
+      "successful_contexts": 19,
+      "comparisons": {
+        "molecular_HF_RESP": {
+          "contexts": 16,
+          "median_context_charge_RMS_difference_e": 0.13000624734514757,
+          "min_e": 0.06864284692828178,
+          "max_e": 0.21955085132857285
+        },
+        "native_AM1_BCC": {
+          "contexts": 12,
+          "median_context_charge_RMS_difference_e": 0.08252250963139804,
+          "min_e": 0.07189745014350923,
+          "max_e": 0.13203558853601247
+        },
+        "current_library": {
+          "contexts": 16,
+          "median_context_charge_RMS_difference_e": 0.061678942057405275,
+          "min_e": 0.04910832998206964,
+          "max_e": 0.10664358134769734
+        },
+        "espaloma": {
+          "contexts": 16,
+          "median_context_charge_RMS_difference_e": 0.08611120076045416,
+          "min_e": 0.05704307891242092,
+          "max_e": 0.14249513373411424
+        }
+      },
+      "max_total_charge_error_e": 2.453592884421596e-14,
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 1.8041124150158794e-15,
+      "rigid_transform_max_difference_e": 4.440892098500626e-16,
+      "alternative_Kekule_max_difference_e": 0.09609690394783033
+    }
+  },
+  "failures": [],
+  "records": [
+    {
+      "model_id": "pyrene_pristine",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 26,
+      "formal_charge": 0,
+      "charge_sum_e": 5.551115123125783e-17,
+      "inference_seconds": 0.005595821887254715,
+      "kekule_changed_bonds": 14,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.457167719820518e-16,
+      "alternative_Kekule_max_difference_e": 0.004398504387720159,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.049845828495294765,
+          "charge_MAE_e": 0.046250548208094606,
+          "max_absolute_difference_e": 0.06816174491520008
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.08639244045514174,
+          "charge_MAE_e": 0.06938954330789085,
+          "max_absolute_difference_e": 0.18158248158700913
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07471762457702963,
+          "charge_MAE_e": 0.07012032260003281,
+          "max_absolute_difference_e": 0.10416174491520007
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.06259571817389642,
+          "charge_MAE_e": 0.04553035261355109,
+          "max_absolute_difference_e": 0.1427404076630321
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 26,
+      "formal_charge": 0,
+      "charge_sum_e": -5.551115123125783e-17,
+      "inference_seconds": 0.000394672155380249,
+      "kekule_changed_bonds": 14,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 6.938893903907228e-17,
+      "alternative_Kekule_max_difference_e": 0.003668723961392839,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.050125403806853874,
+          "charge_MAE_e": 0.04686721593063082,
+          "max_absolute_difference_e": 0.06872407336202233
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.08874106067032991,
+          "charge_MAE_e": 0.07092334372646167,
+          "max_absolute_difference_e": 0.18652733296200322
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07418102217877155,
+          "charge_MAE_e": 0.0698672159306308,
+          "max_absolute_difference_e": 0.10472407336202232
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.05983577464266575,
+          "charge_MAE_e": 0.042181633533107006,
+          "max_absolute_difference_e": 0.13739379646545186
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 26,
+      "formal_charge": 0,
+      "charge_sum_e": 3.524958103184872e-15,
+      "inference_seconds": 0.00034347735345363617,
+      "kekule_changed_bonds": 14,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 3.400058012914542e-16,
+      "rigid_transform_max_difference_e": 4.440892098500626e-16,
+      "alternative_Kekule_max_difference_e": 0.014515838298043676,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.051148284202197795,
+          "charge_MAE_e": 0.04766377550997683,
+          "max_absolute_difference_e": 0.07400875147520924
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.08752226189629755,
+          "charge_MAE_e": 0.06972203651113482,
+          "max_absolute_difference_e": 0.18531512356703742
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07531048130696127,
+          "charge_MAE_e": 0.07066377550997682,
+          "max_absolute_difference_e": 0.11000875147520923
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.061044531054197035,
+          "charge_MAE_e": 0.042814395502041865,
+          "max_absolute_difference_e": 0.14029492312330724
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 30,
+      "formal_charge": 0,
+      "charge_sum_e": 2.7755575615628914e-16,
+      "inference_seconds": 0.00034119002521038055,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.6653345369377348e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.056219823413309326,
+          "charge_MAE_e": 0.05097729366910262,
+          "max_absolute_difference_e": 0.10998570081628323
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.11370160271749785,
+          "charge_MAE_e": 0.07174018521334359,
+          "max_absolute_difference_e": 0.4790538017484016
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.08464503287829855,
+          "charge_MAE_e": 0.08035685780034492,
+          "max_absolute_difference_e": 0.1576857008162832
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.07592354516617125,
+          "charge_MAE_e": 0.0590336600028926,
+          "max_absolute_difference_e": 0.16385903985288303
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 30,
+      "formal_charge": 0,
+      "charge_sum_e": -3.3306690738754696e-16,
+      "inference_seconds": 0.00032449327409267426,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 3.885780586188048e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.05807856789218325,
+          "charge_MAE_e": 0.05328055130370821,
+          "max_absolute_difference_e": 0.11240920635748075
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.11066351276770783,
+          "charge_MAE_e": 0.07069653617515649,
+          "max_absolute_difference_e": 0.46388359610555724
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.08654116770358446,
+          "charge_MAE_e": 0.0820746027261532,
+          "max_absolute_difference_e": 0.16010920635748072
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.07809815647623167,
+          "charge_MAE_e": 0.05919751456701407,
+          "max_absolute_difference_e": 0.14975137825002877
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 30,
+      "formal_charge": 0,
+      "charge_sum_e": 1.7208456881689926e-15,
+      "inference_seconds": 0.0003099050372838974,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 3.3306690738754696e-16,
+      "rigid_transform_max_difference_e": 1.3877787807814457e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.055798933479942234,
+          "charge_MAE_e": 0.04970957553079304,
+          "max_absolute_difference_e": 0.10308760418741347
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.12492831698604095,
+          "charge_MAE_e": 0.07794518537683634,
+          "max_absolute_difference_e": 0.5293840029815492
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.08390355798101243,
+          "charge_MAE_e": 0.07878153456263742,
+          "max_absolute_difference_e": 0.15078760418741344
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.07061905540403338,
+          "charge_MAE_e": 0.05430061130285011,
+          "max_absolute_difference_e": 0.15146089187564638
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 30,
+      "formal_charge": 0,
+      "charge_sum_e": -3.885780586188048e-16,
+      "inference_seconds": 0.00031578168272972107,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.3877787807814457e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.055368413429502765,
+          "charge_MAE_e": 0.050689444823384514,
+          "max_absolute_difference_e": 0.1012345733843869
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.06863135880200777,
+          "charge_MAE_e": 0.05731026881449916,
+          "max_absolute_difference_e": 0.1453175733843869
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.090311194455039,
+          "charge_MAE_e": 0.08536911596813275,
+          "max_absolute_difference_e": 0.1709345733843869
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.07330071782988787,
+          "charge_MAE_e": 0.0564383497379378,
+          "max_absolute_difference_e": 0.1443273356615
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 30,
+      "formal_charge": 0,
+      "charge_sum_e": 1.1102230246251565e-16,
+      "inference_seconds": 0.000314200296998024,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.1102230246251565e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.05878471820673012,
+          "charge_MAE_e": 0.05334780343867848,
+          "max_absolute_difference_e": 0.11255782348283272
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.07006753606678932,
+          "charge_MAE_e": 0.05756342829650319,
+          "max_absolute_difference_e": 0.1566408234828327
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.09314367507938592,
+          "charge_MAE_e": 0.08774574377255531,
+          "max_absolute_difference_e": 0.1822578234828327
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.07650191648075706,
+          "charge_MAE_e": 0.05783339298071858,
+          "max_absolute_difference_e": 0.14123359969261937
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_diol_trans",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 30,
+      "formal_charge": 0,
+      "charge_sum_e": 1.609823385706477e-15,
+      "inference_seconds": 0.0003721565008163452,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 2.914335439641036e-16,
+      "rigid_transform_max_difference_e": 3.469446951953614e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.054974811242717955,
+          "charge_MAE_e": 0.04884158501950653,
+          "max_absolute_difference_e": 0.09555703213958766
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.07779540068948607,
+          "charge_MAE_e": 0.06327475844511324,
+          "max_absolute_difference_e": 0.1804762019196034
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.08890611059954022,
+          "charge_MAE_e": 0.08376372719381192,
+          "max_absolute_difference_e": 0.16525703213958765
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.06773576920484894,
+          "charge_MAE_e": 0.051891351691181774,
+          "max_absolute_difference_e": 0.13455574359956357
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 31,
+      "formal_charge": 0,
+      "charge_sum_e": -2.7755575615628914e-16,
+      "inference_seconds": 0.00032658129930496216,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 2.220446049250313e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.07895323100140754,
+          "charge_MAE_e": 0.06830631598642672,
+          "max_absolute_difference_e": 0.23200769045085223
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.20435178409796997,
+          "charge_MAE_e": 0.15183439554763828,
+          "max_absolute_difference_e": 0.5041015470200793
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.10040084826395389,
+          "charge_MAE_e": 0.087807873954135,
+          "max_absolute_difference_e": 0.24340769045085225
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.13466727853081895,
+          "charge_MAE_e": 0.09909551167545524,
+          "max_absolute_difference_e": 0.46353221275538714
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 31,
+      "formal_charge": 0,
+      "charge_sum_e": 1.1102230246251565e-16,
+      "inference_seconds": 0.00035687536001205444,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 8.326672684688674e-17,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.07663832323048625,
+          "charge_MAE_e": 0.06764459856867962,
+          "max_absolute_difference_e": 0.21783020569459932
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.20300637028999266,
+          "charge_MAE_e": 0.14967322403788283,
+          "max_absolute_difference_e": 0.49462595628490325
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.10020131624459853,
+          "charge_MAE_e": 0.08765030158524204,
+          "max_absolute_difference_e": 0.22923020569459934
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.13063535037890137,
+          "charge_MAE_e": 0.09583554999697058,
+          "max_absolute_difference_e": 0.44935472799913423
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_diol_epoxide",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 31,
+      "formal_charge": 0,
+      "charge_sum_e": 3.1086244689504383e-15,
+      "inference_seconds": 0.0003536175936460495,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 2.7755575615628914e-16,
+      "rigid_transform_max_difference_e": 3.3306690738754696e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.07226032026319654,
+          "charge_MAE_e": 0.05864686570574401,
+          "max_absolute_difference_e": 0.2367647982128196
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.21955085132857285,
+          "charge_MAE_e": 0.159743815471136,
+          "max_absolute_difference_e": 0.5572049762181502
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.09284075400414382,
+          "charge_MAE_e": 0.08049544401740287,
+          "max_absolute_difference_e": 0.24816479821281962
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.12866879502433115,
+          "charge_MAE_e": 0.09764030736897208,
+          "max_absolute_difference_e": 0.4682893205173545
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_dione",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 26,
+      "formal_charge": 0,
+      "charge_sum_e": 8.326672684688674e-17,
+      "inference_seconds": 0.0003119558095932007,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.1102230246251565e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.06542566214925084,
+          "charge_MAE_e": 0.05614821201705085,
+          "max_absolute_difference_e": 0.15353674608607276
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.10898206181981183,
+          "charge_MAE_e": 0.07840746493363407,
+          "max_absolute_difference_e": 0.3154050095005581
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.06453380144001031,
+          "charge_MAE_e": 0.04612038944462909,
+          "max_absolute_difference_e": 0.1494349479538542
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_dione",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 26,
+      "formal_charge": 0,
+      "charge_sum_e": 5.551115123125783e-17,
+      "inference_seconds": 0.0003373958170413971,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.1102230246251565e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.05556243297678429,
+          "charge_MAE_e": 0.04771557213082968,
+          "max_absolute_difference_e": 0.11968835401063854
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.11457658055871496,
+          "charge_MAE_e": 0.08483183387372757,
+          "max_absolute_difference_e": 0.34473503641620096
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.06528779680115768,
+          "charge_MAE_e": 0.049539526325643894,
+          "max_absolute_difference_e": 0.1513798285888992
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_dione",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 26,
+      "formal_charge": 0,
+      "charge_sum_e": -8.021361352916756e-15,
+      "inference_seconds": 0.0003464985638856888,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 5.551115123125783e-17,
+      "rigid_transform_max_difference_e": 3.3306690738754696e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.0706553084649838,
+          "charge_MAE_e": 0.05989079896244502,
+          "max_absolute_difference_e": 0.16916371948365466
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.11029465382426125,
+          "charge_MAE_e": 0.07896297526089283,
+          "max_absolute_difference_e": 0.3139036579195145
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.0651719912449252,
+          "charge_MAE_e": 0.0466156830936202,
+          "max_absolute_difference_e": 0.15245317012910148
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_COOH",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 29,
+      "formal_charge": 0,
+      "charge_sum_e": 0.0,
+      "inference_seconds": 0.0003346111625432968,
+      "kekule_changed_bonds": 14,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 3.885780586188048e-16,
+      "alternative_Kekule_max_difference_e": 0.05802710296623187,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.05489619530017627,
+          "charge_MAE_e": 0.046993129316167837,
+          "max_absolute_difference_e": 0.1405440473872921
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.09560230619019039,
+          "charge_MAE_e": 0.07487262027711888,
+          "max_absolute_difference_e": 0.21143190247349442
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07459092989188428,
+          "charge_MAE_e": 0.07081856298345741,
+          "max_absolute_difference_e": 0.14404820845258254
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.09163511338205724,
+          "charge_MAE_e": 0.0634543234704284,
+          "max_absolute_difference_e": 0.19898662077617663
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_COOH",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 29,
+      "formal_charge": 0,
+      "charge_sum_e": 1.1102230246251565e-16,
+      "inference_seconds": 0.0004304349422454834,
+      "kekule_changed_bonds": 14,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 9.020562075079397e-17,
+      "alternative_Kekule_max_difference_e": 0.045118842900216616,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.05174631576721138,
+          "charge_MAE_e": 0.046659950972970814,
+          "max_absolute_difference_e": 0.10809558454915413
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.09169600450900084,
+          "charge_MAE_e": 0.06994087225104745,
+          "max_absolute_difference_e": 0.2009463332915608
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07617959629545232,
+          "charge_MAE_e": 0.07028030314223216,
+          "max_absolute_difference_e": 0.13976599091006736
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.09039024599222412,
+          "charge_MAE_e": 0.05962377236956673,
+          "max_absolute_difference_e": 0.2014431019426137
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_COOH",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 29,
+      "formal_charge": 0,
+      "charge_sum_e": 4.440892098500626e-15,
+      "inference_seconds": 0.00041327066719532013,
+      "kekule_changed_bonds": 14,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 9.992007221626409e-16,
+      "rigid_transform_max_difference_e": 2.7755575615628914e-16,
+      "alternative_Kekule_max_difference_e": 0.07503138327512843,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.054339851930612526,
+          "charge_MAE_e": 0.04723887788890605,
+          "max_absolute_difference_e": 0.13383465558995644
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.09481428879657527,
+          "charge_MAE_e": 0.07208005159093142,
+          "max_absolute_difference_e": 0.215195936026016
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.075775938113572,
+          "charge_MAE_e": 0.07113108323085598,
+          "max_absolute_difference_e": 0.15839772506308944
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.09024631298224087,
+          "charge_MAE_e": 0.06088950890479968,
+          "max_absolute_difference_e": 0.21333613738668353
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_COO",
+      "method": "sqe",
+      "status": "excluded_charged_component",
+      "reason": "(Rejection(method=Method(id='sqe', name='SQE'), parameter_set=None, policy=None, issues=(PrerequisiteIssue(kind='unsupported_molecule', message=\"molecule 1 ('pyrene_COO'): SQE supports only molecules with neutral connected components because its split-charge construction has no initial charges and conserves zero total charge within each component\", molecule_index=0, atom_index=None, bond_index=None, conformer_index=None),)),)",
+      "formal_charge": -1
+    },
+    {
+      "model_id": "pyrene_COO",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 28,
+      "formal_charge": -1,
+      "charge_sum_e": -0.9999999999999999,
+      "inference_seconds": 0.0005083493888378143,
+      "kekule_changed_bonds": 14,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.0408340855860843e-16,
+      "alternative_Kekule_max_difference_e": 0.018851837911923824,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.10423053728857674,
+          "charge_MAE_e": 0.06734157407819105,
+          "max_absolute_difference_e": 0.43709166320930315
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.13781315854702236,
+          "charge_MAE_e": 0.10422579247626244,
+          "max_absolute_difference_e": 0.44041266320930317
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.11725491535510149,
+          "charge_MAE_e": 0.09007867724875772,
+          "max_absolute_difference_e": 0.40179166320930315
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.12018345443781105,
+          "charge_MAE_e": 0.06826018397151641,
+          "max_absolute_difference_e": 0.4427154591954787
+        }
+      }
+    },
+    {
+      "model_id": "pyrene_COO",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 28,
+      "formal_charge": -1,
+      "charge_sum_e": -0.9999999999999997,
+      "inference_seconds": 0.00038335099816322327,
+      "kekule_changed_bonds": 14,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 4.579669976578771e-16,
+      "rigid_transform_max_difference_e": 3.0531133177191805e-16,
+      "alternative_Kekule_max_difference_e": 0.09609690394783033,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.10664358134769734,
+          "charge_MAE_e": 0.06431803919798486,
+          "max_absolute_difference_e": 0.44388092693152087
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.13508417770425418,
+          "charge_MAE_e": 0.09254512650397874,
+          "max_absolute_difference_e": 0.44055992693152085
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.13203558853601247,
+          "charge_MAE_e": 0.0931291272834215,
+          "max_absolute_difference_e": 0.47918092693152087
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.1294470595441821,
+          "charge_MAE_e": 0.08874967725382062,
+          "max_absolute_difference_e": 0.4382571309453453
+        }
+      }
+    },
+    {
+      "model_id": "C24_pristine_parent_reference",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 36,
+      "formal_charge": 0,
+      "charge_sum_e": -2.7755575615628914e-17,
+      "inference_seconds": 0.00038040801882743835,
+      "kekule_changed_bonds": 24,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 4.163336342344337e-16,
+      "alternative_Kekule_max_difference_e": 0.001944466930100891,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.0467341192754014,
+          "charge_MAE_e": 0.04207678225846117,
+          "max_absolute_difference_e": 0.05950219396741116
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.0664588944983778,
+          "charge_MAE_e": 0.0485308551273355,
+          "max_absolute_difference_e": 0.14559474926820293
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07050286666327954,
+          "charge_MAE_e": 0.0630194082899912,
+          "max_absolute_difference_e": 0.09550219396741115
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.059800382151962414,
+          "charge_MAE_e": 0.05254985045046068,
+          "max_absolute_difference_e": 0.10965373194307625
+        }
+      }
+    },
+    {
+      "model_id": "C24_pristine_parent_reference",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 36,
+      "formal_charge": 0,
+      "charge_sum_e": -5.551115123125783e-17,
+      "inference_seconds": 0.0004321001470088959,
+      "kekule_changed_bonds": 24,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 9.367506770274758e-17,
+      "alternative_Kekule_max_difference_e": 0.00044304091365524045,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.04597061505346577,
+          "charge_MAE_e": 0.04141481955483017,
+          "max_absolute_difference_e": 0.05612223307185693
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.06976367895717661,
+          "charge_MAE_e": 0.05221979730070454,
+          "max_absolute_difference_e": 0.15175538431585242
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.06892841636225522,
+          "charge_MAE_e": 0.0617481528881635,
+          "max_absolute_difference_e": 0.09113657736837617
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.05584144198374144,
+          "charge_MAE_e": 0.04874894891222825,
+          "max_absolute_difference_e": 0.10349338755473668
+        }
+      }
+    },
+    {
+      "model_id": "C24_pristine_parent_reference",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 36,
+      "formal_charge": 0,
+      "charge_sum_e": -2.1399548799649892e-14,
+      "inference_seconds": 0.0003697443753480911,
+      "kekule_changed_bonds": 24,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 5.551115123125783e-17,
+      "rigid_transform_max_difference_e": 9.020562075079397e-17,
+      "alternative_Kekule_max_difference_e": 0.01349279727631214,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.04910832998206964,
+          "charge_MAE_e": 0.04513651901460597,
+          "max_absolute_difference_e": 0.06425956273361291
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.06864284692828178,
+          "charge_MAE_e": 0.05274036015522529,
+          "max_absolute_difference_e": 0.14734618282325207
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07189745014350923,
+          "charge_MAE_e": 0.06546985234793928,
+          "max_absolute_difference_e": 0.1002595627336129
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.05704307891242092,
+          "charge_MAE_e": 0.048228386057707504,
+          "max_absolute_difference_e": 0.1079020009610366
+        }
+      }
+    },
+    {
+      "model_id": "C24_single_basal_EPX_control",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 37,
+      "formal_charge": 0,
+      "charge_sum_e": 2.498001805406602e-16,
+      "inference_seconds": 0.00036664120852947235,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 2.220446049250313e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.06286043257410741,
+          "charge_MAE_e": 0.05223871024065439,
+          "max_absolute_difference_e": 0.21497485593495835
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.14605187304791734,
+          "charge_MAE_e": 0.10413146328898719,
+          "max_absolute_difference_e": 0.40092848720983104
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.11987424906114146,
+          "charge_MAE_e": 0.08385469151144213,
+          "max_absolute_difference_e": 0.4527904547804402
+        }
+      }
+    },
+    {
+      "model_id": "C24_single_basal_EPX_control",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 37,
+      "formal_charge": 0,
+      "charge_sum_e": 5.551115123125783e-17,
+      "inference_seconds": 0.0004569757729768753,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 8.326672684688674e-17,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.06349621123886437,
+          "charge_MAE_e": 0.05210028024125843,
+          "max_absolute_difference_e": 0.21755528791798484
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.14681654821989948,
+          "charge_MAE_e": 0.10480361223112997,
+          "max_absolute_difference_e": 0.4036746506214255
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.12013420069927165,
+          "charge_MAE_e": 0.08278255516505889,
+          "max_absolute_difference_e": 0.4553708867634667
+        }
+      }
+    },
+    {
+      "model_id": "C24_single_basal_EPX_control",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 37,
+      "formal_charge": 0,
+      "charge_sum_e": -2.4452662117369073e-14,
+      "inference_seconds": 0.0004000328481197357,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 1.3322676295501878e-15,
+      "rigid_transform_max_difference_e": 2.498001805406602e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.06051422573619333,
+          "charge_MAE_e": 0.04962421920897231,
+          "max_absolute_difference_e": 0.21960410965371635
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.1525175389115921,
+          "charge_MAE_e": 0.11269516031193927,
+          "max_absolute_difference_e": 0.4002722802285941
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.11256411120053683,
+          "charge_MAE_e": 0.07665688513057667,
+          "max_absolute_difference_e": 0.4574197084991982
+        }
+      }
+    },
+    {
+      "model_id": "C24_EPH_edge_control",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 37,
+      "formal_charge": 0,
+      "charge_sum_e": 2.7755575615628914e-17,
+      "inference_seconds": 0.0003985986113548279,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.734723475976807e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.078395723643774,
+          "charge_MAE_e": 0.057934339906049626,
+          "max_absolute_difference_e": 0.27071094864320716
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.13531705553309076,
+          "charge_MAE_e": 0.10162644871184033,
+          "max_absolute_difference_e": 0.3166965510669589
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.1174219094085833,
+          "charge_MAE_e": 0.07604756385941278,
+          "max_absolute_difference_e": 0.44202527516794166
+        }
+      }
+    },
+    {
+      "model_id": "C24_EPH_edge_control",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 37,
+      "formal_charge": 0,
+      "charge_sum_e": 0.0,
+      "inference_seconds": 0.00043419189751148224,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 6.938893903907228e-17,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.07753605780782602,
+          "charge_MAE_e": 0.056488754653848554,
+          "max_absolute_difference_e": 0.27746671361052405
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.13817981090576248,
+          "charge_MAE_e": 0.10367546470805843,
+          "max_absolute_difference_e": 0.3234442321787715
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.11580116317117015,
+          "charge_MAE_e": 0.07339669073722192,
+          "max_absolute_difference_e": 0.44878104013525855
+        }
+      }
+    },
+    {
+      "model_id": "C24_EPH_edge_control",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 37,
+      "formal_charge": 0,
+      "charge_sum_e": -2.42861286636753e-14,
+      "inference_seconds": 0.0004038773477077484,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 1.4432899320127035e-15,
+      "rigid_transform_max_difference_e": 4.0419056990259605e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.07392224170979457,
+          "charge_MAE_e": 0.055921971105774716,
+          "max_absolute_difference_e": 0.27503062028574027
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.14080993593774868,
+          "charge_MAE_e": 0.1063059983911343,
+          "max_absolute_difference_e": 0.31623738261530954
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.11126371630800351,
+          "charge_MAE_e": 0.06930367903319305,
+          "max_absolute_difference_e": 0.44634494681047476
+        }
+      }
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 37,
+      "formal_charge": 0,
+      "charge_sum_e": -2.7755575615628914e-17,
+      "inference_seconds": 0.00044525787234306335,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.5612511283791264e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.0671150106328603,
+          "charge_MAE_e": 0.050458328886096616,
+          "max_absolute_difference_e": 0.2859001121816147
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.09421607050057454,
+          "charge_MAE_e": 0.07347539571387209,
+          "max_absolute_difference_e": 0.27723211218161475
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07336163005833245,
+          "charge_MAE_e": 0.06279572678016165,
+          "max_absolute_difference_e": 0.18830011218161474
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.08478003916530372,
+          "charge_MAE_e": 0.05714101736834148,
+          "max_absolute_difference_e": 0.38225087025732885
+        }
+      }
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 37,
+      "formal_charge": 0,
+      "charge_sum_e": 5.551115123125783e-17,
+      "inference_seconds": 0.0004801526665687561,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.1102230246251565e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.07014706299895711,
+          "charge_MAE_e": 0.05124149953353154,
+          "max_absolute_difference_e": 0.30693014217332615
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.09757357850252295,
+          "charge_MAE_e": 0.0751354661189822,
+          "max_absolute_difference_e": 0.2982621421733262
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07470379255922933,
+          "charge_MAE_e": 0.06340342221637767,
+          "max_absolute_difference_e": 0.20933014217332618
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.08557460633744107,
+          "charge_MAE_e": 0.05493762541334675,
+          "max_absolute_difference_e": 0.4032809002490403
+        }
+      }
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 37,
+      "formal_charge": 0,
+      "charge_sum_e": -2.453592884421596e-14,
+      "inference_seconds": 0.0004304759204387665,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 1.5265566588595902e-15,
+      "rigid_transform_max_difference_e": 3.5388358909926865e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.06753020198566796,
+          "charge_MAE_e": 0.05005644274385949,
+          "max_absolute_difference_e": 0.29029030998107186
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.09707554980530776,
+          "charge_MAE_e": 0.07668466160421543,
+          "max_absolute_difference_e": 0.2816223099810719
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07305262877901217,
+          "charge_MAE_e": 0.06265918919738662,
+          "max_absolute_difference_e": 0.1926903099810719
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.08197608853866745,
+          "charge_MAE_e": 0.05103392552434547,
+          "max_absolute_difference_e": 0.386641068056786
+        }
+      }
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 40,
+      "formal_charge": 0,
+      "charge_sum_e": -2.220446049250313e-16,
+      "inference_seconds": 0.0004372280091047287,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 4.163336342344337e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.052249294774593065,
+          "charge_MAE_e": 0.046702686538274495,
+          "max_absolute_difference_e": 0.10454297064975382
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.10197168641319784,
+          "charge_MAE_e": 0.07388817370694627,
+          "max_absolute_difference_e": 0.2697289468566088
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.06400660054391952,
+          "charge_MAE_e": 0.054966126177476204,
+          "max_absolute_difference_e": 0.11078082248528331
+        }
+      }
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 40,
+      "formal_charge": 0,
+      "charge_sum_e": 2.220446049250313e-16,
+      "inference_seconds": 0.00039418041706085205,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.1102230246251565e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.053799562905325164,
+          "charge_MAE_e": 0.0478428963538715,
+          "max_absolute_difference_e": 0.11248308752072611
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.10211805512811346,
+          "charge_MAE_e": 0.07441629179326359,
+          "max_absolute_difference_e": 0.26046981370178984
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.06333572869238682,
+          "charge_MAE_e": 0.05373697452987351,
+          "max_absolute_difference_e": 0.10670025508203476
+        }
+      }
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 40,
+      "formal_charge": 0,
+      "charge_sum_e": -1.1324274851176597e-14,
+      "inference_seconds": 0.0004890765994787216,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 3.2612801348363973e-16,
+      "rigid_transform_max_difference_e": 3.469446951953614e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.052702938842603304,
+          "charge_MAE_e": 0.0465458023574253,
+          "max_absolute_difference_e": 0.09536582556081508
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.10910968097596503,
+          "charge_MAE_e": 0.07726883786503928,
+          "max_absolute_difference_e": 0.3178862035157957
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.061109734619918164,
+          "charge_MAE_e": 0.05069917525988231,
+          "max_absolute_difference_e": 0.11629908914443765
+        }
+      }
+    },
+    {
+      "model_id": "C24_OH_OH_far_trans",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 40,
+      "formal_charge": 0,
+      "charge_sum_e": -2.220446049250313e-16,
+      "inference_seconds": 0.0005622468888759613,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.6653345369377348e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.05166254003886587,
+          "charge_MAE_e": 0.04590215044895013,
+          "max_absolute_difference_e": 0.08918097262531899
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.12868746076026932,
+          "charge_MAE_e": 0.07505577014067222,
+          "max_absolute_difference_e": 0.48103009781352246
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07528771812931556,
+          "charge_MAE_e": 0.06560085386289774,
+          "max_absolute_difference_e": 0.15238097262531902
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.08291428433645906,
+          "charge_MAE_e": 0.06379337730625013,
+          "max_absolute_difference_e": 0.17401800759001507
+        }
+      }
+    },
+    {
+      "model_id": "C24_OH_OH_far_trans",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 40,
+      "formal_charge": 0,
+      "charge_sum_e": -2.220446049250313e-16,
+      "inference_seconds": 0.0006186738610267639,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 8.326672684688674e-17,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.05563346175122494,
+          "charge_MAE_e": 0.05022820214206142,
+          "max_absolute_difference_e": 0.11208703868484549
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.12835287165174014,
+          "charge_MAE_e": 0.07996762016232316,
+          "max_absolute_difference_e": 0.4655407941781517
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07988198141641817,
+          "charge_MAE_e": 0.0691799156933303,
+          "max_absolute_difference_e": 0.17528703868484552
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.08366041414843678,
+          "charge_MAE_e": 0.06428255478257676,
+          "max_absolute_difference_e": 0.174420501754891
+        }
+      }
+    },
+    {
+      "model_id": "C24_OH_OH_far_trans",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 40,
+      "formal_charge": 0,
+      "charge_sum_e": -1.1324274851176597e-14,
+      "inference_seconds": 0.0006546676158905029,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 7.216449660063518e-16,
+      "rigid_transform_max_difference_e": 2.498001805406602e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.04973994095184102,
+          "charge_MAE_e": 0.0436961097630014,
+          "max_absolute_difference_e": 0.08170246181805141
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.1408616970354065,
+          "charge_MAE_e": 0.08233732109161015,
+          "max_absolute_difference_e": 0.5292025703582586
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.07321232931700082,
+          "charge_MAE_e": 0.06257977794006371,
+          "max_absolute_difference_e": 0.14490246181805144
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.0814051694093718,
+          "charge_MAE_e": 0.06273363646006104,
+          "max_absolute_difference_e": 0.17161746088154423
+        }
+      }
+    },
+    {
+      "model_id": "C24_EPX_EPX_near_trans",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 38,
+      "formal_charge": 0,
+      "charge_sum_e": -5.551115123125783e-17,
+      "inference_seconds": 0.000621085986495018,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 2.220446049250313e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.07567935858853901,
+          "charge_MAE_e": 0.061801602507774604,
+          "max_absolute_difference_e": 0.2188475883709552
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.18165621467514498,
+          "charge_MAE_e": 0.14731708863615056,
+          "max_absolute_difference_e": 0.3875470682218277
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.09959927300300866,
+          "charge_MAE_e": 0.08585100489278663,
+          "max_absolute_difference_e": 0.24424758837095517
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.15194673981317533,
+          "charge_MAE_e": 0.11348650329306303,
+          "max_absolute_difference_e": 0.42321493811479827
+        }
+      }
+    },
+    {
+      "model_id": "C24_EPX_EPX_near_trans",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 38,
+      "formal_charge": 0,
+      "charge_sum_e": 1.3877787807814457e-16,
+      "inference_seconds": 0.0005884207785129547,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 2.7755575615628914e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.07601145294768032,
+          "charge_MAE_e": 0.06202146801916459,
+          "max_absolute_difference_e": 0.21770204951810634
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.18295868022568115,
+          "charge_MAE_e": 0.1481004697535841,
+          "max_absolute_difference_e": 0.3927248742625992
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.09989142684689477,
+          "charge_MAE_e": 0.08573682466055466,
+          "max_absolute_difference_e": 0.24310204951810632
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.1521736046513062,
+          "charge_MAE_e": 0.11363332650745941,
+          "max_absolute_difference_e": 0.42206941354045446
+        }
+      }
+    },
+    {
+      "model_id": "C24_EPX_EPX_near_trans",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 38,
+      "formal_charge": 0,
+      "charge_sum_e": -1.1268763699945339e-14,
+      "inference_seconds": 0.0005266908556222916,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 7.494005416219807e-16,
+      "rigid_transform_max_difference_e": 2.3592239273284576e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.07050175873610619,
+          "charge_MAE_e": 0.05494225351382056,
+          "max_absolute_difference_e": 0.2218017494802802
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.18615045910364345,
+          "charge_MAE_e": 0.15146328379801313,
+          "max_absolute_difference_e": 0.3872370718488422
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.09575810757902292,
+          "charge_MAE_e": 0.08529895140815592,
+          "max_absolute_difference_e": 0.24720174948028018
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.14249513373411424,
+          "charge_MAE_e": 0.10701011992036512,
+          "max_absolute_difference_e": 0.42616909922412327
+        }
+      }
+    },
+    {
+      "model_id": "C24_OH_EPX_near_trans",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 41,
+      "formal_charge": 0,
+      "charge_sum_e": -5.551115123125783e-17,
+      "inference_seconds": 0.00046964362263679504,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 6.106226635438361e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.06691929193250931,
+          "charge_MAE_e": 0.056354966285888916,
+          "max_absolute_difference_e": 0.2202691720652925
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.17635453853586833,
+          "charge_MAE_e": 0.1330940698706862,
+          "max_absolute_difference_e": 0.4966731384318159
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.09231937896882039,
+          "charge_MAE_e": 0.08239804974230364,
+          "max_absolute_difference_e": 0.24066917206529248
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.11874267421590812,
+          "charge_MAE_e": 0.07635110654364892,
+          "max_absolute_difference_e": 0.4632131098437654
+        }
+      }
+    },
+    {
+      "model_id": "C24_OH_EPX_near_trans",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 41,
+      "formal_charge": 0,
+      "charge_sum_e": -2.220446049250313e-16,
+      "inference_seconds": 0.0005722120404243469,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 9.020562075079397e-17,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.06731996161833662,
+          "charge_MAE_e": 0.05744157002287432,
+          "max_absolute_difference_e": 0.21783685648866624
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.17353446300248807,
+          "charge_MAE_e": 0.13101966751231456,
+          "max_absolute_difference_e": 0.48095127631931694
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.09326524051015944,
+          "charge_MAE_e": 0.08294076783778438,
+          "max_absolute_difference_e": 0.23823685648866622
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.11936449887922715,
+          "charge_MAE_e": 0.07681361009415097,
+          "max_absolute_difference_e": 0.46078079426713914
+        }
+      }
+    },
+    {
+      "model_id": "C24_OH_EPX_near_trans",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 41,
+      "formal_charge": 0,
+      "charge_sum_e": -2.0317081350640365e-14,
+      "inference_seconds": 0.0005846191197633743,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 1.4710455076283324e-15,
+      "rigid_transform_max_difference_e": 3.3306690738754696e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.06418491775932791,
+          "charge_MAE_e": 0.052228630570295725,
+          "max_absolute_difference_e": 0.2247717669025181
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.18058685378771597,
+          "charge_MAE_e": 0.13630957463483756,
+          "max_absolute_difference_e": 0.5620370424729859
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.08946293579383052,
+          "charge_MAE_e": 0.08098659533414591,
+          "max_absolute_difference_e": 0.24517176690251807
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.11191532511708412,
+          "charge_MAE_e": 0.07325454287244028,
+          "max_absolute_difference_e": 0.467715704680991
+        }
+      }
+    },
+    {
+      "model_id": "C24_OH_EPX_far_trans",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 41,
+      "formal_charge": 0,
+      "charge_sum_e": 1.6653345369377348e-16,
+      "inference_seconds": 0.0005043353885412216,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 2.671474153004283e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.06927227666219857,
+          "charge_MAE_e": 0.061086229657236965,
+          "max_absolute_difference_e": 0.21404394049198172
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.15339609813789434,
+          "charge_MAE_e": 0.09739095388143004,
+          "max_absolute_difference_e": 0.5254608694965939
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.08967881252596806,
+          "charge_MAE_e": 0.07988242710760808,
+          "max_absolute_difference_e": 0.2294439404919817
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.12487163323831865,
+          "charge_MAE_e": 0.07944588874017654,
+          "max_absolute_difference_e": 0.4581081177666857
+        }
+      }
+    },
+    {
+      "model_id": "C24_OH_EPX_far_trans",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 41,
+      "formal_charge": 0,
+      "charge_sum_e": -5.551115123125783e-17,
+      "inference_seconds": 0.0005162861198186874,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.0408340855860843e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.07035747782739003,
+          "charge_MAE_e": 0.06210986902259662,
+          "max_absolute_difference_e": 0.2177065468623044
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.15404175709675408,
+          "charge_MAE_e": 0.09816818710293893,
+          "max_absolute_difference_e": 0.512794366950967
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.09098744740731218,
+          "charge_MAE_e": 0.0808838332070736,
+          "max_absolute_difference_e": 0.23310654686230436
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.12561687327370727,
+          "charge_MAE_e": 0.08050222049184472,
+          "max_absolute_difference_e": 0.46177072413700837
+        }
+      }
+    },
+    {
+      "model_id": "C24_OH_EPX_far_trans",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": true,
+      "atoms": 41,
+      "formal_charge": 0,
+      "charge_sum_e": -2.0261570199409107e-14,
+      "inference_seconds": 0.0005586426705121994,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 1.1934897514720433e-15,
+      "rigid_transform_max_difference_e": 4.371503159461554e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "current_library": {
+          "charge_RMS_difference_e": 0.06284365837861722,
+          "charge_MAE_e": 0.05141076438568374,
+          "max_absolute_difference_e": 0.21948739681428564
+        },
+        "molecular_HF_RESP": {
+          "charge_RMS_difference_e": 0.16395646735265645,
+          "charge_MAE_e": 0.10373339136294317,
+          "max_absolute_difference_e": 0.5743609452994054
+        },
+        "native_AM1_BCC": {
+          "charge_RMS_difference_e": 0.08114146128178364,
+          "charge_MAE_e": 0.07129860104333156,
+          "max_absolute_difference_e": 0.2348873968142856
+        },
+        "espaloma": {
+          "charge_RMS_difference_e": 0.11552760904771431,
+          "charge_MAE_e": 0.07501615318093148,
+          "max_absolute_difference_e": 0.4635515740889896
+        }
+      }
+    },
+    {
+      "model_id": "C54_EPX_EPX_near_trans",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": false,
+      "atoms": 74,
+      "formal_charge": 0,
+      "charge_sum_e": -2.7755575615628914e-17,
+      "inference_seconds": 0.0006641224026679993,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 2.220446049250313e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "molecular_DFT_RESP": {
+          "charge_RMS_difference_e": 0.19298644101328227,
+          "charge_MAE_e": 0.15142110192220942,
+          "max_absolute_difference_e": 0.41496850039345
+        }
+      }
+    },
+    {
+      "model_id": "C54_EPX_EPX_near_trans",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": false,
+      "atoms": 74,
+      "formal_charge": 0,
+      "charge_sum_e": 0.0,
+      "inference_seconds": 0.0005629956722259521,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.249000902703301e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "molecular_DFT_RESP": {
+          "charge_RMS_difference_e": 0.19584943053527784,
+          "charge_MAE_e": 0.1526970604243304,
+          "max_absolute_difference_e": 0.4327501137823867
+        }
+      }
+    },
+    {
+      "model_id": "C54_EPX_EPX_near_trans",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": false,
+      "atoms": 74,
+      "formal_charge": 0,
+      "charge_sum_e": 9.2148511043888e-15,
+      "inference_seconds": 0.0006443113088607788,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 1.8041124150158794e-15,
+      "rigid_transform_max_difference_e": 4.440892098500626e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "molecular_DFT_RESP": {
+          "charge_RMS_difference_e": 0.199373057278143,
+          "charge_MAE_e": 0.15676490113408215,
+          "max_absolute_difference_e": 0.4487444118490348
+        }
+      }
+    },
+    {
+      "model_id": "C54_pristine_parent_reference",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": false,
+      "atoms": 72,
+      "formal_charge": 0,
+      "charge_sum_e": -1.1102230246251565e-16,
+      "inference_seconds": 0.0005728323012590408,
+      "kekule_changed_bonds": 54,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.9081958235744878e-16,
+      "alternative_Kekule_max_difference_e": 0.007100292072126105,
+      "comparisons": {
+        "molecular_DFT_RESP": {
+          "charge_RMS_difference_e": 0.10565521736549635,
+          "charge_MAE_e": 0.0714293217807811,
+          "max_absolute_difference_e": 0.21095606965252917
+        }
+      }
+    },
+    {
+      "model_id": "C54_pristine_parent_reference",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": false,
+      "atoms": 72,
+      "formal_charge": 0,
+      "charge_sum_e": 1.1102230246251565e-16,
+      "inference_seconds": 0.0006027575582265854,
+      "kekule_changed_bonds": 54,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.3877787807814457e-16,
+      "alternative_Kekule_max_difference_e": 0.005597425246593169,
+      "comparisons": {
+        "molecular_DFT_RESP": {
+          "charge_RMS_difference_e": 0.10678345090355688,
+          "charge_MAE_e": 0.07085644080237474,
+          "max_absolute_difference_e": 0.21128143118370685
+        }
+      }
+    },
+    {
+      "model_id": "C54_pristine_parent_reference",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": false,
+      "atoms": 72,
+      "formal_charge": 0,
+      "charge_sum_e": 7.993605777301127e-15,
+      "inference_seconds": 0.0005995631217956543,
+      "kekule_changed_bonds": 54,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 1.1379786002407855e-15,
+      "rigid_transform_max_difference_e": 4.440892098500626e-16,
+      "alternative_Kekule_max_difference_e": 0.014485844482708038,
+      "comparisons": {
+        "molecular_DFT_RESP": {
+          "charge_RMS_difference_e": 0.10513534178541756,
+          "charge_MAE_e": 0.07228913173037027,
+          "max_absolute_difference_e": 0.20566641488913373
+        }
+      }
+    },
+    {
+      "model_id": "C54_single_basal_EPX_control",
+      "method": "sqe",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": false,
+      "atoms": 73,
+      "formal_charge": 0,
+      "charge_sum_e": -5.551115123125783e-17,
+      "inference_seconds": 0.0007194969803094864,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 1.7694179454963432e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "molecular_DFT_RESP": {
+          "charge_RMS_difference_e": 0.2009476302734524,
+          "charge_MAE_e": 0.14776706415559598,
+          "max_absolute_difference_e": 0.42782872037386555
+        }
+      }
+    },
+    {
+      "model_id": "C54_single_basal_EPX_control",
+      "method": "sqeq0",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": false,
+      "atoms": 73,
+      "formal_charge": 0,
+      "charge_sum_e": -8.326672684688674e-17,
+      "inference_seconds": 0.000588366761803627,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 0.0,
+      "rigid_transform_max_difference_e": 8.326672684688674e-17,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "molecular_DFT_RESP": {
+          "charge_RMS_difference_e": 0.20298133825708384,
+          "charge_MAE_e": 0.14941807584539052,
+          "max_absolute_difference_e": 0.43633735249931066
+        }
+      }
+    },
+    {
+      "model_id": "C54_single_basal_EPX_control",
+      "method": "sqeqp",
+      "status": "technical_gates_passed",
+      "primary_matched_panel": false,
+      "atoms": 73,
+      "formal_charge": 0,
+      "charge_sum_e": -2.7755575615628914e-15,
+      "inference_seconds": 0.0006192438304424286,
+      "kekule_changed_bonds": 0,
+      "native_warnings": [],
+      "repeat_max_difference_e": 0.0,
+      "permutation_max_difference_e": 1.5265566588595902e-15,
+      "rigid_transform_max_difference_e": 1.1102230246251565e-16,
+      "alternative_Kekule_max_difference_e": 0.0,
+      "comparisons": {
+        "molecular_DFT_RESP": {
+          "charge_RMS_difference_e": 0.20694422517889163,
+          "charge_MAE_e": 0.154105816674429,
+          "max_absolute_difference_e": 0.4462735171077734
+        }
+      }
+    }
+  ],
+  "parameters_refitted": false,
+  "parameter_target": "Published B3LYP/6-311G NPA; not our HF-RESP target",
+  "library_used_to_initialize_SQE": false,
+  "charge_similarity_is_physical_validation": false,
+  "final_parameter_validation": false,
+  "Python_packages": {
+    "chargefw": "0.1.7",
+    "numpy": "2.4.2"
+  },
+  "inputs_SHA256": "80f180b27ac1a721d526f708d9a33f889438d58c8062bbbe4d19d4d65db5fc48",
+  "worker_SHA256": "29cd54c6192c8e65daf1908529962cd2d10a50a86b9dbf03757819d1494a802f",
+  "artifacts_SHA256": {
+    "per_atom_charges.csv": "f71edb9afd89a774d9bb2103c1bd8bbd0baa7bb07bd1a277290be3348ee8f652",
+    "per_context_role_charges.csv": "40ab4ce2527c7afbbe0f5c3b40666254c325a33843e98b2ec0aa4850c0b706c8",
+    "parameters/SQE_Schindler2021_CCD_gen.json": "708bf0d69af2c6338baec6f0ae9c3781c2f84191b2975c0345a58550c1e5d87c",
+    "parameters/SQEq0_Schindler2021_CCD_gen.json": "77eadc8173c4ccec0149654a70a952c9436bc58e8f1018725431fcaebf53d1a6",
+    "parameters/SQEqp_Schindler2021_CCD_gen.json": "69b0cfb8ef6631e79059524be981d465b48b7e24640f381e69cead3234f7256c",
+    "sqe/pyrene_pristine.native.json": "9b1c2ec5f991ad5b85860df387d76025338f1460761068d75d773695025a8645",
+    "sqe/pyrene_pristine.json": "558046d87791775c3b7e6b87e39096fb7d99e1d8edf2d57d5fb5fb564accd4a5",
+    "sqe/pyrene_diol_cis.native.json": "b4a58e9a460940cd5898387b94eba467b19c16eed2bcc34d1c5a9c85e0e6fbba",
+    "sqe/pyrene_diol_cis.json": "8eb4f5677087574d2150af0c88324e92b3ce6a29d3a3a60c8e5d07ca90f54085",
+    "sqe/pyrene_diol_trans.native.json": "bb81e904c5e2dc9bbc2a275803ceacf56c9ae421e5f260dc760807a5ae703781",
+    "sqe/pyrene_diol_trans.json": "f4713718cf5541608a6f37b0f4251337c0ff735e892b1f5fefc33c310c4d39c0",
+    "sqe/pyrene_diol_epoxide.native.json": "3a4cb8ff42d4b1e0e3b12abbcd5376bdab9316089d5cd04593458ebe6d2a3629",
+    "sqe/pyrene_diol_epoxide.json": "266b731caf2619aac40eaeacf4a7398d2438f53dc4a6e6f7cfb48219cfa61561",
+    "sqe/pyrene_dione.native.json": "f4c1064fa95aaffb7ad3b0e17b96ad033cd8d1947480144891b18a67beaa7fb1",
+    "sqe/pyrene_dione.json": "c83791270101fa7d2cfa85a3511e96195cacc1e03a1af5931f8d41d3a43ee956",
+    "sqe/pyrene_COOH.native.json": "8f03e7eeac1acafd9a8cc6a340db503febc215cb25c5d82fc763427157d5cb96",
+    "sqe/pyrene_COOH.json": "9df029969d01f0b310d5ffc2655f770c4961317876822622a5f3de6750af7299",
+    "sqe/pyrene_COO.json": "c254777e0d624c7023c0b20798888f7b631467ef9e655ce374f67851615a1007",
+    "sqe/C24_pristine_parent_reference.native.json": "d5579a69e724b19293a1eb6476eb58eaf01411fc959b5afbcabd9ea9cdcf2369",
+    "sqe/C24_pristine_parent_reference.json": "bd03841dc3d1c28c63cea2619984a0f6dfb6180e548e22e288e96427256dfff6",
+    "sqe/C24_single_basal_EPX_control.native.json": "eca4b6882c7921935a7a44b8ada142b9c3b4e7161f43feabd4a8fecc55416b98",
+    "sqe/C24_single_basal_EPX_control.json": "0c173d7c64c2c38e1fd071d6dfe53317ae7117149aa38dc02bb0695526fd774c",
+    "sqe/C24_EPH_edge_control.native.json": "dd0600cd3f36e24a741d096b5f97e0d75d54b88ce04d5dc9275ee768b265c2a0",
+    "sqe/C24_EPH_edge_control.json": "c1f9a1a7b833f95d1a91ec27378c6cd34cd888e1766b5c02b4c8cbf4b3a8be4a",
+    "sqe/C24_EPT_edge_control.native.json": "af938f31c4ee4e10500ca3db7419854b68e1642c5f63c90031fbbb7b578974df",
+    "sqe/C24_EPT_edge_control.json": "862c6370b84d91e689eed972fd7f8c16c4372884afe051aa5581221e00fa7a2d",
+    "sqe/C24_OH_OH_near_trans.native.json": "4c44156532a26e7a985660373d9eae4323e2fdbccc944e89e4826f1223898a2f",
+    "sqe/C24_OH_OH_near_trans.json": "0a76dc9105773b8cc4e13ec90157474b92d23204032f7b2475b9753e13de2e54",
+    "sqe/C24_OH_OH_far_trans.native.json": "21948ec03f435faa83f00f4f9a2c557702ac063ee349d778e3dabe1810bffe2a",
+    "sqe/C24_OH_OH_far_trans.json": "93583e661e9ece8c7f45f0ad1eed3e68d1d9023eb1d6a985b677f82a1ab94d8a",
+    "sqe/C24_EPX_EPX_near_trans.native.json": "b25c4e31f80c0c2580423b080fb9f5c26e2f346f3b1c24cd1782c1498d90e22e",
+    "sqe/C24_EPX_EPX_near_trans.json": "aa2776f23f922365a3cbf20a3cd7034f0aa87f9c47c65e02c3822e1bcf86f263",
+    "sqe/C24_OH_EPX_near_trans.native.json": "c4674ed5d0f3bf52bd61f5982d6dc4e7b175b95fec2423482b28a48b025f2586",
+    "sqe/C24_OH_EPX_near_trans.json": "a23e44cc4ab5ec837a939f25427ce8e4ca12a71292d12dc9441b72c1097736a2",
+    "sqe/C24_OH_EPX_far_trans.native.json": "8957ce770950f60f594a801662faf40cbb0754bb5e04ea6b739f748c217f3dde",
+    "sqe/C24_OH_EPX_far_trans.json": "4f2e7c02b0ac0b9d79284e25d8e0161afa9322462859dfabae1308b3ee39ac2d",
+    "sqe/C54_EPX_EPX_near_trans.native.json": "cfe3673abc24f368cbfd4a10ab8821fe222a30a05c53b8104fd6d085ecac7a13",
+    "sqe/C54_EPX_EPX_near_trans.json": "02ce8150e7c77cd6e87486a220778c7565ede08845d41b1a0cc095c08b9cdcaa",
+    "sqe/C54_pristine_parent_reference.native.json": "3f92f4853dde38ff9f9e2a87a67bd7bfef9ed78e664a4c3678ee624924cb2fdb",
+    "sqe/C54_pristine_parent_reference.json": "7db0522dfb45c54e21eb68a213270029b43c842045356d6396a9abf89a44ada3",
+    "sqe/C54_single_basal_EPX_control.native.json": "a422f84cd8582a051165c02ee6cd7b463adebd4a93477df08e0103c71b7b00ab",
+    "sqe/C54_single_basal_EPX_control.json": "271dfa9d888014f9ad4d49fb57a69fe91ff2fa0a1b244fed8f22753603d4bd65",
+    "sqeq0/pyrene_pristine.native.json": "2e4185a13a7ef74ec042f38316f740e0135c6cc0549ccaecccf7ebdf81976f12",
+    "sqeq0/pyrene_pristine.json": "5912f73b6fe5357f7c1a20fbc285932fbec306ad2a1c6333db4c6693da323aeb",
+    "sqeq0/pyrene_diol_cis.native.json": "281904c830d9cceff1ba30e9147e2da090943070d2d911c85ce81c748637ea80",
+    "sqeq0/pyrene_diol_cis.json": "3ea151fbb0ecfa87a2022c46a39d360a4d23529d68ddd592cad629e4607875f9",
+    "sqeq0/pyrene_diol_trans.native.json": "e1352796d3f36ca30fc93233be158f5f289264e64cd343bb6b53a275e77dc2cb",
+    "sqeq0/pyrene_diol_trans.json": "9b0d5b6826bc4810d169fb94a3d1b7b97f30ed6fba7550bfa0ccadf6914a7040",
+    "sqeq0/pyrene_diol_epoxide.native.json": "52a836e64bea9cd8db5d183e3afcca332b5fe6e0e8884f7523b243a9ddfccc39",
+    "sqeq0/pyrene_diol_epoxide.json": "a9f946c7c94dd6fd63ab6e36731e61dd4f112c098afb16f307bd84528f854e1d",
+    "sqeq0/pyrene_dione.native.json": "ad2d51875812605c2d1abc43b9d1e2fe1f140ac81ac090ccf48f293dc80ea744",
+    "sqeq0/pyrene_dione.json": "cfc4f2e3675fbb68624c8b78962402b1c08941878a0e062a8a55c4602c6d9a99",
+    "sqeq0/pyrene_COOH.native.json": "f2b146e1b7c77a1ce315cb4ac89de242b4fbf166cd94f2dee2176468ad9876be",
+    "sqeq0/pyrene_COOH.json": "d7e8b530cd5397d55448ac55c89f5b989a1405bbe4b017d49087a45259a4ce15",
+    "sqeq0/pyrene_COO.native.json": "074723e629aa717ec17cf9876e747d0d69e629c4f6de9eeb0c7323ccf1805a51",
+    "sqeq0/pyrene_COO.json": "5d52d6195d5592678e256070f70b0f20acdf069a6a90e1a5180c1be5f75b66bf",
+    "sqeq0/C24_pristine_parent_reference.native.json": "e6070fba0027558940e9011b579d264972d95cdb26c30173d123201a02f36d54",
+    "sqeq0/C24_pristine_parent_reference.json": "c70c66ef11926cec8f152f1a5b49943d6c4be2ab90d896d7f2bc3f81e9330e0b",
+    "sqeq0/C24_single_basal_EPX_control.native.json": "a789166349c42e73689bc04de1756044ec8a190c5e2bce1b8ffb97d1885d23ab",
+    "sqeq0/C24_single_basal_EPX_control.json": "c48540c862e9400e17466dfbb37b56e1316647b5386b7c3a44dc5b1fcfdf2fca",
+    "sqeq0/C24_EPH_edge_control.native.json": "50b2358b8b7dd13c49f67381cc820977a69e3e935ee1f2a4bb982666e72cf221",
+    "sqeq0/C24_EPH_edge_control.json": "2b35a8f69eb8f6c06a267e903c901dcdf3cb0e987612b92c6312c4bc8795c15c",
+    "sqeq0/C24_EPT_edge_control.native.json": "88517d5972baf6a646cc65f5430fa2a75c13645670bf8c0e4a371e4674d5f8f2",
+    "sqeq0/C24_EPT_edge_control.json": "817c6f83b0fe28d81443260943f15d9408cda97b3f89f5bec6270307efd0c075",
+    "sqeq0/C24_OH_OH_near_trans.native.json": "a66c666fa5cec8fd0e9d6b856ee6b06c5cf0a1de624755d7873b925ff162e1d0",
+    "sqeq0/C24_OH_OH_near_trans.json": "076088e45ac89490b4d30da9d5d9323b36bcae6558ee14f36a68bb76686caa11",
+    "sqeq0/C24_OH_OH_far_trans.native.json": "d59ec8238f548fda472d301b48322e800d99356bd610f5e34faef2af5cdc5706",
+    "sqeq0/C24_OH_OH_far_trans.json": "0b7b51e012fe5e375320592cc2313ba5223b75f9254bdba0aa3c355126838ba0",
+    "sqeq0/C24_EPX_EPX_near_trans.native.json": "f61c76ff3edf9a7d3dcdd33c70028c9b174cbce698ac839132dd0af61ccbbecb",
+    "sqeq0/C24_EPX_EPX_near_trans.json": "6f80bc3377ef814915e05385f1971bbe57d1a81d040371ce75bc1bc9ca6d45e5",
+    "sqeq0/C24_OH_EPX_near_trans.native.json": "d12626769751c70823d7e0c23f926a900e96ff104a42324cef99eff3329d4ef9",
+    "sqeq0/C24_OH_EPX_near_trans.json": "2aa59d9cd1e34109b18bb93baae5eea80472e97249a5254092a58679140d302d",
+    "sqeq0/C24_OH_EPX_far_trans.native.json": "dbe1fc95f073ceb9e5ad8f6063c2ae41b59e8b09a0585d5a2db17137712a8c1a",
+    "sqeq0/C24_OH_EPX_far_trans.json": "f2f9431ca7f16eeae883fc9d672e3f30eaff6c5a7f4e3fefec5cfd370a1d182d",
+    "sqeq0/C54_EPX_EPX_near_trans.native.json": "54f1128775ac3ea62644a790e18f51b616b5a16c23cdee24bf4f61ea22101d2e",
+    "sqeq0/C54_EPX_EPX_near_trans.json": "748ad0db57fee8c8c9a82ba231b83ed34b5622373316cb0c3037c3598f9cc0fb",
+    "sqeq0/C54_pristine_parent_reference.native.json": "ac07fcf1e116e085735a50231e5904a956a90cf1e79f7154fc78e80da2f21737",
+    "sqeq0/C54_pristine_parent_reference.json": "8d793840bccc25e38df7b21c05e1ce6bfd067f20f2fb6d5a29a44aa166b7e21f",
+    "sqeq0/C54_single_basal_EPX_control.native.json": "87f94f51f213041db904719ecb8480c47f3244c867185a19c1b36c3848f21b74",
+    "sqeq0/C54_single_basal_EPX_control.json": "2aba9378e6bffef09b09f1af3b877e325e3ad6ec12b7291c0a3c68abcf200434",
+    "sqeqp/pyrene_pristine.native.json": "c2cbf56771b0d5d8649158e33fe043c527a29c5e742a97080fa8350dd12356f0",
+    "sqeqp/pyrene_pristine.json": "0c5f26a74700dd2ba68ede1f474c7002432d1af053f07e874a13a02069130ba8",
+    "sqeqp/pyrene_diol_cis.native.json": "603cb83596f6472aba7eb02561089e6743ca34dbf3092974511cf19cc639b9bb",
+    "sqeqp/pyrene_diol_cis.json": "6b1b92781621809d392f9854acc7fbb17f27510ce3d878d0d555b4048f390627",
+    "sqeqp/pyrene_diol_trans.native.json": "fb41f485dc766bc63709cdfaea4b065171b3d4c67be81e7af8c15e324c658116",
+    "sqeqp/pyrene_diol_trans.json": "fd6580049aadafbaeb28f05fd274aacf64c6e45475893843a7bd8f02da9fd9ee",
+    "sqeqp/pyrene_diol_epoxide.native.json": "644c554c4615b479d7b407fed65acc67e9f153468e3b445facd3a2ab5e9bfa6f",
+    "sqeqp/pyrene_diol_epoxide.json": "7b596793db4ab8809268a6a5f99c8dd4163abdb96ad6555dcc9aa396367f29ed",
+    "sqeqp/pyrene_dione.native.json": "396fe62e4e88201d3904d687d9ff832a804b9f7b644035d3edd1c07b3235ff2d",
+    "sqeqp/pyrene_dione.json": "20476973f96293a65ed0f0e9f7a8884086a91397b7764f0121a48866bc6ae971",
+    "sqeqp/pyrene_COOH.native.json": "9ae688ecf485f154f337663c4e9b632cc4f2710eeeff6e6d44604b30513456bc",
+    "sqeqp/pyrene_COOH.json": "1a61bb2e1a9c1886c8a161a9f0c85194048b082a34281934d6becc09dc583572",
+    "sqeqp/pyrene_COO.native.json": "dc1824ac0dced78c1acfa4cd42e3d3ae53dabf063d77b9016ce5c976dfb549bb",
+    "sqeqp/pyrene_COO.json": "c391dfbbb108b66e448209be2c8ec3cdcca306db55e01faa7754016fe3d11a0b",
+    "sqeqp/C24_pristine_parent_reference.native.json": "e550c3f773c1d7c3290bed2750439e540d2f4670f0968017a311566a366ab3ad",
+    "sqeqp/C24_pristine_parent_reference.json": "6da03786af04afe546fb1cce9a485c7cc9f54e47b4ca5a3b01af858d729456a8",
+    "sqeqp/C24_single_basal_EPX_control.native.json": "5586b4a9ccd27183b8a41bd54a787ebd429ab1972bb2253da2b03259b0010fc7",
+    "sqeqp/C24_single_basal_EPX_control.json": "3427d870d097170e061af864e09be29d412782358813885b9ec036979519d052",
+    "sqeqp/C24_EPH_edge_control.native.json": "0b5213f6b4e3aaea435ca1a820b89cda1f5f9d7ab4f940bf78fefb5b797a0105",
+    "sqeqp/C24_EPH_edge_control.json": "ab20b95624ce898548a5b541165ab84a5e162988a1964c55cadd977c98f96508",
+    "sqeqp/C24_EPT_edge_control.native.json": "5ba8a3a191652c2165e3b1fdcb23353c5d9a00a94c35d98891cd6b265274d9d8",
+    "sqeqp/C24_EPT_edge_control.json": "4efdcafff18624f2f7a797eaae0968e8b0be1b8805380a30713265f657b2da07",
+    "sqeqp/C24_OH_OH_near_trans.native.json": "1e87fe7602a791da48f2788d9511cb66d8b66e5b57380ab5ff934d1dd01ba4ef",
+    "sqeqp/C24_OH_OH_near_trans.json": "51e9b5fe35b48f7df75e0a2e2b6b6e52f34df37867d5923aed83fa31d7b17b5d",
+    "sqeqp/C24_OH_OH_far_trans.native.json": "d38164a2d0eff483f4616ebc51eed0a057460ba093d9b951b7aec718a3470d4a",
+    "sqeqp/C24_OH_OH_far_trans.json": "b4f80e1523dfdedf3716a864fe35244a2c4875cd72f8d95526f8e334bfc40abd",
+    "sqeqp/C24_EPX_EPX_near_trans.native.json": "e0565384f45cb112ff2e1b6eb3523df117793856c6bea5f7876bc76c50d0e8aa",
+    "sqeqp/C24_EPX_EPX_near_trans.json": "4ff4196dd4ca0562ed8991d5c8aa4b66a577372fa3b87dd0a891af29aa8654a5",
+    "sqeqp/C24_OH_EPX_near_trans.native.json": "0287ed3ed6f93f12b42f6102fea3a41950118e67d22ad0d6def830f6c4d12baf",
+    "sqeqp/C24_OH_EPX_near_trans.json": "6c1382e0f483aacaabcf0d2f6edfa7f00526b130c6ccd72125124e7f71d0c9db",
+    "sqeqp/C24_OH_EPX_far_trans.native.json": "8ec22988201f33de56bca7d8a48865bdb0a3567733ce7f506872991cf44574ea",
+    "sqeqp/C24_OH_EPX_far_trans.json": "26d3122f936a50dd21202907bd5f886b07273dfe76b08a32bae6d631f453e62a",
+    "sqeqp/C54_EPX_EPX_near_trans.native.json": "cc9c4b4254226bb65ef1aef01c436dea038109bf150991825978a4caba4dff2b",
+    "sqeqp/C54_EPX_EPX_near_trans.json": "4a5d8fd4dd7aace7e36b7c42e7b4bac6553d1f88143d5b561bd789891b016408",
+    "sqeqp/C54_pristine_parent_reference.native.json": "24a3ffcf94934515ce553ab0d958fa1fc7b9a09044252dd7c8af997409eabc10",
+    "sqeqp/C54_pristine_parent_reference.json": "a90fef7e986e7b759e164e4eba72c90b1ae7edda2f090d1c64fde743df1145fe",
+    "sqeqp/C54_single_basal_EPX_control.native.json": "37a67bb755a8cc79983a8c7416a17bc6ef177007bbe563afd8fe4cda17c3a4c8",
+    "sqeqp/C54_single_basal_EPX_control.json": "4c8a719912ae75ddc47613ad2abb16f28655c481f7a06310a204d3ab47162041"
+  }
+}

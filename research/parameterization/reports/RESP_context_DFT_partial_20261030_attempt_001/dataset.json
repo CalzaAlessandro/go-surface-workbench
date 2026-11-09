@@ -1,0 +1,22 @@
+[
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/dft_resp_completed_snapshot_attempt_001/pyrene_pristine/fit/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/dft_resp_completed_snapshot_attempt_001/pyrene_pristine/fit/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/dft_resp_completed_snapshot_attempt_001/pyrene_pristine/fit/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/dft_resp_completed_snapshot_attempt_001/pyrene_diol_cis/fit/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/dft_resp_completed_snapshot_attempt_001/pyrene_diol_cis/fit/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/dft_resp_completed_snapshot_attempt_001/pyrene_diol_cis/fit/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/dft_resp_completed_snapshot_attempt_001/pyrene_diol_trans/fit/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/dft_resp_completed_snapshot_attempt_001/pyrene_diol_trans/fit/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/dft_resp_completed_snapshot_attempt_001/pyrene_diol_trans/fit/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/dft_resp_completed_snapshot_attempt_001/pyrene_dione/fit/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/dft_resp_completed_snapshot_attempt_001/pyrene_dione/fit/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/GO_PARAMETERIZATION/calculations/dft_resp_completed_snapshot_attempt_001/pyrene_dione/fit/FIT_COMPLETE.json"
+  }
+]

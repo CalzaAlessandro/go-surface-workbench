@@ -1,0 +1,447 @@
+{
+  "summary": {
+    "model_id": "C24_OH_OH_near_trans",
+    "status": "technical_gates_passed",
+    "atoms": 40,
+    "formal_charge": 0,
+    "Espaloma_charge_sum_e": 2.60770320892334e-08,
+    "repeat_max_difference_e": 0.0,
+    "permutation_max_difference_e": 1.4901161193847656e-08,
+    "inference_seconds": 0.004537517204880714,
+    "native_BCC_primary_available": false,
+    "native_BCC_exclusion": {
+      "reason": "BCC parameter missing for native types 12-16-2",
+      "candidate_available": false,
+      "missing_parameters_not_imputed": true
+    },
+    "comparisons": {
+      "espaloma__current_library": {
+        "charge_RMS_difference_e": 0.07468891800778152,
+        "charge_MAE_e": 0.06407837763801216,
+        "max_absolute_difference_e": 0.16032347679138184
+      },
+      "espaloma__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.13419019019636413,
+        "charge_MAE_e": 0.098523895765239,
+        "max_absolute_difference_e": 0.3256910906534195
+      },
+      "current_library__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.12078282915712814,
+        "charge_MAE_e": 0.086429,
+        "max_absolute_difference_e": 0.319473
+      }
+    },
+    "canonical_isomeric_SMILES": "[H]O[C@]12C3=C([H])C([H])=C4C([H])=C([H])c5c([H])c([H])c6c([H])c([H])c7c([H])c([H])c(c1c7c6c5[C@]42O[H])C([H])=C3[H]",
+    "stereo_metadata_discrepancies": [],
+    "stereochemical_validation_claimed": false,
+    "final_parameter_validation": false
+  },
+  "atoms": [
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 1,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.31032347679138184,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.266539,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 2,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.19429878890514374,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.253194,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 3,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.11856630444526672,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.188211,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 4,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.046536885201931,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.217511,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 5,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.0984383225440979,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.275332,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 6,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.03528689593076706,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.052755,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 7,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.11697034537792206,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.167884,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 8,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.07835093885660172,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.221891,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 9,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.2532137930393219,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.201965,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 10,
+      "element": "C",
+      "role": "hydroxyl_C",
+      "espaloma_charge_e": 0.24378196895122528,
+      "current_library_charge_e": 0.25,
+      "molecular_HF_RESP_charge_e": 0.569473,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 11,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.04245675727725029,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.042232,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 12,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.13289234042167664,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.248473,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 13,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.2532137930393219,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.201965,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 14,
+      "element": "C",
+      "role": "hydroxyl_C",
+      "espaloma_charge_e": 0.2437819093465805,
+      "current_library_charge_e": 0.25,
+      "molecular_HF_RESP_charge_e": 0.569473,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 15,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.04245675727725029,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.042232,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 16,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.13289234042167664,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.248473,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 17,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.03528687357902527,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.052755,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 18,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.11697036027908325,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.167884,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 19,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.07835093140602112,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.221891,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 20,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.1185663640499115,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.188211,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 21,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.046536970883607864,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.217511,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 22,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.0984383076429367,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.275332,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 23,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.31032347679138184,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.266539,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 24,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.19429875910282135,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.253194,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 25,
+      "element": "O",
+      "role": "hydroxyl_O",
+      "espaloma_charge_e": -0.6471278667449951,
+      "current_library_charge_e": -0.64,
+      "molecular_HF_RESP_charge_e": -0.707705,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 26,
+      "element": "O",
+      "role": "hydroxyl_O",
+      "espaloma_charge_e": -0.6471277475357056,
+      "current_library_charge_e": -0.64,
+      "molecular_HF_RESP_charge_e": -0.707705,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 27,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.2484576255083084,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.157171,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 28,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.23754030466079712,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.170982,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 29,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.2112835943698883,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.151191,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 30,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.23933403193950653,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.173736,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 31,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.21840736269950867,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.16974,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 32,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.2424446940422058,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.16123,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 33,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.21840737760066986,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.16974,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 34,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.2424446940422058,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.16123,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 35,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.2112836092710495,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.151191,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 36,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.23933403193950653,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.173736,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 37,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.24845758080482483,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.157171,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 38,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.23754028975963593,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.170982,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 39,
+      "element": "H",
+      "role": "hydroxyl_H",
+      "espaloma_charge_e": 0.43321317434310913,
+      "current_library_charge_e": 0.39,
+      "molecular_HF_RESP_charge_e": 0.411365,
+      "native_AM1_BCC_charge_e": null
+    },
+    {
+      "model_id": "C24_OH_OH_near_trans",
+      "atom_id": 40,
+      "element": "H",
+      "role": "hydroxyl_H",
+      "espaloma_charge_e": 0.43321317434310913,
+      "current_library_charge_e": 0.39,
+      "molecular_HF_RESP_charge_e": 0.411365,
+      "native_AM1_BCC_charge_e": null
+    }
+  ],
+  "source_SHA256": {
+    "PARAMETERIZATION/calculations/am1_bcc_native_snapshot_20261103_attempt_001/C24_OH_OH_near_trans/model.json": "7d2ae7a26d628300886b9b04d3727e068b1f983c3f92dc0e28fef18bd47c6e55",
+    "PARAMETERIZATION/calculations/am1_bcc_native_snapshot_20261103_attempt_001/C24_OH_OH_near_trans/am1_bcc.mol2": "ba235b2418134758f8afa2ec0d026b05f4f817f666bf464762ed6cd6a1ee7b7f",
+    "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_near_trans/HF/charges.json": "9898ce53ad9c24ccb6a1b08562e02eeea63509732c63e2b9d87409a77661945e",
+    "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_near_trans/HF/FIT_COMPLETE.json": "3c93d39714f750ad457763d3d83095270cfe2df024b861005abfd3c0d0e90170"
+  }
+}

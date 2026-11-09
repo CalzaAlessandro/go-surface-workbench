@@ -1,0 +1,2 @@
+source,center_type_third,outer_types_multiset,ordered_signatures,lines,coefficient_conflict,scope
+Hoshin_original_GAFF,ca,"[""c3"",""c3"",""ca""]","[""c3-c3-ca-ca"",""c3-ca-ca-c3"",""ca-c3-ca-c3""]","[68,70,71]",False,candidate outer permutations only; topology/loader semantics must be checked

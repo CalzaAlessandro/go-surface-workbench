@@ -1,0 +1,93 @@
+{
+  "separate_from_original_35_contexts": true,
+  "paired_HF_DFT": false,
+  "L0_baseline_holdout": false,
+  "raw_molecular_RESP_unprojected": true,
+  "source_artifact_hash_gates": [
+    {
+      "model_id": "C24_EPX3_loading_s20261308",
+      "artifact": "model.json",
+      "embedded_sha256": "271619e2549ed54f22ea084efa1980b63e14656271582b6166def5d2f943410e",
+      "actual_sha256": "271619e2549ed54f22ea084efa1980b63e14656271582b6166def5d2f943410e",
+      "match": true
+    },
+    {
+      "model_id": "C24_EPX3_loading_s20261308",
+      "artifact": "charges.json",
+      "embedded_sha256": "6dd8980d124aa1b54efb5bcd4651f5c676d51b6c887603b920f64af90e5ca17b",
+      "actual_sha256": "6dd8980d124aa1b54efb5bcd4651f5c676d51b6c887603b920f64af90e5ca17b",
+      "match": true
+    },
+    {
+      "model_id": "C24_OH2_loading_s20261304",
+      "artifact": "model.json",
+      "embedded_sha256": "16ed07dd89da61fc6f35af5cd7f181e45213b097aa02793d3d166a7971288c19",
+      "actual_sha256": "16ed07dd89da61fc6f35af5cd7f181e45213b097aa02793d3d166a7971288c19",
+      "match": true
+    },
+    {
+      "model_id": "C24_OH2_loading_s20261304",
+      "artifact": "charges.json",
+      "embedded_sha256": "3d14c03f85d24e3897202a4e8be5575d98f2856e10f203903d56da779bd8bc27",
+      "actual_sha256": "3d14c03f85d24e3897202a4e8be5575d98f2856e10f203903d56da779bd8bc27",
+      "match": true
+    }
+  ],
+  "sources": [
+    {
+      "path": "PARAMETERIZATION/calculations/expanded_resp_completed_20261105_snapshot_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/fits/attempt_001/model.json",
+      "sha256": "271619e2549ed54f22ea084efa1980b63e14656271582b6166def5d2f943410e",
+      "bytes": 20291
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/expanded_resp_completed_20261105_snapshot_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/fits/attempt_001/charges.json",
+      "sha256": "6dd8980d124aa1b54efb5bcd4651f5c676d51b6c887603b920f64af90e5ca17b",
+      "bytes": 8333
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/expanded_resp_completed_20261105_snapshot_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/fits/attempt_001/FIT_COMPLETE.json",
+      "sha256": "ea1fe7601a71c0513663d3848fb761f815a23939a83c897569ffe56b3a35ef77",
+      "bytes": 8248
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/expanded_resp_completed_20261105_snapshot_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/fits/attempt_001/model.json",
+      "sha256": "16ed07dd89da61fc6f35af5cd7f181e45213b097aa02793d3d166a7971288c19",
+      "bytes": 20017
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/expanded_resp_completed_20261105_snapshot_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/fits/attempt_001/charges.json",
+      "sha256": "3d14c03f85d24e3897202a4e8be5575d98f2856e10f203903d56da779bd8bc27",
+      "bytes": 8465
+    },
+    {
+      "path": "PARAMETERIZATION/calculations/expanded_resp_completed_20261105_snapshot_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/fits/attempt_001/FIT_COMPLETE.json",
+      "sha256": "c2c3ae078a1fa2bf6e9a3c929f2bc3bd22e7179105042d61ca09c80707bfdbfe",
+      "bytes": 8242
+    },
+    {
+      "path": "PARAMETERIZATION/reports/RESP_ASSUMPTIONS_20261105_attempt_001/build_extra_loading.py",
+      "sha256": "e342a8d22ace851444ad8d120075cd82cbbd0a656b9d8e5d4691b6e84bd3e15a",
+      "bytes": 5435
+    },
+    {
+      "path": "PARAMETERIZATION/src/go_param/context.py",
+      "sha256": "6b12261ad38743151d74a3a72e7e59a6e6a851c1b8078f3c0bf8977929e4b5d7",
+      "bytes": 24676
+    },
+    {
+      "path": "PARAMETERIZATION/src/go_param/modular.py",
+      "sha256": "5eed6ca52083daff27efddfbf93f0b18ae1bad652f1203642bec1df0c58d7ea3",
+      "bytes": 27668
+    },
+    {
+      "path": "PARAMETERIZATION/src/go_param/resp.py",
+      "sha256": "d85754ada656ec2880fb00823d3c088558fddcd3553c1a854f75e2f51c2068c2",
+      "bytes": 28038
+    },
+    {
+      "path": "PARAMETERIZATION/src/go_param/protocols.py",
+      "sha256": "ccd8cfbe26d1f4a809ed5f884014c611e94c2fc94048378c9f25af8b9ba04422",
+      "bytes": 1559
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+[
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPH_edge_control/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPH_edge_control/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPH_edge_control/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPT_edge_control/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPT_edge_control/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPT_edge_control/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPX_EPX_near_trans/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPX_EPX_near_trans/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPX_EPX_near_trans/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_far_trans/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_far_trans/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_far_trans/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_near_trans/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_near_trans/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_EPX_near_trans/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_far_trans/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_far_trans/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_far_trans/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_near_trans/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_near_trans/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_OH_OH_near_trans/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_pristine_parent_reference/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_pristine_parent_reference/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_pristine_parent_reference/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_single_basal_EPX_control/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_single_basal_EPX_control/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_single_basal_EPX_control/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COO/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COO/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COO/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COOH/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COOH/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_COOH/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_cis/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_cis/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_cis/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_epoxide/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_epoxide/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_epoxide/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_trans/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_trans/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_trans/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_dione/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_dione/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_dione/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_pristine/DFT/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_pristine/DFT/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_pristine/DFT/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/c54_recovered_results_snapshot_20261103_attempt_001/outputs/C54_EPX_EPX_near_trans/fits/attempt_001/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/c54_recovered_results_snapshot_20261103_attempt_001/outputs/C54_EPX_EPX_near_trans/fits/attempt_001/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/c54_recovered_results_snapshot_20261103_attempt_001/outputs/C54_EPX_EPX_near_trans/fits/attempt_001/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/c54_recovered_results_snapshot_20261103_attempt_001/outputs/C54_pristine_parent_reference/fits/attempt_001/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/c54_recovered_results_snapshot_20261103_attempt_001/outputs/C54_pristine_parent_reference/fits/attempt_001/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/c54_recovered_results_snapshot_20261103_attempt_001/outputs/C54_pristine_parent_reference/fits/attempt_001/FIT_COMPLETE.json"
+  },
+  {
+    "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/c54_single_results_20261103_snapshot_001/fits/attempt_001/model.json",
+    "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/c54_single_results_20261103_snapshot_001/fits/attempt_001/charges.json",
+    "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/c54_single_results_20261103_snapshot_001/fits/attempt_001/FIT_COMPLETE.json"
+  }
+]

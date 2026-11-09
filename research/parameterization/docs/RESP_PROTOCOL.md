@@ -13,11 +13,35 @@ These filenames denote actual completed Gaussian logs supplied by the caller. Th
 
 ## QM and atom identity
 
-The caller must first approve optimized geometry, frequencies, and the HF wavefunction stability check. A standalone ESP calculation cannot prove these parent properties. Each supplied log must end normally, request HF/6-31G*, explicit symmetry disabling (`NoSymm` or `Symmetry=None`), and MK ESP, and agree with the model charge, multiplicity, element sequence, and stable 1-based atom IDs. The last MK atomic centers must match the last preceding Gaussian atom identity table. Declared bonds and possible new short contacts are checked with explicit C/H/O covalent-distance bounds; these checks do not constitute a reaction or electronic-structure analysis.
+The caller must first approve the parent geometry and frequency evidence and
+retain the electronic-state assessment. A standalone ESP calculation cannot
+prove these parent properties. The initial strict research branch additionally
+requires a stable wavefunction; conventional restricted-HF controls retain
+their explicit instability status rather than being silently replaced with
+UHF or DFT. See [AMBER_RESP_ACCEPTANCE.md](AMBER_RESP_ACCEPTANCE.md).
+Each supplied log must end normally, request the declared ESP method
+(HF/6-31G* by default), explicit symmetry disabling (`NoSymm` or `Symmetry=None`),
+and MK ESP, and agree with model charge, multiplicity, element sequence, and
+stable 1-based atom IDs. HF ESP on an accepted DFT geometry is supported through
+separate ESP/geometry method arguments and explicit provenance. The last MK
+atomic centers must match the last preceding Gaussian atom identity table.
+Declared bonds and possible new short contacts are checked with explicit
+C/H/O covalent-distance bounds; these checks do not constitute a reaction
+or electronic-structure analysis.
 
 All supplied geometries must have the same ordered pair distances and superpose by a proper rotation and translation within 0.00005 Å. They represent **one physical conformer**, not independent conformers. Duplicate log paths/content are rejected. Atom order remains the input contract; swaps of graph-symmetric, chemically equivalent atoms cannot be distinguished by geometry alone.
 
-`espgen` output is parsed by fixed-width I5 header fields, with exact atom/grid record counts and finite numbers. Both its native 64-column numeric records and the manual's 65-column records are supported. Atomic ESP coordinates must reproduce Gaussian MK centers after conversion from bohr to Å. Grid coordinates and potential remain in atomic units throughout the fit and independent metric calculation.
+`espgen` headers retain a fixed I5 atom field and a minimum-width point-count
+field: the latter expands beyond 99,999 points. The Python parser preserves
+the complete count, checks exact atom/grid record counts and rejects unsupported
+multipole records. Both native 64-column numeric records and the manual's
+65-column records are supported. Native RESP builds with fixed `(2i5)` input
+also need separately verified input-decoding support for expanded counts;
+a Python parser change alone does not fix the external executable. The C54
+calculation-only engine was checked against the installed pilot and retained
+every original point. Atomic ESP coordinates must reproduce Gaussian MK centers
+after conversion from bohr to Å. Grid coordinates and potential remain in atomic
+units throughout the fit and independent metric calculation.
 
 Freshly generated optimization, stability-check, and rigid MK inputs use `Symmetry=None`. The [Gaussian Symmetry documentation provided by CONFLEX](https://www.conflex.co.jp/gaussian_support/symmetry.php) distinguishes this from `NoSymm`: `NoSymm` preserves the input orientation but still attempts point-group identification, while `Symmetry=None` bypasses symmetry handling and point-group assignment entirely. This change addresses the observed Gaussian `Logic error in ASyTop` in a rounded optimized pilot geometry. It changes no coordinates, atom identities, rotations, or electronic-structure settings. Previously prepared attempt inputs and logs remain preserved; retries require new output directories. The route gates accept either explicit disabling form so earlier valid evidence remains readable. Successful numerical execution of fresh inputs must still be verified independently.
 

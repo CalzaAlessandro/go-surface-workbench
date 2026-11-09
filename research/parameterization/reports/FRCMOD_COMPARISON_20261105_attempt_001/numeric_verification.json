@@ -1,0 +1,33 @@
+{
+  "deterministic_rebuild": true,
+  "all_generator_source_hash_and_Fourier_assertions_passed": true,
+  "existing_production_parser_section_counts_agree_except_documented_NONB_fix": true,
+  "production_parser_modified": false,
+  "Hoshin_NONB_alias_recovery_rows": 5,
+  "valid_numeric_parameter_rows": 1205,
+  "incomplete_rows_preserved": 1,
+  "html_tables": 14,
+  "html_valid_local_artifact_links": 17,
+  "HTML_QA_scope": "structure and local link validation; no browser render",
+  "generator_sha256": "d77a72445c135e1dd909bdcc9e2018313e45fcce7bc358aacf7717a9e2ae3db9",
+  "verifier_sha256": "3bd015441088e1b07f652189281acdf347564f38808138a6491c8aba8f62a6ca",
+  "outputs_sha256": {
+    "numeric_aim_bonds.csv": "66d17cc8da11a228082e5c35910621d06f013527506c3ce06f11de623d631976",
+    "numeric_aim_lj.csv": "8509baf7b035fb96938eed5006616093195abdcccfd3371ee9b13cdea0818029",
+    "numeric_base_comparison.csv": "978a2eb51362d137b0e3486e63f50e6fbb99fcec7aa8a32a11b5358f5964159d",
+    "numeric_base_summary.csv": "9d978960e3ee7bc8c75516e499667c7d5f48ba905e2871e6563fd2ec8cf0089c",
+    "numeric_current_earlier_changes.csv": "2c4fdd1ccbf839069af1c883d0a9731c7e5a0bb41ca8f81d9452844d736d26f7",
+    "numeric_duplicates.csv": "bf6dedb9bb98a458fe8fa747d98f14c247e5477adcaf6a1916ae8bf558913afb",
+    "numeric_flags.csv": "83a917c68c58ff80ec0d3c3f454b16c5314f18e29034eb194b4b37c439085dee",
+    "numeric_highlights.csv": "d8b52c9fa36413f41d20787fa7ded1dd7e6166c24602219d61c70ab51fd6d6ae",
+    "numeric_improper_permutation_overlaps.csv": "e16f45f6684db4d74ad8c50af299818eff8d698508f00b4510d57bf6809bee7f",
+    "numeric_invalid_rows.csv": "2b250c03c5ef15ecf5d2ad887c69b33a1532d5c8424f529a18179d26ef459868",
+    "numeric_inventory.csv": "a20769b3f05e3eb3069dc7307b07a1e44e8e95af41572806c2a3320b0890a6de",
+    "numeric_pairwise_summary.csv": "43196cfc14070d2910f58634247c811fab8dc9f01a7b00887ac0f35bd2ff3804",
+    "numeric_pairwise_terms.csv": "c9762ffdce1db41a1ffbc920a9a90ba227e65c08fe1639cd9713393efa92eb9d",
+    "numeric_qm_priorities.csv": "ca8e11381a1ff56e67c2bea0962a218751f1ed9518c2f6ed0bdb4b1b0bebd2af",
+    "numeric_terms.csv": "12b6b9c672311f8f9b360e03845ccf5d3a3c2d2a53e9c16b5484a5a487f06269",
+    "numeric_report.html": "e573d268ba391c5b6f5f4e17afe8b6b6f81527c3566d3dbd4f83f933e3bc4de0",
+    "numeric_summary.json": "0dd7cdb61816a348fc7d6cf9510e285a15995e8e2f2b44b9257c90a3a7e94dd4"
+  }
+}

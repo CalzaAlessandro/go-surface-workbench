@@ -1,0 +1,846 @@
+{
+  "accepted": false,
+  "issues": [
+    "stability_not_confirmed"
+  ],
+  "manual_review_required": false,
+  "model_id": "pyrene_pristine",
+  "normal_terminations": 3,
+  "error_lines": [],
+  "optimization_completed": true,
+  "final_hf_energy_hartree": -611.76795709,
+  "frequencies_cm1": [
+    106.4879,
+    167.2648,
+    234.8534,
+    274.6573,
+    285.7063,
+    381.9639,
+    437.3629,
+    438.5516,
+    492.8457,
+    540.9018,
+    541.3223,
+    543.2645,
+    564.3241,
+    585.7447,
+    586.709,
+    631.3811,
+    636.6607,
+    751.0836,
+    751.289,
+    788.7792,
+    800.1672,
+    845.7602,
+    869.5217,
+    871.7472,
+    895.7047,
+    903.1023,
+    920.462,
+    951.8846,
+    1019.6355,
+    1026.1471,
+    1031.907,
+    1092.2599,
+    1099.051,
+    1105.9501,
+    1110.7396,
+    1118.4186,
+    1150.9373,
+    1174.7038,
+    1199.3883,
+    1202.4622,
+    1270.2369,
+    1289.2988,
+    1303.4276,
+    1324.4257,
+    1347.0911,
+    1362.464,
+    1366.6948,
+    1376.9634,
+    1434.7348,
+    1450.9072,
+    1549.9994,
+    1561.6569,
+    1595.8023,
+    1598.392,
+    1603.3541,
+    1672.2299,
+    1679.0568,
+    1753.3809,
+    1795.685,
+    1796.2142,
+    1815.2536,
+    1852.8396,
+    3351.418,
+    3353.039,
+    3353.5077,
+    3355.7011,
+    3362.7139,
+    3364.323,
+    3375.554,
+    3376.1919,
+    3382.3456,
+    3383.3362
+  ],
+  "wavefunction_stable": false,
+  "charge_multiplicity_records": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "final_orientation": {
+    "kind": "Input",
+    "line_number": 244046,
+    "atoms": [
+      {
+        "center_number": 1,
+        "atomic_number": 6,
+        "position": [
+          -3.141594,
+          0.596367,
+          1.776952
+        ]
+      },
+      {
+        "center_number": 2,
+        "atomic_number": 6,
+        "position": [
+          -2.869575,
+          -0.544718,
+          1.042491
+        ]
+      },
+      {
+        "center_number": 3,
+        "atomic_number": 6,
+        "position": [
+          -1.756086,
+          -0.602441,
+          0.210275
+        ]
+      },
+      {
+        "center_number": 4,
+        "atomic_number": 6,
+        "position": [
+          -1.438718,
+          -1.776264,
+          -0.572401
+        ]
+      },
+      {
+        "center_number": 5,
+        "atomic_number": 6,
+        "position": [
+          -0.362291,
+          -1.813449,
+          -1.368144
+        ]
+      },
+      {
+        "center_number": 6,
+        "atomic_number": 6,
+        "position": [
+          0.530552,
+          -0.681433,
+          -1.480109
+        ]
+      },
+      {
+        "center_number": 7,
+        "atomic_number": 6,
+        "position": [
+          1.653571,
+          -0.70097,
+          -2.301219
+        ]
+      },
+      {
+        "center_number": 8,
+        "atomic_number": 6,
+        "position": [
+          2.485638,
+          0.401974,
+          -2.382947
+        ]
+      },
+      {
+        "center_number": 9,
+        "atomic_number": 6,
+        "position": [
+          2.213619,
+          1.54306,
+          -1.648487
+        ]
+      },
+      {
+        "center_number": 10,
+        "atomic_number": 6,
+        "position": [
+          1.100131,
+          1.600782,
+          -0.81627
+        ]
+      },
+      {
+        "center_number": 11,
+        "atomic_number": 6,
+        "position": [
+          0.782762,
+          2.774605,
+          -0.033594
+        ]
+      },
+      {
+        "center_number": 12,
+        "atomic_number": 6,
+        "position": [
+          -0.293665,
+          2.811791,
+          0.762149
+        ]
+      },
+      {
+        "center_number": 13,
+        "atomic_number": 6,
+        "position": [
+          -1.186507,
+          1.679774,
+          0.874114
+        ]
+      },
+      {
+        "center_number": 14,
+        "atomic_number": 6,
+        "position": [
+          -2.309526,
+          1.699312,
+          1.695223
+        ]
+      },
+      {
+        "center_number": 15,
+        "atomic_number": 6,
+        "position": [
+          -0.903724,
+          0.51906,
+          0.12262
+        ]
+      },
+      {
+        "center_number": 16,
+        "atomic_number": 6,
+        "position": [
+          0.247769,
+          0.479281,
+          -0.728615
+        ]
+      },
+      {
+        "center_number": 17,
+        "atomic_number": 1,
+        "position": [
+          -4.005964,
+          0.626227,
+          2.415933
+        ]
+      },
+      {
+        "center_number": 18,
+        "atomic_number": 1,
+        "position": [
+          -3.522315,
+          -1.397095,
+          1.112668
+        ]
+      },
+      {
+        "center_number": 19,
+        "atomic_number": 1,
+        "position": [
+          -2.092881,
+          -2.627323,
+          -0.500575
+        ]
+      },
+      {
+        "center_number": 20,
+        "atomic_number": 1,
+        "position": [
+          -0.140482,
+          -2.694769,
+          -1.943875
+        ]
+      },
+      {
+        "center_number": 21,
+        "atomic_number": 1,
+        "position": [
+          1.873329,
+          -1.583487,
+          -2.876032
+        ]
+      },
+      {
+        "center_number": 22,
+        "atomic_number": 1,
+        "position": [
+          3.350008,
+          0.372115,
+          -3.021928
+        ]
+      },
+      {
+        "center_number": 23,
+        "atomic_number": 1,
+        "position": [
+          2.86636,
+          2.395436,
+          -1.718663
+        ]
+      },
+      {
+        "center_number": 24,
+        "atomic_number": 1,
+        "position": [
+          1.436925,
+          3.625665,
+          -0.10542
+        ]
+      },
+      {
+        "center_number": 25,
+        "atomic_number": 1,
+        "position": [
+          -0.515473,
+          3.69311,
+          1.33788
+        ]
+      },
+      {
+        "center_number": 26,
+        "atomic_number": 1,
+        "position": [
+          -2.529284,
+          2.581829,
+          2.270037
+        ]
+      }
+    ],
+    "parse_error": false
+  },
+  "optimized_atoms": [
+    {
+      "id": 1,
+      "name": "C1",
+      "element": "C",
+      "position": [
+        -3.141594,
+        0.596367,
+        1.776952
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 10,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 2,
+      "name": "C2",
+      "element": "C",
+      "position": [
+        -2.869575,
+        -0.544718,
+        1.042491
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 12,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 3,
+      "name": "C3",
+      "element": "C",
+      "position": [
+        -1.756086,
+        -0.602441,
+        0.210275
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 20,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 4,
+      "name": "C4",
+      "element": "C",
+      "position": [
+        -1.438718,
+        -1.776264,
+        -0.572401
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 16,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 5,
+      "name": "C5",
+      "element": "C",
+      "position": [
+        -0.362291,
+        -1.813449,
+        -1.368144
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 16,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 6,
+      "name": "C6",
+      "element": "C",
+      "position": [
+        0.530552,
+        -0.681433,
+        -1.480109
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 20,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 7,
+      "name": "C7",
+      "element": "C",
+      "position": [
+        1.653571,
+        -0.70097,
+        -2.301219
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 12,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 8,
+      "name": "C8",
+      "element": "C",
+      "position": [
+        2.485638,
+        0.401974,
+        -2.382947
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 10,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 9,
+      "name": "C9",
+      "element": "C",
+      "position": [
+        2.213619,
+        1.54306,
+        -1.648487
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 12,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 10,
+      "name": "C10",
+      "element": "C",
+      "position": [
+        1.100131,
+        1.600782,
+        -0.81627
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 20,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 11,
+      "name": "C11",
+      "element": "C",
+      "position": [
+        0.782762,
+        2.774605,
+        -0.033594
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 16,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 12,
+      "name": "C12",
+      "element": "C",
+      "position": [
+        -0.293665,
+        2.811791,
+        0.762149
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 16,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 13,
+      "name": "C13",
+      "element": "C",
+      "position": [
+        -1.186507,
+        1.679774,
+        0.874114
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 20,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 14,
+      "name": "C14",
+      "element": "C",
+      "position": [
+        -2.309526,
+        1.699312,
+        1.695223
+      ],
+      "role": "edge_C",
+      "roles": [
+        "edge_C",
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 12,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 15,
+      "name": "C15",
+      "element": "C",
+      "position": [
+        -0.903724,
+        0.51906,
+        0.12262
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 24,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 16,
+      "name": "C16",
+      "element": "C",
+      "position": [
+        0.247769,
+        0.479281,
+        -0.728615
+      ],
+      "role": "scaffold_C",
+      "roles": [
+        "scaffold_C"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 24,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 17,
+      "name": "H17",
+      "element": "H",
+      "position": [
+        -4.005964,
+        0.626227,
+        2.415933
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 0,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 18,
+      "name": "H18",
+      "element": "H",
+      "position": [
+        -3.522315,
+        -1.397095,
+        1.112668
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 2,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 19,
+      "name": "H19",
+      "element": "H",
+      "position": [
+        -2.092881,
+        -2.627323,
+        -0.500575
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 6,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 20,
+      "name": "H20",
+      "element": "H",
+      "position": [
+        -0.140482,
+        -2.694769,
+        -1.943875
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 6,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 21,
+      "name": "H21",
+      "element": "H",
+      "position": [
+        1.873329,
+        -1.583487,
+        -2.876032
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 2,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 22,
+      "name": "H22",
+      "element": "H",
+      "position": [
+        3.350008,
+        0.372115,
+        -3.021928
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 0,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 23,
+      "name": "H23",
+      "element": "H",
+      "position": [
+        2.86636,
+        2.395436,
+        -1.718663
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 2,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 24,
+      "name": "H24",
+      "element": "H",
+      "position": [
+        1.436925,
+        3.625665,
+        -0.10542
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 6,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 25,
+      "name": "H25",
+      "element": "H",
+      "position": [
+        -0.515473,
+        3.69311,
+        1.33788
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 6,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    },
+    {
+      "id": 26,
+      "name": "H26",
+      "element": "H",
+      "position": [
+        -2.529284,
+        2.581829,
+        2.270037
+      ],
+      "role": "edge_H",
+      "roles": [
+        "edge_H"
+      ],
+      "formal_charge": 0,
+      "symmetry_class": 2,
+      "chiral_tag": "CHI_UNSPECIFIED",
+      "cip_code": null
+    }
+  ],
+  "topology": {
+    "passed": true,
+    "lost_bonds": [],
+    "too_short_bonds": [],
+    "novel_close_pairs": [],
+    "method": "covalent-radius distance screen; does not validate bond order",
+    "bond_min_radius_factor": 0.65,
+    "bond_max_radius_factor": 1.3,
+    "novel_pair_radius_factor": 1.2,
+    "radii_angstrom": {
+      "H": 0.31,
+      "C": 0.76,
+      "N": 0.71,
+      "O": 0.66,
+      "F": 0.57,
+      "S": 1.05,
+      "Cl": 1.02
+    }
+  },
+  "limits": [
+    "Distance screen does not validate bond order or stereochemistry.",
+    "Acceptance requires a nonlinear fragment and does not establish global-minimum sampling."
+  ],
+  "optimized_model": null
+}

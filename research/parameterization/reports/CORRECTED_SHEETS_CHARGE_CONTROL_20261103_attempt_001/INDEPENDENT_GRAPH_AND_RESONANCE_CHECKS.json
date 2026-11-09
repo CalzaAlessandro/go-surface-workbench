@@ -1,0 +1,22 @@
+[
+  {
+    "model": "GOX935",
+    "independent_bipartite_maximum_matching_pairs": 119,
+    "MILP_pairs_agree": true,
+    "unmatched_neutral_C_sites": 63,
+    "COO_formal_charge_swaps": 32,
+    "COO_bond_order_swaps": 32,
+    "all_atoms_coordinates_connectivity_and_total_charge_unchanged": true,
+    "unresolved_C_sites_unchanged_in_C": true
+  },
+  {
+    "model": "REGOX980",
+    "independent_bipartite_maximum_matching_pairs": 253,
+    "MILP_pairs_agree": true,
+    "unmatched_neutral_C_sites": 28,
+    "COO_formal_charge_swaps": 12,
+    "COO_bond_order_swaps": 12,
+    "all_atoms_coordinates_connectivity_and_total_charge_unchanged": true,
+    "unresolved_C_sites_unchanged_in_C": true
+  }
+]

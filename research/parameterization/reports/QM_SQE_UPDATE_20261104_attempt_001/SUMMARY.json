@@ -1,0 +1,36 @@
+{
+  "generated_at_utc": "2026-11-04T19:45:59.213556+00:00",
+  "physical_C24_contexts": [
+    "C24_EPX_EPX_near_trans",
+    "C24_OH_EPX_far_trans",
+    "C24_OH_EPX_near_trans",
+    "C24_OH_OH_far_trans",
+    "C24_OH_OH_near_trans",
+    "C24_pristine_parent_reference",
+    "C24_single_basal_EPX_control"
+  ],
+  "excluded_from_C16_transfer_test": [
+    {
+      "model_id": "C24_EPH_edge_control",
+      "reason": "unsupported roles absent from training: EPH_C,EPH_CH,EPH_H,EPH_O"
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "reason": "unsupported roles absent from training: EPT_C,EPT_H,EPT_O"
+    }
+  ],
+  "aggregation": "mean over three rigid HF MK orientations within each molecular context; median over seven contexts",
+  "unit_of_observation": "molecular context, not ESP rotation",
+  "median_HF_ESP_RRMS": {
+    "current_library": 0.3501246797268849,
+    "l0_hf_train_C16": 0.1791665725539285,
+    "default_C16_training": 0.23321607680123965,
+    "molecular_HF_RESP": 0.07554874957049254,
+    "default_all16_training": 0.30541734188106556
+  },
+  "all16_fit_C24_evaluation_is_in_sample": true,
+  "molecular_HF_RESP_is_fitted_in_sample_reference": true,
+  "COOH_COO_independent_transfer_validation": false,
+  "production_parameter_validation": false,
+  "fit_source_files_SHA256_verified": 15
+}

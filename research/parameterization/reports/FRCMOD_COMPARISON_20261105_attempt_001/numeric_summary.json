@@ -1,0 +1,3676 @@
+{
+  "scope": "source coefficients only, not resolved GO topology or accuracy ranking",
+  "highlights": [
+    {
+      "categoria": "differenza di coefficienti",
+      "risultato": "Current vs earlier: 17/17 BOND condivisi diversi; 38 ANGLE e 16 serie DIHE condivise diverse; una DIHE coincide alla precisione stampata; tutti i 10 LJ diversi.",
+      "limite": "Non è una classifica di accuratezza; verificare che i tipi descrivano gli stessi atomi."
+    },
+    {
+      "categoria": "provenienza numerica",
+      "risultato": "Current: tutti i 19 K di BOND coincidono esattamente con GAFF2 2.2.20; 18 lunghezze sono compatibili con il DAT arrotondato a 0.001 Å, una coincide esattamente. Tutti i 10 LJ coincidono esattamente.",
+      "limite": "La corrispondenza prova l'impronta numerica, non il caricamento storico o una validazione GO."
+    },
+    {
+      "categoria": "provenienza numerica",
+      "risultato": "Earlier GAFF2: contro GAFF1.81, 14/14 BOND con firma disponibile coincidono esattamente o alla precisione stampata (3 firme c6 assenti); 24/25 ANGLE disponibili e 9/9 LJ disponibili coincidono esattamente (c6 LJ assente).",
+      "limite": "Il nome GAFF2 non basta a dichiarare un preset GAFF2 puro. Nessuna equivalenza automatica c6→c3."
+    },
+    {
+      "categoria": "provenienza numerica",
+      "risultato": "Hoshin: contro GAFF distribuito giugno2003 coincidono tutti i 6 BOND, tutti i 5 LJ e tutte le 25 serie DIHE dopo divisione PK/IDIVF; 7/12 ANGLE coincidono alla precisione stampata, 5 differiscono.",
+      "limite": "Gli improper aggiuntivi e il typing devono essere verificati nel modello sorgente."
+    },
+    {
+      "categoria": "differenza di coefficienti",
+      "risultato": "OLD GOX e REGOX: tutte le 25 ANGLE, 56 serie DIHE e 27 IMPROPER condivise coincidono; REGOX aggiunge una ANGLE e 5 firme DIHE; nessuna MASS/BOND/LJ override in entrambi.",
+      "limite": "L'assenza di override non indica un'assenza di parametro nella base."
+    },
+    {
+      "categoria": "integrità tecnica",
+      "risultato": "36 gruppi duplicati identici sulle firme canoniche, nessun conflitto numerico in questi gruppi. Our_AMBER riga139 IMPROPER CY-CX-CX-CY è incompleta e manca dei tre coefficienti.",
+      "limite": "Non completata per analogia; l'effetto sul loader non è testato."
+    },
+    {
+      "categoria": "validazione QM mirata",
+      "risultato": "Current cx-cx-cx ha θ0=60°; c6-c2-ca passa da 125.19° a 115.29°; cx-op-cx K passa da 84.3 a119.01 kcal/(mol rad²).",
+      "limite": "Prima controllare grafo, classificazione ring e origine DAT; poi confrontare Hessiane e geometrie sullo stesso motivo."
+    },
+    {
+      "categoria": "validazione QM mirata",
+      "risultato": "OH–epossido oh-c6-cx-op: earlier ha solo PK/IDIVF=1.4/9 a n=3; current usa ampiezze 0.5,0.9,0.18 kcal/mol a n=3,2,1. cx-cx-op-cx cambia anch'essa serie completa.",
+      "limite": "Scansioni rilassate solo dopo estrazione delle torsioni effettive del prmtop; cariche/LJ/scaling coerenti."
+    },
+    {
+      "categoria": "ambito chimico",
+      "risultato": "La presenza di os/op e di legami C–O non dimostra copertura di eteri o lattoni. I lattoni sono esteri ciclici, richiedono percorsi carbonile–O–C e contesto d'anello/protonazione specifici.",
+      "limite": "Nessuna dichiarazione di lattone validato o nuovo parametro ricavato da questo audit."
+    }
+  ],
+  "source_manifest_hash": "8d9de40640d5aa96b12671bd232387bb358d0381d48f7f982341611bfb87ed98",
+  "script_sha256": "d77a72445c135e1dd909bdcc9e2018313e45fcce7bc358aacf7717a9e2ae3db9",
+  "sources": [
+    {
+      "source": "Hoshin_original_GAFF",
+      "sha256": "21b6f0991a9060e290821c5a7a88d14062ffe3066f8322568925b1f04096870a",
+      "bytes": 3227,
+      "MASS": 5,
+      "BOND": 6,
+      "ANGLE": 12,
+      "DIHE": 32,
+      "IMPROPER": 6,
+      "NONBON": 5,
+      "unique_definition_keys": 59,
+      "duplicate_groups": 0,
+      "conflicting_groups": 0,
+      "zero_DIHE_components": 8,
+      "analogy_flag_rows": 0,
+      "native_namespace": "GAFF-family lowercase; same labels do not prove same chemical role",
+      "candidate_bases": [
+        "AmberGO_GAFF_2003",
+        "system_GAFF_1.81",
+        "AmberGO_GAFF2_2.11",
+        "system_GAFF2_2.2.20"
+      ],
+      "historical_load_version": "not established by frcmod alone",
+      "invalid_or_incomplete_rows": 0,
+      "file": "parameters/comparison_sources/HOSHIN_OLD_CURRENT_20261105/Hoshin_original_GAFF.frcmod",
+      "explicit_DIHE_scaling": [
+        "{\"SCEE\": [1.2], \"SCNB\": [2.0]}"
+      ]
+    },
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "sha256": "0d519dbfba5478a610e3c88c1cd4346a9ea96034518f855a7c9c6667343722d4",
+      "bytes": 11822,
+      "MASS": 0,
+      "BOND": 0,
+      "ANGLE": 11,
+      "DIHE": 86,
+      "IMPROPER": 29,
+      "NONBON": 0,
+      "unique_definition_keys": 114,
+      "duplicate_groups": 1,
+      "conflicting_groups": 0,
+      "zero_DIHE_components": 37,
+      "analogy_flag_rows": 126,
+      "native_namespace": "GAFF-family lowercase; same labels do not prove same chemical role",
+      "candidate_bases": [
+        "AmberGO_GAFF_2003",
+        "system_GAFF_1.81",
+        "AmberGO_GAFF2_2.11",
+        "system_GAFF2_2.2.20"
+      ],
+      "historical_load_version": "not established by frcmod alone",
+      "invalid_or_incomplete_rows": 0,
+      "file": "parameters/comparison_sources/HOSHIN_OLD_CURRENT_20261105/AmberGO_Merve_GAFF2.frcmod",
+      "explicit_DIHE_scaling": [
+        "{\"status\": \"not_explicit_in_term; resolve loaded base/topology\"}"
+      ]
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "sha256": "32198b3539b265537cc4161dee4669e017c216720372b5d529521b04169efa28",
+      "bytes": 25628,
+      "MASS": 10,
+      "BOND": 19,
+      "ANGLE": 60,
+      "DIHE": 226,
+      "IMPROPER": 31,
+      "NONBON": 10,
+      "unique_definition_keys": 336,
+      "duplicate_groups": 14,
+      "conflicting_groups": 0,
+      "zero_DIHE_components": 91,
+      "analogy_flag_rows": 206,
+      "native_namespace": "GAFF-family lowercase; same labels do not prove same chemical role",
+      "candidate_bases": [
+        "AmberGO_GAFF_2003",
+        "system_GAFF_1.81",
+        "AmberGO_GAFF2_2.11",
+        "system_GAFF2_2.2.20"
+      ],
+      "historical_load_version": "not established by frcmod alone",
+      "invalid_or_incomplete_rows": 0,
+      "file": "parameters/comparison_sources/HOSHIN_OLD_CURRENT_20261105/Our_current_GAFF2.frcmod",
+      "explicit_DIHE_scaling": [
+        "{\"status\": \"not_explicit_in_term; resolve loaded base/topology\"}"
+      ]
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "sha256": "6da950e0c2d5688f49cf0d968cc45f7333abde7d6cfd04f1872b1455b21b1389",
+      "bytes": 19781,
+      "MASS": 10,
+      "BOND": 17,
+      "ANGLE": 51,
+      "DIHE": 175,
+      "IMPROPER": 17,
+      "NONBON": 10,
+      "unique_definition_keys": 265,
+      "duplicate_groups": 12,
+      "conflicting_groups": 0,
+      "zero_DIHE_components": 85,
+      "analogy_flag_rows": 181,
+      "native_namespace": "GAFF-family lowercase; same labels do not prove same chemical role",
+      "candidate_bases": [
+        "AmberGO_GAFF_2003",
+        "system_GAFF_1.81",
+        "AmberGO_GAFF2_2.11",
+        "system_GAFF2_2.2.20"
+      ],
+      "historical_load_version": "not established by frcmod alone",
+      "invalid_or_incomplete_rows": 0,
+      "file": "parameters/comparison_sources/HOSHIN_OLD_CURRENT_20261105/Our_earlier_GAFF2.frcmod",
+      "explicit_DIHE_scaling": [
+        "{\"status\": \"not_explicit_in_term; resolve loaded base/topology\"}"
+      ]
+    },
+    {
+      "source": "Our_AMBER",
+      "sha256": "f7461fbfcdd8459ae00f0f5da57a71b53b983f6be68cb4d5574ce2f6735183ae",
+      "bytes": 11353,
+      "MASS": 12,
+      "BOND": 19,
+      "ANGLE": 44,
+      "DIHE": 47,
+      "IMPROPER": 13,
+      "NONBON": 9,
+      "unique_definition_keys": 141,
+      "duplicate_groups": 2,
+      "conflicting_groups": 0,
+      "zero_DIHE_components": 0,
+      "analogy_flag_rows": 137,
+      "native_namespace": "Amber uppercase; custom legacy names",
+      "candidate_bases": [
+        "system_parm99",
+        "system_parm10"
+      ],
+      "historical_load_version": "not established by frcmod alone",
+      "invalid_or_incomplete_rows": 1,
+      "file": "parameters/comparison_sources/HOSHIN_OLD_CURRENT_20261105/Our_AMBER.frcmod",
+      "explicit_DIHE_scaling": [
+        "{\"status\": \"not_explicit_in_term; resolve loaded base/topology\"}"
+      ]
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "sha256": "e9187db500c12fb7dcc3182cda699aba58be4b58a7ee0bc574cd5c88cee17dd1",
+      "bytes": 8298,
+      "MASS": 0,
+      "BOND": 0,
+      "ANGLE": 27,
+      "DIHE": 57,
+      "IMPROPER": 27,
+      "NONBON": 0,
+      "unique_definition_keys": 108,
+      "duplicate_groups": 2,
+      "conflicting_groups": 0,
+      "zero_DIHE_components": 34,
+      "analogy_flag_rows": 106,
+      "native_namespace": "GAFF-family lowercase; same labels do not prove same chemical role",
+      "candidate_bases": [
+        "AmberGO_GAFF_2003",
+        "system_GAFF_1.81",
+        "AmberGO_GAFF2_2.11",
+        "system_GAFF2_2.2.20"
+      ],
+      "historical_load_version": "not established by frcmod alone",
+      "invalid_or_incomplete_rows": 0,
+      "file": "parameters/comparison_sources/HOSHIN_OLD_CURRENT_20261105/OLD_GOX_GAFF.frcmod",
+      "explicit_DIHE_scaling": [
+        "{\"status\": \"not_explicit_in_term; resolve loaded base/topology\"}"
+      ]
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "sha256": "43c0d3a06cb02bd2bbf135f9519d34e090e9054ed4b30863404a2a22baaccca3",
+      "bytes": 8881,
+      "MASS": 0,
+      "BOND": 0,
+      "ANGLE": 28,
+      "DIHE": 67,
+      "IMPROPER": 27,
+      "NONBON": 0,
+      "unique_definition_keys": 114,
+      "duplicate_groups": 5,
+      "conflicting_groups": 0,
+      "zero_DIHE_components": 44,
+      "analogy_flag_rows": 106,
+      "native_namespace": "GAFF-family lowercase; same labels do not prove same chemical role",
+      "candidate_bases": [
+        "AmberGO_GAFF_2003",
+        "system_GAFF_1.81",
+        "AmberGO_GAFF2_2.11",
+        "system_GAFF2_2.2.20"
+      ],
+      "historical_load_version": "not established by frcmod alone",
+      "invalid_or_incomplete_rows": 0,
+      "file": "parameters/comparison_sources/HOSHIN_OLD_CURRENT_20261105/OLD_REGOX_GAFF.frcmod",
+      "explicit_DIHE_scaling": [
+        "{\"status\": \"not_explicit_in_term; resolve loaded base/topology\"}"
+      ]
+    }
+  ],
+  "invalid_rows": [
+    {
+      "source": "Our_AMBER",
+      "section": "IMPROPER",
+      "line": 139,
+      "raw": "CY-CX-CX-CY",
+      "error": "Unparsed IMPROPER:139: CY-CX-CX-CY",
+      "status": "invalid_incomplete_parameter_not_filled"
+    }
+  ],
+  "bases": [
+    {
+      "id": "AmberGO_GAFF_2003",
+      "file": "references/go_prior_art_20261104/AmberGO_native_audit_20261104/gaff.dat",
+      "sha256": "cee6e0c1013af9a7dfe9d39ff1c6567e0c5605069767a5606697e24165cf2de3",
+      "bytes": 323402,
+      "header": "AMBER General Force Field for organic mol., add. info. at the end (June, 2003)",
+      "lj_aliases": {}
+    },
+    {
+      "id": "AmberGO_GAFF2_2.11",
+      "file": "references/go_prior_art_20261104/AmberGO_native_audit_20261104/gaff2.dat",
+      "sha256": "b9c5378cca30794dd819ba852c5691f28ba71fa1402cfefd98b7f6873175f45d",
+      "bytes": 526166,
+      "header": "AMBER General Force Field for organic molecules (Version 2.11, May 2016)",
+      "lj_aliases": {}
+    },
+    {
+      "id": "system_GAFF_1.81",
+      "file": "references/system_forcefield_sources/gaff.dat",
+      "sha256": "21ce262ab4af254c2f2b4bf95f4413c2a6593c67faa31ffc7108b7dd07a63d09",
+      "bytes": 487704,
+      "header": "AMBER General Force Field for organic molecules (Version 1.81, May 2017)",
+      "lj_aliases": {}
+    },
+    {
+      "id": "system_GAFF2_2.2.20",
+      "file": "references/system_forcefield_sources/gaff2.dat",
+      "sha256": "14ad62c8e532c47e2e400e2ca6ad8052b33bda4c4b9bc6f49b6a528e527512be",
+      "bytes": 878433,
+      "header": "AMBER General Force Field for organic molecules (Version 2.2.20, March 2021)",
+      "lj_aliases": {}
+    },
+    {
+      "id": "system_parm99",
+      "file": "references/system_forcefield_sources/parm99.dat",
+      "sha256": "3997101649f048522213c7ea1445c47e71830c5066eba2b4cc2c681a6248e198",
+      "bytes": 41916,
+      "header": "PARM99 for DNA,RNA,AA, organic molecules, Polariz.& LP incl.02/04/99",
+      "lj_aliases": {
+        "CA": "C*",
+        "CB": "C*",
+        "CC": "C*",
+        "CD": "C*",
+        "CK": "C*",
+        "CM": "C*",
+        "CN": "C*",
+        "CQ": "C*",
+        "CR": "C*",
+        "CV": "C*",
+        "CW": "C*",
+        "CY": "C*",
+        "CZ": "C*"
+      }
+    },
+    {
+      "id": "system_parm10",
+      "file": "references/system_forcefield_sources/parm10.dat",
+      "sha256": "dc0c02d28fb7ee4f04d0a5edee3cd62968ba5e9bdb69e0f728bf01d242d7d062",
+      "bytes": 58579,
+      "header": "PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA",
+      "lj_aliases": {
+        "CA": "C*",
+        "CB": "C*",
+        "CC": "C*",
+        "CD": "C*",
+        "CK": "C*",
+        "CM": "C*",
+        "CN": "C*",
+        "CQ": "C*",
+        "CR": "C*",
+        "CV": "C*",
+        "CW": "C*",
+        "CY": "C*",
+        "CZ": "C*",
+        "CP": "C*",
+        "CS": "C*"
+      }
+    }
+  ],
+  "duplicates": [
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "section": "DIHE",
+      "signature": "ca-ca-cx-ca",
+      "definitions": 2,
+      "lines": [
+        [
+          76
+        ],
+        [
+          78
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "ca-c6-ca-ca",
+      "definitions": 2,
+      "lines": [
+        [
+          105
+        ],
+        [
+          106
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "c2-ca-cx-ca",
+      "definitions": 2,
+      "lines": [
+        [
+          129
+        ],
+        [
+          130
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "c6-ca-c6-oh",
+      "definitions": 2,
+      "lines": [
+        [
+          144
+        ],
+        [
+          145
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "cx-ca-cx-op",
+      "definitions": 2,
+      "lines": [
+        [
+          151
+        ],
+        [
+          152
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "cx-ca-c6-oh",
+      "definitions": 2,
+      "lines": [
+        [
+          153
+        ],
+        [
+          154
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "cx-ca-cx-h1",
+      "definitions": 2,
+      "lines": [
+        [
+          156
+        ],
+        [
+          157
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "cx-c6-cx-cx",
+      "definitions": 2,
+      "lines": [
+        [
+          161
+        ],
+        [
+          162
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "c6-cx-ca-cx",
+      "definitions": 2,
+      "lines": [
+        [
+          164
+        ],
+        [
+          165
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "c6-c6-oh-ho",
+      "definitions": 2,
+      "lines": [
+        [
+          166
+        ],
+        [
+          168
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            3.0,
+            0.5,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            3.0,
+            0.5,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "c6-c6-cx-cx",
+      "definitions": 2,
+      "lines": [
+        [
+          171
+        ],
+        [
+          172
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "c6-c6-cx-op",
+      "definitions": 2,
+      "lines": [
+        [
+          173
+        ],
+        [
+          174
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "c6-c6-ca-c6",
+      "definitions": 2,
+      "lines": [
+        [
+          177
+        ],
+        [
+          178
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "c6-c6-c6-oh",
+      "definitions": 2,
+      "lines": [
+        [
+          180
+        ],
+        [
+          181
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "section": "DIHE",
+      "signature": "cx-c6-cx-h1",
+      "definitions": 2,
+      "lines": [
+        [
+          183
+        ],
+        [
+          184
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "signature": "c6-cx-c6-oh",
+      "definitions": 2,
+      "lines": [
+        [
+          96
+        ],
+        [
+          97
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "signature": "cx-c6-cx-h1",
+      "definitions": 2,
+      "lines": [
+        [
+          99
+        ],
+        [
+          100
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "signature": "ca-c6-ca-o",
+      "definitions": 2,
+      "lines": [
+        [
+          108
+        ],
+        [
+          110
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "signature": "ca-cx-c6-cx",
+      "definitions": 2,
+      "lines": [
+        [
+          119
+        ],
+        [
+          121
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "signature": "cx-c6-cx-op",
+      "definitions": 2,
+      "lines": [
+        [
+          127
+        ],
+        [
+          128
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "signature": "cx-c6-cx-cx",
+      "definitions": 2,
+      "lines": [
+        [
+          129
+        ],
+        [
+          130
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "signature": "cx-cx-c6-oh",
+      "definitions": 2,
+      "lines": [
+        [
+          138
+        ],
+        [
+          139
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "signature": "oh-c6-cx-op",
+      "definitions": 2,
+      "lines": [
+        [
+          140
+        ],
+        [
+          141
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "signature": "c6-c6-c6-oh",
+      "definitions": 2,
+      "lines": [
+        [
+          144
+        ],
+        [
+          145
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            9.0,
+            1.4,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "signature": "c6-c6-oh-ho",
+      "definitions": 2,
+      "lines": [
+        [
+          148
+        ],
+        [
+          149
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            3.0,
+            0.5,
+            0.0,
+            3.0
+          ]
+        ],
+        [
+          [
+            3.0,
+            0.5,
+            0.0,
+            3.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "signature": "ca-cx-ca-ha",
+      "definitions": 2,
+      "lines": [
+        [
+          170
+        ],
+        [
+          171
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "signature": "cx-ca-cx-op",
+      "definitions": 2,
+      "lines": [
+        [
+          173
+        ],
+        [
+          174
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            6.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_AMBER",
+      "section": "ANGLE",
+      "signature": "C-C-CA",
+      "definitions": 2,
+      "lines": [
+        [
+          38
+        ],
+        [
+          40
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            53.35,
+            120.02
+          ]
+        ],
+        [
+          [
+            53.35,
+            120.02
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "Our_AMBER",
+      "section": "ANGLE",
+      "signature": "HA-CA-OS",
+      "definitions": 2,
+      "lines": [
+        [
+          43
+        ],
+        [
+          44
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            69.6,
+            119.2
+          ]
+        ],
+        [
+          [
+            69.6,
+            119.2
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "section": "ANGLE",
+      "signature": "c-ca-c2",
+      "definitions": 2,
+      "lines": [
+        [
+          8
+        ],
+        [
+          11
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            64.519,
+            120.0
+          ]
+        ],
+        [
+          [
+            64.519,
+            120.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "section": "ANGLE",
+      "signature": "c-cx-c2",
+      "definitions": 2,
+      "lines": [
+        [
+          13
+        ],
+        [
+          14
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            66.489,
+            124.95
+          ]
+        ],
+        [
+          [
+            66.489,
+            124.95
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "section": "ANGLE",
+      "signature": "c-ca-c2",
+      "definitions": 2,
+      "lines": [
+        [
+          8
+        ],
+        [
+          11
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            64.519,
+            120.0
+          ]
+        ],
+        [
+          [
+            64.519,
+            120.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "section": "ANGLE",
+      "signature": "c-cx-c2",
+      "definitions": 2,
+      "lines": [
+        [
+          13
+        ],
+        [
+          14
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            66.489,
+            124.95
+          ]
+        ],
+        [
+          [
+            66.489,
+            124.95
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "section": "DIHE",
+      "signature": "ca-c2-cx-ca",
+      "definitions": 3,
+      "lines": [
+        [
+          94
+        ],
+        [
+          97
+        ],
+        [
+          100
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            1.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "section": "DIHE",
+      "signature": "ca-c3-cx-ca",
+      "definitions": 3,
+      "lines": [
+        [
+          95
+        ],
+        [
+          98
+        ],
+        [
+          101
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            1.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "section": "DIHE",
+      "signature": "ca-ca-cx-ca",
+      "definitions": 2,
+      "lines": [
+        [
+          99
+        ],
+        [
+          102
+        ]
+      ],
+      "raw_values": [
+        [
+          [
+            1.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ],
+        [
+          [
+            1.0,
+            0.0,
+            0.0,
+            2.0
+          ]
+        ]
+      ],
+      "coefficient_conflict": false,
+      "interpretation": "duplicate definitions; actual loader precedence not simulated"
+    }
+  ],
+  "improper_outer_permutation_overlaps": [
+    {
+      "source": "Hoshin_original_GAFF",
+      "center_type_third": "ca",
+      "outer_types_multiset": [
+        "c3",
+        "c3",
+        "ca"
+      ],
+      "ordered_signatures": [
+        "c3-c3-ca-ca",
+        "c3-ca-ca-c3",
+        "ca-c3-ca-c3"
+      ],
+      "lines": [
+        68,
+        70,
+        71
+      ],
+      "coefficient_conflict": false,
+      "scope": "candidate outer permutations only; topology/loader semantics must be checked"
+    }
+  ],
+  "base_summary": [
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "ANGLE",
+      "definitions": 11,
+      "no_candidate_match": 11
+    },
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "DIHE",
+      "definitions": 75,
+      "no_candidate_match": 75
+    },
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "IMPROPER",
+      "definitions": 29,
+      "no_candidate_match": 29
+    },
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "ANGLE",
+      "definitions": 11,
+      "no_candidate_match": 11
+    },
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "DIHE",
+      "definitions": 75,
+      "no_candidate_match": 75
+    },
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "IMPROPER",
+      "definitions": 29,
+      "no_candidate_match": 29
+    },
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "ANGLE",
+      "definitions": 11,
+      "no_candidate_match": 11
+    },
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "DIHE",
+      "definitions": 75,
+      "no_candidate_match": 75
+    },
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "IMPROPER",
+      "definitions": 29,
+      "no_candidate_match": 29
+    },
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "ANGLE",
+      "definitions": 11,
+      "no_candidate_match": 11
+    },
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "DIHE",
+      "definitions": 75,
+      "no_candidate_match": 75
+    },
+    {
+      "source": "AmberGO_Merve_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "IMPROPER",
+      "definitions": 29,
+      "no_candidate_match": 29
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "ANGLE",
+      "definitions": 12,
+      "different_coefficients": 12
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "BOND",
+      "definitions": 6,
+      "different_coefficients": 6
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "DIHE",
+      "definitions": 25,
+      "same_coefficients": 17,
+      "different_coefficients": 8
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "IMPROPER",
+      "definitions": 6,
+      "same_coefficients": 1,
+      "no_candidate_match": 5
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "MASS",
+      "definitions": 5,
+      "same_mass_optional_polarizability_differs_or_unspecified": 5
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "NONBON",
+      "definitions": 5,
+      "different_coefficients": 5
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "AmberGO_GAFF_2003",
+      "section": "ANGLE",
+      "definitions": 12,
+      "same_to_reported_precision": 7,
+      "different_coefficients": 5
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "AmberGO_GAFF_2003",
+      "section": "BOND",
+      "definitions": 6,
+      "same_coefficients": 6
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "AmberGO_GAFF_2003",
+      "section": "DIHE",
+      "definitions": 25,
+      "same_coefficients": 25
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "AmberGO_GAFF_2003",
+      "section": "IMPROPER",
+      "definitions": 6,
+      "same_coefficients": 1,
+      "no_candidate_match": 5
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "AmberGO_GAFF_2003",
+      "section": "MASS",
+      "definitions": 5,
+      "same_mass_optional_polarizability_differs_or_unspecified": 5
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "AmberGO_GAFF_2003",
+      "section": "NONBON",
+      "definitions": 5,
+      "same_coefficients": 5
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "system_GAFF2_2.2.20",
+      "section": "ANGLE",
+      "definitions": 12,
+      "different_coefficients": 12
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "system_GAFF2_2.2.20",
+      "section": "BOND",
+      "definitions": 6,
+      "different_coefficients": 6
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "system_GAFF2_2.2.20",
+      "section": "DIHE",
+      "definitions": 25,
+      "same_coefficients": 17,
+      "different_coefficients": 8
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "system_GAFF2_2.2.20",
+      "section": "IMPROPER",
+      "definitions": 6,
+      "same_coefficients": 1,
+      "no_candidate_match": 5
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "system_GAFF2_2.2.20",
+      "section": "MASS",
+      "definitions": 5,
+      "same_mass_optional_polarizability_differs_or_unspecified": 5
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "system_GAFF2_2.2.20",
+      "section": "NONBON",
+      "definitions": 5,
+      "different_coefficients": 5
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "system_GAFF_1.81",
+      "section": "ANGLE",
+      "definitions": 12,
+      "different_coefficients": 12
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "system_GAFF_1.81",
+      "section": "BOND",
+      "definitions": 6,
+      "different_coefficients": 6
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "system_GAFF_1.81",
+      "section": "DIHE",
+      "definitions": 25,
+      "same_coefficients": 25
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "system_GAFF_1.81",
+      "section": "IMPROPER",
+      "definitions": 6,
+      "same_coefficients": 1,
+      "no_candidate_match": 5
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "system_GAFF_1.81",
+      "section": "MASS",
+      "definitions": 5,
+      "same_mass_optional_polarizability_differs_or_unspecified": 5
+    },
+    {
+      "source": "Hoshin_original_GAFF",
+      "base": "system_GAFF_1.81",
+      "section": "NONBON",
+      "definitions": 5,
+      "same_coefficients": 5
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "ANGLE",
+      "definitions": 27,
+      "no_candidate_match": 20,
+      "different_coefficients": 7
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "DIHE",
+      "definitions": 56,
+      "no_candidate_match": 56
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "IMPROPER",
+      "definitions": 27,
+      "no_candidate_match": 26,
+      "same_coefficients": 1
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "base": "AmberGO_GAFF_2003",
+      "section": "ANGLE",
+      "definitions": 27,
+      "no_candidate_match": 26,
+      "different_coefficients": 1
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "base": "AmberGO_GAFF_2003",
+      "section": "DIHE",
+      "definitions": 56,
+      "no_candidate_match": 56
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "base": "AmberGO_GAFF_2003",
+      "section": "IMPROPER",
+      "definitions": 27,
+      "no_candidate_match": 26,
+      "same_coefficients": 1
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "base": "system_GAFF2_2.2.20",
+      "section": "ANGLE",
+      "definitions": 27,
+      "no_candidate_match": 16,
+      "different_coefficients": 11
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "base": "system_GAFF2_2.2.20",
+      "section": "DIHE",
+      "definitions": 56,
+      "no_candidate_match": 56
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "base": "system_GAFF2_2.2.20",
+      "section": "IMPROPER",
+      "definitions": 27,
+      "no_candidate_match": 26,
+      "same_coefficients": 1
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "base": "system_GAFF_1.81",
+      "section": "ANGLE",
+      "definitions": 27,
+      "no_candidate_match": 20,
+      "different_coefficients": 7
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "base": "system_GAFF_1.81",
+      "section": "DIHE",
+      "definitions": 56,
+      "no_candidate_match": 56
+    },
+    {
+      "source": "OLD_GOX_GAFF",
+      "base": "system_GAFF_1.81",
+      "section": "IMPROPER",
+      "definitions": 27,
+      "no_candidate_match": 26,
+      "same_coefficients": 1
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "ANGLE",
+      "definitions": 28,
+      "no_candidate_match": 20,
+      "different_coefficients": 8
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "DIHE",
+      "definitions": 66,
+      "no_candidate_match": 66
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "IMPROPER",
+      "definitions": 27,
+      "no_candidate_match": 26,
+      "same_coefficients": 1
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "base": "AmberGO_GAFF_2003",
+      "section": "ANGLE",
+      "definitions": 28,
+      "no_candidate_match": 27,
+      "different_coefficients": 1
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "base": "AmberGO_GAFF_2003",
+      "section": "DIHE",
+      "definitions": 66,
+      "no_candidate_match": 66
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "base": "AmberGO_GAFF_2003",
+      "section": "IMPROPER",
+      "definitions": 27,
+      "no_candidate_match": 26,
+      "same_coefficients": 1
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "base": "system_GAFF2_2.2.20",
+      "section": "ANGLE",
+      "definitions": 28,
+      "no_candidate_match": 16,
+      "different_coefficients": 12
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "base": "system_GAFF2_2.2.20",
+      "section": "DIHE",
+      "definitions": 66,
+      "no_candidate_match": 66
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "base": "system_GAFF2_2.2.20",
+      "section": "IMPROPER",
+      "definitions": 27,
+      "no_candidate_match": 26,
+      "same_coefficients": 1
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "base": "system_GAFF_1.81",
+      "section": "ANGLE",
+      "definitions": 28,
+      "no_candidate_match": 20,
+      "different_coefficients": 8
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "base": "system_GAFF_1.81",
+      "section": "DIHE",
+      "definitions": 66,
+      "no_candidate_match": 66
+    },
+    {
+      "source": "OLD_REGOX_GAFF",
+      "base": "system_GAFF_1.81",
+      "section": "IMPROPER",
+      "definitions": 27,
+      "no_candidate_match": 26,
+      "same_coefficients": 1
+    },
+    {
+      "source": "Our_AMBER",
+      "base": "system_parm10",
+      "section": "ANGLE",
+      "definitions": 44,
+      "no_candidate_match": 35,
+      "different_coefficients": 9
+    },
+    {
+      "source": "Our_AMBER",
+      "base": "system_parm10",
+      "section": "BOND",
+      "definitions": 19,
+      "different_coefficients": 7,
+      "no_candidate_match": 12
+    },
+    {
+      "source": "Our_AMBER",
+      "base": "system_parm10",
+      "section": "DIHE",
+      "definitions": 46,
+      "different_coefficients": 9,
+      "same_coefficients": 10,
+      "no_candidate_match": 27
+    },
+    {
+      "source": "Our_AMBER",
+      "base": "system_parm10",
+      "section": "IMPROPER",
+      "definitions": 13,
+      "no_candidate_match": 9,
+      "same_coefficients": 1,
+      "different_coefficients": 3
+    },
+    {
+      "source": "Our_AMBER",
+      "base": "system_parm10",
+      "section": "MASS",
+      "definitions": 12,
+      "same_coefficients": 10,
+      "no_candidate_match": 1,
+      "same_mass_optional_polarizability_differs_or_unspecified": 1
+    },
+    {
+      "source": "Our_AMBER",
+      "base": "system_parm10",
+      "section": "NONBON",
+      "definitions": 9,
+      "same_coefficients": 7,
+      "different_coefficients": 2
+    },
+    {
+      "source": "Our_AMBER",
+      "base": "system_parm99",
+      "section": "ANGLE",
+      "definitions": 44,
+      "no_candidate_match": 37,
+      "different_coefficients": 7
+    },
+    {
+      "source": "Our_AMBER",
+      "base": "system_parm99",
+      "section": "BOND",
+      "definitions": 19,
+      "different_coefficients": 6,
+      "no_candidate_match": 13
+    },
+    {
+      "source": "Our_AMBER",
+      "base": "system_parm99",
+      "section": "DIHE",
+      "definitions": 46,
+      "different_coefficients": 6,
+      "same_coefficients": 10,
+      "no_candidate_match": 30
+    },
+    {
+      "source": "Our_AMBER",
+      "base": "system_parm99",
+      "section": "IMPROPER",
+      "definitions": 13,
+      "no_candidate_match": 9,
+      "same_coefficients": 1,
+      "different_coefficients": 3
+    },
+    {
+      "source": "Our_AMBER",
+      "base": "system_parm99",
+      "section": "MASS",
+      "definitions": 12,
+      "same_coefficients": 9,
+      "no_candidate_match": 2,
+      "same_mass_optional_polarizability_differs_or_unspecified": 1
+    },
+    {
+      "source": "Our_AMBER",
+      "base": "system_parm99",
+      "section": "NONBON",
+      "definitions": 9,
+      "same_coefficients": 7,
+      "no_candidate_match": 1,
+      "different_coefficients": 1
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "ANGLE",
+      "definitions": 60,
+      "no_candidate_match": 32,
+      "different_coefficients": 25,
+      "same_coefficients": 3
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "BOND",
+      "definitions": 19,
+      "different_coefficients": 15,
+      "no_candidate_match": 4
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "DIHE",
+      "definitions": 220,
+      "no_candidate_match": 155,
+      "same_coefficients": 63,
+      "different_coefficients": 2
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "IMPROPER",
+      "definitions": 31,
+      "no_candidate_match": 29,
+      "same_coefficients": 2
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "MASS",
+      "definitions": 10,
+      "same_coefficients": 9,
+      "no_candidate_match": 1
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "NONBON",
+      "definitions": 10,
+      "same_coefficients": 9,
+      "no_candidate_match": 1
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "ANGLE",
+      "definitions": 60,
+      "no_candidate_match": 42,
+      "different_coefficients": 18
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "BOND",
+      "definitions": 19,
+      "different_coefficients": 14,
+      "no_candidate_match": 5
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "DIHE",
+      "definitions": 220,
+      "no_candidate_match": 155,
+      "same_coefficients": 57,
+      "different_coefficients": 8
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "IMPROPER",
+      "definitions": 31,
+      "no_candidate_match": 29,
+      "same_coefficients": 2
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "MASS",
+      "definitions": 10,
+      "same_coefficients": 8,
+      "no_candidate_match": 2
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "NONBON",
+      "definitions": 10,
+      "different_coefficients": 8,
+      "no_candidate_match": 2
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "ANGLE",
+      "definitions": 60,
+      "no_candidate_match": 15,
+      "same_coefficients": 45
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "BOND",
+      "definitions": 19,
+      "same_to_reported_precision": 18,
+      "same_coefficients": 1
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "DIHE",
+      "definitions": 220,
+      "no_candidate_match": 155,
+      "same_coefficients": 65
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "IMPROPER",
+      "definitions": 31,
+      "no_candidate_match": 29,
+      "same_coefficients": 2
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "MASS",
+      "definitions": 10,
+      "same_coefficients": 10
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "NONBON",
+      "definitions": 10,
+      "same_coefficients": 10
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "ANGLE",
+      "definitions": 60,
+      "no_candidate_match": 32,
+      "different_coefficients": 28
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "BOND",
+      "definitions": 19,
+      "different_coefficients": 15,
+      "no_candidate_match": 4
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "DIHE",
+      "definitions": 220,
+      "no_candidate_match": 155,
+      "same_coefficients": 63,
+      "different_coefficients": 2
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "IMPROPER",
+      "definitions": 31,
+      "no_candidate_match": 29,
+      "same_coefficients": 2
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "MASS",
+      "definitions": 10,
+      "same_coefficients": 9,
+      "no_candidate_match": 1
+    },
+    {
+      "source": "Our_current_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "NONBON",
+      "definitions": 10,
+      "different_coefficients": 9,
+      "no_candidate_match": 1
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "ANGLE",
+      "definitions": 51,
+      "no_candidate_match": 26,
+      "different_coefficients": 25
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "BOND",
+      "definitions": 17,
+      "different_coefficients": 14,
+      "no_candidate_match": 3
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "DIHE",
+      "definitions": 172,
+      "no_candidate_match": 131,
+      "same_coefficients": 41
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "IMPROPER",
+      "definitions": 17,
+      "same_coefficients": 2,
+      "no_candidate_match": 15
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "MASS",
+      "definitions": 10,
+      "same_coefficients": 9,
+      "no_candidate_match": 1
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "AmberGO_GAFF2_2.11",
+      "section": "NONBON",
+      "definitions": 10,
+      "different_coefficients": 9,
+      "no_candidate_match": 1
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "ANGLE",
+      "definitions": 51,
+      "no_candidate_match": 38,
+      "different_coefficients": 13
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "BOND",
+      "definitions": 17,
+      "different_coefficients": 13,
+      "no_candidate_match": 4
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "DIHE",
+      "definitions": 172,
+      "no_candidate_match": 131,
+      "same_coefficients": 35,
+      "different_coefficients": 6
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "IMPROPER",
+      "definitions": 17,
+      "same_coefficients": 2,
+      "no_candidate_match": 15
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "MASS",
+      "definitions": 10,
+      "same_coefficients": 8,
+      "no_candidate_match": 2
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "AmberGO_GAFF_2003",
+      "section": "NONBON",
+      "definitions": 10,
+      "same_coefficients": 8,
+      "no_candidate_match": 2
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "ANGLE",
+      "definitions": 51,
+      "no_candidate_match": 13,
+      "different_coefficients": 37,
+      "same_coefficients": 1
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "BOND",
+      "definitions": 17,
+      "different_coefficients": 17
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "DIHE",
+      "definitions": 172,
+      "no_candidate_match": 131,
+      "same_coefficients": 41
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "IMPROPER",
+      "definitions": 17,
+      "same_coefficients": 2,
+      "no_candidate_match": 15
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "MASS",
+      "definitions": 10,
+      "same_coefficients": 9,
+      "same_mass_optional_polarizability_differs_or_unspecified": 1
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "system_GAFF2_2.2.20",
+      "section": "NONBON",
+      "definitions": 10,
+      "different_coefficients": 10
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "ANGLE",
+      "definitions": 51,
+      "no_candidate_match": 26,
+      "same_coefficients": 24,
+      "different_coefficients": 1
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "BOND",
+      "definitions": 17,
+      "same_coefficients": 7,
+      "same_to_reported_precision": 7,
+      "no_candidate_match": 3
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "DIHE",
+      "definitions": 172,
+      "no_candidate_match": 131,
+      "same_coefficients": 41
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "IMPROPER",
+      "definitions": 17,
+      "same_coefficients": 2,
+      "no_candidate_match": 15
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "MASS",
+      "definitions": 10,
+      "same_coefficients": 9,
+      "no_candidate_match": 1
+    },
+    {
+      "source": "Our_earlier_GAFF2",
+      "base": "system_GAFF_1.81",
+      "section": "NONBON",
+      "definitions": 10,
+      "same_coefficients": 9,
+      "no_candidate_match": 1
+    }
+  ],
+  "pairwise_summary": [
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "AmberGO_Merve_GAFF2",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 5,
+      "only_right_override": 0
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "AmberGO_Merve_GAFF2",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 6,
+      "only_right_override": 0
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "AmberGO_Merve_GAFF2",
+      "section": "ANGLE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 12,
+      "only_right_override": 11
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "AmberGO_Merve_GAFF2",
+      "section": "DIHE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 25,
+      "only_right_override": 74
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "AmberGO_Merve_GAFF2",
+      "section": "IMPROPER",
+      "same_coefficients": 1,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 5,
+      "only_right_override": 28
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "AmberGO_Merve_GAFF2",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 5,
+      "only_right_override": 0
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "Our_current_GAFF2",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 3,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 2,
+      "only_right_override": 7
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "Our_current_GAFF2",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 2,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 4,
+      "only_right_override": 17
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "Our_current_GAFF2",
+      "section": "ANGLE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 1,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 11,
+      "only_right_override": 59
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "Our_current_GAFF2",
+      "section": "DIHE",
+      "same_coefficients": 1,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 24,
+      "only_right_override": 205
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "Our_current_GAFF2",
+      "section": "IMPROPER",
+      "same_coefficients": 1,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 5,
+      "only_right_override": 30
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "Our_current_GAFF2",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 3,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 2,
+      "only_right_override": 7
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "Our_earlier_GAFF2",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 3,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 2,
+      "only_right_override": 7
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "Our_earlier_GAFF2",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 2,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 4,
+      "only_right_override": 15
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "Our_earlier_GAFF2",
+      "section": "ANGLE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 1,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 11,
+      "only_right_override": 50
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "same_coefficients": 1,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 24,
+      "only_right_override": 159
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "Our_earlier_GAFF2",
+      "section": "IMPROPER",
+      "same_coefficients": 1,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 5,
+      "only_right_override": 16
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "Our_earlier_GAFF2",
+      "section": "NONBON",
+      "same_coefficients": 3,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 2,
+      "only_right_override": 7
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "OLD_GOX_GAFF",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 5,
+      "only_right_override": 0
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "OLD_GOX_GAFF",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 6,
+      "only_right_override": 0
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "OLD_GOX_GAFF",
+      "section": "ANGLE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 12,
+      "only_right_override": 25
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "OLD_GOX_GAFF",
+      "section": "DIHE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 25,
+      "only_right_override": 56
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "OLD_GOX_GAFF",
+      "section": "IMPROPER",
+      "same_coefficients": 1,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 5,
+      "only_right_override": 26
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "OLD_GOX_GAFF",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 5,
+      "only_right_override": 0
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "OLD_REGOX_GAFF",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 5,
+      "only_right_override": 0
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "OLD_REGOX_GAFF",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 6,
+      "only_right_override": 0
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "OLD_REGOX_GAFF",
+      "section": "ANGLE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 12,
+      "only_right_override": 26
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "OLD_REGOX_GAFF",
+      "section": "DIHE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 25,
+      "only_right_override": 61
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "OLD_REGOX_GAFF",
+      "section": "IMPROPER",
+      "same_coefficients": 1,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 5,
+      "only_right_override": 26
+    },
+    {
+      "left": "Hoshin_original_GAFF",
+      "right": "OLD_REGOX_GAFF",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 5,
+      "only_right_override": 0
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "Our_current_GAFF2",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 10
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "Our_current_GAFF2",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 19
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "Our_current_GAFF2",
+      "section": "ANGLE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 3,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 8,
+      "only_right_override": 57
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "Our_current_GAFF2",
+      "section": "DIHE",
+      "same_coefficients": 11,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 8,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 55,
+      "only_right_override": 187
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "Our_current_GAFF2",
+      "section": "IMPROPER",
+      "same_coefficients": 9,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 20,
+      "only_right_override": 22
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "Our_current_GAFF2",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 10
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "Our_earlier_GAFF2",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 10
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "Our_earlier_GAFF2",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 17
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "Our_earlier_GAFF2",
+      "section": "ANGLE",
+      "same_coefficients": 2,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 1,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 8,
+      "only_right_override": 48
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "same_coefficients": 18,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 56,
+      "only_right_override": 142
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "Our_earlier_GAFF2",
+      "section": "IMPROPER",
+      "same_coefficients": 5,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 24,
+      "only_right_override": 12
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "Our_earlier_GAFF2",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 10
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 0
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 0
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "ANGLE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 4,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 7,
+      "only_right_override": 21
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "DIHE",
+      "same_coefficients": 16,
+      "same_to_reported_precision": 9,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 2,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 47,
+      "only_right_override": 29
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "IMPROPER",
+      "same_coefficients": 15,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 14,
+      "only_right_override": 12
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 0
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 0
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 0
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "ANGLE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 4,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 7,
+      "only_right_override": 22
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "DIHE",
+      "same_coefficients": 19,
+      "same_to_reported_precision": 9,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 4,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 42,
+      "only_right_override": 29
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "IMPROPER",
+      "same_coefficients": 15,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 14,
+      "only_right_override": 12
+    },
+    {
+      "left": "AmberGO_Merve_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "Our_earlier_GAFF2",
+      "section": "MASS",
+      "same_coefficients": 9,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 1,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "Our_earlier_GAFF2",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 17,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 2,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "Our_earlier_GAFF2",
+      "section": "ANGLE",
+      "same_coefficients": 9,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 38,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 13,
+      "only_right_override": 4
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "Our_earlier_GAFF2",
+      "section": "DIHE",
+      "same_coefficients": 135,
+      "same_to_reported_precision": 1,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 16,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 54,
+      "only_right_override": 8
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "Our_earlier_GAFF2",
+      "section": "IMPROPER",
+      "same_coefficients": 15,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 16,
+      "only_right_override": 2
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "Our_earlier_GAFF2",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 10,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 10,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 19,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "ANGLE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 9,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 51,
+      "only_right_override": 16
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "DIHE",
+      "same_coefficients": 9,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 6,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 191,
+      "only_right_override": 41
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "IMPROPER",
+      "same_coefficients": 17,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 14,
+      "only_right_override": 10
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 10,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 10,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 19,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "ANGLE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 9,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 51,
+      "only_right_override": 17
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "DIHE",
+      "same_coefficients": 10,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 7,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 189,
+      "only_right_override": 44
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "IMPROPER",
+      "same_coefficients": 17,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 14,
+      "only_right_override": 10
+    },
+    {
+      "left": "Our_current_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 10,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_earlier_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 10,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_earlier_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 17,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_earlier_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "ANGLE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 7,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 44,
+      "only_right_override": 18
+    },
+    {
+      "left": "Our_earlier_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "DIHE",
+      "same_coefficients": 11,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 149,
+      "only_right_override": 45
+    },
+    {
+      "left": "Our_earlier_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "IMPROPER",
+      "same_coefficients": 9,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 8,
+      "only_right_override": 18
+    },
+    {
+      "left": "Our_earlier_GAFF2",
+      "right": "OLD_GOX_GAFF",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 10,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_earlier_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 10,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_earlier_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 17,
+      "only_right_override": 0
+    },
+    {
+      "left": "Our_earlier_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "ANGLE",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 8,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 43,
+      "only_right_override": 18
+    },
+    {
+      "left": "Our_earlier_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "DIHE",
+      "same_coefficients": 13,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 147,
+      "only_right_override": 48
+    },
+    {
+      "left": "Our_earlier_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "IMPROPER",
+      "same_coefficients": 9,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 8,
+      "only_right_override": 18
+    },
+    {
+      "left": "Our_earlier_GAFF2",
+      "right": "OLD_REGOX_GAFF",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 10,
+      "only_right_override": 0
+    },
+    {
+      "left": "OLD_GOX_GAFF",
+      "right": "OLD_REGOX_GAFF",
+      "section": "MASS",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 0
+    },
+    {
+      "left": "OLD_GOX_GAFF",
+      "right": "OLD_REGOX_GAFF",
+      "section": "BOND",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 0
+    },
+    {
+      "left": "OLD_GOX_GAFF",
+      "right": "OLD_REGOX_GAFF",
+      "section": "ANGLE",
+      "same_coefficients": 25,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 1
+    },
+    {
+      "left": "OLD_GOX_GAFF",
+      "right": "OLD_REGOX_GAFF",
+      "section": "DIHE",
+      "same_coefficients": 56,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 5
+    },
+    {
+      "left": "OLD_GOX_GAFF",
+      "right": "OLD_REGOX_GAFF",
+      "section": "IMPROPER",
+      "same_coefficients": 27,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 0
+    },
+    {
+      "left": "OLD_GOX_GAFF",
+      "right": "OLD_REGOX_GAFF",
+      "section": "NONBON",
+      "same_coefficients": 0,
+      "same_to_reported_precision": 0,
+      "same_mass_optional_polarizability_differs_or_unspecified": 0,
+      "different_coefficients": 0,
+      "ambiguous_duplicate_conflict": 0,
+      "only_left_override": 0,
+      "only_right_override": 0
+    }
+  ],
+  "aim": [
+    {
+      "file": "references/gaff2_aim/GO_18/GO_sheet_1_8.top",
+      "sha256": "55aae42235dd146259aeb1f425e42980b2966d846e643d502ccd00f82a1ff124",
+      "defaults": [
+        "1",
+        "2",
+        "yes",
+        "0.5",
+        "0.8333"
+      ],
+      "atom_count": 15597,
+      "used_atomtypes": 65,
+      "sum_charge_e": 8.906799742192106e-10,
+      "interaction_counts": {
+        "bonds_function_1": 22300,
+        "pairs_function_1": 85274,
+        "angles_function_1": 51899,
+        "dihedrals_function_9": 130294,
+        "dihedrals_function_4": 1360
+      },
+      "bonded_provenance": "GAFF2/ACPYPE; inherited bonded model, not AIM bonded refit",
+      "units_conversion": "GROMACS harmonic kb = 2*Amber K*4.184*100; b0(nm)*10=Å; LJ Rmin/2=10*sigma(nm)*2^(1/6)/2"
+    },
+    {
+      "file": "references/gaff2_aim/GO_30/GO_sheet_3_0.top",
+      "sha256": "dd0b082236f55891780c8eda75c3e24b9c7b7015ace27cdb5656ad7db6d68c94",
+      "defaults": [
+        "1",
+        "2",
+        "yes",
+        "0.5",
+        "0.8333"
+      ],
+      "atom_count": 12819,
+      "used_atomtypes": 67,
+      "sum_charge_e": -5.109984102524834e-09,
+      "interaction_counts": {
+        "bonds_function_1": 18504,
+        "pairs_function_1": 66223,
+        "angles_function_1": 41253,
+        "dihedrals_function_9": 93891,
+        "dihedrals_function_4": 4276
+      },
+      "bonded_provenance": "GAFF2/ACPYPE; inherited bonded model, not AIM bonded refit",
+      "units_conversion": "GROMACS harmonic kb = 2*Amber K*4.184*100; b0(nm)*10=Å; LJ Rmin/2=10*sigma(nm)*2^(1/6)/2"
+    }
+  ],
+  "verification": {
+    "all_seven_archive_hashes_match": true,
+    "archives_equal_original_local_snapshots": true,
+    "all_six_DAT_hashes_match_prior_manifests": true,
+    "all_parameter_rows_accounted_for_without_silent_drop": true,
+    "invalid_rows_preserved_not_filled": 1,
+    "NONB_alias_retains_5_Hoshin_LJ_rows": true,
+    "Fourier_IDIVF_normalization_checked": true,
+    "AIM_defaults_read_from_both_topologies": true
+  },
+  "limitations": [
+    "Non è noto il DAT e l'ordine di caricamento storico dei file locali; le basi sono confronti candidati, non provenienza dimostrata.",
+    "I confronti fra firme uguali non stabiliscono identità dell'ambiente chimico. Namespace AMBER escluso dal confronto incrociato con GAFF.",
+    "Wildcard e permutazioni improper sono uno screening di candidati; nessuna precedenza effettiva LEaP, match di grafo, topologia risolta, esclusione 1–4 o validazione QM è simulata.",
+    "Frcmod privo di MASS/BOND/NONBON può ereditare tutto dalla base: le righe assenti non sono automaticamente parametri mancanti.",
+    "Zero torsionale può essere scelta convenzionale; penalty di analogia non è errore energetico e non misura accuratezza.",
+    "I tipi AIM con suffissi sono classi ambientali, non si riducono automaticamente a tipi GAFF. Eteri e lattoni richiedono grafi e typing espliciti; os/op da soli non ne provano la copertura."
+  ]
+}

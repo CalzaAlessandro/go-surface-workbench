@@ -1,0 +1,13 @@
+source_topology,family,native_types,atoms,mean_charge_e_atom_weighted,min_type_charge_e,max_type_charge_e
+gaff2_aim/GO_18/GO_sheet_1_8.top,"Carboni, altri tipi",6,4866,0.09926316120339067,0.066074787547,0.124784588123
+gaff2_aim/GO_18/GO_sheet_1_8.top,"Carboni, tipi c3*",10,2312,0.16605739462550692,0.116853838051,0.198584669424
+gaff2_aim/GO_18/GO_sheet_1_8.top,"Carboni, tipi ca*",8,1362,-0.049819494306097646,-0.092284290821,0.011644585366
+gaff2_aim/GO_18/GO_sheet_1_8.top,Idrogeni (tipi H nativi),10,2312,0.3701493569957188,0.368928002757,0.372602120404
+gaff2_aim/GO_18/GO_sheet_1_8.top,"Ossigeni, tipi oh*",10,2312,-0.4757151122950169,-0.486876056067,-0.461103035122
+gaff2_aim/GO_18/GO_sheet_1_8.top,"Ossigeni, tipi os*",21,2433,-0.2281204526478011,-0.252359997243,-0.215339624362
+gaff2_aim/GO_30/GO_sheet_3_0.top,"Carboni, altri tipi",6,2830,0.10625916162113286,0.065585035309,0.142348022794
+gaff2_aim/GO_30/GO_sheet_3_0.top,"Carboni, tipi c3*",10,1432,0.16530082489148673,0.114882364666,0.203912532376
+gaff2_aim/GO_30/GO_sheet_3_0.top,"Carboni, tipi ca*",10,4278,-0.008925587732671809,-0.118556304728,0.005401694947
+gaff2_aim/GO_30/GO_sheet_3_0.top,Idrogeni (tipi H nativi),10,1432,0.37020257908127585,0.364197532376,0.371724841947
+gaff2_aim/GO_30/GO_sheet_3_0.top,"Ossigeni, tipi oh*",10,1432,-0.47976728125392315,-0.488695523352,-0.465606644095
+gaff2_aim/GO_30/GO_sheet_3_0.top,"Ossigeni, tipi os*",21,1415,-0.24193914544589895,-0.253457670505,-0.216604815218

@@ -3,7 +3,7 @@
 Design update from the user's stated distribution goals. This document does
 not claim a new importer, charge-correction CLI or final parameter release.
 
-## Three separate choices with compatibility checks
+## Material composition and a compatible force-field bundle
 
 - **Material composition:** the four LayerOne presets specify functional-group
   proportions/composition and documented protonation assumptions. They do not
@@ -16,18 +16,27 @@ not claim a new importer, charge-correction CLI or final parameter release.
   the recipe. Existing fixed-size examples are legacy/provisional references;
   adapting their preset resolver remains implementation work. Definitive
   material rebuilding is deferred until parameter selection.
-- **Charge assignment:** the standard reusable block library is the default.
+- **Charge assignment within the RESP research family:** the standard reusable block library is the default.
   An optional, separately recorded structure-specific step can redistribute
   those charges after construction. Current, OLD and new/published controls
   must retain their status and provenance; diagnostic pilot values are not
   production presets.
-- **Force-field parameters:** an explicit bonded/LJ/1–4/radii choice with a
-  matrix of supported charge combinations. An OPLS or GAFF2–AIM charge table
-  does not automatically define a valid variant of the current GAFF2 model.
+- **Complete force-field preset:** published GAFF2–AIM and HierGO/OPLS presets
+  carry their original charges, bonded/LJ terms, mixing and 1–4 conventions
+  together. They do not expose independent charges-only or LJ overrides.
+  Applying our fitted redistribution under the same published name is forbidden
+  by the proposed selection policy. Any derivative requires a new name and
+  validation. An OPLS or GAFF2–AIM charge table does not define a valid variant
+  of the current GAFF2 model. Validated Amber conversion, compatible GB radii
+  and full chemistry coverage are separate release gates, not assumed results.
 
 Charge assignment and structure-specific correction are distinct settings:
 choosing the reference charge library does not imply a correction ran. Preserve
 both vectors and their exact atom map for review and reproducibility.
+The fixed-library, minimum-graph-distance context and static-redistribution
+methods remain distinct. A first SQE fit to 16 molecular HF–RESP references is
+available as a research artifact; the new C24/C54 contexts will test density,
+distance and carboxylate transfer. No production rule has been selected.
 
 ## One preparation engine, two entry paths
 

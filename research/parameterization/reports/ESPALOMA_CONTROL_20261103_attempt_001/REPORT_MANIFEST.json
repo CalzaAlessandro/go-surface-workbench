@@ -1,0 +1,7 @@
+{
+  "HTML_SHA256": "ba9154d58ddcc475b1b1addc2cf3d5590c24caf2eefcebea87b1b1a98a8cacd7",
+  "source_archive_SHA256": "4e71ebb063a17e137ed7763bb0034ca585fc197467d60ca3986674e8fe0c524e",
+  "aggregation": "median of per-context atom-matched RMS differences; same 12 native-BCC-covered contexts",
+  "charge_similarity_is_physical_validation": false,
+  "final_parameter_validation": false
+}

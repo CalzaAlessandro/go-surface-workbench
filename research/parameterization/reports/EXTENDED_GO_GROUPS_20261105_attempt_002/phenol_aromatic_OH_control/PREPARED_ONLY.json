@@ -1,0 +1,8 @@
+{
+  "status": "inputs_prepared_not_submitted",
+  "DFT_geometry_accepted": false,
+  "HF_ESP_template_requires_regeneration_from_accepted_DFT_geometry": true,
+  "orientations_prepared": false,
+  "RESP_fit_completed": false,
+  "force_field_validated": false
+}

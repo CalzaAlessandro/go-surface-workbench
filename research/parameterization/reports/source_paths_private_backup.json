@@ -1,0 +1,260 @@
+{
+  "copied_read_only_sources": [
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/CAB_amber.lib",
+      "copy": "resources/reference/current/CAB_amber.lib",
+      "sha256": "56ebdc872d15ea2c30549368faa16100d73c28a94d7493d67a1563f2a9c58979"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/CAB_gaff2.lib",
+      "copy": "resources/reference/current/CAB_gaff2.lib",
+      "sha256": "2a6311b8fd181bce6c64acba9b57b02f2a2e02bc8f0a8bcadb22e2dfcfd1d0a4"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/CBD_amber.lib",
+      "copy": "resources/reference/current/CBD_amber.lib",
+      "sha256": "68954e0dc0c10ea49a9d8fd27836facaf09c1ff0e11e1619ca69a94bfa11396c"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/CBD_gaff2.lib",
+      "copy": "resources/reference/current/CBD_gaff2.lib",
+      "sha256": "6d35d60e31d2925dd6de1d2b7f8bd1fccad1493d5b217cbc71b07b4cd3635896"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/CBX_amber.lib",
+      "copy": "resources/reference/current/CBX_amber.lib",
+      "sha256": "e24939816f36d4d48887f190dcd2c964cffcf68e3d66e4ca69c3496f79961cad"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/CBX_gaff2.lib",
+      "copy": "resources/reference/current/CBX_gaff2.lib",
+      "sha256": "57f988478d37c41110c43f37ea44b6e183eceeab9e83cea23ce77b82fd88d328"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/EHH.lib",
+      "copy": "resources/reference/current/EHH.lib",
+      "sha256": "c1a95b0a671ea4ce5977d84120768d1285b897135995c97c8d61f18085f0ddaf"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/EPH_amber.lib",
+      "copy": "resources/reference/current/EPH_amber.lib",
+      "sha256": "53a4895eb1b9c71dfb0b1d4f7056f3c1ae43d160f92fd0d26d5b358f41a83137"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/EPH_gaff2.lib",
+      "copy": "resources/reference/current/EPH_gaff2.lib",
+      "sha256": "bddb2304b5394152f91501b5eaf14b2db2742ed234d73ae0595b499cf9d95cf8"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/EPT_amber.lib",
+      "copy": "resources/reference/current/EPT_amber.lib",
+      "sha256": "a4194da6db2eea0a2a5b649150970e4786bfc51286cf9a71fe4e189cdd0214fa"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/EPT_gaff2.lib",
+      "copy": "resources/reference/current/EPT_gaff2.lib",
+      "sha256": "e3793a739c1bb11150ce4992fe1f119d220bf1d7a5a9f4e4d00fa9c66757b598"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/EPX_amber.lib",
+      "copy": "resources/reference/current/EPX_amber.lib",
+      "sha256": "574aa84f8fde48bb1bac4acb73cba19e06de209d3f7eb6e927850beb11859d0e"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/EPX_gaff2.lib",
+      "copy": "resources/reference/current/EPX_gaff2.lib",
+      "sha256": "95c90d34bb3e56fcc0bcb2938b1e428b12febf45d10241afce17fa15d9fa266e"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/GGG_amber.lib",
+      "copy": "resources/reference/current/GGG_amber.lib",
+      "sha256": "ebdb52ab559d8ac38891954d069d2bd2d7d86036de7529ed5e6fb3896d502b81"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/GGG_gaff2.lib",
+      "copy": "resources/reference/current/GGG_gaff2.lib",
+      "sha256": "0eff381f25a87b1a18c9052079a84f46563060bff502088c1652a5cb96c13085"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/GO_amber.frcmod",
+      "copy": "resources/reference/current/GO_amber.frcmod",
+      "sha256": "f7461fbfcdd8459ae00f0f5da57a71b53b983f6be68cb4d5574ce2f6735183ae"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/GO_gaff2.frcmod",
+      "copy": "resources/reference/current/GO_gaff2.frcmod",
+      "sha256": "32198b3539b265537cc4161dee4669e017c216720372b5d529521b04169efa28"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/GO_gaff2_old.frcmod",
+      "copy": "resources/reference/current/GO_gaff2_old.frcmod",
+      "sha256": "6da950e0c2d5688f49cf0d968cc45f7333abde7d6cfd04f1872b1455b21b1389"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/GRT_amber.lib",
+      "copy": "resources/reference/current/GRT_amber.lib",
+      "sha256": "19278b2edc8245566a49a726e26eff2547cd0b8ff9a73a6c722398f18fc59d8d"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/GRT_gaff2.lib",
+      "copy": "resources/reference/current/GRT_gaff2.lib",
+      "sha256": "b79b53c097d3e154e3d0234bb8c7da348a46c12e1a1a3c5006231a33124c3278"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/HYD_amber.lib",
+      "copy": "resources/reference/current/HYD_amber.lib",
+      "sha256": "0728d52813880951ce0582fc7147197ac0fdc9cf6d674ad775eb3cf32e7930d4"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/HYD_gaff2.lib",
+      "copy": "resources/reference/current/HYD_gaff2.lib",
+      "sha256": "283fd79a85280034aeb390677a28b7bfb347fd2a81575573f4f453677ceedf7f"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/align_100ns.in",
+      "copy": "resources/reference/current/align_100ns.in",
+      "sha256": "a9632adad5127c06dd7b83edd2681ac7872fc09fd3a40a9ca99946ec8cb30b58"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/align_10ns.in",
+      "copy": "resources/reference/current/align_10ns.in",
+      "sha256": "df5e1fabca5cfac652f49beba59f74920b892466ca63d5a665a8ade06f33a168"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/align_1ns.in",
+      "copy": "resources/reference/current/align_1ns.in",
+      "sha256": "ca5b0487e7372e8b7aac7c3a364a99c891ce9a42a5870ba4ddfc841b4eafae77"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/align_50ns.in",
+      "copy": "resources/reference/current/align_50ns.in",
+      "sha256": "532fb352a5b2ccbfabab9e2250ec0aa49d6b3ef9496d95a61742e12d0cdb41a4"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/gb1.in",
+      "copy": "resources/reference/current/gb1.in",
+      "sha256": "3a9a4f9fea25965297256ebefed7571e06ac614ec203ae823eec2da2662e6524"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/gb2.in",
+      "copy": "resources/reference/current/gb2.in",
+      "sha256": "26213bef299d6b125ed2bcbc5f976fb617bdabf446964687a7b182f924bd979e"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/gb5.in",
+      "copy": "resources/reference/current/gb5.in",
+      "sha256": "0c866e641dab58f9e95559bf68e64e6efa2dc9189fc24bbe73ea608598418bff"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/gb7.in",
+      "copy": "resources/reference/current/gb7.in",
+      "sha256": "f65e4df44991d653d45a9f2a5867e3ed348bbc671aac0c870d0c02a01ffe8f1d"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/gb8.in",
+      "copy": "resources/reference/current/gb8.in",
+      "sha256": "9da0124a434425195b8c0814b177a36e85f9224c95018cebca30aba05bcbbfff"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/md_100ns.in",
+      "copy": "resources/reference/current/md_100ns.in",
+      "sha256": "683f1599b6acb9ce7e5a6fa35787a69428565981a48a919afbb942752ed03db6"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/md_10ns.in",
+      "copy": "resources/reference/current/md_10ns.in",
+      "sha256": "9a04a67bda954b5bf9713cf49c4182ffa47cb8b5eebdb61a7b8332157760907e"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/md_1ns.in",
+      "copy": "resources/reference/current/md_1ns.in",
+      "sha256": "f447ca74c0b03498ebcabf36ff82cf91d429e46409f80d5b6bd20e58217042c7"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/md_50ns.in",
+      "copy": "resources/reference/current/md_50ns.in",
+      "sha256": "67131edb7df97a0869c84e4df352ec4feaeb4ca0a27e84b4d3aa974599719848"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/min.in",
+      "copy": "resources/reference/current/min.in",
+      "sha256": "731156209887402f9e4ea3eeecc16aa4d970331e2ee6ae414204f1287a9eb543"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/nmode.in",
+      "copy": "resources/reference/current/nmode.in",
+      "sha256": "0313ecb4f8457d90db905341b2e02b853549bd00dd1278fc7b72620c74ecab43"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/npt.in",
+      "copy": "resources/reference/current/npt.in",
+      "sha256": "e2d5eaa499d79841f6bef92688bac1df635649b0fcce06741a173389a2b385d3"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/npt_fast.in",
+      "copy": "resources/reference/current/npt_fast.in",
+      "sha256": "81fe0438c548aebf63806d21cc32ed206dc164d9142be77d2f35b7a12c11f113"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/nvt.in",
+      "copy": "resources/reference/current/nvt.in",
+      "sha256": "4366f3a01c20124754bf4e7ad62a22bca29e7f7c09f14aa4b08327157c84b9e3"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/pb.in",
+      "copy": "resources/reference/current/pb.in",
+      "sha256": "7a4ca26b9f806274e629487b9fc81fe38d27c9afadb0d71faf13575de0c4edfd"
+    },
+    {
+      "source": "/Users/alessandrocalza/Desktop/VS_POLL_WORKFLOW/resources/LIB/qh.in",
+      "copy": "resources/reference/current/qh.in",
+      "sha256": "2d567dac4dcc245ec5efbf2eb35c2bda964c969f51241f697b7692ba0f2510d1"
+    },
+    {
+      "source": "/Users/alessandrocalza/Documents/UNIBO/03 - PHD/THESIS/GOX PARAMETERS - OLD/gox.frcmod",
+      "copy": "resources/reference/old/gox.frcmod",
+      "sha256": "e9187db500c12fb7dcc3182cda699aba58be4b58a7ee0bc574cd5c88cee17dd1"
+    },
+    {
+      "source": "/Users/alessandrocalza/Documents/UNIBO/03 - PHD/THESIS/GOX PARAMETERS - OLD/gox.parm7",
+      "copy": "resources/reference/old/gox.parm7",
+      "sha256": "f1f929cf40284d568328f5de1f114b9fd094621e5a6e8d4006039bb241348f6c"
+    },
+    {
+      "source": "/Users/alessandrocalza/Documents/UNIBO/03 - PHD/THESIS/GOX PARAMETERS - OLD/gox.pdb",
+      "copy": "resources/reference/old/gox.pdb",
+      "sha256": "67a16d46aebaafe4584eef2baa69caa27d8b4170a7265a0920634d5f65a6dde9"
+    },
+    {
+      "source": "/Users/alessandrocalza/Documents/UNIBO/03 - PHD/THESIS/GOX PARAMETERS - OLD/gox.rst7",
+      "copy": "resources/reference/old/gox.rst7",
+      "sha256": "6484c36873749e36b5a1d629f268c08f3ecf2d055387e42bbc34799a2a78b4da"
+    },
+    {
+      "source": "/Users/alessandrocalza/Documents/UNIBO/03 - PHD/THESIS/GOX PARAMETERS - OLD/rgo.frcmod",
+      "copy": "resources/reference/old/rgo.frcmod",
+      "sha256": "43c0d3a06cb02bd2bbf135f9519d34e090e9054ed4b30863404a2a22baaccca3"
+    },
+    {
+      "source": "/Users/alessandrocalza/Documents/UNIBO/03 - PHD/THESIS/GOX PARAMETERS - OLD/rgo.parm7",
+      "copy": "resources/reference/old/rgo.parm7",
+      "sha256": "a88160fe91a6d1a740a148fb8dd5d21d105c83801431fea623303c19b7365e19"
+    },
+    {
+      "source": "/Users/alessandrocalza/Documents/UNIBO/03 - PHD/THESIS/GOX PARAMETERS - OLD/rgo.pdb",
+      "copy": "resources/reference/old/rgo.pdb",
+      "sha256": "769acc29d06204a776cb12874015e2034396cfc52cb0f2af0bb8c232b05afc82"
+    },
+    {
+      "source": "/Users/alessandrocalza/Documents/UNIBO/03 - PHD/THESIS/GOX PARAMETERS - OLD/rgo.prepi",
+      "copy": "resources/reference/old/rgo.prepi",
+      "sha256": "a727197402ee8ff22caaf1cc0f4e229a7c85530bd9fd515510167b47d884d214"
+    },
+    {
+      "source": "/Users/alessandrocalza/Documents/UNIBO/03 - PHD/THESIS/GOX PARAMETERS - OLD/rgo.rst7",
+      "copy": "resources/reference/old/rgo.rst7",
+      "sha256": "33d0e096e6b39fa7df8254e3d7c5ae57bb13ab6eb338eed7e5ad42433fdf14c0"
+    }
+  ],
+  "current_charge_origin": "User reports standard Amber parameterization of separate graphene-oxide fragments; exact QM/RESP settings still to recover."
+}

@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-05",
+  "scope": "read-only scientific literature and QM-needs review; no QM calculation or parameter fit performed",
+  "inputs": [
+    {
+      "path": "PARAMETERIZATION/docs/CHARGES_BONDED_LJ_COUPLING.md",
+      "sha256": "8ec7d17a59a26447268e4817427f031b24450f2c7ecf3b6270a141e0548fc2d0"
+    },
+    {
+      "path": "PARAMETERIZATION/docs/BONDED_QM_PROTOCOL.md",
+      "sha256": "15266b66a14ae0681bd6155e257be012bfda4679d0995a99557eb00181931d5c"
+    },
+    {
+      "path": "PARAMETERIZATION/docs/NEW_FRCMOD_CANDIDATES.md",
+      "sha256": "e120b418916a79fa8059f673cf2a40910fc5dfe9eee84a307d5cfcb21110aa5f"
+    },
+    {
+      "path": "PARAMETERIZATION/docs/FRCMOD_AUDIT.md",
+      "sha256": "86843d9c34b8fbc73e1c7fb6b0ffdf04f7b63e26c5d04f767d8b68cbf3e77c29"
+    },
+    {
+      "path": "PARAMETERIZATION/docs/FORCE_FIELD_CANDIDATES.md",
+      "sha256": "470570ea7aad3f46b0be46cd1bbad931bacc83d8bc3339e840c80c0318a0832d"
+    },
+    {
+      "path": "PARAMETERIZATION/references/papers/Pinto2023_SI.txt",
+      "sha256": "70dd4494b5204db248b05f3200b4f9b34cdc7bebf0f9964fea7c323656ebb599"
+    },
+    {
+      "path": "PARAMETERIZATION/references/papers/Pinto2023_SI.pdf",
+      "sha256": "0f3e1eeb70b9626a6628cb3b0fa9f72f7f51844e8ce243afdb78ace80b4b60e5"
+    },
+    {
+      "path": "PARAMETERIZATION/references/local_snapshot/opls/atom-typing.py",
+      "sha256": "5a6c002afa7a4148e451c65d7f17d4e57a2c5cab906889c9d5b150fb86ab0e8e"
+    },
+    {
+      "path": "PARAMETERIZATION/references/local_snapshot/opls/Oplsatom2",
+      "sha256": "780bf2c161822eb59fd8ab2ac2cc57ee08c1a5cf63672459880ddca247a67398"
+    },
+    {
+      "path": "PARAMETERIZATION/references/local_snapshot/opls/OPLS-top.f90",
+      "sha256": "7b9388e1689aed7f3e14075c317f32f345e48f31a70b703a065d82ca9029061f"
+    },
+    {
+      "path": "PARAMETERIZATION/references/local_snapshot/opls/PROVENANCE.json",
+      "sha256": "fe18f270e57a6dbb11cabe87cef99705d560ee20cc660ea12aee11dfbc2c7eef"
+    },
+    {
+      "path": "PARAMETERIZATION/reports/dft_bonded_reference_QA_20261030.json",
+      "sha256": "172968580f78d5a647c7b06df1a75b537e757b186b8422383871865676a4a20e"
+    },
+    {
+      "path": "PARAMETERIZATION/parameters/comparison_sources/HOSHIN_OLD_CURRENT_20261105/MANIFEST.json",
+      "sha256": "8d9de40640d5aa96b12671bd232387bb358d0381d48f7f982341611bfb87ed98"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "REPORT.html",
+      "sha256": "c919af008e67f069072553215b7fb30b13256d20361136e952168ab12fbd4c14"
+    },
+    {
+      "path": "EVIDENCE.md",
+      "sha256": "685d2bdaf0d16220434aed5fc0ad1c0fa2f97ac16402c39fd14ccd4415330c9a"
+    }
+  ],
+  "html_structural_check": {
+    "tables": 4,
+    "rows": 27,
+    "links": 10,
+    "local_links_exist": true,
+    "render_visual_qa": "not_performed_in_subtask"
+  }
+}

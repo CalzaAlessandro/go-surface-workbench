@@ -1,0 +1,38 @@
+{
+  "generated_at_utc": "2026-11-04T19:45:59.213556+00:00",
+  "files_SHA256": {
+    "CALIBRATION_COMPLETE.json": "b428da850eff84f6bdd39b4259a59646b6e44a496bf67905c059355d286c701b",
+    "EXPANDED_PREPARATION.json": "9bea99190cc352054c0909f962bd0407fbf6f21d60fa56c351fb4ddea78fd512",
+    "EXPANDED_SUBMISSION.json": "cdc5be91c2f898fc84f0e66eadb4fb009e40a1ef3f4287430ceed2c5a6639dd2",
+    "HF_ESP_transfer.png": "d7f1c9b93b401cc33533e135968a0a413d81dc70a7d1ce9cd889695ca0311d8a",
+    "HF_ESP_transfer.svg": "cc7a6764e5af4060d195d89a4717030e0e51a45c60387fd39f2a93cef644644a",
+    "REPORT.html": "eb414113cd2b4c2ee783291745037be1fa4d88bbf4e87faf6d1b63b07275e935",
+    "SCHEDULER_STATUS.json": "5f3080585c51578c0f78ca70edf5fcd13f05dddb7c9250a1208b026e72b356d6",
+    "SUMMARY.json": "d87d31664864f9606aa1f3324ae7320c45e23c26432ae21648324cc1747ec2c8",
+    "build_report.py": "f203f4a164fda6c419acd85ab15e256adc340eaa76eba7cd85ff266ae5fa40c7",
+    "comparison.html": "e194f3dc2c7ab845bfeebd03490e79d7ca95fab79ab03398d4e235f0fe8dde3a",
+    "default_C16_training.fit.json": "8d5fa3a9fa94ac7ff838b564cc23f5f69e0514d4801be8c233e48ceda0a5aac3",
+    "default_all16_training.fit.json": "c74db645c8bbba826fbd27ca74ee8b11dbf722386347fbfab0f2f5978caedbb8",
+    "default_per_atom_charges.csv": "611d54efa998bba76e2891964ec6e3befc8aae2fbbf636aaa62f52ae40a7b68f",
+    "matched_context_scores.csv": "b2cf004827902a243e0dd2741190689cbc465776ddc6e0b91799629dbcb45faa",
+    "matched_orientation_scores.csv": "15b73b827d23847bc41534263a295294c885a8c2395cf85f3dea1b486177aecb",
+    "per_context_charge_scores.csv": "eaf97bd9f15b1a0ab0099fa15920e3332362f18ca2b47ecb585e5e7b6ead7678",
+    "status_payload.py": "bd174e12c1157334cd70b6f0ba8ab23a3230fc5441839c6d4e737443e72e6afa"
+  },
+  "original_source_SHA256": {
+    "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/sqe_resp_fit_results_20261104_snapshot_001/results/CALIBRATION_COMPLETE.json": "b428da850eff84f6bdd39b4259a59646b6e44a496bf67905c059355d286c701b",
+    "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/sqe_resp_fit_results_20261104_snapshot_001/results/HF_ESP_scores.csv": "61c131ed00eae648be6dd943bde285149f8f347069ae0438079ac48f1a9070a9",
+    "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/cross_method_ESP_scores.csv": "743e6be5c8572f2d883ebc75c17eaf828b751e22f6a724b9f379efecfb7c6de1",
+    "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/l0_hf_train_C16/inputs.json": "da4d4a34923bea6d233393216c4801ca052092ab585f7bed57d7aaa30b8e08b6"
+  },
+  "figure": {
+    "width_inches": 7.1,
+    "height_inches": 4.4,
+    "PNG_dpi": 300,
+    "matplotlib": "3.11.1",
+    "numpy": "2.4.6",
+    "points": "7 molecular contexts per method; deterministic horizontal displacement",
+    "lines": "median; no uncertainty interval or smoothing"
+  },
+  "production_parameter_validation": false
+}

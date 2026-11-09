@@ -101,6 +101,13 @@ def test_fixed_width_header_can_have_adjacent_atom_and_large_grid_counts():
         api().esp_header('   28   10    1')
 
 
+def test_native_espgen_six_digit_point_count_does_not_truncate_to_five_digits():
+    assert api().esp_header('   72120100    0') == (72,120100)
+    assert api().esp_header('   72120100') == (72,120100)
+    with pytest.raises(ValueError,match='multipole|header'):
+        api().esp_header('   72120100    1')
+
+
 def test_esp_units_and_strict_record_count(tmp_path, formate):
     _, _, esp = write_case(tmp_path, formate)
     xyz, points, potential = api().read_esp(esp)

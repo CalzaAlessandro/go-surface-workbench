@@ -1,0 +1,23 @@
+{
+  "built_utc": "2026-11-04T21:41:59.191406+00:00",
+  "scientific_scope": "Independent QM validation; conventional Amber charge branch preserved",
+  "reference_selected": false,
+  "production_charges_changed": false,
+  "runtime_probe_job": "1469071",
+  "runtime_probe_passed": true,
+  "end_to_end_job": "1469072",
+  "end_to_end_passed": true,
+  "new_GO_array": "1469073",
+  "new_anchor_array": "1469076",
+  "GO_models": 8,
+  "GO_property_levels": 48,
+  "anchor_models": 6,
+  "anchor_property_levels": 54,
+  "finite_field_anchors": 2,
+  "local_tests_passed": 238,
+  "external_candidates_not_yet_curated": {
+    "CSIRO_finite": 4,
+    "GO_MACE_periodic_frames": 75,
+    "GO_MACE_large_sheet_atoms": 15009
+  }
+}

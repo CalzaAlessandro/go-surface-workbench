@@ -1,0 +1,279 @@
+{
+  "generated_at_utc": "2026-11-04T21:05:31.965225+00:00",
+  "source_job_id": "1469066",
+  "QM_grids_verified": 54,
+  "physical_contexts": 9,
+  "matched_C24_for_mixing": [
+    "C24_pristine_parent_reference",
+    "C24_OH_OH_far_trans",
+    "C24_EPX_EPX_near_trans",
+    "C24_OH_EPX_near_trans",
+    "C24_OH_EPX_far_trans"
+  ],
+  "mixing_diagnostic_DFT": [
+    {
+      "model_id": "C24_pristine_parent_reference",
+      "HF_RESP": 0.13008179725554148,
+      "BCC": 0.5972401306482216,
+      "mixture": 0.348462163056811
+    },
+    {
+      "model_id": "C24_OH_OH_far_trans",
+      "HF_RESP": 0.11347014848339228,
+      "BCC": 0.40660665822357117,
+      "mixture": 0.2484359764050305
+    },
+    {
+      "model_id": "C24_EPX_EPX_near_trans",
+      "HF_RESP": 0.14627144790632288,
+      "BCC": 0.46093565397748393,
+      "mixture": 0.28716857916838157
+    },
+    {
+      "model_id": "C24_OH_EPX_near_trans",
+      "HF_RESP": 0.14752976078971258,
+      "BCC": 0.45488095733748357,
+      "mixture": 0.28217509660989054
+    },
+    {
+      "model_id": "C24_OH_EPX_far_trans",
+      "HF_RESP": 0.13456030445746137,
+      "BCC": 0.5132332294062901,
+      "mixture": 0.3067326767478935
+    }
+  ],
+  "mixture_worse_than_HF_RESP_C24": 5,
+  "mixture_better_than_BCC_C24": 5,
+  "aggregate_scores": [
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "HF",
+      "candidate": "Espaloma_BCC_ELF10",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "1.2659188170051132"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "HF",
+      "candidate": "L0_HF_RESP_C16",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "0.17916657255392857"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "HF",
+      "candidate": "SQE_HF_RESP_C16",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "0.23321607680123954"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "HF",
+      "candidate": "current_library",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "0.350124679726885"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "HF",
+      "candidate": "literature_hiergo_opls",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "0.24394163409735597"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "HF",
+      "candidate": "molecular_DFT_RESP",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "0.11273233996897762"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "HF",
+      "candidate": "molecular_HF_RESP",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "0.07554874957049258"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "DFT",
+      "candidate": "Espaloma_BCC_ELF10",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "1.424734318738018"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "DFT",
+      "candidate": "L0_HF_RESP_C16",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "0.2310017970479044"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "DFT",
+      "candidate": "SQE_HF_RESP_C16",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "0.22309298903525673"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "DFT",
+      "candidate": "current_library",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "0.4522781656164453"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "DFT",
+      "candidate": "literature_hiergo_opls",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "0.31032734657157107"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "DFT",
+      "candidate": "molecular_DFT_RESP",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "0.10984411659782922"
+    },
+    {
+      "subset": "all_seven_C24",
+      "QM_reference": "DFT",
+      "candidate": "molecular_HF_RESP",
+      "contexts": "7",
+      "median_mean_ESP_RRMS": "0.14184421836519814"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "HF",
+      "candidate": "BCC_integer_charge_control",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.3583365523211989"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "HF",
+      "candidate": "Espaloma_BCC_ELF10",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "1.2659188170051132"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "HF",
+      "candidate": "L0_HF_RESP_C16",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.19580322137038425"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "HF",
+      "candidate": "RESP_BCC_50_50_diagnostic",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.19685548870073769"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "HF",
+      "candidate": "SQE_HF_RESP_C16",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.23321607680123954"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "HF",
+      "candidate": "current_library",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.3495666913329405"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "HF",
+      "candidate": "literature_hiergo_opls",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.24394163409735597"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "HF",
+      "candidate": "molecular_DFT_RESP",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.11189971150138518"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "HF",
+      "candidate": "molecular_HF_RESP",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.07309080830524636"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "DFT",
+      "candidate": "BCC_integer_charge_control",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.46093565397748393"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "DFT",
+      "candidate": "Espaloma_BCC_ELF10",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "1.424734318738018"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "DFT",
+      "candidate": "L0_HF_RESP_C16",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.2310017970479044"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "DFT",
+      "candidate": "RESP_BCC_50_50_diagnostic",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.28716857916838157"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "DFT",
+      "candidate": "SQE_HF_RESP_C16",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.22309298903525673"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "DFT",
+      "candidate": "current_library",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.4381242103395176"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "DFT",
+      "candidate": "literature_hiergo_opls",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.31032734657157107"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "DFT",
+      "candidate": "molecular_DFT_RESP",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.10362643250733086"
+    },
+    {
+      "subset": "five_BCC_covered_C24",
+      "QM_reference": "DFT",
+      "candidate": "molecular_HF_RESP",
+      "contexts": "5",
+      "median_mean_ESP_RRMS": "0.13456030445746137"
+    }
+  ],
+  "QM_reference": "raw HF/6-31G* and wB97XD/6-311++G(d,p) electrostatic potentials, not fitted charge vectors",
+  "independence": "DFT is independent of the HF-RESP fitting target, but remains an approximate electronic method; all candidates share the evaluated geometry",
+  "GAFF2_AIM_finite_fragment_ESP_score_available": false,
+  "GAFF2_AIM_scope": "native periodic charge/LJ inventory; finite edges and COO lack a validated published mapping",
+  "new_QM_or_charge_parameter_fit": false,
+  "production_validation": false
+}

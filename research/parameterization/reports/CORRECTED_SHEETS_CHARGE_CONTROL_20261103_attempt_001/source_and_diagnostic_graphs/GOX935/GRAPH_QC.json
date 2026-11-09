@@ -1,0 +1,45 @@
+{
+  "name": "GOX935",
+  "mask": ":1-494",
+  "atoms": 1007,
+  "residues": 494,
+  "source_charge_sum_e": -16.000000000000004,
+  "formal_charge": -16,
+  "formula_counts": {
+    "C": 613,
+    "O": 253,
+    "H": 141
+  },
+  "residue_counts": {
+    "CAB": 30,
+    "GRT": 19,
+    "GGG": 241,
+    "HYD": 85,
+    "CBD": 16,
+    "CBX": 3,
+    "EPH": 24,
+    "EPX": 71,
+    "EPT": 5
+  },
+  "sigma_bonds": 1342,
+  "connected_component_atom_counts": [
+    1007
+  ],
+  "electron_count": 5859,
+  "carbon_sites_needing_one_pi_bond": 301,
+  "pi_candidate_edges": 230,
+  "max_completed_pi_pairs": 119,
+  "minimum_unmatched_neutral_C_sites": 63,
+  "maximum_sigma_bond_length_angstrom": 1.5529990341271949,
+  "source_files_sha256": {
+    "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/corrected_sheets_charge_control_20261103_attempt_001/sources/GOX935/compl.parm7": "8431f7e939ea03a6ed31fa6dbfa53036f47068d2d9356604dfd9b1b81bac82b1",
+    "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/corrected_sheets_charge_control_20261103_attempt_001/sources/GOX935/compl.rst7": "720a2299761b1ef15a04934356f11baa5d834a4459c51d44df5a98bf45724ef1"
+  },
+  "source_remote_directory": "/export/scratch/alessandro.calza3/HPC_POLL/PRIORITY_GOX935_4nm_corrected/ACETAMINOPHEN/GAFF2/N/1/U/complex_bottom_10",
+  "closed_shell_valence_graph_established": false,
+  "physical_spin_state_determined": false,
+  "production_charge_model_eligible": false,
+  "assumptions": "Named oxygen motifs retained; one formal -1 per CBD, neutral C; no proton/atom/bond added or removed. Unmatched sites are a Lewis-graph diagnostic, not a computed physical spin multiplicity.",
+  "bond_orders_are_inferred": true,
+  "bond_connectivity_inferred_by_distance": false
+}

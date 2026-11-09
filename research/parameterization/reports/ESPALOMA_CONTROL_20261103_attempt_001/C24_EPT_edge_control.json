@@ -1,0 +1,439 @@
+{
+  "summary": {
+    "model_id": "C24_EPT_edge_control",
+    "status": "technical_gates_passed",
+    "atoms": 37,
+    "formal_charge": 0,
+    "Espaloma_charge_sum_e": 5.21540641784668e-07,
+    "repeat_max_difference_e": 0.0,
+    "permutation_max_difference_e": 2.9802322387695312e-08,
+    "inference_seconds": 0.00437704473733902,
+    "native_BCC_primary_available": true,
+    "native_BCC_exclusion": null,
+    "comparisons": {
+      "espaloma__native_AM1_BCC": {
+        "charge_RMS_difference_e": 0.0783176274197999,
+        "charge_MAE_e": 0.07393553917407987,
+        "max_absolute_difference_e": 0.1939507580757141
+      },
+      "espaloma__current_library": {
+        "charge_RMS_difference_e": 0.06263187550931314,
+        "charge_MAE_e": 0.05375510252810815,
+        "max_absolute_difference_e": 0.11085814982652664
+      },
+      "espaloma__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.12231099429721926,
+        "charge_MAE_e": 0.09207875420268807,
+        "max_absolute_difference_e": 0.36395514982652666
+      },
+      "native_AM1_BCC__current_library": {
+        "charge_RMS_difference_e": 0.03914851831789406,
+        "charge_MAE_e": 0.03069189189189189,
+        "max_absolute_difference_e": 0.09759999999999996
+      },
+      "native_AM1_BCC__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.11635601246361287,
+        "charge_MAE_e": 0.09210854054054055,
+        "max_absolute_difference_e": 0.28009700000000004
+      },
+      "current_library__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.09045650744493254,
+        "charge_MAE_e": 0.06424675675675677,
+        "max_absolute_difference_e": 0.253097
+      }
+    },
+    "canonical_isomeric_SMILES": "[H]c1c([H])c2c([H])c([H])c3c([H])c([H])c4c([H])c([H])c5c([H])c([H])c6c7c(c1[C@]1([H])O[C@]61[H])c2c3c4c57",
+    "stereo_metadata_discrepancies": [
+      {
+        "atom_id": 1,
+        "stored_CIP": "S",
+        "coordinate_derived_CIP": "R"
+      },
+      {
+        "atom_id": 3,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": "S"
+      }
+    ],
+    "stereochemical_validation_claimed": false,
+    "final_parameter_validation": false
+  },
+  "atoms": [
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 1,
+      "element": "C",
+      "role": "EPT_C",
+      "espaloma_charge_e": 0.0372309610247612,
+      "current_library_charge_e": 0.02,
+      "molecular_HF_RESP_charge_e": -0.036503,
+      "native_AM1_BCC_charge_e": 0.1134
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 2,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.18464605510234833,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.152978,
+      "native_AM1_BCC_charge_e": -0.107
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 3,
+      "element": "C",
+      "role": "EPT_C",
+      "espaloma_charge_e": 0.0372309610247612,
+      "current_library_charge_e": 0.02,
+      "molecular_HF_RESP_charge_e": -0.025211,
+      "native_AM1_BCC_charge_e": 0.1134
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 4,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": 0.018992528319358826,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.064685,
+      "native_AM1_BCC_charge_e": -0.0663
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 5,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.16806147992610931,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.317404,
+      "native_AM1_BCC_charge_e": -0.114
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 6,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": 0.018992528319358826,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.025208,
+      "native_AM1_BCC_charge_e": -0.0663
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 7,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.07627725601196289,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.029172,
+      "native_AM1_BCC_charge_e": 0.002
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 8,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.11085814982652664,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.204405,
+      "native_AM1_BCC_charge_e": -0.027
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 9,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.18464605510234833,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.131311,
+      "native_AM1_BCC_charge_e": -0.107
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 10,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.07627725601196289,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.058973,
+      "native_AM1_BCC_charge_e": 0.002
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 11,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.06462348997592926,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.017337,
+      "native_AM1_BCC_charge_e": -0.012
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 12,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.16085082292556763,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.24818,
+      "native_AM1_BCC_charge_e": -0.115
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 13,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.16806147992610931,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.340505,
+      "native_AM1_BCC_charge_e": -0.114
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 14,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.06462348997592926,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.078658,
+      "native_AM1_BCC_charge_e": -0.012
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 15,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.06513577699661255,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.051383,
+      "native_AM1_BCC_charge_e": -0.011
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 16,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.16085082292556763,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.240228,
+      "native_AM1_BCC_charge_e": -0.111
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 17,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.11085814982652664,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.253097,
+      "native_AM1_BCC_charge_e": -0.027
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 18,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.06513577699661255,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.045994,
+      "native_AM1_BCC_charge_e": -0.011
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 19,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.09507989138364792,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.179404,
+      "native_AM1_BCC_charge_e": -0.03
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 20,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.16085082292556763,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.27194,
+      "native_AM1_BCC_charge_e": -0.115
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 21,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.09507989138364792,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.128565,
+      "native_AM1_BCC_charge_e": -0.03
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 22,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.16085082292556763,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.25384,
+      "native_AM1_BCC_charge_e": -0.113
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 23,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.16085082292556763,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.215887,
+      "native_AM1_BCC_charge_e": -0.111
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 24,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.16085082292556763,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.228008,
+      "native_AM1_BCC_charge_e": -0.113
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 25,
+      "element": "O",
+      "role": "EPT_O",
+      "espaloma_charge_e": -0.1836492419242859,
+      "current_library_charge_e": -0.28,
+      "molecular_HF_RESP_charge_e": -0.288668,
+      "native_AM1_BCC_charge_e": -0.3776
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 26,
+      "element": "H",
+      "role": "EPT_H",
+      "espaloma_charge_e": 0.15467552840709686,
+      "current_library_charge_e": 0.12,
+      "molecular_HF_RESP_charge_e": 0.126003,
+      "native_AM1_BCC_charge_e": 0.0997
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 27,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22944451868534088,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.161163,
+      "native_AM1_BCC_charge_e": 0.138
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 28,
+      "element": "H",
+      "role": "EPT_H",
+      "espaloma_charge_e": 0.15467552840709686,
+      "current_library_charge_e": 0.12,
+      "molecular_HF_RESP_charge_e": 0.125225,
+      "native_AM1_BCC_charge_e": 0.0997
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 29,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22626224160194397,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.180777,
+      "native_AM1_BCC_charge_e": 0.137
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 30,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22944451868534088,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.158374,
+      "native_AM1_BCC_charge_e": 0.138
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 31,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22415122389793396,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.166599,
+      "native_AM1_BCC_charge_e": 0.136
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 32,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22626224160194397,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.183792,
+      "native_AM1_BCC_charge_e": 0.137
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 33,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22415122389793396,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.164552,
+      "native_AM1_BCC_charge_e": 0.136
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 34,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22415122389793396,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.169647,
+      "native_AM1_BCC_charge_e": 0.136
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 35,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22415122389793396,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.169049,
+      "native_AM1_BCC_charge_e": 0.136
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 36,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22415122389793396,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.161455,
+      "native_AM1_BCC_charge_e": 0.136
+    },
+    {
+      "model_id": "C24_EPT_edge_control",
+      "atom_id": 37,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22415122389793396,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.165572,
+      "native_AM1_BCC_charge_e": 0.136
+    }
+  ],
+  "source_SHA256": {
+    "PARAMETERIZATION/calculations/am1_bcc_native_snapshot_20261103_attempt_001/C24_EPT_edge_control/model.json": "3f63b4cd5c1ea3daf660f9e20bb98c6682de3afac29a0f203b9bed219838b1a6",
+    "PARAMETERIZATION/calculations/am1_bcc_native_snapshot_20261103_attempt_001/C24_EPT_edge_control/am1_bcc.mol2": "3c944fb2cdd8f383752d8af73733feae65dbdc3b52307c1a500a71cabb59bc46",
+    "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPT_edge_control/HF/charges.json": "46c51be14908906e4e9640932ce54234148574f324674dd875ff1fe152f5c01e",
+    "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/C24_EPT_edge_control/HF/FIT_COMPLETE.json": "f956369ca2b2e95e5624d2ad695924a410be0e8b7c56f4192283f320ee8b5d28"
+  }
+}

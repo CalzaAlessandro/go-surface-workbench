@@ -1,0 +1,5 @@
+training,method,supported_original_C24_models,original_C24_models
+C16_only,L0,7,9
+C16_only,L1,2,9
+C16_plus_loading,L0,7,9
+C16_plus_loading,L1,4,9

@@ -1,0 +1,16 @@
+{
+  "source": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/cross_method_ESP_scores.csv",
+  "source_sha256": "743e6be5c8572f2d883ebc75c17eaf828b751e22f6a724b9f379efecfb7c6de1",
+  "aggregation": "arithmetic mean of 3 rigid orientations per physical geometry, not replicates",
+  "missing_data": "unavailable shown as N/D, not zero",
+  "normalization": {
+    "RRMS_scale_min": 0,
+    "common_RRMS_scale_max": 0.7
+  },
+  "formats": [
+    "PNG 300 dpi",
+    "SVG",
+    "HTML with selectable reference grid"
+  ],
+  "journal_specific_validation": false
+}

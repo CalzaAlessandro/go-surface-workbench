@@ -1,0 +1,14 @@
+{
+  "verified_at_utc": "2026-11-03T21:51:57.414244+00:00",
+  "squeue_user": "alessandro.calza3",
+  "squeue_stdout": "",
+  "sacct_job_ids": [
+    "1406363",
+    "1452975",
+    "1453077",
+    "1453111",
+    "1463920",
+    "1464485"
+  ],
+  "sacct_stdout": "JobID|JobName|State|Elapsed|ExitCode\n1406363_0|GO-isolated-RESP|COMPLETED|04:36:58|0:0\n1406363_0.batch|batch|COMPLETED|04:36:58|0:0\n1406363_1|GO-isolated-RESP|COMPLETED|06:04:05|0:0\n1406363_1.batch|batch|COMPLETED|06:04:05|0:0\n1406363_2|GO-isolated-RESP|FAILED|2-17:54:54|1:0\n1406363_2.batch|batch|FAILED|2-17:54:54|1:0\n1406363_3|GO-isolated-RESP|FAILED|3-14:03:07|1:0\n1406363_3.batch|batch|FAILED|3-14:03:07|1:0\n1452975|GO-charge-synthesis|COMPLETED|00:06:07|0:0\n1452975.batch|batch|COMPLETED|00:06:07|0:0\n1453077|GO-C54-ESP-recovery|COMPLETED|00:00:46|0:0\n1453077.batch|batch|COMPLETED|00:00:46|0:0\n1453111|GO-C54-single-followup|COMPLETED|00:00:14|0:0\n1453111.batch|batch|COMPLETED|00:00:14|0:0\n1463920|GO-Espaloma-control|COMPLETED|00:00:10|0:0\n1463920.batch|batch|COMPLETED|00:00:10|0:0\n1464485|GO-SQE-control|COMPLETED|00:00:05|0:0\n1464485.batch|batch|COMPLETED|00:00:05|0:0\n"
+}

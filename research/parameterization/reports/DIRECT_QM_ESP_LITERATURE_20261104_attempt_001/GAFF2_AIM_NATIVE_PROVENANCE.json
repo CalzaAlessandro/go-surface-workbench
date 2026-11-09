@@ -1,0 +1,24 @@
+{
+  "source_parameter_table_SHA256": "a7e5e56c89afac19d2131547f0523b4eeb9ef4acf01086ba69d2edd4a06ffd48",
+  "topology_SHA256": {
+    "gaff2_aim/GO_18/GO_sheet_1_8.top": "55aae42235dd146259aeb1f425e42980b2966d846e643d502ccd00f82a1ff124",
+    "gaff2_aim/GO_30/GO_sheet_3_0.top": "dd0b082236f55891780c8eda75c3e24b9c7b7015ace27cdb5656ad7db6d68c94"
+  },
+  "native_periodic_variants": [
+    {
+      "file": "gaff2_aim/GO_18/GO_sheet_1_8.top",
+      "atom_count": 15597,
+      "C_over_O": 1.7997892518440464,
+      "sum_charge_e": 8.88971862268717e-10
+    },
+    {
+      "file": "gaff2_aim/GO_30/GO_sheet_3_0.top",
+      "atom_count": 12819,
+      "C_over_O": 2.9996487530734104,
+      "sum_charge_e": -5.133018746161788e-09
+    }
+  ],
+  "purpose": "native charge/LJ inventory; different sheets from finite QM fragments; not an accuracy ranking",
+  "no_coefficients_changed": true,
+  "no_unsupported_edge_or_carboxylate_fallback": true
+}

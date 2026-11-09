@@ -1,0 +1,1314 @@
+method,model_id,scaffold_C,context_id,atom_id,element,name,role,roles,position_angstrom,charge_e,functional_group_ids,is_scaffold_carbon
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.148133, 0.596614, 1.781789]",-0.093248,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.875385, -0.547942, 1.045133]",-0.29546,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,3,C,C3,scaffold_C,"[""scaffold_C""]","[-1.757923, -0.60757, 0.209165]",0.201417,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.443519, -1.776851, -0.569198]",-0.249581,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.357751, -1.814334, -1.371813]",-0.249581,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,6,C,C6,scaffold_C,"[""scaffold_C""]","[0.529865, -0.686585, -1.482052]",0.201417,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[1.657666, -0.704574, -2.305947]",-0.29546,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[2.492178, 0.401727, -2.387784]",-0.093248,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[2.21943, 1.546283, -1.651128]",-0.29546,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,10,C,C10,scaffold_C,"[""scaffold_C""]","[1.101968, 1.605912, -0.815161]",0.201417,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[0.787564, 2.775192, -0.036797]",-0.249581,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.298204, 2.812676, 0.765818]",-0.249581,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,13,C,C13,scaffold_C,"[""scaffold_C""]","[-1.185821, 1.684927, 0.876056]",0.201417,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.313621, 1.702915, 1.699952]",-0.29546,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,15,C,C15,scaffold_C,"[""scaffold_C""]","[-0.901416, 0.518957, 0.12091]",-0.032271,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,16,C,C16,scaffold_C,"[""scaffold_C""]","[0.245461, 0.479384, -0.726905]",-0.032271,[],True
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,17,H,H17,edge_H,"[""edge_H""]","[-4.019601, 0.626706, 2.426074]",0.145857,[],False
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,18,H,H18,edge_H,"[""edge_H""]","[-3.532317, -1.408837, 1.114256]",0.168057,[],False
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,19,H,H19,edge_H,"[""edge_H""]","[-2.103259, -2.635414, -0.496881]",0.165397,[],False
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,20,H,H20,edge_H,"[""edge_H""]","[-0.134167, -2.703454, -1.952405]",0.165397,[],False
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,21,H,H21,edge_H,"[""edge_H""]","[1.877213, -1.595818, -2.884718]",0.168057,[],False
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,22,H,H22,edge_H,"[""edge_H""]","[3.363646, 0.371635, -3.03207]",0.145857,[],False
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,23,H,H23,edge_H,"[""edge_H""]","[2.876362, 2.407178, -1.720252]",0.168057,[],False
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,24,H,H24,edge_H,"[""edge_H""]","[1.447303, 3.633755, -0.109115]",0.165397,[],False
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,25,H,H25,edge_H,"[""edge_H""]","[-0.521788, 3.701795, 1.34641]",0.165397,[],False
+HF,pyrene_pristine,16,pyrene_pristine::fit_001,26,H,H26,edge_H,"[""edge_H""]","[-2.533168, 2.594159, 2.278723]",0.168057,[],False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.93523, -3.15801, -0.363658]",-0.187522,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.505718, -2.592798, -1.525756]",-0.208813,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,3,C,C3,scaffold_C,"[""scaffold_C""]","[-0.760576, -1.380276, -1.511891]",-0.125091,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.008036, -0.988739, -2.576027]",-0.200482,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[0.962227, 0.043025, -2.480006]",-0.166839,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,6,C,C6,scaffold_C,"[""scaffold_C""]","[1.196158, 0.727686, -1.327627]",-0.029014,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[2.321705, 1.581059, -1.167961]",-0.230557,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[2.697522, 2.028399, 0.063324]",-0.174906,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[2.021612, 1.584102, 1.23286]",-0.143531,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,10,C,C10,scaffold_C,"[""scaffold_C""]","[0.898688, 0.810095, 1.167773]",-0.05224,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[0.329482, 0.194987, 2.31787]",-0.26288,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.548877, -0.839532, 2.23557]",-0.191728,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,13,C,C13,scaffold_C,"[""scaffold_C""]","[-0.982132, -1.37432, 0.993759]",-0.202282,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.609624, -2.579142, 0.895711]",-0.050583,[],True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,15,C,C15,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-0.874101, -0.516242, -0.260499]",0.77266,"[""OH:1""]",True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,16,C,C16,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[0.201978, 0.674978, -0.179261]",0.437016,"[""OH:2""]",True
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,17,O,O17,hydroxyl_O,"[""hydroxyl_O""]","[-2.178654, 0.068239, -0.329036]",-0.68478,"[""OH:1""]",False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,18,O,O18,hydroxyl_O,"[""hydroxyl_O""]","[-0.519061, 1.916416, -0.376326]",-0.647989,"[""OH:2""]",False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,19,H,H19,edge_H,"[""edge_H""]","[-2.454238, -4.109643, -0.385258]",0.155061,[],False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,20,H,H20,edge_H,"[""edge_H""]","[-1.643358, -3.105673, -2.472238]",0.161008,[],False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,21,H,H21,edge_H,"[""edge_H""]","[-0.072211, -1.555538, -3.500055]",0.167625,[],False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,22,H,H22,edge_H,"[""edge_H""]","[1.607793, 0.227257, -3.333684]",0.161622,[],False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,23,H,H23,edge_H,"[""edge_H""]","[2.922491, 1.808474, -2.042582]",0.16453,[],False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,24,H,H24,edge_H,"[""edge_H""]","[3.582109, 2.645883, 0.168965]",0.154061,[],False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,25,H,H25,edge_H,"[""edge_H""]","[2.457161, 1.795688, 2.204715]",0.143781,[],False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,26,H,H26,edge_H,"[""edge_H""]","[0.693276, 0.512846, 3.290438]",0.167302,[],False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,27,H,H27,edge_H,"[""edge_H""]","[-0.879752, -1.333508, 3.14402]",0.172355,[],False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,28,H,H28,edge_H,"[""edge_H""]","[-1.822161, -3.13769, 1.80204]",0.123684,[],False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,29,H,H29,hydroxyl_H,"[""hydroxyl_H""]","[-2.074209, 0.898449, -0.809121]",0.383316,"[""OH:1""]",False
+HF,pyrene_diol_cis,16,pyrene_diol_cis::fit_002,30,H,H30,hydroxyl_H,"[""hydroxyl_H""]","[-0.807733, 2.225256, 0.487392]",0.395213,"[""OH:2""]",False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.609541, -3.171119, -0.409184]",-0.144546,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.779552, -2.590796, -1.632963]",-0.230017,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,3,C,C3,scaffold_C,"[""scaffold_C""]","[-0.700306, -1.183792, -1.789858]",-0.008377,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.735471, -0.53941, -2.993195]",-0.190462,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.615632, 0.879636, -3.093041]",-0.190462,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,6,C,C6,scaffold_C,"[""scaffold_C""]","[-0.271364, 1.6578, -2.024874]",-0.008377,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.178143, 3.072573, -2.061166]",-0.230017,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[0.035771, 3.794428, -0.922379]",-0.144546,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[0.14063, 3.172845, 0.356428]",-0.123952,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,10,C,C10,scaffold_C,"[""scaffold_C""]","[0.100759, 1.820009, 0.494754]",-0.060863,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[0.178262, 1.135554, 1.742771]",-0.194454,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[0.057564, -0.221561, 1.840046]",-0.194454,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,13,C,C13,scaffold_C,"[""scaffold_C""]","[-0.267858, -1.0434, 0.722011]",-0.060863,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.314485, -2.402696, 0.755112]",-0.123952,[],True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,15,C,C15,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-0.706047, -0.321732, -0.537816]",0.424748,"[""OH:1""]",True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,16,C,C16,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[0.140315, 0.94763, -0.747817]",0.424748,"[""OH:2""]",True
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,17,O,O17,hydroxyl_O,"[""hydroxyl_O""]","[-2.068397, 0.038157, -0.259645]",-0.595917,"[""OH:1""]",False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,18,O,O18,hydroxyl_O,"[""hydroxyl_O""]","[1.510664, 0.58989, -0.988131]",-0.595917,"[""OH:2""]",False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,19,H,H19,edge_H,"[""edge_H""]","[-0.649849, -4.251035, -0.320185]",0.14664,[],False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,20,H,H20,edge_H,"[""edge_H""]","[-0.93262, -3.206311, -2.513805]",0.157038,[],False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,21,H,H21,edge_H,"[""edge_H""]","[-0.876863, -1.117023, -3.901541]",0.161259,[],False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,22,H,H22,edge_H,"[""edge_H""]","[-0.785944, 1.35114, -4.056355]",0.161259,[],False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,23,H,H23,edge_H,"[""edge_H""]","[-0.32281, 3.57924, -3.010121]",0.157038,[],False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,24,H,H24,edge_H,"[""edge_H""]","[0.082086, 4.876372, -0.977921]",0.14664,[],False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,25,H,H25,edge_H,"[""edge_H""]","[0.221618, 3.798305, 1.240229]",0.138238,[],False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,26,H,H26,edge_H,"[""edge_H""]","[0.363598, 1.722894, 2.636883]",0.155399,[],False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,27,H,H27,edge_H,"[""edge_H""]","[0.187181, -0.703237, 2.80448]",0.155399,[],False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,28,H,H28,edge_H,"[""edge_H""]","[-0.094504, -2.920805, 1.683651]",0.138238,[],False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,29,H,H29,hydroxyl_H,"[""hydroxyl_H""]","[-2.452652, 0.392088, -1.066973]",0.365265,"[""OH:1""]",False
+HF,pyrene_diol_trans,16,pyrene_diol_trans::fit_003,30,H,H30,hydroxyl_H,"[""hydroxyl_H""]","[1.89482, 0.298084, -0.156436]",0.365265,"[""OH:2""]",False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.384334, -3.271584, 1.023992]",-0.114026,[],True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.313308, -3.244065, 0.069584]",-0.505943,[],True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,3,C,C3,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-1.514161, -2.090109, -0.887414]",0.803922,"[""OH:2""]",True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.783631, -1.38312, -0.482348]",-0.43013,[],True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.983479, -0.07337, -0.593913]",-0.219405,[],True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,6,C,C6,scaffold_C,"[""scaffold_C""]","[-1.947159, 0.859075, -0.994676]",0.118869,[],True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.163077, 2.194914, -0.986655]",-0.242947,[],True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.085756, 3.15297, -1.001991]",-0.010753,[],True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[0.195184, 2.751447, -0.959753]",-0.544844,[],True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,10,C,C10,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.532225, 1.331555, -1.129975]",0.77314,"[""EPX:1""]",True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[1.783864, 0.857907, -0.492587]",-0.509926,[],True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[1.786327, -0.261578, 0.237825]",-0.030785,[],True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,13,C,C13,scaffold_C,"[""scaffold_C""]","[0.672564, -1.208871, 0.251567]",-0.339709,[],True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[0.604055, -2.210569, 1.13842]",-0.047986,[],True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,15,C,C15,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-0.24427, -1.153405, -0.965708]",0.620354,"[""OH:1""]",True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,16,C,C16,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-0.590977, 0.339452, -1.259698]",-0.058061,"[""EPX:1""]",True
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,17,O,O17,hydroxyl_O,"[""hydroxyl_O""]","[0.543489, -1.664485, -2.035072]",-0.644591,"[""OH:1""]",False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,18,O,O18,hydroxyl_O,"[""hydroxyl_O""]","[-1.796508, -2.606198, -2.17903]",-0.705619,"[""OH:2""]",False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,19,O,O19,epoxide_O,"[""epoxide_O""]","[0.101997, 0.807519, -2.412303]",-0.419002,"[""EPX:1""]",False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,20,H,H20,edge_H,"[""edge_H""]","[-0.322398, -4.112851, 1.70532]",0.148732,[],False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,21,H,H21,edge_H,"[""edge_H""]","[-2.022621, -4.056163, -0.055516]",0.207996,[],False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,22,H,H22,edge_H,"[""edge_H""]","[-3.593459, -2.030977, -0.163913]",0.212189,[],False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,23,H,H23,edge_H,"[""edge_H""]","[-3.951738, 0.348117, -0.341387]",0.167626,[],False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,24,H,H24,edge_H,"[""edge_H""]","[-3.171375, 2.560947, -0.822297]",0.156338,[],False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,25,H,H25,edge_H,"[""edge_H""]","[-1.329698, 4.206373, -0.92251]",0.146068,[],False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,26,H,H26,edge_H,"[""edge_H""]","[1.005264, 3.453164, -0.794942]",0.217086,[],False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,27,H,H27,edge_H,"[""edge_H""]","[2.649098, 1.511873, -0.519217]",0.196159,[],False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,28,H,H28,edge_H,"[""edge_H""]","[2.665075, -0.5243, 0.819322]",0.161114,[],False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,29,H,H29,edge_H,"[""edge_H""]","[1.348194, -2.277408, 1.92648]",0.132253,[],False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,30,H,H30,hydroxyl_H,"[""hydroxyl_H""]","[0.737528, -0.916292, -2.617998]",0.377622,"[""OH:1""]",False
+HF,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_004,31,H,H31,hydroxyl_H,"[""hydroxyl_H""]","[-0.936217, -2.727231, -2.60184]",0.384257,"[""OH:2""]",False
+HF,pyrene_dione,16,pyrene_dione::fit_005,1,C,C1,carbonyl_C,"[""carbonyl_C"", ""edge_C"", ""scaffold_C""]","[-3.417705, 0.887318, 1.513839]",0.637564,"[""CAB:1""]",True
+HF,pyrene_dione,16,pyrene_dione::fit_005,2,C,C2,carbonyl_C,"[""carbonyl_C"", ""edge_C"", ""scaffold_C""]","[-3.011687, -0.503901, 0.952052]",0.454363,"[""CAB:2""]",True
+HF,pyrene_dione,16,pyrene_dione::fit_005,3,C,C3,scaffold_C,"[""scaffold_C""]","[-1.724117, -0.596486, 0.211115]",-0.056737,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.325438, -1.842847, -0.311948]",-0.124459,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.147947, -1.960578, -0.996978]",-0.285308,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,6,C,C6,scaffold_C,"[""scaffold_C""]","[0.688787, -0.834955, -1.191958]",0.217344,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[1.916037, -0.927959, -1.898586]",-0.294682,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[2.705548, 0.176239, -2.072333]",-0.090429,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[2.309837, 1.424209, -1.550689]",-0.259806,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,10,C,C10,scaffold_C,"[""scaffold_C""]","[1.126878, 1.558288, -0.85887]",0.151616,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[0.69834, 2.834942, -0.312134]",-0.199344,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.453582, 2.966269, 0.361781]",-0.243787,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,13,C,C13,scaffold_C,"[""scaffold_C""]","[-1.343414, 1.838347, 0.586142]",0.291384,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.50196, 1.994738, 1.270086]",-0.573061,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,15,C,C15,scaffold_C,"[""scaffold_C""]","[-0.934354, 0.530699, 0.042593]",-0.10532,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,16,C,C16,scaffold_C,"[""scaffold_C""]","[0.291199, 0.419695, -0.667607]",0.043524,[],True
+HF,pyrene_dione,16,pyrene_dione::fit_005,17,O,O17,carbonyl_O,"[""carbonyl_O""]","[-4.456709, 1.000371, 2.120531]",-0.510762,"[""CAB:1""]",False
+HF,pyrene_dione,16,pyrene_dione::fit_005,18,O,O18,carbonyl_O,"[""carbonyl_O""]","[-3.730999, -1.453558, 1.124946]",-0.476134,"[""CAB:2""]",False
+HF,pyrene_dione,16,pyrene_dione::fit_005,19,H,H19,edge_H,"[""edge_H""]","[-1.975326, -2.695286, -0.155087]",0.177978,[],False
+HF,pyrene_dione,16,pyrene_dione::fit_005,20,H,H20,edge_H,"[""edge_H""]","[0.159384, -2.919737, -1.399677]",0.180702,[],False
+HF,pyrene_dione,16,pyrene_dione::fit_005,21,H,H21,edge_H,"[""edge_H""]","[2.217721, -1.889875, -2.298751]",0.178465,[],False
+HF,pyrene_dione,16,pyrene_dione::fit_005,22,H,H22,edge_H,"[""edge_H""]","[3.641318, 0.09666, -2.61319]",0.154038,[],False
+HF,pyrene_dione,16,pyrene_dione::fit_005,23,H,H23,edge_H,"[""edge_H""]","[2.944975, 2.291838, -1.6955]",0.174703,[],False
+HF,pyrene_dione,16,pyrene_dione::fit_005,24,H,H24,edge_H,"[""edge_H""]","[1.34342, 3.694062, -0.464725]",0.163657,[],False
+HF,pyrene_dione,16,pyrene_dione::fit_005,25,H,H25,edge_H,"[""edge_H""]","[-0.754212, 3.928335, 0.761259]",0.166765,[],False
+HF,pyrene_dione,16,pyrene_dione::fit_005,26,H,H26,edge_H,"[""edge_H""]","[-2.793412, 2.961612, 1.665753]",0.227724,[],False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,1,C,C1,COOH_anchor,"[""COOH_anchor"", ""edge_C"", ""scaffold_C""]","[-2.268719, -0.267082, -2.463215]",0.024731,"[""COOH:1""]",True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.923884, -1.158643, -1.451315]",-0.330246,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,3,C,C3,scaffold_C,"[""scaffold_C""]","[-0.949831, -0.824926, -0.513657]",0.215036,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.569331, -1.723344, 0.545236]",-0.240915,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[0.377642, -1.381421, 1.444901]",-0.257229,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,6,C,C6,scaffold_C,"[""scaffold_C""]","[1.044186, -0.106666, 1.381969]",0.204711,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[2.025906, 0.265816, 2.302609]",-0.299932,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[2.648022, 1.503593, 2.211462]",-0.084944,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[2.305414, 2.39393, 1.203103]",-0.299932,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,10,C,C10,scaffold_C,"[""scaffold_C""]","[1.328762, 2.061113, 0.261868]",0.204711,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[0.947058, 2.958078, -0.79744]",-0.257229,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[0.000165, 2.617533, -1.697942]",-0.240915,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,13,C,C13,scaffold_C,"[""scaffold_C""]","[-0.665428, 1.342544, -1.633756]",0.215036,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.645057, 0.974414, -2.554934]",-0.330246,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,15,C,C15,scaffold_C,"[""scaffold_C""]","[-0.310203, 0.438238, -0.600959]",-0.059798,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,16,C,C16,scaffold_C,"[""scaffold_C""]","[0.689636, 0.798386, 0.349501]",-0.011025,[],True
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,17,C,C17,COOH_C,"[""COOH_C""]","[-3.316622, -0.689373, -3.429575]",0.785724,"[""COOH:1""]",False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,18,O,O18,COOH_O,"[""COOH_O""]","[-3.891194, -1.747639, -3.403005]",-0.605694,"[""COOH:1""]",False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,19,O,O19,COOH_OH,"[""COOH_OH""]","[-3.577429, 0.241682, -4.367444]",-0.658299,"[""COOH:1""]",False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,20,H,H20,edge_H,"[""edge_H""]","[-2.426114, -2.118361, -1.404458]",0.199393,[],False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,21,H,H21,edge_H,"[""edge_H""]","[-1.063942, -2.687021, 0.603851]",0.170172,[],False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,22,H,H22,edge_H,"[""edge_H""]","[0.655142, -2.067825, 2.238064]",0.169305,[],False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,23,H,H23,edge_H,"[""edge_H""]","[2.300029, -0.423819, 3.094073]",0.171467,[],False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,24,H,H24,edge_H,"[""edge_H""]","[3.408222, 1.777276, 2.934342]",0.148898,[],False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,25,H,H25,edge_H,"[""edge_H""]","[2.796657, 3.35922, 1.139302]",0.171467,[],False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,26,H,H26,edge_H,"[""edge_H""]","[1.440733, 3.922416, -0.857603]",0.169305,[],False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,27,H,H27,edge_H,"[""edge_H""]","[-0.277873, 3.303306, -2.491309]",0.170172,[],False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,28,H,H28,edge_H,"[""edge_H""]","[-1.922256, 1.659411, -3.346992]",0.199393,[],False
+HF,pyrene_COOH,16,pyrene_COOH::fit_006,29,H,H29,COOH_H,"[""COOH_H""]","[-4.262415, -0.12356, -4.938843]",0.456878,"[""COOH:1""]",False
+HF,pyrene_COO,16,pyrene_COO::fit_007,1,C,C1,COO_anchor,"[""COO_anchor"", ""edge_C"", ""scaffold_C""]","[-3.440746, -0.203253, -0.22579]",0.086049,"[""COO:1""]",True
+HF,pyrene_COO,16,pyrene_COO::fit_007,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.5469, -0.790916, 0.663101]",-0.330794,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,3,C,C3,scaffold_C,"[""scaffold_C""]","[-1.176118, -0.528456, 0.604007]",0.187194,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.235728, -1.125739, 1.513537]",-0.19805,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[1.089109, -0.860378, 1.442119]",-0.319905,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,6,C,C6,scaffold_C,"[""scaffold_C""]","[1.616676, 0.036154, 0.447042]",0.22251,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[2.980322, 0.328929, 0.349594]",-0.328501,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[3.450638, 1.1997, -0.624817]",-0.111598,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[2.573302, 1.796062, -1.521211]",-0.328501,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,10,C,C10,scaffold_C,"[""scaffold_C""]","[1.201705, 1.531934, -1.460374]",0.22251,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[0.2597, 2.12928, -2.370407]",-0.319905,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.062861, 1.855681, -2.288582]",-0.19805,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,13,C,C13,scaffold_C,"[""scaffold_C""]","[-1.589063, 0.959923, -1.294094]",0.187194,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.951114, 0.666002, -1.194892]",-0.330794,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,15,C,C15,scaffold_C,"[""scaffold_C""]","[-0.68181, 0.358398, -0.385604]",-0.094758,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,16,C,C16,scaffold_C,"[""scaffold_C""]","[0.713123, 0.642353, -0.466369]",-0.005995,[],True
+HF,pyrene_COO,16,pyrene_COO::fit_007,17,C,C17,COO_C,"[""COO_C""]","[-4.961965, -0.512664, -0.137815]",0.807216,"[""COO:1""]",False
+HF,pyrene_COO,16,pyrene_COO::fit_007,18,O,O18,COO_O,"[""COO_O""]","[-5.666207, 0.070431, -0.983873]",-0.786679,"[""COO:1""]",False
+HF,pyrene_COO,16,pyrene_COO::fit_007,19,O,O19,COO_O,"[""COO_O""]","[-5.285419, -1.304684, 0.767626]",-0.786679,"[""COO:1""]",False
+HF,pyrene_COO,16,pyrene_COO::fit_007,20,H,H20,edge_H,"[""edge_H""]","[-2.95721, -1.465231, 1.408864]",0.178581,[],False
+HF,pyrene_COO,16,pyrene_COO::fit_007,21,H,H21,edge_H,"[""edge_H""]","[-0.620235, -1.804093, 2.269186]",0.154963,[],False
+HF,pyrene_COO,16,pyrene_COO::fit_007,22,H,H22,edge_H,"[""edge_H""]","[1.783081, -1.321692, 2.138526]",0.154485,[],False
+HF,pyrene_COO,16,pyrene_COO::fit_007,23,H,H23,edge_H,"[""edge_H""]","[3.67199, -0.133739, 1.047248]",0.15881,[],False
+HF,pyrene_COO,16,pyrene_COO::fit_007,24,H,H24,edge_H,"[""edge_H""]","[4.512376, 1.415936, -0.686238]",0.133857,[],False
+HF,pyrene_COO,16,pyrene_COO::fit_007,25,H,H25,edge_H,"[""edge_H""]","[2.947998, 2.475963, -2.280522]",0.15881,[],False
+HF,pyrene_COO,16,pyrene_COO::fit_007,26,H,H26,edge_H,"[""edge_H""]","[0.637195, 2.808773, -3.128827]",0.154485,[],False
+HF,pyrene_COO,16,pyrene_COO::fit_007,27,H,H27,edge_H,"[""edge_H""]","[-1.762481, 2.313203, -2.981545]",0.154963,[],False
+HF,pyrene_COO,16,pyrene_COO::fit_007,28,H,H28,edge_H,"[""edge_H""]","[-3.672077, 1.10967, -1.875061]",0.178581,[],False
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.245052, -3.519525, -7.9e-05]",-0.24227,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.245052, -3.519525, -7.9e-05]",-0.24227,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.42549, -2.837999, 7.9e-05]",-0.24227,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,4,C,C4,scaffold_C,"[""scaffold_C""]","[-0.0, -2.832211, -1.4e-05]",0.163785,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.42549, -2.837999, 7.9e-05]",-0.24227,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.452765, -1.416113, 1.5e-05]",0.163785,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,7,C,C7,scaffold_C,"[""scaffold_C""]","[-0.0, -1.424357, -0.001854]",-0.009508,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.452765, -1.416113, 1.5e-05]",0.163785,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.670509, -0.681532, 7.9e-05]",-0.24227,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,10,C,C10,scaffold_C,"[""scaffold_C""]","[-1.233529, -0.712182, 0.001856]",-0.009508,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.233529, -0.712182, 0.001856]",-0.009508,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.670508, -0.681532, 7.9e-05]",-0.24227,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.670508, 0.681532, -7.9e-05]",-0.24227,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,14,C,C14,scaffold_C,"[""scaffold_C""]","[-1.233529, 0.712182, -0.001856]",-0.009508,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.233529, 0.712182, -0.001856]",-0.009508,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.670509, 0.681532, -7.9e-05]",-0.24227,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.452765, 1.416113, -1.5e-05]",0.163785,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,18,C,C18,scaffold_C,"[""scaffold_C""]","[0.0, 1.424357, 0.001854]",-0.009508,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.452765, 1.416113, -1.5e-05]",0.163785,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.42549, 2.837999, -7.9e-05]",-0.24227,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,21,C,C21,scaffold_C,"[""scaffold_C""]","[0.0, 2.832211, 1.4e-05]",0.163785,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.42549, 2.837999, -7.9e-05]",-0.24227,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.245052, 3.519525, 7.9e-05]",-0.24227,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.245052, 3.519525, 7.9e-05]",-0.24227,[],True
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,25,H,H25,edge_H,"[""edge_H""]","[-1.241002, -4.604661, 0.00014]",0.165132,[],False
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,26,H,H26,edge_H,"[""edge_H""]","[1.241001, -4.604661, 0.00014]",0.165132,[],False
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,27,H,H27,edge_H,"[""edge_H""]","[-3.367262, -3.377084, -0.000141]",0.165132,[],False
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,28,H,H28,edge_H,"[""edge_H""]","[3.367262, -3.377085, -0.000141]",0.165132,[],False
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,29,H,H29,edge_H,"[""edge_H""]","[-4.608228, -1.227638, -0.00014]",0.165132,[],False
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,30,H,H30,edge_H,"[""edge_H""]","[4.608228, -1.227638, -0.00014]",0.165132,[],False
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,31,H,H31,edge_H,"[""edge_H""]","[-4.608228, 1.227638, 0.00014]",0.165132,[],False
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,32,H,H32,edge_H,"[""edge_H""]","[4.608228, 1.227638, 0.00014]",0.165132,[],False
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,33,H,H33,edge_H,"[""edge_H""]","[-3.367262, 3.377085, 0.000141]",0.165132,[],False
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,34,H,H34,edge_H,"[""edge_H""]","[3.367262, 3.377084, 0.000141]",0.165132,[],False
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,35,H,H35,edge_H,"[""edge_H""]","[-1.241001, 4.604661, -0.00014]",0.165132,[],False
+HF,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,36,H,H36,edge_H,"[""edge_H""]","[1.241002, 4.604661, -0.00014]",0.165132,[],False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.261503, -3.514817, -0.194323]",-0.37792,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.238673, -3.503671, -0.246237]",-0.355678,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.442644, -2.859343, -0.123278]",-0.074331,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,4,C,C4,scaffold_C,"[""scaffold_C""]","[0.007152, -2.826519, -0.092361]",0.414398,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.424086, -2.821413, -0.18609]",-0.199507,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.50387, -1.447694, 0.131784]",-0.09911,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,7,C,C7,scaffold_C,"[""scaffold_C""]","[0.02477, -1.454173, 0.149319]",-0.314163,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.449817, -1.416542, -0.028081]",0.170039,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.659, -0.708714, 0.101151]",-0.200704,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,10,C,C10,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.242032, -0.775548, 0.445036]",0.421571,"[""EPX:1""]",True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.230419, -0.722269, 0.133266]",0.03059,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.670998, -0.678793, -0.084172]",-0.242636,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.658988, 0.708748, 0.101171]",-0.200158,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,14,C,C14,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.24202, 0.775533, 0.445058]",0.422937,"[""EPX:1""]",True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.23043, 0.722225, 0.133287]",0.031935,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.671009, 0.678716, -0.084152]",-0.24335,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.503847, 1.447709, 0.131826]",-0.100492,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,18,C,C18,scaffold_C,"[""scaffold_C""]","[0.024794, 1.454147, 0.149361]",-0.316281,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.44984, 1.416483, -0.028041]",0.170645,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.442598, 2.859364, -0.123196]",-0.0721,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,21,C,C21,scaffold_C,"[""scaffold_C""]","[0.007197, 2.826501, -0.09228]",0.415843,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.424131, 2.821359, -0.18601]",-0.200088,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.261447, 3.514822, -0.194222]",-0.3798,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.238729, 3.503638, -0.246137]",-0.355711,[],True
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,25,O,O25,epoxide_O,"[""epoxide_O""]","[-1.236943, -2.4e-05, 1.632759]",-0.345793,"[""EPX:1""]",False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,26,H,H26,edge_H,"[""edge_H""]","[-1.245227, -4.58426, -0.376631]",0.175219,[],False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,27,H,H27,edge_H,"[""edge_H""]","[1.233451, -4.576074, -0.411133]",0.189862,[],False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,28,H,H28,edge_H,"[""edge_H""]","[-3.375962, -3.395865, -0.260037]",0.135621,[],False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,29,H,H29,edge_H,"[""edge_H""]","[3.364185, -3.351653, -0.297247]",0.162252,[],False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,30,H,H30,edge_H,"[""edge_H""]","[-4.604176, -1.223251, -0.040692]",0.174701,[],False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,31,H,H31,edge_H,"[""edge_H""]","[4.604019, -1.226736, -0.165026]",0.162313,[],False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,32,H,H32,edge_H,"[""edge_H""]","[-4.604156, 1.223305, -0.040657]",0.174528,[],False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,33,H,H33,edge_H,"[""edge_H""]","[4.604039, 1.226646, -0.164991]",0.162416,[],False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,34,H,H34,edge_H,"[""edge_H""]","[-3.375907, 3.395905, -0.25994]",0.135118,[],False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,35,H,H35,edge_H,"[""edge_H""]","[3.364239, 3.351587, -0.297152]",0.162426,[],False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,36,H,H36,edge_H,"[""edge_H""]","[-1.245154, 4.584269, -0.376499]",0.175531,[],False
+HF,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,37,H,H37,edge_H,"[""edge_H""]","[1.233524, 4.576045, -0.411002]",0.189874,[],False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,1,C,C1,EPH_CH,"[""EPH_CH"", ""edge_C"", ""scaffold_C""]","[-1.329921, -3.583162, 0.209355]",-0.00809,"[""EPH:1""]",True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.288917, -3.538175, 0.146979]",-0.438148,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.48901, -2.787581, -0.122094]",-0.240318,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,4,C,C4,EPH_C,"[""EPH_C"", ""scaffold_C""]","[0.016206, -2.848273, 0.386474]",0.410396,"[""EPH:1""]",True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.418275, -2.847341, -0.056202]",-0.031528,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.47588, -1.430072, 0.005499]",0.042583,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,7,C,C7,scaffold_C,"[""scaffold_C""]","[-0.014567, -1.393242, 0.202551]",-0.277099,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.440525, -1.396534, -0.044143]",-0.026257,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.689558, -0.649942, -0.129732]",-0.173305,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,10,C,C10,scaffold_C,"[""scaffold_C""]","[-1.218901, -0.714793, 0.164731]",0.172857,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.227792, -0.692684, 0.076888]",0.302053,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.639916, -0.679585, -0.142539]",-0.202495,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.675399, 0.693653, -0.077347]",-0.273432,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,14,C,C14,scaffold_C,"[""scaffold_C""]","[-1.22497, 0.723503, 0.106647]",-0.175883,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.232378, 0.723092, 0.06142]",-0.251028,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.652645, 0.69936, -0.114266]",-0.290949,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.437848, 1.431574, 0.038775]",0.291805,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,18,C,C18,scaffold_C,"[""scaffold_C""]","[0.000124, 1.434466, 0.109673]",0.16907,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.456902, 1.427472, -0.014368]",0.275868,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.415877, 2.834871, 0.038122]",-0.331262,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,21,C,C21,scaffold_C,"[""scaffold_C""]","[0.001492, 2.849363, 0.087301]",0.068558,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.429248, 2.860542, -0.002426]",-0.283731,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.226847, 3.529172, 0.073408]",-0.191475,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.257616, 3.538494, 0.051628]",-0.176561,[],True
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,25,O,O25,EPH_O,"[""EPH_O""]","[-0.740516, -3.361399, 1.477314]",-0.303859,"[""EPH:1""]",False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,26,H,H26,EPH_H,"[""EPH_H""]","[-1.298864, -4.62121, -0.112224]",0.132593,"[""EPH:1""]",False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,27,H,H27,edge_H,"[""edge_H""]","[1.287248, -4.621171, 0.198958]",0.198476,[],False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,28,H,H28,edge_H,"[""edge_H""]","[-3.37818, -3.291784, -0.485219]",0.163511,[],False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,29,H,H29,edge_H,"[""edge_H""]","[3.358156, -3.369532, -0.204279]",0.123925,[],False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,30,H,H30,edge_H,"[""edge_H""]","[-4.625082, -1.186625, -0.245527]",0.15327,[],False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,31,H,H31,edge_H,"[""edge_H""]","[4.572725, -1.226274, -0.235679]",0.169061,[],False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,32,H,H32,edge_H,"[""edge_H""]","[-4.60138, 1.255007, -0.148216]",0.158566,[],False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,33,H,H33,edge_H,"[""edge_H""]","[4.593698, 1.235365, -0.179272]",0.174947,[],False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,34,H,H34,edge_H,"[""edge_H""]","[-3.356624, 3.374243, -0.002736]",0.187726,[],False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,35,H,H35,edge_H,"[""edge_H""]","[3.372056, 3.396065, -0.043394]",0.165171,[],False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,36,H,H36,edge_H,"[""edge_H""]","[-1.230059, 4.614156, 0.065766]",0.164855,[],False
+HF,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_010,37,H,H37,edge_H,"[""edge_H""]","[1.251246, 4.623563, 0.052693]",0.15013,[],False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,1,C,C1,EPT_C,"[""EPT_C"", ""edge_C"", ""scaffold_C""]","[-1.189676, -3.53433, 0.223882]",-0.036503,"[""EPT:1""]",True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.293688, -3.452392, 0.020612]",-0.152978,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,3,C,C3,EPT_C,"[""EPT_C"", ""edge_C"", ""scaffold_C""]","[-2.465984, -2.797436, 0.224956]",-0.025211,"[""EPT:1""]",True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,4,C,C4,scaffold_C,"[""scaffold_C""]","[0.073395, -2.773962, 0.104941]",0.064685,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.48468, -2.762406, -0.022178]",-0.317404,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.439058, -1.323363, 0.105946]",0.025208,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,7,C,C7,scaffold_C,"[""scaffold_C""]","[0.045688, -1.378557, 0.107502]",-0.029172,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.495889, -1.358736, 0.006472]",0.204405,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.636755, -0.605812, 0.021807]",-0.131311,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,10,C,C10,scaffold_C,"[""scaffold_C""]","[-1.216773, -0.649541, 0.109642]",0.058973,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.265681, -0.661105, 0.056077]",0.017337,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.718415, -0.61213, -0.021598]",-0.24818,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.634676, 0.770595, -0.021704]",-0.340505,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,14,C,C14,scaffold_C,"[""scaffold_C""]","[-1.205348, 0.765577, 0.054179]",-0.078658,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.265012, 0.769371, 0.044336]",-0.051383,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.711239, 0.742052, -0.01116]",-0.240228,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.424656, 1.482159, 0.006381]",0.253097,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,18,C,C18,scaffold_C,"[""scaffold_C""]","[0.033793, 1.480295, 0.045978]",0.045994,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.481367, 1.474639, 0.015168]",0.179404,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.389318, 2.9142, -0.022396]",-0.27194,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,21,C,C21,scaffold_C,"[""scaffold_C""]","[0.036407, 2.886276, 0.014691]",0.128565,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.457531, 2.888812, 0.001168]",-0.25384,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.21299, 3.585077, -0.011975]",-0.215887,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.273079, 3.572682, 0.000952]",-0.228008,[],True
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,25,O,O25,EPT_O,"[""EPT_O""]","[-1.931797, -3.347423, 1.427149]",-0.288668,"[""EPT:1""]",False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,26,H,H26,EPT_H,"[""EPT_H""]","[-1.171486, -4.563554, -0.127428]",0.126003,"[""EPT:1""]",False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,27,H,H27,edge_H,"[""edge_H""]","[1.294716, -4.537502, 0.008928]",0.161163,[],False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,28,H,H28,EPT_H,"[""EPT_H""]","[-3.366764, -3.296065, -0.125793]",0.125225,"[""EPT:1""]",False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,29,H,H29,edge_H,"[""edge_H""]","[3.426349, -3.298994, -0.06889]",0.180777,[],False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,30,H,H30,edge_H,"[""edge_H""]","[-4.577011, -1.147478, 0.01032]",0.158374,[],False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,31,H,H31,edge_H,"[""edge_H""]","[4.655962, -1.157384, -0.051107]",0.166599,[],False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,32,H,H32,edge_H,"[""edge_H""]","[-4.570199, 1.31786, -0.06809]",0.183792,[],False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,33,H,H33,edge_H,"[""edge_H""]","[4.643746, 1.296541, -0.030598]",0.164552,[],False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,34,H,H34,edge_H,"[""edge_H""]","[-3.33026, 3.45357, -0.051964]",0.169647,[],False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,35,H,H35,edge_H,"[""edge_H""]","[3.399003, 3.428017, -0.015389]",0.169049,[],False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,36,H,H36,edge_H,"[""edge_H""]","[-1.19905, 4.669882, -0.032026]",0.161455,[],False
+HF,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_011,37,H,H37,edge_H,"[""edge_H""]","[1.26933, 4.657611, -0.016086]",0.165572,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.267528, -3.524071, 0.03074]",-0.266539,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.236804, -3.511573, -0.114278]",-0.253194,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.448659, -2.874856, 0.054824]",-0.188211,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,4,C,C4,scaffold_C,"[""scaffold_C""]","[0.009019, -2.81973, -0.006438]",0.217511,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.427353, -2.83044, -0.13708]",-0.275332,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.518634, -1.434497, 0.082577]",-0.052755,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,7,C,C7,scaffold_C,"[""scaffold_C""]","[0.026452, -1.435669, 0.050497]",-0.167884,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.455756, -1.419334, -0.080007]",0.221891,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.662776, -0.724234, -0.014597]",-0.201965,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,10,C,C10,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-1.237869, -0.670407, 0.364866]",0.569473,"[""OH:1""]",True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.232835, -0.722083, -0.0162]",-0.042232,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.67911, -0.676264, -0.050505]",-0.248473,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.662986, 0.723196, 0.015093]",-0.201965,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,14,C,C14,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-1.238117, 0.670079, -0.364707]",0.569473,"[""OH:2""]",True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.232625, 0.722482, 0.016011]",-0.042232,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.678919, 0.677379, 0.049972]",-0.248473,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.519066, 1.433795, -0.082241]",-0.052755,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,18,C,C18,scaffold_C,"[""scaffold_C""]","[0.026024, 1.435715, -0.050516]",-0.167884,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.455352, 1.420092, 0.079645]",0.221891,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.449509, 2.874173, -0.054498]",-0.188211,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,21,C,C21,scaffold_C,"[""scaffold_C""]","[0.008194, 2.819771, 0.006419]",0.217511,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.426543, 2.831189, 0.136721]",-0.275332,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.268566, 3.523736, -0.030579]",-0.266539,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.235791, 3.511974, 0.114086]",-0.253194,[],True
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,25,O,O25,hydroxyl_O,"[""hydroxyl_O""]","[-1.212445, -0.340435, 1.764172]",-0.707705,"[""OH:1""]",False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,26,O,O26,hydroxyl_O,"[""hydroxyl_O""]","[-1.212791, 0.34011, -1.764015]",-0.707705,"[""OH:2""]",False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,27,H,H27,edge_H,"[""edge_H""]","[-1.24579, -4.608756, -0.000785]",0.157171,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,28,H,H28,edge_H,"[""edge_H""]","[1.229443, -4.595627, -0.165728]",0.170982,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,29,H,H29,edge_H,"[""edge_H""]","[-3.379596, -3.432707, 0.029758]",0.151191,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,30,H,H30,edge_H,"[""edge_H""]","[3.364885, -3.373846, -0.194355]",0.173736,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,31,H,H31,edge_H,"[""edge_H""]","[-4.61231, -1.242785, -0.106138]",0.16974,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,32,H,H32,edge_H,"[""edge_H""]","[4.616726, -1.221022, -0.092902]",0.16123,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,33,H,H33,edge_H,"[""edge_H""]","[-4.61266, 1.241468, 0.106767]",0.16974,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,34,H,H34,edge_H,"[""edge_H""]","[4.616382, 1.222412, 0.092237]",0.16123,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,35,H,H35,edge_H,"[""edge_H""]","[-3.380606, 3.431751, -0.029302]",0.151191,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,36,H,H36,edge_H,"[""edge_H""]","[3.363924, 3.37487, 0.193864]",0.173736,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,37,H,H37,edge_H,"[""edge_H""]","[-1.247143, 4.608427, 0.000943]",0.157171,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,38,H,H38,edge_H,"[""edge_H""]","[1.228119, 4.596025, 0.165537]",0.170982,[],False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,39,H,H39,hydroxyl_H,"[""hydroxyl_H""]","[-1.145783, -1.162969, 2.25357]",0.411365,"[""OH:1""]",False
+HF,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_012,40,H,H40,hydroxyl_H,"[""hydroxyl_H""]","[-1.14645, 1.162661, -2.253428]",0.411365,"[""OH:2""]",False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.264418, -3.549742, 0.008968]",-0.400466,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.264397, -3.549749, 0.008966]",-0.399764,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.405562, -2.872202, -0.135801]",-0.187532,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,4,C,C4,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-8e-06, -2.869252, 0.468233]",0.777851,"[""OH:1""]",True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.405545, -2.872215, -0.135802]",-0.188446,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.452987, -1.418627, -0.015609]",0.089609,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,7,C,C7,scaffold_C,"[""scaffold_C""]","[-4e-06, -1.398922, 0.126393]",-0.12834,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.452979, -1.418641, -0.015609]",0.090034,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.624126, -0.707812, -0.034345]",-0.196249,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,10,C,C10,scaffold_C,"[""scaffold_C""]","[-1.208173, -0.70881, 0.044754]",0.037801,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.208169, -0.708817, 0.044754]",0.037954,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.624122, -0.707832, -0.034346]",-0.196468,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.624122, 0.707832, 0.034346]",-0.196249,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,14,C,C14,scaffold_C,"[""scaffold_C""]","[-1.208169, 0.708817, -0.044754]",0.037801,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.208173, 0.70881, -0.044754]",0.037954,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.624126, 0.707812, 0.034345]",-0.196468,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.452979, 1.418641, 0.015609]",0.089609,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,18,C,C18,scaffold_C,"[""scaffold_C""]","[4e-06, 1.398922, -0.126393]",-0.12834,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.452987, 1.418627, 0.015609]",0.090034,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.405545, 2.872215, 0.135803]",-0.187532,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,21,C,C21,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[8e-06, 2.869252, -0.468233]",0.777851,"[""OH:2""]",True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.405562, 2.872202, 0.135801]",-0.188446,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.264398, 3.549749, -0.008966]",-0.400466,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.264418, 3.549742, -0.008968]",-0.399764,[],True
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,25,O,O25,hydroxyl_O,"[""hydroxyl_O""]","[-8e-06, -2.880504, 1.92537]",-0.71275,"[""OH:1""]",False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,26,O,O26,hydroxyl_O,"[""hydroxyl_O""]","[7e-06, 2.880504, -1.92537]",-0.71275,"[""OH:2""]",False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,27,H,H27,edge_H,"[""edge_H""]","[-1.239444, -4.630192, -0.105036]",0.16513,[],False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,28,H,H28,edge_H,"[""edge_H""]","[1.239418, -4.630199, -0.105039]",0.165,[],False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,29,H,H29,edge_H,"[""edge_H""]","[-3.329647, -3.38989, -0.373914]",0.162688,[],False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,30,H,H30,edge_H,"[""edge_H""]","[3.329627, -3.389909, -0.373917]",0.162911,[],False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,31,H,H31,edge_H,"[""edge_H""]","[-4.570788, -1.235348, -0.092178]",0.15521,[],False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,32,H,H32,edge_H,"[""edge_H""]","[4.570781, -1.235374, -0.092179]",0.155275,[],False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,33,H,H33,edge_H,"[""edge_H""]","[-4.570781, 1.235374, 0.092179]",0.15521,[],False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,34,H,H34,edge_H,"[""edge_H""]","[4.570788, 1.235348, 0.092177]",0.155275,[],False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,35,H,H35,edge_H,"[""edge_H""]","[-3.329627, 3.389909, 0.373917]",0.162688,[],False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,36,H,H36,edge_H,"[""edge_H""]","[3.329647, 3.38989, 0.373914]",0.162911,[],False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,37,H,H37,edge_H,"[""edge_H""]","[-1.239418, 4.630199, 0.105039]",0.16513,[],False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,38,H,H38,edge_H,"[""edge_H""]","[1.239444, 4.630192, 0.105036]",0.165,[],False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,39,H,H39,hydroxyl_H,"[""hydroxyl_H""]","[-1e-06, -3.797512, 2.213111]",0.410551,"[""OH:1""]",False
+HF,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_013,40,H,H40,hydroxyl_H,"[""hydroxyl_H""]","[2e-06, 3.797512, -2.213111]",0.410551,"[""OH:2""]",False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.20309, -3.521171, 0.017128]",-0.070907,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.277686, -3.550195, 0.074099]",-0.063686,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.453564, -2.82158, -0.026605]",-0.366346,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,4,C,C4,scaffold_C,"[""scaffold_C""]","[-0.000416, -2.887141, 0.113673]",-0.193357,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.439978, -2.860629, 0.085225]",-0.377186,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.523916, -1.463202, 0.003785]",0.223006,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,7,C,C7,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.017139, -1.422763, 0.3073]",0.617657,"[""EPX:1""]",True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.485869, -1.409742, 0.060102]",0.40763,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.733295, -0.677715, -0.041661]",-0.201394,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,10,C,C10,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.278371, -0.709525, 0.230308]",0.039603,"[""EPX:1""]",True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.28545, -0.691695, 0.057692]",-0.295659,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.691515, -0.689903, 0.013733]",-0.301266,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.73329, 0.677738, 0.041712]",-0.201394,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,14,C,C14,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.278369, 0.709533, -0.230291]",0.039603,"[""EPX:2""]",True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.285453, 0.691687, -0.057711]",-0.295659,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.691519, 0.68988, -0.013784]",-0.301266,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.523907, 1.463218, -0.003751]",0.223006,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,18,C,C18,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.017143, 1.422763, -0.3073]",0.617657,"[""EPX:2""]",True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.485877, 1.409726, -0.060137]",0.40763,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.453546, 2.821596, 0.026638]",-0.366346,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,21,C,C21,scaffold_C,"[""scaffold_C""]","[-0.000399, 2.88714, -0.113674]",-0.193357,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.439995, 2.860614, -0.085259]",-0.377186,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.203068, 3.521179, -0.017112]",-0.070907,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.277707, 3.550186, -0.074117]",-0.063686,[],True
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,25,O,O25,epoxide_O,"[""epoxide_O""]","[-0.660845, -0.948754, 1.492311]",-0.400207,"[""EPX:1""]",False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,26,O,O26,epoxide_O,"[""epoxide_O""]","[-0.66086, 0.948758, -1.492302]",-0.400207,"[""EPX:2""]",False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,27,H,H27,edge_H,"[""edge_H""]","[-1.21923, -4.60338, -0.065318]",0.153635,[],False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,28,H,H28,edge_H,"[""edge_H""]","[1.288864, -4.634825, 0.039591]",0.13372,[],False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,29,H,H29,edge_H,"[""edge_H""]","[-3.366403, -3.402012, -0.115499]",0.199204,[],False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,30,H,H30,edge_H,"[""edge_H""]","[3.384134, -3.395423, 0.073672]",0.173373,[],False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,31,H,H31,edge_H,"[""edge_H""]","[-4.678417, -1.20941, -0.088808]",0.140009,[],False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,32,H,H32,edge_H,"[""edge_H""]","[4.631916, -1.231199, 0.015406]",0.182169,[],False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,33,H,H33,edge_H,"[""edge_H""]","[-4.678408, 1.20944, 0.088872]",0.140009,[],False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,34,H,H34,edge_H,"[""edge_H""]","[4.631924, 1.231169, -0.01547]",0.182169,[],False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,35,H,H35,edge_H,"[""edge_H""]","[-3.36638, 3.402033, 0.115545]",0.199204,[],False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,36,H,H36,edge_H,"[""edge_H""]","[3.384155, 3.395402, -0.073719]",0.173373,[],False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,37,H,H37,edge_H,"[""edge_H""]","[-1.2192, 4.603388, 0.065335]",0.153635,[],False
+HF,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_014,38,H,H38,edge_H,"[""edge_H""]","[1.288893, 4.634817, -0.03961]",0.13372,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.221173, -3.502952, -0.458524]",-0.065864,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.252177, -3.542078, -0.385778]",-0.047924,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.470351, -2.802745, -0.392128]",-0.301892,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,4,C,C4,scaffold_C,"[""scaffold_C""]","[-0.020286, -2.866371, -0.416706]",-0.263607,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.413647, -2.868799, -0.250382]",-0.398618,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.537219, -1.454562, -0.256356]",0.142707,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,7,C,C7,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.002587, -1.389306, -0.408081]",0.781008,"[""EPX:1""]",True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.46134, -1.427159, -0.083775]",0.418045,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.763386, -0.694164, -0.208554]",-0.077912,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,10,C,C10,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.278151, -0.66959, -0.306066]",-0.009632,"[""EPX:1""]",True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.258796, -0.703139, -0.034942]",-0.434656,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.667453, -0.72315, 0.010773]",-0.337667,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.760186, 0.656167, -0.210225]",-0.338692,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,14,C,C14,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-1.346631, 0.651492, 0.443084]",0.14156,"[""OH:1""]",True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.258487, 0.670138, 0.149527]",-0.03208,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.671519, 0.658437, 0.05477]",-0.210782,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.530295, 1.420001, -0.127043]",0.320463,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,18,C,C18,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[0.011098, 1.466319, 0.500696]",0.470536,"[""OH:2""]",True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.472092, 1.379982, 0.098605]",0.19446,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.421634, 2.693193, -0.548434]",-0.36886,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,21,C,C21,scaffold_C,"[""scaffold_C""]","[0.003473, 2.800816, -0.218867]",-0.118656,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.438649, 2.825273, -0.061864]",-0.274278,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.150958, 3.373093, -0.609964]",-0.021218,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.281676, 3.474036, -0.291721]",-0.173294,[],True
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,25,O,O25,hydroxyl_O,"[""hydroxyl_O""]","[-1.687179, 0.23356, 1.754927]",-0.683293,"[""OH:1""]",False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,26,O,O26,hydroxyl_O,"[""hydroxyl_O""]","[0.173445, 1.870542, 1.888865]",-0.64192,"[""OH:2""]",False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,27,O,O27,epoxide_O,"[""epoxide_O""]","[-0.607128, -0.722192, -1.550367]",-0.424971,"[""EPX:1""]",False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,28,H,H28,edge_H,"[""edge_H""]","[-1.240092, -4.587051, -0.511032]",0.152101,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,29,H,H29,edge_H,"[""edge_H""]","[1.256453, -4.623359, -0.478616]",0.135436,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,30,H,H30,edge_H,"[""edge_H""]","[-3.38889, -3.379893, -0.424034]",0.174328,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,31,H,H31,edge_H,"[""edge_H""]","[3.355721, -3.407235, -0.250031]",0.177039,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,32,H,H32,edge_H,"[""edge_H""]","[-4.701144, -1.237846, -0.261165]",0.122703,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,33,H,H33,edge_H,"[""edge_H""]","[4.605075, -1.268876, -0.008863]",0.18775,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,34,H,H34,edge_H,"[""edge_H""]","[-4.693319, 1.20215, -0.307121]",0.168527,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,35,H,H35,edge_H,"[""edge_H""]","[4.612182, 1.198789, 0.030193]",0.164487,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,36,H,H36,edge_H,"[""edge_H""]","[-3.303115, 3.212837, -0.911426]",0.178941,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,37,H,H37,edge_H,"[""edge_H""]","[3.384817, 3.353881, -0.108991]",0.159909,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,38,H,H38,edge_H,"[""edge_H""]","[-1.127485, 4.381663, -1.011677]",0.132956,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,39,H,H39,edge_H,"[""edge_H""]","[1.285452, 4.528671, -0.547233]",0.159941,[],False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,40,H,H40,hydroxyl_H,"[""hydroxyl_H""]","[-1.334225, 0.912879, 2.342943]",0.453446,"[""OH:1""]",False
+HF,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_015,41,H,H41,hydroxyl_H,"[""hydroxyl_H""]","[0.895049, 1.359946, 2.265053]",0.389475,"[""OH:2""]",False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.231422, -3.436294, -0.043522]",-0.567424,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.261586, -3.422374, -0.152004]",-0.385097,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.354455, -2.756295, -0.266731]",-0.068048,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,4,C,C4,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[0.037908, -2.832738, 0.504609]",0.821998,"[""OH:1""]",True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.374135, -2.739363, -0.403823]",-0.19448,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.420515, -1.297199, -0.18731]",0.009915,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,7,C,C7,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[0.023192, -1.239847, 0.544563]",0.312468,"[""OH:2""]",True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.454533, -1.285782, -0.255941]",0.172041,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.616544, -0.597381, -0.369448]",-0.220288,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,10,C,C10,scaffold_C,"[""scaffold_C""]","[-1.239829, -0.585074, 0.005239]",0.019494,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.280123, -0.578731, -0.010274]",-0.173472,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.648, -0.58057, -0.443228]",-0.273309,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.642757, 0.787596, -0.321348]",-0.174943,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,14,C,C14,scaffold_C,"[""scaffold_C""]","[-1.249405, 0.79584, -0.130874]",0.101279,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.286319, 0.804252, -0.136556]",0.113442,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.675381, 0.802724, -0.365851]",-0.167824,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.452977, 1.51191, -0.219564]",0.031224,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,18,C,C18,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.015954, 1.520164, -0.317373]",-0.0222,"[""EPX:1""]",True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.485081, 1.524115, -0.238414]",0.045939,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.424161, 2.966848, -0.076544]",-0.126694,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,21,C,C21,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.012458, 3.030037, -0.303499]",0.711363,"[""EPX:1""]",True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.450795, 2.978381, -0.090039]",-0.146899,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.285826, 3.673564, -0.014297]",-0.453552,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.309099, 3.679275, -0.019308]",-0.443062,[],True
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,25,O,O25,hydroxyl_O,"[""hydroxyl_O""]","[0.160755, -3.338846, 1.850687]",-0.741006,"[""OH:1""]",False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,26,O,O26,hydroxyl_O,"[""hydroxyl_O""]","[-0.032442, -0.836149, 1.923332]",-0.715734,"[""OH:2""]",False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,27,O,O27,epoxide_O,"[""epoxide_O""]","[0.011591, 2.28789, -1.524402]",-0.384372,"[""EPX:1""]",False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,28,H,H28,edge_H,"[""edge_H""]","[-1.212557, -4.517127, -0.146384]",0.209542,[],False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,29,H,H29,edge_H,"[""edge_H""]","[1.230179, -4.497777, -0.292639]",0.182769,[],False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,30,H,H30,edge_H,"[""edge_H""]","[-3.255211, -3.284054, -0.565639]",0.148699,[],False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,31,H,H31,edge_H,"[""edge_H""]","[3.253061, -3.25522, -0.778253]",0.16002,[],False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,32,H,H32,edge_H,"[""edge_H""]","[-4.537105, -1.151425, -0.521722]",0.160186,[],False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,33,H,H33,edge_H,"[""edge_H""]","[4.564407, -1.130938, -0.62985]",0.170384,[],False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,34,H,H34,edge_H,"[""edge_H""]","[-4.5882, 1.315628, -0.388052]",0.154696,[],False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,35,H,H35,edge_H,"[""edge_H""]","[4.619097, 1.332892, -0.439913]",0.155697,[],False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,36,H,H36,edge_H,"[""edge_H""]","[-3.377387, 3.467327, 0.061964]",0.158589,[],False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,37,H,H37,edge_H,"[""edge_H""]","[3.402398, 3.483452, 0.043151]",0.161678,[],False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,38,H,H38,edge_H,"[""edge_H""]","[-1.298305, 4.734963, 0.208924]",0.195205,[],False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,39,H,H39,edge_H,"[""edge_H""]","[1.317358, 4.7402, 0.206321]",0.193881,[],False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,40,H,H40,hydroxyl_H,"[""hydroxyl_H""]","[-0.689418, -3.215393, 2.28371]",0.426118,"[""OH:1""]",False
+HF,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_016,41,H,H41,hydroxyl_H,"[""hydroxyl_H""]","[0.623576, -1.359731, 2.395611]",0.441778,"[""OH:2""]",False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,1,C,C1,EPH_CH,"[""EPH_CH"", ""edge_C"", ""scaffold_C""]","[-1.329921, -3.583162, 0.209355]",-0.020059,"[""EPH:1""]",True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.288917, -3.538175, 0.146979]",-0.421164,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.48901, -2.787581, -0.122094]",-0.242089,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,4,C,C4,EPH_C,"[""EPH_C"", ""scaffold_C""]","[0.016206, -2.848273, 0.386474]",0.355614,"[""EPH:1""]",True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.418275, -2.847341, -0.056202]",-0.056534,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.47588, -1.430072, 0.005499]",0.067778,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,7,C,C7,scaffold_C,"[""scaffold_C""]","[-0.014567, -1.393242, 0.202551]",-0.230628,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.440525, -1.396534, -0.044143]",-0.009475,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.689558, -0.649942, -0.129732]",-0.176859,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,10,C,C10,scaffold_C,"[""scaffold_C""]","[-1.218901, -0.714793, 0.164731]",0.105215,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.227792, -0.692684, 0.076888]",0.297995,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.639916, -0.679585, -0.142539]",-0.202817,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.675399, 0.693653, -0.077347]",-0.28417,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,14,C,C14,scaffold_C,"[""scaffold_C""]","[-1.22497, 0.723503, 0.106647]",-0.117688,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.232378, 0.723092, 0.06142]",-0.237387,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.652645, 0.69936, -0.114266]",-0.29878,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.437848, 1.431574, 0.038775]",0.281975,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,18,C,C18,scaffold_C,"[""scaffold_C""]","[0.000124, 1.434466, 0.109673]",0.140769,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.456902, 1.427472, -0.014368]",0.287021,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.415877, 2.834871, 0.038122]",-0.320554,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,21,C,C21,scaffold_C,"[""scaffold_C""]","[0.001492, 2.849363, 0.087301]",0.09481,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.429248, 2.860542, -0.002426]",-0.290352,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.226847, 3.529172, 0.073408]",-0.208303,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.257616, 3.538494, 0.051628]",-0.188136,[],True
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,25,O,O25,EPH_O,"[""EPH_O""]","[-0.740516, -3.361399, 1.477314]",-0.253752,"[""EPH:1""]",False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,26,H,H26,EPH_H,"[""EPH_H""]","[-1.298864, -4.62121, -0.112224]",0.133365,"[""EPH:1""]",False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,27,H,H27,edge_H,"[""edge_H""]","[1.287248, -4.621171, 0.198958]",0.196187,[],False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,28,H,H28,edge_H,"[""edge_H""]","[-3.37818, -3.291784, -0.485219]",0.158165,[],False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,29,H,H29,edge_H,"[""edge_H""]","[3.358156, -3.369532, -0.204279]",0.127084,[],False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,30,H,H30,edge_H,"[""edge_H""]","[-4.625082, -1.186625, -0.245527]",0.153608,[],False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,31,H,H31,edge_H,"[""edge_H""]","[4.572725, -1.226274, -0.235679]",0.16526,[],False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,32,H,H32,edge_H,"[""edge_H""]","[-4.60138, 1.255007, -0.148216]",0.159599,[],False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,33,H,H33,edge_H,"[""edge_H""]","[4.593698, 1.235365, -0.179272]",0.172396,[],False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,34,H,H34,edge_H,"[""edge_H""]","[-3.356624, 3.374243, -0.002736]",0.182465,[],False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,35,H,H35,edge_H,"[""edge_H""]","[3.372056, 3.396065, -0.043394]",0.165328,[],False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,36,H,H36,edge_H,"[""edge_H""]","[-1.230059, 4.614156, 0.065766]",0.163405,[],False
+DFT,C24_EPH_edge_control,24,C24_EPH_edge_control::fit_001,37,H,H37,edge_H,"[""edge_H""]","[1.251246, 4.623563, 0.052693]",0.150707,[],False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,1,C,C1,EPT_C,"[""EPT_C"", ""edge_C"", ""scaffold_C""]","[-1.189676, -3.53433, 0.223882]",-0.07598,"[""EPT:1""]",True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.293688, -3.452392, 0.020612]",-0.131173,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,3,C,C3,EPT_C,"[""EPT_C"", ""edge_C"", ""scaffold_C""]","[-2.465984, -2.797436, 0.224956]",-0.06392,"[""EPT:1""]",True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,4,C,C4,scaffold_C,"[""scaffold_C""]","[0.073395, -2.773962, 0.104941]",0.06352,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.48468, -2.762406, -0.022178]",-0.341051,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.439058, -1.323363, 0.105946]",0.022082,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,7,C,C7,scaffold_C,"[""scaffold_C""]","[0.045688, -1.378557, 0.107502]",-0.034763,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.495889, -1.358736, 0.006472]",0.231284,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.636755, -0.605812, 0.021807]",-0.108601,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,10,C,C10,scaffold_C,"[""scaffold_C""]","[-1.216773, -0.649541, 0.109642]",0.057474,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.265681, -0.661105, 0.056077]",0.027065,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.718415, -0.61213, -0.021598]",-0.260694,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.634676, 0.770595, -0.021704]",-0.365233,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,14,C,C14,scaffold_C,"[""scaffold_C""]","[-1.205348, 0.765577, 0.054179]",-0.074271,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.265012, 0.769371, 0.044336]",-0.057071,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.711239, 0.742052, -0.01116]",-0.252425,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.424656, 1.482159, 0.006381]",0.28286,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,18,C,C18,scaffold_C,"[""scaffold_C""]","[0.033793, 1.480295, 0.045978]",0.046714,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.481367, 1.474639, 0.015168]",0.19659,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.389318, 2.9142, -0.022396]",-0.286015,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,21,C,C21,scaffold_C,"[""scaffold_C""]","[0.036407, 2.886276, 0.014691]",0.14188,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.457531, 2.888812, 0.001168]",-0.258272,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.21299, 3.585077, -0.011975]",-0.226491,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.273079, 3.572682, 0.000952]",-0.229816,[],True
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,25,O,O25,EPT_O,"[""EPT_O""]","[-1.931797, -3.347423, 1.427149]",-0.231557,"[""EPT:1""]",False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,26,H,H26,EPT_H,"[""EPT_H""]","[-1.171486, -4.563554, -0.127428]",0.133174,"[""EPT:1""]",False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,27,H,H27,edge_H,"[""edge_H""]","[1.294716, -4.537502, 0.008928]",0.153455,[],False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,28,H,H28,EPT_H,"[""EPT_H""]","[-3.366764, -3.296065, -0.125793]",0.132315,"[""EPT:1""]",False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,29,H,H29,edge_H,"[""edge_H""]","[3.426349, -3.298994, -0.06889]",0.180045,[],False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,30,H,H30,edge_H,"[""edge_H""]","[-4.577011, -1.147478, 0.01032]",0.150589,[],False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,31,H,H31,edge_H,"[""edge_H""]","[4.655962, -1.157384, -0.051107]",0.168309,[],False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,32,H,H32,edge_H,"[""edge_H""]","[-4.570199, 1.31786, -0.06809]",0.183175,[],False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,33,H,H33,edge_H,"[""edge_H""]","[4.643746, 1.296541, -0.030598]",0.16541,[],False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,34,H,H34,edge_H,"[""edge_H""]","[-3.33026, 3.45357, -0.051964]",0.171583,[],False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,35,H,H35,edge_H,"[""edge_H""]","[3.399003, 3.428017, -0.015389]",0.165784,[],False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,36,H,H36,edge_H,"[""edge_H""]","[-1.19905, 4.669882, -0.032026]",0.162126,[],False
+DFT,C24_EPT_edge_control,24,C24_EPT_edge_control::fit_002,37,H,H37,edge_H,"[""edge_H""]","[1.26933, 4.657611, -0.016086]",0.161896,[],False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.20309, -3.521171, 0.017128]",-0.066177,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.277686, -3.550195, 0.074099]",-0.049071,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.453564, -2.82158, -0.026605]",-0.38651,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,4,C,C4,scaffold_C,"[""scaffold_C""]","[-0.000416, -2.887141, 0.113673]",-0.19448,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.439978, -2.860629, 0.085225]",-0.406159,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.523916, -1.463202, 0.003785]",0.261858,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,7,C,C7,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.017139, -1.422763, 0.3073]",0.600291,"[""EPX:1""]",True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.485869, -1.409742, 0.060102]",0.429724,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.733295, -0.677715, -0.041661]",-0.210567,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,10,C,C10,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.278371, -0.709525, 0.230308]",-0.00817,"[""EPX:1""]",True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.28545, -0.691695, 0.057692]",-0.291936,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.691515, -0.689903, 0.013733]",-0.305285,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.73329, 0.677738, 0.041712]",-0.210567,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,14,C,C14,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.278369, 0.709533, -0.230291]",-0.00817,"[""EPX:2""]",True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.285453, 0.691687, -0.057711]",-0.291936,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.691519, 0.68988, -0.013784]",-0.305285,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.523907, 1.463218, -0.003751]",0.261858,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,18,C,C18,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.017143, 1.422763, -0.3073]",0.600291,"[""EPX:2""]",True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.485877, 1.409726, -0.060137]",0.429724,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.453546, 2.821596, 0.026638]",-0.38651,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,21,C,C21,scaffold_C,"[""scaffold_C""]","[-0.000399, 2.88714, -0.113674]",-0.19448,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.439995, 2.860614, -0.085259]",-0.406159,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.203068, 3.521179, -0.017112]",-0.066177,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.277707, 3.550186, -0.074117]",-0.049071,[],True
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,25,O,O25,epoxide_O,"[""epoxide_O""]","[-0.660845, -0.948754, 1.492311]",-0.346931,"[""EPX:1""]",False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,26,O,O26,epoxide_O,"[""epoxide_O""]","[-0.66086, 0.948758, -1.492302]",-0.346931,"[""EPX:2""]",False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,27,H,H27,edge_H,"[""edge_H""]","[-1.21923, -4.60338, -0.065318]",0.148624,[],False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,28,H,H28,edge_H,"[""edge_H""]","[1.288864, -4.634825, 0.039591]",0.131142,[],False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,29,H,H29,edge_H,"[""edge_H""]","[-3.366403, -3.402012, -0.115499]",0.198037,[],False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,30,H,H30,edge_H,"[""edge_H""]","[3.384134, -3.395423, 0.073672]",0.177533,[],False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,31,H,H31,edge_H,"[""edge_H""]","[-4.678417, -1.20941, -0.088808]",0.139995,[],False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,32,H,H32,edge_H,"[""edge_H""]","[4.631916, -1.231199, 0.015406]",0.17808,[],False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,33,H,H33,edge_H,"[""edge_H""]","[-4.678408, 1.20944, 0.088872]",0.139995,[],False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,34,H,H34,edge_H,"[""edge_H""]","[4.631924, 1.231169, -0.01547]",0.17808,[],False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,35,H,H35,edge_H,"[""edge_H""]","[-3.36638, 3.402033, 0.115545]",0.198037,[],False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,36,H,H36,edge_H,"[""edge_H""]","[3.384155, 3.395402, -0.073719]",0.177533,[],False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,37,H,H37,edge_H,"[""edge_H""]","[-1.2192, 4.603388, 0.065335]",0.148624,[],False
+DFT,C24_EPX_EPX_near_trans,24,C24_EPX_EPX_near_trans::fit_003,38,H,H38,edge_H,"[""edge_H""]","[1.288893, 4.634817, -0.03961]",0.131142,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.231422, -3.436294, -0.043522]",-0.547171,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.261586, -3.422374, -0.152004]",-0.325747,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.354455, -2.756295, -0.266731]",-0.077004,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,4,C,C4,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[0.037908, -2.832738, 0.504609]",0.736416,"[""OH:1""]",True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.374135, -2.739363, -0.403823]",-0.227584,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.420515, -1.297199, -0.18731]",-0.004062,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,7,C,C7,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[0.023192, -1.239847, 0.544563]",0.241963,"[""OH:2""]",True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.454533, -1.285782, -0.255941]",0.201685,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.616544, -0.597381, -0.369448]",-0.216512,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,10,C,C10,scaffold_C,"[""scaffold_C""]","[-1.239829, -0.585074, 0.005239]",0.079082,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.280123, -0.578731, -0.010274]",-0.181676,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.648, -0.58057, -0.443228]",-0.28193,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.642757, 0.787596, -0.321348]",-0.173685,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,14,C,C14,scaffold_C,"[""scaffold_C""]","[-1.249405, 0.79584, -0.130874]",0.153428,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.286319, 0.804252, -0.136556]",0.189339,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.675381, 0.802724, -0.365851]",-0.165064,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.452977, 1.51191, -0.219564]",0.010002,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,18,C,C18,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.015954, 1.520164, -0.317373]",-0.135375,"[""EPX:1""]",True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.485081, 1.524115, -0.238414]",0.024882,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.424161, 2.966848, -0.076544]",-0.120034,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,21,C,C21,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.012458, 3.030037, -0.303499]",0.723674,"[""EPX:1""]",True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.450795, 2.978381, -0.090039]",-0.14641,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.285826, 3.673564, -0.014297]",-0.467449,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.309099, 3.679275, -0.019308]",-0.454536,[],True
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,25,O,O25,hydroxyl_O,"[""hydroxyl_O""]","[0.160755, -3.338846, 1.850687]",-0.703002,"[""OH:1""]",False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,26,O,O26,hydroxyl_O,"[""hydroxyl_O""]","[-0.032442, -0.836149, 1.923332]",-0.684773,"[""OH:2""]",False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,27,O,O27,epoxide_O,"[""epoxide_O""]","[0.011591, 2.28789, -1.524402]",-0.329888,"[""EPX:1""]",False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,28,H,H28,edge_H,"[""edge_H""]","[-1.212557, -4.517127, -0.146384]",0.207035,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,29,H,H29,edge_H,"[""edge_H""]","[1.230179, -4.497777, -0.292639]",0.170557,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,30,H,H30,edge_H,"[""edge_H""]","[-3.255211, -3.284054, -0.565639]",0.150307,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,31,H,H31,edge_H,"[""edge_H""]","[3.253061, -3.25522, -0.778253]",0.163739,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,32,H,H32,edge_H,"[""edge_H""]","[-4.537105, -1.151425, -0.521722]",0.155881,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,33,H,H33,edge_H,"[""edge_H""]","[4.564407, -1.130938, -0.62985]",0.168376,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,34,H,H34,edge_H,"[""edge_H""]","[-4.5882, 1.315628, -0.388052]",0.151303,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,35,H,H35,edge_H,"[""edge_H""]","[4.619097, 1.332892, -0.439913]",0.15262,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,36,H,H36,edge_H,"[""edge_H""]","[-3.377387, 3.467327, 0.061964]",0.156851,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,37,H,H37,edge_H,"[""edge_H""]","[3.402398, 3.483452, 0.043151]",0.161207,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,38,H,H38,edge_H,"[""edge_H""]","[-1.298305, 4.734963, 0.208924]",0.196042,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,39,H,H39,edge_H,"[""edge_H""]","[1.317358, 4.7402, 0.206321]",0.194843,[],False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,40,H,H40,hydroxyl_H,"[""hydroxyl_H""]","[-0.689418, -3.215393, 2.28371]",0.417021,"[""OH:1""]",False
+DFT,C24_OH_EPX_far_trans,24,C24_OH_EPX_far_trans::fit_004,41,H,H41,hydroxyl_H,"[""hydroxyl_H""]","[0.623576, -1.359731, 2.395611]",0.435651,"[""OH:2""]",False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.221173, -3.502952, -0.458524]",-0.055861,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.252177, -3.542078, -0.385778]",-0.005512,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.470351, -2.802745, -0.392128]",-0.316148,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,4,C,C4,scaffold_C,"[""scaffold_C""]","[-0.020286, -2.866371, -0.416706]",-0.306861,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.413647, -2.868799, -0.250382]",-0.452519,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.537219, -1.454562, -0.256356]",0.149287,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,7,C,C7,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.002587, -1.389306, -0.408081]",0.842306,"[""EPX:1""]",True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.46134, -1.427159, -0.083775]",0.508471,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.763386, -0.694164, -0.208554]",-0.055843,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,10,C,C10,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.278151, -0.66959, -0.306066]",-0.051098,"[""EPX:1""]",True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.258796, -0.703139, -0.034942]",-0.565372,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.667453, -0.72315, 0.010773]",-0.382422,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.760186, 0.656167, -0.210225]",-0.371613,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,14,C,C14,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-1.346631, 0.651492, 0.443084]",0.198826,"[""OH:1""]",True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.258487, 0.670138, 0.149527]",0.171463,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.671519, 0.658437, 0.05477]",-0.179273,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.530295, 1.420001, -0.127043]",0.337701,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,18,C,C18,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[0.011098, 1.466319, 0.500696]",0.165253,"[""OH:2""]",True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.472092, 1.379982, 0.098605]",0.128483,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.421634, 2.693193, -0.548434]",-0.356908,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,21,C,C21,scaffold_C,"[""scaffold_C""]","[0.003473, 2.800816, -0.218867]",-0.007084,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.438649, 2.825273, -0.061864]",-0.23237,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.150958, 3.373093, -0.609964]",-0.042664,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.281676, 3.474036, -0.291721]",-0.226541,[],True
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,25,O,O25,hydroxyl_O,"[""hydroxyl_O""]","[-1.687179, 0.23356, 1.754927]",-0.651683,"[""OH:1""]",False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,26,O,O26,hydroxyl_O,"[""hydroxyl_O""]","[0.173445, 1.870542, 1.888865]",-0.534284,"[""OH:2""]",False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,27,O,O27,epoxide_O,"[""epoxide_O""]","[-0.607128, -0.722192, -1.550367]",-0.380302,"[""EPX:1""]",False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,28,H,H28,edge_H,"[""edge_H""]","[-1.240092, -4.587051, -0.511032]",0.146825,[],False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,29,H,H29,edge_H,"[""edge_H""]","[1.256453, -4.623359, -0.478616]",0.128585,[],False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,30,H,H30,edge_H,"[""edge_H""]","[-3.38889, -3.379893, -0.424034]",0.174326,[],False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,31,H,H31,edge_H,"[""edge_H""]","[3.355721, -3.407235, -0.250031]",0.18395,[],False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,32,H,H32,edge_H,"[""edge_H""]","[-4.701144, -1.237846, -0.261165]",0.117119,[],False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,33,H,H33,edge_H,"[""edge_H""]","[4.605075, -1.268876, -0.008863]",0.189851,[],False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,34,H,H34,edge_H,"[""edge_H""]","[-4.693319, 1.20215, -0.307121]",0.172753,[],False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,35,H,H35,edge_H,"[""edge_H""]","[4.612182, 1.198789, 0.030193]",0.156329,[],False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,36,H,H36,edge_H,"[""edge_H""]","[-3.303115, 3.212837, -0.911426]",0.174456,[],False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,37,H,H37,edge_H,"[""edge_H""]","[3.384817, 3.353881, -0.108991]",0.152389,[],False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,38,H,H38,edge_H,"[""edge_H""]","[-1.127485, 4.381663, -1.011677]",0.129358,[],False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,39,H,H39,edge_H,"[""edge_H""]","[1.285452, 4.528671, -0.547233]",0.165988,[],False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,40,H,H40,hydroxyl_H,"[""hydroxyl_H""]","[-1.334225, 0.912879, 2.342943]",0.428645,"[""OH:1""]",False
+DFT,C24_OH_EPX_near_trans,24,C24_OH_EPX_near_trans::fit_005,41,H,H41,hydroxyl_H,"[""hydroxyl_H""]","[0.895049, 1.359946, 2.265053]",0.351998,"[""OH:2""]",False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.264418, -3.549742, 0.008968]",-0.361741,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.264397, -3.549749, 0.008966]",-0.360788,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.405562, -2.872202, -0.135801]",-0.216741,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,4,C,C4,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-8e-06, -2.869252, 0.468233]",0.635252,"[""OH:1""]",True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.405545, -2.872215, -0.135802]",-0.21798,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.452987, -1.418627, -0.015609]",0.118029,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,7,C,C7,scaffold_C,"[""scaffold_C""]","[-4e-06, -1.398922, 0.126393]",-0.084381,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.452979, -1.418641, -0.015609]",0.118727,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.624126, -0.707812, -0.034345]",-0.202528,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,10,C,C10,scaffold_C,"[""scaffold_C""]","[-1.208173, -0.70881, 0.044754]",0.033858,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.208169, -0.708817, 0.044754]",0.033929,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.624122, -0.707832, -0.034346]",-0.202863,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.624122, 0.707832, 0.034346]",-0.202528,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,14,C,C14,scaffold_C,"[""scaffold_C""]","[-1.208169, 0.708817, -0.044754]",0.033858,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.208173, 0.70881, -0.044754]",0.033929,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.624126, 0.707812, 0.034345]",-0.202863,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.452979, 1.418641, 0.015609]",0.118029,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,18,C,C18,scaffold_C,"[""scaffold_C""]","[4e-06, 1.398922, -0.126393]",-0.084381,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.452987, 1.418627, 0.015609]",0.118727,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.405545, 2.872215, 0.135803]",-0.216741,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,21,C,C21,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[8e-06, 2.869252, -0.468233]",0.635252,"[""OH:2""]",True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.405562, 2.872202, 0.135801]",-0.21798,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.264398, 3.549749, -0.008966]",-0.361741,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.264418, 3.549742, -0.008968]",-0.360788,[],True
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,25,O,O25,hydroxyl_O,"[""hydroxyl_O""]","[-8e-06, -2.880504, 1.92537]",-0.649635,"[""OH:1""]",False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,26,O,O26,hydroxyl_O,"[""hydroxyl_O""]","[7e-06, 2.880504, -1.92537]",-0.649635,"[""OH:2""]",False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,27,H,H27,edge_H,"[""edge_H""]","[-1.239444, -4.630192, -0.105036]",0.163194,[],False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,28,H,H28,edge_H,"[""edge_H""]","[1.239418, -4.630199, -0.105039]",0.163016,[],False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,29,H,H29,edge_H,"[""edge_H""]","[-3.329647, -3.38989, -0.373914]",0.165952,[],False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,30,H,H30,edge_H,"[""edge_H""]","[3.329627, -3.389909, -0.373917]",0.16624,[],False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,31,H,H31,edge_H,"[""edge_H""]","[-4.570788, -1.235348, -0.092178]",0.153311,[],False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,32,H,H32,edge_H,"[""edge_H""]","[4.570781, -1.235374, -0.092179]",0.153411,[],False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,33,H,H33,edge_H,"[""edge_H""]","[-4.570781, 1.235374, 0.092179]",0.153311,[],False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,34,H,H34,edge_H,"[""edge_H""]","[4.570788, 1.235348, 0.092177]",0.153411,[],False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,35,H,H35,edge_H,"[""edge_H""]","[-3.329627, 3.389909, 0.373917]",0.165952,[],False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,36,H,H36,edge_H,"[""edge_H""]","[3.329647, 3.38989, 0.373914]",0.16624,[],False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,37,H,H37,edge_H,"[""edge_H""]","[-1.239418, 4.630199, 0.105039]",0.163194,[],False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,38,H,H38,edge_H,"[""edge_H""]","[1.239444, 4.630192, 0.105036]",0.163016,[],False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,39,H,H39,hydroxyl_H,"[""hydroxyl_H""]","[-1e-06, -3.797512, 2.213111]",0.391736,"[""OH:1""]",False
+DFT,C24_OH_OH_far_trans,24,C24_OH_OH_far_trans::fit_006,40,H,H40,hydroxyl_H,"[""hydroxyl_H""]","[2e-06, 3.797512, -2.213111]",0.391736,"[""OH:2""]",False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.267528, -3.524071, 0.03074]",-0.25766,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.236804, -3.511573, -0.114278]",-0.239855,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.448659, -2.874856, 0.054824]",-0.203972,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,4,C,C4,scaffold_C,"[""scaffold_C""]","[0.009019, -2.81973, -0.006438]",0.187913,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.427353, -2.83044, -0.13708]",-0.297294,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.518634, -1.434497, 0.082577]",-0.00115,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,7,C,C7,scaffold_C,"[""scaffold_C""]","[0.026452, -1.435669, 0.050497]",-0.075639,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.455756, -1.419334, -0.080007]",0.251547,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.662776, -0.724234, -0.014597]",-0.213851,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,10,C,C10,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-1.237869, -0.670407, 0.364866]",0.45571,"[""OH:1""]",True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.232835, -0.722083, -0.0162]",-0.073732,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.67911, -0.676264, -0.050505]",-0.255802,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.662986, 0.723196, 0.015093]",-0.213851,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,14,C,C14,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-1.238117, 0.670079, -0.364707]",0.45571,"[""OH:2""]",True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.232625, 0.722482, 0.016011]",-0.073732,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.678919, 0.677379, 0.049972]",-0.255802,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.519066, 1.433795, -0.082241]",-0.00115,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,18,C,C18,scaffold_C,"[""scaffold_C""]","[0.026024, 1.435715, -0.050516]",-0.075639,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.455352, 1.420092, 0.079645]",0.251547,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.449509, 2.874173, -0.054498]",-0.203972,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,21,C,C21,scaffold_C,"[""scaffold_C""]","[0.008194, 2.819771, 0.006419]",0.187913,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.426543, 2.831189, 0.136721]",-0.297294,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.268566, 3.523736, -0.030579]",-0.25766,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.235791, 3.511974, 0.114086]",-0.239855,[],True
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,25,O,O25,hydroxyl_O,"[""hydroxyl_O""]","[-1.212445, -0.340435, 1.764172]",-0.622117,"[""OH:1""]",False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,26,O,O26,hydroxyl_O,"[""hydroxyl_O""]","[-1.212791, 0.34011, -1.764015]",-0.622117,"[""OH:2""]",False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,27,H,H27,edge_H,"[""edge_H""]","[-1.24579, -4.608756, -0.000785]",0.15434,[],False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,28,H,H28,edge_H,"[""edge_H""]","[1.229443, -4.595627, -0.165728]",0.166894,[],False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,29,H,H29,edge_H,"[""edge_H""]","[-3.379596, -3.432707, 0.029758]",0.150577,[],False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,30,H,H30,edge_H,"[""edge_H""]","[3.364885, -3.373846, -0.194355]",0.174234,[],False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,31,H,H31,edge_H,"[""edge_H""]","[-4.61231, -1.242785, -0.106138]",0.169759,[],False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,32,H,H32,edge_H,"[""edge_H""]","[4.616726, -1.221022, -0.092902]",0.160092,[],False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,33,H,H33,edge_H,"[""edge_H""]","[-4.61266, 1.241468, 0.106767]",0.169759,[],False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,34,H,H34,edge_H,"[""edge_H""]","[4.616382, 1.222412, 0.092237]",0.160092,[],False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,35,H,H35,edge_H,"[""edge_H""]","[-3.380606, 3.431751, -0.029302]",0.150577,[],False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,36,H,H36,edge_H,"[""edge_H""]","[3.363924, 3.37487, 0.193864]",0.174234,[],False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,37,H,H37,edge_H,"[""edge_H""]","[-1.247143, 4.608427, 0.000943]",0.15434,[],False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,38,H,H38,edge_H,"[""edge_H""]","[1.228119, 4.596025, 0.165537]",0.166894,[],False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,39,H,H39,hydroxyl_H,"[""hydroxyl_H""]","[-1.145783, -1.162969, 2.25357]",0.370007,"[""OH:1""]",False
+DFT,C24_OH_OH_near_trans,24,C24_OH_OH_near_trans::fit_007,40,H,H40,hydroxyl_H,"[""hydroxyl_H""]","[-1.14645, 1.162661, -2.253428]",0.370007,"[""OH:2""]",False
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.245052, -3.519525, -7.9e-05]",-0.249346,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.245052, -3.519525, -7.9e-05]",-0.249346,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.42549, -2.837999, 7.9e-05]",-0.249346,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,4,C,C4,scaffold_C,"[""scaffold_C""]","[-0.0, -2.832211, -1.4e-05]",0.180192,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.42549, -2.837999, 7.9e-05]",-0.249346,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.452765, -1.416113, 1.5e-05]",0.180192,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,7,C,C7,scaffold_C,"[""scaffold_C""]","[-0.0, -1.424357, -0.001854]",-0.009172,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.452765, -1.416113, 1.5e-05]",0.180192,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.670509, -0.681532, 7.9e-05]",-0.249346,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,10,C,C10,scaffold_C,"[""scaffold_C""]","[-1.233529, -0.712182, 0.001856]",-0.009172,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.233529, -0.712182, 0.001856]",-0.009172,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.670508, -0.681532, 7.9e-05]",-0.249346,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.670508, 0.681532, -7.9e-05]",-0.249346,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,14,C,C14,scaffold_C,"[""scaffold_C""]","[-1.233529, 0.712182, -0.001856]",-0.009172,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.233529, 0.712182, -0.001856]",-0.009172,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.670509, 0.681532, -7.9e-05]",-0.249346,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.452765, 1.416113, -1.5e-05]",0.180192,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,18,C,C18,scaffold_C,"[""scaffold_C""]","[0.0, 1.424357, 0.001854]",-0.009172,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.452765, 1.416113, -1.5e-05]",0.180192,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.42549, 2.837999, -7.9e-05]",-0.249346,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,21,C,C21,scaffold_C,"[""scaffold_C""]","[0.0, 2.832211, 1.4e-05]",0.180192,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.42549, 2.837999, -7.9e-05]",-0.249346,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.245052, 3.519525, 7.9e-05]",-0.249346,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.245052, 3.519525, 7.9e-05]",-0.249346,[],True
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,25,H,H25,edge_H,"[""edge_H""]","[-1.241002, -4.604661, 0.00014]",0.163836,[],False
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,26,H,H26,edge_H,"[""edge_H""]","[1.241001, -4.604661, 0.00014]",0.163836,[],False
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,27,H,H27,edge_H,"[""edge_H""]","[-3.367262, -3.377084, -0.000141]",0.163836,[],False
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,28,H,H28,edge_H,"[""edge_H""]","[3.367262, -3.377085, -0.000141]",0.163836,[],False
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,29,H,H29,edge_H,"[""edge_H""]","[-4.608228, -1.227638, -0.00014]",0.163836,[],False
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,30,H,H30,edge_H,"[""edge_H""]","[4.608228, -1.227638, -0.00014]",0.163836,[],False
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,31,H,H31,edge_H,"[""edge_H""]","[-4.608228, 1.227638, 0.00014]",0.163836,[],False
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,32,H,H32,edge_H,"[""edge_H""]","[4.608228, 1.227638, 0.00014]",0.163836,[],False
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,33,H,H33,edge_H,"[""edge_H""]","[-3.367262, 3.377085, 0.000141]",0.163836,[],False
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,34,H,H34,edge_H,"[""edge_H""]","[3.367262, 3.377084, 0.000141]",0.163836,[],False
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,35,H,H35,edge_H,"[""edge_H""]","[-1.241001, 4.604661, -0.00014]",0.163836,[],False
+DFT,C24_pristine_parent_reference,24,C24_pristine_parent_reference::fit_008,36,H,H36,edge_H,"[""edge_H""]","[1.241002, 4.604661, -0.00014]",0.163836,[],False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.261503, -3.514817, -0.194323]",-0.396646,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[1.238673, -3.503671, -0.246237]",-0.348097,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.442644, -2.859343, -0.123278]",-0.074271,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,4,C,C4,scaffold_C,"[""scaffold_C""]","[0.007152, -2.826519, -0.092361]",0.419215,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[2.424086, -2.821413, -0.18609]",-0.215267,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,6,C,C6,scaffold_C,"[""scaffold_C""]","[-2.50387, -1.447694, 0.131784]",-0.071296,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,7,C,C7,scaffold_C,"[""scaffold_C""]","[0.02477, -1.454173, 0.149319]",-0.286634,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,8,C,C8,scaffold_C,"[""scaffold_C""]","[2.449817, -1.416542, -0.028081]",0.196507,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.659, -0.708714, 0.101151]",-0.212955,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,10,C,C10,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.242032, -0.775548, 0.445036]",0.380942,"[""EPX:1""]",True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,11,C,C11,scaffold_C,"[""scaffold_C""]","[1.230419, -0.722269, 0.133266]",0.017052,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[3.670998, -0.678793, -0.084172]",-0.25258,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,13,C,C13,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.658988, 0.708748, 0.101171]",-0.212621,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,14,C,C14,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.24202, 0.775533, 0.445058]",0.381802,"[""EPX:1""]",True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,15,C,C15,scaffold_C,"[""scaffold_C""]","[1.23043, 0.722225, 0.133287]",0.018117,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[3.671009, 0.678716, -0.084152]",-0.253083,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,17,C,C17,scaffold_C,"[""scaffold_C""]","[-2.503847, 1.447709, 0.131826]",-0.072309,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,18,C,C18,scaffold_C,"[""scaffold_C""]","[0.024794, 1.454147, 0.149361]",-0.287957,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,19,C,C19,scaffold_C,"[""scaffold_C""]","[2.44984, 1.416483, -0.028041]",0.197206,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,20,C,C20,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.442598, 2.859364, -0.123196]",-0.072182,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,21,C,C21,scaffold_C,"[""scaffold_C""]","[0.007197, 2.826501, -0.09228]",0.419763,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[2.424131, 2.821359, -0.18601]",-0.216077,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,23,C,C23,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.261447, 3.514822, -0.194222]",-0.398043,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,24,C,C24,edge_C,"[""edge_C"", ""scaffold_C""]","[1.238729, 3.503638, -0.246137]",-0.347724,[],True
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,25,O,O25,epoxide_O,"[""epoxide_O""]","[-1.236943, -2.4e-05, 1.632759]",-0.29838,"[""EPX:1""]",False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,26,H,H26,edge_H,"[""edge_H""]","[-1.245227, -4.58426, -0.376631]",0.177524,[],False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,27,H,H27,edge_H,"[""edge_H""]","[1.233451, -4.576074, -0.411133]",0.184852,[],False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,28,H,H28,edge_H,"[""edge_H""]","[-3.375962, -3.395865, -0.260037]",0.134311,[],False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,29,H,H29,edge_H,"[""edge_H""]","[3.364185, -3.351653, -0.297247]",0.160677,[],False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,30,H,H30,edge_H,"[""edge_H""]","[-4.604176, -1.223251, -0.040692]",0.173265,[],False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,31,H,H31,edge_H,"[""edge_H""]","[4.604019, -1.226736, -0.165026]",0.162256,[],False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,32,H,H32,edge_H,"[""edge_H""]","[-4.604156, 1.223305, -0.040657]",0.173112,[],False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,33,H,H33,edge_H,"[""edge_H""]","[4.604039, 1.226646, -0.164991]",0.162322,[],False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,34,H,H34,edge_H,"[""edge_H""]","[-3.375907, 3.395905, -0.25994]",0.133775,[],False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,35,H,H35,edge_H,"[""edge_H""]","[3.364239, 3.351587, -0.297152]",0.160865,[],False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,36,H,H36,edge_H,"[""edge_H""]","[-1.245154, 4.584269, -0.376499]",0.177736,[],False
+DFT,C24_single_basal_EPX_control,24,C24_single_basal_EPX_control::fit_009,37,H,H37,edge_H,"[""edge_H""]","[1.233524, 4.576045, -0.411002]",0.184823,[],False
+DFT,pyrene_COO,16,pyrene_COO::fit_010,1,C,C1,COO_anchor,"[""COO_anchor"", ""edge_C"", ""scaffold_C""]","[-3.440746, -0.203253, -0.22579]",0.114968,"[""COO:1""]",True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.5469, -0.790916, 0.663101]",-0.357585,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,3,C,C3,scaffold_C,"[""scaffold_C""]","[-1.176118, -0.528456, 0.604007]",0.204453,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.235728, -1.125739, 1.513537]",-0.211355,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[1.089109, -0.860378, 1.442119]",-0.339033,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,6,C,C6,scaffold_C,"[""scaffold_C""]","[1.616676, 0.036154, 0.447042]",0.249221,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[2.980322, 0.328929, 0.349594]",-0.343861,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[3.450638, 1.1997, -0.624817]",-0.106221,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[2.573302, 1.796062, -1.521211]",-0.343861,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,10,C,C10,scaffold_C,"[""scaffold_C""]","[1.201705, 1.531934, -1.460374]",0.249221,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[0.2597, 2.12928, -2.370407]",-0.339033,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.062861, 1.855681, -2.288582]",-0.211355,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,13,C,C13,scaffold_C,"[""scaffold_C""]","[-1.589063, 0.959923, -1.294094]",0.204453,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.951114, 0.666002, -1.194892]",-0.357585,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,15,C,C15,scaffold_C,"[""scaffold_C""]","[-0.68181, 0.358398, -0.385604]",-0.077828,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,16,C,C16,scaffold_C,"[""scaffold_C""]","[0.713123, 0.642353, -0.466369]",-0.009516,[],True
+DFT,pyrene_COO,16,pyrene_COO::fit_010,17,C,C17,COO_C,"[""COO_C""]","[-4.961965, -0.512664, -0.137815]",0.814786,"[""COO:1""]",False
+DFT,pyrene_COO,16,pyrene_COO::fit_010,18,O,O18,COO_O,"[""COO_O""]","[-5.666207, 0.070431, -0.983873]",-0.787543,"[""COO:1""]",False
+DFT,pyrene_COO,16,pyrene_COO::fit_010,19,O,O19,COO_O,"[""COO_O""]","[-5.285419, -1.304684, 0.767626]",-0.787543,"[""COO:1""]",False
+DFT,pyrene_COO,16,pyrene_COO::fit_010,20,H,H20,edge_H,"[""edge_H""]","[-2.95721, -1.465231, 1.408864]",0.182626,[],False
+DFT,pyrene_COO,16,pyrene_COO::fit_010,21,H,H21,edge_H,"[""edge_H""]","[-0.620235, -1.804093, 2.269186]",0.153987,[],False
+DFT,pyrene_COO,16,pyrene_COO::fit_010,22,H,H22,edge_H,"[""edge_H""]","[1.783081, -1.321692, 2.138526]",0.159802,[],False
+DFT,pyrene_COO,16,pyrene_COO::fit_010,23,H,H23,edge_H,"[""edge_H""]","[3.67199, -0.133739, 1.047248]",0.15649,[],False
+DFT,pyrene_COO,16,pyrene_COO::fit_010,24,H,H24,edge_H,"[""edge_H""]","[4.512376, 1.415936, -0.686238]",0.129408,[],False
+DFT,pyrene_COO,16,pyrene_COO::fit_010,25,H,H25,edge_H,"[""edge_H""]","[2.947998, 2.475963, -2.280522]",0.15649,[],False
+DFT,pyrene_COO,16,pyrene_COO::fit_010,26,H,H26,edge_H,"[""edge_H""]","[0.637195, 2.808773, -3.128827]",0.159802,[],False
+DFT,pyrene_COO,16,pyrene_COO::fit_010,27,H,H27,edge_H,"[""edge_H""]","[-1.762481, 2.313203, -2.981545]",0.153987,[],False
+DFT,pyrene_COO,16,pyrene_COO::fit_010,28,H,H28,edge_H,"[""edge_H""]","[-3.672077, 1.10967, -1.875061]",0.182626,[],False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,1,C,C1,COOH_anchor,"[""COOH_anchor"", ""edge_C"", ""scaffold_C""]","[-2.268719, -0.267082, -2.463215]",0.086229,"[""COOH:1""]",True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.923884, -1.158643, -1.451315]",-0.367707,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,3,C,C3,scaffold_C,"[""scaffold_C""]","[-0.949831, -0.824926, -0.513657]",0.239476,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.569331, -1.723344, 0.545236]",-0.247525,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[0.377642, -1.381421, 1.444901]",-0.269513,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,6,C,C6,scaffold_C,"[""scaffold_C""]","[1.044186, -0.106666, 1.381969]",0.217664,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[2.025906, 0.265816, 2.302609]",-0.306608,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[2.648022, 1.503593, 2.211462]",-0.076274,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[2.305414, 2.39393, 1.203103]",-0.306608,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,10,C,C10,scaffold_C,"[""scaffold_C""]","[1.328762, 2.061113, 0.261868]",0.217664,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[0.947058, 2.958078, -0.79744]",-0.269513,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[0.000165, 2.617533, -1.697942]",-0.247525,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,13,C,C13,scaffold_C,"[""scaffold_C""]","[-0.665428, 1.342544, -1.633756]",0.239476,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.645057, 0.974414, -2.554934]",-0.367707,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,15,C,C15,scaffold_C,"[""scaffold_C""]","[-0.310203, 0.438238, -0.600959]",-0.068116,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,16,C,C16,scaffold_C,"[""scaffold_C""]","[0.689636, 0.798386, 0.349501]",-0.001273,[],True
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,17,C,C17,COOH_C,"[""COOH_C""]","[-3.316622, -0.689373, -3.429575]",0.708192,"[""COOH:1""]",False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,18,O,O18,COOH_O,"[""COOH_O""]","[-3.891194, -1.747639, -3.403005]",-0.564845,"[""COOH:1""]",False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,19,O,O19,COOH_OH,"[""COOH_OH""]","[-3.577429, 0.241682, -4.367444]",-0.62526,"[""COOH:1""]",False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,20,H,H20,edge_H,"[""edge_H""]","[-2.426114, -2.118361, -1.404458]",0.199099,[],False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,21,H,H21,edge_H,"[""edge_H""]","[-1.063942, -2.687021, 0.603851]",0.170404,[],False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,22,H,H22,edge_H,"[""edge_H""]","[0.655142, -2.067825, 2.238064]",0.172593,[],False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,23,H,H23,edge_H,"[""edge_H""]","[2.300029, -0.423819, 3.094073]",0.168296,[],False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,24,H,H24,edge_H,"[""edge_H""]","[3.408222, 1.777276, 2.934342]",0.144276,[],False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,25,H,H25,edge_H,"[""edge_H""]","[2.796657, 3.35922, 1.139302]",0.168296,[],False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,26,H,H26,edge_H,"[""edge_H""]","[1.440733, 3.922416, -0.857603]",0.172593,[],False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,27,H,H27,edge_H,"[""edge_H""]","[-0.277873, 3.303306, -2.491309]",0.170404,[],False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,28,H,H28,edge_H,"[""edge_H""]","[-1.922256, 1.659411, -3.346992]",0.199099,[],False
+DFT,pyrene_COOH,16,pyrene_COOH::fit_011,29,H,H29,COOH_H,"[""COOH_H""]","[-4.262415, -0.12356, -4.938843]",0.444714,"[""COOH:1""]",False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.93523, -3.15801, -0.363658]",-0.160467,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.505718, -2.592798, -1.525756]",-0.2213,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,3,C,C3,scaffold_C,"[""scaffold_C""]","[-0.760576, -1.380276, -1.511891]",-0.116503,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.008036, -0.988739, -2.576027]",-0.184081,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[0.962227, 0.043025, -2.480006]",-0.225644,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,6,C,C6,scaffold_C,"[""scaffold_C""]","[1.196158, 0.727686, -1.327627]",0.120838,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[2.321705, 1.581059, -1.167961]",-0.306552,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[2.697522, 2.028399, 0.063324]",-0.095113,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[2.021612, 1.584102, 1.23286]",-0.243436,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,10,C,C10,scaffold_C,"[""scaffold_C""]","[0.898688, 0.810095, 1.167773]",0.101433,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[0.329482, 0.194987, 2.31787]",-0.298649,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.548877, -0.839532, 2.23557]",-0.206237,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,13,C,C13,scaffold_C,"[""scaffold_C""]","[-0.982132, -1.37432, 0.993759]",-0.156463,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.609624, -2.579142, 0.895711]",-0.090679,[],True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,15,C,C15,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-0.874101, -0.516242, -0.260499]",0.790822,"[""OH:1""]",True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,16,C,C16,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[0.201978, 0.674978, -0.179261]",0.190507,"[""OH:2""]",True
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,17,O,O17,hydroxyl_O,"[""hydroxyl_O""]","[-2.178654, 0.068239, -0.329036]",-0.653158,"[""OH:1""]",False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,18,O,O18,hydroxyl_O,"[""hydroxyl_O""]","[-0.519061, 1.916416, -0.376326]",-0.567031,"[""OH:2""]",False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,19,H,H19,edge_H,"[""edge_H""]","[-2.454238, -4.109643, -0.385258]",0.148267,[],False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,20,H,H20,edge_H,"[""edge_H""]","[-1.643358, -3.105673, -2.472238]",0.159765,[],False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,21,H,H21,edge_H,"[""edge_H""]","[-0.072211, -1.555538, -3.500055]",0.166378,[],False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,22,H,H22,edge_H,"[""edge_H""]","[1.607793, 0.227257, -3.333684]",0.166708,[],False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,23,H,H23,edge_H,"[""edge_H""]","[2.922491, 1.808474, -2.042582]",0.170701,[],False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,24,H,H24,edge_H,"[""edge_H""]","[3.582109, 2.645883, 0.168965]",0.141563,[],False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,25,H,H25,edge_H,"[""edge_H""]","[2.457161, 1.795688, 2.204715]",0.151773,[],False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,26,H,H26,edge_H,"[""edge_H""]","[0.693276, 0.512846, 3.290438]",0.17442,[],False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,27,H,H27,edge_H,"[""edge_H""]","[-0.879752, -1.333508, 3.14402]",0.180629,[],False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,28,H,H28,edge_H,"[""edge_H""]","[-1.822161, -3.13769, 1.80204]",0.12433,[],False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,29,H,H29,hydroxyl_H,"[""hydroxyl_H""]","[-2.074209, 0.898449, -0.809121]",0.368339,"[""OH:1""]",False
+DFT,pyrene_diol_cis,16,pyrene_diol_cis::fit_012,30,H,H30,hydroxyl_H,"[""hydroxyl_H""]","[-0.807733, 2.225256, 0.487392]",0.368841,"[""OH:2""]",False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.384334, -3.271584, 1.023992]",-0.094698,[],True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.313308, -3.244065, 0.069584]",-0.509405,[],True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,3,C,C3,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-1.514161, -2.090109, -0.887414]",0.72529,"[""OH:2""]",True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.783631, -1.38312, -0.482348]",-0.41052,[],True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.983479, -0.07337, -0.593913]",-0.241988,[],True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,6,C,C6,scaffold_C,"[""scaffold_C""]","[-1.947159, 0.859075, -0.994676]",0.196517,[],True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.163077, 2.194914, -0.986655]",-0.279877,[],True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.085756, 3.15297, -1.001991]",0.000519,[],True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[0.195184, 2.751447, -0.959753]",-0.539615,[],True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,10,C,C10,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.532225, 1.331555, -1.129975]",0.768755,"[""EPX:1""]",True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[1.783864, 0.857907, -0.492587]",-0.512617,[],True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[1.786327, -0.261578, 0.237825]",-0.049156,[],True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,13,C,C13,scaffold_C,"[""scaffold_C""]","[0.672564, -1.208871, 0.251567]",-0.319554,[],True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[0.604055, -2.210569, 1.13842]",-0.072049,[],True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,15,C,C15,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-0.24427, -1.153405, -0.965708]",0.653398,"[""OH:1""]",True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,16,C,C16,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-0.590977, 0.339452, -1.259698]",-0.158926,"[""EPX:1""]",True
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,17,O,O17,hydroxyl_O,"[""hydroxyl_O""]","[0.543489, -1.664485, -2.035072]",-0.595891,"[""OH:1""]",False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,18,O,O18,hydroxyl_O,"[""hydroxyl_O""]","[-1.796508, -2.606198, -2.17903]",-0.659399,"[""OH:2""]",False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,19,O,O19,epoxide_O,"[""epoxide_O""]","[0.101997, 0.807519, -2.412303]",-0.361883,"[""EPX:1""]",False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,20,H,H20,edge_H,"[""edge_H""]","[-0.322398, -4.112851, 1.70532]",0.146415,[],False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,21,H,H21,edge_H,"[""edge_H""]","[-2.022621, -4.056163, -0.055516]",0.210211,[],False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,22,H,H22,edge_H,"[""edge_H""]","[-3.593459, -2.030977, -0.163913]",0.212264,[],False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,23,H,H23,edge_H,"[""edge_H""]","[-3.951738, 0.348117, -0.341387]",0.173275,[],False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,24,H,H24,edge_H,"[""edge_H""]","[-3.171375, 2.560947, -0.822297]",0.157893,[],False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,25,H,H25,edge_H,"[""edge_H""]","[-1.329698, 4.206373, -0.92251]",0.142728,[],False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,26,H,H26,edge_H,"[""edge_H""]","[1.005264, 3.453164, -0.794942]",0.211087,[],False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,27,H,H27,edge_H,"[""edge_H""]","[2.649098, 1.511873, -0.519217]",0.199238,[],False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,28,H,H28,edge_H,"[""edge_H""]","[2.665075, -0.5243, 0.819322]",0.166602,[],False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,29,H,H29,edge_H,"[""edge_H""]","[1.348194, -2.277408, 1.92648]",0.133478,[],False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,30,H,H30,hydroxyl_H,"[""hydroxyl_H""]","[0.737528, -0.916292, -2.617998]",0.349312,"[""OH:1""]",False
+DFT,pyrene_diol_epoxide,16,pyrene_diol_epoxide::fit_013,31,H,H31,hydroxyl_H,"[""hydroxyl_H""]","[-0.936217, -2.727231, -2.60184]",0.358598,"[""OH:2""]",False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.609541, -3.171119, -0.409184]",-0.122702,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.779552, -2.590796, -1.632963]",-0.247549,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,3,C,C3,scaffold_C,"[""scaffold_C""]","[-0.700306, -1.183792, -1.789858]",-0.004255,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.735471, -0.53941, -2.993195]",-0.191613,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.615632, 0.879636, -3.093041]",-0.191613,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,6,C,C6,scaffold_C,"[""scaffold_C""]","[-0.271364, 1.6578, -2.024874]",-0.004255,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.178143, 3.072573, -2.061166]",-0.247549,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[0.035771, 3.794428, -0.922379]",-0.122702,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[0.14063, 3.172845, 0.356428]",-0.172882,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,10,C,C10,scaffold_C,"[""scaffold_C""]","[0.100759, 1.820009, 0.494754]",-0.036635,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[0.178262, 1.135554, 1.742771]",-0.201272,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[0.057564, -0.221561, 1.840046]",-0.201272,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,13,C,C13,scaffold_C,"[""scaffold_C""]","[-0.267858, -1.0434, 0.722011]",-0.036635,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.314485, -2.402696, 0.755112]",-0.172882,[],True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,15,C,C15,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[-0.706047, -0.321732, -0.537816]",0.429174,"[""OH:1""]",True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,16,C,C16,hydroxyl_C,"[""hydroxyl_C"", ""scaffold_C""]","[0.140315, 0.94763, -0.747817]",0.429174,"[""OH:2""]",True
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,17,O,O17,hydroxyl_O,"[""hydroxyl_O""]","[-2.068397, 0.038157, -0.259645]",-0.546598,"[""OH:1""]",False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,18,O,O18,hydroxyl_O,"[""hydroxyl_O""]","[1.510664, 0.58989, -0.988131]",-0.546598,"[""OH:2""]",False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,19,H,H19,edge_H,"[""edge_H""]","[-0.649849, -4.251035, -0.320185]",0.144023,[],False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,20,H,H20,edge_H,"[""edge_H""]","[-0.93262, -3.206311, -2.513805]",0.161532,[],False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,21,H,H21,edge_H,"[""edge_H""]","[-0.876863, -1.117023, -3.901541]",0.15774,[],False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,22,H,H22,edge_H,"[""edge_H""]","[-0.785944, 1.35114, -4.056355]",0.15774,[],False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,23,H,H23,edge_H,"[""edge_H""]","[-0.32281, 3.57924, -3.010121]",0.161532,[],False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,24,H,H24,edge_H,"[""edge_H""]","[0.082086, 4.876372, -0.977921]",0.144023,[],False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,25,H,H25,edge_H,"[""edge_H""]","[0.221618, 3.798305, 1.240229]",0.146544,[],False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,26,H,H26,edge_H,"[""edge_H""]","[0.363598, 1.722894, 2.636883]",0.156211,[],False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,27,H,H27,edge_H,"[""edge_H""]","[0.187181, -0.703237, 2.80448]",0.156211,[],False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,28,H,H28,edge_H,"[""edge_H""]","[-0.094504, -2.920805, 1.683651]",0.146544,[],False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,29,H,H29,hydroxyl_H,"[""hydroxyl_H""]","[-2.452652, 0.392088, -1.066973]",0.328281,"[""OH:1""]",False
+DFT,pyrene_diol_trans,16,pyrene_diol_trans::fit_014,30,H,H30,hydroxyl_H,"[""hydroxyl_H""]","[1.89482, 0.298084, -0.156436]",0.328281,"[""OH:2""]",False
+DFT,pyrene_dione,16,pyrene_dione::fit_015,1,C,C1,carbonyl_C,"[""carbonyl_C"", ""edge_C"", ""scaffold_C""]","[-3.417705, 0.887318, 1.513839]",0.603855,"[""CAB:1""]",True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,2,C,C2,carbonyl_C,"[""carbonyl_C"", ""edge_C"", ""scaffold_C""]","[-3.011687, -0.503901, 0.952052]",0.423668,"[""CAB:2""]",True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,3,C,C3,scaffold_C,"[""scaffold_C""]","[-1.724117, -0.596486, 0.211115]",-0.074084,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.325438, -1.842847, -0.311948]",-0.071221,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.147947, -1.960578, -0.996978]",-0.323709,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,6,C,C6,scaffold_C,"[""scaffold_C""]","[0.688787, -0.834955, -1.191958]",0.243849,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[1.916037, -0.927959, -1.898586]",-0.30705,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[2.705548, 0.176239, -2.072333]",-0.083302,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[2.309837, 1.424209, -1.550689]",-0.271158,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,10,C,C10,scaffold_C,"[""scaffold_C""]","[1.126878, 1.558288, -0.85887]",0.176291,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[0.69834, 2.834942, -0.312134]",-0.244652,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.453582, 2.966269, 0.361781]",-0.196138,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,13,C,C13,scaffold_C,"[""scaffold_C""]","[-1.343414, 1.838347, 0.586142]",0.243994,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.50196, 1.994738, 1.270086]",-0.535488,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,15,C,C15,scaffold_C,"[""scaffold_C""]","[-0.934354, 0.530699, 0.042593]",-0.103961,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,16,C,C16,scaffold_C,"[""scaffold_C""]","[0.291199, 0.419695, -0.667607]",0.057515,[],True
+DFT,pyrene_dione,16,pyrene_dione::fit_015,17,O,O17,carbonyl_O,"[""carbonyl_O""]","[-4.456709, 1.000371, 2.120531]",-0.488189,"[""CAB:1""]",False
+DFT,pyrene_dione,16,pyrene_dione::fit_015,18,O,O18,carbonyl_O,"[""carbonyl_O""]","[-3.730999, -1.453558, 1.124946]",-0.444457,"[""CAB:2""]",False
+DFT,pyrene_dione,16,pyrene_dione::fit_015,19,H,H19,edge_H,"[""edge_H""]","[-1.975326, -2.695286, -0.155087]",0.160126,[],False
+DFT,pyrene_dione,16,pyrene_dione::fit_015,20,H,H20,edge_H,"[""edge_H""]","[0.159384, -2.919737, -1.399677]",0.184141,[],False
+DFT,pyrene_dione,16,pyrene_dione::fit_015,21,H,H21,edge_H,"[""edge_H""]","[2.217721, -1.889875, -2.298751]",0.178125,[],False
+DFT,pyrene_dione,16,pyrene_dione::fit_015,22,H,H22,edge_H,"[""edge_H""]","[3.641318, 0.09666, -2.61319]",0.150999,[],False
+DFT,pyrene_dione,16,pyrene_dione::fit_015,23,H,H23,edge_H,"[""edge_H""]","[2.944975, 2.291838, -1.6955]",0.172774,[],False
+DFT,pyrene_dione,16,pyrene_dione::fit_015,24,H,H24,edge_H,"[""edge_H""]","[1.34342, 3.694062, -0.464725]",0.16973,[],False
+DFT,pyrene_dione,16,pyrene_dione::fit_015,25,H,H25,edge_H,"[""edge_H""]","[-0.754212, 3.928335, 0.761259]",0.159344,[],False
+DFT,pyrene_dione,16,pyrene_dione::fit_015,26,H,H26,edge_H,"[""edge_H""]","[-2.793412, 2.961612, 1.665753]",0.218997,[],False
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.148133, 0.596614, 1.781789]",-0.075225,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.875385, -0.547942, 1.045133]",-0.311557,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,3,C,C3,scaffold_C,"[""scaffold_C""]","[-1.757923, -0.60757, 0.209165]",0.222699,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-1.443519, -1.776851, -0.569198]",-0.26404,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,5,C,C5,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.357751, -1.814334, -1.371813]",-0.26404,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,6,C,C6,scaffold_C,"[""scaffold_C""]","[0.529865, -0.686585, -1.482052]",0.222699,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[1.657666, -0.704574, -2.305947]",-0.311557,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,8,C,C8,edge_C,"[""edge_C"", ""scaffold_C""]","[2.492178, 0.401727, -2.387784]",-0.075225,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,9,C,C9,edge_C,"[""edge_C"", ""scaffold_C""]","[2.21943, 1.546283, -1.651128]",-0.311557,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,10,C,C10,scaffold_C,"[""scaffold_C""]","[1.101968, 1.605912, -0.815161]",0.222699,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,11,C,C11,edge_C,"[""edge_C"", ""scaffold_C""]","[0.787564, 2.775192, -0.036797]",-0.26404,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[-0.298204, 2.812676, 0.765818]",-0.26404,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,13,C,C13,scaffold_C,"[""scaffold_C""]","[-1.185821, 1.684927, 0.876056]",0.222699,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,14,C,C14,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.313621, 1.702915, 1.699952]",-0.311557,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,15,C,C15,scaffold_C,"[""scaffold_C""]","[-0.901416, 0.518957, 0.12091]",-0.029809,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,16,C,C16,scaffold_C,"[""scaffold_C""]","[0.245461, 0.479384, -0.726905]",-0.029809,[],True
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,17,H,H17,edge_H,"[""edge_H""]","[-4.019601, 0.626706, 2.426074]",0.140678,[],False
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,18,H,H18,edge_H,"[""edge_H""]","[-3.532317, -1.408837, 1.114256]",0.165961,[],False
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,19,H,H19,edge_H,"[""edge_H""]","[-2.103259, -2.635414, -0.496881]",0.169115,[],False
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,20,H,H20,edge_H,"[""edge_H""]","[-0.134167, -2.703454, -1.952405]",0.169115,[],False
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,21,H,H21,edge_H,"[""edge_H""]","[1.877213, -1.595818, -2.884718]",0.165961,[],False
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,22,H,H22,edge_H,"[""edge_H""]","[3.363646, 0.371635, -3.03207]",0.140678,[],False
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,23,H,H23,edge_H,"[""edge_H""]","[2.876362, 2.407178, -1.720252]",0.165961,[],False
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,24,H,H24,edge_H,"[""edge_H""]","[1.447303, 3.633755, -0.109115]",0.169115,[],False
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,25,H,H25,edge_H,"[""edge_H""]","[-0.521788, 3.701795, 1.34641]",0.169115,[],False
+DFT,pyrene_pristine,16,pyrene_pristine::fit_016,26,H,H26,edge_H,"[""edge_H""]","[-2.533168, 2.594159, 2.278723]",0.165961,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.482186, -5.655565, -0.088652]",-0.223959,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[0.001972, -5.644517, 0.000747]",-0.367919,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[2.488822, -5.650872, 0.051501]",-0.204124,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.655797, -4.988754, -0.113732]",-0.267794,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,5,C,C5,scaffold_C,"[""scaffold_C""]","[-1.215042, -4.965569, -0.006306]",0.165774,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,6,C,C6,scaffold_C,"[""scaffold_C""]","[1.222974, -4.966384, 0.05272]",0.102975,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[3.656941, -4.969964, 0.086107]",-0.28214,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,8,C,C8,scaffold_C,"[""scaffold_C""]","[-3.704376, -3.54611, -0.066045]",0.314999,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,9,C,C9,scaffold_C,"[""scaffold_C""]","[-1.217276, -3.549498, 0.071284]",0.212399,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,10,C,C10,scaffold_C,"[""scaffold_C""]","[1.221909, -3.550519, 0.117234]",0.297065,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,11,C,C11,scaffold_C,"[""scaffold_C""]","[3.689852, -3.529944, 0.107277]",0.328566,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[-4.903938, -2.831311, -0.097639]",-0.439037,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,13,C,C13,scaffold_C,"[""scaffold_C""]","[-2.482174, -2.836204, 0.025919]",-0.250524,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,14,C,C14,scaffold_C,"[""scaffold_C""]","[0.001089, -2.870667, 0.155991]",-0.467797,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,15,C,C15,scaffold_C,"[""scaffold_C""]","[2.473666, -2.828326, 0.125892]",-0.306102,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[4.905808, -2.814284, 0.085814]",-0.47323,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,17,C,C17,scaffold_C,"[""scaffold_C""]","[-4.933159, -1.433834, -0.063792]",0.184646,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,18,C,C18,scaffold_C,"[""scaffold_C""]","[-2.515615, -1.445213, 0.043404]",0.165238,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,19,C,C19,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.011014, -1.407462, 0.331362]",0.682718,"[""EPX:1""]",True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,20,C,C20,scaffold_C,"[""scaffold_C""]","[2.4907, -1.410389, 0.093507]",0.293041,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,21,C,C21,scaffold_C,"[""scaffold_C""]","[4.939058, -1.432354, 0.048955]",0.261785,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[-6.162153, -0.674744, -0.038257]",-0.229659,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,23,C,C23,scaffold_C,"[""scaffold_C""]","[-3.709674, -0.726782, -0.017697]",-0.00541,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,24,C,C24,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.266079, -0.700554, 0.245767]",-0.054475,"[""EPX:1""]",True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,25,C,C25,scaffold_C,"[""scaffold_C""]","[1.275338, -0.678087, 0.072798]",-0.295778,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,26,C,C26,scaffold_C,"[""scaffold_C""]","[3.709151, -0.710429, 0.03102]",-0.095039,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,27,C,C27,edge_C,"[""edge_C"", ""scaffold_C""]","[6.170598, -0.674289, 0.020332]",-0.243683,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,28,C,C28,edge_C,"[""edge_C"", ""scaffold_C""]","[-6.162153, 0.674744, 0.038254]",-0.229659,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,29,C,C29,scaffold_C,"[""scaffold_C""]","[-3.709673, 0.726782, 0.017695]",-0.00541,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,30,C,C30,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.266079, 0.700554, -0.245768]",-0.054475,"[""EPX:2""]",True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,31,C,C31,scaffold_C,"[""scaffold_C""]","[1.275338, 0.678087, -0.072798]",-0.295778,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,32,C,C32,scaffold_C,"[""scaffold_C""]","[3.709151, 0.710428, -0.031018]",-0.095039,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,33,C,C33,edge_C,"[""edge_C"", ""scaffold_C""]","[6.170598, 0.674288, -0.020329]",-0.243683,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,34,C,C34,scaffold_C,"[""scaffold_C""]","[-4.933159, 1.433834, 0.06379]",0.184646,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,35,C,C35,scaffold_C,"[""scaffold_C""]","[-2.515615, 1.445213, -0.043405]",0.165238,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,36,C,C36,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[0.011014, 1.407462, -0.331362]",0.682718,"[""EPX:2""]",True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,37,C,C37,scaffold_C,"[""scaffold_C""]","[2.4907, 1.410388, -0.093505]",0.293041,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,38,C,C38,scaffold_C,"[""scaffold_C""]","[4.939058, 1.432353, -0.048953]",0.261785,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,39,C,C39,edge_C,"[""edge_C"", ""scaffold_C""]","[-4.903938, 2.831312, 0.097637]",-0.439037,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,40,C,C40,scaffold_C,"[""scaffold_C""]","[-2.482173, 2.836204, -0.02592]",-0.250524,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,41,C,C41,scaffold_C,"[""scaffold_C""]","[0.001089, 2.870667, -0.155991]",-0.467797,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,42,C,C42,scaffold_C,"[""scaffold_C""]","[2.473667, 2.828326, -0.125891]",-0.306102,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,43,C,C43,edge_C,"[""edge_C"", ""scaffold_C""]","[4.905808, 2.814283, -0.085812]",-0.47323,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,44,C,C44,scaffold_C,"[""scaffold_C""]","[-3.704376, 3.54611, 0.066044]",0.314999,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,45,C,C45,scaffold_C,"[""scaffold_C""]","[-1.217276, 3.549498, -0.071284]",0.212399,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,46,C,C46,scaffold_C,"[""scaffold_C""]","[1.221909, 3.550519, -0.117234]",0.297065,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,47,C,C47,scaffold_C,"[""scaffold_C""]","[3.689853, 3.529943, -0.107275]",0.328566,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,48,C,C48,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.655797, 4.988754, 0.11373]",-0.267794,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,49,C,C49,scaffold_C,"[""scaffold_C""]","[-1.215042, 4.965569, 0.006305]",0.165774,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,50,C,C50,scaffold_C,"[""scaffold_C""]","[1.222974, 4.966384, -0.052719]",0.102975,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,51,C,C51,edge_C,"[""edge_C"", ""scaffold_C""]","[3.656942, 4.969964, -0.086106]",-0.28214,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,52,C,C52,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.482185, 5.655565, 0.088651]",-0.223959,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,53,C,C53,edge_C,"[""edge_C"", ""scaffold_C""]","[0.001972, 5.644517, -0.000747]",-0.367919,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,54,C,C54,edge_C,"[""edge_C"", ""scaffold_C""]","[2.488822, 5.650871, -0.0515]",-0.204124,[],True
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,55,O,O55,epoxide_O,"[""epoxide_O""]","[-0.660388, -0.922576, 1.521846]",-0.361436,"[""EPX:1""]",False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,56,O,O56,epoxide_O,"[""epoxide_O""]","[-0.660387, 0.922576, -1.521846]",-0.361436,"[""EPX:2""]",False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,57,H,H57,edge_H,"[""edge_H""]","[-2.470466, -6.739644, -0.134559]",0.160408,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,58,H,H58,edge_H,"[""edge_H""]","[0.002732, -6.729707, -0.043505]",0.186408,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,59,H,H59,edge_H,"[""edge_H""]","[2.488694, -6.735422, 0.019314]",0.161292,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,60,H,H60,edge_H,"[""edge_H""]","[-4.59207, -5.533308, -0.178298]",0.162388,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,61,H,H61,edge_H,"[""edge_H""]","[4.60057, -5.505629, 0.082312]",0.167446,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,62,H,H62,edge_H,"[""edge_H""]","[-5.841614, -3.377729, -0.140802]",0.197533,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,63,H,H63,edge_H,"[""edge_H""]","[5.8393, -3.369362, 0.086787]",0.199874,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,64,H,H64,edge_H,"[""edge_H""]","[-7.101167, -1.217719, -0.068543]",0.161488,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,65,H,H65,edge_H,"[""edge_H""]","[7.108101, -1.220431, 0.036394]",0.162065,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,66,H,H66,edge_H,"[""edge_H""]","[-7.101167, 1.21772, 0.068539]",0.161488,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,67,H,H67,edge_H,"[""edge_H""]","[7.108101, 1.220431, -0.036391]",0.162065,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,68,H,H68,edge_H,"[""edge_H""]","[-5.841614, 3.37773, 0.1408]",0.197533,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,69,H,H69,edge_H,"[""edge_H""]","[5.8393, 3.369362, -0.086784]",0.199874,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,70,H,H70,edge_H,"[""edge_H""]","[-4.592069, 5.533309, 0.178296]",0.162388,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,71,H,H71,edge_H,"[""edge_H""]","[4.60057, 5.505629, -0.08231]",0.167446,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,72,H,H72,edge_H,"[""edge_H""]","[-2.470465, 6.739644, 0.134558]",0.160408,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,73,H,H73,edge_H,"[""edge_H""]","[0.002732, 6.729707, 0.043505]",0.186408,[],False
+DFT,C54_EPX_EPX_near_trans,54,C54_EPX_EPX_near_trans::fit_017,74,H,H74,edge_H,"[""edge_H""]","[2.488694, 6.735421, -0.019313]",0.161292,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.48142, -5.649909, -9.1e-05]",-0.249828,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[-6e-06, -5.641354, -7.3e-05]",-0.430759,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[2.481417, -5.649906, 0.000257]",-0.249828,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.652259, -4.97389, -0.000213]",-0.249828,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,5,C,C5,scaffold_C,"[""scaffold_C""]","[-1.217638, -4.961864, -0.000156]",0.22977,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,6,C,C6,scaffold_C,"[""scaffold_C""]","[1.217633, -4.961861, -2.7e-05]",0.22977,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[3.652254, -4.973888, 0.000396]",-0.249828,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,8,C,C8,scaffold_C,"[""scaffold_C""]","[-3.688227, -3.535428, 4.7e-05]",0.22977,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,9,C,C9,scaffold_C,"[""scaffold_C""]","[-1.221971, -3.542979, 0.002734]",-0.023193,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,10,C,C10,scaffold_C,"[""scaffold_C""]","[1.221961, -3.54298, -0.001195]",-0.023193,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,11,C,C11,scaffold_C,"[""scaffold_C""]","[3.688225, -3.535422, -7.4e-05]",0.22977,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[-4.885493, -2.820653, 0.000329]",-0.430759,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,13,C,C13,scaffold_C,"[""scaffold_C""]","[-2.457281, -2.829729, -0.003244]",-0.023193,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,14,C,C14,scaffold_C,"[""scaffold_C""]","[-1e-05, -2.838284, -0.001919]",-0.008612,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,15,C,C15,scaffold_C,"[""scaffold_C""]","[2.457279, -2.829716, 0.002428]",-0.023193,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[4.885491, -2.820651, -0.000129]",-0.430759,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,17,C,C17,scaffold_C,"[""scaffold_C""]","[-4.905839, -1.426422, 0.000423]",0.22977,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,18,C,C18,scaffold_C,"[""scaffold_C""]","[-2.457972, -1.419137, 0.004806]",-0.008612,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,19,C,C19,scaffold_C,"[""scaffold_C""]","[-1.1e-05, -1.409638, 0.001429]",0.004433,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,20,C,C20,scaffold_C,"[""scaffold_C""]","[2.457974, -1.419125, -0.005365]",-0.008612,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,21,C,C21,scaffold_C,"[""scaffold_C""]","[4.905838, -1.42642, -0.00027]",0.22977,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[-6.133579, -0.676005, 6.6e-05]",-0.249828,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,23,C,C23,scaffold_C,"[""scaffold_C""]","[-3.679211, -0.713219, -0.002365]",-0.023193,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,24,C,C24,scaffold_C,"[""scaffold_C""]","[-1.220763, -0.7048, -0.005095]",0.004433,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,25,C,C25,scaffold_C,"[""scaffold_C""]","[1.220756, -0.704795, 0.005586]",0.004433,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,26,C,C26,scaffold_C,"[""scaffold_C""]","[3.679215, -0.713218, 0.003432]",-0.023193,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,27,C,C27,edge_C,"[""edge_C"", ""scaffold_C""]","[6.133578, -0.676004, 8.4e-05]",-0.249828,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,28,C,C28,edge_C,"[""edge_C"", ""scaffold_C""]","[-6.13358, 0.676004, -6.7e-05]",-0.249828,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,29,C,C29,scaffold_C,"[""scaffold_C""]","[-3.67921, 0.713221, 0.002292]",-0.023193,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,30,C,C30,scaffold_C,"[""scaffold_C""]","[-1.220751, 0.7048, 0.004708]",0.004433,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,31,C,C31,scaffold_C,"[""scaffold_C""]","[1.220753, 0.704791, -0.004035]",0.004433,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,32,C,C32,scaffold_C,"[""scaffold_C""]","[3.679229, 0.713217, -0.003421]",-0.023193,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,33,C,C33,edge_C,"[""edge_C"", ""scaffold_C""]","[6.133581, 0.676003, -3.6e-05]",-0.249828,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,34,C,C34,scaffold_C,"[""scaffold_C""]","[-4.90584, 1.426422, -0.000361]",0.22977,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,35,C,C35,scaffold_C,"[""scaffold_C""]","[-2.457968, 1.419138, -0.004348]",-0.008612,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,36,C,C36,scaffold_C,"[""scaffold_C""]","[-1.9e-05, 1.409648, -0.003493]",0.004433,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,37,C,C37,scaffold_C,"[""scaffold_C""]","[2.457982, 1.419126, 0.004123]",-0.008612,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,38,C,C38,scaffold_C,"[""scaffold_C""]","[4.905847, 1.426429, 0.000229]",0.22977,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,39,C,C39,edge_C,"[""edge_C"", ""scaffold_C""]","[-4.885495, 2.820654, -0.000375]",-0.430759,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,40,C,C40,scaffold_C,"[""scaffold_C""]","[-2.457276, 2.829728, 0.003079]",-0.023193,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,41,C,C41,scaffold_C,"[""scaffold_C""]","[-1.4e-05, 2.83828, 0.004061]",-0.008612,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,42,C,C42,scaffold_C,"[""scaffold_C""]","[2.457287, 2.829732, -0.000931]",-0.023193,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,43,C,C43,edge_C,"[""edge_C"", ""scaffold_C""]","[4.885509, 2.820661, 0.000131]",-0.430759,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,44,C,C44,scaffold_C,"[""scaffold_C""]","[-3.688226, 3.535424, -0.000111]",0.22977,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,45,C,C45,scaffold_C,"[""scaffold_C""]","[-1.221965, 3.542968, -0.003022]",-0.023193,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,46,C,C46,scaffold_C,"[""scaffold_C""]","[1.221952, 3.542978, -0.000721]",-0.023193,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,47,C,C47,scaffold_C,"[""scaffold_C""]","[3.688242, 3.535431, 5.2e-05]",0.22977,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,48,C,C48,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.652255, 4.973885, 0.00011]",-0.249828,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,49,C,C49,scaffold_C,"[""scaffold_C""]","[-1.217637, 4.961851, 0.000351]",0.22977,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,50,C,C50,scaffold_C,"[""scaffold_C""]","[1.21764, 4.961858, 6.7e-05]",0.22977,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,51,C,C51,edge_C,"[""edge_C"", ""scaffold_C""]","[3.652261, 4.973898, -0.000383]",-0.249828,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,52,C,C52,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.481414, 5.6499, 8.1e-05]",-0.249828,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,53,C,C53,edge_C,"[""edge_C"", ""scaffold_C""]","[-5e-06, 5.64134, 0.000222]",-0.430759,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,54,C,C54,edge_C,"[""edge_C"", ""scaffold_C""]","[2.48142, 5.649912, -0.000348]",-0.249828,[],True
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,55,H,H55,edge_H,"[""edge_H""]","[-2.475957, -6.734995, -0.00042]",0.165187,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,56,H,H56,edge_H,"[""edge_H""]","[3e-06, -6.727401, -0.000532]",0.191067,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,57,H,H57,edge_H,"[""edge_H""]","[2.475951, -6.734991, 0.000566]",0.165187,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,58,H,H58,edge_H,"[""edge_H""]","[-4.594709, -5.511703, 5.4e-05]",0.165187,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,59,H,H59,edge_H,"[""edge_H""]","[4.594706, -5.511695, 0.000325]",0.165187,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,60,H,H60,edge_H,"[""edge_H""]","[-5.826036, -3.363708, 0.001749]",0.191067,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,61,H,H61,edge_H,"[""edge_H""]","[5.826034, -3.36371, -0.00158]",0.191067,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,62,H,H62,edge_H,"[""edge_H""]","[-7.07055, -1.223309, 0.000341]",0.165187,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,63,H,H63,edge_H,"[""edge_H""]","[7.070548, -1.223309, -0.000251]",0.165187,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,64,H,H64,edge_H,"[""edge_H""]","[-7.070552, 1.223307, -0.000354]",0.165187,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,65,H,H65,edge_H,"[""edge_H""]","[7.070555, 1.223304, 0.000339]",0.165187,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,66,H,H66,edge_H,"[""edge_H""]","[-5.826038, 3.363708, -0.001702]",0.191067,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,67,H,H67,edge_H,"[""edge_H""]","[5.826047, 3.363717, 0.001272]",0.191067,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,68,H,H68,edge_H,"[""edge_H""]","[-4.594703, 5.511703, -0.00021]",0.165187,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,69,H,H69,edge_H,"[""edge_H""]","[4.594711, 5.511707, -0.000483]",0.165187,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,70,H,H70,edge_H,"[""edge_H""]","[-2.475952, 6.734986, 0.000411]",0.165187,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,71,H,H71,edge_H,"[""edge_H""]","[4e-06, 6.727391, 0.001301]",0.191067,[],False
+DFT,C54_pristine_parent_reference,54,C54_pristine_parent_reference::fit_018,72,H,H72,edge_H,"[""edge_H""]","[2.475947, 6.734996, -0.000483]",0.165187,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,1,C,C1,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.472725, -5.639134, -0.212528]",-0.299288,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,2,C,C2,edge_C,"[""edge_C"", ""scaffold_C""]","[0.012601, -5.637444, -0.149861]",-0.502967,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,3,C,C3,edge_C,"[""edge_C"", ""scaffold_C""]","[2.492453, -5.655958, -0.168257]",-0.289685,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,4,C,C4,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.647302, -4.969285, -0.218591]",-0.197127,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,5,C,C5,scaffold_C,"[""scaffold_C""]","[-1.214184, -4.949588, -0.0973]",0.363415,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,6,C,C6,scaffold_C,"[""scaffold_C""]","[1.223274, -4.970285, -0.097271]",0.342577,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,7,C,C7,edge_C,"[""edge_C"", ""scaffold_C""]","[3.658909, -4.979985, -0.144873]",-0.202339,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,8,C,C8,scaffold_C,"[""scaffold_C""]","[-3.689551, -3.537447, -0.093562]",0.070137,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,9,C,C9,scaffold_C,"[""scaffold_C""]","[-1.219005, -3.551201, 0.048039]",-0.386985,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,10,C,C10,scaffold_C,"[""scaffold_C""]","[1.230612, -3.549183, 0.017496]",-0.268398,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,11,C,C11,scaffold_C,"[""scaffold_C""]","[3.695989, -3.53879, -0.056257]",0.158488,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,12,C,C12,edge_C,"[""edge_C"", ""scaffold_C""]","[-4.884865, -2.817267, -0.121405]",-0.364392,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,13,C,C13,scaffold_C,"[""scaffold_C""]","[-2.467771, -2.836262, 0.066862]",0.379183,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,14,C,C14,scaffold_C,"[""scaffold_C""]","[0.013352, -2.849244, 0.117396]",0.434554,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,15,C,C15,scaffold_C,"[""scaffold_C""]","[2.457946, -2.833938, 0.038646]",0.125765,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,16,C,C16,edge_C,"[""edge_C"", ""scaffold_C""]","[4.880222, -2.826919, -0.070506]",-0.404361,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,17,C,C17,scaffold_C,"[""scaffold_C""]","[-4.903955, -1.427819, -0.028384]",0.225002,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,18,C,C18,scaffold_C,"[""scaffold_C""]","[-2.490687, -1.447109, 0.229803]",-0.457076,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,19,C,C19,scaffold_C,"[""scaffold_C""]","[0.033517, -1.439721, 0.275054]",-0.465795,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,20,C,C20,scaffold_C,"[""scaffold_C""]","[2.454432, -1.427353, 0.108549]",-0.065029,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,21,C,C21,scaffold_C,"[""scaffold_C""]","[4.896755, -1.421214, -0.023309]",0.207828,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,22,C,C22,edge_C,"[""edge_C"", ""scaffold_C""]","[-6.129912, -0.67452, -0.129684]",-0.258117,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,23,C,C23,scaffold_C,"[""scaffold_C""]","[-3.682926, -0.725301, 0.150535]",0.055401,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,24,C,C24,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.233508, -0.751089, 0.542524]",0.55311,"[""EPX:1""]",True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,25,C,C25,scaffold_C,"[""scaffold_C""]","[1.214861, -0.726392, 0.241972]",0.111465,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,26,C,C26,scaffold_C,"[""scaffold_C""]","[3.677269, -0.715533, 0.061755]",-0.012709,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,27,C,C27,edge_C,"[""edge_C"", ""scaffold_C""]","[6.120282, -0.677671, -0.075555]",-0.242299,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,28,C,C28,edge_C,"[""edge_C"", ""scaffold_C""]","[-6.129911, 0.674525, -0.129681]",-0.259336,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,29,C,C29,scaffold_C,"[""scaffold_C""]","[-3.682926, 0.725302, 0.150538]",0.058723,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,30,C,C30,epoxide_C,"[""epoxide_C"", ""scaffold_C""]","[-1.233508, 0.751085, 0.542527]",0.548615,"[""EPX:1""]",True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,31,C,C31,scaffold_C,"[""scaffold_C""]","[1.214863, 0.726388, 0.241986]",0.111634,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,32,C,C32,scaffold_C,"[""scaffold_C""]","[3.67727, 0.715527, 0.061763]",-0.010088,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,33,C,C33,edge_C,"[""edge_C"", ""scaffold_C""]","[6.120283, 0.677662, -0.075554]",-0.239929,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,34,C,C34,scaffold_C,"[""scaffold_C""]","[-4.903954, 1.427822, -0.028378]",0.223639,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,35,C,C35,scaffold_C,"[""scaffold_C""]","[-2.490686, 1.447108, 0.229808]",-0.453932,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,36,C,C36,scaffold_C,"[""scaffold_C""]","[0.033519, 1.439717, 0.275058]",-0.463732,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,37,C,C37,scaffold_C,"[""scaffold_C""]","[2.454433, 1.427347, 0.10854]",-0.064923,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,38,C,C38,scaffold_C,"[""scaffold_C""]","[4.896756, 1.421206, -0.023306]",0.204319,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,39,C,C39,edge_C,"[""edge_C"", ""scaffold_C""]","[-4.884862, 2.81727, -0.121394]",-0.364379,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,40,C,C40,scaffold_C,"[""scaffold_C""]","[-2.467768, 2.836262, 0.066872]",0.372665,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,41,C,C41,scaffold_C,"[""scaffold_C""]","[0.013355, 2.849241, 0.117408]",0.431704,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,42,C,C42,scaffold_C,"[""scaffold_C""]","[2.457949, 2.833933, 0.038657]",0.124299,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,43,C,C43,edge_C,"[""edge_C"", ""scaffold_C""]","[4.880224, 2.826912, -0.070501]",-0.402056,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,44,C,C44,scaffold_C,"[""scaffold_C""]","[-3.689547, 3.537448, -0.093549]",0.073376,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,45,C,C45,scaffold_C,"[""scaffold_C""]","[-1.219001, 3.551199, 0.048051]",-0.380735,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,46,C,C46,scaffold_C,"[""scaffold_C""]","[1.230615, 3.549178, 0.017502]",-0.267627,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,47,C,C47,scaffold_C,"[""scaffold_C""]","[3.695992, 3.538783, -0.05625]",0.158849,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,48,C,C48,edge_C,"[""edge_C"", ""scaffold_C""]","[-3.647297, 4.969286, -0.218573]",-0.199566,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,49,C,C49,scaffold_C,"[""scaffold_C""]","[-1.214179, 4.949587, -0.097283]",0.360055,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,50,C,C50,scaffold_C,"[""scaffold_C""]","[1.223279, 4.970281, -0.097256]",0.342587,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,51,C,C51,edge_C,"[""edge_C"", ""scaffold_C""]","[3.658914, 4.979979, -0.14486]",-0.202972,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,52,C,C52,edge_C,"[""edge_C"", ""scaffold_C""]","[-2.472719, 5.639135, -0.212509]",-0.297449,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,53,C,C53,edge_C,"[""edge_C"", ""scaffold_C""]","[0.012607, 5.637442, -0.149842]",-0.501877,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,54,C,C54,edge_C,"[""edge_C"", ""scaffold_C""]","[2.492458, 5.655953, -0.168241]",-0.289548,[],True
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,55,O,O55,epoxide_O,"[""epoxide_O""]","[-1.260163, -4e-06, 1.760601]",-0.346606,"[""EPX:1""]",False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,56,H,H56,edge_H,"[""edge_H""]","[-2.459182, -6.719562, -0.311772]",0.170977,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,57,H,H57,edge_H,"[""edge_H""]","[0.004567, -6.718785, -0.249747]",0.200572,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,58,H,H58,edge_H,"[""edge_H""]","[2.486815, -6.738366, -0.243681]",0.168843,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,59,H,H59,edge_H,"[""edge_H""]","[-4.584319, -5.506234, -0.323188]",0.163399,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,60,H,H60,edge_H,"[""edge_H""]","[4.602454, -5.512705, -0.202594]",0.156901,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,61,H,H61,edge_H,"[""edge_H""]","[-5.822309, -3.352486, -0.240484]",0.180754,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,62,H,H62,edge_H,"[""edge_H""]","[5.823143, -3.361382, -0.138883]",0.190465,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,63,H,H63,edge_H,"[""edge_H""]","[-7.061187, -1.222516, -0.22829]",0.166756,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,64,H,H64,edge_H,"[""edge_H""]","[7.055837, -1.224974, -0.12552]",0.163487,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,65,H,H65,edge_H,"[""edge_H""]","[-7.061186, 1.222521, -0.228285]",0.167266,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,66,H,H66,edge_H,"[""edge_H""]","[7.055838, 1.224965, -0.125518]",0.16315,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,67,H,H67,edge_H,"[""edge_H""]","[-5.822306, 3.35249, -0.240472]",0.180684,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,68,H,H68,edge_H,"[""edge_H""]","[5.823146, 3.361374, -0.13888]",0.189795,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,69,H,H69,edge_H,"[""edge_H""]","[-4.584313, 5.506237, -0.323168]",0.163868,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,70,H,H70,edge_H,"[""edge_H""]","[4.602459, 5.512698, -0.202581]",0.15699,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,71,H,H71,edge_H,"[""edge_H""]","[-2.459175, 6.719563, -0.311749]",0.170831,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,72,H,H72,edge_H,"[""edge_H""]","[0.004573, 6.718784, -0.249723]",0.200399,[],False
+DFT,C54_single_basal_EPX_control,54,C54_single_basal_EPX_control::fit_019,73,H,H73,edge_H,"[""edge_H""]","[2.486822, 6.738361, -0.24366]",0.168798,[],False

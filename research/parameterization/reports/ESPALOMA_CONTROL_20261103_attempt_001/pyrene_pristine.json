@@ -1,0 +1,318 @@
+{
+  "summary": {
+    "model_id": "pyrene_pristine",
+    "status": "technical_gates_passed",
+    "atoms": 26,
+    "formal_charge": 0,
+    "Espaloma_charge_sum_e": -5.960464477539063e-08,
+    "repeat_max_difference_e": 0.0,
+    "permutation_max_difference_e": 1.4901161193847656e-08,
+    "inference_seconds": 0.003923064097762108,
+    "native_BCC_primary_available": true,
+    "native_BCC_exclusion": null,
+    "comparisons": {
+      "espaloma__native_AM1_BCC": {
+        "charge_RMS_difference_e": 0.07316463532090005,
+        "charge_MAE_e": 0.06847037293360783,
+        "max_absolute_difference_e": 0.10000804197788238
+      },
+      "espaloma__current_library": {
+        "charge_RMS_difference_e": 0.06701247482237391,
+        "charge_MAE_e": 0.055624219087454,
+        "max_absolute_difference_e": 0.1218971535563469
+      },
+      "espaloma__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.14570788249691932,
+        "charge_MAE_e": 0.11020672064370375,
+        "max_absolute_difference_e": 0.3233141535563469
+      },
+      "native_AM1_BCC__current_library": {
+        "charge_RMS_difference_e": 0.026822780214987747,
+        "charge_MAE_e": 0.025307692307692302,
+        "max_absolute_difference_e": 0.03599999999999999
+      },
+      "native_AM1_BCC__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.1294972204067598,
+        "charge_MAE_e": 0.09982338461538462,
+        "max_absolute_difference_e": 0.23441700000000001
+      },
+      "current_library__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.10694830066978085,
+        "charge_MAE_e": 0.08099923076923078,
+        "max_absolute_difference_e": 0.201417
+      }
+    },
+    "canonical_isomeric_SMILES": "[H]c1c([H])c2c([H])c([H])c3c([H])c([H])c([H])c4c([H])c([H])c(c1[H])c2c34",
+    "stereo_metadata_discrepancies": [],
+    "stereochemical_validation_claimed": false,
+    "final_parameter_validation": false
+  },
+  "atoms": [
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 1,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.1629624366760254,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.093248,
+      "native_AM1_BCC_charge_e": -0.127
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 2,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.17201709747314453,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.29546,
+      "native_AM1_BCC_charge_e": -0.114
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 3,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.1218971535563469,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.201417,
+      "native_AM1_BCC_charge_e": -0.033
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 4,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.16997255384922028,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.249581,
+      "native_AM1_BCC_charge_e": -0.115
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 5,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.16997255384922028,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.249581,
+      "native_AM1_BCC_charge_e": -0.115
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 6,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.1218971237540245,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.201417,
+      "native_AM1_BCC_charge_e": -0.033
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 7,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.17201709747314453,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.29546,
+      "native_AM1_BCC_charge_e": -0.114
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 8,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.1629624366760254,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.093248,
+      "native_AM1_BCC_charge_e": -0.127
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 9,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.17201709747314453,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.29546,
+      "native_AM1_BCC_charge_e": -0.114
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 10,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.1218971535563469,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.201417,
+      "native_AM1_BCC_charge_e": -0.033
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 11,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.16997255384922028,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.249581,
+      "native_AM1_BCC_charge_e": -0.115
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 12,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.16997255384922028,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.249581,
+      "native_AM1_BCC_charge_e": -0.115
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 13,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.12189709395170212,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": 0.201417,
+      "native_AM1_BCC_charge_e": -0.033
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 14,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.17201711237430573,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.29546,
+      "native_AM1_BCC_charge_e": -0.114
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 15,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.020821429789066315,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.032271,
+      "native_AM1_BCC_charge_e": -0.015
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 16,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": -0.020821429789066315,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.032271,
+      "native_AM1_BCC_charge_e": -0.015
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 17,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.23300804197788239,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.145857,
+      "native_AM1_BCC_charge_e": 0.133
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 18,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22067071497440338,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.168057,
+      "native_AM1_BCC_charge_e": 0.134
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 19,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.2186039686203003,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.165397,
+      "native_AM1_BCC_charge_e": 0.133
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 20,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.2186039686203003,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.165397,
+      "native_AM1_BCC_charge_e": 0.133
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 21,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22067071497440338,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.168057,
+      "native_AM1_BCC_charge_e": 0.134
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 22,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.23300804197788239,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.145857,
+      "native_AM1_BCC_charge_e": 0.133
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 23,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22067071497440338,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.168057,
+      "native_AM1_BCC_charge_e": 0.134
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 24,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.2186039686203003,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.165397,
+      "native_AM1_BCC_charge_e": 0.133
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 25,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.2186039686203003,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.165397,
+      "native_AM1_BCC_charge_e": 0.133
+    },
+    {
+      "model_id": "pyrene_pristine",
+      "atom_id": 26,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22067071497440338,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.168057,
+      "native_AM1_BCC_charge_e": 0.134
+    }
+  ],
+  "source_SHA256": {
+    "PARAMETERIZATION/calculations/am1_bcc_native_snapshot_20261103_attempt_001/pyrene_pristine/model.json": "1a905a0abce217e2bf2390e99a85690e1fadb3ff57c882bda1ba3b43df3ad1d5",
+    "PARAMETERIZATION/calculations/am1_bcc_native_snapshot_20261103_attempt_001/pyrene_pristine/am1_bcc.mol2": "b60bee71cea3c90bb5b3bc72b8f29b184ed7f49eabff3aaf7aa41851fefed92a",
+    "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_pristine/HF/charges.json": "3e89208284ce46df7fb1ebddce03477909f5c481720458a14ffa8bb192d04f50",
+    "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_pristine/HF/FIT_COMPLETE.json": "69bbb62a2255ad32890635e2ee6312fb1df6933eeb037fd81f92fc4250f9cdb2"
+  }
+}

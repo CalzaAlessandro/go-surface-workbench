@@ -1,0 +1,93 @@
+{
+  "status": "BENCHMARK_COMPLETE",
+  "completed_utc": "2026-11-03T21:25:02.666290+00:00",
+  "successful_contexts": 16,
+  "failed_contexts": 0,
+  "matched_BCC_contexts": 12,
+  "aggregate_common_subset": {
+    "espaloma__native_AM1_BCC": {
+      "common_contexts": 12,
+      "median_context_charge_RMS_difference_e": 0.09118882419275873,
+      "min_context_RMS_difference_e": 0.06633658613815772,
+      "max_context_RMS_difference_e": 0.14074118716081047
+    },
+    "espaloma__current_library": {
+      "common_contexts": 12,
+      "median_context_charge_RMS_difference_e": 0.09152260645881019,
+      "min_context_RMS_difference_e": 0.06263187550931314,
+      "max_context_RMS_difference_e": 0.11762152008262677
+    },
+    "native_AM1_BCC__current_library": {
+      "common_contexts": 12,
+      "median_context_charge_RMS_difference_e": 0.039444637501693074,
+      "min_context_RMS_difference_e": 0.026217042802980907,
+      "max_context_RMS_difference_e": 0.05126025332973464
+    },
+    "espaloma__molecular_HF_RESP": {
+      "common_contexts": 12,
+      "median_context_charge_RMS_difference_e": 0.16711480341120194,
+      "min_context_RMS_difference_e": 0.10968737027104815,
+      "max_context_RMS_difference_e": 0.22607985040178022
+    },
+    "native_AM1_BCC__molecular_HF_RESP": {
+      "common_contexts": 12,
+      "median_context_charge_RMS_difference_e": 0.14674312103042908,
+      "min_context_RMS_difference_e": 0.07612482724884614,
+      "max_context_RMS_difference_e": 0.22505897452416995
+    },
+    "current_library__molecular_HF_RESP": {
+      "common_contexts": 12,
+      "median_context_charge_RMS_difference_e": 0.12171385114778357,
+      "min_context_RMS_difference_e": 0.0565366263319629,
+      "max_context_RMS_difference_e": 0.22356855056328412
+    }
+  },
+  "model_source_commit": "b32649c8df2029fbd25dd18716fe838e0c62d6ae",
+  "initial_development_commit_not_run": "fbf2629433110aebe4806e295bfcdada4e93e05c",
+  "backend": "dgl",
+  "checkpoint_URL": "https://github.com/choderalab/espaloma-charge/releases/download/v0.0.8/model.pt",
+  "checkpoint_SHA256": "ed3e396df3f5ee8dd42240165202be10c59bd7e60c41841512c18b0329ed76f2",
+  "package_versions": {
+    "torch": "2.2.2+cpu",
+    "dgl": "1.1.3",
+    "rdkit": "2025.3.6",
+    "numpy": "1.26.4",
+    "espaloma_charge": "0+unknown"
+  },
+  "Python": "3.11.18 (main, Oct 26 2026, 14:05:07) [Clang 23.1.3 ]",
+  "upstream_serialized_training_mode": true,
+  "benchmark_explicit_eval_mode": true,
+  "charge_adapter": "formal_charge to supported q_ref field",
+  "API_probe_agreement_recorded": true,
+  "graph_only_input": true,
+  "upstream_features_use_stereochemistry_or_coordinates": false,
+  "contexts_with_stereo_metadata_discrepancies": 8,
+  "stereochemical_validation_claimed": false,
+  "weights_refitted": false,
+  "new_Gaussian_or_RESP_fit": false,
+  "charge_similarity_is_physical_validation": false,
+  "final_parameter_validation": false,
+  "inputs_SHA256": "14cc7cc14760afa304f374cf0730aca26ab577572b2b0359c3174c76353fc463",
+  "worker_SHA256": "2f075f405ed885ac1301bb6e655d913a308cdb912b42d7ee281dd45d7dd0ff7c",
+  "artifacts_SHA256": {
+    "CONTROL_PROBES.json": "62e15959a42d1f4633b539c3b1b64b5e8e80ab8f288dda149cba43bab1c0554d",
+    "pyrene_pristine.json": "4d7ef29f08f5c4caea33c70f36d137da850b6204bfad581404b6d9c7b4d91556",
+    "pyrene_diol_cis.json": "41d40e27fc4fc6272686d0efc34917f76767a93883ffd988901665426c10fa1d",
+    "pyrene_diol_trans.json": "7fb278d8cab7b577cc8a1e4f4dd7f6d7acf47c90c137de2524b4f5e56e8591d5",
+    "pyrene_diol_epoxide.json": "687dea4df604f779bbb692f8efb95257bcdb593bf9b8100b7e2db24317e0854d",
+    "pyrene_dione.json": "da77152822e28a0ac3d10ceb1faa26b17e04e7ae122520dbf0c4b3fca3da5c4e",
+    "pyrene_COOH.json": "1218d0e5ad8a89399b0e8d3d803f451314eeee5a5238c2eb870c0c56602e254d",
+    "pyrene_COO.json": "4c163c0ba29cf6ff327cce0fd3ad988181cdf2960a5442ee83f945dcc3a6adee",
+    "C24_pristine_parent_reference.json": "4722753efd345c9231c09cb2da10eddd45195ad019485f7b73c3e73ebab4aa1d",
+    "C24_single_basal_EPX_control.json": "c8775c904a68e41073461d9575bf9cc8b4f8fe39da20faf617dbcc60e106b324",
+    "C24_EPH_edge_control.json": "b22a522ddd56082a799eb75237cf6442d4e678052905fdc2d6b8e2faeffb3dcc",
+    "C24_EPT_edge_control.json": "78904449f9b6312d18e9d0bf782229748eac61acde26271724a65b87217855a8",
+    "C24_OH_OH_near_trans.json": "999db503b58f39e4e2cdb2912e0f66f95683a43720158e8dd6536721b8e8b77c",
+    "C24_OH_OH_far_trans.json": "10983ea3ee873ba626be2d2d6c92d0f272e8d7d22dee24fe14801f2786bee208",
+    "C24_EPX_EPX_near_trans.json": "571be9244821bff8743a16bb3e217edf25332bff6bb33d8a12fc417775e62e92",
+    "C24_OH_EPX_near_trans.json": "7c9f9046f9c4f68eaf4d21d0c983e23250c006884e5b4268e632c410f0afa0b8",
+    "C24_OH_EPX_far_trans.json": "07aa64d589a84e4a7b9677bcb0320fffd2567cc0d2c8156187a484ea3ba40661",
+    "per_atom_charge_comparison.csv": "c997824a34b28a5e4bf777dcadd707f7d1751ee6ed81e6307b068a9e25071d72",
+    "per_context_role_comparison.csv": "2ef8fc04b4824572fe2e3e35c5fb76ef88cfbce875c1e30a15a2ad948c36d338"
+  }
+}

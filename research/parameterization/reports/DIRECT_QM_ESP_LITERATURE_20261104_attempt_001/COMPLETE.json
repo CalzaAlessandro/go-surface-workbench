@@ -1,0 +1,23 @@
+{
+  "status": "DIRECT_QM_ESP_CONTROL_COMPLETE",
+  "completed_utc": "2026-11-04T20:26:28.774292+00:00",
+  "physical_contexts": 9,
+  "held_out_C24": 7,
+  "BCC_covered_held_out_C24": 5,
+  "carboxyl_training_diagnostics": 2,
+  "raw_QM_grids_verified": 54,
+  "streamed_scoring_matches_existing_scorer": true,
+  "SQE_training_target": "HF molecular RESP on C16; no BCC-target SQE fit performed here",
+  "mixture_policy": "fixed 50/50 molecular HF-RESP and integer-charge-constrained BCC control; diagnostic only, not selected using results",
+  "QM_reference_limit": "DFT is a second approximate electronic-structure control, not exact truth; fitted molecular RESP scored in-sample on its own method",
+  "new_QM_or_charge_fit": false,
+  "production_validation": false,
+  "input_SHA256": "7ad3e4b07a17eb3b0b7c76f8baede09929c1a5e1755e01542326199ffe1fb861",
+  "artifacts_SHA256": {
+    "orientation_scores.csv": "64ff5833e2be0deead6a5618cf484e1d349bb2bb1075f6785c6da2844ef16aa2",
+    "context_scores.csv": "a23edb736de2a315e69391f01e166653efede9908eca94e5f9303907c082f065",
+    "aggregate_scores.csv": "8eda3c8803310211ead7dcf24ee46f75b90e0484714032e0f9fa344f4c131505",
+    "QM_SOURCE_EVIDENCE.json": "82abeaa624fc73a002a9e1778ec38dd251188c0c0ecc82c76df81fe3367091e8",
+    "BCC_CHARGE_POLICIES.json": "d7650e7247ded324550b166337301e8783d0731f32327ef4076b13102a8e7cda"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "pw6b95_avtz": {
+    "full_log_sha256": "1c3005d1f84a467e7afcf150c2967560afb3a6cb795b1f611f5c923d0c4c7c8f",
+    "excerpt_sha256": "a4f4c712293bf50fec7abc9866cd75a917d5203f853b8d9e8115ca184367af57",
+    "source": "PARAMETERIZATION/calculations/qm_reference_runtime_results_20261104_snapshot_001/pw6b95_avtz/reference.log",
+    "job_id": "1469071",
+    "gaussian_version": "16 Rev.C.01",
+    "note": "Unmodified selected complete evidence lines from actual Gaussian runtime; omitted bulk MK point output."
+  },
+  "mp2_avdz": {
+    "full_log_sha256": "0f6a1c8d70d082fdc80ed59586540b655c31bacf8f6d2dbff539ed000c2c7c62",
+    "excerpt_sha256": "74ff75cf8969543cdf4c1dba8c25703e23e3a39f6754c60a1c99770c0a7d4df7",
+    "source": "PARAMETERIZATION/calculations/qm_reference_runtime_results_20261104_snapshot_001/mp2_avdz/reference.log",
+    "job_id": "1469071",
+    "gaussian_version": "16 Rev.C.01",
+    "note": "Unmodified selected complete evidence lines from actual Gaussian runtime; omitted bulk MK point output."
+  },
+  "ccsd_avdz": {
+    "full_log_sha256": "10e6820c3677fd012dc2c48b84a49004016dfef49f3915e3b98a6b2b0c30830a",
+    "excerpt_sha256": "30a6eac3cf005bca1962723502b46ebe1f2368ef7961b3a75c5d3abb7989b271",
+    "source": "PARAMETERIZATION/calculations/qm_reference_runtime_results_20261104_snapshot_001/ccsd_avdz/reference.log",
+    "job_id": "1469071",
+    "gaussian_version": "16 Rev.C.01",
+    "note": "Unmodified selected complete evidence lines from actual Gaussian runtime; omitted bulk MK point output."
+  },
+  "ccsd_deliberate_scf_density": {
+    "full_log_sha256": "41063eae9517fce31657f58fe4555bdf3030df51e41ce1c60172d05ce92af4ce",
+    "excerpt_sha256": "62971d688b382e0e465f993e87596e8f6718e3dc775456aa19440dd5ab2d9584",
+    "source": "PARAMETERIZATION/calculations/qm_reference_runtime_results_20261104_snapshot_001/ccsd_deliberate_scf_density/reference.log",
+    "job_id": "1469071",
+    "gaussian_version": "16 Rev.C.01",
+    "note": "Unmodified selected complete evidence lines from actual Gaussian runtime; omitted bulk MK point output."
+  },
+  "ccsdt_avdz_Z+1": {
+    "full_log_sha256": "c4eed03cfb8ef6c7135f5edf19bf00f990224cc396dfbf5ae05b2fc1de8596ee",
+    "excerpt_sha256": "ea15a02f52df8a742668e2982279990d8b6ad6cbcab04b612e7583000a45b0bd",
+    "source": "PARAMETERIZATION/calculations/qm_reference_runtime_results_20261104_snapshot_001/ccsdt_avdz_Z+1/reference.log",
+    "job_id": "1469071",
+    "gaussian_version": "16 Rev.C.01",
+    "note": "Unmodified selected complete evidence lines from actual Gaussian runtime; omitted bulk MK point output."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "checked_utc": "2026-11-05T09:15:19.945434+00:00",
+  "expanded_HF_completed": [
+    "C24_EPX3_loading_s20261308",
+    "C24_EPX4_loading_s20261309",
+    "C24_OH6_loading_s20261306",
+    "C24_OH2_loading_s20261304"
+  ],
+  "expanded_HF_rejected": [
+    {
+      "model_id": "C24_EPX1_OH2_loading_s20261310",
+      "exception": "ValueError",
+      "message": "Reference rejected: stability_not_confirmed"
+    },
+    {
+      "model_id": "C24_OH4_loading_s20261305",
+      "exception": "ValueError",
+      "message": "Reference rejected: optimization_not_completed"
+    }
+  ],
+  "QM_reference_comparisons_complete": {
+    "qm_reference_go_controls_20261104_attempt_001": 0,
+    "qm_reference_anchors_20261104_attempt_001": 5
+  },
+  "reference_selected": false,
+  "acetate_gate": "small_negative_frequencies_manual_review",
+  "GOX_REGOX_whole_sheet_reference_concluded": false
+}

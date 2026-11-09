@@ -1,0 +1,15 @@
+{
+  "calculations/environment_resp_results_20261105_snapshot_001/results/COMPLETE.json": "bcef0b02b0df09bdc00f6f37d11adc79af04385561b2f891b08e8d4c43abd1a9",
+  "calculations/environment_resp_results_20261105_snapshot_001/results/class_coverage.csv": "8294bd64f25c402af37b6c07e675bc4b06c45470a0eb9783e78d9b9337029e45",
+  "calculations/environment_resp_results_20261105_snapshot_001/results/context_scores.csv": "93c160514a7b967748a298e5ebd46af2164bc9c6982ac9c2ce52b7ee7935ad55",
+  "calculations/complementary_results_20261103_snapshot_001/l0_hf_train_C16/shared_library.json": "646061c5a33b005ffd49471a6b6f94754a9c84caa5c6f16df1d26f315905f8b1",
+  "calculations/environment_resp_results_20261105_snapshot_001/results/C16_only_L0/FIT_COMPLETE.json": "ed509c921ea22032b01d8c9e638f8e2fa56eec6699599b62ee68ddd2a2055ae5",
+  "calculations/environment_resp_results_20261105_snapshot_001/results/C16_only_L0/problem.json": "ba48eaa02aaa3f0bd4c2ccf2864c5013235265200015ab4bfcf61ad3e52412e7",
+  "calculations/environment_resp_results_20261105_snapshot_001/results/C16_only_L1/problem.json": "e76631c4963393a56bfd3365329d0df14f8230d3ab7c7b759ff5eab3f4a831d8",
+  "calculations/environment_resp_results_20261105_snapshot_001/results/C16_only_L1/FIT_COMPLETE.json": "c365b8062139c1916dc5667064f5b036342773d7494bcb1638d1e9a4fe9e86f4",
+  "calculations/environment_resp_results_20261105_snapshot_001/results/C16_plus_loading_L0/problem.json": "01dad80004b763c123dde87a9fdc6543054397c3299b7e6602e4726f92bf809d",
+  "calculations/environment_resp_results_20261105_snapshot_001/results/C16_plus_loading_L0/FIT_COMPLETE.json": "352a4831713d5940824b5dd238841438350afaa2571a54ede2f71eb934d46fb3",
+  "calculations/environment_resp_results_20261105_snapshot_001/results/C16_plus_loading_L1/problem.json": "76209ec47819e7e530eb92c3797508f3017092bef4c5f72b1357523ca50f9326",
+  "calculations/environment_resp_results_20261105_snapshot_001/results/C16_plus_loading_L1/FIT_COMPLETE.json": "868e74cc8750e46fd4d14d00df004d39d7bd59c859fde834a1f0bb4288e64348",
+  "reports/RESP_ASSUMPTIONS_20261105_attempt_001/summary.json": "8238c3bc4ac9b1b22ff3dae3c5c95d163ffef11aa26c0c451c8024bf93261768"
+}

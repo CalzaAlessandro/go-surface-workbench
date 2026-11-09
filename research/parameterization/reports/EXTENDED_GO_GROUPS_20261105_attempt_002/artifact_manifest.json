@@ -1,0 +1,245 @@
+{
+  "algorithm": "SHA-256",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "ccbd7d43d0a90fe67b1aee059bce776950b836667a762b4f82d5b41b223b58c7",
+      "bytes": 5969
+    },
+    {
+      "path": "REPORT.html",
+      "sha256": "82dfb6b4f5e1a5c8b56565a4e6e5ec6c1b67e97155c9da2f08cd91e9f4e3f5e2",
+      "bytes": 8625
+    },
+    {
+      "path": "build_report.py",
+      "sha256": "48deb698f250ebaf1f3a422b73955ff46ec0d512805c2dc4714bc4e43cefb775",
+      "bytes": 10986
+    },
+    {
+      "path": "catalog.json",
+      "sha256": "30725e4d53b17202c8bbe48ecb3847da705d5d1d5ba733c54234c067a342281d",
+      "bytes": 4922
+    },
+    {
+      "path": "coumarin_lactone6_edge/HF_RESP_template/reference.gjf",
+      "sha256": "b5c6a236e74900650a0ba258be627213bfbf7c845f45c646feb5d36a13164f18",
+      "bytes": 1213
+    },
+    {
+      "path": "coumarin_lactone6_edge/PREPARED_ONLY.json",
+      "sha256": "c76faf509c782206217069d834c68728389cfe92973e9a5a7305d1e79e26a543",
+      "bytes": 257
+    },
+    {
+      "path": "coumarin_lactone6_edge/geometry_opt/reference.gjf",
+      "sha256": "3bb7b1cc47608537665bff3155c823b513092584195956b172c6d3de593e5b0f",
+      "bytes": 1291
+    },
+    {
+      "path": "coumarin_lactone6_edge/initial.sdf",
+      "sha256": "20ddf53698ee177becf39aafb3f518cb23ec9db62f7c1cfba02c4143103b1f5d",
+      "bytes": 1629
+    },
+    {
+      "path": "coumarin_lactone6_edge/initial.xyz",
+      "sha256": "c177599d0ccdc4c23b1a566b79de489e358673d1ab7d3082ef10fad0631b2b3c",
+      "bytes": 894
+    },
+    {
+      "path": "coumarin_lactone6_edge/model.json",
+      "sha256": "5678f294be0ce2e69b740a5a280573c22f56870eca7f55c27acdab973fd8b816",
+      "bytes": 10087
+    },
+    {
+      "path": "dibenzofuran_ether_edge/HF_RESP_template/reference.gjf",
+      "sha256": "ac5ae8105a2c9cd31440db1f33f9346e1b6add93e4e8b5f9abc30478fb9f5886",
+      "bytes": 1410
+    },
+    {
+      "path": "dibenzofuran_ether_edge/PREPARED_ONLY.json",
+      "sha256": "c76faf509c782206217069d834c68728389cfe92973e9a5a7305d1e79e26a543",
+      "bytes": 257
+    },
+    {
+      "path": "dibenzofuran_ether_edge/geometry_opt/reference.gjf",
+      "sha256": "58786e6074af06227b3533e2b0d7a303b7a89165d442bf40989dbe9488c103fb",
+      "bytes": 1492
+    },
+    {
+      "path": "dibenzofuran_ether_edge/initial.sdf",
+      "sha256": "df234c6f5cc0af502cbae1949831ed43fc8a10db20550275211df7b90e4b5986",
+      "bytes": 1980
+    },
+    {
+      "path": "dibenzofuran_ether_edge/initial.xyz",
+      "sha256": "a4a33e55514aa05f2bcd901069b06de8d1e263081c2f808e82f615ca66ab71d1",
+      "bytes": 1091
+    },
+    {
+      "path": "dibenzofuran_ether_edge/model.json",
+      "sha256": "dfddaab2717c975f2e9536e05f6025b88ab7b7b0e5984649dab2dfce1819de8b",
+      "bytes": 12016
+    },
+    {
+      "path": "diphenyl_ether_bridge_control/HF_RESP_template/reference.gjf",
+      "sha256": "8d402f9be5a637b0faba9d237cf8a5d85b6a1594d8995907e70c6e82c73a615c",
+      "bytes": 1511
+    },
+    {
+      "path": "diphenyl_ether_bridge_control/PREPARED_ONLY.json",
+      "sha256": "c76faf509c782206217069d834c68728389cfe92973e9a5a7305d1e79e26a543",
+      "bytes": 257
+    },
+    {
+      "path": "diphenyl_ether_bridge_control/geometry_opt/reference.gjf",
+      "sha256": "1f0c2efb30e956e7cd44f9d3fe62f169c4d4f910fe0451cbb15918563bd87f27",
+      "bytes": 1595
+    },
+    {
+      "path": "diphenyl_ether_bridge_control/initial.sdf",
+      "sha256": "72b6954c3075a23837a687f29288f7f2af6811e81484464814df2594122b683e",
+      "bytes": 2137
+    },
+    {
+      "path": "diphenyl_ether_bridge_control/initial.xyz",
+      "sha256": "f92078f2b2ce171c4567127a99ecd468b6b530b837a1d332e5a12dc35cce0919",
+      "bytes": 1192
+    },
+    {
+      "path": "diphenyl_ether_bridge_control/model.json",
+      "sha256": "a24635ede06ab64a71c387c5c9ca0cd254a2dc2f18ca73dee52dd54f3b8a72d7",
+      "bytes": 12905
+    },
+    {
+      "path": "motifs.svg",
+      "sha256": "d266308c3001d46880d46a79d4901b31e4c0181e4b6fad9242fc10c13fdd634c",
+      "bytes": 100174
+    },
+    {
+      "path": "naphthoquinone14_edge/HF_RESP_template/reference.gjf",
+      "sha256": "8b6e92fbc85154c2c5a63822010ecf47fc05d348de8ece19378e7611ea2abd6a",
+      "bytes": 1261
+    },
+    {
+      "path": "naphthoquinone14_edge/PREPARED_ONLY.json",
+      "sha256": "c76faf509c782206217069d834c68728389cfe92973e9a5a7305d1e79e26a543",
+      "bytes": 257
+    },
+    {
+      "path": "naphthoquinone14_edge/geometry_opt/reference.gjf",
+      "sha256": "323957071c25f6401ce179f5899e4b528563cb5199035963d6ce686ba0d9e564",
+      "bytes": 1340
+    },
+    {
+      "path": "naphthoquinone14_edge/initial.sdf",
+      "sha256": "5ece89cae07923f6b11fa370d59c644546bc1871aee7720eae98a673a33d60b6",
+      "bytes": 1716
+    },
+    {
+      "path": "naphthoquinone14_edge/initial.xyz",
+      "sha256": "a523314cf4ffdadeca323f9633d36cfc4638eb64780709caeb1739a8eedb5ad6",
+      "bytes": 942
+    },
+    {
+      "path": "naphthoquinone14_edge/model.json",
+      "sha256": "42e9ee28bc0f736d7b76ba6905313523c5765651b467c47a1ca9c1a4110661a3",
+      "bytes": 10593
+    },
+    {
+      "path": "oxolan2ol_lactol_control/HF_RESP_template/reference.gjf",
+      "sha256": "619c370c9ff2b5a1d00f94f01ab8d246ba9dd177279e0233fe41bf8c3dbd39a7",
+      "bytes": 1072
+    },
+    {
+      "path": "oxolan2ol_lactol_control/PREPARED_ONLY.json",
+      "sha256": "c76faf509c782206217069d834c68728389cfe92973e9a5a7305d1e79e26a543",
+      "bytes": 257
+    },
+    {
+      "path": "oxolan2ol_lactol_control/geometry_opt/reference.gjf",
+      "sha256": "ff3c622cb2ec91848df245aa43a578b7d0abddf67a4afccd4f19dadce2ea5ade",
+      "bytes": 1147
+    },
+    {
+      "path": "oxolan2ol_lactol_control/initial.sdf",
+      "sha256": "601a99cb91379f93270707cdfbdb9a6720054aa518ae74dc6537cda7b45d48d2",
+      "bytes": 1361
+    },
+    {
+      "path": "oxolan2ol_lactol_control/initial.xyz",
+      "sha256": "af6d66813c74f2984efa91382ab7cb1d76d2badc116ec489bf3a8b94e35a03c7",
+      "bytes": 753
+    },
+    {
+      "path": "oxolan2ol_lactol_control/model.json",
+      "sha256": "575480a787fbb62377e2b4c5c8cceb1f6f135eccb31dd471dfc86bf0999e0847",
+      "bytes": 8647
+    },
+    {
+      "path": "phenol_aromatic_OH_control/HF_RESP_template/reference.gjf",
+      "sha256": "e7a010a615b251e0d511aef79d4b21753d289eb90dc207f844cf0ea116c29ea7",
+      "bytes": 1023
+    },
+    {
+      "path": "phenol_aromatic_OH_control/PREPARED_ONLY.json",
+      "sha256": "c76faf509c782206217069d834c68728389cfe92973e9a5a7305d1e79e26a543",
+      "bytes": 257
+    },
+    {
+      "path": "phenol_aromatic_OH_control/geometry_opt/reference.gjf",
+      "sha256": "caace972d11d10443db6c6e70b9e9f486e93da3abba0ba77d1ef65854c6d920b",
+      "bytes": 1097
+    },
+    {
+      "path": "phenol_aromatic_OH_control/initial.sdf",
+      "sha256": "d468db92c55a718d8ecc7414e83a53e213861c0730625493adbde2888dcd7eb0",
+      "bytes": 1281
+    },
+    {
+      "path": "phenol_aromatic_OH_control/initial.xyz",
+      "sha256": "3524b4d91b5b355eba50fe6c3279d5614542443b5c458f68ed23aca94820c4ec",
+      "bytes": 704
+    },
+    {
+      "path": "phenol_aromatic_OH_control/model.json",
+      "sha256": "6758ed0476e471242bb9118bc9ad5b2c77095321ada5ca5dec07b368870cbc3b",
+      "bytes": 8147
+    },
+    {
+      "path": "phthalide_lactone5_edge/HF_RESP_template/reference.gjf",
+      "sha256": "48c2d54c751c89761add5b6fd7599f3afb320f24510c7c03a54eb46bdf1b0ee1",
+      "bytes": 1166
+    },
+    {
+      "path": "phthalide_lactone5_edge/PREPARED_ONLY.json",
+      "sha256": "c76faf509c782206217069d834c68728389cfe92973e9a5a7305d1e79e26a543",
+      "bytes": 257
+    },
+    {
+      "path": "phthalide_lactone5_edge/geometry_opt/reference.gjf",
+      "sha256": "32fefa0f508c2085e2e7f7fee1356d36a6cb1a2ac4a9ae062e2a1883ac2e7864",
+      "bytes": 1243
+    },
+    {
+      "path": "phthalide_lactone5_edge/initial.sdf",
+      "sha256": "7e72168e79a38c66b506307869c166cb885657e5182333b3eac3b45a7657bd7f",
+      "bytes": 1546
+    },
+    {
+      "path": "phthalide_lactone5_edge/initial.xyz",
+      "sha256": "502efd51ee61ca8c5d87c3ab7dbf3525881fe6f572e523b31c9007252273cc5f",
+      "bytes": 847
+    },
+    {
+      "path": "phthalide_lactone5_edge/model.json",
+      "sha256": "8183f345b973e64a5b646d7c6ad7d78a377a85b6cdbc4319fd0dff922a0c63c9",
+      "bytes": 9659
+    },
+    {
+      "path": "source_manifest.json",
+      "sha256": "bebec6a3556de21ea97e4806b9265c97636ff601c32d90073ecd895208e17ec2",
+      "bytes": 4147
+    }
+  ]
+}

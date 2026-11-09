@@ -1,0 +1,10 @@
+candidate,model_or_fit,role,charge_e,multiplicity_in_region,four_atom_region_charge_e,whole_pyrene_COO_target_e,partial_region_charge_is_formal_charge
+Libreria attuale,shared_library,COO_anchor,-0.18,1,-1.0,-1,False
+Libreria attuale,shared_library,COO_C,0.76,1,-1.0,-1,False
+Libreria attuale,shared_library,COO_O,-0.79,2,-1.0,-1,False
+RESP HF atomico,pyrene_COO,COO_anchor,0.086049,1,-0.680093,-1,False
+RESP HF atomico,pyrene_COO,COO_C,0.807216,1,-0.680093,-1,False
+RESP HF atomico,pyrene_COO,COO_O,-0.786679,2,-0.680093,-1,False
+RESP HF L0,shared_library,COO_anchor,-0.632501,1,-1.0,-1,False
+RESP HF L0,shared_library,COO_C,1.731213,1,-1.0,-1,False
+RESP HF L0,shared_library,COO_O,-1.049356,2,-1.0,-1,False

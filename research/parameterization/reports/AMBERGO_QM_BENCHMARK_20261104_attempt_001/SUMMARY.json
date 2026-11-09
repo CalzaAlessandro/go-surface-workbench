@@ -1,0 +1,70 @@
+{
+  "job_id": "1469100",
+  "completed": true,
+  "no_new_QM": true,
+  "no_new_charge_fit": true,
+  "contexts": 7,
+  "verified_QM_grids": 42,
+  "training_transfer": "C16\u2192C24 for L0/SQE; individual molecular RESP references fitted in-sample",
+  "QM_DFT_method": "wB97XD/6-311++G(d,p)",
+  "HF_reference": "HF/6-31G* conventional branch with known RHF stability caveat",
+  "metric": "mean of 3 rigid orientations per context, then median over 7 contexts",
+  "AmberGO_limit": "Hybrid finite H-edge caps not provided by AmberGO; intervals across 3 cap choices, not statistical uncertainty",
+  "GAFF2_AIM": "Not numerically ranked: no validated native assignment to these finite fragments",
+  "production_validation": false,
+  "summary": [
+    {
+      "model": "Libreria RESP L0, training C16",
+      "HF_potential_median_RRMS": 0.17916657255392857,
+      "DFT_potential_median_RRMS": 0.2310017970479044,
+      "HF_RESP_atomic_median_RMSE_e": 0.18298483645305147
+    },
+    {
+      "model": "SQE\u2013RESP, training C16",
+      "HF_potential_median_RRMS": 0.23321607680123954,
+      "DFT_potential_median_RRMS": 0.22309298903525673,
+      "HF_RESP_atomic_median_RMSE_e": 0.12155713336855961
+    },
+    {
+      "model": "AmberGO + bordi ibridi (3 scelte)",
+      "HF_potential_median_RRMS": [
+        0.18082341291210569,
+        0.29866347248895
+      ],
+      "DFT_potential_median_RRMS": [
+        0.26026203255911823,
+        0.399643218215939
+      ],
+      "HF_RESP_atomic_median_RMSE_e": [
+        0.16892765098748636,
+        0.17845037900814334
+      ]
+    },
+    {
+      "model": "HierGO / OPLS",
+      "HF_potential_median_RRMS": 0.24394163409735597,
+      "DFT_potential_median_RRMS": 0.31032734657157107,
+      "HF_RESP_atomic_median_RMSE_e": 0.17091048973935435
+    },
+    {
+      "model": "Tua LIB originale",
+      "HF_potential_median_RRMS": 0.350124679726885,
+      "DFT_potential_median_RRMS": 0.4522781656164453,
+      "HF_RESP_atomic_median_RMSE_e": 0.16205507685777196
+    },
+    {
+      "model": "EspalomaCharge, modello provato",
+      "HF_potential_median_RRMS": 1.2659188170051132,
+      "DFT_potential_median_RRMS": 1.424734318738018,
+      "HF_RESP_atomic_median_RMSE_e": 0.19489175819973345
+    }
+  ],
+  "source_sha256": {
+    "summary.csv": "95bd71e8d5072a3ae9c24d8d1b3d461edc40acfae6eca2513ceccb779da65641",
+    "charge_scores.csv": "1d482d485aae47564ac1bde0790433e62cd01c3d1619c3d05aa3be8a14714f05",
+    "context_scores.csv": "99d934a6fdc609e0faab17345b79ced1c554eb30bd1dcabef3d284bf689117b9",
+    "QM_EVIDENCE.json": "b1f16d8d97a5a9011449f90692803f2b6f7ad4d632f9fe5a47a2fee5bca90467",
+    "orientation_scores.csv": "b8cd6fc3d14f55872d24789324498d326a0b5c493a7eebe4e91ae33dbe39e704",
+    "COMPLETE.json": "4b902005549f263c62731f175e312b5ee041c82c64cf4ed6d88c502e1f77741c"
+  }
+}

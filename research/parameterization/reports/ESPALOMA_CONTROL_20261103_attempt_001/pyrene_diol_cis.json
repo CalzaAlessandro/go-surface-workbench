@@ -1,0 +1,369 @@
+{
+  "summary": {
+    "model_id": "pyrene_diol_cis",
+    "status": "technical_gates_passed",
+    "atoms": 30,
+    "formal_charge": 0,
+    "Espaloma_charge_sum_e": 7.599592208862305e-07,
+    "repeat_max_difference_e": 0.0,
+    "permutation_max_difference_e": 5.960464477539063e-08,
+    "inference_seconds": 0.004110097885131836,
+    "native_BCC_primary_available": true,
+    "native_BCC_exclusion": null,
+    "comparisons": {
+      "espaloma__native_AM1_BCC": {
+        "charge_RMS_difference_e": 0.12659956751846474,
+        "charge_MAE_e": 0.1097065843017896,
+        "max_absolute_difference_e": 0.21560256142616271
+      },
+      "espaloma__current_library": {
+        "charge_RMS_difference_e": 0.09152260645881019,
+        "charge_MAE_e": 0.08391999453306198,
+        "max_absolute_difference_e": 0.13415256142616272
+      },
+      "espaloma__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.16048595272377503,
+        "charge_MAE_e": 0.11004242786639533,
+        "max_absolute_difference_e": 0.5802774855232239
+      },
+      "native_AM1_BCC__current_library": {
+        "charge_RMS_difference_e": 0.04121070653766243,
+        "charge_MAE_e": 0.03535999999999999,
+        "max_absolute_difference_e": 0.08145
+      },
+      "native_AM1_BCC__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.12413452099516877,
+        "charge_MAE_e": 0.0755457,
+        "max_absolute_difference_e": 0.54796
+      },
+      "current_library__molecular_HF_RESP": {
+        "charge_RMS_difference_e": 0.11718841057331567,
+        "charge_MAE_e": 0.0616227,
+        "max_absolute_difference_e": 0.52266
+      }
+    },
+    "canonical_isomeric_SMILES": "[H]O[C@]12C3=C([H])C([H])=C([H])C1=C([H])C([H])=C1C([H])=C([H])C([H])=C(C([H])=C3[H])[C@]12O[H]",
+    "stereo_metadata_discrepancies": [
+      {
+        "atom_id": 15,
+        "stored_CIP": "R",
+        "coordinate_derived_CIP": "S"
+      },
+      {
+        "atom_id": 16,
+        "stored_CIP": "S",
+        "coordinate_derived_CIP": "R"
+      }
+    ],
+    "stereochemical_validation_claimed": false,
+    "final_parameter_validation": false
+  },
+  "atoms": [
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 1,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.26026061177253723,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.187522,
+      "native_AM1_BCC_charge_e": -0.124
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 2,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.2586371898651123,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.208813,
+      "native_AM1_BCC_charge_e": -0.107
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 3,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": 0.13415256142616272,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.125091,
+      "native_AM1_BCC_charge_e": -0.08145
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 4,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.27212363481521606,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.200482,
+      "native_AM1_BCC_charge_e": -0.1125
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 5,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.27212363481521606,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.166839,
+      "native_AM1_BCC_charge_e": -0.1125
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 6,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": 0.13415250182151794,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.029014,
+      "native_AM1_BCC_charge_e": -0.08145
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 7,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.2586371898651123,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.230557,
+      "native_AM1_BCC_charge_e": -0.107
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 8,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.26026055216789246,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.174906,
+      "native_AM1_BCC_charge_e": -0.124
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 9,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.2586371898651123,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.143531,
+      "native_AM1_BCC_charge_e": -0.107
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 10,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": 0.13415250182151794,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.05224,
+      "native_AM1_BCC_charge_e": -0.08145
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 11,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.27212363481521606,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.26288,
+      "native_AM1_BCC_charge_e": -0.1125
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 12,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.27212366461753845,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.191728,
+      "native_AM1_BCC_charge_e": -0.1125
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 13,
+      "element": "C",
+      "role": "scaffold_C",
+      "espaloma_charge_e": 0.13415251672267914,
+      "current_library_charge_e": 0.0,
+      "molecular_HF_RESP_charge_e": -0.202282,
+      "native_AM1_BCC_charge_e": -0.08145
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 14,
+      "element": "C",
+      "role": "edge_C",
+      "espaloma_charge_e": -0.25863727927207947,
+      "current_library_charge_e": -0.15,
+      "molecular_HF_RESP_charge_e": -0.050583,
+      "native_AM1_BCC_charge_e": -0.107
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 15,
+      "element": "C",
+      "role": "hydroxyl_C",
+      "espaloma_charge_e": 0.19238251447677612,
+      "current_library_charge_e": 0.25,
+      "molecular_HF_RESP_charge_e": 0.77266,
+      "native_AM1_BCC_charge_e": 0.2247
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 16,
+      "element": "C",
+      "role": "hydroxyl_C",
+      "espaloma_charge_e": 0.19238252937793732,
+      "current_library_charge_e": 0.25,
+      "molecular_HF_RESP_charge_e": 0.437016,
+      "native_AM1_BCC_charge_e": 0.2247
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 17,
+      "element": "O",
+      "role": "hydroxyl_O",
+      "espaloma_charge_e": -0.6234994530677795,
+      "current_library_charge_e": -0.64,
+      "molecular_HF_RESP_charge_e": -0.68478,
+      "native_AM1_BCC_charge_e": -0.5923
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 18,
+      "element": "O",
+      "role": "hydroxyl_O",
+      "espaloma_charge_e": -0.6234993934631348,
+      "current_library_charge_e": -0.64,
+      "molecular_HF_RESP_charge_e": -0.647989,
+      "native_AM1_BCC_charge_e": -0.5923
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 19,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22263643145561218,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.155061,
+      "native_AM1_BCC_charge_e": 0.1355
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 20,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.20876851677894592,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.161008,
+      "native_AM1_BCC_charge_e": 0.1335
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 21,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.20897895097732544,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.167625,
+      "native_AM1_BCC_charge_e": 0.135
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 22,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.20897895097732544,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.161622,
+      "native_AM1_BCC_charge_e": 0.135
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 23,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.20876851677894592,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.16453,
+      "native_AM1_BCC_charge_e": 0.1335
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 24,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.22263634204864502,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.154061,
+      "native_AM1_BCC_charge_e": 0.1355
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 25,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.20876851677894592,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.143781,
+      "native_AM1_BCC_charge_e": 0.1335
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 26,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.20897895097732544,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.167302,
+      "native_AM1_BCC_charge_e": 0.135
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 27,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.20897892117500305,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.172355,
+      "native_AM1_BCC_charge_e": 0.135
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 28,
+      "element": "H",
+      "role": "edge_H",
+      "espaloma_charge_e": 0.20876853168010712,
+      "current_library_charge_e": 0.15,
+      "molecular_HF_RESP_charge_e": 0.123684,
+      "native_AM1_BCC_charge_e": 0.1335
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 29,
+      "element": "H",
+      "role": "hydroxyl_H",
+      "espaloma_charge_e": 0.42646321654319763,
+      "current_library_charge_e": 0.39,
+      "molecular_HF_RESP_charge_e": 0.383316,
+      "native_AM1_BCC_charge_e": 0.42
+    },
+    {
+      "model_id": "pyrene_diol_cis",
+      "atom_id": 30,
+      "element": "H",
+      "role": "hydroxyl_H",
+      "espaloma_charge_e": 0.42646321654319763,
+      "current_library_charge_e": 0.39,
+      "molecular_HF_RESP_charge_e": 0.395213,
+      "native_AM1_BCC_charge_e": 0.42
+    }
+  ],
+  "source_SHA256": {
+    "PARAMETERIZATION/calculations/am1_bcc_native_snapshot_20261103_attempt_001/pyrene_diol_cis/model.json": "f1789321f55d3368fdf27750e5f0fec59cbc409ec3ea23591beb27599b66cb5a",
+    "PARAMETERIZATION/calculations/am1_bcc_native_snapshot_20261103_attempt_001/pyrene_diol_cis/am1_bcc.mol2": "2ef10152f8dc8ddca8d1b45979c05317c6b7fba5426e37f097eb10669a0153a4",
+    "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_cis/HF/charges.json": "d7dc52a117dcb1324e88af897608bd96cee4ddc19890d447d2106c33d49161f1",
+    "PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/atomic_inputs/pyrene_diol_cis/HF/FIT_COMPLETE.json": "b6b8115e110b448cfeb49d3d4145bef4786eb39e4674e9d710436ff9688f1f8e"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "report": "RESP_AMBER_REPORT.html",
+  "self_contained_images_and_styles": true,
+  "data_files_sha256": {
+    "SUMMARY_RESULTS.json": "9dee88f5626186ad4974b4563e953ab91aa126c88ddb415b6e8e8810bbff45d9",
+    "RRMS_by_physical_context.csv": "2b963b751f721ec28c02b2d6234bac7c472465fc7dc16f034ddf3eee1a2ffe88",
+    "L0_shared_role_charges.csv": "c1491f56ab947db3dd01f986b062f2ec84961678e9b2da38c15223b4085a7f3a",
+    "COO_charge_diagnostic.csv": "71bdb1f7f553cd3a48f517df9271d31586dc0e81c84ad88b01ac1de0b4299aa9",
+    "basal_C_summary_by_context.csv": "073324f93e06281dcd88557c32c472933edcbb02760afaaee348753840f6dcd1"
+  },
+  "html_sha256": "1fe927f7ee7d4fb5056f37af576bf1255a562525eb9275b2c9e0a07ba7bc9412",
+  "final_parameter_validation": false
+}

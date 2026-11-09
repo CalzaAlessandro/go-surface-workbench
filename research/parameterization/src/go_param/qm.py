@@ -313,7 +313,8 @@ def _same_element_cloud(a, b, tolerance=1e-7):
 
 
 def prepare_orientations(model_record, log, output_dir, *, cpus=8, mem_gb=6,
-                         allow_rhf_instability_diagnostic=False, method=HF_METHOD):
+                         allow_rhf_instability_diagnostic=False, method=HF_METHOD,
+                         esp_method=None):
     """Gate, preserve optimized geometry, then prepare three generic MK rotations.
 
     An existing output directory is rejected. This writes inputs only, never runs
@@ -321,7 +322,11 @@ def prepare_orientations(model_record, log, output_dir, *, cpus=8, mem_gb=6,
     rotational alignment, since these are orientation controls, not conformers.
     """
     require_method(method)
-    if allow_rhf_instability_diagnostic and method != HF_METHOD:
+    mk_method = method if esp_method is None else require_method(esp_method)
+    mixed_hf_on_dft = (method, mk_method) == (DFT_METHOD, HF_METHOD)
+    if mk_method != method and not mixed_hf_on_dft:
+        raise ValueError(f'Unsupported mixed geometry/ESP protocol: {mk_method}//{method}')
+    if allow_rhf_instability_diagnostic and (method != HF_METHOD or mk_method != HF_METHOD):
         raise ValueError('RHF instability diagnostic is HF-only (HF/6-31G*)')
     record = _model(model_record)
     validation = inspect_reference(record, log, method=method)
@@ -332,7 +337,7 @@ def prepare_orientations(model_record, log, output_dir, *, cpus=8, mem_gb=6,
     if not validation['accepted'] and not diagnostic:
         raise ValueError('Gaussian reference not accepted: '+', '.join(validation['issues']))
     # Validate resources before creating any output directory.
-    gaussian_input(record, cpus=cpus, mem_gb=mem_gb, method=method)
+    gaussian_input(record, cpus=cpus, mem_gb=mem_gb, method=mk_method)
     if diagnostic:
         optimized = copy.deepcopy(record)
         optimized['atoms'] = validation['optimized_atoms']
@@ -346,6 +351,15 @@ def prepare_orientations(model_record, log, output_dir, *, cpus=8, mem_gb=6,
             topology_validation='distance_screen_only_not_bond_order_or_stereochemical_validation')
     else:
         optimized = validation['optimized_model']
+        if mixed_hf_on_dft:
+            optimized = copy.deepcopy(optimized)
+            optimized.setdefault('metadata', {}).update(
+                geometry_qm_method=DFT_METHOD,
+                esp_qm_method=HF_METHOD,
+                dft_geometry_wavefunction_stability_validated=True,
+                hf_esp_wavefunction_stability_validated=False,
+                wavefunction_stability_validated=False,
+                scope='conventional_rhf_mk_esp_on_accepted_dft_geometry')
     center = [sum(a['position'][k] for a in optimized['atoms'])/len(optimized['atoms']) for k in range(3)]
     orientations = []
     for index, angles in enumerate(ROTATIONS_DEGREES, 1):
@@ -366,22 +380,28 @@ def prepare_orientations(model_record, log, output_dir, *, cpus=8, mem_gb=6,
     original_bytes = Path(model_record).read_bytes() if isinstance(model_record, (str, Path)) else _json_text(record).encode()
     manifest = {'schema_version': 1, 'status': 'prepared_inputs_only_not_executed',
                 'scope': ('rhf_instability_diagnostic_control' if diagnostic else
+                          'conventional_rhf_mk_esp_on_accepted_dft_geometry' if mixed_hf_on_dft else
                           'dft_resp_control' if method == DFT_METHOD else 'stable_reference'),
-                'qm_method': method,
+                'qm_method': f'{mk_method}//{method}' if mixed_hf_on_dft else method,
                 'reference_accepted': validation['accepted'],
                 'final_parameter_validation': False,
                 'model_id': record['model_id'], 'source_model_sha256': _hash_bytes(original_bytes),
                 'source_log_sha256': _source_log_hash(log), 'optimized_model_sha256': _hash_bytes(optimized_text.encode()),
                 'optimized_model_path': str((output/'model.json').resolve()),
-                'method': f'{method} MK single points; fixed geometry, Symmetry=None', 'orientations': []}
-    integration = ' Integral=UltraFine' if method == DFT_METHOD else ''
+                'method': (f'{mk_method} MK single points on accepted {method} geometry; fixed geometry, Symmetry=None'
+                           if mixed_hf_on_dft else f'{method} MK single points; fixed geometry, Symmetry=None'),
+                'orientations': []}
+    if mixed_hf_on_dft:
+        manifest['geometry_qm_method'] = method
+        manifest['esp_qm_method'] = mk_method
+    integration = ' Integral=UltraFine' if mk_method == DFT_METHOD else ''
     for index, rotated in enumerate(orientations, 1):
         folder = output/f'orientation_{index:02d}'
         folder.mkdir()
         model_text = _json_text(rotated)
         (folder/'model.json').write_text(model_text)
         lines = [f'%NProcShared={cpus}', f'%Mem={mem_gb}GB', '%Chk=mk.chk',
-                 f'#P {method} Pop=MK SCF=(Tight,XQC) Symmetry=None{integration} IOp(6/33=2,6/41=10,6/42=17)', '',
+                 f'#P {mk_method} Pop=MK SCF=(Tight,XQC) Symmetry=None{integration} IOp(6/33=2,6/41=10,6/42=17)', '',
                  f'{record["model_id"]}: rigid MK orientation {index}', '',
                  f'{record["formal_charge"]} {record["multiplicity"]}']
         lines += [f'{a["element"]:2s} '+' '.join(f'{x:.12f}' for x in a['position']) for a in rotated['atoms']]
@@ -417,6 +437,7 @@ def main(argv=None):
     prepare.add_argument('log', type=Path)
     prepare.add_argument('output_dir', type=Path)
     prepare.add_argument('--method', choices=RESP_METHODS, default=HF_METHOD)
+    prepare.add_argument('--esp-method', choices=RESP_METHODS, default=None)
     prepare.add_argument('--cpus', type=int, default=8)
     prepare.add_argument('--mem-gb', type=int, default=6)
     prepare.add_argument('--rhf-diagnostic', action='store_true',
@@ -427,7 +448,8 @@ def main(argv=None):
         print(_json_text(_safe_report(report)), end='')
         return 0 if report['accepted'] else 2
     report = prepare_orientations(args.model, args.log, args.output_dir, cpus=args.cpus, mem_gb=args.mem_gb,
-                                  allow_rhf_instability_diagnostic=args.rhf_diagnostic, method=args.method)
+                                  allow_rhf_instability_diagnostic=args.rhf_diagnostic, method=args.method,
+                                  esp_method=args.esp_method)
     print(_json_text(report), end='')
     return 0
 

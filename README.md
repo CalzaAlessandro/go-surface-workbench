@@ -1,4 +1,14 @@
-# GO Builder
+# GO Builder (`go-surface-workbench`)
+
+[![Status: Under Active Development](https://img.shields.io/badge/status-active%20development-orange.svg)]()
+[![Python: >=3.11](https://img.shields.io/badge/python-3.11+-blue.svg)]()
+
+> [!IMPORTANT]
+> **Work in Progress / Active Research Repository**
+> This repository contains the source code, parameterization protocols, and validation toolchains for the GO Builder workbench.
+> The project is currently under active scientific development. Force-field parameters, atomic charges, and model topologies are preliminary and subject to revision prior to peer-reviewed publication.
+> 
+> Molecular engine outputs (Gaussian/ORCA/Amber logs and trajectories) are tracked separately. External dependencies and molecular dynamics engines must be configured as described in [Engine setup](docs/ENGINE_SETUP.md).
 
 Nome provvisorio della repository: **go-surface-workbench**.
 Vedere [direzione scientifica](docs/ROADMAP.md) e [prestazioni misurate](docs/PERFORMANCE.md).
@@ -11,12 +21,6 @@ Il [catalogo dei preset di carica](docs/CHARGE_PRESETS.md) include ora il
 riferimento pubblicato GAFF2–AIM con cariche e Lennard-Jones originali, oltre
 alle librerie correnti e al riferimento HierGO/OPLS. La nuova derivazione
 resta RESP; l'assegnazione generale di tutti i preset è ancora da completare.
-
-> **Private development snapshot.** This repository is a source snapshot of the
-> GO Builder workbench, not a complete software bundle or a release. Executables,
-> software archives, virtual environments, and validation campaign outputs were
-> left out. Install the molecular engines separately as described in
-> [Engine setup](docs/ENGINE_SETUP.md). The project license has not been chosen.
 
 Generatore generale di grafene ossido con connettività esplicita. Questa
 cartella contiene codice, esempi, test e copie dei parametri con provenienza;

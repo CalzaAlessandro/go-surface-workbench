@@ -3,7 +3,9 @@ from __future__ import annotations
 import argparse
 import csv
 from datetime import datetime, timezone
+from functools import lru_cache
 import hashlib
+from itertools import combinations
 import json
 import math
 from pathlib import Path
@@ -136,6 +138,60 @@ def prepare_resonance_model(model_path, output_path):
     return model
 
 
+def _validate_aromatic_valences(model, expected, actual, carboxylate):
+    """Require an integer Kekule assignment preserving every source atom valence.
+
+    MOL2 can mix aromatic edges with explicit single/double edges. Counting
+    only changed numeric double bonds would omit compensating aromatic edges.
+    This exact finite-graph b-matching check needs no chemistry toolkit on HPC.
+    """
+    ids=sorted(a['id'] for a in model['atoms']);index={i:j for j,i in enumerate(ids)}
+    targets=[0.]*len(ids);base=[0.]*len(ids);unknown=[]
+    for pair,old in expected.items():
+        for i in pair:targets[index[i]]+=old
+        value=actual[pair]
+        if pair in carboxylate:value=old  # Independently validated COO MOL2 convention.
+        if value=='ar':
+            unknown.append(tuple(index[i] for i in pair));value=1
+        elif value=='am':value=1
+        else:value=float(value)
+        for i in pair:base[index[i]]+=value
+    # Three 1.5-labelled bonds at a fused neutral aromatic C encode valence
+    # four, not 4.5. Require a genuine integer Kekule assignment below.
+    atoms={a['id']:a for a in model['atoms']}
+    for atom_id in ids:
+        pos=index[atom_id]
+        incident=[old for pair,old in expected.items() if atom_id in pair]
+        if (targets[pos]==4.5 and incident==[1.5]*3
+                and atoms[atom_id]['element']=='C'
+                and atoms[atom_id].get('formal_charge',0)==0):
+            targets[pos]=4.
+    residual=[want-got for want,got in zip(targets,base)]
+    if any(abs(v-round(v))>1e-9 for v in residual):
+        raise ValueError('Source/output aromatic atom valences lack an integer assignment')
+
+    @lru_cache(maxsize=None)
+    def feasible(edges,remaining):
+        degrees=[0]*len(ids)
+        for i,j in edges:degrees[i]+=1;degrees[j]+=1
+        if any(v<0 or v>degrees[i] for i,v in enumerate(remaining)) or sum(remaining)%2:
+            return False
+        if not edges:return not any(remaining)
+        node=min((i for i,n in enumerate(degrees) if n),
+                 key=lambda i:(math.comb(degrees[i],remaining[i]),degrees[i]))
+        incident=[k for k,e in enumerate(edges) if node in e]
+        rest=tuple(e for k,e in enumerate(edges) if k not in incident)
+        for chosen in combinations(incident,remaining[node]):
+            pending=list(remaining);pending[node]=0
+            for k in chosen:
+                i,j=edges[k];pending[j if i==node else i]-=1
+            if feasible(rest,tuple(pending)):return True
+        return False
+
+    if not feasible(tuple(unknown),tuple(round(v) for v in residual)):
+        raise ValueError('Aromatic representation does not preserve atom-wise bond valences')
+
+
 def validate_bond_representation(model, actual, output_atoms):
     expected={tuple(sorted((b['a'],b['b']))):b['order'] for b in model['bonds']}
     if set(actual)!=set(expected):raise ValueError('AM1-BCC bond connectivity changed')
@@ -170,12 +226,23 @@ def validate_bond_representation(model, actual, output_atoms):
                 and all(model['atoms'][i-1]['element']=='C' for i in pair)):
             cyclic[pair]=(old,int(value));continue
         raise ValueError(f'AM1-BCC fixed bond order changed: {pair}: {old}->{value}')
-    # A numeric Kekule change must be a closed even alternating C-C cycle and
-    # preserve each atom's integer bond-valence. Isolated sigma/FG changes fail.
+    _validate_aromatic_valences(model,expected,actual,coo)
+    # A numeric Kekule change must be a closed even alternating C-C cycle (or
+    # an alternating C-C path closing through validated aromatic ring junctions)
+    # and preserve integer bond-valence. Isolated sigma/FG changes fail.
+    aromatic_edges=aromatic|{p for p,old in expected.items() if old==1.5 and actual[p] in ('ar','1','2')}
+    arom_adj={}
+    for a,b in aromatic_edges:
+        arom_adj.setdefault(a,set()).add(b)
+        arom_adj.setdefault(b,set()).add(a)
     adjacency={}
     for pair,(old,new) in cyclic.items():
         for i in pair:adjacency.setdefault(i,[]).append((pair,old,new))
-    if any(len(edges)!=2 or sum(e[2]-e[1] for e in edges)!=0 for edges in adjacency.values()):
+    for i,edges in adjacency.items():
+        if len(edges)==2 and sum(e[2]-e[1] for e in edges)==0:
+            continue
+        if len(edges)==1 and len(arom_adj.get(i,()))>=2:
+            continue
         raise ValueError('Changed numeric bond orders do not form valence-preserving alternating cycles')
     cycles=[]; unseen=set(adjacency)
     while unseen:
@@ -184,10 +251,23 @@ def validate_bond_representation(model, actual, output_atoms):
             i=stack.pop()
             if i in component:continue
             component.add(i)
-            stack.extend(j for edge,_,_ in adjacency[i] for j in edge if j not in component)
-        unseen-=component
-        if len(component)<6 or len(component)%2:raise ValueError('Invalid conjugated carbon cycle')
-        cycles.append(sorted(component))
+            if i in adjacency:
+                stack.extend(j for edge,_,_ in adjacency[i] for j in edge if j not in component)
+            if i in arom_adj and (i not in adjacency or len(adjacency[i])==1):
+                stack.extend(j for j in arom_adj[i] if j not in component)
+        cyclic_nodes=component&set(adjacency)
+        unseen-=cyclic_nodes
+        endpoints=[i for i in cyclic_nodes if len(adjacency[i])==1]
+        comp_edges={edge: (old,new) for i in cyclic_nodes for edge,old,new in adjacency[i]}
+        if endpoints:
+            # Aromatic edges can compensate the numeric-path bond count;
+            # exact atom-wise conservation was proved above over the full graph.
+            if len(endpoints)%2 or len(component)<6:
+                raise ValueError('Invalid aromatic-junction conjugated carbon cycle')
+        elif (len(cyclic_nodes)<6 or len(cyclic_nodes)%2
+              or sum(new-old for old,new in comp_edges.values())!=0):
+            raise ValueError('Invalid conjugated carbon cycle')
+        cycles.append(sorted(cyclic_nodes))
     return {'representation_changes':changes,'alternating_cycle_atom_ids':cycles,
             'validated_aromatic_metadata':bool(metadata),'fixed_sigma_and_functional_group_bonds_preserved':True}
 

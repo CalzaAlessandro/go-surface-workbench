@@ -1,0 +1,12 @@
+{
+  "files_sha256": {
+    "SUMMARY.json": "cbea5badfe8715c8f1a0f745cd63c7bf9cdabab087db52e05cc7213bf1f22f64",
+    "summary.csv": "95bd71e8d5072a3ae9c24d8d1b3d461edc40acfae6eca2513ceccb779da65641",
+    "charge_scores.csv": "1d482d485aae47564ac1bde0790433e62cd01c3d1619c3d05aa3be8a14714f05",
+    "context_scores.csv": "99d934a6fdc609e0faab17345b79ced1c554eb30bd1dcabef3d284bf689117b9",
+    "QM_EVIDENCE.json": "b1f16d8d97a5a9011449f90692803f2b6f7ad4d632f9fe5a47a2fee5bca90467",
+    "build_report.py": "343a6796e4f1cc6a867b9cc1f940334338277148121ea7f5cd94ed2b13327e78",
+    "comparison.html": "c038957cb0de2a1dfebb78bf8ecc22e36d07f9b31bfe53cd07aedf42434b03c9",
+    "REPORT.html": "1c8d2e65055415e3beec57b0c7c7c4f3cf15dfc3040674d8a02ec77156753bea"
+  }
+}

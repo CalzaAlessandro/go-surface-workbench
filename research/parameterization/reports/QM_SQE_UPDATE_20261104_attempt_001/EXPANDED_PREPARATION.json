@@ -1,0 +1,20 @@
+{
+  "status": "INITIAL_STRUCTURES_ONLY",
+  "cases": 55,
+  "requested_cases": 56,
+  "skipped": [
+    {
+      "shell": 2,
+      "counts": {
+        "EPX": 2
+      },
+      "distance": "far",
+      "reason": "unable to place exact counts with requested distance and closed-shell pi matching"
+    }
+  ],
+  "duplicate_completed_contexts_not_resubmitted": true,
+  "physical_context_unit": "one explicit molecular graph/starting conformation; rigid ESP rotations are not extra contexts",
+  "primary_target": "HF/6-31G* MK with external Amber RESP on accepted DFT geometries",
+  "geometry_protocol": "wB97XD/6-311++G(d,p) Opt/Freq and wavefunction stability gate",
+  "production_parameter_validation": false
+}

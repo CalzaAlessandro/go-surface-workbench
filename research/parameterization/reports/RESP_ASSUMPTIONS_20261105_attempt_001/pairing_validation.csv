@@ -1,0 +1,17 @@
+model_id,chemical_signature_exact_match,coordinates_exact_match,atom_order_ids_elements_roles_formal_charges_bonds_exact_match,raw_model_sha256_identical
+C24_EPH_edge_control,True,True,True,False
+C24_EPT_edge_control,True,True,True,False
+C24_EPX_EPX_near_trans,True,True,True,False
+C24_OH_EPX_far_trans,True,True,True,False
+C24_OH_EPX_near_trans,True,True,True,False
+C24_OH_OH_far_trans,True,True,True,False
+C24_OH_OH_near_trans,True,True,True,False
+C24_pristine_parent_reference,True,True,True,False
+C24_single_basal_EPX_control,True,True,True,False
+pyrene_COO,True,True,True,False
+pyrene_COOH,True,True,True,False
+pyrene_diol_cis,True,True,True,False
+pyrene_diol_epoxide,True,True,True,False
+pyrene_diol_trans,True,True,True,False
+pyrene_dione,True,True,True,False
+pyrene_pristine,True,True,True,False

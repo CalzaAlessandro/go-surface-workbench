@@ -1,0 +1,110 @@
+{
+  "sources": [
+    {
+      "model_id": "dibenzofuran_ether_edge",
+      "url": "https://www.ebi.ac.uk/chebi/CHEBI:28145",
+      "input_smiles": "c1ccc2c(c1)oc1ccccc12",
+      "formula": "C12H8O",
+      "input_inchikey": "TXCDCPKCNAJMEE-UHFFFAOYSA-N",
+      "access_date": "2026-11-05",
+      "source_access": "ChEBI primary record opened",
+      "identity_scope": "molecular reference identity, not presence in GO"
+    },
+    {
+      "model_id": "diphenyl_ether_bridge_control",
+      "url": "https://www.ebi.ac.uk/chebi/CHEBI:39258",
+      "input_smiles": "c1ccc(Oc2ccccc2)cc1",
+      "formula": "C12H10O",
+      "input_inchikey": "USIUVYZYUHIAEV-UHFFFAOYSA-N",
+      "access_date": "2026-11-05",
+      "source_access": "ChEBI primary record opened",
+      "identity_scope": "molecular reference identity, not presence in GO"
+    },
+    {
+      "model_id": "phthalide_lactone5_edge",
+      "url": "https://www.ebi.ac.uk/chebi/CHEBI:38085",
+      "input_smiles": "O=C1OCc2ccccc21",
+      "formula": "C8H6O2",
+      "input_inchikey": "WNZQDUSMALZDQF-UHFFFAOYSA-N",
+      "access_date": "2026-11-05",
+      "source_access": "ChEBI primary record opened",
+      "identity_scope": "molecular reference identity, not presence in GO"
+    },
+    {
+      "model_id": "coumarin_lactone6_edge",
+      "url": "https://www.ebi.ac.uk/chebi/CHEBI:28794",
+      "input_smiles": "O=c1ccc2ccccc2o1",
+      "formula": "C9H6O2",
+      "input_inchikey": "ZYGHJZDHTFUPRJ-UHFFFAOYSA-N",
+      "access_date": "2026-11-05",
+      "source_access": "ChEBI primary record opened",
+      "identity_scope": "molecular reference identity, not presence in GO"
+    },
+    {
+      "model_id": "oxolan2ol_lactol_control",
+      "url": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=200907060640520321",
+      "input_smiles": "OC1CCCO1",
+      "formula": "C4H8O2",
+      "input_inchikey": "JNODDICFTDYODH-UHFFFAOYSA-N",
+      "access_date": "2026-11-05",
+      "source_access": "indexed J-GLOBAL content retrieved; direct request HTTP 503",
+      "identity_scope": "molecular reference identity, not presence in GO"
+    },
+    {
+      "model_id": "phenol_aromatic_OH_control",
+      "url": "https://www.ebi.ac.uk/chebi/CHEBI:15882",
+      "input_smiles": "Oc1ccccc1",
+      "formula": "C6H6O",
+      "input_inchikey": "ISWSIDIOOBJBQZ-UHFFFAOYSA-N",
+      "access_date": "2026-11-05",
+      "source_access": "ChEBI primary record opened",
+      "identity_scope": "molecular reference identity, not presence in GO"
+    },
+    {
+      "model_id": "naphthoquinone14_edge",
+      "url": "https://www.ebi.ac.uk/chebi/CHEBI:27418",
+      "input_smiles": "O=C1C=CC(=O)c2ccccc21",
+      "formula": "C10H6O2",
+      "input_inchikey": "FRASJONUBLZVQX-UHFFFAOYSA-N",
+      "access_date": "2026-11-05",
+      "source_access": "ChEBI primary record opened",
+      "identity_scope": "molecular reference identity, not presence in GO"
+    }
+  ],
+  "local_files": [
+    {
+      "path": "src/go_param/extended_fragments.py",
+      "sha256": "79b8703d61ce915dc7788f7228722779a54d51ec85c3306b3dcba6abc257e0a2"
+    },
+    {
+      "path": "tests/test_extended_fragments.py",
+      "sha256": "94f94d9891a5f6fa6d583cce8e5c92b43faec973e72ba51406421498e6035549"
+    },
+    {
+      "path": "docs/EXTENDED_GO_GROUPS_20261105.md",
+      "sha256": "8855dad9b547888d7dc0208e84ad76e7401f1bd70aa57bcd8f4ae58a56bb2675"
+    },
+    {
+      "path": "src/go_param/qm.py",
+      "sha256": "d95d6286b933141364c6bf64891e9ca8442355711d0d4ba6f76745a71968ab72"
+    },
+    {
+      "path": "src/go_param/reference_qm.py",
+      "sha256": "01b7a40f195a5b7e748d58a5adfbf944b39eab4422fe9c18b6cc9349c23f0ca1"
+    },
+    {
+      "path": "src/go_param/resp.py",
+      "sha256": "d85754ada656ec2880fb00823d3c088558fddcd3553c1a854f75e2f51c2068c2"
+    },
+    {
+      "path": "src/go_param/protocols.py",
+      "sha256": "ccd8cfbe26d1f4a809ed5f884014c611e94c2fc94048378c9f25af8b9ba04422"
+    },
+    {
+      "path": "docs/MISSING_GROUPS_LITERATURE.md",
+      "sha256": "233c27d7222cd512222f0c4b5365011beb34ba10cb1a19026577d7733d51dca8"
+    }
+  ],
+  "source_identity_human_verification": "pending",
+  "no_claim_of_GO_population": true
+}

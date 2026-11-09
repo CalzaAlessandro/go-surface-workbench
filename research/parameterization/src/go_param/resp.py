@@ -44,12 +44,17 @@ def _json(path, value):
 
 
 def esp_header(line):
-    """Read espgen's adjacent I5 fields, including a fully occupied point field."""
-    if len(line) < 10 or line[15:].strip():
-        raise ValueError('Malformed ESP header: expected 2I5 or 3I5')
+    """Read native espgen headers: I5 atom count, minimum-width grid count.
+
+    C printf expands %5d beyond 99,999 points. Slicing a second I5 would
+    silently truncate that count; the optional final multipole field is zero.
+    """
+    rest=line[5:].split()
+    if len(line.rstrip('\r\n')) < 10 or len(rest) not in (1,2):
+        raise ValueError('Malformed ESP header')
     try:
-        nat, npoints = int(line[:5]), int(line[5:10])
-        extra = int(line[10:15]) if line[10:15].strip() else 0
+        nat, npoints = int(line[:5]), int(rest[0])
+        extra = int(rest[1]) if len(rest)==2 else 0
     except ValueError as exc:
         raise ValueError('Malformed ESP header') from exc
     if nat < 1 or npoints < 1 or extra != 0:
@@ -381,7 +386,8 @@ def _new_attempt(output_dir):
             return path
 
 
-def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', resp='resp', method=HF_METHOD) -> dict:
+def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', resp='resp',
+               method=HF_METHOD, geometry_method=None) -> dict:
     """Fit one atomic reference; supplied logs are rigid orientations, not conformers.
 
     A fresh attempt is always retained, including failure evidence. Success writes
@@ -389,6 +395,10 @@ def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', 
     No parameter library or topology is published by this function.
     """
     require_method(method)
+    geom_method = method if geometry_method is None else require_method(geometry_method)
+    mixed_hf_on_dft = (geom_method, method) == (DFT_METHOD, HF_METHOD)
+    if geom_method != method and not mixed_hf_on_dft:
+        raise ValueError(f'Unsupported mixed geometry/ESP protocol: {method}//{geom_method}')
     out = _new_attempt(output_dir)
     try:
         model_path = Path(model_path).resolve()
@@ -397,8 +407,8 @@ def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', 
         model = json.loads(model_bytes)
         _validate_model(model)
         model_method = model.get('metadata', {}).get('qm_method')
-        if model_method is not None and model_method != method:
-            raise ValueError('Optimized model QM method differs from selected RESP method')
+        if model_method is not None and model_method != geom_method:
+            raise ValueError('Optimized model QM method differs from selected RESP geometry method')
         if not gaussian_logs:
             raise ValueError('At least one Gaussian MK log is required')
         logs = [Path(p).resolve() for p in gaussian_logs]
@@ -468,19 +478,30 @@ def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', 
             writer = csv.DictWriter(handle, fieldnames=['atom_id', 'element', 'name', 'role', 'symmetry_class', 'charge_e'])
             writer.writeheader()
             writer.writerows({key: atom[key] for key in writer.fieldnames} for atom in records)
+        protocol_method = f'{method}//{geom_method}' if mixed_hf_on_dft else method
+        protocol = {'method': f'{protocol_method} MK ESP; Amber hyperbolic RESP', 'qm_method': protocol_method,
+                    'stage1_qwt': .0005, 'stage2_qwt': .001, 'ihfree': 1, 'physical_conformers': 1,
+                    'orientations': len(datasets), 'mean_grid_points': nref,
+                    'parent_qm_optimization_frequencies_stability': 'must be approved upstream; not inferred from MK logs',
+                    'scope': ('conventional_rhf_mk_esp_on_accepted_dft_geometry; RHF wavefunction stability not claimed; '
+                              if mixed_hf_on_dft else
+                              'DFT-RESP control; ' if method == DFT_METHOD else '')
+                             + 'finite whole-model atomic reference; no bulk or modular-transfer validation'}
+        provenance = {'qm_method': protocol_method, 'model_source_path': str(model_path),
+                      'model_sha256': _digest(out/'model.json'), 'gaussian_logs': evidence,
+                      'executables': programs, 'fit_code_sha256': _digest(Path(__file__))}
+        if mixed_hf_on_dft:
+            protocol['geometry_qm_method'] = geom_method
+            protocol['esp_qm_method'] = method
+            provenance['geometry_qm_method'] = geom_method
+            provenance['esp_qm_method'] = method
         result = {'schema_version': 1, 'status': 'atomic_resp_fit_completed', 'model_id': model.get('model_id'),
                   'attempt_dir': str(out), 'charges_csv': str(out/'charges.csv'), 'charges_json': str(out/'charges.json'),
                   'charge_sum_e': float(q[0].sum()), 'formal_charge': model['formal_charge'],
                   'stage2': second, 'orientation_weights': weights, 'metrics': metrics,
                   'final_parameter_validation': False,
-                  'protocol': {'method': f'{method} MK ESP; Amber hyperbolic RESP', 'qm_method': method, 'stage1_qwt': .0005,
-                               'stage2_qwt': .001, 'ihfree': 1, 'physical_conformers': 1,
-                               'orientations': len(datasets), 'mean_grid_points': nref,
-                               'parent_qm_optimization_frequencies_stability': 'must be approved upstream; not inferred from MK logs',
-                               'scope': ('DFT-RESP control; ' if method == DFT_METHOD else '') + 'finite whole-model atomic reference; no bulk or modular-transfer validation'},
-                  'provenance': {'qm_method': method, 'model_source_path': str(model_path), 'model_sha256': _digest(out/'model.json'),
-                                 'gaussian_logs': evidence, 'executables': programs,
-                                 'fit_code_sha256': _digest(Path(__file__))}}
+                  'protocol': protocol,
+                  'provenance': provenance}
         result['artifacts_sha256'] = {str(p.relative_to(out)): _digest(p) for p in sorted(out.rglob('*'))
                                       if p.is_file()}
         _json(out/'FIT_COMPLETE.json', result)
@@ -493,13 +514,17 @@ def fit_atomic(model_path, gaussian_logs: list, output_dir, *, espgen='espgen', 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--method', choices=RESP_METHODS, default=HF_METHOD)
+    parser.add_argument('--geometry-method', choices=RESP_METHODS, default=None)
     parser.add_argument('--model', required=True)
     parser.add_argument('--logs', nargs='+', required=True)
     parser.add_argument('--output-dir', required=True)
     parser.add_argument('--espgen', default='espgen')
     parser.add_argument('--resp', default='resp')
     args = parser.parse_args(argv)
-    result = fit_atomic(args.model, args.logs, args.output_dir, espgen=args.espgen, resp=args.resp, method=args.method)
+    kwargs = {'espgen': args.espgen, 'resp': args.resp, 'method': args.method}
+    if args.geometry_method is not None:
+        kwargs['geometry_method'] = args.geometry_method
+    result = fit_atomic(args.model, args.logs, args.output_dir, **kwargs)
     print(json.dumps(result, indent=2, allow_nan=False))
 
 

@@ -4,7 +4,69 @@ Independent study of GO functional-group electrostatics and force fields.
 Original GO_BUILDER, user libraries, OLD parameters and existing MD campaigns
 are preserved. Gaussian and AmberTools are system installations.
 
-## Current scope
+## Latest verified results: 2026-11-04
+
+The [QM reference validation and published-structure audit](reports/QM_REFERENCE_VALIDATION_20261104_attempt_001/REPORT.html)
+records the completed Gaussian/density/finite-field probes, new method-comparison
+arrays, and externally sourced GO/nanoflake candidates. HF/6-31G*–RESP remains
+the conventional Amber baseline; no production charge or LJ parameter changed.
+Arrays 1469073 (eight GO controls) and 1469076 (six chemical anchors) are running;
+their submission is not a validated choice of reference. External structures are
+catalogued with provenance but are not yet curated charge-fitting labels.
+See the [validation protocol](docs/QM_REFERENCE_VALIDATION_PLAN_20261104.md) and
+[source-pool audit](references/go_prior_art_20261104/README.md).
+
+The [table-based QM/literature report](reports/DIRECT_QM_ESP_LITERATURE_20261104_attempt_001/REPORT.html)
+contains the direct HF/DFT potential comparison, RESP/BCC mixing diagnostic and
+native GAFF2–AIM parameter inventory. The user-facing report now uses tables.
+The [reference recommendation](docs/DFT_REFERENCE_FIXED_CHARGES_20261104.md)
+separates electronic validation from the effective fixed-charge model for water.
+It does not introduce new calculations or production parameters.
+
+The [current HTML report](reports/QM_SQE_UPDATE_20261104_attempt_001/REPORT.html)
+records the completed first SQE calibration to molecular HF–RESP, the
+matched C16→C24 transfer comparison, whole-sheet QM array 1468880 and the
+55-context expanded RESP array 1468993. Both whole-sheet low-spin trials
+have entered SCF; the first four expanded references are running Gaussian.
+These are active calculations, not completed new charge references. Every
+new production trial has a five-day limit.
+
+The recalibrated modular L0 remains better than this first SQE on the matched
+held-out HF potential metric. No final charge method is selected. See the
+[SQE protocol and limitations](docs/SQE_HF_RESP_PILOT_20261104.md).
+
+## Earlier verified controls, updated through 2026-11-03
+
+The [Espaloma control](reports/ESPALOMA_CONTROL_20261103_attempt_001/REPORT.html)
+completed on 16 graphs, with 12 fully covered native BCC comparisons. It uses
+the published model with an explicit formal-charge adapter; the report
+records the release API charge issue and source stereo-metadata warnings.
+Charge-vector similarity is not force-field validation. See the
+[charge/LJ/bonded coupling note](docs/CHARGES_BONDED_LJ_COUPLING.md).
+
+The [HTML charge report](reports/CHARGE_COMPARISON_20261103_attempt_001/RESP_AMBER_REPORT.html)
+contains the actual RESP charges, comparison with the current library,
+matched HF/DFT controls and held-out-context scores. Sixteen HF/6-31G* RESP
+controls on accepted DFT geometries and sixteen matching DFT–RESP controls
+are complete. Three recovered C54 references bring the DFT panel to nineteen;
+these are not 34 independent chemical contexts. Twelve native AM1-BCC
+controls have full parameter coverage; four exclusions are explicit.
+Four shared-block RESP L0 fits are complete, including C16-only training
+evaluated on seven supported held-out C24 contexts. No production library
+or force-field winner has been selected.
+
+The C54 single-epoxide recovery and gated postprocessing are complete in the
+[19-context update](reports/CHARGE_CONTROLS_UPDATE_20261103_attempt_001/REPORT.html).
+The [campaign status](reports/CAMPAIGN_STATUS.json) distinguishes the current
+observation from historical snapshots.
+
+The mixed-level workflow selects the DFT parent with
+`--method 'wB97XD/6-311++G(d,p)'` and the conventional HF ESP target with
+`--esp-method 'HF/6-31G*'` in `02_fit_and_compare.py`. The subsequent fit uses
+Amber RESP. An ESP error metric evaluates the fitted RESP charges, not a
+separate Gaussian charge set.
+
+## Original study scope (historical snapshot through 2026-10-30)
 
 Eight explicit finite pyrene-based models cover pristine scaffold, epoxide,
 paired OH (cis/trans), paired carbonyl, COOH, COO− and mixed diol/epoxide.
@@ -68,85 +130,32 @@ renormalization. OPLS charge-only controls do not constitute the full OPLS model
 See docs/PROTOCOL.md, docs/RESP_PROTOCOL.md, docs/COMPARISON_PROTOCOL.md and
 docs/FORCE_FIELD_CANDIDATES.md for the scientific choices and primary sources.
 
-RESP and AM1-BCC method definitions, raw/constrained rounding controls and
-resonance checks are documented in [CHARGE_METHOD_COMPARISON.md](docs/CHARGE_METHOD_COMPARISON.md).
-Three provisional GAFF/GAFF2/AMBER99SB-compatible bonded/LJ candidates and
-their unresolved gaps are in [NEW_FRCMOD_CANDIDATES.md](docs/NEW_FRCMOD_CANDIDATES.md).
+## Transferable blocks and chemical context
 
-## Current experiment status
+The [assumption assessment](docs/ASSUMPTIONS_LITERATURE_ASSESSMENT.md) separates
+physical total-charge requirements from block-neutrality and zero-background
+approximations. The [L0 protocol](docs/MODULAR_RESP_PROTOCOL.md) fits shared roles
+using external Amber RESP, retaining current charges as a matched control.
+The [distance panel](docs/MIXED_DISTANCE_PANEL.md) contains 34 initial paired
+configurations and five edge controls on two PAH sizes. Its eight-model first
+QM subset was submitted as job 1401678; submission is not scientific completion.
+The [literature group inventory](docs/MISSING_GROUPS_LITERATURE.md) distinguishes
+ethers, phenolic OH, lactols, lactones and other conditional additions. These
+groups have not been silently added to current libraries or material recipes.
+The [context-dependent charge proposal](docs/CONTEXT_DEPENDENT_CHARGES.md)
+describes tabulated and fitted local corrections; it is not implemented.
 
-The real LEaP coverage test constructed 11 of 24 fragment/candidate topologies;
-the remaining cases have unresolved terms. These source-selected baselines
-are not complete production force fields. Seven HF atomic RESP controls remain
-explicitly diagnostic because of RHF electronic instability. Seven AM1-BCC
-models pass the current evidence gates; the dione has one bond without an explicit BCC parameter and remains a separately documented native-zero-fallback diagnostic.
-All eight original DFT geometry/Hessian calculations finished; seven pass the
-preliminary geometry, frequency and electronic-state gates. The standalone
-pyrene epoxide changes its intended connectivity. No new bonded constants have
-yet been fitted. An eight-model mixed-distance/edge subset is now running.
+The eight original DFT geometry/Hessian calculations have finished. Seven pass
+the preliminary identity, connectivity-distance, positive-frequency and
+wavefunction-stability checks. The standalone pyrene epoxide changes its
+intended C–C connectivity and remains excluded. These are references for later
+bonded fitting, not fitted force constants.
 
-The machine-readable [campaign status](reports/CAMPAIGN_STATUS.json) records
-the verification timestamp and exact scope. See [bonded QM protocol](docs/BONDED_QM_PROTOCOL.md)
-and the input-only examples under `examples/dft_bonded_reference/`.
-
-The new [assumption assessment](docs/ASSUMPTIONS_LITERATURE_ASSESSMENT.md),
-[L0 shared-block protocol](docs/MODULAR_RESP_PROTOCOL.md),
-[distance/face/size panel](docs/MIXED_DISTANCE_PANEL.md) and
-[missing-group inventory](docs/MISSING_GROUPS_LITERATURE.md) separate current
-evidence from further validation. Seven-model modular RESP remains an
-RHF-instability diagnostic pilot; the AM1-BCC block projection is separately
-labeled and is not native AM1-BCC.
-
-The proposed distribution architecture has independent material recipes,
-charge choices and compatible parameter packages, with an external-GO entry
-path: see [preset/external-input design](docs/PRESETS_AND_EXTERNAL_PREPARATION_DESIGN.md).
-An optional fixed-charge redistribution mode is a proposal, not implemented.
-[SQE+qp method selection](docs/STATIC_CHARGE_METHOD_SELECTION.md) records the
-published solver candidate, existing local implementation and NPA/RESP/GO
-validation limits.
-
-Current priority is RESP context data and coherent charge/Lennard-Jones
-comparisons; deriving new bonded/frcmod coefficients is deferred. The
-[experimental charge constraints](docs/EXPERIMENTAL_CHARGE_CONSTRAINTS.md) and
-[nonbonded benchmarks](docs/EXPERIMENTAL_NONBONDED_BENCHMARKS.md) distinguish
-measured titration/adsorption behavior from non-unique atomic partial charges.
-
-Explicit [DFT-RESP support](docs/EXPLICIT_RESP_METHODS.md) preserves HF defaults
-and labels the selected QM method throughout the gates and fit. The actual
-seven-control DFT-RESP panel and independent postanalysis have completed.
-The [complete context snapshot](reports/RESP_context_DFT_seven_controls_20261030_attempt_001/README.md)
-contains seven physical contexts and 210 training ESP comparison rows.
-The [context analyzer](docs/RESP_CONTEXT_ANALYSIS.md) exports individual atom
-and group values versus scaffold graph distances, separately identifying
-interior carbons and H-terminated edges. The 39-model starting panel now has
-[four supplementary isolated controls](docs/ISOLATED_CONTROLS.md). Their
-QM→RESP sequence is now submitted as array 1406363: the two C₂₄ controls are
-running and the two C₅₄ controls are queued. They are not completed references.
-
-The [interim four-structure report](reports/RESP_context_DFT_partial_20261030_attempt_001/README.md)
-contains individually resolved atom/group charges and 120 locally reproduced
-training ESP comparisons. It is a fixed snapshot of four completed structures,
-so its count differs from the subsequent live completion count. The source
-files, actual MK SCF evidence and charge totals were checked; this is not
-transferable force-field validation.
-
-Array 1406371 schedules mixed-panel RESP continuations with
-[`aftercorr`](https://slurm.schedmd.com/sbatch.html#OPT_dependency), followed by
-an independent scientific reference gate in each worker. New calculation
-arrays and the previously pending mixed references have a five-day wall-time
-limit. One far-OH parent and its RESP control completed. The near-OH parent
-timed out at its original eight-hour limit; recovery job 1408584 uses a copied
-checkpoint in a new folder, recomputes frequencies and then runs gated
-DFT-RESP. Its obsolete RESP dependency task was canceled. The current
-[live snapshot](reports/CHARGE_SCOPE_LIVE_STATUS_20261030_attempt_002.json)
-records the separate original, recovered and downstream job states.
-
-The additive `go_param.hf_fixed` helper tests fixed-geometry HF evidence after
-an independently accepted DFT parent. All seven native probes completed
-Gaussian normally, with external RHF-to-UHF instability; the additional
-strict research gate therefore remains false. This is distinct from SCF
-failure or automatic Amber incompatibility. The
-[HF probe report](reports/HF_on_DFT_stability_20261030_attempt_001/README.md),
-[DFT level and stability interpretation](docs/DFT_LEVEL_AND_RHF_STABILITY.md)
-and [Amber RESP acceptance policy](docs/AMBER_RESP_ACCEPTANCE.md) preserve
-that distinction. These probes did not fit new RESP charges.
+The seven initial DFT–RESP controls and their independent postanalysis have
+completed: see reports/RESP_context_DFT_seven_controls_20261030_attempt_001.
+Seven HF probes on their fixed DFT geometries completed Gaussian normally
+but reported external RHF-to-UHF instability; that additional strict gate
+does not imply SCF failure or automatic Amber incompatibility. See
+docs/DFT_LEVEL_AND_RHF_STABILITY.md and docs/AMBER_RESP_ACCEPTANCE.md.
+The near-OH mixed reference timed out at the original eight-hour limit and
+is under isolated checkpoint-based recovery as job 1408584, with five days.

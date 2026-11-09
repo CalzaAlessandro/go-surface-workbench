@@ -1,0 +1,14 @@
+{
+  "scope": "descriptive existing results; no new RESP fit or QM",
+  "sources": {
+    "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/reports/CHARGE_COMPARISON_20261103_attempt_001/context_HF_16/per_atom_charges.csv": "c4603d3624a0f1322b8ed8ecb086c68df2f73760f6b97f29cce896713f774da4",
+    "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/reports/CHARGE_COMPARISON_20261103_attempt_001/context_HF_16/background_carbon_distance_charges.csv": "c2a16ef18b30af9124f9e922b3b66997f459192a1ce2e0d655c7f6ad22ecb0de",
+    "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/l0_hf_all16/current_library.json": "514d1c7f94dd4965f32223156653e96b3a7d5acbe88e2f84a27a71aac5af6928",
+    "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/complementary_results_20261103_snapshot_001/l0_hf_all16/shared_library.json": "f5ece42dfcc6564f821c0ca89fd1d11b9437adca5ab3a5b50258edfe85fb3a18"
+  },
+  "rows_COO": 9,
+  "basal_context_distance_rows": 42,
+  "basal_atom_count": 123,
+  "error_bars": "none; atoms and rigid rotations are not independent replicate fits",
+  "final_parameter_validation": false
+}

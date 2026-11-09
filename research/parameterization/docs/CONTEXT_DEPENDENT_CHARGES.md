@@ -1,8 +1,12 @@
 # Proposed context-dependent GO charge library
 
-Status: scientific proposal, not implemented or fitted. The user's subsequent
-clarification sets standard library charges as the default, with optional static
-redistribution on the completed structure; see
+Status: scientific proposal, not implemented or fitted. Update 2026-11-03:
+the user confirms HF–RESP as primary and DFT–RESP/AM1-BCC as controls. Fixed
+libraries, environment classes and static redistribution are still competing
+candidates; no production assignment method has been selected. The total must
+equal the integer formal charge of the final product, including grafts and
+protonation, and may be nonzero. See the current
+[charge strategy benchmark](CHARGE_STRATEGY_BENCHMARK_20261103.md),
 [published method selection](STATIC_CHARGE_METHOD_SELECTION.md) and
 [preset/external-input design](PRESETS_AND_EXTERNAL_PREPARATION_DESIGN.md).
 Preserve the current
@@ -95,7 +99,10 @@ because its charge sum passes.
   This is a precedent for conserving increments, not evidence that a correction
   to the current fixed GO blocks is native AM1-BCC or an embedded QM calculation.
 
-The existing L0 constrained-HF pilot remains electronically diagnostic. The
-34 distance/face configurations plus five edge controls are initial graphs;
-only a first eight-model DFT subset is currently running. No context-response
-coefficient, validated charge table or fluctuating-charge MD method is claimed.
+The earlier constrained-HF pilot remains a dated diagnostic. The current panel
+contains 16 conventional HF-RESP references on accepted DFT geometries and 18
+DFT-RESP controls, with shared physical contexts. Four L0 fits and the first
+supported C24 held-out comparison are complete; the
+[dated HTML report](../reports/CHARGE_COMPARISON_20261103_attempt_001/RESP_AMBER_REPORT.html)
+records the exact scope. No environment-response coefficient, validated
+production charge table or fluctuating-charge MD method is claimed.

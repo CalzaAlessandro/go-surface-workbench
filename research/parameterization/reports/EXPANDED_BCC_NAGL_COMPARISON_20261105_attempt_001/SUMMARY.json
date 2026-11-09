@@ -1,0 +1,217 @@
+{
+  "created_utc": "2026-11-05T00:00:59.196532+00:00",
+  "NAGL_job_id": "1469240",
+  "BCC_ABCG2_job_id": "1469241",
+  "NAGL_technical_successes": 16,
+  "native_BCC_covered": 12,
+  "native_ABCG2_covered": 12,
+  "matched_subsets": {
+    "C24_7": [
+      "C24_EPX_EPX_near_trans",
+      "C24_OH_EPX_far_trans",
+      "C24_OH_EPX_near_trans",
+      "C24_OH_OH_far_trans",
+      "C24_OH_OH_near_trans",
+      "C24_pristine_parent_reference",
+      "C24_single_basal_EPX_control"
+    ],
+    "matched_C24_5": [
+      "C24_EPX_EPX_near_trans",
+      "C24_OH_EPX_far_trans",
+      "C24_OH_EPX_near_trans",
+      "C24_OH_OH_far_trans",
+      "C24_pristine_parent_reference"
+    ]
+  },
+  "aggregate_scores": [
+    {
+      "subset": "matched_C24_5",
+      "N_contexts": 5,
+      "method": "L0_HF_RESP_C16",
+      "label": "Libreria L0–RESP, training C16",
+      "HF_median_ESP_RRMS": 0.19580322137038425,
+      "DFT_median_ESP_RRMS": 0.2310017970479044
+    },
+    {
+      "subset": "matched_C24_5",
+      "N_contexts": 5,
+      "method": "SQE_HF_RESP_C16",
+      "label": "SQE–RESP, training C16",
+      "HF_median_ESP_RRMS": 0.23321607680123954,
+      "DFT_median_ESP_RRMS": 0.22309298903525673
+    },
+    {
+      "subset": "matched_C24_5",
+      "N_contexts": 5,
+      "method": "current_library",
+      "label": "LIB originale",
+      "HF_median_ESP_RRMS": 0.3495666913329405,
+      "DFT_median_ESP_RRMS": 0.4381242103395176
+    },
+    {
+      "subset": "matched_C24_5",
+      "N_contexts": 5,
+      "method": "BCC_integer_charge_control",
+      "label": "AM1-BCC classico · controllo Q intero",
+      "HF_median_ESP_RRMS": 0.3583365523211988,
+      "DFT_median_ESP_RRMS": 0.4609356539774836
+    },
+    {
+      "subset": "matched_C24_5",
+      "N_contexts": 5,
+      "method": "ABCG2_integer_charge_control",
+      "label": "ABCG2 · controllo Q intero",
+      "HF_median_ESP_RRMS": 0.5886270539340792,
+      "DFT_median_ESP_RRMS": 0.7018969350710426
+    },
+    {
+      "subset": "matched_C24_5",
+      "N_contexts": 5,
+      "method": "NAGL_AM1BCC_ELF10",
+      "label": "NAGL 1.0 · surrogato ELF10",
+      "HF_median_ESP_RRMS": 0.4071705373203318,
+      "DFT_median_ESP_RRMS": 0.513213818423025
+    },
+    {
+      "subset": "matched_C24_5",
+      "N_contexts": 5,
+      "method": "Espaloma_BCC_ELF10",
+      "label": "EspalomaCharge · modello provato",
+      "HF_median_ESP_RRMS": 1.2659188170051132,
+      "DFT_median_ESP_RRMS": 1.424734318738018
+    },
+    {
+      "subset": "matched_C24_5",
+      "N_contexts": 5,
+      "method": "literature_hiergo_opls",
+      "label": "HierGO / OPLS",
+      "HF_median_ESP_RRMS": 0.24394163409735597,
+      "DFT_median_ESP_RRMS": 0.31032734657157107
+    },
+    {
+      "subset": "matched_C24_5",
+      "N_contexts": 5,
+      "method": "Stauffer_ESP_current_caps",
+      "label": "Stauffer ESP + bordi della LIB",
+      "HF_median_ESP_RRMS": 0.2856820441304177,
+      "DFT_median_ESP_RRMS": 0.32898978916659316
+    },
+    {
+      "subset": "matched_C24_5",
+      "N_contexts": 5,
+      "method": "Stauffer_SESP_current_caps",
+      "label": "Stauffer SESP + bordi della LIB",
+      "HF_median_ESP_RRMS": 0.29767797545782804,
+      "DFT_median_ESP_RRMS": 0.39270996301483035
+    },
+    {
+      "subset": "matched_C24_5",
+      "N_contexts": 5,
+      "method": "AmberGO_current_caps",
+      "label": "AmberGO + bordi della LIB",
+      "HF_median_ESP_RRMS": 0.28823805738211866,
+      "DFT_median_ESP_RRMS": 0.3768387693527502
+    },
+    {
+      "subset": "C24_7",
+      "N_contexts": 7,
+      "method": "L0_HF_RESP_C16",
+      "label": "Libreria L0–RESP, training C16",
+      "HF_median_ESP_RRMS": 0.17916657255392857,
+      "DFT_median_ESP_RRMS": 0.2310017970479044
+    },
+    {
+      "subset": "C24_7",
+      "N_contexts": 7,
+      "method": "SQE_HF_RESP_C16",
+      "label": "SQE–RESP, training C16",
+      "HF_median_ESP_RRMS": 0.23321607680123954,
+      "DFT_median_ESP_RRMS": 0.22309298903525673
+    },
+    {
+      "subset": "C24_7",
+      "N_contexts": 7,
+      "method": "current_library",
+      "label": "LIB originale",
+      "HF_median_ESP_RRMS": 0.350124679726885,
+      "DFT_median_ESP_RRMS": 0.4522781656164453
+    },
+    {
+      "subset": "C24_7",
+      "N_contexts": 7,
+      "method": "NAGL_AM1BCC_ELF10",
+      "label": "NAGL 1.0 · surrogato ELF10",
+      "HF_median_ESP_RRMS": 0.4071705373203318,
+      "DFT_median_ESP_RRMS": 0.513213818423025
+    },
+    {
+      "subset": "C24_7",
+      "N_contexts": 7,
+      "method": "Espaloma_BCC_ELF10",
+      "label": "EspalomaCharge · modello provato",
+      "HF_median_ESP_RRMS": 1.2659188170051132,
+      "DFT_median_ESP_RRMS": 1.424734318738018
+    },
+    {
+      "subset": "C24_7",
+      "N_contexts": 7,
+      "method": "literature_hiergo_opls",
+      "label": "HierGO / OPLS",
+      "HF_median_ESP_RRMS": 0.24394163409735597,
+      "DFT_median_ESP_RRMS": 0.31032734657157107
+    },
+    {
+      "subset": "C24_7",
+      "N_contexts": 7,
+      "method": "Stauffer_ESP_current_caps",
+      "label": "Stauffer ESP + bordi della LIB",
+      "HF_median_ESP_RRMS": 0.28757114854160354,
+      "DFT_median_ESP_RRMS": 0.3704624077660727
+    },
+    {
+      "subset": "C24_7",
+      "N_contexts": 7,
+      "method": "Stauffer_SESP_current_caps",
+      "label": "Stauffer SESP + bordi della LIB",
+      "HF_median_ESP_RRMS": 0.30839073942959594,
+      "DFT_median_ESP_RRMS": 0.4067750132273574
+    },
+    {
+      "subset": "C24_7",
+      "N_contexts": 7,
+      "method": "AmberGO_current_caps",
+      "label": "AmberGO + bordi della LIB",
+      "HF_median_ESP_RRMS": 0.29866347248895,
+      "DFT_median_ESP_RRMS": 0.399643218215939
+    }
+  ],
+  "OpenEye_license_absent_confirmed_by_user": true,
+  "whole_sheet_NAGL_predictions": false,
+  "whole_sheet_exclusions": [
+    {
+      "model_id": "GOX935",
+      "atoms": 1007,
+      "formal_charge": -16,
+      "closed_shell_valence_graph_established": false,
+      "unmatched_neutral_C_sites": 63,
+      "reason": "Native graph valence/spin not established; radical sites must not be silently capped or converted for a trained nonradical charge model",
+      "provenance": "corrected_sheets_charge_control_20261103_attempt_001/inputs.json"
+    },
+    {
+      "model_id": "REGOX980",
+      "atoms": 913,
+      "formal_charge": -6,
+      "closed_shell_valence_graph_established": false,
+      "unmatched_neutral_C_sites": 28,
+      "reason": "Native graph valence/spin not established; radical sites must not be silently capped or converted for a trained nonradical charge model",
+      "provenance": "corrected_sheets_charge_control_20261103_attempt_001/inputs.json"
+    }
+  ],
+  "production_force_field_validated": false,
+  "production_libraries_modified": false,
+  "new_QM_or_charge_fit": false,
+  "HF_caveat": "Conventional HF/6-31G* branch; RHF determinant stability caveat retained.",
+  "DFT_reference": "wB97XD/6-311++G(d,p), reference validation still running.",
+  "BCC_rounding_policy": "Raw charges preserved. Integer-control values use explicitly documented minimum-L2 correction for three-decimal AM1 population rounding, not missing-parameter imputation.",
+  "scope": "Same archived AM1 populations, different native corrections; not a new independent full geometry-optimized workflow for each method."
+}

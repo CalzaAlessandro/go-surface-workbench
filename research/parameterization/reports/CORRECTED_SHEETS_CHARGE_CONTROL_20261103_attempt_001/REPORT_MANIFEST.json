@@ -1,0 +1,40 @@
+{
+  "report_SHA256": "e94859ae5a3daf4d70d813d06b50c5275e09f6651225fa0bdfabbf137a0273ae",
+  "source_archives": {
+    "corrected_sheets_charge_results_20261103_snapshot_001.tar.gz": "0327903353e74a287ba689aab5299f7b3ad68c291d892908fd5116c76a393ed9",
+    "corrected_sheets_resonance_results_20261103_snapshot_001.tar.gz": "e59ddf633b1e865b60eb8b74e92c3aab10cacb2b327fe7db98121b40f03dbc92"
+  },
+  "verified_backend_artifact_files": 36,
+  "diagnostic_predictions": 18,
+  "production_charge_model_eligible": false,
+  "new_QM_or_RESP_calculation": false,
+  "files_SHA256": {
+    "GRAPH_QC.json": "544f0e7c5efb58974227496f19a5d283e88ee4fb473e1b411b2b984403bb3bb2",
+    "SCHEDULER_STATUS.json": "3ff3a1de23c2725ee4c6c57b5475aecb090ee3e2953acb46c7d7865ff14a0446",
+    "COO_resonance_sensitivity.png": "6c1cb1c5644e9b75b79923a9b314c8689597e82750d5f88192cbf37fe29022ff",
+    "COO_resonance_sensitivity.svg": "39ee12779a4c3f81ba730ec5588027d0b6c4d6126321f6987cee89750b577b8d",
+    "INDEPENDENT_GRAPH_AND_RESONANCE_CHECKS.json": "255ccccf80eb666d5e8125b1feb27c9c516ec8c9dee786127bdcae2a15e102d3",
+    "representation_sensitivity.csv": "1c05dcfb9bc3ac2898c7cf0e18c198da5a7d2f82b53099885e3a45b1cf0a44a8",
+    "mean_charge_table.csv": "a803d13740672138cf148c211fcdd70daee48b187c3c127bf9019ecefe80d8f4",
+    "build_report.py": "59da70b069ac62e2b4f818a97d9e651cf5317d574735aa44aaf9dfa012ef4dca",
+    "comparison.html": "a38024a14c280aea6d185455cbcdae94b3e5196bb15bfde4c90338d31080ff45",
+    "README.md": "f9dbe32b4ca88afae96d13f6b988b4b2c97b9fe99636dd85150aa2654b046b74",
+    "basal_and_CBD_summary.csv": "9c2b29312f214a3d561288e47696d9860d2c35f59f62cca83d753306e102ce88",
+    "per_role_all_methods.csv": "7522401688a068c6e5df9007b5ffcdee94891557a6d579b899f86d3ac84392df",
+    "basal_distributions.svg": "978c1ef3f8654f855bb283dad03a2e056f1bb9a5974f54c002ac1c1e358968dc",
+    "basal_distributions.png": "1c5ed615ea1e67e352f8bac59396be31d46f92eb7f85279aa1aed40cee889465",
+    "REPORT.html": "e94859ae5a3daf4d70d813d06b50c5275e09f6651225fa0bdfabbf137a0273ae",
+    "prediction_timings_and_checks.csv": "831b5fe2644cc84de98c00312d3c982c2089e08065f1064685ac003614d200a2",
+    "per_atom_all_methods.csv": "8b3852fea41c96adc01fc38c40c8d2ad0e4a18e3b62e73bf5f3fec06b122fe00",
+    "source_and_diagnostic_graphs/GOX935/GRAPH_QC.json": "ccbbefe1fec013218223a9e7f70522085387dc52d4779546096cc0fc4166440f",
+    "source_and_diagnostic_graphs/GOX935/compl.parm7": "8431f7e939ea03a6ed31fa6dbfa53036f47068d2d9356604dfd9b1b81bac82b1",
+    "source_and_diagnostic_graphs/GOX935/diagnostic_A.sdf": "0eded722c5d33b4fc692608f7536df4489b005c89852d53350559072f7a329eb",
+    "source_and_diagnostic_graphs/GOX935/diagnostic_B.sdf": "7c4089b30f1977fa3941bbbd251e7583bcfb9da0c59a45a341ec99e994833651",
+    "source_and_diagnostic_graphs/GOX935/compl.rst7": "720a2299761b1ef15a04934356f11baa5d834a4459c51d44df5a98bf45724ef1",
+    "source_and_diagnostic_graphs/REGOX980/GRAPH_QC.json": "d5b604cb4e46164684e801ba5b9fd3f087e647fcef2abe52d796e0442ed94006",
+    "source_and_diagnostic_graphs/REGOX980/compl.parm7": "4a7fcf50f0b7ff7071c6b56e3b606e5a157a2e90e30fcf7af00e9c330076eabe",
+    "source_and_diagnostic_graphs/REGOX980/diagnostic_A.sdf": "26edf8fbd0a8e7ceb669451fff0310829f2d122cd16c2a1e5013b8ab7b783777",
+    "source_and_diagnostic_graphs/REGOX980/diagnostic_B.sdf": "cbe5be3bfdaf56ed9c9d184ae006080a39a4d7af9b6b74627667cbbdda5bdc19",
+    "source_and_diagnostic_graphs/REGOX980/compl.rst7": "01e96e9bcc518c840648c0568f6c02ba72aed167ebb8e320027410052c7daab6"
+  }
+}

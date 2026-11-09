@@ -1,6 +1,12 @@
 # Optional structure-specific charges: published method selection
 
-Research finding, 2026-10-30. No new charge-correction mode is implemented.
+Original method-selection finding, 2026-10-30. Update, 2026-11-04:
+the native published controls and a first GO role-based SQE fit to HF–RESP
+have now run. The implementation is research-only; no production correction
+mode is enabled. See the [bounded calibration](SQE_HF_RESP_PILOT_20261104.md)
+for its fixed q0 baseline, fitted variables, held-out results and limitations.
+The remaining text records the original selection rationale, not a claim that
+the first fit is the final published SQE+qp parameterization.
 
 **SQE+qp is a close published architectural match.** It combines type reference
 charges with bond-domain redistribution. The 2021 study evaluated organic and

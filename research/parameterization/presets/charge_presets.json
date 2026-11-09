@@ -1,0 +1,133 @@
+{
+  "schema_version": 2,
+  "primary_derivation": "RESP on isolated/mixed GO fragments; lookup/rule/published-method calibration selected after independent context validation",
+  "fixed_charge_MD": true,
+  "preserve_published_coefficients": true,
+  "presets": [
+    {
+      "id": "resp-current",
+      "label": "Current user RESP block libraries",
+      "charge_method": "RESP (user-reported HF/6-31G* fragment protocol)",
+      "mode": "fixed_library",
+      "status": "legacy_reference_not_newly_validated",
+      "source": "resources/reference/current",
+      "paired_parameters": "existing current GAFF2 source preset; unchanged"
+    },
+    {
+      "id": "resp-go-new",
+      "label": "New GO RESP library",
+      "charge_method": "RESP",
+      "mode": "under_derivation",
+      "status": "not_selectable_for_production",
+      "selection_pending": [
+        "constant_blocks",
+        "distance_context_table",
+        "regularized_context_rule",
+        "published_redistribution_model_calibrated_to_RESP"
+      ],
+      "canonical_ESP_target": "gas-phase HF/6-31G* Merz-Kollman ESP with Amber RESP fitting",
+      "DFT_RESP_scope": "separate comparison control; no automatic promotion to canonical preset",
+      "acceptance_policy": "research/parameterization/docs/AMBER_RESP_ACCEPTANCE.md",
+      "policy_enforcement_status": "documented selection requirements; generic production selector not implemented"
+    },
+    {
+      "id": "gaff2-aim",
+      "label": "Published GAFF2-AIM",
+      "charge_method": "DDEC6 environment-class averages",
+      "mode": "published_charge_LJ_pair",
+      "status": "published_reference_subset",
+      "source": "resources/reference/gaff2_aim",
+      "provenance": "resources/reference/gaff2_aim/PROVENANCE.json",
+      "requires_original_AIM_LJ": true,
+      "bonded_family": "published GAFF2",
+      "source_variants": [
+        {
+          "nominal_C_over_O": 1.8,
+          "topology": "resources/reference/gaff2_aim/GO_18/GO_sheet_1_8.top",
+          "coordinates": "resources/reference/gaff2_aim/GO_18/GO_sheet_1_8.gro"
+        },
+        {
+          "nominal_C_over_O": 3.0,
+          "topology": "resources/reference/gaff2_aim/GO_30/GO_sheet_3_0.top",
+          "coordinates": "resources/reference/gaff2_aim/GO_30/GO_sheet_3_0.gro"
+        }
+      ],
+      "scope": [
+        "published periodic basal OH/epoxide environments"
+      ],
+      "unmapped": [
+        "finite edges",
+        "EPH/EPT termini",
+        "carbonyl",
+        "COOH",
+        "COO-",
+        "new grafting chemistry"
+      ],
+      "generic_assignment_status": "not_implemented_no_automatic_charge_renormalization_or_mix_with_other_LJ",
+      "indivisible_force_field_bundle": true,
+      "charge_only_override_permitted": false,
+      "static_correction_permitted": false
+    },
+    {
+      "id": "opls-hiergo",
+      "label": "Published HierGO OPLS reference",
+      "charge_method": "published OPLS charge table",
+      "mode": "published_force_field_pair",
+      "status": "published_reference",
+      "source": "resources/reference/opls",
+      "provenance": "resources/reference/opls/PROVENANCE.json",
+      "paired_parameters": "original HierGO/OPLS conventions; unchanged",
+      "generic_assignment_status": "cross-format generic assignment and complete Amber conversion still require validation",
+      "indivisible_force_field_bundle": true,
+      "charge_only_override_permitted": false,
+      "static_correction_permitted": false,
+      "unmapped": [
+        "COO- not in archived 17-row charge table",
+        "unvalidated graft junctions"
+      ],
+      "bonded_family": "original HierGO/OPLS with original nonbonded and 1-4 conventions"
+    }
+  ],
+  "charge_preset_changes_model_dimensions": false,
+  "bonded_parameter_derivation_status": "deferred_by_user_current_focus_charges_and_charge_LJ_pairs",
+  "published_bundle_policy": {
+    "preserve_together": [
+      "partial_charges",
+      "bonded_terms",
+      "LJ_parameters",
+      "mixing_rules",
+      "1_4_conventions"
+    ],
+    "charge_only_override_permitted": false,
+    "redistribution_under_published_name_permitted": false,
+    "unsupported_chemistry": "explicit_error_no_cross_preset_fallback",
+    "Amber_export_gate": "validated_full_conversion_and_explicit_compatible_GB_radius_policy",
+    "enforcement_status": "research_catalog_policy; generic production selector not implemented"
+  },
+  "net_charge_policy": "integer determined by chemistry and protonation, including nonzero totals; no global neutralization",
+  "assignment_methods": [
+    {
+      "id": "fixed_library",
+      "status": "legacy_assignment_available_new_modular_HF_RESP_candidate_not_production_validated"
+    },
+    {
+      "id": "graph_context",
+      "status": "under_calibration_no_final_lookup_or_rule",
+      "distance_definition": "minimum number of chemical graph bonds, independent of traversal and atom numbering"
+    },
+    {
+      "id": "static_redistribution",
+      "status": "research_only",
+      "SQE": {
+        "fit_status": "first_bounded_HF_RESP_fit_complete",
+        "reference_contexts": 16,
+        "C16_training_contexts": 7,
+        "supported_C24_held_out_contexts": 7,
+        "independent_COO_transfer_validated": false,
+        "production_validation": false
+      },
+      "Espaloma": "published_BCC_oriented_control_not_refitted_to_RESP",
+      "during_MD": "charges_fixed"
+    }
+  ]
+}

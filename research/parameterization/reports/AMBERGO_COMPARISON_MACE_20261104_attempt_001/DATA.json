@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-11-04T22:08:25.812872+00:00",
+  "units": "elementary charge e",
+  "meaning": "Native assignment comparison, not an accuracy or adsorption-energy ranking",
+  "AIM_scope": "Ranges of native atom types present in two original periodic GO_18 and GO_30 topologies; graph-based role assignment; not confidence intervals",
+  "RESP_L0": "Shared-role HF-RESP fit to 16 finite contexts with imposed constraints; preliminary, not production validated",
+  "rows": [
+    {
+      "role": "scaffold_C",
+      "label": "C senza legame diretto con O",
+      "AmberGO": 0.0,
+      "HierGO / OPLS": 0.0,
+      "Tua LIB originale": 0.0,
+      "RESP L0 preliminare": 0.0,
+      "GAFF2_AIM_min": -0.118556304728,
+      "GAFF2_AIM_max": 0.011644585366
+    },
+    {
+      "role": "hydroxyl_C",
+      "label": "C dell\u2019OH",
+      "AmberGO": 0.16,
+      "HierGO / OPLS": 0.265,
+      "Tua LIB originale": 0.25,
+      "RESP L0 preliminare": 0.150237,
+      "GAFF2_AIM_min": 0.114882364666,
+      "GAFF2_AIM_max": 0.203912532376
+    },
+    {
+      "role": "hydroxyl_O",
+      "label": "O dell\u2019OH",
+      "AmberGO": -0.57,
+      "HierGO / OPLS": -0.683,
+      "Tua LIB originale": -0.64,
+      "RESP L0 preliminare": -0.497352,
+      "GAFF2_AIM_min": -0.488695523352,
+      "GAFF2_AIM_max": -0.461103035122
+    },
+    {
+      "role": "hydroxyl_H",
+      "label": "H dell\u2019OH",
+      "AmberGO": 0.41,
+      "HierGO / OPLS": 0.418,
+      "Tua LIB originale": 0.39,
+      "RESP L0 preliminare": 0.347114,
+      "GAFF2_AIM_min": 0.364197532376,
+      "GAFF2_AIM_max": 0.372602120404
+    },
+    {
+      "role": "epoxide_C",
+      "label": "C dell\u2019epossido",
+      "AmberGO": 0.16,
+      "HierGO / OPLS": 0.2,
+      "Tua LIB originale": 0.185,
+      "RESP L0 preliminare": 0.145185,
+      "GAFF2_AIM_min": 0.065585035309,
+      "GAFF2_AIM_max": 0.142348022794
+    },
+    {
+      "role": "epoxide_O",
+      "label": "O dell\u2019epossido",
+      "AmberGO": -0.32,
+      "HierGO / OPLS": -0.4,
+      "Tua LIB originale": -0.37,
+      "RESP L0 preliminare": -0.290371,
+      "GAFF2_AIM_min": -0.253457670505,
+      "GAFF2_AIM_max": -0.215339624362
+    }
+  ],
+  "source_sha256": {
+    "references/gaff2_aim/GO_18/GO_sheet_1_8.top": "55aae42235dd146259aeb1f425e42980b2966d846e643d502ccd00f82a1ff124",
+    "references/gaff2_aim/GO_30/GO_sheet_3_0.top": "dd0b082236f55891780c8eda75c3e24b9c7b7015ace27cdb5656ad7db6d68c94",
+    "references/hiergo_17_charge_rows.json": "dc0cd6749e765478c2b06631508da06eea337da86ce062333e89f9b62e34c582",
+    "references/library_charges.json": "05002664a61446842bc2c619d67d3a20f967fe71e6ff9ab3d9e335037150865c",
+    "references/go_prior_art_20261104/AmberGO_native_audit_20261104/FINAL_MOL2_CHARGE_AUDIT.json": "8b4781a7a6fb8ae4bdf669d65c5c8af49eb32f30e519597b32c6baadbf6b3d7d",
+    "reports/CHARGE_COMPARISON_20261103_attempt_001/L0_shared_role_charges.csv": "c1491f56ab947db3dd01f986b062f2ec84961678e9b2da38c15223b4085a7f3a"
+  }
+}

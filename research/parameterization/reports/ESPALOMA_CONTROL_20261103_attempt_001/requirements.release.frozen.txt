@@ -1,0 +1,23 @@
+certifi==2026.10.23
+charset-normalizer==3.5.2
+dgl==1.1.3
+espaloma-charge @ https://github.com/choderalab/espaloma-charge/archive/b32649c8df2029fbd25dd18716fe838e0c62d6ae.zip
+filelock==4.2.4
+fsspec==2026.9.0
+idna==3.20
+jinja2==3.1.6
+markupsafe==3.0.3
+mpmath==1.3.0
+networkx==3.6.1
+numpy==1.26.4
+packaging==26.3
+pillow==13.0.0
+psutil==7.2.2
+rdkit==2025.3.6
+requests==2.34.2
+scipy==1.13.1
+sympy==1.14.0
+torch==2.2.2+cpu
+tqdm==4.70.1
+typing-extensions==4.16.0
+urllib3==2.8.0

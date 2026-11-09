@@ -249,3 +249,50 @@ def test_mk_gate_checks_every_scf_record_before_final_matching_energy(tmp_path, 
     text = text.replace(' SCF Done:', f' SCF Done:  {earlier} A.U. after 1 cycles\n SCF Done:', 1)
     with pytest.raises(ValueError, match='SCF.*(?:method|energy)|energy.*SCF'):
         resp._gaussian_geometry(text, formate, method=DFT)
+
+
+def test_mixed_hf_esp_on_accepted_dft_geometry_preserves_provenance_and_gates(tmp_path, formate):
+    record = model()
+    manifest = qm.prepare_orientations(record, dft_log(record), tmp_path/'mixed_prep',
+                                       method=DFT, esp_method=HF)
+    assert manifest['qm_method'] == f'{HF}//{DFT}'
+    assert manifest['geometry_qm_method'] == DFT
+    assert manifest['esp_qm_method'] == HF
+    assert manifest['scope'] == 'conventional_rhf_mk_esp_on_accepted_dft_geometry'
+    prepared_model = json.loads(Path(manifest['optimized_model_path']).read_text())
+    assert prepared_model['metadata']['qm_method'] == DFT
+    assert prepared_model['metadata']['geometry_qm_method'] == DFT
+    assert prepared_model['metadata']['esp_qm_method'] == HF
+    assert prepared_model['metadata']['wavefunction_stability_validated'] is False
+    assert prepared_model['metadata']['dft_geometry_wavefunction_stability_validated'] is True
+    for entry in manifest['orientations']:
+        gjf = Path(entry['input_path']).read_text()
+        assert f'#P {HF} Pop=MK ' in gjf
+        assert 'Integral=UltraFine' not in gjf
+
+    with pytest.raises(ValueError, match='Unsupported mixed'):
+        qm.prepare_orientations(record, synthetic_log(record), tmp_path/'bad_mix',
+                                method=HF, esp_method=DFT)
+
+    formate['metadata'] = {'qm_method': DFT, 'coordinate_units': 'angstrom'}
+    path, log, _ = write_case(tmp_path, formate)
+    eg, rp = external_fixtures(tmp_path, [.5, -.8, -.8, .1])
+    result = resp.fit_atomic(path, [log], tmp_path/'mixed_fits', espgen=eg, resp=rp,
+                             method=HF, geometry_method=DFT)
+    assert result['protocol']['qm_method'] == f'{HF}//{DFT}'
+    assert result['protocol']['geometry_qm_method'] == DFT
+    assert result['protocol']['esp_qm_method'] == HF
+    assert 'conventional_rhf_mk_esp_on_accepted_dft_geometry' in result['protocol']['scope']
+    assert result['final_parameter_validation'] is False
+
+
+def test_pipeline_mixed_hf_on_dft_propagates_separate_methods(tmp_path, monkeypatch, source):
+    from test_pipeline import install_transport_stage_mocks
+    args = install_transport_stage_mocks(tmp_path, monkeypatch, source)
+    result = pipeline.run(*args, method=DFT, esp_method=HF)
+    assert result['status'] == 'CONVENTIONAL_HF_ESP_ON_DFT_GEOMETRY_ATOMIC_RESP_AND_TRAINING_ESP_CONTROLS_COMPLETE'
+    assert result['scope']['qm_method'] == f'{HF}//{DFT}'
+    assert result['scope']['geometry_qm_method'] == DFT
+    assert result['scope']['esp_qm_method'] == HF
+    scores = json.loads((args[2]/'charge_comparison.json').read_text())
+    assert all(score['qm_method'] == f'{HF}//{DFT}' for score in scores)

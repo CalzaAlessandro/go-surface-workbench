@@ -1,0 +1,739 @@
+{
+  "metadata": {
+    "id": "SQEqp_Schindler2021_CCD_gen",
+    "method": "sqeqp",
+    "name": "Schindler 2021 (CCD_gen)",
+    "publication": "10.1186/s13321-021-00528-w",
+    "notes": "Parameterised to reproduce B3LYP/6-311G/NPA charges"
+  },
+  "atom": {
+    "names": ["electronegativity", "hardness", "width", "q0"],
+    "data": [
+      {
+        "key": {"element": "Br", "classifier": "hbo", "type": "1"},
+        "values": [1.0504, 0.0984, 1.2323, -2.3992]
+      },
+      {
+        "key": {"element": "C", "classifier": "hbo", "type": "1"},
+        "values": [1.2239, 0.8195, 0.7377, -2.4201]
+      },
+      {
+        "key": {"element": "C", "classifier": "hbo", "type": "2"},
+        "values": [1.8544, 1.0331, 0.5228, -2.3666]
+      },
+      {
+        "key": {"element": "C", "classifier": "hbo", "type": "3"},
+        "values": [1.0364, 1.116, 0.5758, -2.4061]
+      },
+      {
+        "key": {"element": "Cl", "classifier": "hbo", "type": "1"},
+        "values": [-1.1744, 94.8943, -7.516, -2.3599]
+      },
+      {
+        "key": {"element": "F", "classifier": "hbo", "type": "1"},
+        "values": [5.2903, 6.491, -0.0207, -2.3093]
+      },
+      {
+        "key": {"element": "H", "classifier": "hbo", "type": "1"},
+        "values": [0.9376, 4.6083, 0.7579, -2.2978]
+      },
+      {
+        "key": {"element": "N", "classifier": "hbo", "type": "1"},
+        "values": [2.2142, 1.2714, 0.3389, -2.3528]
+      },
+      {
+        "key": {"element": "N", "classifier": "hbo", "type": "2"},
+        "values": [2.1591, 0.8722, -0.6052, -2.3814]
+      },
+      {
+        "key": {"element": "N", "classifier": "hbo", "type": "3"},
+        "values": [1.3673, 1.7868, -0.0107, -2.3671]
+      },
+      {
+        "key": {"element": "O", "classifier": "hbo", "type": "1"},
+        "values": [2.4925, 1.3207, 0.0227, -2.3397]
+      },
+      {
+        "key": {"element": "O", "classifier": "hbo", "type": "2"},
+        "values": [2.4572, -0.4168, 0.7921, -2.3294]
+      },
+      {
+        "key": {"element": "P", "classifier": "hbo", "type": "2"},
+        "values": [-0.486, 1.1527, 0.6468, -2.4221]
+      },
+      {
+        "key": {"element": "S", "classifier": "hbo", "type": "1"},
+        "values": [1.1316, 0.6728, 0.9633, -2.3231]
+      },
+      {
+        "key": {"element": "S", "classifier": "hbo", "type": "2"},
+        "values": [0.2069, 0.9631, 0.9369, -2.5732]
+      }
+    ]
+  },
+  "bond": {
+    "names": ["kappa"],
+    "data": [
+      {
+        "key": {
+          "atoms": [
+            {"element": "Br", "classifier": "hbo", "type": "1"},
+            {"element": "C", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [2.5283]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "Br", "classifier": "hbo", "type": "1"},
+            {"element": "C", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [4.6806]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "1"},
+            {"element": "C", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [2.88]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "1"},
+            {"element": "C", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [628.2353]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "1"},
+            {"element": "C", "classifier": "hbo", "type": "3"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [2.2574]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "1"},
+            {"element": "Cl", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [102.1869]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "1"},
+            {"element": "F", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [4.598]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "1"},
+            {"element": "H", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [-2.0301]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "1"},
+            {"element": "N", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [3.7249]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "1"},
+            {"element": "N", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [5.6253]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "1"},
+            {"element": "O", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [2.8047]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "1"},
+            {"element": "P", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [3.1129]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "1"},
+            {"element": "S", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [1.1513]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "1"},
+            {"element": "S", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [0.7923]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "C", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [1.8352]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "C", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "2"}
+        },
+        "values": [0.4172]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "C", "classifier": "hbo", "type": "3"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [10.9007]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "Cl", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [-3.4572]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "F", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [3.261]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "H", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [1.246]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "N", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [1.9389]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "N", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [1.6678]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "N", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "2"}
+        },
+        "values": [0.7997]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "O", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [1.4041]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "O", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "2"}
+        },
+        "values": [1.8505]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "P", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [5.5802]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "S", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [3.655]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "S", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [3.4003]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "2"},
+            {"element": "S", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "2"}
+        },
+        "values": [437.3754]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "3"},
+            {"element": "C", "classifier": "hbo", "type": "3"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [15.9851]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "3"},
+            {"element": "C", "classifier": "hbo", "type": "3"}
+          ],
+          "bond": {"classifier": "bo", "type": "3"}
+        },
+        "values": [-0.0312]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "3"},
+            {"element": "H", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [-3.3983]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "3"},
+            {"element": "N", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [8.0095]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "3"},
+            {"element": "N", "classifier": "hbo", "type": "3"}
+          ],
+          "bond": {"classifier": "bo", "type": "3"}
+        },
+        "values": [-0.0635]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "3"},
+            {"element": "O", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [4.0775]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "C", "classifier": "hbo", "type": "3"},
+            {"element": "S", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [-0.7733]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "F", "classifier": "hbo", "type": "1"},
+            {"element": "P", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [2.6359]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "F", "classifier": "hbo", "type": "1"},
+            {"element": "S", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [2.4911]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "H", "classifier": "hbo", "type": "1"},
+            {"element": "N", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [-0.5784]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "H", "classifier": "hbo", "type": "1"},
+            {"element": "N", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [0.0777]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "H", "classifier": "hbo", "type": "1"},
+            {"element": "O", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [-0.7274]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "H", "classifier": "hbo", "type": "1"},
+            {"element": "P", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [6.9958]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "H", "classifier": "hbo", "type": "1"},
+            {"element": "S", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [-2.8471]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "H", "classifier": "hbo", "type": "1"},
+            {"element": "S", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [33.3706]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "1"},
+            {"element": "N", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [33.6991]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "1"},
+            {"element": "N", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [1.2173]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "1"},
+            {"element": "O", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [0.5198]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "1"},
+            {"element": "P", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [3.477]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "1"},
+            {"element": "S", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [2.0819]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "2"},
+            {"element": "N", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [33.1795]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "2"},
+            {"element": "N", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "2"}
+        },
+        "values": [0.8076]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "2"},
+            {"element": "O", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [0.5518]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "2"},
+            {"element": "O", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "2"}
+        },
+        "values": [1.7046]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "2"},
+            {"element": "P", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [4.2327]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "2"},
+            {"element": "S", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [2.1958]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "2"},
+            {"element": "S", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [2.9626]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "N", "classifier": "hbo", "type": "2"},
+            {"element": "S", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "2"}
+        },
+        "values": [1.4083]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "O", "classifier": "hbo", "type": "1"},
+            {"element": "O", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [2.4183]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "O", "classifier": "hbo", "type": "1"},
+            {"element": "P", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [3.5261]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "O", "classifier": "hbo", "type": "1"},
+            {"element": "S", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [2.8898]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "O", "classifier": "hbo", "type": "1"},
+            {"element": "S", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [2.4162]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "O", "classifier": "hbo", "type": "2"},
+            {"element": "P", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "2"}
+        },
+        "values": [2.9114]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "O", "classifier": "hbo", "type": "2"},
+            {"element": "S", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "2"}
+        },
+        "values": [2.4171]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "P", "classifier": "hbo", "type": "2"},
+            {"element": "S", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [8.2426]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "P", "classifier": "hbo", "type": "2"},
+            {"element": "S", "classifier": "hbo", "type": "2"}
+          ],
+          "bond": {"classifier": "bo", "type": "2"}
+        },
+        "values": [-0.3808]
+      },
+      {
+        "key": {
+          "atoms": [
+            {"element": "S", "classifier": "hbo", "type": "1"},
+            {"element": "S", "classifier": "hbo", "type": "1"}
+          ],
+          "bond": {"classifier": "bo", "type": "1"}
+        },
+        "values": [39.601]
+      }
+    ]
+  }
+}

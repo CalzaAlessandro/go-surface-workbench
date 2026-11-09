@@ -1,0 +1,3046 @@
+{
+  "schema_version": 1,
+  "analysis": "atomic partial-charge chemical context; no group averaging",
+  "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors",
+  "model_count": 2,
+  "context_count": 2,
+  "coverage": {
+    "all_models_passed_charge_identity_and_total_checks": true,
+    "all_requested_functional_group_pairs_computed": true,
+    "functional_group_pair_count": 4
+  },
+  "models": [
+    {
+      "model_id": "C24_EPX3_loading_s20261308",
+      "provenance": {
+        "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/expanded_resp_completed_20261105_snapshot_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/fits/attempt_001/model.json",
+        "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/expanded_resp_completed_20261105_snapshot_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/fits/attempt_001/charges.json",
+        "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/expanded_resp_completed_20261105_snapshot_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/fits/attempt_001/FIT_COMPLETE.json",
+        "model_id": "C24_EPX3_loading_s20261308",
+        "origin": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/orientations/model.json",
+        "model_metadata": {
+          "scope": "conventional_rhf_mk_esp_on_accepted_dft_geometry",
+          "parent_carbon_count": 24,
+          "scaffold_carbon_ids": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "functional_groups": [
+            {
+              "type": "EPX",
+              "carbon_ids": [
+                18,
+                21
+              ],
+              "oxygen_ids": [
+                25
+              ],
+              "requested_face": 1
+            },
+            {
+              "type": "EPX",
+              "carbon_ids": [
+                7,
+                10
+              ],
+              "oxygen_ids": [
+                26
+              ],
+              "requested_face": -1
+            },
+            {
+              "type": "EPX",
+              "carbon_ids": [
+                15,
+                19
+              ],
+              "oxygen_ids": [
+                27
+              ],
+              "requested_face": 1
+            }
+          ],
+          "actual_group_counts": {
+            "EPX": 3
+          },
+          "requested_group_counts": {
+            "EPX": 3
+          },
+          "pair_graph_distances": [
+            {
+              "group_indices": [
+                0,
+                1
+              ],
+              "distance": 2
+            },
+            {
+              "group_indices": [
+                0,
+                2
+              ],
+              "distance": 1
+            },
+            {
+              "group_indices": [
+                1,
+                2
+              ],
+              "distance": 2
+            }
+          ],
+          "requested_distance_bin": null,
+          "selected_pair_distance": 2,
+          "graph_distance_definition": "minimum C-C scaffold bond distance between group anchors",
+          "pi_matching_complete": true,
+          "placement_attempt": 0,
+          "seed": 20261308,
+          "rdkit_version": "2026.03.6",
+          "geometry_status": "wB97XD_6-311++G(d,p)_optimized_frequency_and_stability_validated",
+          "initial_geometry_method": "analytic honeycomb plus constrained MMFF94",
+          "initial_MMFF_converged": true,
+          "coordinate_units": "angstrom",
+          "canonical_isomeric_SMILES": "[H]C1=C([H])C2=C([H])C([H])=C3C([H])=C([H])C4=C5[C@]36O[C@]26C2=C1C([H])=C([H])[C@]13O[C@]21[C@]51O[C@@]1(C([H])=C4[H])C([H])=C3[H]",
+          "wavefunction_stability_validated": false,
+          "fitted_partial_charges_available": false,
+          "qm_method": "wB97XD/6-311++G(d,p)",
+          "source_log_sha256": "e8fe61378b70c5c3aa6e9d6f0014692ca7bba901cdf1e74277cc1d6bbb6b2574",
+          "topology_validation": "distance_screen_only_not_bond_order_or_stereochemical_validation",
+          "geometry_qm_method": "wB97XD/6-311++G(d,p)",
+          "esp_qm_method": "HF/6-31G*",
+          "dft_geometry_wavefunction_stability_validated": true,
+          "hf_esp_wavefunction_stability_validated": false
+        },
+        "face_metadata_annotation_only": {},
+        "fit_status": "atomic_resp_fit_completed",
+        "qm_method": "HF/6-31G*//wB97XD/6-311++G(d,p) MK ESP; Amber hyperbolic RESP",
+        "scope": "conventional_rhf_mk_esp_on_accepted_dft_geometry; RHF wavefunction stability not claimed; finite whole-model atomic reference; no bulk or modular-transfer validation",
+        "protocol_scope": "conventional_rhf_mk_esp_on_accepted_dft_geometry; RHF wavefunction stability not claimed; finite whole-model atomic reference; no bulk or modular-transfer validation",
+        "model_scope": "conventional_rhf_mk_esp_on_accepted_dft_geometry",
+        "is_diagnostic": false,
+        "reported_wavefunction_stability_validated": false,
+        "upstream_qm_gate": "must be approved upstream; not inferred from MK logs",
+        "physical_conformers": 1,
+        "orientations": 3,
+        "analysis_context_count": 1,
+        "context_unit": "one atomic charge fit; rigid rotations are provenance, not independent contexts",
+        "fit_status_is_acceptance": false,
+        "fit_evidence_metadata_only": {
+          "schema_version": 1,
+          "status": "atomic_resp_fit_completed",
+          "model_id": "C24_EPX3_loading_s20261308",
+          "attempt_dir": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/fits/attempt_001",
+          "charges_csv": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/fits/attempt_001/charges.csv",
+          "charges_json": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/fits/attempt_001/charges.json",
+          "charge_sum_e": 1.3877787807814457e-16,
+          "formal_charge": 0,
+          "stage2": {
+            "status": "noop_no_methyl_methylene",
+            "groups_atom_ids": [],
+            "max_abs_change_e": 0.0,
+            "explanation": "All charges retained from stage 1; stage2.in is audit only and was not executed."
+          },
+          "orientation_weights": [
+            1.00037,
+            1.0003,
+            0.99933
+          ],
+          "metrics": [
+            {
+              "grid_points": 76210,
+              "esp_rmse_au": 0.0015772726153481323,
+              "esp_rrms": 0.10026580785431108,
+              "dipole": {
+                "vector_debye": [
+                  -0.966329609879367,
+                  -1.206057020337613,
+                  -1.7034913889174597
+                ],
+                "magnitude_debye": 2.3000542087853466,
+                "origin_angstrom": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "frame": "this Gaussian MK orientation; coordinate origin, not center of mass",
+                "origin_dependent_for_ions": false
+              },
+              "orientation": 1
+            },
+            {
+              "grid_points": 76220,
+              "esp_rmse_au": 0.0015768013267236731,
+              "esp_rrms": 0.10024198158660091,
+              "dipole": {
+                "vector_debye": [
+                  1.3597548095492202,
+                  -1.2780275144223223,
+                  -1.3445987342009187
+                ],
+                "magnitude_debye": 2.3000507006862803,
+                "origin_angstrom": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "frame": "this Gaussian MK orientation; coordinate origin, not center of mass",
+                "origin_dependent_for_ions": false
+              },
+              "orientation": 2
+            },
+            {
+              "grid_points": 76369,
+              "esp_rmse_au": 0.0015794262839321752,
+              "esp_rrms": 0.10049538028389526,
+              "dipole": {
+                "vector_debye": [
+                  0.558839392077092,
+                  1.1273212253728389,
+                  -1.9253767028176394
+                ],
+                "magnitude_debye": 2.300050012296719,
+                "origin_angstrom": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "frame": "this Gaussian MK orientation; coordinate origin, not center of mass",
+                "origin_dependent_for_ions": false
+              },
+              "orientation": 3
+            }
+          ],
+          "final_parameter_validation": false,
+          "protocol": {
+            "method": "HF/6-31G*//wB97XD/6-311++G(d,p) MK ESP; Amber hyperbolic RESP",
+            "qm_method": "HF/6-31G*//wB97XD/6-311++G(d,p)",
+            "stage1_qwt": 0.0005,
+            "stage2_qwt": 0.001,
+            "ihfree": 1,
+            "physical_conformers": 1,
+            "orientations": 3,
+            "mean_grid_points": 76266.33333333333,
+            "parent_qm_optimization_frequencies_stability": "must be approved upstream; not inferred from MK logs",
+            "scope": "conventional_rhf_mk_esp_on_accepted_dft_geometry; RHF wavefunction stability not claimed; finite whole-model atomic reference; no bulk or modular-transfer validation",
+            "geometry_qm_method": "wB97XD/6-311++G(d,p)",
+            "esp_qm_method": "HF/6-31G*"
+          },
+          "provenance": {
+            "qm_method": "HF/6-31G*//wB97XD/6-311++G(d,p)",
+            "model_source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/orientations/model.json",
+            "model_sha256": "271619e2549ed54f22ea084efa1980b63e14656271582b6166def5d2f943410e",
+            "gaussian_logs": [
+              {
+                "qm_method": "HF/6-31G*",
+                "source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/orientations/orientation_01/gaussian.log",
+                "snapshot": "gaussian_logs/orientation_001.log",
+                "sha256": "a1e0602b3beddfc1eb04c0c1460d82d52988e4a185a3fbbf48bc1b91e24421be",
+                "esp_sha256": "a75b4ec1a37f13f4fb65a7f472c4e229f9f5da03586121b291c9a07ba5ed2539",
+                "grid_points": 76210
+              },
+              {
+                "qm_method": "HF/6-31G*",
+                "source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/orientations/orientation_02/gaussian.log",
+                "snapshot": "gaussian_logs/orientation_002.log",
+                "sha256": "115c4116796bbda4783b5532a74a04cac884217d3e9fbc20d7403f80ff576542",
+                "esp_sha256": "c25f48249b044eb9b757e8adb42a27115f93bd489b8454cc8fa190d1347a324a",
+                "grid_points": 76220
+              },
+              {
+                "qm_method": "HF/6-31G*",
+                "source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_EPX3_loading_s20261308/HF_RESP_attempt_001/orientations/orientation_03/gaussian.log",
+                "snapshot": "gaussian_logs/orientation_003.log",
+                "sha256": "71996ebc2e4dd3d761341aa946771525c97610a0337c4617b1d183c8862ca87d",
+                "esp_sha256": "d8695235d0c02bbc84d2dd81525259494be672f94c5aeadd629537f1458ee8ea",
+                "grid_points": 76369
+              }
+            ],
+            "executables": {
+              "espgen": {
+                "path": "/usr/local/amber24u3+at25/bin/espgen",
+                "sha256": "84ef419a4adbcefb2c9131a7761527b841a1a789783f36c0fc0eb6f4064fb8f1"
+              },
+              "resp": {
+                "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/c54_esp_recovery_20261103_attempt_001/resp_header_io/resp",
+                "sha256": "94726cbb4171afd2ef31e3b85dcb3bc7ec82100467b0fcfcdfce65b1b8ac0f9a"
+              }
+            },
+            "fit_code_sha256": "d85754ada656ec2880fb00823d3c088558fddcd3553c1a854f75e2f51c2068c2",
+            "geometry_qm_method": "wB97XD/6-311++G(d,p)",
+            "esp_qm_method": "HF/6-31G*"
+          },
+          "artifacts_sha256": {
+            "all.esp": "1c5720282aa85fd9ebd81cfafdcc4aaff6fba6a27204b50959bd22259bda7c2f",
+            "charges.csv": "5ac9fbf26f60fd9d070e4fcecd19877d7e82ea27349daccdc4375a46a7438b2a",
+            "charges.json": "6dd8980d124aa1b54efb5bcd4651f5c676d51b6c887603b920f64af90e5ca17b",
+            "commands.jsonl": "8dcc2cf05af9879ddad62c8dcd70c03ca3fa495f365bb38a509ad62ef2dc2cc0",
+            "espgen_001.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "espgen_002.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "espgen_003.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "gaussian_logs/orientation_001.log": "a1e0602b3beddfc1eb04c0c1460d82d52988e4a185a3fbbf48bc1b91e24421be",
+            "gaussian_logs/orientation_002.log": "115c4116796bbda4783b5532a74a04cac884217d3e9fbc20d7403f80ff576542",
+            "gaussian_logs/orientation_003.log": "71996ebc2e4dd3d761341aa946771525c97610a0337c4617b1d183c8862ca87d",
+            "model.json": "271619e2549ed54f22ea084efa1980b63e14656271582b6166def5d2f943410e",
+            "orientation_001.esp": "a75b4ec1a37f13f4fb65a7f472c4e229f9f5da03586121b291c9a07ba5ed2539",
+            "orientation_002.esp": "c25f48249b044eb9b757e8adb42a27115f93bd489b8454cc8fa190d1347a324a",
+            "orientation_003.esp": "d8695235d0c02bbc84d2dd81525259494be672f94c5aeadd629537f1458ee8ea",
+            "resp1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stage1.charges": "9a9405ed22b27c4b7e3f1edf9668f1bbd02fcda4ebad1cc2f5aa4861e95a2f03",
+            "stage1.esout": "62f5aaeeb3436a03f3b4ce261bb4d3807b8a50853cbf52fea7e346fb35a48fb4",
+            "stage1.in": "6d677953d587a7dc718c2401270be3d74214f67d47269423452684bcee3cc13c",
+            "stage1.out": "112b173faa79a46e1a31ca2f6aca10c135ba15b7070e899274e4220a0670828d",
+            "stage1.punch": "a513ab782f10a310ffef4a686ae742a576558990559011493039373bc882b5bc",
+            "stage2.in": "77c6bc4ef92fc2f128a23d8ac41d09b1a023e5d4ae8c3407e2c812e2dd3a45f5"
+          }
+        },
+        "context_id": "C24_EPX3_loading_s20261308::fit_001"
+      },
+      "charge_check": {
+        "expected_formal_charge_e": 0,
+        "observed_charge_sum_e": -1.3877787807814457e-17,
+        "error_e": -1.3877787807814457e-17,
+        "rounding_tolerance_e": 1.9500001e-05,
+        "passed": true
+      },
+      "coverage": {
+        "model_atom_count": 39,
+        "charge_atom_count": 39,
+        "atom_identity_order_elements_match": true,
+        "all_atom_charges_finite": true,
+        "whole_model_charge_passed": true,
+        "functional_group_count_excluding_GRT": 3,
+        "functional_group_pair_count": 3,
+        "scaffold_carbon_count": 24,
+        "background_scaffold_carbon_count": 18,
+        "background_kind_counts": {
+          "interior_scaffold": 6,
+          "hydrogen_terminated_edge": 12
+        },
+        "scaffold_carbon_source": "metadata.scaffold_carbon_ids",
+        "all_pair_distances_computed": true
+      },
+      "scaffold_carbon_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "background_carbon_atom_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        20,
+        22,
+        23,
+        24
+      ],
+      "per_atom_charges": [
+        {
+          "atom_id": 1,
+          "element": "C",
+          "name": "C1",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -1.198551,
+            -3.509241,
+            -0.063132
+          ],
+          "charge_e": -0.195799,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 2,
+          "element": "C",
+          "name": "C2",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            1.290599,
+            -3.554353,
+            -0.030758
+          ],
+          "charge_e": -0.172282,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 3,
+          "element": "C",
+          "name": "C3",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -2.439831,
+            -2.792653,
+            -0.063109
+          ],
+          "charge_e": -0.196632,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 4,
+          "element": "C",
+          "name": "C4",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            0.01164,
+            -2.884521,
+            -0.063607
+          ],
+          "charge_e": -0.062206,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 5,
+          "element": "C",
+          "name": "C5",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            2.444846,
+            -2.855073,
+            -0.051474
+          ],
+          "charge_e": -0.243811,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 6,
+          "element": "C",
+          "name": "C6",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -2.503974,
+            -1.432245,
+            -0.063442
+          ],
+          "charge_e": -0.062975,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 7,
+          "element": "C",
+          "name": "C7",
+          "role": "epoxide_C",
+          "roles": [
+            "epoxide_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            0.04629,
+            -1.420879,
+            -0.217325
+          ],
+          "charge_e": 0.45194,
+          "functional_group_ids": [
+            "EPX:2"
+          ],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 8,
+          "element": "C",
+          "name": "C8",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            2.469527,
+            -1.399963,
+            0.0423
+          ],
+          "charge_e": 0.273157,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 9,
+          "element": "C",
+          "name": "C9",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -3.723517,
+            -0.65953,
+            -0.030617
+          ],
+          "charge_e": -0.172292,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 10,
+          "element": "C",
+          "name": "C10",
+          "role": "epoxide_C",
+          "roles": [
+            "epoxide_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -1.253794,
+            -0.670397,
+            -0.217104
+          ],
+          "charge_e": 0.453536,
+          "functional_group_ids": [
+            "EPX:2"
+          ],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 11,
+          "element": "C",
+          "name": "C11",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            1.290011,
+            -0.72512,
+            0.140778
+          ],
+          "charge_e": -0.249343,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 12,
+          "element": "C",
+          "name": "C12",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            3.703623,
+            -0.657821,
+            -0.13923
+          ],
+          "charge_e": -0.267752,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 13,
+          "element": "C",
+          "name": "C13",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -3.695018,
+            0.689738,
+            -0.051363
+          ],
+          "charge_e": -0.24199,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 14,
+          "element": "C",
+          "name": "C14",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -1.273001,
+            0.754554,
+            0.140899
+          ],
+          "charge_e": -0.247187,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 15,
+          "element": "C",
+          "name": "C15",
+          "role": "epoxide_C",
+          "roles": [
+            "epoxide_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            1.270505,
+            0.692863,
+            0.483338
+          ],
+          "charge_e": 0.122874,
+          "functional_group_ids": [
+            "EPX:3"
+          ],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 16,
+          "element": "C",
+          "name": "C16",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            3.731589,
+            0.687961,
+            -0.196426
+          ],
+          "charge_e": -0.313821,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 17,
+          "element": "C",
+          "name": "C17",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -2.447154,
+            1.438671,
+            0.042377
+          ],
+          "charge_e": 0.269207,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 18,
+          "element": "C",
+          "name": "C18",
+          "role": "epoxide_C",
+          "roles": [
+            "epoxide_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -0.035229,
+            1.446646,
+            0.483364
+          ],
+          "charge_e": 0.123737,
+          "functional_group_ids": [
+            "EPX:1"
+          ],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 19,
+          "element": "C",
+          "name": "C19",
+          "role": "epoxide_C",
+          "roles": [
+            "epoxide_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            2.579893,
+            1.474768,
+            0.252279
+          ],
+          "charge_e": 0.471664,
+          "functional_group_ids": [
+            "EPX:3"
+          ],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 20,
+          "element": "C",
+          "name": "C20",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -2.4215,
+            2.878451,
+            -0.139361
+          ],
+          "charge_e": -0.266735,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 21,
+          "element": "C",
+          "name": "C21",
+          "role": "epoxide_C",
+          "roles": [
+            "epoxide_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -0.012787,
+            2.97155,
+            0.252221
+          ],
+          "charge_e": 0.470808,
+          "functional_group_ids": [
+            "EPX:1"
+          ],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 22,
+          "element": "C",
+          "name": "C22",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            2.446972,
+            2.900982,
+            -0.118572
+          ],
+          "charge_e": -0.317451,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 23,
+          "element": "C",
+          "name": "C23",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -1.269984,
+            3.575548,
+            -0.196576
+          ],
+          "charge_e": -0.313904,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 24,
+          "element": "C",
+          "name": "C24",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            1.288856,
+            3.569576,
+            -0.118598
+          ],
+          "charge_e": -0.316926,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 25,
+          "element": "O",
+          "name": "O25",
+          "role": "epoxide_O",
+          "roles": [
+            "epoxide_O"
+          ],
+          "position_angstrom": [
+            -0.121853,
+            2.371409,
+            1.537492
+          ],
+          "charge_e": -0.315985,
+          "functional_group_ids": [
+            "EPX:1"
+          ],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 26,
+          "element": "O",
+          "name": "O26",
+          "role": "epoxide_O",
+          "roles": [
+            "epoxide_O"
+          ],
+          "position_angstrom": [
+            -0.534401,
+            -0.925283,
+            -1.438638
+          ],
+          "charge_e": -0.443714,
+          "functional_group_ids": [
+            "EPX:2"
+          ],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 27,
+          "element": "O",
+          "name": "O27",
+          "role": "epoxide_O",
+          "roles": [
+            "epoxide_O"
+          ],
+          "position_angstrom": [
+            2.114671,
+            1.080248,
+            1.537509
+          ],
+          "charge_e": -0.316386,
+          "functional_group_ids": [
+            "EPX:3"
+          ],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 28,
+          "element": "H",
+          "name": "H28",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            -1.232423,
+            -4.593649,
+            -0.030408
+          ],
+          "charge_e": 0.177014,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 29,
+          "element": "H",
+          "name": "H29",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            1.303755,
+            -4.639153,
+            -0.033139
+          ],
+          "charge_e": 0.15408,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 30,
+          "element": "H",
+          "name": "H30",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            -3.361987,
+            -3.36425,
+            -0.030476
+          ],
+          "charge_e": 0.177385,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 31,
+          "element": "H",
+          "name": "H31",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            3.395214,
+            -3.376997,
+            -0.090216
+          ],
+          "charge_e": 0.153019,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 32,
+          "element": "H",
+          "name": "H32",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            -4.669563,
+            -1.190539,
+            -0.033007
+          ],
+          "charge_e": 0.153918,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 33,
+          "element": "H",
+          "name": "H33",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            4.595058,
+            -1.225801,
+            -0.385971
+          ],
+          "charge_e": 0.186261,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 34,
+          "element": "H",
+          "name": "H34",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            -4.622169,
+            1.251872,
+            -0.090105
+          ],
+          "charge_e": 0.152766,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 35,
+          "element": "H",
+          "name": "H35",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            4.613123,
+            1.212645,
+            -0.54869
+          ],
+          "charge_e": 0.180452,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 36,
+          "element": "H",
+          "name": "H36",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            -3.359071,
+            3.366477,
+            -0.386201
+          ],
+          "charge_e": 0.186251,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 37,
+          "element": "H",
+          "name": "H37",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            3.350155,
+            3.401576,
+            -0.453967
+          ],
+          "charge_e": 0.189397,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 38,
+          "element": "H",
+          "name": "H38",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            -1.256294,
+            4.601261,
+            -0.549013
+          ],
+          "charge_e": 0.180407,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 39,
+          "element": "H",
+          "name": "H39",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            1.270751,
+            4.602047,
+            -0.454026
+          ],
+          "charge_e": 0.189318,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        }
+      ],
+      "functional_groups": [
+        {
+          "group_id": "EPX:1",
+          "block_type": "EPX",
+          "atom_ids": [
+            18,
+            21,
+            25
+          ],
+          "roles": [
+            "epoxide_C",
+            "epoxide_O"
+          ],
+          "net_charge_e": 0.27856,
+          "target_formal_charge_e": 0.0,
+          "scaffold_carbon_anchor_ids": [
+            18,
+            21
+          ],
+          "scaffold_anchor_source": "group scaffold carbons",
+          "scaffold_anchor_charge_e_sum": 0.594545,
+          "carbon_atom_ids_for_centroid": [
+            18,
+            21
+          ],
+          "carbon_centroid_angstrom": [
+            -0.024008,
+            2.209098,
+            0.36779249999999997
+          ]
+        },
+        {
+          "group_id": "EPX:2",
+          "block_type": "EPX",
+          "atom_ids": [
+            7,
+            10,
+            26
+          ],
+          "roles": [
+            "epoxide_C",
+            "epoxide_O"
+          ],
+          "net_charge_e": 0.461762,
+          "target_formal_charge_e": 0.0,
+          "scaffold_carbon_anchor_ids": [
+            7,
+            10
+          ],
+          "scaffold_anchor_source": "group scaffold carbons",
+          "scaffold_anchor_charge_e_sum": 0.905476,
+          "carbon_atom_ids_for_centroid": [
+            7,
+            10
+          ],
+          "carbon_centroid_angstrom": [
+            -0.6037520000000001,
+            -1.045638,
+            -0.21721449999999998
+          ]
+        },
+        {
+          "group_id": "EPX:3",
+          "block_type": "EPX",
+          "atom_ids": [
+            15,
+            19,
+            27
+          ],
+          "roles": [
+            "epoxide_C",
+            "epoxide_O"
+          ],
+          "net_charge_e": 0.278152,
+          "target_formal_charge_e": 0.0,
+          "scaffold_carbon_anchor_ids": [
+            15,
+            19
+          ],
+          "scaffold_anchor_source": "group scaffold carbons",
+          "scaffold_anchor_charge_e_sum": 0.594538,
+          "carbon_atom_ids_for_centroid": [
+            15,
+            19
+          ],
+          "carbon_centroid_angstrom": [
+            1.925199,
+            1.0838155,
+            0.3678085
+          ]
+        }
+      ],
+      "functional_group_pairs": [
+        {
+          "group_a_id": "EPX:1",
+          "group_a_type": "EPX",
+          "group_a_net_charge_e": 0.27856,
+          "group_a_scaffold_anchor_charge_e_sum": 0.594545,
+          "group_b_id": "EPX:2",
+          "group_b_type": "EPX",
+          "group_b_net_charge_e": 0.461762,
+          "group_b_scaffold_anchor_charge_e_sum": 0.905476,
+          "combined_group_net_charge_e": 0.7403219999999999,
+          "graph_distance": 2,
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors",
+          "graph_anchor_atom_ids": [
+            18,
+            10
+          ],
+          "graph_path_atom_ids": [
+            18,
+            14,
+            10
+          ],
+          "carbon_centroid_distance_angstrom": 3.357326723046329,
+          "centroid_definition": "Euclidean distance between centroids of all carbon atoms in each partitioned functional-group block; no periodic boundary correction"
+        },
+        {
+          "group_a_id": "EPX:1",
+          "group_a_type": "EPX",
+          "group_a_net_charge_e": 0.27856,
+          "group_a_scaffold_anchor_charge_e_sum": 0.594545,
+          "group_b_id": "EPX:3",
+          "group_b_type": "EPX",
+          "group_b_net_charge_e": 0.278152,
+          "group_b_scaffold_anchor_charge_e_sum": 0.594538,
+          "combined_group_net_charge_e": 0.556712,
+          "graph_distance": 1,
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors",
+          "graph_anchor_atom_ids": [
+            18,
+            15
+          ],
+          "graph_path_atom_ids": [
+            18,
+            15
+          ],
+          "carbon_centroid_distance_angstrom": 2.2507040307226647,
+          "centroid_definition": "Euclidean distance between centroids of all carbon atoms in each partitioned functional-group block; no periodic boundary correction"
+        },
+        {
+          "group_a_id": "EPX:2",
+          "group_a_type": "EPX",
+          "group_a_net_charge_e": 0.461762,
+          "group_a_scaffold_anchor_charge_e_sum": 0.905476,
+          "group_b_id": "EPX:3",
+          "group_b_type": "EPX",
+          "group_b_net_charge_e": 0.278152,
+          "group_b_scaffold_anchor_charge_e_sum": 0.594538,
+          "combined_group_net_charge_e": 0.739914,
+          "graph_distance": 2,
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors",
+          "graph_anchor_atom_ids": [
+            7,
+            15
+          ],
+          "graph_path_atom_ids": [
+            7,
+            11,
+            15
+          ],
+          "carbon_centroid_distance_angstrom": 3.3574420738997497,
+          "centroid_definition": "Euclidean distance between centroids of all carbon atoms in each partitioned functional-group block; no periodic boundary correction"
+        }
+      ],
+      "background_carbon_distance_charges": [
+        {
+          "atom_id": 1,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.195799,
+          "nearest_functional_group_graph_distance": 2,
+          "nearest_functional_group_ids": [
+            "EPX:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 2,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.172282,
+          "nearest_functional_group_graph_distance": 2,
+          "nearest_functional_group_ids": [
+            "EPX:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 3,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.196632,
+          "nearest_functional_group_graph_distance": 2,
+          "nearest_functional_group_ids": [
+            "EPX:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 4,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": -0.062206,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "EPX:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 5,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.243811,
+          "nearest_functional_group_graph_distance": 3,
+          "nearest_functional_group_ids": [
+            "EPX:2",
+            "EPX:3"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 6,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": -0.062975,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "EPX:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 8,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": 0.273157,
+          "nearest_functional_group_graph_distance": 2,
+          "nearest_functional_group_ids": [
+            "EPX:2",
+            "EPX:3"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 9,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.172292,
+          "nearest_functional_group_graph_distance": 2,
+          "nearest_functional_group_ids": [
+            "EPX:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 11,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": -0.249343,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "EPX:2",
+            "EPX:3"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 12,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.267752,
+          "nearest_functional_group_graph_distance": 2,
+          "nearest_functional_group_ids": [
+            "EPX:3"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 13,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.24199,
+          "nearest_functional_group_graph_distance": 3,
+          "nearest_functional_group_ids": [
+            "EPX:1",
+            "EPX:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 14,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": -0.247187,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "EPX:1",
+            "EPX:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 16,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.313821,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "EPX:3"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 17,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": 0.269207,
+          "nearest_functional_group_graph_distance": 2,
+          "nearest_functional_group_ids": [
+            "EPX:1",
+            "EPX:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 20,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.266735,
+          "nearest_functional_group_graph_distance": 2,
+          "nearest_functional_group_ids": [
+            "EPX:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 22,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.317451,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "EPX:3"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 23,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.313904,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "EPX:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 24,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.316926,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "EPX:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        }
+      ],
+      "context_index": 1,
+      "context_id": "C24_EPX3_loading_s20261308::fit_001"
+    },
+    {
+      "model_id": "C24_OH2_loading_s20261304",
+      "provenance": {
+        "model_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/expanded_resp_completed_20261105_snapshot_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/fits/attempt_001/model.json",
+        "charges_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/expanded_resp_completed_20261105_snapshot_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/fits/attempt_001/charges.json",
+        "fit_evidence_path": "/Users/alessandrocalza/Desktop/CURRENT_PROJECTS/GO_BUILDER/PARAMETERIZATION/calculations/expanded_resp_completed_20261105_snapshot_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/fits/attempt_001/FIT_COMPLETE.json",
+        "model_id": "C24_OH2_loading_s20261304",
+        "origin": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/orientations/model.json",
+        "model_metadata": {
+          "scope": "conventional_rhf_mk_esp_on_accepted_dft_geometry",
+          "parent_carbon_count": 24,
+          "scaffold_carbon_ids": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "functional_groups": [
+            {
+              "type": "OH",
+              "carbon_ids": [
+                4
+              ],
+              "oxygen_ids": [
+                25
+              ],
+              "requested_face": 1
+            },
+            {
+              "type": "OH",
+              "carbon_ids": [
+                8
+              ],
+              "oxygen_ids": [
+                26
+              ],
+              "requested_face": -1
+            }
+          ],
+          "actual_group_counts": {
+            "OH": 2
+          },
+          "requested_group_counts": {
+            "OH": 2
+          },
+          "pair_graph_distances": [
+            {
+              "group_indices": [
+                0,
+                1
+              ],
+              "distance": 3
+            }
+          ],
+          "requested_distance_bin": null,
+          "selected_pair_distance": 3,
+          "graph_distance_definition": "minimum C-C scaffold bond distance between group anchors",
+          "pi_matching_complete": true,
+          "placement_attempt": 0,
+          "seed": 20261304,
+          "rdkit_version": "2026.03.6",
+          "geometry_status": "wB97XD_6-311++G(d,p)_optimized_frequency_and_stability_validated",
+          "initial_geometry_method": "analytic honeycomb plus constrained MMFF94",
+          "initial_MMFF_converged": true,
+          "coordinate_units": "angstrom",
+          "canonical_isomeric_SMILES": "[H]O[C@@]12C([H])=C([H])c3c([H])c([H])c4c([H])c([H])c5c([H])c([H])c6c7c(c1c3c4c57)[C@@](O[H])(C([H])=C6[H])C([H])=C2[H]",
+          "wavefunction_stability_validated": false,
+          "fitted_partial_charges_available": false,
+          "qm_method": "wB97XD/6-311++G(d,p)",
+          "source_log_sha256": "0880423a4325125ff39a5503fcee412e3f227052a6722928dbe906d95340abe6",
+          "topology_validation": "distance_screen_only_not_bond_order_or_stereochemical_validation",
+          "geometry_qm_method": "wB97XD/6-311++G(d,p)",
+          "esp_qm_method": "HF/6-31G*",
+          "dft_geometry_wavefunction_stability_validated": true,
+          "hf_esp_wavefunction_stability_validated": false
+        },
+        "face_metadata_annotation_only": {},
+        "fit_status": "atomic_resp_fit_completed",
+        "qm_method": "HF/6-31G*//wB97XD/6-311++G(d,p) MK ESP; Amber hyperbolic RESP",
+        "scope": "conventional_rhf_mk_esp_on_accepted_dft_geometry; RHF wavefunction stability not claimed; finite whole-model atomic reference; no bulk or modular-transfer validation",
+        "protocol_scope": "conventional_rhf_mk_esp_on_accepted_dft_geometry; RHF wavefunction stability not claimed; finite whole-model atomic reference; no bulk or modular-transfer validation",
+        "model_scope": "conventional_rhf_mk_esp_on_accepted_dft_geometry",
+        "is_diagnostic": false,
+        "reported_wavefunction_stability_validated": false,
+        "upstream_qm_gate": "must be approved upstream; not inferred from MK logs",
+        "physical_conformers": 1,
+        "orientations": 3,
+        "analysis_context_count": 1,
+        "context_unit": "one atomic charge fit; rigid rotations are provenance, not independent contexts",
+        "fit_status_is_acceptance": false,
+        "fit_evidence_metadata_only": {
+          "schema_version": 1,
+          "status": "atomic_resp_fit_completed",
+          "model_id": "C24_OH2_loading_s20261304",
+          "attempt_dir": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/fits/attempt_001",
+          "charges_csv": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/fits/attempt_001/charges.csv",
+          "charges_json": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/fits/attempt_001/charges.json",
+          "charge_sum_e": -1.9999999998354667e-06,
+          "formal_charge": 0,
+          "stage2": {
+            "status": "noop_no_methyl_methylene",
+            "groups_atom_ids": [],
+            "max_abs_change_e": 0.0,
+            "explanation": "All charges retained from stage 1; stage2.in is audit only and was not executed."
+          },
+          "orientation_weights": [
+            0.99998,
+            1.00053,
+            0.99949
+          ],
+          "metrics": [
+            {
+              "grid_points": 77566,
+              "esp_rmse_au": 0.0008919447891582064,
+              "esp_rrms": 0.06999344572716623,
+              "dipole": {
+                "vector_debye": [
+                  -1.8329170782182374,
+                  0.8518645081867808,
+                  1.1605576398749844
+                ],
+                "magnitude_debye": 2.3306977906636845,
+                "origin_angstrom": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "frame": "this Gaussian MK orientation; coordinate origin, not center of mass",
+                "origin_dependent_for_ions": false
+              },
+              "orientation": 1
+            },
+            {
+              "grid_points": 77480,
+              "esp_rmse_au": 0.000893685621555924,
+              "esp_rrms": 0.07015174428142897,
+              "dipole": {
+                "vector_debye": [
+                  -2.1461644342400166,
+                  -0.6486693141503019,
+                  -0.636663135958473
+                ],
+                "magnitude_debye": 2.330693803699978,
+                "origin_angstrom": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "frame": "this Gaussian MK orientation; coordinate origin, not center of mass",
+                "origin_dependent_for_ions": false
+              },
+              "orientation": 2
+            },
+            {
+              "grid_points": 77642,
+              "esp_rmse_au": 0.0008913925241636732,
+              "esp_rrms": 0.07008273635071158,
+              "dipole": {
+                "vector_debye": [
+                  -2.1465039709714464,
+                  0.7759290960762281,
+                  0.47177776797072624
+                ],
+                "magnitude_debye": 2.330690782125613,
+                "origin_angstrom": [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                "frame": "this Gaussian MK orientation; coordinate origin, not center of mass",
+                "origin_dependent_for_ions": false
+              },
+              "orientation": 3
+            }
+          ],
+          "final_parameter_validation": false,
+          "protocol": {
+            "method": "HF/6-31G*//wB97XD/6-311++G(d,p) MK ESP; Amber hyperbolic RESP",
+            "qm_method": "HF/6-31G*//wB97XD/6-311++G(d,p)",
+            "stage1_qwt": 0.0005,
+            "stage2_qwt": 0.001,
+            "ihfree": 1,
+            "physical_conformers": 1,
+            "orientations": 3,
+            "mean_grid_points": 77562.66666666667,
+            "parent_qm_optimization_frequencies_stability": "must be approved upstream; not inferred from MK logs",
+            "scope": "conventional_rhf_mk_esp_on_accepted_dft_geometry; RHF wavefunction stability not claimed; finite whole-model atomic reference; no bulk or modular-transfer validation",
+            "geometry_qm_method": "wB97XD/6-311++G(d,p)",
+            "esp_qm_method": "HF/6-31G*"
+          },
+          "provenance": {
+            "qm_method": "HF/6-31G*//wB97XD/6-311++G(d,p)",
+            "model_source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/orientations/model.json",
+            "model_sha256": "16ed07dd89da61fc6f35af5cd7f181e45213b097aa02793d3d166a7971288c19",
+            "gaussian_logs": [
+              {
+                "qm_method": "HF/6-31G*",
+                "source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/orientations/orientation_01/gaussian.log",
+                "snapshot": "gaussian_logs/orientation_001.log",
+                "sha256": "27cd723a9794bd1a288643836fb2118751b9384f2771d4b3553f7835b30733e1",
+                "esp_sha256": "b7c64780e15447b6b0fa6efdae8ba946631ff9786d8a998ee859b4508ba60aca",
+                "grid_points": 77566
+              },
+              {
+                "qm_method": "HF/6-31G*",
+                "source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/orientations/orientation_02/gaussian.log",
+                "snapshot": "gaussian_logs/orientation_002.log",
+                "sha256": "2416a338fd8038881ecf90cc194cfc7c23b24eca27e795f7018b1a5b1bd40948",
+                "esp_sha256": "1446be29f636d4beeb66c33727ac8cb6d140697055f5a614ccaebe89425671aa",
+                "grid_points": 77480
+              },
+              {
+                "qm_method": "HF/6-31G*",
+                "source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/expanded_resp_panel_20261104_attempt_001/cases/C24_OH2_loading_s20261304/HF_RESP_attempt_001/orientations/orientation_03/gaussian.log",
+                "snapshot": "gaussian_logs/orientation_003.log",
+                "sha256": "8a3dd04330ca575e29b1256a0d4c68497b9425bd9e35cdf7f276ff6d01595c0f",
+                "esp_sha256": "006ca597d30a69338074968fa2a9cbc3bebfde495881aab804d2c3f7bcfdacb0",
+                "grid_points": 77642
+              }
+            ],
+            "executables": {
+              "espgen": {
+                "path": "/usr/local/amber24u3+at25/bin/espgen",
+                "sha256": "84ef419a4adbcefb2c9131a7761527b841a1a789783f36c0fc0eb6f4064fb8f1"
+              },
+              "resp": {
+                "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/c54_esp_recovery_20261103_attempt_001/resp_header_io/resp",
+                "sha256": "94726cbb4171afd2ef31e3b85dcb3bc7ec82100467b0fcfcdfce65b1b8ac0f9a"
+              }
+            },
+            "fit_code_sha256": "d85754ada656ec2880fb00823d3c088558fddcd3553c1a854f75e2f51c2068c2",
+            "geometry_qm_method": "wB97XD/6-311++G(d,p)",
+            "esp_qm_method": "HF/6-31G*"
+          },
+          "artifacts_sha256": {
+            "all.esp": "c6ac2659ab942a726c306be5e44876f2ed5b276023d92fac003c084561af85eb",
+            "charges.csv": "895ef8805853a4f8400579441d1173a8ad3f2a7062197365bc883b6ff58b9ca8",
+            "charges.json": "3d14c03f85d24e3897202a4e8be5575d98f2856e10f203903d56da779bd8bc27",
+            "commands.jsonl": "1d68aec24944b4284aa173f25218b69b1bfeac1b2e650c2e3f9c4390c0d559b7",
+            "espgen_001.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "espgen_002.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "espgen_003.log": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+            "gaussian_logs/orientation_001.log": "27cd723a9794bd1a288643836fb2118751b9384f2771d4b3553f7835b30733e1",
+            "gaussian_logs/orientation_002.log": "2416a338fd8038881ecf90cc194cfc7c23b24eca27e795f7018b1a5b1bd40948",
+            "gaussian_logs/orientation_003.log": "8a3dd04330ca575e29b1256a0d4c68497b9425bd9e35cdf7f276ff6d01595c0f",
+            "model.json": "16ed07dd89da61fc6f35af5cd7f181e45213b097aa02793d3d166a7971288c19",
+            "orientation_001.esp": "b7c64780e15447b6b0fa6efdae8ba946631ff9786d8a998ee859b4508ba60aca",
+            "orientation_002.esp": "1446be29f636d4beeb66c33727ac8cb6d140697055f5a614ccaebe89425671aa",
+            "orientation_003.esp": "006ca597d30a69338074968fa2a9cbc3bebfde495881aab804d2c3f7bcfdacb0",
+            "resp1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "stage1.charges": "2e45c07e5294464ae3964acc582fb6e6896164f18a291c365486fa7ad07188e7",
+            "stage1.esout": "0d2040ce049acf11c02d634528f226718ce3f297939be9e75ec52194902af4aa",
+            "stage1.in": "c5f3a3b939dd735df3fcc4af882a97006dcda131b40131583b752f8b4afa5371",
+            "stage1.out": "1b0d5ab58c31c65880eb7f9dd1a42b6070ad0b1001187a992da041cd7d6d5180",
+            "stage1.punch": "41c3b954e4104ff19b706603dddbea2ff52fac0bf82b37148f4a88d17266b927",
+            "stage2.in": "5f6b9284092065a99fd5278559630b15d521157afe6248248e209b6afc62a43a"
+          }
+        },
+        "context_id": "C24_OH2_loading_s20261304::fit_002"
+      },
+      "charge_check": {
+        "expected_formal_charge_e": 0,
+        "observed_charge_sum_e": -1.999999999807711e-06,
+        "error_e": -1.999999999807711e-06,
+        "rounding_tolerance_e": 2.0000000999999998e-05,
+        "passed": true
+      },
+      "coverage": {
+        "model_atom_count": 40,
+        "charge_atom_count": 40,
+        "atom_identity_order_elements_match": true,
+        "all_atom_charges_finite": true,
+        "whole_model_charge_passed": true,
+        "functional_group_count_excluding_GRT": 2,
+        "functional_group_pair_count": 1,
+        "scaffold_carbon_count": 24,
+        "background_scaffold_carbon_count": 22,
+        "background_kind_counts": {
+          "interior_scaffold": 10,
+          "hydrogen_terminated_edge": 12
+        },
+        "scaffold_carbon_source": "metadata.scaffold_carbon_ids",
+        "all_pair_distances_computed": true
+      },
+      "scaffold_carbon_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "background_carbon_atom_ids": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "per_atom_charges": [
+        {
+          "atom_id": 1,
+          "element": "C",
+          "name": "C1",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -1.302395,
+            -3.329538,
+            -0.042491
+          ],
+          "charge_e": -0.358487,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 2,
+          "element": "C",
+          "name": "C2",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            1.228194,
+            -3.370238,
+            0.134245
+          ],
+          "charge_e": -0.262218,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 3,
+          "element": "C",
+          "name": "C3",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -2.43452,
+            -2.630393,
+            -0.176956
+          ],
+          "charge_e": -0.215963,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 4,
+          "element": "C",
+          "name": "C4",
+          "role": "hydroxyl_C",
+          "roles": [
+            "hydroxyl_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -0.052434,
+            -2.668323,
+            0.486794
+          ],
+          "charge_e": 0.660051,
+          "functional_group_ids": [
+            "OH:1"
+          ],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 5,
+          "element": "C",
+          "name": "C5",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            2.329799,
+            -2.740037,
+            -0.245301
+          ],
+          "charge_e": -0.262218,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 6,
+          "element": "C",
+          "name": "C6",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -2.480342,
+            -1.177573,
+            0.005894
+          ],
+          "charge_e": 0.163961,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 7,
+          "element": "C",
+          "name": "C7",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -0.023963,
+            -1.199099,
+            0.13328
+          ],
+          "charge_e": -0.061407,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 8,
+          "element": "C",
+          "name": "C8",
+          "role": "hydroxyl_C",
+          "roles": [
+            "hydroxyl_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            2.393685,
+            -1.262769,
+            -0.511117
+          ],
+          "charge_e": 0.660051,
+          "functional_group_ids": [
+            "OH:2"
+          ],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 9,
+          "element": "C",
+          "name": "C9",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -3.674199,
+            -0.454058,
+            -0.030866
+          ],
+          "charge_e": -0.238386,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 10,
+          "element": "C",
+          "name": "C10",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -1.267131,
+            -0.479398,
+            0.126769
+          ],
+          "charge_e": -0.08582,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 11,
+          "element": "C",
+          "name": "C11",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            1.141622,
+            -0.540176,
+            -0.070037
+          ],
+          "charge_e": -0.061407,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 12,
+          "element": "C",
+          "name": "C12",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            3.630519,
+            -0.577755,
+            0.018762
+          ],
+          "charge_e": -0.358487,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 13,
+          "element": "C",
+          "name": "C13",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -3.678455,
+            0.930667,
+            0.049786
+          ],
+          "charge_e": -0.242093,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 14,
+          "element": "C",
+          "name": "C14",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -1.260698,
+            0.930286,
+            0.115567
+          ],
+          "charge_e": 0.03276,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 15,
+          "element": "C",
+          "name": "C15",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            1.182852,
+            0.892742,
+            0.022403
+          ],
+          "charge_e": -0.08582,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 16,
+          "element": "C",
+          "name": "C16",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            3.635317,
+            0.742217,
+            0.233799
+          ],
+          "charge_e": -0.215963,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 17,
+          "element": "C",
+          "name": "C17",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -2.479545,
+            1.649029,
+            0.114097
+          ],
+          "charge_e": 0.14463,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 18,
+          "element": "C",
+          "name": "C18",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -0.018715,
+            1.623599,
+            0.119177
+          ],
+          "charge_e": 0.03276,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 19,
+          "element": "C",
+          "name": "C19",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            2.417864,
+            1.551902,
+            0.141602
+          ],
+          "charge_e": 0.163961,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 20,
+          "element": "C",
+          "name": "C20",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -2.424484,
+            3.086005,
+            0.174732
+          ],
+          "charge_e": -0.231081,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 21,
+          "element": "C",
+          "name": "C21",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            0.01033,
+            3.035619,
+            0.205877
+          ],
+          "charge_e": 0.14463,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 22,
+          "element": "C",
+          "name": "C22",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            2.43096,
+            2.943018,
+            0.26296
+          ],
+          "charge_e": -0.238386,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 23,
+          "element": "C",
+          "name": "C23",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            -1.242507,
+            3.743725,
+            0.231082
+          ],
+          "charge_e": -0.231081,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 24,
+          "element": "C",
+          "name": "C24",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "position_angstrom": [
+            1.253059,
+            3.675507,
+            0.267071
+          ],
+          "charge_e": -0.242093,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": true
+        },
+        {
+          "atom_id": 25,
+          "element": "O",
+          "name": "O25",
+          "role": "hydroxyl_O",
+          "roles": [
+            "hydroxyl_O"
+          ],
+          "position_angstrom": [
+            -0.096884,
+            -2.770588,
+            1.933077
+          ],
+          "charge_e": -0.714553,
+          "functional_group_ids": [
+            "OH:1"
+          ],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 26,
+          "element": "O",
+          "name": "O26",
+          "role": "hydroxyl_O",
+          "roles": [
+            "hydroxyl_O"
+          ],
+          "position_angstrom": [
+            2.454576,
+            -1.190802,
+            -1.958626
+          ],
+          "charge_e": -0.714553,
+          "functional_group_ids": [
+            "OH:2"
+          ],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 27,
+          "element": "H",
+          "name": "H27",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            -1.282645,
+            -4.403473,
+            -0.194449
+          ],
+          "charge_e": 0.174705,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 28,
+          "element": "H",
+          "name": "H28",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            1.232012,
+            -4.445015,
+            0.287983
+          ],
+          "charge_e": 0.157848,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 29,
+          "element": "H",
+          "name": "H29",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            -3.357308,
+            -3.130754,
+            -0.454422
+          ],
+          "charge_e": 0.161749,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 30,
+          "element": "H",
+          "name": "H30",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            3.236407,
+            -3.295918,
+            -0.464072
+          ],
+          "charge_e": 0.157848,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 31,
+          "element": "H",
+          "name": "H31",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            -4.613694,
+            -0.987935,
+            -0.132708
+          ],
+          "charge_e": 0.165773,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 32,
+          "element": "H",
+          "name": "H32",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            4.538483,
+            -1.165253,
+            0.104054
+          ],
+          "charge_e": 0.174705,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 33,
+          "element": "H",
+          "name": "H33",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            -4.620414,
+            1.469091,
+            0.040932
+          ],
+          "charge_e": 0.170578,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 34,
+          "element": "H",
+          "name": "H34",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            4.554937,
+            1.248386,
+            0.511239
+          ],
+          "charge_e": 0.161749,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 35,
+          "element": "H",
+          "name": "H35",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            -3.358594,
+            3.638144,
+            0.182261
+          ],
+          "charge_e": 0.161105,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 36,
+          "element": "H",
+          "name": "H36",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            3.381848,
+            3.456504,
+            0.363962
+          ],
+          "charge_e": 0.165773,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 37,
+          "element": "H",
+          "name": "H37",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            -1.221532,
+            4.827088,
+            0.289026
+          ],
+          "charge_e": 0.161105,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 38,
+          "element": "H",
+          "name": "H38",
+          "role": "edge_H",
+          "roles": [
+            "edge_H"
+          ],
+          "position_angstrom": [
+            1.290437,
+            4.75737,
+            0.340778
+          ],
+          "charge_e": 0.170578,
+          "functional_group_ids": [],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 39,
+          "element": "H",
+          "name": "H39",
+          "role": "hydroxyl_H",
+          "roles": [
+            "hydroxyl_H"
+          ],
+          "position_angstrom": [
+            -0.975775,
+            -2.508694,
+            2.220782
+          ],
+          "charge_e": 0.416847,
+          "functional_group_ids": [
+            "OH:1"
+          ],
+          "is_scaffold_carbon": false
+        },
+        {
+          "atom_id": 40,
+          "element": "H",
+          "name": "H40",
+          "role": "hydroxyl_H",
+          "roles": [
+            "hydroxyl_H"
+          ],
+          "position_angstrom": [
+            2.683653,
+            -0.289118,
+            -2.200104
+          ],
+          "charge_e": 0.416847,
+          "functional_group_ids": [
+            "OH:2"
+          ],
+          "is_scaffold_carbon": false
+        }
+      ],
+      "functional_groups": [
+        {
+          "group_id": "OH:1",
+          "block_type": "OH",
+          "atom_ids": [
+            4,
+            25,
+            39
+          ],
+          "roles": [
+            "hydroxyl_C",
+            "hydroxyl_H",
+            "hydroxyl_O"
+          ],
+          "net_charge_e": 0.3623450000000001,
+          "target_formal_charge_e": 0.0,
+          "scaffold_carbon_anchor_ids": [
+            4
+          ],
+          "scaffold_anchor_source": "group scaffold carbons",
+          "scaffold_anchor_charge_e_sum": 0.660051,
+          "carbon_atom_ids_for_centroid": [
+            4
+          ],
+          "carbon_centroid_angstrom": [
+            -0.052434,
+            -2.668323,
+            0.486794
+          ]
+        },
+        {
+          "group_id": "OH:2",
+          "block_type": "OH",
+          "atom_ids": [
+            8,
+            26,
+            40
+          ],
+          "roles": [
+            "hydroxyl_C",
+            "hydroxyl_H",
+            "hydroxyl_O"
+          ],
+          "net_charge_e": 0.3623450000000001,
+          "target_formal_charge_e": 0.0,
+          "scaffold_carbon_anchor_ids": [
+            8
+          ],
+          "scaffold_anchor_source": "group scaffold carbons",
+          "scaffold_anchor_charge_e_sum": 0.660051,
+          "carbon_atom_ids_for_centroid": [
+            8
+          ],
+          "carbon_centroid_angstrom": [
+            2.393685,
+            -1.262769,
+            -0.511117
+          ]
+        }
+      ],
+      "functional_group_pairs": [
+        {
+          "group_a_id": "OH:1",
+          "group_a_type": "OH",
+          "group_a_net_charge_e": 0.3623450000000001,
+          "group_a_scaffold_anchor_charge_e_sum": 0.660051,
+          "group_b_id": "OH:2",
+          "group_b_type": "OH",
+          "group_b_net_charge_e": 0.3623450000000001,
+          "group_b_scaffold_anchor_charge_e_sum": 0.660051,
+          "combined_group_net_charge_e": 0.7246900000000002,
+          "graph_distance": 3,
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors",
+          "graph_anchor_atom_ids": [
+            4,
+            8
+          ],
+          "graph_path_atom_ids": [
+            4,
+            2,
+            5,
+            8
+          ],
+          "carbon_centroid_distance_angstrom": 2.9924749912067767,
+          "centroid_definition": "Euclidean distance between centroids of all carbon atoms in each partitioned functional-group block; no periodic boundary correction"
+        }
+      ],
+      "background_carbon_distance_charges": [
+        {
+          "atom_id": 1,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.358487,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "OH:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 2,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.262218,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "OH:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 3,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.215963,
+          "nearest_functional_group_graph_distance": 2,
+          "nearest_functional_group_ids": [
+            "OH:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 5,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.262218,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "OH:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 6,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": 0.163961,
+          "nearest_functional_group_graph_distance": 3,
+          "nearest_functional_group_ids": [
+            "OH:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 7,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": -0.061407,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "OH:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 9,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.238386,
+          "nearest_functional_group_graph_distance": 4,
+          "nearest_functional_group_ids": [
+            "OH:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 10,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": -0.08582,
+          "nearest_functional_group_graph_distance": 2,
+          "nearest_functional_group_ids": [
+            "OH:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 11,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": -0.061407,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "OH:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 12,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.358487,
+          "nearest_functional_group_graph_distance": 1,
+          "nearest_functional_group_ids": [
+            "OH:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 13,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.242093,
+          "nearest_functional_group_graph_distance": 5,
+          "nearest_functional_group_ids": [
+            "OH:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 14,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": 0.03276,
+          "nearest_functional_group_graph_distance": 3,
+          "nearest_functional_group_ids": [
+            "OH:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 15,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": -0.08582,
+          "nearest_functional_group_graph_distance": 2,
+          "nearest_functional_group_ids": [
+            "OH:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 16,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.215963,
+          "nearest_functional_group_graph_distance": 2,
+          "nearest_functional_group_ids": [
+            "OH:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 17,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": 0.14463,
+          "nearest_functional_group_graph_distance": 4,
+          "nearest_functional_group_ids": [
+            "OH:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 18,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": 0.03276,
+          "nearest_functional_group_graph_distance": 3,
+          "nearest_functional_group_ids": [
+            "OH:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 19,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": 0.163961,
+          "nearest_functional_group_graph_distance": 3,
+          "nearest_functional_group_ids": [
+            "OH:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 20,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.231081,
+          "nearest_functional_group_graph_distance": 5,
+          "nearest_functional_group_ids": [
+            "OH:1"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 21,
+          "element": "C",
+          "role": "scaffold_C",
+          "roles": [
+            "scaffold_C"
+          ],
+          "background_kind": "interior_scaffold",
+          "charge_e": 0.14463,
+          "nearest_functional_group_graph_distance": 4,
+          "nearest_functional_group_ids": [
+            "OH:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 22,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.238386,
+          "nearest_functional_group_graph_distance": 4,
+          "nearest_functional_group_ids": [
+            "OH:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 23,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.231081,
+          "nearest_functional_group_graph_distance": 5,
+          "nearest_functional_group_ids": [
+            "OH:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        },
+        {
+          "atom_id": 24,
+          "element": "C",
+          "role": "edge_C",
+          "roles": [
+            "edge_C",
+            "scaffold_C"
+          ],
+          "background_kind": "hydrogen_terminated_edge",
+          "charge_e": -0.242093,
+          "nearest_functional_group_graph_distance": 5,
+          "nearest_functional_group_ids": [
+            "OH:2"
+          ],
+          "graph_distance_definition": "minimum number of C-C scaffold bonds between group scaffold-carbon anchors"
+        }
+      ],
+      "context_index": 2,
+      "context_id": "C24_OH2_loading_s20261304::fit_002"
+    }
+  ]
+}

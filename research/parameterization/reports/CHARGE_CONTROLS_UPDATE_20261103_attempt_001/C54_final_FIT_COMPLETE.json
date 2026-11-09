@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "status": "atomic_resp_fit_completed",
+  "model_id": "C54_single_basal_EPX_control",
+  "attempt_dir": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/c54_single_followup_20261103_attempt_001/fits/attempt_001",
+  "charges_csv": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/c54_single_followup_20261103_attempt_001/fits/attempt_001/charges.csv",
+  "charges_json": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/c54_single_followup_20261103_attempt_001/fits/attempt_001/charges.json",
+  "charge_sum_e": 2.9999999997532e-06,
+  "formal_charge": 0,
+  "stage2": {
+    "status": "noop_no_methyl_methylene",
+    "groups_atom_ids": [],
+    "max_abs_change_e": 0.0,
+    "explanation": "All charges retained from stage 1; stage2.in is audit only and was not executed."
+  },
+  "orientation_weights": [
+    1.00036,
+    1.00032,
+    0.99933
+  ],
+  "metrics": [
+    {
+      "grid_points": 121147,
+      "esp_rmse_au": 0.001290297854786134,
+      "esp_rrms": 0.1048595387772859,
+      "dipole": {
+        "vector_debye": [
+          -0.9982425601670957,
+          -0.15895625848061348,
+          -1.8971229905152018
+        ],
+        "magnitude_debye": 2.149611811974538,
+        "origin_angstrom": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frame": "this Gaussian MK orientation; coordinate origin, not center of mass",
+        "origin_dependent_for_ions": false
+      },
+      "orientation": 1
+    },
+    {
+      "grid_points": 121157,
+      "esp_rmse_au": 0.001276888360422573,
+      "esp_rrms": 0.10380999591376831,
+      "dipole": {
+        "vector_debye": [
+          0.9337760886289861,
+          -0.461657856512143,
+          -1.8803527087852645
+        ],
+        "magnitude_debye": 2.1496027701905103,
+        "origin_angstrom": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frame": "this Gaussian MK orientation; coordinate origin, not center of mass",
+        "origin_dependent_for_ions": false
+      },
+      "orientation": 2
+    },
+    {
+      "grid_points": 121397,
+      "esp_rmse_au": 0.0012786261902398358,
+      "esp_rrms": 0.10389782775344585,
+      "dipole": {
+        "vector_debye": [
+          0.6358877813752251,
+          1.7541450614901546,
+          -1.067426905867334
+        ],
+        "magnitude_debye": 2.1495995828577272,
+        "origin_angstrom": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frame": "this Gaussian MK orientation; coordinate origin, not center of mass",
+        "origin_dependent_for_ions": false
+      },
+      "orientation": 3
+    }
+  ],
+  "final_parameter_validation": false,
+  "protocol": {
+    "method": "wB97XD/6-311++G(d,p) MK ESP; Amber hyperbolic RESP",
+    "qm_method": "wB97XD/6-311++G(d,p)",
+    "stage1_qwt": 0.0005,
+    "stage2_qwt": 0.001,
+    "ihfree": 1,
+    "physical_conformers": 1,
+    "orientations": 3,
+    "mean_grid_points": 121233.66666666667,
+    "parent_qm_optimization_frequencies_stability": "must be approved upstream; not inferred from MK logs",
+    "scope": "DFT-RESP control; finite whole-model atomic reference; no bulk or modular-transfer validation"
+  },
+  "provenance": {
+    "qm_method": "wB97XD/6-311++G(d,p)",
+    "model_source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/isolated_controls_dft_resp_attempt_001/outputs/C54_single_basal_EPX_control/attempt_001/orientations/model.json",
+    "model_sha256": "b1a8c95d3940ef3985a8cd36c2edec7853b8d43d344e6546ea8617f1f3486f0c",
+    "gaussian_logs": [
+      {
+        "qm_method": "wB97XD/6-311++G(d,p)",
+        "source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/isolated_controls_dft_resp_attempt_001/outputs/C54_single_basal_EPX_control/attempt_001/orientations/orientation_01/gaussian.log",
+        "snapshot": "gaussian_logs/orientation_001.log",
+        "sha256": "41412c0d6b10fc48207b60d748ba2d5adbc5dba47e136cf0c5fd28a10aafdbf3",
+        "esp_sha256": "da92c116ca6b57a8b3c1bee7dd0d817e0e32edb05b05ac5bd2abf4a6ead0fa73",
+        "grid_points": 121147
+      },
+      {
+        "qm_method": "wB97XD/6-311++G(d,p)",
+        "source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/isolated_controls_dft_resp_attempt_001/outputs/C54_single_basal_EPX_control/attempt_001/orientations/orientation_02/gaussian.log",
+        "snapshot": "gaussian_logs/orientation_002.log",
+        "sha256": "58b0f6a17ecf9a33c8c3dbbd0f29daafdeb7ee616afd8115f6d554c6bfef284e",
+        "esp_sha256": "73527c4cd722903e2d17e552c667e9ccbedcf1b5c0e64382ea84cfcc5400a225",
+        "grid_points": 121157
+      },
+      {
+        "qm_method": "wB97XD/6-311++G(d,p)",
+        "source_path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/isolated_controls_dft_resp_attempt_001/outputs/C54_single_basal_EPX_control/attempt_001/orientations/orientation_03/gaussian.log",
+        "snapshot": "gaussian_logs/orientation_003.log",
+        "sha256": "d6686de6cf423f5ff2eb3f4ac70857be05a064eeb06d0ce48f78c45406f0ad3b",
+        "esp_sha256": "02366020526095e43dabd1801fcec7f250ababa16390459e420d6f205352f543",
+        "grid_points": 121397
+      }
+    ],
+    "executables": {
+      "espgen": {
+        "path": "/usr/local/amber24u3+at25/bin/espgen",
+        "sha256": "84ef419a4adbcefb2c9131a7761527b841a1a789783f36c0fc0eb6f4064fb8f1"
+      },
+      "resp": {
+        "path": "/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/c54_esp_recovery_20261103_attempt_001/resp_header_io/resp",
+        "sha256": "94726cbb4171afd2ef31e3b85dcb3bc7ec82100467b0fcfcdfce65b1b8ac0f9a"
+      }
+    },
+    "fit_code_sha256": "d85754ada656ec2880fb00823d3c088558fddcd3553c1a854f75e2f51c2068c2"
+  },
+  "artifacts_sha256": {
+    "all.esp": "12ea77e65e7644acb867c187acc5333107decc864c6f2fdb8a0c4b6250c0e724",
+    "charges.csv": "e12ec347aa122f06074e77025944f3900fb84a0ead4b9fbbb43ba7b732b850b0",
+    "charges.json": "d57d3aac7256c7642db85f49a68ce28c362624237f5a4601f3777ae207f55d72",
+    "commands.jsonl": "1b65ea09bdd31dec69ba90304336c3c84ca7111612d4661ebe1577528a5f917c",
+    "espgen_001.log": "91a5c87731493d10ad91ee7a392524eb1332ab958fc845264a6eb36cad090c59",
+    "espgen_002.log": "91a5c87731493d10ad91ee7a392524eb1332ab958fc845264a6eb36cad090c59",
+    "espgen_003.log": "91a5c87731493d10ad91ee7a392524eb1332ab958fc845264a6eb36cad090c59",
+    "gaussian_logs/orientation_001.log": "41412c0d6b10fc48207b60d748ba2d5adbc5dba47e136cf0c5fd28a10aafdbf3",
+    "gaussian_logs/orientation_002.log": "58b0f6a17ecf9a33c8c3dbbd0f29daafdeb7ee616afd8115f6d554c6bfef284e",
+    "gaussian_logs/orientation_003.log": "d6686de6cf423f5ff2eb3f4ac70857be05a064eeb06d0ce48f78c45406f0ad3b",
+    "model.json": "b1a8c95d3940ef3985a8cd36c2edec7853b8d43d344e6546ea8617f1f3486f0c",
+    "orientation_001.esp": "da92c116ca6b57a8b3c1bee7dd0d817e0e32edb05b05ac5bd2abf4a6ead0fa73",
+    "orientation_002.esp": "73527c4cd722903e2d17e552c667e9ccbedcf1b5c0e64382ea84cfcc5400a225",
+    "orientation_003.esp": "02366020526095e43dabd1801fcec7f250ababa16390459e420d6f205352f543",
+    "resp1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stage1.charges": "03d14abd9088c527381b254c99ebeda367886f65ef47339d63f02d2590f39e16",
+    "stage1.esout": "bb6e1e467185dc804f960f35e9ce710aa075762b5ecfb33c545545f761749744",
+    "stage1.in": "e2ae5223ac6a703dd9c39c4aaf319146f3569265136a1ab426656b664149baaa",
+    "stage1.out": "8586a8211013e1d87538488308e62ca2c008f0b514266e255d7db9cab2262e8c",
+    "stage1.punch": "9b291d9a38a6219107b59de58f2d31446f18ff0aa312f0d96de0533a34005308",
+    "stage2.in": "0525319865f2385278437b9352060036439317c831e6da7c9dd750b54d7fb165"
+  }
+}

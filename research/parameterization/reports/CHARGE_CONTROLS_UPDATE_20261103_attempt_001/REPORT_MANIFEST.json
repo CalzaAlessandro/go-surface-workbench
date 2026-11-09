@@ -1,0 +1,12 @@
+{
+  "report_SHA256": "1fc0cc9d52bdd3d1d340ea8b69bf560e9d99ce33d83116e8ba0209448bb4f08e",
+  "SQE_archive_SHA256": "7dadb15ee836c2df9994895de00722d49044e2b5cb1e3ec82f9a3d037f03eca2",
+  "last_C54_archive_SHA256": "3b0b473072e3fd9785b06388d2eab647919cb57a9fc4c5324e55abe515d99289",
+  "DFT_contexts": 19,
+  "HF_contexts": 16,
+  "SQE_native_result_files_verified": 118,
+  "final_parameter_validation": false,
+  "figure_aggregation": "within-context means for a chemical role; not universal parameters",
+  "scheduler_snapshot_SHA256": "8f045bc351891947dc3883f8f27defbf19f4287c0ff11182af477eca991bf3e8",
+  "verified_at_utc": "2026-11-03T21:51:57.414244+00:00"
+}

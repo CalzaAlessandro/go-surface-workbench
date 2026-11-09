@@ -5,6 +5,13 @@ GAFF2–AIM and HierGO/OPLS remain separate, unchanged reference presets. New
 bonded/frcmod fitting is deferred; the current priority is electrostatics and
 coherent charge/Lennard-Jones comparisons.
 
+Update 2026-11-03: the user selects HF–RESP as primary, with DFT–RESP and
+AM1-BCC controls, and defers GAFF/frcmod selection. The immediate use of
+experimental data is to constrain chemical composition and protonation.
+Adsorption/solvation observables remain later tests of the full interaction
+model. The [charge benchmark](CHARGE_STRATEGY_BENCHMARK_20261103.md) records
+the final-product integer-charge requirement and scaling constraints.
+
 ## What is measured
 
 Partial atomic charges are model-dependent partitions, not uniquely measured
@@ -39,6 +46,12 @@ condition-dependent evidence of heterogeneous acidity, not a universal
 deprotonation fraction for any constructed sheet.
 
 ## Linking these data to fixed-charge simulations
+
+For functionalized materials, [Orth et al. (2016)](https://doi.org/10.1016/j.jcis.2016.01.013)
+combine titration and spectroscopy to characterize introduced groups and
+their acid/base response. This is an experimental precedent for tracking
+functionalization/protonation, not a measured partial-charge library for a
+GO–PEG or GO–amino-acid junction.
 
 Choose and report a protonation model before comparing adsorption. A
 fixed-protonation MD simulation does not itself predict a titration curve;
