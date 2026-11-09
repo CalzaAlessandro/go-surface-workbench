@@ -11,34 +11,33 @@
 > 
 > Molecular engine outputs (Gaussian/ORCA/Amber logs and trajectories) are tracked separately. External dependencies and molecular dynamics engines must be configured as described in [Engine setup](docs/ENGINE_SETUP.md).
 
-Nome provvisorio della repository: **go-surface-workbench**.
-Vedere [direzione scientifica](docs/ROADMAP.md) e [prestazioni misurate](docs/PERFORMANCE.md).
+Provisional repository name: **go-surface-workbench**.
+See [scientific roadmap](docs/ROADMAP.md) and [measured performance benchmarks](docs/PERFORMANCE.md).
 
-Lo studio dei metodi di carica e dei tre candidati di force field è in
-[research/parameterization](research/parameterization/README.md); i nuovi
-parametri restano separati dalle librerie usate nelle campagne esistenti.
+Studies on charge derivation methods and candidate force fields are documented in
+[research/parameterization](research/parameterization/README.md); newly derived
+parameters remain isolated from the libraries used in legacy simulation campaigns.
 
-Il [catalogo dei preset di carica](docs/CHARGE_PRESETS.md) include ora il
-riferimento pubblicato GAFF2–AIM con cariche e Lennard-Jones originali, oltre
-alle librerie correnti e al riferimento HierGO/OPLS. La nuova derivazione
-resta RESP; l'assegnazione generale di tutti i preset è ancora da completare.
+The [charge presets catalog](docs/CHARGE_PRESETS.md) includes the published
+GAFF2–AIM reference with original charges and Lennard-Jones parameters, alongside
+current libraries and the HierGO/OPLS reference. New charge derivation protocols
+focus on RESP; general assignment across all presets is ongoing.
 
-Generatore generale di grafene ossido con connettività esplicita. Questa
-cartella contiene codice, esempi, test e copie dei parametri con provenienza;
-non include Amber o Gaussian. I modelli GOX/REGOX corrected e i parametri OLD
-restano riferimenti: non vengono ricostruiti o sostituiti automaticamente.
-L'unica manutenzione applicata al workflow precedente riguarda gli input
-di allineamento richiesti dall'utente, con backup; vedere
-[ALIGNMENT.md](docs/ALIGNMENT.md).
+General-purpose graphene oxide generator with explicit connectivity. This
+directory contains code, examples, test suites, and parameter copies with full
+provenance; it does not distribute Amber or Gaussian binaries. Legacy GOX/REGOX
+corrected models and OLD parameters serve as reference points and are neither rebuilt
+nor overwritten automatically. Alignment inputs are maintained with backups as
+described in [ALIGNMENT.md](docs/ALIGNMENT.md).
 
-Il percorso principale per **creare e funzionalizzare il GO** è
-`01_build_GO.py` → `02_open_epoxides.py` (opzionale) → `03_prepare_amber.py`.
-`prepare_fragment.py` prepara una volta il reagente da innestare; la stessa
-ricetta si può riusare per diversi caricamenti e semi casuali.
+The core workflow to **build and functionalize GO sheets** is:
+`01_build_GO.py` → `02_open_epoxides.py` (optional) → `03_prepare_amber.py`.
+`prepare_fragment.py` prepares grafting reagents once; the resulting recipe can be
+reused across multiple loadings and random seeds.
 
-## Installazione e trasferimento
+## Installation & Environment Setup
 
-Richiede Python 3.11 o successivo. Dalla cartella:
+Requires Python 3.11 or later. From the project directory:
 
 ```bash
 uv sync
@@ -46,45 +45,44 @@ uv run python go.py --help
 uv run pytest -q
 ```
 
-`pyproject.toml` e `uv.lock` definiscono NumPy, ParmEd e RDKit. Per un sistema
-senza uv si può usare l'esportazione generata `requirements.txt` in un ambiente
-Python separato. Amber/AmberTools (`tleap`, `sander`, `MMPBSA.py`, `espgen`,
-`resp`) e Gaussian (`g16`) restano installazioni di sistema.
+Dependencies (`pyproject.toml` and `uv.lock`) include NumPy, ParmEd, and RDKit. For
+environments without `uv`, a standard `requirements.txt` can be exported and installed
+in a virtual environment. Amber/AmberTools (`tleap`, `sander`, `MMPBSA.py`, `espgen`,
+`resp`) and Gaussian (`g16`) must be provided by the host environment or cluster modules.
 
-Questa snapshot contiene sorgenti, esempi, test, risorse di riferimento,
-documentazione e file delle dipendenze. Non include `software/`, gli eseguibili
-di Vina/Open Babel, MGLTools o i relativi archivi, né gli output di `validation`.
-Ricreare `.venv` sul sistema di destinazione: un ambiente binario macOS non si
-trasferisce su Linux. Installare separatamente gli engine e gli strumenti di
-sistema richiesti; vedere [Engine setup](docs/ENGINE_SETUP.md). Per importare le
-API direttamente da questa cartella usare
-`PYTHONPATH=src uv run python ...`; gli script della radice gestiscono già il
-percorso dei sorgenti.
+This repository contains source code, examples, tests, reference assets, documentation,
+and dependency specifications. It does not track `software/`, Vina/Open Babel/MGLTools
+binaries, archives, or large `validation/` outputs. Recreate `.venv` on target machines:
+macOS binary virtual environments cannot be transferred to Linux. Install system engines
+separately as detailed in [Engine setup](docs/ENGINE_SETUP.md). To import modules directly
+from source, use `PYTHONPATH=src uv run python ...`; root scripts resolve package paths
+automatically.
 
-## Script e ordine d'uso
+## Scripts & Usage Workflow
 
-| Script | Uso |
+| Script | Purpose |
 |---|---|
-| `prepare_fragment.py` | Opzionale: prepara un frammento da SDF/MOL/MOL2/SMILES e sceglie esplicitamente il sito reattivo |
-| `01_build_GO.py` | Crea foglio, difetti, gruppi e terminazioni H |
-| `02_open_epoxides.py` | Opzionale: apertura anti degli epossidi con il frammento scelto |
-| `03_prepare_amber.py` | Assegna i template GAFF2 e prepara LEaP; `--run` esegue AmberTools esterno |
-| `04_prepare_docking_receptor.py` | Estrae un GO nativo o equilibrato e crea box 3D senza appiattirlo |
-| `05_dock_boxes.py` | Docking Vina oppure GNINA con scoring Vina e CNN disattivata |
-| `06_assemble_docked_complex.py` | Assembla il recettore completo e ligandi già parametrizzati nelle coordinate delle pose |
-| `07_export_gromacs.py` | Esporta una topologia Amber completa in `.top`, `.itp`, `.gro` |
-| `audit_charges.py` | Confronto descrittivo di sorgenti CURRENT, OLD e HierGO/OPLS |
-| `prepare_QM.py` | Prepara un riferimento Gaussian/MK su un frammento finito esplicitamente saturato |
-| `compare_ESP.py` | Confronta cariche sulla stessa geometria e griglia quantistica |
-| `import_Amber.py` | Ingresso alternativo a 01: importa una topologia esistente senza ricostruire legami |
-| `check_model.py` | Controlla grafo, prerequisiti GBSA e maschere disponibili |
-| `update_alignment.py` | Inventario e migrazione con backup degli input CPPTRAJ; non ricalcola traiettorie |
+| `prepare_fragment.py` | Optional: prepares a fragment from SDF/MOL/MOL2/SMILES and explicitly sets the reactive attachment site |
+| `01_build_GO.py` | Generates basal sheet, vacancies/holes, functional groups, and edge H-terminations |
+| `02_open_epoxides.py` | Optional: anti-opening of basal epoxides with the selected nucleophilic fragment |
+| `03_prepare_amber.py` | Assigns GAFF2 templates and prepares LEaP inputs; `--run` executes external AmberTools |
+| `04_prepare_docking_receptor.py` | Extracts native or equilibrated GO and constructs 3D bounding boxes without flattening |
+| `05_dock_boxes.py` | Bounded docking using AutoDock Vina or GNINA (with Vina scoring and CNN disabled) |
+| `06_assemble_docked_complex.py` | Assembles the complete receptor and pre-parameterized ligands in docked pose coordinates |
+| `07_export_gromacs.py` | Exports a completed Amber topology into GROMACS `.top`, `.itp`, and `.gro` |
+| `audit_charges.py` | Descriptive audit and comparison of CURRENT, OLD, and HierGO/OPLS charge assignments |
+| `prepare_QM.py` | Generates Gaussian/MK ESP single-point inputs on explicitly capped finite fragments |
+| `compare_ESP.py` | Evaluates electrostatic potential RMSD across candidate charge sets on identical grids |
+| `import_Amber.py` | Alternative entry point to 01: imports existing topologies without guessing bonds |
+| `check_model.py` | Inspects molecular graphs, GBSA prerequisites, and selection masks |
+| `update_alignment.py` | Audits and migrates CPPTRAJ alignment inputs with automatic backups |
 
-Gli stessi comandi sono disponibili da `go.py`: `fragment`, `build`,
+All commands are accessible via the `go.py` unified CLI: `fragment`, `build`,
 `functionalize`, `amber`, `gromacs`, `audit`, `qm`, `esp-import`, `esp`, `import`,
-`check`, `snapshot`, `dock`, `complex`, `alignment`. `--help` elenca le opzioni di ogni script.
+`check`, `snapshot`, `dock`, `complex`, `alignment`. Run `go.py <command> --help`
+to list specific options.
 
-## Generare un GO
+## Generating a Graphene Oxide Sheet
 
 ```bash
 uv run python 01_build_GO.py --recipe examples/finite_GO.json \
@@ -95,53 +93,51 @@ uv run python 07_export_gromacs.py --topology work/amber/go.prmtop \
   --coordinates work/amber/go.inpcrd --output-prefix work/gromacs/GO
 ```
 
-Senza `--run`, 03 prepara gli input ma non certifica una parametrizzazione
-completa. Con `--run` richiede `tleap` nel PATH e verifica il risultato.
-I risultati esistenti non vengono sovrascritti: scegliere un nuovo percorso.
+Without `--run`, `03_prepare_amber.py` generates input files but does not execute
+AmberTools. With `--run`, it requires `tleap` on `$PATH` and verifies topology creation.
+Existing outputs are never silently overwritten: specify a new target directory.
 
-La ricetta JSON contiene:
+JSON recipe fields:
 
-| Campo | Significato |
+| Field | Description |
 |---|---|
-| `nx`, `ny` | Numero di celle rettangolari, ciascuna inizialmente con quattro C |
-| `bond_length` | Distanza C–C iniziale in Å, default 1,42 |
-| `pbc` | `[false,false,false]` per foglio finito; `[true,true,false]` per il grafo periodico |
-| `vacuum` | Dimensione z della cella di costruzione in Å; non aggiunge solvente |
-| `vacancies` | Numero oppure lista di ID dei carboni da rimuovere |
-| `holes` | Lista di `{center:[x,y], radius:r}` in Å oppure `{size:n, seed_atom:id}` |
-| `groups` | Conteggi di `OH`, `epoxide`, `carbonyl`, `COOH`, `COO`; ogni gruppo può specificare anche `count` e `id` |
-| `faces` | `both`, `up`, `down` per i gruppi basali |
-| `seed` | Seme casuale riproducibile |
+| `nx`, `ny` | Number of rectangular unit cells along x and y (each initially containing 4 carbons) |
+| `bond_length` | Initial C–C bond length in Å (default: `1.42`) |
+| `pbc` | `[false, false, false]` for finite flakes; `[true, true, false]` for periodic graphs |
+| `vacuum` | Box z-dimension in Å; does not add solvent |
+| `vacancies` | Count or explicit list of carbon IDs to remove |
+| `holes` | List of `{center: [x, y], radius: r}` in Å or `{size: n, seed_atom: id}` |
+| `groups` | Counts for `OH`, `epoxide`, `carbonyl`, `COOH`, `COO`; supports explicit `count` and `id` |
+| `faces` | Face assignment for basal groups: `both`, `up`, or `down` |
+| `seed` | Reproducible random seed |
 
-Le dimensioni della cella sono 3 × bond_length × nx e √3 × bond_length × ny.
-La rimozione dei carboni pendenti modifica il conteggio finale. OH ed epossidi
-richiedono siti basali; carbonili e carbossili richiedono bordi o difetti.
-Il programma riporta i conteggi effettivi; una richiesta non realizzabile o una
-ricerca di posizionamento fallita termina con errore, senza ridurre i conteggi.
+Unit cell dimensions are $3 \times \text{bond\_length} \times nx$ and $\sqrt{3} \times \text{bond\_length} \times ny$.
+Pruning dangling carbons updates the final atom count. Hydroxyls and epoxides require
+basal aromatic sites; carbonyls and carboxyls require edge or vacancy boundaries.
+The generator reports actual group counts; requests exceeding site capacity or
+unresolvable packing collisions fail gracefully with exit code 1 without truncating counts.
 
-XPS può guidare la scelta dei conteggi, ma non è obbligatorio. Questa versione
-riceve conteggi, non interpreta automaticamente uno spettro o una percentuale.
-I conteggi sono gruppi chimici: un epossido coinvolge due carboni.
+Experimental XPS data can inform group ratios, but automatic spectral interpretation
+is out of scope. Counts represent chemical groups: an epoxide spans two carbons.
 
-### Come avviene la costruzione
+### Construction Details
 
-Il reticolo nasce da celle esagonali analitiche di quattro C, con C–C iniziale
-di 1,42 Å. I legami vengono registrati durante la generazione. Vacanze e buchi
-rimuovono atomi dal grafo; i carboni pendenti vengono eliminati e il foglio deve
-restare connesso. Si scelgono poi i siti: OH ed epossidi sul piano basale,
-carbonile/COOH/COO sui bordi esterni o dei difetti. Un epossido occupa una coppia
-C–C; gli altri gruppi usano un sito, senza riutilizzi.
+The lattice originates from analytical hexagonal cells of four carbons (initial C–C = 1.42 Å).
+Bonds are recorded during generation. Vacancies and holes remove atoms from the graph;
+dangling carbons are pruned to keep the sheet fully connected. Functional groups are
+assigned hierarchically: OH and epoxides on basal planes, carbonyl/COOH/COO along
+outer edges and pore boundaries. Each epoxide spans one C–C pair; other groups occupy
+single carbon sites without overlapping.
 
-**La scelta è casuale per tutti i gruppi standard, salvo ID espliciti.**
-Ogni tentativo sceglie l'intera disposizione, poi aggiunge e controlla nell'ordine
-COOH, COO, carbonili, epossidi e OH. Se un posizionamento fallisce, riparte da
-una nuova disposizione, fino a 128 tentativi. Non enumera tutte le permutazioni.
-`seed` riproduce la ricerca; `faces: both` sceglie casualmente la faccia dei
-gruppi basali, senza imporre esattamente metà sopra/metà sotto. I bordi liberi
-sono infine saturati con H. Sono coordinate iniziali, da rilassare dopo aver
-assegnato i parametri.
+**Placement is randomized for standard groups unless explicit IDs are supplied.**
+Each attempt generates an entire candidate layout, validating COOH, COO, carbonyls,
+epoxides, and hydroxyls in sequence. If steric constraints are violated, up to 128
+stochastic layout attempts are evaluated. The `seed` parameter ensures exact
+reproducibility; `faces: both` randomly distributes basal groups between top and bottom
+faces without forcing an exact 50/50 split. Unfunctionalized edge carbons are saturated
+with hydrogen atoms to yield an initial unrelaxed starting geometry.
 
-Per fissare siti specifici si può sostituire un conteggio con un oggetto:
+To anchor groups at specific sites, replace group counts with an object:
 
 ```json
 "groups": {
@@ -151,21 +147,17 @@ Per fissare siti specifici si può sostituire un conteggio con un oggetto:
 }
 ```
 
-Qui OH usa il carbonio 58, mentre gli altri gruppi restano casuali. Per gli
-epossidi `id` è una lista di coppie di carboni adiacenti, per esempio
-`{"count": 1, "id": [[58, 59]]}` in una ricetta distinta. Sono gli ID stabili
-dei carboni nel JSON, prima della decorazione, non necessariamente i seriali
-del PDB. Devono esistere dopo buchi/pulizia ed essere siti chimicamente adatti.
-I siti fissati sono riservati prima della scelta casuale degli altri gruppi.
-Se manca `count` viene ricavato dagli ID; se entrambi sono presenti devono
-coincidere. Gli ID fissati non vengono sostituiti quando sono ingombrati.
-Un esempio completo è `examples/GO_mixed_sites.json`.
+Here, one hydroxyl is pinned to carbon 58, while remaining groups are placed randomly.
+For epoxides, `id` specifies pairs of adjacent carbons (e.g., `{"count": 1, "id": [[58, 59]]}`).
+IDs correspond to pre-decoration JSON carbon indices. Pinned sites are reserved prior
+to stochastic sampling and are not shifted upon steric clashes. See
+`examples/GO_mixed_sites.json` for a complete example.
 
-## Amminoacidi, PEG, peptidi e ciclodestrine
+## Covalent Functionalization (Amino Acids, PEG, Peptides, Cyclodextrins)
 
-La funzionalizzazione può essere **casuale e riproducibile**, come il
-posizionamento dei gruppi standard. Il sito reattivo del frammento resta
-esplicito; i siti sulla superficie possono essere scelti automaticamente.
+Functionalization can be **stochastic and reproducible**, mirroring standard group decoration.
+The reactive attachment atom on the fragment is explicitly designated, while surface
+attachment sites can be selected automatically.
 
 ```bash
 uv run python prepare_fragment.py --smiles 'NCC(=O)O' --inspect --json
@@ -176,20 +168,20 @@ uv run python 02_open_epoxides.py --model work/GO.json \
   --pdb work/GO_glycine.pdb
 ```
 
-Per un peptide, un PEG amminato o una ciclodestrina ammino-funzionalizzata usare
-`--input molecola.sdf` e scegliere l'atomo dalla mappa `--inspect --json`.
-L'identificativo è un indice **da 1**, conservato prima dell'aggiunta di H.
-Il sito non viene scelto dal nome della molecola: per la lisina, ad esempio,
-α-N ed ε-N sono scelte distinte. MOL2 richiede tutti gli H espliciti.
+For peptides, amino-PEG chains, or amino-functionalized cyclodextrins, supply
+`--input molecule.sdf` and inspect the atom mapping with `--inspect --json`.
+Atom indices are **1-based** and preserved prior to hydrogen addition. Reactive atoms
+are never inferred purely from molecule names: in lysine, for instance, $\alpha$-N and
+$\epsilon$-N are distinct attachment points. MOL2 inputs require explicit hydrogens.
 
-L'apertura implementata consuma un legame C–O dell'epossido, forma C–nucleofilo
-e trasferisce un H del donatore all'ossigeno rimasto. L'attacco iniziale è dal
-lato opposto al legame C–O rotto; l'OH rimane sulla faccia opposta al sostituente.
-Atomi, carica formale, origine degli atomi e stereochimica del frammento vengono
-tracciati. La ricerca considera siti e torsioni evitando sovrapposizioni gravi.
+The implemented ring-opening mechanism cleaves one epoxide C–O bond, forms a new
+C–nucleophile bond, and transfers a donor hydrogen to the remaining oxygen atom.
+Nucleophilic attack occurs from the face opposite the cleaved C–O bond; the newly
+formed hydroxyl remains on the opposite side of the graft. Atoms, formal charges,
+provenance, and fragment stereochemistry are tracked throughout.
 
-L'esempio seguente genera un GO e innesta casualmente due copie del PEG
-amminato incluso, usando metà dei quattro epossidi:
+Example: generating GO and grafting two copies of an amino-PEG fragment across half of
+the four available epoxides:
 
 ```bash
 uv run python 01_build_GO.py --recipe examples/GO_for_random_grafting.json \
@@ -200,81 +192,48 @@ uv run python 02_open_epoxides.py --model work/GO_for_PEG.json \
   --output work/GO_PEG.json --pdb work/GO_PEG.pdb
 ```
 
-Opzioni valide anche per amminoacidi e altri frammenti:
+Grafting options:
 
-| Opzione | Selezione degli innesti |
+| Option | Description |
 |---|---|
-| `--count 2` | Due innesti; i siti disponibili sono scelti casualmente per default |
-| `--id 2 3` | Opzionale: usa quei precisi anelli epossidici, identificati in `metadata.groups` |
-| `--seed 17` | Riproduce scelta dei siti e ricerca dell'orientamento, a parità di input/versione |
+| `--count 2` | Number of grafts; available epoxide sites are sampled randomly by default |
+| `--id 2 3` | Optional: targets specific epoxide rings identified in `metadata.groups` |
+| `--seed 17` | Reproducible random seed for site selection and conformer orientation |
 
-La frazione è **calcolata dall'output**, come innesti ottenuti diviso epossidi
-intatti all'inizio del comando: due su quattro danno 0,5 (50%); due su tre
-danno circa 0,667 (66,7%). Non è una flag di input. `--id` è facoltativo e può
-accompagnare `--count`: in tal caso il numero di ID deve coincidere. Con il
-solo `--id` il numero viene ricavato dalla lista. La CLI sostituisce la scelta
-della ricetta; senza opzioni usa il `count` della ricetta, oppure uno come
-default. Numero richiesto/ottenuto, frazione effettiva, siti e seme sono salvati
-in `metadata.functionalization_history` e riportati a schermo.
-Una nuova esecuzione con altro frammento usa gli epossidi rimasti, permettendo
-superfici con modifiche miste. In questa fase `--id` indica ID di **gruppo
-epossidico**, mentre gli ID nella ricetta di costruzione indicano carboni.
+The grafting fraction is **computed from output data** (grafts achieved divided by
+intact epoxides present prior to execution). In this phase, `--id` identifies
+**epoxide group IDs**, distinct from construction recipe carbon IDs. Consecutive runs
+with different fragments consume remaining intact epoxides, enabling heterogeneous
+surface functionalization.
 
-Il campionamento usa siti mescolati e rifiuto degli ingombri: non promette
-equiprobabilità fra siti accettati o una distribuzione termodinamica. Ruota
-il frammento attorno al nuovo legame; la sua conformazione interna rimane
-quella preparata o fornita. La faccia dell'innesto è opposta all'ossigeno
-dell'epossido scelto. Per il foglio nativo `faces` nella ricetta di costruzione
-controlla la distribuzione iniziale degli ossigeni sulle due facce.
+Fragment search samples torsional rotations around the newly formed bond while
+preserving internal fragment geometry. Graft orientation faces away from the target
+epoxide oxygen. If requested loadings cannot be accommodated without steric clashes,
+the command issues a warning and exits with code 1 without saving a partial model.
+With `--json`, structured diagnostic metadata is returned.
 
-### Superficie insufficiente o ingombri irrisolvibili
+**Newly formed junctions require parameterization.** `03_prepare_amber.py` rejects
+modified models until valid `--parameter-templates` are supplied, including atom types,
+charges, and dedicated `frcmod` files. Epoxide partial charges are not reused on
+opened products. See [FRAGMENTS.md](docs/FRAGMENTS.md) and [CHARGES.md](docs/CHARGES.md).
 
-Per gruppi standard e frammenti, una richiesta non raggiunta produce
-`[WARNING]` e stato `INCOMPLETE`, con conteggi richiesti, miglior disposizione
-provata quando disponibile, capacità dei siti e numero di tentativi. La capacità
-residua dei gruppi standard considera già i carboni riservati da ID espliciti.
-I suggerimenti indicano se aumentare il foglio, ridurre il caricamento, cambiare
-seme/siti o provare un altro conformero del frammento.
+Pertinent literature is discussed in [FUNCTIONALIZATION_LITERATURE.md](docs/FUNCTIONALIZATION_LITERATURE.md).
+The anti-addition mechanism represents the design choice implemented in this workbench.
 
-Le quantità superiori alla capacità nota vengono segnalate prima della ricerca.
-Il fallback geometrico prova altre disposizioni, siti e orientamenti nei limiti
-descritti. A esaurimento il comando termina con codice 1 e non salva un modello
-parziale. Il miglior tentativo non dimostra il massimo caricamento fisicamente
-possibile. Con `--json` la stessa diagnostica è un unico oggetto strutturato.
+## Amber Topologies, Periodicity, Docking & MM/GBSA
 
-Il prodotto è una geometria iniziale, non una traiettoria di reazione o una
-struttura equilibrata. Sono implementati donatori neutri amminici, alcolici e
-tiolici con un H trasferibile e valenze supportate. Ammidi e ammine già
-protonate non vengono trattate automaticamente come ammine nucleofile.
-La protonazione del prodotto alle condizioni della MD va definita e
-parametrizzata esplicitamente.
+Supported Amber execution centers on **finite covalent flakes**, solvated within
+periodic boundary solvent boxes. Covalent bonds spanning periodic boundaries in
+infinite lattice graphs are preserved in JSON models, but export to Amber/GROMACS is
+gated pending engine-level verification. PDB coordinates do not preserve image shifts.
+`examples/periodic_GO.json` demonstrates graph connectivity, not production Amber MD.
 
-**La nuova giunzione deve essere parametrizzata.** 03 rifiuta il prodotto finché
-non riceve `--parameter-templates` con una mappa completa e tracciabile di
-atomi/tipi/cariche, legami e un `frcmod` dedicato. Non riutilizza automaticamente
-le cariche dell'epossido intatto sul prodotto. Dettagli e schema in
-[FRAGMENTS.md](docs/FRAGMENTS.md) e [CHARGES.md](docs/CHARGES.md).
+Receptors for docking and MM/GBSA comprise the GO sheet **plus all covalent functionalizations**.
+Retain the Amber topology as the definitive reference when preparing PDBQT files:
+atom ordering, partial charges, and bonding in docking inputs must remain consistent
+with MD topologies.
 
-I due articoli indicati dall'utente sono discussi in
-[FUNCTIONALIZATION_LITERATURE.md](docs/FUNCTIONALIZATION_LITERATURE.md).
-La modalità anti è la scelta costruttiva richiesta dall'utente; non viene
-presentata come stereochimica misurata in quei lavori.
-
-## Amber, periodicità, docking e MM/GBSA
-
-Il percorso Amber supportato è **foglio covalente finito**, anche in una scatola
-di solvente periodica. I legami che attraversano le immagini di un reticolo
-covalente infinito vengono conservati nel JSON, ma l'esportazione di quel
-reticolo verso Amber o attraverso Amber verso GROMACS è bloccata finché non
-esiste una verifica specifica del motore. Il PDB non conserva gli spostamenti
-di immagine. `examples/periodic_GO.json` dimostra il grafo, non una MD Amber.
-
-Il recettore per il docking/GBSA è GO **più tutte le modifiche covalenti**.
-Mantenere la topologia Amber come riferimento anche se si prepara un PDBQT:
-cariche, ordine degli atomi e legami usati nel docking non devono sostituire
-automaticamente quelli del modello MD.
-
-### Recettore nativo oppure equilibrato e box tridimensionali
+### Receptor Preparation and 3D Bounding Boxes
 
 ```bash
 uv run python 04_prepare_docking_receptor.py \
@@ -283,46 +242,38 @@ uv run python 04_prepare_docking_receptor.py \
   --output-dir work/GO_snapshot
 ```
 
-Per REGOX usare `--receptor-mask ':1-628'`. Una topologia costruita da zero può
-avere numerazione diversa: leggere le maschere prodotte da 03, senza riutilizzare
-questi conteggi. Si può passare anche un NetCDF con `--frame N` (indice da 1).
-Il recettore deve contenere interamente le molecole covalenti selezionate;
-una funzionalizzazione covalente non va esclusa dalla maschera.
+For REGOX models, use `--receptor-mask ':1-628'`. Freshly generated topologies may
+differ in numbering: inspect masks produced by script 03. NetCDF trajectories can be
+sampled with `--frame N` (1-based). The receptor mask must encompass the entire covalent
+sheet and any attached grafts.
 
-04 riunisce le immagini del foglio finito seguendo i legami e conserva la sua
-forma tridimensionale. Scrive `receptor.parm7`, `receptor.rst7`, `receptor.pdb`,
-il grafo e `boxes.json`. I box coprono il volume della struttura, comprese
-ondulazioni e ripiegamenti; non assumono due piani z. Anche cavità non
-accessibili possono rientrare nei box: l'accessibilità non viene certificata.
+Script 04 stitches finite flake images across boundaries following explicit bonds while
+preserving out-of-plane corrugations. It outputs `receptor.parm7`, `receptor.rst7`,
+`receptor.pdb`, molecular graphs, and `boxes.json`. Grid boxes span the true 3D envelope
+rather than assuming idealized planar sheets.
 
-### Vina e GNINA empirico
+### AutoDock Vina & Empirical GNINA Docking
 
-Con GNINA si possono usare direttamente PDB del recettore e SDF del ligando:
+GNINA allows direct input of receptor PDB and ligand SDF files:
 
 ```bash
 uv run python 05_dock_boxes.py --boxes work/GO_snapshot/boxes.json \
   --receptor work/GO_snapshot/receptor.pdb --ligand ligand.sdf \
-  --engine gnina --gnina /percorso/gnina --cpus 8 \
+  --engine gnina --gnina /path/to/gnina --cpus 8 \
   --runs 3 --exhaustiveness 16 --num-modes 10 \
   --output-dir work/dock_gnina --run
 ```
 
-Il worker imposta `--scoring vina --cnn_scoring none --no_gpu
---pose_sort_order Energy`. Con Vina usare `--engine vina`, recettore e ligando
-PDBQT già preparati e un eseguibile Vina installato (o indicato con `--vina /percorso/vina`).
-Entrambi ricevono `--cpu` esplicito; `--exhaustiveness` controlla la ricerca e
-non sostituisce la richiesta di risorse Slurm. I run e i box sono sequenziali.
-Senza `--run` viene scritto soltanto il piano; `--slurm --run` invia il worker
-che eseguirà il docking. Log, semi, hash e pose migliori sono registrati.
-Dettagli in [DOCKING_BOXES.md](docs/DOCKING_BOXES.md).
+The execution worker sets `--scoring vina --cnn_scoring none --no_gpu --pose_sort_order Energy`.
+For AutoDock Vina, use `--engine vina` with pre-prepared PDBQT files and specify `--vina /path/to/vina`.
+Resource allocation (`--cpus`) and search depth (`--exhaustiveness`) are passed explicitly.
+Without `--run`, the script writes execution plans; `--slurm --run` submits jobs to the scheduler.
+Logs, random seeds, input hashes, and top poses are recorded. Details in [DOCKING_BOXES.md](docs/DOCKING_BOXES.md).
 
-Il vecchio comando `sed` ricordato dall'utente sostituiva `0.000 OA` con
-`-0.342 OA`: cambiava la carica, non il tipo OA. Non è una correzione generale
-dei tipi PDBQT e non viene applicato. Lo scoring Vina standard ignora le
-cariche parziali fornite; le cariche Amber restano quelle della topologia.
-Vedere la [FAQ ufficiale di Vina](https://autodock-vina.readthedocs.io/en/latest/faq.html).
+Standard Vina empirical scoring does not utilize supplied partial charges; Amber partial
+charges remain governed by the topology. Refer to the [Official AutoDock Vina FAQ](https://autodock-vina.readthedocs.io/en/latest/faq.html).
 
-### Assemblaggio per MD e MM/GBSA
+### Complex Assembly for MD & MM/GBSA
 
 ```bash
 uv run python 06_assemble_docked_complex.py \
@@ -332,26 +283,23 @@ uv run python 06_assemble_docked_complex.py \
   --output-dir work/complex_pose1
 ```
 
-Le coordinate devono essere complete e già nello stesso riferimento della
-posa. Non si ricostruiscono gli H da PDBQT. Per più ligandi simultanei ripetere
-le due opzioni ligando; pose alternative sovrapposte richiedono complessi
-separati. L'assemblaggio conserva i legami interni e non crea legami fra
-recettore e contaminante. Le maschere sono calcolate dalla topologia risultante.
-Dettagli in [DOCKING.md](docs/DOCKING.md).
+Coordinates must be complete and defined in the docked reference frame; missing hydrogens
+are not reconstructed from PDBQT. Multiple ligands can be specified by repeating flags;
+overlapping candidate poses require separate complex assemblies. Assembly preserves
+intramolecular bonds and does not introduce covalent bonds between receptor and ligand.
+Masks are extracted directly from the resulting topology. Details in [DOCKING.md](docs/DOCKING.md).
 
-03 permette `--radii bondi|mbondi|mbondi2|mbondi3`; scegliere raggi coerenti con
-il modello GB e mantenerli uguali fra recettore, ligando e complesso. La
-compatibilità tecnica GBSA non dimostra l'accuratezza del modello del GO.
-Il legame covalente GO–funzionalizzazione resta dentro il recettore e non va
-tagliato per un normale calcolo di binding del contaminante.
+Script 03 supports `--radii bondi|mbondi|mbondi2|mbondi3`; select GB radii consistently
+across receptor, ligand, and complex. Technical GBSA execution does not inherently validate
+GO parameter accuracy. Covalent functionalization bonds reside within the receptor mask
+and must not be severed during binding affinity evaluations.
 
-`import_Amber.py` importa topologie esistenti con coordinate esplicite. Conserva la cella
-reale, oppure `null` se assente; non inventa legami o cariche formali. Riconosce
-come siti di apertura soltanto epossidi basali `EPX` con il grafo locale atteso.
-Altri nomi/motivi richiedono un'annotazione esplicita. Amber non conserva gli
-ordini chimici di legame: l'importazione numerica non li ricostruisce.
+`import_Amber.py` imports existing topologies with explicit coordinates, preserving unit
+cell parameters (`null` if absent) without inferring missing bonds or formal charges.
+It identifies basal `EPX` epoxides matching expected local graph patterns. Amber topologies
+do not store bond orders: numerical import does not guess chemical hybridization.
 
-## Cariche: confronto e validazione
+## Charge Derivation: Audits & Validation
 
 ```bash
 uv run python audit_charges.py --output-dir work/charge_audit
@@ -359,13 +307,12 @@ uv run python 01_build_GO.py --recipe examples/QM_sheet.json --output work/QM.js
 uv run python prepare_QM.py --model work/QM.json --output-dir work/QM_reference
 ```
 
-`prepare_QM.py` prepara un single point HF/6-31G* con ESP MK e un fit RESP esplorativo.
-Gaussian e RESP non partono automaticamente. Il protocollo proposto non viene
-attribuito retroattivamente alle cariche CURRENT, di cui l'utente riferisce una
-parametrizzazione Amber dei singoli frammenti.
+`prepare_QM.py` generates single-point HF/6-31G* inputs with Merz-Kollman (MK) ESP grids
+and exploratory RESP fitting scripts. Gaussian (`g16`) and RESP calculations do not run
+automatically.
 
-Dopo Gaussian, controllare convergenza e terminazione; lo script generato
-`prepare_resp.sh` usa AmberTools esterno. Importare la griglia e confrontare:
+Following QM completion and convergence verification, the generated `prepare_resp.sh`
+script invokes AmberTools. Import ESP grids and evaluate candidate charges:
 
 ```bash
 uv run python go.py esp-import --esp-file reference.esp --model work/QM.json \
@@ -374,21 +321,20 @@ uv run python compare_ESP.py --reference work/reference.json \
   --candidates candidates.json --output-dir work/ESP_comparison
 ```
 
-`candidates.json` associa nomi a modelli con stessi ID, elementi e coordinate,
-più le cariche da verificare. Geometria, protonazione e carica totale devono
-coincidere. Non vengono inventate corrispondenze o rinormalizzate cariche.
-Servono frammenti e conformazioni comuni prima di scegliere fra CURRENT, OLD e
-OPLS; un punteggio ESP isolato non seleziona automaticamente il force field
-migliore per l'adsorbimento. Vedere [CHARGES.md](docs/CHARGES.md).
+`candidates.json` maps model identifiers to identical geometries and atom orderings,
+contrasting candidate partial charge assignments. Total charge and protonation states
+must match exactly. Common fragment topologies are required before benchmarking
+CURRENT, OLD, and OPLS sets; isolated ESP scores alone do not determine optimal
+adsorption force fields. See [CHARGES.md](docs/CHARGES.md).
 
-## Esecuzione locale e Slurm
+## Local Execution & Slurm Integration
 
-La creazione del grafene con `01_build_GO.py` o `go.py build` è locale:
-accetta ricette personalizzate o preset e non espone opzioni Slurm. `--dry-run`
-mostra il comando locale senza creare il modello o file di invio.
+Graphene sheet generation via `01_build_GO.py` or `go.py build` runs locally:
+it accepts custom recipes or presets and does not expose Slurm flags. `--dry-run`
+prints execution commands without writing models or submission scripts.
 
-Gli altri stadi mantengono lo stesso worker per esecuzione locale e Slurm.
-Per esempio, per preparare gli input Amber sul cluster:
+Downstream pipeline stages share unified worker scripts for local and Slurm execution.
+For example, preparing Amber inputs on an HPC cluster:
 
 ```bash
 uv run python 03_prepare_amber.py --model work/GO.json \
@@ -396,25 +342,24 @@ uv run python 03_prepare_amber.py --model work/GO.json \
   --time 00:10:00 --partition ciamician_cpu
 ```
 
-Opzioni comuni agli stadi successivi alla creazione: `--slurm`, `--dry-run`, `--submission-dir`, `--cpus`, `--memory`,
-`--time`, `--partition`, `--account`, `--setup`, `--python`, `--json`.
-`--setup /percorso/site_setup.sh` inizializza i moduli del proprio sistema;
-`--python` indica l'interprete disponibile sul worker. Non sono scelti moduli o
-partizioni automaticamente. `--slurm --dry-run` scrive un worker verificabile
-senza inviarlo; la ricevuta registra comando, hash e ID realmente restituito.
-Gli input relativi sono risolti nella directory da cui si lancia il comando.
+Common flags across downstream stages: `--slurm`, `--dry-run`, `--submission-dir`,
+`--cpus`, `--memory`, `--time`, `--partition`, `--account`, `--setup`, `--python`, `--json`.
+`--setup /path/to/site_setup.sh` initializes cluster modules; `--python` specifies
+the worker Python interpreter. Slurm modules and partitions are never chosen automatically.
+`--slurm --dry-run` generates inspectable job scripts without submitting; submission
+receipts track executed commands, script hashes, and scheduler job IDs.
 
-## Stato e differenze dagli originali
+## Validation Status & Original Baselines
 
-[VALIDATION.md](VALIDATION.md) distingue prove completate e scienza ancora da
-validare. [COMPARISON.md](docs/COMPARISON.md) confronta il metodo con HierGO e
-GOPY. I file originali copiati sono registrati in
-`resources/reference/SOURCES.json`; HierGO/OPLS mantiene commit, hash e licenza
-in `resources/reference/opls/PROVENANCE.json`.
+[VALIDATION.md](VALIDATION.md) delineates completed regression benchmarks from
+ongoing scientific parameterization. [COMPARISON.md](docs/COMPARISON.md) compares
+methodologies against HierGO and GOPY. Original reference files are indexed in
+`resources/reference/SOURCES.json`; HierGO/OPLS tracks commit SHAs, file hashes,
+and upstream licenses in `resources/reference/opls/PROVENANCE.json`.
 
 ## Citation & License
 
 This project is licensed under the [Apache 2.0 License](LICENSE).
 
-If you use this workbench or its parameterization methodologies in your research, please cite this repository using the metadata in [CITATION.cff](CITATION.cff).
-
+If you use this workbench or its parameterization methodologies in your research,
+please cite this repository using the metadata provided in [CITATION.cff](CITATION.cff).
