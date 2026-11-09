@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software or its parameterization toolchain, please cite this repository."
+title: "go-surface-workbench"
+type: software
+license: Apache-2.0
+repository-code: "https://github.com/CalzaAlessandro/go-surface-workbench"
+authors:
+  - family-names: "Calza"
+    given-names: "Alessandro"
+    affiliation: "NanoBio Interface Lab, Dipartimento di Chimica “Giacomo Ciamician,” Alma Mater Studiorum – Università di Bologna, 40129 Bologna, Italy; IRCCS Azienda Ospedaliero – Universitaria di Bologna, Preclinical & Translational Research in Oncology lab (PRO), 40138 Bologna, Italy"
+    orcid: "https://orcid.org/0009-0002-3700-3240"

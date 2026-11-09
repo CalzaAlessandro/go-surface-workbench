@@ -2,6 +2,7 @@
 
 [![Status: Under Active Development](https://img.shields.io/badge/status-active%20development-orange.svg)]()
 [![Python: >=3.11](https://img.shields.io/badge/python-3.11+-blue.svg)]()
+[![License: Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
 > [!IMPORTANT]
 > **Work in Progress / Active Research Repository**
@@ -410,3 +411,10 @@ validare. [COMPARISON.md](docs/COMPARISON.md) confronta il metodo con HierGO e
 GOPY. I file originali copiati sono registrati in
 `resources/reference/SOURCES.json`; HierGO/OPLS mantiene commit, hash e licenza
 in `resources/reference/opls/PROVENANCE.json`.
+
+## Citation & License
+
+This project is licensed under the [Apache 2.0 License](LICENSE).
+
+If you use this workbench or its parameterization methodologies in your research, please cite this repository using the metadata in [CITATION.cff](CITATION.cff).
+
