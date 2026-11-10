@@ -1,0 +1,31 @@
+name: Tests
+
+'on':
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          python-version: '3.12'
+
+      - name: Install dependencies from lockfile
+        run: uv sync --frozen
+
+      - name: Run unit test suite
+        run: uv run pytest -v
+
+      - name: Run minimal example
+        run: uv run python examples/quickstart/run_quickstart.py --output-dir "$RUNNER_TEMP/quickstart"

@@ -1,0 +1,23 @@
+{
+  "title": "GO Workbench",
+  "description": "Preliminary research software for graphene oxide generation with explicit connectivity, optional covalent functionalization and parameterization workflows. New parameters and charge models require scientific validation before production use.",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Calza, Alessandro",
+      "affiliation": "NanoBio Interface Lab, Dipartimento di Chimica “Giacomo Ciamician,” Alma Mater Studiorum – Università di Bologna, 40129 Bologna, Italy; IRCCS Azienda Ospedaliero – Universitaria di Bologna, Preclinical & Translational Research in Oncology lab (PRO), 40138 Bologna, Italy",
+      "orcid": "0009-0002-3700-3240"
+    }
+  ],
+  "license": "apache-2.0",
+  "access_right": "open",
+  "version": "0.1.0",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/CalzaAlessandro/go-surface-workbench",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "publication_date": "2026-11-10"
+}

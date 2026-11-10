@@ -1,5 +1,5 @@
 <a id="go-builder-go-surface-workbench"></a>
-<h1 align="center">GO Builder</h1>
+<h1 align="center">GO Workbench</h1>
 
 Generate graphene oxide sheets with explicit connectivity and optional covalent functionalization.
 
@@ -14,8 +14,14 @@ Generate graphene oxide sheets with explicit connectivity and optional covalent 
   <a href="#generating-a-graphene-oxide-sheet">Build a sheet</a> ·
   <a href="docs/FRAGMENTS.md">Functionalize</a> ·
   <a href="docs/CHARGE_PRESETS.md">Charge presets</a> ·
+  <a href="docs/QUICKSTART.md">Quickstart</a> ·
   <a href="VALIDATION.md">Validation</a>
 </p>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/banner_dark.svg">
+  <img src="docs/images/banner.svg" width="100%" alt="A stylized GO sheet on a workbench with a hammer, illustrating model construction">
+</picture>
 
 > [!NOTE]
 > New parameters, charges and topologies are preliminary.

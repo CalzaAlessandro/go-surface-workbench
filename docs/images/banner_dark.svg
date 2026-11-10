@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="350" viewBox="0 0 1600 350" role="img">
+    <title>GO Workbench</title><desc>A stylized graphene oxide sheet on a workbench, with a hammer illustrating model construction. Schematic, not a calculated molecular structure.</desc><style>text {font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif}</style>
+    <rect width="1600" height="350" rx="12" fill="#0b1524"/>
+          <text x="74" y="116" font-size="56" font-weight="700" fill="#f1f5f9">GO Workbench</text>
+          <text x="77" y="163" font-size="26" fill="#94a3b8">Graphene oxide model construction</text>
+          <path d="M78 199 H419" stroke="#2dd4bf" stroke-width="4"/>
+          <text x="77" y="243" font-size="22" fill="#94a3b8">Build · Functionalize · Prepare inputs</text>
+          <g transform="translate(820 0) scale(.88)">
+    <g stroke-linejoin="round" stroke-linecap="round">
+      <!-- Bench, with a top and two braced legs. -->
+      <path d="M137 248 H548 V264 H137 Z" fill="#172b40" stroke="#cbd5e1" stroke-width="4"/>
+      <path d="M137 248 L189 204 H601 L548 248 Z" fill="#24425a" stroke="#cbd5e1" stroke-width="4"/>
+      <path d="M170 266 V366 H190 V266 M510 266 V366 H530 V266" fill="#172b40" stroke="#cbd5e1" stroke-width="4"/>
+      <path d="M190 326 H510" stroke="#cbd5e1" stroke-width="9"/>
+      <path d="M556 258 V332 H575 V242" fill="none" stroke="#cbd5e1" stroke-width="4"/>
+      <!-- GO is an illustrative molecular lattice, not a calculated structure. -->
+      <g transform="translate(218 120) matrix(1 .08 -.38 .55 0 0)">
+        <g fill="none" stroke="#38bdf8" stroke-width="3.4"><path d="M-30.0,0.0 L-15.0,-25.981"/><path d="M-30.0,0.0 L-15.0,25.981"/><path d="M-30.0,51.962 L-15.0,25.981"/><path d="M-30.0,51.962 L-15.0,77.942"/><path d="M-30.0,103.923 L-15.0,77.942"/><path d="M-30.0,103.923 L-15.0,129.904"/><path d="M-15.0,-25.981 L15.0,-25.981"/><path d="M-15.0,25.981 L15.0,25.981"/><path d="M-15.0,77.942 L15.0,77.942"/><path d="M-15.0,129.904 L15.0,129.904"/><path d="M15.0,-25.981 L30.0,0.0"/><path d="M15.0,25.981 L30.0,0.0"/><path d="M15.0,25.981 L30.0,51.962"/><path d="M15.0,77.942 L30.0,51.961"/><path d="M15.0,77.942 L30.0,51.962"/><path d="M15.0,77.942 L30.0,103.923"/><path d="M15.0,129.904 L30.0,103.923"/><path d="M15.0,129.904 L30.0,155.885"/><path d="M30.0,-0.0 L60.0,-0.0"/><path d="M30.0,51.961 L60.0,51.961"/><path d="M30.0,51.962 L60.0,51.962"/><path d="M30.0,103.923 L60.0,103.923"/><path d="M30.0,155.885 L60.0,155.885"/><path d="M60.0,0.0 L75.0,-25.981"/><path d="M60.0,-0.0 L75.0,25.981"/><path d="M60.0,51.961 L75.0,77.942"/><path d="M60.0,51.962 L75.0,25.981"/><path d="M60.0,51.962 L75.0,77.942"/><path d="M60.0,103.923 L75.0,77.942"/><path d="M60.0,103.923 L75.0,129.904"/><path d="M60.0,155.885 L75.0,129.904"/><path d="M75.0,-25.981 L105.0,-25.981"/><path d="M75.0,25.981 L105.0,25.981"/><path d="M75.0,77.942 L105.0,77.942"/><path d="M75.0,129.904 L105.0,129.904"/><path d="M105.0,-25.981 L120.0,0.0"/><path d="M105.0,25.981 L120.0,0.0"/><path d="M105.0,25.981 L120.0,51.962"/><path d="M105.0,77.942 L120.0,51.961"/><path d="M105.0,77.942 L120.0,51.962"/><path d="M105.0,77.942 L120.0,103.923"/><path d="M105.0,129.904 L120.0,103.923"/><path d="M105.0,129.904 L120.0,155.885"/><path d="M120.0,-0.0 L150.0,-0.0"/><path d="M120.0,51.961 L150.0,51.961"/><path d="M120.0,51.962 L150.0,51.962"/><path d="M120.0,103.923 L150.0,103.923"/><path d="M120.0,155.885 L150.0,155.885"/><path d="M150.0,0.0 L165.0,-25.981"/><path d="M150.0,-0.0 L165.0,25.981"/><path d="M150.0,51.961 L165.0,77.942"/><path d="M150.0,51.962 L165.0,25.981"/><path d="M150.0,51.962 L165.0,77.942"/><path d="M150.0,103.923 L165.0,77.942"/><path d="M150.0,103.923 L165.0,129.904"/><path d="M150.0,155.885 L165.0,129.904"/><path d="M165.0,-25.981 L195.0,-25.981"/><path d="M165.0,25.981 L195.0,25.981"/><path d="M165.0,77.942 L195.0,77.942"/><path d="M165.0,129.904 L195.0,129.904"/><path d="M195.0,-25.981 L210.0,0.0"/><path d="M195.0,25.981 L210.0,0.0"/><path d="M195.0,25.981 L210.0,51.962"/><path d="M195.0,77.942 L210.0,51.961"/><path d="M195.0,77.942 L210.0,51.962"/><path d="M195.0,77.942 L210.0,103.923"/><path d="M195.0,129.904 L210.0,103.923"/><path d="M195.0,129.904 L210.0,155.885"/><path d="M210.0,-0.0 L240.0,-0.0"/><path d="M210.0,51.961 L240.0,51.961"/><path d="M210.0,51.962 L240.0,51.962"/><path d="M210.0,103.923 L240.0,103.923"/><path d="M210.0,155.885 L240.0,155.885"/><path d="M240.0,0.0 L255.0,-25.981"/><path d="M240.0,-0.0 L255.0,25.981"/><path d="M240.0,51.961 L255.0,77.942"/><path d="M240.0,51.962 L255.0,25.981"/><path d="M240.0,51.962 L255.0,77.942"/><path d="M240.0,103.923 L255.0,77.942"/><path d="M240.0,103.923 L255.0,129.904"/><path d="M240.0,155.885 L255.0,129.904"/><path d="M255.0,-25.981 L285.0,-25.981"/><path d="M255.0,25.981 L285.0,25.981"/><path d="M255.0,77.942 L285.0,77.942"/><path d="M255.0,129.904 L285.0,129.904"/><path d="M285.0,-25.981 L300.0,0.0"/><path d="M285.0,25.981 L300.0,0.0"/><path d="M285.0,25.981 L300.0,51.962"/><path d="M285.0,77.942 L300.0,51.962"/><path d="M285.0,77.942 L300.0,103.923"/><path d="M285.0,129.904 L300.0,103.923"/></g>
+        <g fill="none" stroke="#fb923c" stroke-width="4">
+          <path d="M60 0 L60 -40"/>
+          <path d="M195 25.981 L195 -13"/>
+          <path d="M285 129.904 L285 171"/>
+          <path d="M75 -25.981 L90 -62 L105 -25.981"/>
+        </g>
+        <g font-size="20" font-weight="600" fill="#fb923c" stroke="none">
+          <text x="47" y="-47">OH</text><text x="181" y="-21">OH</text>
+          <text x="272" y="193">OH</text><text x="82" y="-69">O</text>
+        </g>
+      </g>
+      <!-- Hammer in motion above the sheet. -->
+      <g transform="translate(505 73) rotate(31)">
+        <rect x="-10" y="5" width="20" height="123" rx="7" fill="#2dd4bf" stroke="#0f766e" stroke-width="3"/>
+        <path d="M-48 -24 H25 L51 -7 L47 7 L24 -3 H-48 Z" fill="#cbd5e1" stroke="#cbd5e1" stroke-width="4"/>
+        <path d="M-48 -25 H-33 V7 H-48 Z" fill="#94a3b8"/>
+      </g>
+      <g fill="none" stroke="#2dd4bf" stroke-width="3.5">
+        <path d="M412 57 L398 38 M396 81 L372 73 M435 43 L433 19"/>
+      </g>
+    </g></g></svg>

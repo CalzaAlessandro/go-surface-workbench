@@ -1,8 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this software or its parameterization toolchain, please cite this repository."
-title: "go-surface-workbench"
+title: "GO Workbench"
 type: software
 license: Apache-2.0
+version: "0.1.0"
+date-released: "2026-11-10"
 repository-code: "https://github.com/CalzaAlessandro/go-surface-workbench"
 authors:
   - family-names: "Calza"
