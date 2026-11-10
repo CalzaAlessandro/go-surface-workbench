@@ -1,8 +1,21 @@
-# GO Builder (`go-surface-workbench`)
+<a id="go-builder-go-surface-workbench"></a>
+<h1 align="center">GO Builder</h1>
 
-[![Status: Under Active Development](https://img.shields.io/badge/status-active%20development-orange.svg)]()
-[![Python: >=3.11](https://img.shields.io/badge/python-3.11+-blue.svg)]()
-[![License: Apache-2.0](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+General-purpose graphene oxide generator with explicit connectivity.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Active%20development-9A6700?style=flat" alt="Status: active development">
+  <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-%E2%89%A53.11-58616B?style=flat" alt="Python: 3.11 or later"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-607D8B?style=flat" alt="License: Apache-2.0"></a>
+</p>
+
+<p align="center">
+  <a href="#installation--environment-setup">Install</a> ·
+  <a href="#generating-a-graphene-oxide-sheet">Build a sheet</a> ·
+  <a href="docs/FRAGMENTS.md">Functionalize</a> ·
+  <a href="docs/CHARGE_PRESETS.md">Charge presets</a> ·
+  <a href="VALIDATION.md">Validation</a>
+</p>
 
 > [!IMPORTANT]
 > **Work in Progress / Active Research Repository**
@@ -23,8 +36,7 @@ GAFF2–AIM reference with original charges and Lennard-Jones parameters, alongs
 current libraries and the HierGO/OPLS reference. New charge derivation protocols
 focus on RESP; general assignment across all presets is ongoing.
 
-General-purpose graphene oxide generator with explicit connectivity. This
-directory contains code, examples, test suites, and parameter copies with full
+This directory contains code, examples, test suites, and parameter copies with full
 provenance; it does not distribute Amber or Gaussian binaries. Legacy GOX/REGOX
 corrected models and OLD parameters serve as reference points and are neither rebuilt
 nor overwritten automatically. Alignment inputs are maintained with backups as

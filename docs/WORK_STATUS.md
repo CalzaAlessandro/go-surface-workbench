@@ -1,91 +1,98 @@
 > Historical baseline record. The current builder has 287 passing tests and local-only GO creation; current parameterization/preset status is documented in README, LAYERONE_PRESETS and research/parameterization.
 
-> **Nota sulla snapshot:** questo documento conserva lo stato di lavoro registrato il 29 ottobre 2026. La cartella `validation/`, gli archivi di output e i binari citati nei resoconti sono stati esclusi dalla snapshot; i relativi risultati qui riassunti non sono quindi verificabili dai soli file inclusi.
+> **Snapshot note:** this document preserves the work status recorded on 29 October 2026. The `validation/` folder, output archives, and binaries cited in the reports were excluded from the snapshot; the results summarized here therefore cannot be verified from the included files alone.
 
-# Stato di lavoro — 29 ottobre 2026
+<a id="stato-di-lavoro--29-ottobre-2026"></a>
+# Work status — 29 October 2026
 
-Il focus richiesto dall'utente è creare e funzionalizzare il GO. Il percorso
-principale è 01_build_GO.py → 02_open_epoxides.py (opzionale) →
-03_prepare_amber.py, con prepare_fragment.py per i reagenti.
+The user's requested focus is GO creation and functionalization. The main
+workflow is 01_build_GO.py → 02_open_epoxides.py (optional) →
+03_prepare_amber.py, with prepare_fragment.py for reagents.
 
-## Implementato e verificato
+<a id="implementato-e-verificato"></a>
+## Implemented and verified
 
-- Grafo esplicito, reticolo finito/xy-periodico, buchi, vacanze, conteggi esatti
-  OH/epoxide/carbonyl/COOH/COO, terminazioni H e semi riproducibili.
-- Apertura anti con frammento N/O/S supportato, H trasferito, connettività,
-  carica formale e identità conservate; normale locale e gestione delle immagini.
-- Interfaccia semplificata: --count e --id facoltativo, --seed; random per
-  default e frazione calcolata dall'output. Rimossa la selezione per frazione.
-  Anche i gruppi classici accettano {count,id}: ID dei carboni riservati prima
-  dei siti casuali; per epossidi liste di coppie C-C.
-- PlacementError su richieste valide ma non raggiunte: WARNING, INCOMPLETE,
-  capacità nota, miglior conteggio provato e tentativi, suggerimenti; exit1,
-  nessun modello parziale. Classic fallback128disposizioni; innesti cercano
-  siti/regioisomeri/torsioni alternative. Non si deduce un massimo fisico.
-- Prove CLI reali: GO con gruppi standard, due PEG su quattro epossidi, lisina
-  tramite epsilon-N e Gly-Gly tramite terminale N. Dati e log in
-  validation/final/generation_and_random_functionalization. Nuove prove con
-  count/id, siti classici, warning lisina, capacità e128tentativi esauriti in
-  validation/final/count_id_and_warnings; vecchie ricevute sono storiche.
-- Revisione indipendente del nuovo selettore: corretto un caso di input ID
-  non hashabile; riproducibilità, selettori e contabilità senza altri difetti.
-- 258 test passati; Ruff pulito (33file). 14 entry point con help/Slurm, worker Slurm
-  eseguito localmente produce lo stesso modello del comando seriale.
-- Amber LEaP + Sander GB su cluster: job1374053 COMPLETED0:0, 179atomi,
-  232legami, q−1; graph/q/coordinate preservati. GROMACS roundtrip numerico
-  verificato; nessun grompp o confronto energetico fra motori.
-- Audit finale CURRENT GAFF2/OLD/OPLS, provenienza e 51copie originali
-  verificate. Gaussian/RESP preparati, non eseguiti.
+- Explicit graph, finite/xy-periodic lattice, holes, vacancies, exact
+  OH/epoxide/carbonyl/COOH/COO counts, H terminations, and reproducible seeds.
+- Anti opening with a supported N/O/S fragment, transferred H, and preserved
+  connectivity, formal charge, and identity; local normal and image handling.
+- Simplified interface: --count with optional --id, --seed; random by
+  default, with the fraction calculated from the output. Selection by fraction removed.
+  The standard groups also accept {count,id}: carbon IDs reserved before
+  random sites; lists of C-C pairs for epoxides.
+- PlacementError for valid requests that cannot be fulfilled: WARNING, INCOMPLETE,
+  known capacity, best count attempted and attempt count, suggestions; exit1,
+  no partial model. Standard groups fall back to 128 arrangements; grafts try
+  alternative sites/regioisomers/torsions. No physical maximum is inferred.
+- Actual CLI runs: GO with standard groups, two PEG grafts on four epoxides, lysine
+  through epsilon-N, and Gly-Gly through the N terminus. Data and logs in
+  validation/final/generation_and_random_functionalization. New runs with
+  count/id, standard sites, lysine warnings, capacity, and exhaustion of 128 attempts in
+  validation/final/count_id_and_warnings; older records are historical.
+- Independent review of the new selector: an unhashable ID input case
+  fixed; no further defects in reproducibility, selectors, or accounting.
+- 258 tests passed; Ruff clean (33 files). 14 entry points with help/Slurm; the Slurm worker
+  run locally produces the same model as the serial command.
+- Amber LEaP + Sander GB on the cluster: job 1374053 COMPLETED0:0, 179 atoms,
+  232 bonds, q−1; graph/q/coordinates preserved. Numerical GROMACS round trip
+  verified; no grompp or energy comparison between engines.
+- Final CURRENT GAFF2/OLD/OPLS audit, provenance, and 51 original copies
+  verified. Gaussian/RESP prepared, not run.
 
-## Integrazioni già presenti
+<a id="integrazioni-già-presenti"></a>
+## Existing integrations
 
-04 snapshot nonplanare e box3D; 05 Vina/GNINA-Vina senza CNN;
-06 assemblaggio topologie complete postdocking; 07 export GROMACS.
-Sono integrazioni successive al costruttore. Prove esterne isolate: GNINA1.3.2
-su GO reale+etanolo; MMPBSA1frame+idecomp1+EO/DEO, job1378877 COMPLETED0:0,
-CSV finiti verificati e scaricati. Gli indici EO0/DEO1 richiedono mappa frame.
-L'assemblaggio richiede tutti gli H; gli output GNINA ordinari possono
-richiedere ricostruzione esterna. Nessun nuovo sviluppo su questi moduli è
-necessario per usare il generatore.
+04 nonplanar snapshot and 3D box; 05 Vina/GNINA-Vina without CNN;
+06 assembly of complete post-docking topologies; 07 GROMACS export.
+These integrations follow the builder. Isolated external tests: GNINA 1.3.2
+on actual GO + ethanol; MMPBSA 1 frame + idecomp1 + EO/DEO, job 1378877 COMPLETED0:0,
+finite CSV values verified and downloaded. EO0/DEO1 indices require a frame map.
+Assembly requires all H atoms; standard GNINA outputs may
+require external reconstruction. No new development on these modules is
+needed to use the generator.
 
-## Manutenzione allineamento autorizzata separatamente
+<a id="manutenzione-allineamento-autorizzata-separatamente"></a>
+## Separately authorized alignment maintenance
 
-11533file HPC (11520campagna+12template+1helper), 4template locali aggiornati
-align→rms con backup. I11520input precedenti erano align first senza maschera.
-CPPTRAJ6.29.13 provato numericamente: bare/maskedalign/rms muovono tutti
-l'intero frame, erroreligando1.57e−6Å. Nessun motivo per rifare GBSA solo per
-quel comando, nessuna traiettoria o analisi di campagna ricalcolata.
-Backup HPC e helper scaricati in validation/final/alignment_migration.
-README/SHA256SUMS del vecchio VS_POLL_WORKFLOW aggiornati e verificati (147file);
-le versioni precedenti dei due documenti sono nel backup locale. autoimage
-anchor valido prima di boxnobox; limiti per fogli grandi/ripiegati in ALIGNMENT.md.
+11533 HPC files (11520 campaign + 12 templates + 1 helper), 4 local templates updated
+align→rms with backups. The 11520 previous inputs used align first without a mask.
+CPPTRAJ 6.29.13 tested numerically: bare/masked align/rms all move
+the entire frame, ligand error 1.57 × 10⁻⁶ Å. No reason to repeat GBSA solely because of
+that command; no campaign trajectory or analysis recalculated.
+HPC backups and helper downloaded to validation/final/alignment_migration.
+README/SHA256SUMS from the old VS_POLL_WORKFLOW updated and verified (147 files);
+the previous versions of the two documents are in the local backup. A valid autoimage
+anchor is required before boxnobox; limitations for large/folded sheets are in ALIGNMENT.md.
 
-## Limiti scientifici aperti
+<a id="limiti-scientifici-aperti"></a>
+## Open scientific limitations
 
-Parametrizzare le nuove giunzioni; eseguire benchmark QM/ESP comune prima
-di scegliere cariche CURRENT/OLD/OPLS; rilassare/equilibrare le strutture.
-Nessun vincitore delle cariche selezionato. Reticoli covalenti avvolgenti
-conservati nel grafo ma export Amber ancora bloccato; percorso testato finito.
-Non confondere test di formato o un singolo snapshot GBSA con validazione fisica.
+Parameterize new junctions; run a common QM/ESP benchmark before
+choosing CURRENT/OLD/OPLS charges; relax/equilibrate the structures.
+No preferred charge model selected. Winding covalent lattices
+are preserved in the graph, but Amber export remains blocked; the tested workflow is finite.
+Do not confuse format tests or a single GBSA snapshot with physical validation.
 
-## Ambiente
+<a id="ambiente"></a>
+## Environment
 
-Cartella di lavoro isolata GO_BUILDER; nessun Git al momento dello stato registrato.
-Python3.14.10, uv lock; dipendenze esportate senza editable in requirements.txt.
-CLI inseriscono src nel path; API da questa cartella con PYTHONPATH=src.
-Software copiato byte-identico da VS_POLL_WORKFLOW: Vina/vina_split1.2.7,
-MGLTools1.5.7p1 archivio Linuxx86_64, wrapper e licenze. Amber/Gaussian/GNINA
-restano esterni. Non estrarre MGLTools su filesystem macOS case-insensitive.
-Documentazione per l'utente: README.md, VALIDATION.md, docs/FRAGMENTS.md,
-docs/COMPARISON.md e docs/CHARGES.md.
+Isolated GO_BUILDER working folder; no Git at the time of the recorded status.
+Python 3.14.10, uv lock; dependencies exported without editable installs to requirements.txt.
+CLIs add src to the path; API access from this folder with PYTHONPATH=src.
+Software copied byte-for-byte from VS_POLL_WORKFLOW: Vina/vina_split 1.2.7,
+MGLTools 1.5.7p1 Linux x86_64 archive, wrappers, and licenses. Amber/Gaussian/GNINA
+remain external. Do not extract MGLTools on a case-insensitive macOS filesystem.
+User documentation: README.md, VALIDATION.md, docs/FRAGMENTS.md,
+docs/COMPARISON.md, and docs/CHARGES.md.
 
-## Confronto richiesto con GOPY/HierGO
+<a id="confronto-richiesto-con-gopyhiergo"></a>
+## Requested comparison with GOPY/HierGO
 
-Aggiornato docs/COMPARISON.md in7componenti funzionali:3blocchi geometrici
-comuni a entrambi (reticolo, difetti/pulizia, decorazione), periodicità affine
-al tema di HierGO, innesti/Amber-ParmEd affini al tema di GOPY. Algoritmi e
-parametri diversi; nessuna percentuale di codice attribuita. GOPY tutorial
-usa analogieAMBER99SB, HierGO OPLStabulato; qui9librerieGAFF2utente+frcmod.
-CinqueoriginaliHierGO archiviati per riferimento; soloOplsatom2letto dall'audit,
-nessun programmaHierGO/GOPYeseguito dal generatore. Nuove giunzioni ancora da
-parametrizzare, QM/RESP non eseguiti, nessun vincitore delle cariche scelto.
+docs/COMPARISON.md updated with 7 functional components: 3 geometric building blocks
+shared by both (lattice, defects/cleanup, decoration), periodicity related
+to the HierGO approach, grafts/Amber-ParmEd related to the GOPY approach. Different algorithms and
+parameters; no percentage of code attributed. The GOPY tutorial
+uses AMBER99SB analogies, HierGO uses tabulated OPLS; this project uses 9 user GAFF2 libraries + frcmod.
+Five HierGO originals archived for reference; only Oplsatom2 read by the audit,
+no HierGO/GOPY program run by the generator. New junctions still require
+parameterization, QM/RESP not run, no preferred charge model selected.

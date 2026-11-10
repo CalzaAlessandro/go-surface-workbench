@@ -1,37 +1,39 @@
-# Funzionalizzazione: riferimenti e scelte del costruttore
+<a id="funzionalizzazione-riferimenti-e-scelte-del-costruttore"></a>
+# Functionalization: references and builder choices
 
-Moro et al. (2024) descrivono GO modificato con L-lisina, L-arginina e
-L-metionina tramite apertura degli epossidi, in condizioni di sintesi a pH 9.
-La composizione XPS guida il modello; la funzionalizzazione comporta anche
-parziale riduzione del materiale. Il lavoro impiega GAFF, acqua TIP3P e MD in
-Amber 16; per il glifosato riporta cariche RESP. Questi dati sostengono la
-classe di trasformazione, senza determinare automaticamente il sito reattivo,
-la protonazione o le cariche di ogni nuovo frammento del nostro generatore.
-Fonte: [articolo e record ufficiale UNIBO](https://cris.unibo.it/handle/11585/983516),
+Moro et al. (2024) describe GO modified with L-lysine, L-arginine and
+L-methionine through epoxide opening under synthesis conditions at pH 9.
+The XPS composition guides the model; functionalization also involves
+partial reduction of the material. The study uses GAFF, TIP3P water and MD in
+Amber 16; it reports RESP charges for glyphosate. These data support the
+class of transformation, without automatically determining the reactive site,
+protonation or charges of each new fragment in our generator.
+Source: [article and official UNIBO record](https://cris.unibo.it/handle/11585/983516),
 DOI [10.1016/j.mtchem.2024.101936](https://doi.org/10.1016/j.mtchem.2024.101936).
-È stato consultato il testo principale; il supplemento DOCX non è stato
-recuperato durante questa verifica.
+The main text was consulted; the DOCX supplement was not
+retrieved during this verification.
 
-Tunioli et al. (2023) descrivono β-ciclodestrine ammino-funzionalizzate con
-linker C0/C2/C6/C12 e il loro innesto sul GO tramite apertura degli epossidi.
-Il controllo con βCD non modificata distingue la reattività dei precursori
-amminati nelle condizioni studiate. I modelli sono guidati da XPS; vengono
-riportati GAFF, cariche ottenute a livello AM1, TIP3P, Amber 16 e analisi
-MM/GBSA. Lunghezza del linker e composizione del materiale sono variabili
-dello studio: non forniscono parametri trasferibili a ogni ciclodestrina o
-frammento arbitrario.
-Fonti: [articolo](https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/chem.202301854),
-[record ufficiale e supplementi](https://cris.unibo.it/handle/11585/948766).
+Tunioli et al. (2023) describe amino-functionalized β-cyclodextrins with
+C0/C2/C6/C12 linkers and their grafting onto GO through epoxide opening.
+The control with unmodified βCD distinguishes the reactivity of the aminated
+precursors under the conditions studied. The models are guided by XPS; the study
+reports GAFF, charges obtained at the AM1 level, TIP3P, Amber 16 and
+MM/GBSA analysis. Linker length and material composition are variables
+in the study: they do not provide transferable parameters for every cyclodextrin or
+arbitrary fragment.
+Sources: [article](https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/chem.202301854),
+[official record and supplements](https://cris.unibo.it/handle/11585/948766).
 
-## Regole implementate
+<a id="regole-implementate"></a>
+## Implemented rules
 
-Il nostro costruttore richiede un sito N/O/S esplicito, neutro e con un H
-trasferibile. Rompe un legame C–O dell'epossido, forma il legame C–nucleofilo e
-trasferisce quell'H all'ossigeno conservato. L'attacco anti e un solo ancoraggio
-per apertura sono regole costruttive richieste per questo progetto; non sono
-presentate come una traiettoria di reazione osservata nei due articoli.
+Our builder requires an explicitly selected neutral N/O/S site with a
+transferable H. It breaks one epoxide C–O bond, forms the C–nucleophile bond and
+transfers that H to the retained oxygen. Anti attack and a single attachment point
+per opening are construction rules required for this project; they are not
+presented as a reaction trajectory observed in the two articles.
 
-Per lisina, PEG, peptidi o βCD si sceglie l'atomo tramite la mappa del frammento.
-α-N ed ε-N della lisina restano scelte distinte. Protonazione finale e nuova
-giunzione richiedono parametri propri prima della MD; il programma non
-trasferisce automaticamente le cariche dell'epossido intatto al prodotto.
+For lysine, PEG, peptides or βCD, the atom is selected through the fragment map.
+The α-N and ε-N of lysine remain distinct choices. Final protonation and the new
+junction require their own parameters before MD; the program does not
+automatically transfer intact-epoxide charges to the product.

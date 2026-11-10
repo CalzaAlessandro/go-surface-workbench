@@ -1,45 +1,46 @@
-# Nuovi gruppi GO: riferimenti di ricerca non parametrizzati
+<a id="nuovi-gruppi-go-riferimenti-di-ricerca-non-parametrizzati"></a>
+# New GO groups: unparameterized research references
 
-Sono stati preparati sette riferimenti C/H/O neutri, senza radicali nel grafo e con elettroni pari. Il singoletto chiuso è un’ipotesi iniziale: nessun QM, verifica dello stato fondamentale, fit RESP o test MD è stato eseguito.
+Seven neutral C/H/O references have been prepared, with no radicals in the graph and even electron counts. A closed-shell singlet is an initial assumption: no QM calculation, ground-state check, RESP fit, or MD test has been performed.
 
-| Riferimento | Motivo | Formula | Fonte dello SMILES |
+| Reference | Motif | Formula | SMILES source |
 |---|---|---|---|
-| `dibenzofuran_ether_edge` | non_epoxide_ether, anello 5 | C12H8O | [dibenzofuran](https://www.ebi.ac.uk/chebi/CHEBI:28145) |
-| `diphenyl_ether_bridge_control` | non_epoxide_ether, anello non richiesto | C12H10O | [diphenyl ether](https://www.ebi.ac.uk/chebi/CHEBI:39258) |
-| `phthalide_lactone5_edge` | lactone, anello 5 | C8H6O2 | [phthalide](https://www.ebi.ac.uk/chebi/CHEBI:38085) |
-| `coumarin_lactone6_edge` | lactone, anello 6 | C9H6O2 | [coumarin](https://www.ebi.ac.uk/chebi/CHEBI:28794) |
-| `oxolan2ol_lactol_control` | lactol, anello 5 | C4H8O2 | [oxolan-2-ol](https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=200907060640520321) |
-| `phenol_aromatic_OH_control` | phenolic_OH, anello non richiesto | C6H6O | [phenol](https://www.ebi.ac.uk/chebi/CHEBI:15882) |
-| `naphthoquinone14_edge` | quinone, anello 6 | C10H6O2 | [1,4-naphthoquinone](https://www.ebi.ac.uk/chebi/CHEBI:27418) |
+| `dibenzofuran_ether_edge` | non_epoxide_ether, 5-membered ring | C12H8O | [dibenzofuran](https://www.ebi.ac.uk/chebi/CHEBI:28145) |
+| `diphenyl_ether_bridge_control` | non_epoxide_ether, ring not required | C12H10O | [diphenyl ether](https://www.ebi.ac.uk/chebi/CHEBI:39258) |
+| `phthalide_lactone5_edge` | lactone, 5-membered ring | C8H6O2 | [phthalide](https://www.ebi.ac.uk/chebi/CHEBI:38085) |
+| `coumarin_lactone6_edge` | lactone, 6-membered ring | C9H6O2 | [coumarin](https://www.ebi.ac.uk/chebi/CHEBI:28794) |
+| `oxolan2ol_lactol_control` | lactol, 5-membered ring | C4H8O2 | [oxolan-2-ol](https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=200907060640520321) |
+| `phenol_aromatic_OH_control` | phenolic_OH, ring not required | C6H6O | [phenol](https://www.ebi.ac.uk/chebi/CHEBI:15882) |
+| `naphthoquinone14_edge` | quinone, 6-membered ring | C10H6O2 | [1,4-naphthoquinone](https://www.ebi.ac.uk/chebi/CHEBI:27418) |
 
-Il dibenzofurano è un piccolo riferimento aromatico fuso per un ambiente etereo di bordo/difetto; il difeniletere è un controllo di ponte diarile. Ftalide, cumarina e 1,4-naftochinone sono riferimenti aromatici fusi; fenolo è un controllo aromatico monociclico. Oxolan-2-ol è soltanto un controllo **alifatico** della connettività lattolica. Nessuno è un sostituto equivalente di un foglio GO completo o una prova della presenza/abbondanza dei gruppi nei nostri campioni XPS.
+Dibenzofuran is a small fused aromatic reference for an edge/defect ether environment; diphenyl ether is a diaryl bridge control. Phthalide, coumarin, and 1,4-naphthoquinone are fused aromatic references; phenol is a monocyclic aromatic control. Oxolan-2-ol is only an **aliphatic** control for lactol connectivity. None is an equivalent substitute for a complete GO sheet or evidence of the presence/abundance of these groups in our XPS samples.
 
-Le fonti ChEBI sono state aperte il 5 novembre 2026. Per oxolan-2-ol lo SMILES e InChIKey sono stati recuperati dalla pagina J-GLOBAL/JST indicizzata; l’accesso diretto ha restituito HTTP 503. Questo limite di accesso è conservato nel manifest delle fonti. Le identità grafiche dei sette input sono state controllate anche mediante formula e InChIKey RDKit, prima di assegnare un singolo stereoisomero geometrico dove lo SMILES non specifica la stereochimica.
+The ChEBI sources were opened on 5 November 2026. For oxolan-2-ol, the SMILES and InChIKey were retrieved from the indexed J-GLOBAL/JST page; direct access returned HTTP 503. This access limitation is preserved in the source manifest. The graph identities of the seven inputs were also checked using the formula and RDKit InChIKey, before assigning a single geometric stereoisomer where the SMILES does not specify stereochemistry.
 
-Il gate separa etere non epossidico, estere ciclico a cinque/sei termini, emiacetale ciclico senza carbonile, fenolo neutro e chinone para coniugato. Nei modelli ogni atomo ha ID stabile, elemento, carica formale intera, ruolo `extended_…`, equivalenza del grafo e coordinate. **Non ci sono cariche parziali.** I nuovi ruoli sono `UNPARAMETERIZED_RESEARCH_REFERENCE`; `modular.partition_model` e il builder non sono dichiarati compatibili.
+The gate distinguishes non-epoxide ether, five-/six-membered cyclic ester, cyclic hemiacetal without a carbonyl, neutral phenol, and conjugated para-quinone. In the models, each atom has a stable ID, element, integer formal charge, `extended_…` role, graph equivalence, and coordinates. **There are no partial charges.** The new roles are `UNPARAMETERIZED_RESEARCH_REFERENCE`; `modular.partition_model` and the builder are not declared compatible.
 
-Questa seconda esportazione ripristina la rappresentazione aromatica RDKit dopo MMFF94s, prima di assegnare ruoli e scrivere JSON/SDF. Il test di round trip della cumarina verifica che non cambino gli ordini di legame fra i due formati. La prima esportazione rimane storica e non va usata come pannello corrente.
+This second export restores the RDKit aromatic representation after MMFF94s, before assigning roles and writing JSON/SDF. The coumarin round-trip test checks that bond orders do not change between the two formats. The first export remains historical and must not be used as the current panel.
 
-I sette `model.json`/`initial.sdf`/`initial.xyz` contengono geometrie ETKDGv3 + MMFF94s convergenti con seme 20261105. Sono esclusivamente geometrie iniziali. `geometry_opt/reference.gjf` prepara Opt/Freq/MK e Stable a wB97XD/6-311++G(d,p). `HF_RESP_template/reference.gjf` prepara un **template** HF/6-31G* MK/Stable con coordinate iniziali: va rigenerato usando una geometria DFT accettata prima di qualunque uso scientifico. Nessuna orientazione, sottomissione o carica è stata generata.
+The seven `model.json`/`initial.sdf`/`initial.xyz` sets contain converged ETKDGv3 + MMFF94s geometries with seed 20261105. These are exclusively initial geometries. `geometry_opt/reference.gjf` prepares Opt/Freq/MK and Stable at wB97XD/6-311++G(d,p). `HF_RESP_template/reference.gjf` prepares an HF/6-31G* MK/Stable **template** with initial coordinates: it must be regenerated using an accepted DFT geometry before any scientific use. No orientations, submissions, or charges have been generated.
 
-HierGO comprende ETH per l’etere non epossidico, ma non un set esplicito di lattoni o COO−. I lattoni e il lattolo qui sono estensioni di ricerca ispirate alla letteratura, non blocchi già stabiliti di HierGO. Le motivazioni GO e i limiti di attribuzione sono nella revisione locale `docs/MISSING_GROUPS_LITERATURE.md`; l’identità dei piccoli riferimenti non prova l’identità dei siti nel materiale.
+HierGO includes ETH for non-epoxide ether, but no explicit set of lactones or COO−. The lactones and lactol here are research extensions inspired by the literature, not established HierGO blocks. The GO rationale and attribution limits are in the local review `docs/MISSING_GROUPS_LITERATURE.md`; the identities of the small references do not establish the identities of sites in the material.
 
-Per arrivare a parametri trasferibili occorrono QM accettato, conservazione della connettività e dell’ordine atomico, fit e validazione su contesti esclusi dalla calibrazione, definizione di blocchi/anchor senza sovrapposizioni e bonded/LJ/scaling coerenti. Non si impone automaticamente la neutralità di sottoinsiemi a cariche RESP molecolari future e non si trasferiscono parametri EPX agli eteri o COOH ai lattoni.
+Transferable parameters require accepted QM, preservation of connectivity and atom order, fitting and validation on contexts excluded from calibration, definitions of nonoverlapping blocks/anchors, and consistent bonded/LJ/scaling conventions. Neutrality of subsets is not automatically imposed on future molecular RESP charges, and EPX parameters are not transferred to ethers, nor COOH parameters to lactones.
 
-La trasferibilità da circa **4 nm a circa 10 nm**, necessaria per proteine/DNA, resta un requisito da verificare. Il metodo finale dovrà conservare le stesse classi di grafo e gli stessi vincoli di carica molecolare/gruppo tra dimensioni. Servono verifiche tenute fuori dalla calibrazione su fogli più grandi, variando bordo/interno, ossidazione bassa e alta a dimensione fissa, dimensioni diverse a composizione comparabile, gruppi vicini e protonazione, con controlli elettrostatici/MD pertinenti. **Non si richiede nuovo QM dell’intero foglio a ogni dimensione produttiva.** Un nuovo ambiente non supportato richiede riferimenti mirati e una nuova verifica della copertura.
+Transferability from approximately **4 nm to approximately 10 nm**, required for proteins/DNA, remains a requirement to be checked. The final method must preserve the same graph classes and molecular/group charge constraints across sizes. Checks held out from calibration are needed on larger sheets, varying edge/interior environments, low and high oxidation at a fixed size, different sizes at comparable composition, nearby groups, and protonation, with relevant electrostatic/MD controls. **New QM for the entire sheet is not required at every production size.** A new unsupported environment requires targeted references and a new coverage check.
 
-I test reali del grafo sono stati scritti e visti fallire prima dell’implementazione. Verifica completa: 265 test passati, di cui 20 nell’estensione. Le cariche, gli input scientifici precedenti e il codice di assegnamento esistente restano fuori dall’estensione.
+The actual graph tests were written and observed to fail before implementation. Complete verification: 265 tests passed, including 20 in the extension. Charges, previous scientific inputs, and existing assignment code remain outside the extension.
 
-Per rigenerare il pannello, dalla directory PARAMETERIZATION, usare una nuova directory:
+To regenerate the panel, use a new directory from the PARAMETERIZATION directory:
 
 ```sh
 PYTHONPATH=src uv run --no-project --cache-dir /private/tmp/go-builder-uv-cache --python ../VS_POLL_HIGH_COVERAGE/.venv/bin/python -m go_param.extended_fragments --output-dir reports/EXTENDED_GO_GROUPS_20261105_attempt_003 --cpus 8 --mem-gb 6
 ```
 
-Per ricostruire solo questo README, la tavola 2D e il rapporto:
+To rebuild only this README, the 2D panel, and the report:
 
 ```sh
 uv run --no-project --cache-dir /private/tmp/go-builder-uv-cache --python ../VS_POLL_HIGH_COVERAGE/.venv/bin/python reports/EXTENDED_GO_GROUPS_20261105_attempt_002/build_report.py
 ```
 
-Vedere anche `catalog.json`, `source_manifest.json`, `artifact_manifest.json` e `docs/EXTENDED_GO_GROUPS_20261105.md`.
+See also `catalog.json`, `source_manifest.json`, `artifact_manifest.json`, and `docs/EXTENDED_GO_GROUPS_20261105.md`.

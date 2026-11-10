@@ -1,23 +1,25 @@
-# Complessi dopo docking: Amber e MM/GBSA
+<a id="complessi-dopo-docking-amber-e-mmgbsa"></a>
+# Post-docking complexes: Amber and MM/GBSA
 
-Il recettore è l'intera superficie parametrizzata: GO, gruppi ossigenati e
-qualsiasi linker o funzionalizzazione covalente. Il contaminante adsorbito è
-un componente distinto. La separazione non dipende da nomi come GOX o da
-maschere fissate a priori.
+The receptor is the entire parameterized surface: GO, oxygen-containing groups,
+and any linker or covalent functionalization. The adsorbed pollutant is a
+separate component. This separation does not depend on names such as GOX or
+on predefined masks.
 
-## Input e comando
+<a id="input-e-comando"></a>
+## Inputs and command
 
-Servono topologie Amber complete di recettore e ligando e coordinate delle
-pose nello stesso riferimento cartesiano. Tutti i formati richiedono ogni atomo della topologia, inclusi gli H.
-Il comando conserva cariche, tipi, masse e parametri Amber; le eventuali
-cariche contenute nel file di docking non vengono usate.
+Complete Amber topologies for the receptor and ligand are required, together
+with pose coordinates in the same Cartesian reference frame. All formats require every atom in the topology, including H atoms.
+The command preserves Amber charges, types, masses, and parameters; any
+charges in the docking file are not used.
 
-| Coordinate | Corrispondenza con il template Amber |
+| Coordinates | Matching to the Amber template |
 |---|---|
-| Restart Amber (`.rst7`, `.inpcrd`, `.ncrst`, `.rst`, `.restrt`, `.crd`) | Ordine completo della topologia, fornito esplicitamente dall'utente |
-| PDB/ENT | Ordine completo; nomi, elementi espliciti e confini dei residui verificati |
-| PDBQT | Primo MODEL; nomi atomici univoci, un solo residuo; ordine dell'albero Vina permutabile |
-| SDF/MOL | Prima posa; grafo esplicito ed elementi corrispondenti al template, tutti gli H presenti |
+| Amber restart (`.rst7`, `.inpcrd`, `.ncrst`, `.rst`, `.restrt`, `.crd`) | Complete topology order, explicitly provided by the user |
+| PDB/ENT | Complete order; names, explicit elements, and residue boundaries checked |
+| PDBQT | First MODEL; unique atom names, a single residue; Vina tree order may differ |
+| SDF/MOL | First pose; explicit graph and elements matching the template, with all H atoms present |
 
 ```bash
 uv run python 06_assemble_docked_complex.py \
@@ -26,28 +28,28 @@ uv run python 06_assemble_docked_complex.py \
   --output-dir complesso_posa1
 ```
 
-Oppure aggiungere `--slurm` e le opzioni di partizione/risorse: la logica
-scientifica è identica all'esecuzione locale.
+Alternatively, add `--slurm` and the partition/resource options: the scientific
+logic is identical to local execution.
 
-Un PDBQT è accettato solo se contiene **tutti** gli atomi del template.
-I nomi devono essere univoci in una singola molecola/residuo; i tipi AutoDock
-verificano l'elemento. L'ordine di ROOT/BRANCH non determina l'ordine Amber.
-Pseudoatomi di chiusura e dummy di idratazione non sono supportati.
-[Definizioni ufficiali dei tipi Vina](https://github.com/ccsb-scripps/AutoDock-Vina/blob/develop/src/lib/atom_constants.h).
+A PDBQT is accepted only if it contains **all** atoms in the template.
+Names must be unique within a single molecule/residue; AutoDock types
+are used to check the element. ROOT/BRANCH order does not determine Amber order.
+Ring-closure pseudoatoms and hydration dummy atoms are not supported.
+[Official Vina type definitions](https://github.com/ccsb-scripps/AutoDock-Vina/blob/develop/src/lib/atom_constants.h).
 
-Gli SDF/MOL vengono letti con RDKit senza aggiungere H. La connettività
-completa, inclusi gli H legati a ciascun atomo, deve coincidere. Gli ordini di
-legame non vengono ricavati da Amber: il confronto usa adiacenza ed elementi,
-mentre il modello elettronico/force field resta quello del template Amber.
-Non è una verifica indipendente di aromaticità, stati elettronici o stereo E/Z.
+SDF/MOL files are read with RDKit without adding H atoms. The complete
+connectivity, including the H atoms bonded to each atom, must match. Bond orders
+are not inferred from Amber: the comparison uses adjacency and elements,
+while the electronic/force-field model remains that of the Amber template.
+This is not an independent check of aromaticity, electronic states, or E/Z stereochemistry.
 
-Il mapping automatico enumera solo le corrispondenze degli atomi pesanti
-(max 4096); gli H vengono associati per atomo genitore. Una simmetria che
-scambia atomi con cariche RESP, tipi o masse diversi viene rifiutata. Gli H
-dello stesso genitore devono essere equivalenti nei parametri atomici. Per
-risolvere una corrispondenza nota, inserire nello **SDF** la proprietà
-`GO_BUILDER_ATOM_NAMES`: un array JSON di tutti i nomi Amber, nell'ordine
-degli atomi SDF. Tutti i nomi del template devono essere univoci. Esempio:
+Automatic mapping enumerates only heavy-atom matches
+(max 4096); H atoms are assigned by parent atom. A symmetry that
+exchanges atoms with different RESP charges, types, or masses is rejected. H atoms
+with the same parent must have equivalent atomic parameters. To
+resolve a known correspondence, add the property
+`GO_BUILDER_ATOM_NAMES` to the **SDF**: a JSON array of all Amber names, in SDF
+atom order. All template names must be unique. Example:
 
 ```text
 > <GO_BUILDER_ATOM_NAMES>
@@ -55,71 +57,73 @@ degli atomi SDF. Tutti i nomi del template devono essere univoci. Esempio:
 
 ```
 
-Anche con la mappa esplicita, elementi e grafo completo vengono verificati.
-Nessun indice SDF viene assunto automaticamente come indice Amber.
+Elements and the complete graph are checked even with an explicit map.
+No SDF index is automatically assumed to be an Amber index.
 
-Per gli SDF con centri tetraedrici C/Si potenzialmente stereogenici servono
-coordinate di riferimento complete del template, precedenti al docking.
-La geometria della posa viene confrontata con quella del riferimento senza
-allineamenti: inversioni e centri quasi planari vengono rifiutati. Fornire
-`--ligand-reference-coordinates contaminante.rst7` per ciascun ligando.
-Nell'API Python l'opzione è `ligand_reference_coordinates=[...]`, con un
-file o `None` per ogni ligando. Il riferimento deve essere un restart Amber
-o un PDB nell'ordine completo del template.
+For SDF files with potentially stereogenic tetrahedral C/Si centers, complete
+reference coordinates from the template, obtained before docking, are required.
+The pose geometry is compared with the reference geometry without
+alignment: inversions and nearly planar centers are rejected. Provide
+`--ligand-reference-coordinates contaminante.rst7` for each ligand.
+In the Python API, the option is `ligand_reference_coordinates=[...]`, with one
+file or `None` per ligand. The reference must be an Amber restart
+or a PDB in the complete template order.
 
-Gli output GNINA ordinari non garantiscono gli H richiesti: la documentazione
-nel sorgente di `stripH` specifica che gli H non polari vengono sempre rimossi.
-Non esiste una flag qui introdotta per mantenerli. Uno SDF GNINA privo di H
-va completato **esternamente**, mantenendo identità, protonazione e geometria
-stereochimica del template, prima di questo assemblaggio.
-[Sorgente ufficiale GNINA](https://github.com/gnina/gnina/blob/master/gninasrc/main/main.cpp).
-Lo stesso vincolo vale per i PDBQT che hanno perso H.
+Standard GNINA outputs do not guarantee the required H atoms: the source
+documentation for `stripH` states that nonpolar H atoms are always removed.
+No flag is introduced here to retain them. A GNINA SDF lacking H atoms
+must be completed **externally**, preserving the template's identity,
+protonation, and stereochemical geometry, before this assembly step.
+[Official GNINA source](https://github.com/gnina/gnina/blob/master/gninasrc/main/main.cpp).
+The same constraint applies to PDBQT files that have lost H atoms.
 
-Questo comando non effettua allineamento, assegnazione di cariche,
-ricostruzione del ligando da distanze o generazione di H.
+This command does not perform alignment, assign charges,
+reconstruct the ligand from distances, or generate H atoms.
 
 ## Output
 
-| File | Contenuto |
+| File | Contents |
 |---|---|
-| `compl.parm7`, `compl.rst7`, `compl.pdb` | Complesso secco completo |
-| `rec.parm7`, `rec.rst7`, `rec.pdb` | Recettore, comprese le modifiche covalenti |
-| `lig.parm7`, `lig.rst7`, `lig.pdb` | Ligando, oppure insieme dei ligandi simultanei |
-| `lig_001.*`, ecc. | Componenti ligando individuali |
-| `masks.json` | Maschere di recettore, ligando/i e complesso |
-| `manifest.json` | Sorgenti e hash, carica, controlli di conservazione dei parametri |
+| `compl.parm7`, `compl.rst7`, `compl.pdb` | Complete dry complex |
+| `rec.parm7`, `rec.rst7`, `rec.pdb` | Receptor, including covalent modifications |
+| `lig.parm7`, `lig.rst7`, `lig.pdb` | Ligand, or the set of simultaneous ligands |
+| `lig_001.*`, etc. | Individual ligand components |
+| `masks.json` | Masks for the receptor, ligand(s), and complex |
+| `manifest.json` | Sources and hashes, charge, parameter-conservation checks |
 
-Le estensioni `.parm7` e `.prmtop` indicano lo stesso formato Amber. I PDB
-includono CONECT; la topologia resta il riferimento per tutti i parametri.
+The extensions `.parm7` and `.prmtop` denote the same Amber format. PDB files
+include CONECT; the topology remains the reference for all parameters.
 
-L'assemblaggio conserva legami, angoli, torsioni, esclusioni, interazioni 1–4,
-parametri LJ, cariche e raggi/screen GB; non aggiunge legami recettore–ligando.
-Nomi atomici vicini geometricamente non determinano la connettività.
+Assembly preserves bonds, angles, torsions, exclusions, 1–4 interactions,
+LJ parameters, charges, and GB radii/screening factors; it does not add receptor–ligand bonds.
+Atom names and geometric proximity do not determine connectivity.
 
-## Pose alternative o caricamento simultaneo
+<a id="pose-alternative-o-caricamento-simultaneo"></a>
+## Alternative poses or simultaneous loading
 
-Una posa alternativa va in un complesso separato. Ripetere le opzioni ligando
-significa invece inserire più molecole **contemporaneamente** nello stesso
-sistema. Le coordinate devono essere compatibili; sovrapposizioni gravi
-vengono rifiutate.
+Each alternative pose belongs in a separate complex. Repeating the ligand
+options instead inserts several molecules **simultaneously** into the same
+system. Coordinates must be compatible; severe overlaps
+are rejected.
 
-L'insieme `lig.parm7` di più molecole descrive un gruppo ligando congiunto. Una
-singola energia di binding per quel gruppo non è l'affinità individuale di
-ciascuna copia. Per quelle analisi occorrono partizioni e traiettorie coerenti.
+A `lig.parm7` containing multiple molecules describes a combined ligand group. A
+single binding energy for that group is not the individual affinity of
+each copy. Those analyses require consistent partitions and trajectories.
 
-## Compatibilità con la dinamica e il GBSA
+<a id="compatibilità-con-la-dinamica-e-il-gbsa"></a>
+## Compatibility with dynamics and GBSA
 
-I file prodotti sono secchi. Solvatazione, controioni ed eventuale rilassamento
-sono passaggi successivi del workflow MD; non vengono avviati da questo
-comando. Il soluto covalente deve essere finito e le coordinate devono
-contenere molecole intere.
+The output files are dry. Solvation, counterions, and any relaxation
+are subsequent steps in the MD workflow; this command does not
+start them. The covalent solute must be finite, and the coordinates must
+contain whole molecules.
 
-Le componenti devono usare un protocollo coerente per raggi GB, fattori 1–4 e
-tipi LJ omonimi. Dati incompatibili sono rifiutati: non viene adattato un
-force field al volo. Il controllo numerico di compatibilità non convalida le
-cariche della superficie, la correttezza della posa o l'interpretazione
-termodinamica del GBSA.
+The components must use a consistent protocol for GB radii, 1–4 factors, and
+LJ types with the same names. Incompatible data are rejected: a
+force field is not adapted on the fly. The numerical compatibility check does not validate
+surface charges, pose correctness, or the thermodynamic
+interpretation of GBSA.
 
-Il legame GO–PEG/amminoacido/peptide/ciclodestrina resta interno al recettore.
-Tagliarlo per trattare la modifica come un ligando non covalente cambierebbe
-il problema fisico e non è l'analisi ordinaria del contaminante adsorbito.
+The GO–PEG/amino-acid/peptide/cyclodextrin bond remains internal to the receptor.
+Cutting it to treat the modification as a noncovalent ligand would change
+the physical problem and is not the standard analysis of an adsorbed pollutant.

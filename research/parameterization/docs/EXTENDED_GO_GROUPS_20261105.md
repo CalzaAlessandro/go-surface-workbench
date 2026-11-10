@@ -1,48 +1,53 @@
-# Frammenti di riferimento per gruppi GO aggiuntivi
+<a id="frammenti-di-riferimento-per-gruppi-go-aggiuntivi"></a>
+# Reference fragments for additional GO groups
 
-L’estensione prepara sette grafi molecolari C/H/O neutri e geometrie iniziali riproducibili per confronti QM futuri. Non aggiunge tipi o cariche al builder, non modifica L0 e non esegue QM o dinamica molecolare. Tutti i ruoli iniziano con `extended_` e hanno stato `UNPARAMETERIZED_RESEARCH_REFERENCE`. Il formato è compatibile con `go_param.resp._validate_model` e con gli helper degli input Gaussian; questo non significa che `modular.partition_model` supporti i nuovi ruoli.
+This extension prepares seven neutral C/H/O molecular graphs and reproducible initial geometries for future QM comparisons. It adds no types or charges to the builder, does not modify L0 and runs neither QM nor molecular dynamics. All roles start with `extended_` and have status `UNPARAMETERIZED_RESEARCH_REFERENCE`. The format is compatible with `go_param.resp._validate_model` and the Gaussian input helpers; this does not mean that `modular.partition_model` supports the new roles.
 
-| Modello | Motivo | Interpretazione del riferimento |
+| Model | Motif | Interpretation of the reference |
 |---|---|---|
-| `dibenzofuran_ether_edge` | O in anello a cinque termini, non epossido | Piccolo motivo aromatico fuso per un possibile ambiente etereo di bordo/difetto; l’O eteroaromatico non è equivalente a ogni etere alifatico |
-| `diphenyl_ether_bridge_control` | Ar–O–Ar non ciclico | Controllo separato di ponte diarile, non un frammento continuo di foglio |
-| `phthalide_lactone5_edge` | Estere ciclico a cinque termini | Riferimento aromatico fuso per lattone; comprende il carbonile e l’O estereo dello stesso anello |
-| `coumarin_lactone6_edge` | Estere ciclico coniugato a sei termini | Riferimento aromatico fuso; non si trasferiscono automaticamente cariche dal lattone a cinque termini |
-| `oxolan2ol_lactol_control` | C sp³ con OH e OR ciclico | Controllo alifatico di emiacetale ciclico; non è un lattone e non prova un ambiente aromatico di bordo |
-| `phenol_aromatic_OH_control` | C aromatico–OH | Controllo del fenolo neutro, distinto dall’alcol basale sp³ e dal fenolato |
-| `naphthoquinone14_edge` | Due carbonili para coniugati | Riferimento aromatico fuso per un contesto chinonico più ampio del singolo carbonile |
+| `dibenzofuran_ether_edge` | O in a five-membered ring, not an epoxide | Small fused aromatic motif for a possible edge/defect ether environment; heteroaromatic O is not equivalent to every aliphatic ether |
+| `diphenyl_ether_bridge_control` | Noncyclic Ar–O–Ar | Separate diaryl-bridge control, not a contiguous sheet fragment |
+| `phthalide_lactone5_edge` | Five-membered cyclic ester | Fused aromatic lactone reference; includes the carbonyl and ester O of the same ring |
+| `coumarin_lactone6_edge` | Six-membered conjugated cyclic ester | Fused aromatic reference; charges are not automatically transferred from the five-membered lactone |
+| `oxolan2ol_lactol_control` | sp³ C with OH and cyclic OR | Aliphatic cyclic-hemiacetal control; not a lactone and does not establish an aromatic edge environment |
+| `phenol_aromatic_OH_control` | Aromatic C–OH | Neutral phenol control, distinct from basal sp³ alcohol and phenolate |
+| `naphthoquinone14_edge` | Two conjugated para carbonyls | Fused aromatic reference for a quinone context broader than a single carbonyl |
 
-Le molecole sono riferimenti di connettività, non sostituti equivalenti di fogli completi. Nessuna presenza o abbondanza nei campioni XPS dell’utente è assegnata. Un grafo neutro con zero elettroni radicalici RDKit ed elettroni pari permette un’ipotesi iniziale di singoletto chiuso, ma non valida lo stato fondamentale o la stabilità del determinante.
+These molecules are connectivity references, not equivalent replacements for complete sheets. No presence or abundance is assigned to the user's XPS samples. A neutral graph with zero RDKit radical electrons and an even electron count permits an initial closed-shell singlet hypothesis, but does not validate the ground state or determinant stability.
 
-## Rapporto con HierGO e letteratura
+<a id="rapporto-con-hiergo-e-letteratura"></a>
+## Relationship to HierGO and the literature
 
-L’inventario locale verificato e la [revisione dei gruppi mancanti](MISSING_GROUPS_LITERATURE.md) distinguono ETH di HierGO, etere non epossidico, da EPX/EPH/EPT. HierGO non fornisce un set esplicito di lattoni o COO−: i lattoni preparati qui sono un’estensione di ricerca ispirata alla letteratura GO, non un’implementazione stabilita di HierGO. Anche il lattolo rimane un candidato distinto.
+The verified local inventory and [review of missing groups](MISSING_GROUPS_LITERATURE.md) distinguish HierGO ETH, a nonepoxide ether, from EPX/EPH/EPT. HierGO does not provide an explicit lactone or COO− set: the lactones prepared here are a research extension motivated by GO literature, rather than an established HierGO implementation. The lactol also remains a separate candidate.
 
-La revisione locale collega la motivazione GO a Gao et al., DOI [10.1038/nchem.281](https://doi.org/10.1038/nchem.281), Bagri et al., DOI [10.1038/nchem.686](https://doi.org/10.1038/nchem.686), e Aliyev et al., DOI [10.3390/nano9081180](https://doi.org/10.3390/nano9081180), con le rispettive condizioni di materiale e limiti delle assegnazioni. Le identità dei piccoli riferimenti non sono identità sperimentali dei siti GO. Le fonti SMILES e i rispettivi identificatori sono registrati nel catalogo e nel README del rapporto.
+The local review links the GO motivation to Gao et al., DOI [10.1038/nchem.281](https://doi.org/10.1038/nchem.281), Bagri et al., DOI [10.1038/nchem.686](https://doi.org/10.1038/nchem.686), and Aliyev et al., DOI [10.3390/nano9081180](https://doi.org/10.3390/nano9081180), with their respective material conditions and assignment limitations. The identities of the small references do not establish experimental GO site identities. SMILES sources and their identifiers are recorded in the catalog and report README.
 
-## Protocollo e gate
+<a id="protocollo-e-gate"></a>
+## Protocol and acceptance gates
 
-1. Sanitizzazione RDKit e verifica della formula e dell’InChIKey del grafo documentato. Aggiunta esplicita degli H, carica formale totale 0, zero radicali nel grafo, elettroni pari, ID atomici contigui e classi di equivalenza del grafo senza atom map.
-2. Gate specifici: l’O etereo non appartiene a un triangolo né è l’O estereo di un carbonile; nel lattone C carbonilico e O estereo appartengono all’anello richiesto; nel lattolo un C sp³ ciclico lega OH e OR e il grafo non contiene carbonili; OH fenolico su C aromatico; chinone con due siti carbonilici para e coniugazione nello stesso anello a sei termini.
-3. ETKDGv3 con seme 20261105 e un thread, quindi MMFF94s fino a convergenza (massimo 3000 iterazioni). Sono geometrie iniziali, non geometrie QM accettate. Dove lo SMILES lascia indefinita la stereochimica, si registra un solo stereoisomero deterministico dalla geometria, senza assegnare popolazioni o racemati.
-4. `geometry_opt/reference.gjf`: helper esistente per ottimizzazione, frequenze e stabilità a wB97XD/6-311++G(d,p). `HF_RESP_template/reference.gjf`: solo modello di input HF/6-31G* MK/Stable a geometria fissata. **Il template HF contiene ancora le coordinate MMFF e va rigenerato dalla geometria DFT accettata prima del suo uso scientifico.** Nessuna orientazione o sottomissione è preparata automaticamente.
-5. Prima del fit servono evidenze reali di ottimizzazione/frequenze/stabilità e verifica che connettività, ordine di legame, stereochimica e identità atomica siano conservati. Il fit RESP successivo conserva la carica molecolare; non inventa a priori cariche atomiche o neutralità dei sottoinsiemi.
-6. Prima di qualsiasi assegnamento produttivo servono ownership disgiunta dei blocchi e degli anchor, ambiente locale esplicito, validazione su contesti esclusi dal fit e cariche accoppiate a bonded/LJ/scaling coerenti. Vanno controllati torsioni e barriere, geometrie d’equilibrio, interazioni non legate e proprietà MD pertinenti. Non si riusano automaticamente i parametri EPX per ETH, HYD per fenolo o COOH per lattone.
+1. RDKit sanitization and verification of the formula and InChIKey of the documented graph. Explicit addition of H atoms, total formal charge 0, zero graph radicals, an even electron count, contiguous atom IDs and graph-equivalence classes without atom maps.
+2. Motif-specific gates: ether O belongs neither to a triangle nor to the ester linkage of a carbonyl; in a lactone, the carbonyl C and ester O belong to the required ring; in a lactol, a cyclic sp³ C bonds to OH and OR and the graph contains no carbonyls; phenolic OH is on aromatic C; a quinone has two para carbonyl sites and conjugation in the same six-membered ring.
+3. ETKDGv3 with seed 20261105 and one thread, followed by MMFF94s to convergence (maximum 3000 iterations). These are initial geometries, not accepted QM geometries. Where the SMILES leaves stereochemistry undefined, one deterministic stereoisomer is recorded from the geometry, without assigning populations or racemates.
+4. `geometry_opt/reference.gjf`: existing helper for optimization, frequencies and stability at wB97XD/6-311++G(d,p). `HF_RESP_template/reference.gjf`: an HF/6-31G* MK/Stable input template at fixed geometry only. **The HF template still contains MMFF coordinates and must be regenerated from the accepted DFT geometry before scientific use.** No orientation or submission is prepared automatically.
+5. Before fitting, actual optimization/frequency/stability evidence and checks that connectivity, bond order, stereochemistry and atom identity are preserved are required. The subsequent RESP fit conserves molecular charge; it does not invent atomic charges or subset neutrality in advance.
+6. Before any production assignment, disjoint block and anchor ownership, an explicit local environment, validation on contexts excluded from fitting and charges coupled to consistent bonded/LJ/scaling terms are required. Torsions and barriers, equilibrium geometries, nonbonded interactions and relevant MD properties must be checked. EPX parameters are not automatically reused for ETH, HYD for phenol or COOH for lactone.
 
-## Trasferimento da circa 4 nm a circa 10 nm
+<a id="trasferimento-da-circa-4-nm-a-circa-10-nm"></a>
+## Transfer from approximately 4 nm to approximately 10 nm
 
-La trasferibilità di dimensione è un requisito futuro del metodo finale di carica, anche per simulazioni con proteine/DNA. Questi piccoli riferimenti e i loro input non la dimostrano. Una volta validata, l’assegnazione deve riutilizzare le stesse classi di grafo locali e gli stessi vincoli di carica totale/gruppo a entrambe le dimensioni, senza introdurre dipendenze dal nome o dal numero totale di atomi del foglio.
+Size transferability is a future requirement of the final charge method, including for protein/DNA simulations. These small references and their inputs do not demonstrate it. Once validated, assignment must reuse the same local graph classes and total/group charge constraints at both sizes, without introducing dependence on the sheet name or total atom count.
 
-Occorre una validazione tenuta fuori dalla calibrazione su fogli più grandi, includendo ossidazione bassa e alta, variazioni di bordo/interno, combinazioni e distanze dei gruppi, protonazione e geometria. Dimensione e grado di ossidazione vanno variati separatamente: stessi conteggi su un foglio più grande non significano stessa copertura. Si devono verificare somma di carica esatta, copertura delle classi, assenza di nuovi ambienti non supportati e stabilità delle assegnazioni per ambienti equivalenti; le proprietà elettrostatiche e MD pertinenti vanno confrontate con riferimenti indipendenti disponibili. Il protocollo non richiede un nuovo QM del foglio intero per ogni dimensione produttiva. Un ambiente nuovo o una mancata validazione richiede un’estensione mirata dei riferimenti, non una promozione automatica del piccolo frammento a prova di trasferibilità. Vedere [i criteri di accettazione](SCALABILITY_ACCEPTANCE_20261105.md).
+Validation excluded from calibration is required on larger sheets, including low and high oxidation, edge/interior variation, group combinations and separations, protonation and geometry. Size and oxidation level must be varied separately: the same counts on a larger sheet do not imply the same coverage. Exact charge sums, class coverage, absence of new unsupported environments and stable assignments for equivalent environments must be checked; relevant electrostatic and MD properties must be compared with available independent references. The protocol does not require a new whole-sheet QM calculation for every production size. A new environment or failed validation requires targeted reference expansion, rather than automatically treating the small fragment as evidence of transferability. See the [acceptance criteria](SCALABILITY_ACCEPTANCE_20261105.md).
 
-## Implementazione e verifica
+<a id="implementazione-e-verifica"></a>
+## Implementation and verification
 
-API isolata: `go_param.extended_fragments.build_candidate`, `validate_motif` e `export_candidates`. L’esportazione rifiuta un percorso esistente e costruisce/valida l’intero pannello prima di scrivere i file. I test sono stati scritti prima dell’implementazione e comprendono grafi reali errati, ricostruzione SDF/ID, determinismo della geometria e preparazione dei template senza eseguire QM.
+Isolated API: `go_param.extended_fragments.build_candidate`, `validate_motif` and `export_candidates`. Export rejects an existing path and builds/validates the entire panel before writing files. Tests were written before implementation and cover real incorrect graphs, SDF/ID reconstruction, geometric determinism and template preparation without executing QM.
 
-Per una nuova esportazione, dalla directory `PARAMETERIZATION`:
+For a new export, from the `PARAMETERIZATION` directory:
 
 ```sh
 PYTHONPATH=src uv run --no-project --cache-dir /private/tmp/go-builder-uv-cache --python ../VS_POLL_HIGH_COVERAGE/.venv/bin/python -m go_param.extended_fragments --output-dir reports/EXTENDED_GO_GROUPS_20261105_attempt_003 --cpus 8 --mem-gb 6
 ```
 
-Usare una nuova directory per ogni tentativo. Il pannello attuale è `attempt_002`, con rappresentazione aromatica coerente fra JSON e SDF dopo MMFF94s. `attempt_001` conserva la prima esportazione storica, sostituita per l'incoerenza di rappresentazione della cumarina; non contiene risultati QM.
+Use a new directory for each attempt. The current panel is `attempt_002`, with consistent aromatic representation between JSON and SDF after MMFF94s. `attempt_001` preserves the first historical export, superseded because of inconsistent coumarin representation; it contains no QM results.

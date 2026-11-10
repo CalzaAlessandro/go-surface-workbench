@@ -1,185 +1,199 @@
-# Scelta delle cariche GO: riproducibilità, trasferibilità e scala
+<a id="scelta-delle-cariche-go-riproducibilità-trasferibilità-e-scala"></a>
+# Selecting GO charges: reproducibility, transferability and scale
 
-Decisioni confermate dall'utente il 3 novembre 2026. Questo è il protocollo del
-confronto successivo, non un nuovo metodo già implementato o validato.
+Decisions confirmed by the user on 3 November 2026. This is the protocol for
+the next comparison, rather than a newly implemented or validated method.
 
-Aggiornamento del 4 novembre: il primo fit SQE è completato come studio pilota;
-QM sui due fogli interi ed espansione dei frammenti sono in esecuzione.
-Il [protocollo SQE](SQE_HF_RESP_PILOT_20261104.md) e il
-[report corrente](../reports/QM_SQE_UPDATE_20261104_attempt_001/REPORT.html)
-riportano risultati e limiti. Questa pagina resta il piano di scelta tra A/B/C,
-non l'approvazione di un metodo finale.
+Update on 4 November: the first SQE fit is complete as a pilot study;
+QM calculations on the two whole sheets and fragment expansion are running.
+The [SQE protocol](SQE_HF_RESP_PILOT_20261104.md) and
+[current report](../reports/QM_SQE_UPDATE_20261104_attempt_001/REPORT.html)
+describe the results and limitations. This page remains the plan for choosing
+among A/B/C; it does not approve a final method.
 
-## Obiettivo e perimetro
+<a id="obiettivo-e-perimetro"></a>
+## Objective and scope
 
-Derivare un modello di carica riproducibile per GO di dimensione scelta
-dall'utente, utilizzabile in Amber con small molecules, proteine e successive
-funzionalizzazioni. HF/6-31G* MK seguito da RESP resta il riferimento principale.
-DFT–RESP e AM1-BCC sono controlli separati. Il fit GAFF/GAFF2, Lennard-Jones
-e frcmod resta rinviato: ora si decide come assegnare le cariche.
+Derive a reproducible charge model for GO of a user-selected size, suitable
+for Amber with small molecules, proteins and subsequent functionalization.
+HF/6-31G* MK followed by RESP remains the main reference. DFT–RESP and AM1-BCC
+are separate controls. GAFF/GAFF2, Lennard-Jones and frcmod fitting remain
+deferred: the current decision concerns how to assign charges.
 
-Restano i gruppi classici già coperti: GGG/GRT, HYD, EPX, EPH/EPT, CAB, CBX e
-CBD. Eteri, lattoni/lattoli e altre chimiche presenti in modelli come HierGO,
-oltre a PEG, amminoacidi e peptidi, sono estensioni da parametrizzare, non
-tipologie cui assegnare silenziosamente le cariche di gruppi simili.
+The classical groups already covered remain in scope: GGG/GRT, HYD, EPX,
+EPH/EPT, CAB, CBX and CBD. Ethers, lactones/lactols and other chemistries
+present in models such as HierGO, together with PEG, amino acids and peptides,
+are extensions requiring parameterization. They must not silently receive
+charges from superficially similar groups.
 
-## Vincolo obbligatorio sulla carica totale
+<a id="vincolo-obbligatorio-sulla-carica-totale"></a>
+## Mandatory total-charge constraint
 
-La somma delle cariche parziali deve uguagliare la carica formale intera del
-prodotto finale. Non si impone neutralità al GO. La protonazione, i gruppi
-carichi e i prodotti della reazione determinano il totale.
+The sum of partial charges must equal the integer formal charge of the final
+product. GO is not required to be neutral. Protonation, charged groups and
+reaction products determine the total.
 
-Esempio contabile: 16 carbossilati e 4 centri ammonio da +1 e, senza altri
-gruppi ionici, danno Q = −12 e. Un PEG neutro non cambia il totale se anche
-il giunto formato e il bilancio di protoni sono neutri. Per un nuovo innesto
-si usa il grafo del prodotto, con H e cariche formali espliciti: non basta
-sommare cariche di precursori che potrebbero perdere atomi o protoni.
+Charge-accounting example: 16 carboxylates and 4 ammonium centers at +1 e,
+with no other ionic groups, give Q = −12 e. Neutral PEG does not change the
+total if the newly formed junction and proton balance are also neutral. A new
+graft requires the product graph with explicit H atoms and formal charges:
+simply summing precursor charges is insufficient when atoms or protons may
+be lost.
 
-GO covalentemente funzionalizzato, molecole adsorbite e controioni hanno
-contabilità separata. Ogni componente chimica indipendente mantiene il
-proprio stato di carica; l'eventuale neutralità della scatola solvata è un
-requisito distinto. Il totale non dipende dalla scelta L0/intorno/redistribuzione.
-Si impone durante il fit o per costruzione, non con un riscalamento arbitrario
-di tutti gli atomi alla fine.
+Covalently functionalized GO, adsorbed molecules and counterions have separate
+charge accounts. Each independent chemical component retains its own charge
+state; any neutrality requirement for the solvated box is separate. The total
+does not depend on the choice of L0, environment classes or redistribution.
+It is imposed during fitting or by construction, rather than by arbitrarily
+rescaling all atoms at the end.
 
-La carica formale COO⁻ = −1 e non obbliga la somma delle cariche parziali su
-quel particolare sottoinsieme di atomi a essere −1 e in un fit molecolare.
-La neutralità dei singoli blocchi e il fondo basale esattamente a zero sono
-vincoli aggiuntivi del modello modulare; vanno testati separatamente dalla
-conservazione obbligatoria del totale.
+A formal COO⁻ charge of −1 e does not require the partial charges on that
+particular atom subset to sum to −1 e in a molecular fit. Neutral individual
+blocks and an exactly zero basal background are additional constraints of
+the modular model; they must be tested separately from mandatory conservation
+of the total charge.
 
-## Tre famiglie da confrontare
+<a id="tre-famiglie-da-confrontare"></a>
+## Three families to compare
 
-| Famiglia | Assegnazione durante la preparazione | Cosa verificare |
+| Family | Assignment during preparation | What to test |
 |---|---|---|
-| A · Libreria fissa L0 | Una carica per ruolo, comune a ogni occorrenza; baseline già calcolata | Trasferibilità senza classi ambientali, effetto del fondo a zero e dei confini dei blocchi |
-| B · Libreria per intorno | Poche classi chimiche con vettori RESP condivisi; tipo dei vicini, distanza di legame, bordo e giunto | Beneficio su frammenti interi esclusi dal fit; copertura e numero di parametri |
-| C · Redistribuzione statica | Valori di base più correzioni conservative assegnate al GO completo | Calibrazione RESP, identificabilità, dipendenza da dimensione/geometria e costo di assegnazione |
+| A · Fixed L0 library | One charge per role, shared by every occurrence; baseline already calculated | Transferability without environment classes, effects of a zero background and block boundaries |
+| B · Environment-based library | A small number of chemical classes with shared RESP vectors; neighbor type, bond distance, edge and junction | Benefits on entire fragments excluded from fitting; coverage and parameter count |
+| C · Static redistribution | Baseline values plus charge-conserving corrections assigned to the complete GO structure | RESP calibration, identifiability, size/geometry dependence and assignment cost |
 
-Tutte producono cariche fisse durante MD e MM/GBSA. La famiglia B non è
-una dinamica a cariche variabili. Una dipendenza dalla distanza euclidea
-istantanea durante MD richiederebbe un altro modello energetico.
+All three produce fixed charges during MD and MM/GBSA. Family B does not
+describe variable-charge dynamics. Dependence on instantaneous Euclidean
+distance during MD would require a different energy model.
 
-Per B, la distanza nel grafo è il primo descrittore da provare: non cambia
-quando il foglio si piega. Tipo dei gruppi, posizione basale/bordo e faccia
-locale sono informazioni distinte. L'eventuale distanza 3D entra soltanto
-come ipotesi aggiuntiva verificata su geometrie rappresentative; non diventa
-automaticamente una correzione universale 1/r.
+For B, graph distance is the first descriptor to test: it does not change
+when the sheet bends. Group type, basal/edge position and local face are
+distinct descriptors. Any 3D distance enters only as an additional hypothesis
+tested on representative geometries; it does not automatically become a
+universal 1/r correction.
 
-Per C, correzioni +δ/−δ su legami conservano il totale per costruzione.
-Una baseline deve già avere il totale corretto; componenti disconnesse non
-si scambiano carica attraverso legami inesistenti. Una regola locale di
-incrementi e un solver SQE sono candidati diversi, non sinonimi. SQE+qp è
-un precedente pubblicato, ma i suoi parametri pubblicati non sono una
-calibrazione RESP per GO.
+For C, +δ/−δ corrections on bonds conserve the total by construction. The
+baseline must already have the correct total; disconnected components do not
+exchange charge through nonexistent bonds. A local increment rule and an SQE
+solver are different candidates, not synonyms. SQE+qp is a published precedent,
+but its published parameters are not a GO-specific RESP calibration.
 
-## Primo confronto: isolare l'effetto dei vincoli
+<a id="primo-confronto-isolare-leffetto-dei-vincoli"></a>
+## First comparison: isolate the effects of constraints
 
-Prima di moltiplicare le classi per distanza, confrontare:
+Before multiplying classes by distance, compare:
 
-1. L0 attuale: fondo interno a zero e blocchi con carica imposta.
-2. Variante con intorno basale esteso, mantenendo controllati i confini di
-   carica. Provare intorni di una e due distanze di legame come ipotesi di
-   benchmark, non come raggio fisico già stabilito.
-3. Variante con carica vincolata su una regione funzionale più ampia anziché
-   sul solo blocco originale. Se due regioni si sovrappongono, fondere i
-   domini o usare incrementi conservativi: un atomo non appartiene a due
-   somme indipendenti costruite come se fossero disgiunte.
+1. Current L0: zero internal background and blocks with imposed charges.
+2. A variant with an extended basal environment, keeping charge boundaries
+   controlled. Test environments one and two bonds away as benchmark
+   hypotheses, rather than as an established physical radius.
+3. A variant with charge constrained over a larger functional region rather
+   than only the original block. If two regions overlap, merge the domains
+   or use charge-conserving increments: one atom cannot belong to two
+   independent sums constructed as though they were disjoint.
 
-Cambiare un'ipotesi alla volta. Le RESP atomiche di ogni frammento rimangono
-un riferimento più flessibile, distinto da una libreria applicabile a ogni
-nuovo foglio. I valori dei carboni interni di frammenti finiti non sono
-automaticamente valori trasferibili alla superficie macroscopica.
+Change one assumption at a time. Atomwise RESP charges for each fragment
+remain a more flexible reference, distinct from a library applicable to any
+new sheet. Internal-carbon values from finite fragments are not automatically
+transferable to a macroscopic surface.
 
-### Dato diagnostico sul carbossilato
+<a id="dato-diagnostico-sul-carbossilato"></a>
+### Diagnostic carboxylate data
 
-Nel modello pyrene_COO già calcolato, il fit molecolare HF–RESP dà
-COO_C = +0,807216 e e ciascun COO_O = −0,786679 e. La libreria attuale usa
-+0,760000 e e −0,790000 e; il L0 HF condiviso dà +1,731213 e e −1,049356 e.
-Il carbonio di ancoraggio differisce fra i tre modelli.
+For the already calculated pyrene_COO model, the molecular HF–RESP fit gives
+COO_C = +0.807216 e and each COO_O = −0.786679 e. The current library uses
++0.760000 e and −0.790000 e; the shared HF L0 gives +1.731213 e and −1.049356 e.
+The anchoring carbon differs among the three models.
 
-Il fit molecolare e L0 non hanno gli stessi vincoli: il confronto non prova
-quale vincolo causi da solo la differenza. Richiede il confronto controllato
-sopra descritto. In particolare, non dimostra che il protocollo HF–RESP
-richieda di assegnare +1,73 e al carbonio carbossilico, né che la libreria
-originale sia sbagliata. COOH e COO⁻ hanno ciascuno un solo contesto fisico:
-tre rotazioni non costituiscono tre esempi indipendenti.
+The molecular and L0 fits have different constraints: this comparison does
+not establish which constraint alone causes the difference. It requires the
+controlled comparison described above. In particular, it does not show that
+the HF–RESP protocol requires +1.73 e on the carboxyl carbon, or that the
+original library is wrong. COOH and COO⁻ each have only one physical context:
+three rotations do not constitute three independent examples.
 
-## Dati, generalizzazione e criterio di scelta
+<a id="dati-generalizzazione-e-criterio-di-scelta"></a>
+## Data, generalization and selection criterion
 
-Usare gli stessi riferimenti HF, geometrie, griglie, pesi e convenzioni RESP
-per tutti i candidati. Riutilizzare i dati reali già disponibili prima di
-lanciare nuovi QM. Valutare residuo del potenziale generato dalle cariche
-RESP, sensibilità dei parametri, somme dei domini e risposta al cambio di
-dimensione. Analizzare carboni interni e bordi separatamente.
+Use the same HF references, geometries, grids, weights and RESP conventions
+for all candidates. Reuse available real data before launching new QM
+calculations. Evaluate the residual of the potential generated by RESP
+charges, parameter sensitivity, domain sums and the response to changes in
+size. Analyze internal and edge carbons separately.
 
-Escludere dal fit interi frammenti, separazioni e dimensioni, non una loro
-rotazione. Una classe chimica assente dal training resta non supportata.
-La successiva espansione mirata deve includere COOH/COO⁻ su più dimensioni
-e vicino/lontano da OH/EPX; quindi nuovi giunti covalenti rappresentativi.
-Per i conformeri, distinguere variazioni fisiche da rotazioni numeriche.
+Exclude entire fragments, separations and sizes from fitting, rather than
+one of their rotations. A chemical class absent from training remains
+unsupported. Subsequent targeted expansion must include COOH/COO⁻ at multiple
+sizes and near/far from OH/EPX, followed by representative new covalent
+junctions. For conformers, distinguish physical variations from numerical
+rotations.
 
-La scelta preferisce il modello più semplice che dia risultati stabili
-fuori dall'addestramento e tempi/memoria adatti ai fogli previsti. Una
-regola per intorno locale non richiede un nuovo HF sull'intero foglio a ogni
-generazione. Per un solver globale, il costo e la dipendenza dalla taglia
-vanno misurati: non si presume una scalabilità lineare.
+Prefer the simplest model that gives stable results outside training and
+requires suitable time and memory for the intended sheets. A local-environment
+rule does not require a new whole-sheet HF calculation for every generated
+structure. For a global solver, cost and size dependence must be measured;
+linear scaling is not assumed.
 
-## Riproducibilità e scalabilità della costruzione
+<a id="riproducibilità-e-scalabilità-della-costruzione"></a>
+## Reproducibility and scalability of construction
 
-Separare ricetta chimica, realizzazione geometrica e preset delle cariche.
-Registrare seed, dimensioni, conteggi effettivi dei gruppi, protonazione,
-connettività e IDs, versione/hash della libreria e carica di ogni atomo.
-La stessa ricetta con lo stesso seed deve riprodurre la stessa realizzazione;
-seed diversi producono un insieme di superfici per verificare la robustezza.
+Separate the chemical recipe, geometric realization and charge preset.
+Record the seed, dimensions, actual group counts, protonation, connectivity
+and IDs, library version/hash and the charge of each atom. The same recipe
+with the same seed must reproduce the same realization; different seeds
+produce an ensemble of surfaces for robustness checks.
 
-I gruppi basali scalano con l'area; i siti di bordo con perimetro e bordi
-dei difetti. Con soli carbossilati al bordo esterno, mantenere la stessa
-frazione COO/C o densità di carica su tutte le dimensioni non è garantito.
-La ricetta deve dichiarare quali densità conserva e rifiutare conteggi non
-realizzabili, senza inventare siti né modificare la carica per compensare.
-Questa è una specifica da verificare, non una nuova funzione già aggiunta.
+Basal groups scale with area; edge sites scale with the perimeter and defect
+boundaries. With carboxylates confined to the outer edge, preserving the same
+COO/C fraction or charge density across sizes is not guaranteed. The recipe
+must state which densities it preserves and reject unrealizable counts,
+without inventing sites or changing the charge to compensate. This is a
+specification to verify, rather than a newly added feature.
 
-Per PEG o amminoacidi, caratterizzare separatamente catena ripetuta, terminali
-e giunto GO–innesto. Il legame nuovo cambia l'intorno chimico: un modello
-libero di PEG/amminoacido non valida le cariche del prodotto covalente.
-Le topologie del GO, dei complessi e dei sottoinsiemi MM/GBSA devono ereditare
-la stessa assegnazione finale, senza ricalcolarla separatamente.
+For PEG or amino acids, characterize the repeating chain, termini and
+GO–graft junction separately. The new bond changes the chemical environment:
+a free PEG/amino-acid model does not validate charges in the covalent product.
+GO, complex and MM/GBSA subset topologies must inherit the same final
+assignment, without recalculating it separately.
 
-## Appoggio sperimentale
+<a id="appoggio-sperimentale"></a>
+## Experimental support
 
-Le cariche atomiche parziali non hanno un unico valore sperimentale diretto.
-Gli esperimenti vincolano composizione, protonazione e proprietà collettive.
-Non è quindi disponibile una tabella sperimentale universale che scelga da
-sola tra i tre schemi di assegnazione.
+Atomic partial charges have no unique, directly measurable experimental value.
+Experiments constrain composition, protonation and collective properties.
+There is therefore no universal experimental table that can independently
+select among the three assignment schemes.
 
-- XPS e analisi complementari: ricetta e proporzioni dei gruppi, con
-  incertezza di assegnazione; non una carica parziale univoca per atomo.
-- Titolazione potentiometrica: quantità di siti dissociabili e risposta
-  al pH del campione, utile per definire protonazione e totale del modello.
-  [Tao et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC10339393/) combinano
-  titolazioni e ipotesi strutturali DFT; queste ultime restano interpretazioni.
-- Funzionalizzazioni: [Orth et al.](https://doi.org/10.1016/j.jcis.2016.01.013)
-  usano titolazione e spettroscopia per caratterizzare gruppi introdotti.
-  Non sono misure dirette dei coefficienti RESP del giunto.
-- Adsorbimento e calorimetria: [Pandit e De](https://doi.org/10.1021/acs.jpcc.6b11571)
-  misurano interazioni GO–amminoacidi; sono un successivo controllo del modello
-  completo, con acqua, protonazione e parametri non elettrostatici coerenti.
-  Non si adattano ora le sole cariche a un'unica energia di adsorbimento.
+- XPS and complementary analyses: the recipe and group proportions, with
+  assignment uncertainty; not a unique partial charge for each atom.
+- Potentiometric titration: the number of dissociable sites and the sample's
+  pH response, useful for defining model protonation and total charge.
+  [Tao et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC10339393/) combine
+  titrations with DFT structural hypotheses; the latter remain interpretations.
+- Functionalization: [Orth et al.](https://doi.org/10.1016/j.jcis.2016.01.013)
+  use titration and spectroscopy to characterize introduced groups.
+  These do not directly measure junction RESP coefficients.
+- Adsorption and calorimetry: [Pandit and De](https://doi.org/10.1021/acs.jpcc.6b11571)
+  measure GO–amino-acid interactions. These provide a subsequent test of the
+  complete model, with consistent water, protonation and nonelectrostatic
+  parameters. Charges alone are not currently being fitted to a single
+  adsorption energy.
 
-Per i materiali LayerOne servono dati del campione corrispondente: risultati
-su GO di altra sintesi sono precedenti e controlli di trasferibilità, non
-misure delle proprietà del nostro campione. Proteine e peptidi rappresentano
-una verifica successiva più complessa; le piccole sonde permettono prima
-di separare meglio gli effetti del modello.
+LayerOne materials require data from the corresponding sample: results for
+GO produced by other synthesis routes provide precedents and transferability
+controls, rather than measurements of our sample's properties. Proteins and
+peptides provide a later, more complex test; small probes first help separate
+the effects of the model more clearly.
 
-## Precedenti metodologici
+<a id="precedenti-metodologici"></a>
+## Methodological precedents
 
 [R.E.D., Dupradeau et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC2918240/)
-documentano fit RESP su più molecole/conformazioni con vincoli per frammenti.
-È un precedente per costruire librerie coerenti; non valida da solo il GO.
-Il SI [GAFF2–AIM, Pinto et al.](https://doi.org/10.1021/acs.jpcb.2c06037),
-S5, usa classi di primi vicini: è un precedente di intorno chimico, distinto
-dal nostro target RESP. [SQE+qp](https://link.springer.com/article/10.1186/s13321-021-00528-w)
-fornisce una famiglia di redistribuzione conservativa con riferimento di
-carica; una calibrazione GO/RESP rimane da eseguire e validare.
+describe RESP fits over multiple molecules/conformations with fragment
+constraints. This provides a precedent for building consistent libraries;
+it does not by itself validate GO. Section S5 of the
+[GAFF2–AIM SI, Pinto et al.](https://doi.org/10.1021/acs.jpcb.2c06037)
+uses nearest-neighbor classes: a chemical-environment precedent distinct
+from our RESP target. [SQE+qp](https://link.springer.com/article/10.1186/s13321-021-00528-w)
+provides a family of charge-conserving redistribution models with a charge
+reference; GO/RESP calibration still needs to be performed and validated.

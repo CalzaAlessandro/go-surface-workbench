@@ -1,81 +1,85 @@
-# Componenti comuni e differenze rispetto a HierGO e GOPY
+<a id="componenti-comuni-e-differenze-rispetto-a-hiergo-e-gopy"></a>
+# Common components and differences from HierGO and GOPY
 
-Il confronto seguente divide il workflow in **sette componenti funzionali**.
-È una classificazione per spiegare le scelte del progetto; non misura una
-percentuale di codice condiviso o di accuratezza fisica.
+The comparison below divides the workflow into **seven functional components**.
+This classification explains the project's choices; it does not measure
+the percentage of shared code or physical accuracy.
 
-| Componente | GOPY | HierGO | GO Builder |
+| Component | GOPY | HierGO | GO Builder |
 |---|---|---|---|
-| 1. Reticolo | Generazione di grafene 2D | Celle/piastrelle replicabili | Reticolo rettangolare analitico, quattro C per cella |
-| 2. Difetti | Costruzione di buchi e pulizia | Vacanze, buchi e difetti topologici | Vacanze/buchi e pulizia dei pendenti; nessuno Stone–Wales o bordo di grano |
-| 3. Gruppi ossigenati | COOH, epossidi, OH e varianti | Decorazione basale/bordi, modelli fresh/aged | Conteggi OH/epossidi/carbonili/COOH/COO; casuale o siti fissati |
-| 4. Innesti molecolari | Procedura PEG dedicata | Il percorso confrontato riguarda la decorazione del GO | Frammenti espliciti; apertura anti e conservazione O come OH |
-| 5. Periodicità | Nessun percorso equivalente verificato qui | Costruzione e stitching di piastrelle | Immagini dei legami nel grafo; export Amber dei reticoli infiniti bloccato |
-| 6. Parametri per MD | Librerie/frcmod nel percorso Amber | Atom typing e assegnazione OPLS | Nove librerie GAFF2 dell'utente e GO_gaff2.frcmod; LEaP con legami espliciti |
-| 7. GROMACS | Conversione Amber tramite ParmEd | Percorso OPLS diretto | Conversione della medesima topologia Amber e confronto numerico nel round trip |
+| 1. Lattice | 2D graphene generation | Replicable cells/tiles | Analytical rectangular lattice, four C atoms per cell |
+| 2. Defects | Hole construction and cleanup | Vacancies, holes and topological defects | Vacancies/holes and dangling-atom cleanup; no Stone–Wales or grain boundary defects |
+| 3. Oxygen-containing groups | COOH, epoxides, OH and variants | Basal/edge decoration, fresh/aged models | OH/epoxide/carbonyl/COOH/COO counts; random or fixed sites |
+| 4. Molecular grafts | Dedicated PEG procedure | The compared workflow concerns GO decoration | Explicit fragments; anti opening with O retained as OH |
+| 5. Periodicity | No equivalent workflow verified here | Tile construction and stitching | Bond images in the graph; Amber export of infinite lattices blocked |
+| 6. MD parameters | Libraries/frcmod in the Amber workflow | Atom typing and OPLS assignment | Nine user GAFF2 libraries and GO_gaff2.frcmod; LEaP with explicit bonds |
+| 7. GROMACS | Amber conversion through ParmEd | Direct OPLS workflow | Conversion of the same Amber topology and numerical round-trip comparison |
 
-Le prime tre componenti condividono lo scopo con entrambi gli strumenti.
-Con HierGO si aggiunge il tema della periodicità; con GOPY quello degli
-innesti PEG e del percorso Amber/ParmEd. I dettagli degli algoritmi e dei
-parametri restano distinti.
-Fonti: [GOPY](https://github.com/Iourarum/GOPY),
+The first three components share their purpose with both tools.
+Periodicity is an additional common theme with HierGO; PEG grafts
+and the Amber/ParmEd workflow are additional common themes with GOPY. Algorithmic and
+parameter details remain distinct.
+Sources: [GOPY](https://github.com/Iourarum/GOPY),
 [HierGO](https://github.com/IFM-molecular-simulation-group/HierGO).
 
-## Costruzione e selezione dei siti nel nuovo codice
+<a id="costruzione-e-selezione-dei-siti-nel-nuovo-codice"></a>
+## Construction and site selection in the new code
 
-Il motore genera gli atomi e i legami insieme. I gruppi standard usano siti
-casuali salvo ID espliciti, con prenotazione dei carboni e ricerca a tentativi.
-Ogni tentativo sceglie la disposizione completa e poi verifica i gruppi in
-sequenza; fino a 128 tentativi, senza enumerare tutte le permutazioni. Per gli
-innesti si sceglie count e optional id; la frazione è calcolata dal conteggio.
-Errori di capacità o ingombro danno warning e stato INCOMPLETE, senza modelli
-parziali. Il modello è una geometria iniziale, non un ensemble equilibrato.
+The engine generates atoms and bonds together. Standard groups use random
+sites unless explicit IDs are supplied, with carbon-site reservation and a trial-based search.
+Each trial chooses the complete arrangement and then checks the groups in
+sequence; up to 128 trials are made, without enumerating every permutation. For
+grafts, count and an optional id are selected; the fraction is calculated from the count.
+Capacity or steric failures produce warnings and INCOMPLETE status, without partial
+models. The model is an initial geometry, not an equilibrated ensemble.
 
-GOPY sceglie casualmente gruppi da rimuovere e costruisce una catena PEG
-specifica. Qui si conserva l'ossigeno dell'epossido come OH durante l'apertura
-anti con un frammento fornito: è una trasformazione diversa.
-[Sorgente GOPY](https://github.com/Iourarum/GOPY/blob/master/GOPY.py).
+GOPY randomly selects groups for removal and constructs a specific PEG
+chain. Here the epoxide oxygen is retained as OH during anti opening
+with a supplied fragment: this is a different transformation.
+[GOPY source](https://github.com/Iourarum/GOPY/blob/master/GOPY.py).
 
-## Cariche e parametri: origine e destinazione
+<a id="cariche-e-parametri-origine-e-destinazione"></a>
+## Charges and parameters: source and destination
 
-Nel tutorial GOPY i parametri dei gruppi sono ricavati per analogia da
-AMBER99SB e da studi sul grafene; il percorso carica librerie/frcmod, usa
-bondbydistance e converte Amber in GROMACS con ParmEd. Non è il nostro set GAFF2.
-[Tutorial originale](https://github.com/Iourarum/GOPY/blob/master/Tutorial_GO_topology.md).
+In the GOPY tutorial, group parameters are derived by analogy from
+AMBER99SB and graphene studies; the workflow loads libraries/frcmod, uses
+bondbydistance and converts Amber to GROMACS with ParmEd. This is not our GAFF2 set.
+[Original tutorial](https://github.com/Iourarum/GOPY/blob/master/Tutorial_GO_topology.md).
 
-Nel percorso HierGO, atom typing e Oplsatom2 assegnano tipi/cariche tabulati;
-la guida usa VMD/TopoTools e OPLS-top.f90 per l'ITP, con i parametri OPLS
-bonded/nonbonded da fornire. Non è un fitting quantistico nuovo della superficie.
-[Guida ufficiale](https://github.com/IFM-molecular-simulation-group/HierGO/blob/master/Generating%20an%20OPLS-AA%20topology%20file%20from%20a%20pdb%20file.docx),
-[generatore OPLS](https://github.com/IFM-molecular-simulation-group/HierGO/blob/master/OPLS-top.f90).
+In the HierGO workflow, atom typing and Oplsatom2 assign tabulated types/charges;
+the guide uses VMD/TopoTools and OPLS-top.f90 for the ITP, with OPLS
+bonded/nonbonded parameters to be supplied. This is not a new quantum-mechanical fit for the surface.
+[Official guide](https://github.com/IFM-molecular-simulation-group/HierGO/blob/master/Generating%20an%20OPLS-AA%20topology%20file%20from%20a%20pdb%20file.docx),
+[OPLS generator](https://github.com/IFM-molecular-simulation-group/HierGO/blob/master/OPLS-top.f90).
 
-Nel nuovo percorso MD le cariche e i tipi vengono **letti dalle nove librerie
-GAFF2 dell'utente**, con GO_gaff2.frcmod. LEaP riceve gli atomi e tutti i legami:
-nessun bondbydistance. Non vengono ricalcolate cariche nuove su ogni foglio,
-né imposte neutralizzazioni per ottenere un totale desiderato.
+In the new MD workflow, charges and types are **read from the user's nine
+GAFF2 libraries**, with GO_gaff2.frcmod. LEaP receives the atoms and all bonds:
+no bondbydistance. New charges are not recalculated for each sheet,
+and neutralization is not imposed to achieve a desired total.
 
-Per una giunzione GO–amminoacido/PEG ecc. i parametri dell'epossido intatto non
-sono riutilizzati automaticamente. Servono tipi, cariche e termini della
-chimica modificata; la preparazione MD resta bloccata senza un template
-completo con provenienza. Questo limite non è risolto dal solo fatto che la
-geometria del prodotto sia stata costruita.
+For a GO–amino acid/PEG etc. junction, intact-epoxide parameters are not
+automatically reused. Types, charges and terms for the modified chemistry
+are required; MD preparation remains blocked without a complete template
+with documented provenance. Constructing the product geometry alone
+does not resolve this limitation.
 
-OPLS e OLD sono **riferimenti per l'audit**, non alternative già selezionabili
-per generare la MD. Non si sostituiscono le sole cariche OPLS dentro GAFF2:
-anche potenziali bonded, Lennard–Jones, regole di combinazione e fattori 1–4
-fanno parte del modello. Gaussian/MK e RESP sono preparati, ma il benchmark
-QM/ESP comune non è stato eseguito. Nessuna famiglia è stata dichiarata migliore.
-Vedere [CHARGES.md](CHARGES.md).
+OPLS and OLD are **audit references**, not alternatives already selectable
+for MD generation. OPLS charges alone are not substituted into GAFF2:
+bonded potentials, Lennard–Jones terms, combination rules and 1–4 scaling factors
+are also part of the model. Gaussian/MK and RESP inputs are prepared, but the common
+QM/ESP benchmark has not been run. No family has been declared superior.
+See [CHARGES.md](CHARGES.md).
 
-## Che cosa è riutilizzato materialmente
+<a id="che-cosa-è-riutilizzato-materialmente"></a>
+## What is actually reused
 
-Il generatore e il percorso Amber non eseguono i programmi GOPY/HierGO.
-Le librerie correnti sono copie tracciate dei file dell'utente, conservate in
-resources/reference/current. Cinque file originali HierGO sono archiviati
-separatamente con commit/hash/licenza: LICENSE, README.md, atom-typing.py,
-OPLS-top.f90 e Oplsatom2. L'audit legge la tabella Oplsatom2 e controlla gli hash;
-la costruzione MD GAFF2 non usa quelle cariche né esegue quei programmi.
+The generator and Amber workflow do not run the GOPY/HierGO programs.
+The current libraries are tracked copies of the user's files, preserved in
+resources/reference/current. Five original HierGO files are archived
+separately with commit/hash/license information: LICENSE, README.md, atom-typing.py,
+OPLS-top.f90 and Oplsatom2. The audit reads the Oplsatom2 table and checks its hashes;
+GAFF2 MD construction does not use those charges or run those programs.
 
-Non sono implementati tutti gli strumenti originali: in particolare
-Stone–Wales, mini grain boundary, stitching multistrato, bunching dedicato,
-modelli fresh/aged e N-doping richiedono estensioni proprie.
+Not all original tools are implemented: in particular,
+Stone–Wales, mini grain boundary, multilayer stitching, dedicated bunching,
+fresh/aged models and N-doping require their own extensions.

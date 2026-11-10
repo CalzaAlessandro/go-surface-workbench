@@ -1,50 +1,52 @@
-# Audit delle cariche e riferimento elettrostatico
+<a id="audit-delle-cariche-e-riferimento-elettrostatico"></a>
+# Charge audit and electrostatic reference
 
-L'audit confronta le sorgenti in modo descrittivo. Non assegna un vincitore:
-GO CURRENT, i due sistemi OLD e la tabella HierGO non descrivono la stessa
-composizione, protonazione, connettività e carica totale. Differenze nelle cariche
-parziali, anche grandi, non misurano da sole l'accuratezza di una parametrizzazione.
+The audit provides a descriptive comparison of the sources. It does not select a winner:
+GO CURRENT, the two OLD systems and the HierGO table do not describe the same
+composition, protonation, connectivity or total charge. Differences in partial
+charges, even large ones, do not by themselves measure the accuracy of a parameterization.
 
-La provenienza comunicata dall'utente per CURRENT è la parametrizzazione Amber
-standard di frammenti GO separati. Metodo QM, base, schema di fitting, equivalenze
-RESP, geometrie e vincoli originali restano da recuperare. Non si attribuiscono
-retroattivamente HF/6-31G*, RESP o AM1-BCC alle tabelle disponibili.
+The provenance reported by the user for CURRENT is standard Amber parameterization
+of separate GO fragments. The original QM method, basis set, fitting scheme, RESP
+equivalences, geometries and constraints remain to be recovered. HF/6-31G*, RESP
+or AM1-BCC are not retroactively attributed to the available tables.
 
-## Sorgenti e risultati dell'audit
+<a id="sorgenti-e-risultati-dellaudit"></a>
+## Audit sources and results
 
-`CURRENT` comprende esclusivamente i nove file `*_gaff2.lib` nella copia
-`resources/reference/current`. I nove `*_amber.lib` presenti nella stessa cartella
-sono una famiglia separata, `BUNDLED_LEGACY_AMBER`; `EHH.lib` è
-`BUNDLED_AUXILIARY`. La cartella condivisa non implica che tutti i file siano
-parametri attualmente usati.
+`CURRENT` includes only the nine `*_gaff2.lib` files in the
+`resources/reference/current` copy. The nine `*_amber.lib` files in the same folder
+are a separate family, `BUNDLED_LEGACY_AMBER`; `EHH.lib` is
+`BUNDLED_AUXILIARY`. Sharing a folder does not imply that all files contain
+parameters currently in use.
 
-Il parser OFF estrae le tabelle atomiche effettive e la connettività interna senza
-dipendere da `boundbox` o dalle sezioni di perturbazione. Questo permette l'audit
-del CBD storico e di EPH con metadati EPX estranei, ma non certifica la validità
-completa di questi file per LEaP. L'identità atomica usa l'indice nel template:
-nomi duplicati non vengono fusi.
+The OFF parser extracts the actual atom tables and internal connectivity without
+depending on `boundbox` or the perturbation sections. This allows the audit
+of the historical CBD and of EPH with unrelated EPX metadata, but does not verify
+that these files are fully valid for LEaP. Atom identity uses the index within the template:
+duplicate names are not merged.
 
-OLD viene letto dalle topologie compilate `gox.parm7` e `rgo.parm7` tramite ParmEd.
-I motivi chimici sono descritti dalla connettività locale, separando gli indizi
-dei nomi di residuo. Dove mancano ordini di legame affidabili, le assegnazioni
-restano esplicitamente ambigue, per esempio `carbonyl_or_deprotonated_oxygen`.
-I vicini di un template incompleto e quelli di una topologia completa non sono
-contesti automaticamente equivalenti.
+OLD is read from the compiled topologies `gox.parm7` and `rgo.parm7` through ParmEd.
+Chemical motifs are described by local connectivity, keeping residue-name
+clues separate. Where reliable bond orders are unavailable, assignments
+remain explicitly ambiguous, for example `carbonyl_or_deprotonated_oxygen`.
+The neighbors in an incomplete template and those in a complete topology are not
+automatically equivalent contexts.
 
-HierGO è fissato al commit `60382a1a1807ef0003ffcc3903392e913b1e5e9a` del
-[repository ufficiale](https://github.com/IFM-molecular-simulation-group/HierGO).
-Licenza GPL-3.0, file originali, URL e SHA256 sono conservati in
-`resources/reference/opls/PROVENANCE.json`; l'audit verifica questi hash.
-La tabella originale `Oplsatom2` contiene 17 righe contestuali, non 17 atomi di un
-sistema. Lo stesso `opls_180` compare come ossigeno epossidico EPX/OE con −0.4000 e
-ed etereo ETH/OT con −0.1700 e: il solo tipo OPLS non identifica la carica.
+HierGO is pinned to commit `60382a1a1807ef0003ffcc3903392e913b1e5e9a` of the
+[official repository](https://github.com/IFM-molecular-simulation-group/HierGO).
+The GPL-3.0 license, original files, URLs and SHA256 hashes are preserved in
+`resources/reference/opls/PROVENANCE.json`; the audit checks these hashes.
+The original `Oplsatom2` table contains 17 contextual rows, not 17 atoms of a
+system. The same `opls_180` appears as epoxide oxygen EPX/OE with −0.4000 e
+and ether oxygen ETH/OT with −0.1700 e: the OPLS type alone does not identify the charge.
 
-La selezione esplicita dei residui GO 1–494 del complesso CURRENT disponibile,
-escludendo il ligando 495, contiene 1007 atomi (C613 O253 H141), carica −16 e.
-OLD gox contiene 940 atomi (C661 O214 H65), carica −9.0821659936 e; OLD rgo
-contiene 814 atomi (C674 O47 H93), carica −3.0000199991 e. La carica non intera
-di OLD gox merita recupero della procedura originale; non viene corretta
-automaticamente e non autorizza una conclusione sull'accuratezza relativa.
+Explicit selection of GO residues 1–494 in the available CURRENT complex,
+excluding ligand 495, contains 1007 atoms (C613 O253 H141), with charge −16 e.
+OLD gox contains 940 atoms (C661 O214 H65), with charge −9.0821659936 e; OLD rgo
+contains 814 atoms (C674 O47 H93), with charge −3.0000199991 e. The noninteger charge
+of OLD gox warrants recovery of the original procedure; it is not automatically
+corrected and does not justify a conclusion about relative accuracy.
 
 ```python
 from go_builder.charges import audit_charge_sources
@@ -58,32 +60,33 @@ report = audit_charge_sources(
 
 API: `audit_charge_sources(output_dir, *, current_dir=None, old_dir=None,
 opls_dir=None, current_topology=None, current_go_residue_count=494)`.
-Le directory di sorgente predefinite sono le copie sotto `resources/reference`.
-La topologia CURRENT compilata è opzionale; quando specificata, la selezione
-dei primi N residui deve essere verificata sul sistema fornito.
+The default source directories are the copies under `resources/reference`.
+The compiled CURRENT topology is optional; when supplied, selection
+of the first N residues must be checked against the provided system.
 
-Output: `audit.json`, `atoms.csv`, `motifs.csv`, `sources.csv`. Le statistiche sono
-separate per sorgente e contesto atomico; somme di template o tabelle di parametri
-non sono cariche totali di una superficie. Ogni file dati ha SHA256 e percorso.
-Una directory di output già presente genera `FileExistsError`.
+Output: `audit.json`, `atoms.csv`, `motifs.csv`, `sources.csv`. Statistics are
+separated by source and atomic context; sums over templates or parameter tables
+are not total surface charges. Each data file has a SHA256 hash and path.
+An existing output directory raises `FileExistsError`.
 
-## Preparazione di un confronto verificabile
+<a id="preparazione-di-un-confronto-verificabile"></a>
+## Preparing a verifiable comparison
 
-1. Scegliere frammenti GO finiti, con bordi saturati esplicitamente con H, che
-   rappresentino bordo grafenico, OH, epossido, carbonile, COOH, COO− e l'eventuale
-   prodotto di apertura. Definire protonazione, carica intera e molteplicità;
-   alcuni conteggi di gruppi basali generano specie con elettroni spaiati.
-2. Applicare ciascuna sorgente solo dove esiste una corrispondenza chimica
-   documentata. Cariche dei caps e dei nuovi giunti richiedono una scelta
-   motivata. Se una sorgente non copre il frammento, registrare il caso come
-   non assegnabile; non aggiungere zeri né neutralizzare per ottenere un confronto.
-3. Usare la stessa geometria e lo stesso stato di carica per tutti i candidati
-   di ciascun frammento. Preparare un riferimento QM dichiarato e ripetere il
-   confronto su più conformazioni; il riferimento non ricostruisce il metodo
-   originario di CURRENT.
-4. Confrontare ESP sullo stesso insieme di punti e dipoli rispetto alla stessa
-   origine. Successivamente verificare geometria, stabilità Amber e sensibilità
-   delle osservabili, compreso MM/GBSA con raggi GB e campionamento confrontabili.
+1. Choose finite GO fragments, with edges explicitly capped with H, that
+   represent graphene edges, OH, epoxide, carbonyl, COOH, COO− and any
+   ring-opening product. Define protonation, integer charge and multiplicity;
+   some basal-group counts produce species with unpaired electrons.
+2. Apply each source only where a documented chemical correspondence
+   exists. Charges for capping atoms and new junctions require a justified
+   choice. If a source does not cover the fragment, record the case as
+   unassignable; do not add zeros or neutralize charges to obtain a comparison.
+3. Use the same geometry and charge state for all candidates
+   for each fragment. Prepare a declared QM reference and repeat the
+   comparison across multiple conformations; the reference does not reconstruct
+   the original CURRENT method.
+4. Compare ESP over the same set of points and dipoles relative to the same
+   origin. Subsequently check geometry, stability in Amber and sensitivity
+   of observables, including MM/GBSA with comparable GB radii and sampling.
 
 ```python
 from go_builder.qm import prepare_qm
@@ -95,23 +98,24 @@ manifest = prepare_qm(
 ```
 
 API: `prepare_qm(model, output_dir, *, total_charge=None, multiplicity=1,
-method='HF', basis='6-31G*', nproc=4, memory='4GB')`. Se manca `total_charge`,
-devono essere presenti le cariche formali di tutti gli atomi. Coordinate in Å.
-Sono rifiutati modelli periodici, legami con immagini residue, bordi aperti,
-sovrapposizioni atomiche e combinazioni carica/spin incompatibili.
-Non vengono tagliati o saturati automaticamente frammenti periodici.
+method='HF', basis='6-31G*', nproc=4, memory='4GB')`. If `total_charge` is absent,
+formal charges must be present for all atoms. Coordinates are in Å.
+Periodic models, bonds with remaining image offsets, open edges,
+atomic overlaps and incompatible charge/spin combinations are rejected.
+Periodic fragments are not automatically cut or capped.
 
-Vengono scritti `reference.gjf`, `qm_manifest.json`, `resp-stage1.in`,
-`prepare_resp.sh` e istruzioni. Il file Gaussian è un single point, senza
-ottimizzazione, con `Pop=MK`, SCF stretto e output dei punti ESP.
-Il riferimento predefinito HF/6-31G* è una scelta esplicita di benchmark.
-Gaussian e AmberTools restano software esterni: **nessun calcolo viene avviato**.
-Lo script RESP può essere lanciato dall'utente dopo la verifica dell'output QM e
-rifiuta di sovrascrivere risultati. Il fitting RESP a uno stadio fornito è
-esplorativo, senza equivalenze: il fitting produttivo richiede vincoli chimici
-e l'eventuale secondo stadio definiti per il protocollo scelto.
+The files `reference.gjf`, `qm_manifest.json`, `resp-stage1.in`,
+`prepare_resp.sh` and instructions are written. The Gaussian file specifies a single point,
+without optimization, with `Pop=MK`, tight SCF and ESP point output.
+The default HF/6-31G* reference is an explicit benchmark choice.
+Gaussian and AmberTools remain external software: **no calculation is launched**.
+The user can run the RESP script after checking the QM output;
+it refuses to overwrite results. The supplied one-stage RESP fit is
+exploratory, without equivalences: production fitting requires chemical constraints
+and any second stage to be defined for the chosen protocol.
 
-## Da espgen al confronto comune
+<a id="da-espgen-al-confronto-comune"></a>
+## From espgen to a common comparison
 
 ```python
 from go_builder.qm import espgen_to_reference, compare_esp
@@ -119,7 +123,7 @@ from go_builder.qm import espgen_to_reference, compare_esp
 espgen_to_reference(
     "results/qm_epoxide/reference.esp", capped_model,
     "results/epoxide_reference.json", total_charge=0,
-    # Facoltativo: dipolo QM nella stessa orientazione e origine.
+    # Optional: QM dipole in the same orientation and with the same origin.
     dipole=[0.0, 0.0, 1.2], dipole_unit="debye",
     dipole_origin=[0.0, 0.0, 0.0],
 )
@@ -133,13 +137,13 @@ compare_esp(
 
 `espgen_to_reference(esp_path, model, output_path, *, total_charge,
 geometry_tolerance=1e-5, dipole=None, dipole_unit='debye', dipole_origin=None)`
-legge l'ESP standard Amber per una molecola, con coordinate in bohr e potenziale
-in unità atomiche. La geometria deve corrispondere all'ordine degli atomi del
-modello entro la tolleranza in Å. Con `NoSymm` si conserva l'orientazione richiesta;
-in caso di rotazioni o riordini il convertitore rifiuta il dato e richiede una
-mappatura esplicita. `dipole_origin`, se fornito al convertitore, è in Å.
+reads standard Amber ESP for one molecule, with coordinates in bohr and potential
+in atomic units. The geometry must match the model's atom order
+within the tolerance in Å. `NoSymm` preserves the required orientation;
+if atoms have been rotated or reordered, the converter rejects the data and requires
+an explicit mapping. `dipole_origin`, when supplied to the converter, is in Å.
 
-La struttura JSON minima per un riferimento analitico di esempio è:
+The minimal JSON structure for an example analytical reference is:
 
 ```json
 {
@@ -154,7 +158,7 @@ La struttura JSON minima per un riferimento analitico di esempio è:
 }
 ```
 
-Un file candidati per la CLI ESP usa questa forma, con coordinate predefinite in Å:
+A candidate file for the ESP CLI uses this form, with coordinates in Å by default:
 
 ```json
 {
@@ -164,27 +168,27 @@ Un file candidati per la CLI ESP usa questa forma, con coordinate predefinite in
 }
 ```
 
-Questo esempio verifica unità e legge di Coulomb; non rappresenta un benchmark
-QM completato né un modello GO. Per dati reali occorre fornire le cariche
-corrispondenti di tutti gli atomi, caps compresi.
+This example checks units and Coulomb's law; it does not represent a completed
+QM benchmark or a GO model. Real data require the corresponding charges
+for all atoms, including capping atoms.
 
 API: `compare_esp(reference_path, candidates, output_dir, *,
-geometry_tolerance=1e-6, charge_tolerance=1e-6)`. Vengono verificati identità,
-elementi, geometria, finitezza, non periodicità e uguaglianza della carica totale.
-Nessuna rinormalizzazione o compensazione delle cariche viene applicata.
-Il riferimento richiede unità esplicite; supporta coordinate bohr/Å e dipolo
-debye, e·bohr o e·Å. Nel JSON di riferimento l'origine usa `position_unit`.
+geometry_tolerance=1e-6, charge_tolerance=1e-6)`. Identity,
+elements, geometry, finiteness, nonperiodicity and equality of total charge are checked.
+No charge renormalization or compensation is applied.
+The reference requires explicit units; it supports bohr/Å coordinates and dipoles in
+debye, e·bohr or e·Å. In the reference JSON, the origin uses `position_unit`.
 
-Output: `esp_comparison.json` e `esp_residuals.csv`, con RMSE, MAE, errore massimo,
-RMSE relativa, dipoli e rispettivi errori se è dato il dipolo QM. Potenziali in
-Hartree/e; la conversione kcal/mol/e è l'energia per carica di prova unitaria.
-Il dipolo di un sistema carico dipende dall'origine. Le RMSE sono non pesate:
-la distribuzione dei punti del riferimento determina il peso spaziale.
-Hash del riferimento e di ogni insieme candidato carica/geometria permettono
-di ricostruire l'esatto confronto. Non viene prodotta una raccomandazione globale.
+Output: `esp_comparison.json` and `esp_residuals.csv`, with RMSE, MAE, maximum error,
+relative RMSE, dipoles and their respective errors if the QM dipole is provided. Potentials are in
+Hartree/e; conversion to kcal/mol/e gives the energy per unit test charge.
+The dipole of a charged system depends on the origin. The RMSE values are unweighted:
+the distribution of reference points determines the spatial weighting.
+Hashes of the reference and each candidate charge/geometry set allow
+the exact comparison to be reconstructed. No overall recommendation is produced.
 
-Riferimenti operativi primari: il formato espgen, comprese coordinate in bohr e
-campi a larghezza fissa, è verificato nel
-[sorgente Amber ufficiale](https://github.com/Amber-MD/AmberClassic/blob/main/src/antechamber/espgen.c).
-L'uso di espgen e respgen per fitting a due stadi è descritto nel
-[manuale Amber](https://dev-archive.ambermd.org/200603/att-0122/amber9.pdf).
+Primary operational references: the espgen format, including bohr coordinates and
+fixed-width fields, is verified in the
+[official Amber source](https://github.com/Amber-MD/AmberClassic/blob/main/src/antechamber/espgen.c).
+The use of espgen and respgen for two-stage fitting is described in the
+[Amber manual](https://dev-archive.ambermd.org/200603/att-0122/amber9.pdf).

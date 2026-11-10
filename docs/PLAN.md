@@ -21,16 +21,16 @@
 
 ## Tasks
 
-Aggiornamento richiesto dall'utente il 29 ottobre: concentrare il lavoro su
-generazione/funzionalizzazione. Rendere esplicita la selezione casuale dei
-siti per PEG e frammenti generici: numero e ID facoltativi, frazione calcolata
-dall'output, seme riproducibile; registrare quanti innesti sono realizzati.
-Anche i gruppi standard sono casuali per default, con count/id per fissarli.
-Richieste non raggiunte danno warning strutturato, tentativi alternativi e
-arresto senza salvare composizioni parziali. La selezione casuale non modifica la
-reazione anti, non elimina altri gruppi e non certifica una distribuzione
-all'equilibrio. Testare frazioni derivate, riproducibilità, siti espliciti
-e percorso completo da CLI prima della consegna.
+Update requested by the user on 29 October: focus the work on
+generation/functionalization. Make random site selection explicit for
+PEG and generic fragments: optional count and IDs, fraction calculated
+from the output, reproducible seed; record how many grafts are made.
+Standard groups are also random by default, with count/id to specify them.
+Unfulfilled requests produce structured warnings, alternative attempts, and
+termination without saving partial compositions. Random selection does not change the
+anti reaction, remove other groups, or establish an equilibrium
+distribution. Test derived fractions, reproducibility, explicit sites,
+and the complete CLI workflow before delivery.
 
 - [x] 1. Graph model, finite/periodic construction, holes and functional-group placement. Write tests before implementation; run targeted tests.
 - [x] 2. Anti epoxide opening with explicit fragment/transfer-H and chemistry validation. Test stereochemistry and conservation first. Count with optional IDs, derived fractions and incomplete-placement warnings verified.

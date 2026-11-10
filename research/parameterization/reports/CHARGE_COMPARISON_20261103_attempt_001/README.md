@@ -1,189 +1,197 @@
-> Aggiornamento successivo: completato anche il terzo C54. Il pannello DFT ha ora 19 contesti. Vedi il [nuovo report con Espaloma e SQE](../CHARGE_CONTROLS_UPDATE_20261103_attempt_001/REPORT.html). Questa cartella conserva lo snapshot precedente a 18 contesti.
+> Subsequent update: the third C54 has also been completed. The DFT panel now has 19 contexts. See the [new report with Espaloma and SQE](../CHARGE_CONTROLS_UPDATE_20261103_attempt_001/REPORT.html). This folder preserves the previous snapshot with 18 contexts.
 
-# Cariche RESP per Amber: confronto del 3 novembre 2026
+<a id="cariche-resp-per-amber-confronto-del-3-novembre-2026"></a>
+# RESP charges for Amber: comparison of 3 November 2026
 
-Sono completati 16 riferimenti atomici RESP HF/6-31G* su geometrie DFT,
-16 corrispondenti controlli DFT–RESP, quattro fit RESP a blocchi condivisi L0
-e 12 controlli AM1-BCC con copertura completa dei parametri BCC.
-Due ulteriori C₅₄ portano il pannello DFT–RESP a 18 strutture.
-Nessuna nuova libreria di produzione è stata selezionata.
+16 atom-specific HF/6-31G* RESP references on DFT geometries,
+16 corresponding DFT–RESP controls, four L0 shared-block RESP fits,
+and 12 AM1-BCC controls with complete BCC parameter coverage have been completed.
+Two additional C₅₄ structures bring the DFT–RESP panel to 18 structures.
+No new production library has been selected.
 
-HF e DFT condividono le stesse prime 16 geometrie: non sono 34 contesti chimici
-indipendenti. COOH e COO⁻ hanno ciascuno un solo contesto fisico nel pannello.
+HF and DFT share the same first 16 geometries: these are not 34 independent
+chemical contexts. COOH and COO⁻ each have only one physical context in the panel.
 
-La versione da leggere è la [pagina HTML completa](RESP_AMBER_REPORT.html),
-con cariche, metodi, grafici selezionabili e considerazioni sui prossimi passi.
+The version to read is the [complete HTML page](RESP_AMBER_REPORT.html),
+with charges, methods, selectable plots, and considerations for the next steps.
 
-## RESP ed ESP: cosa viene calcolato
+<a id="resp-ed-esp-cosa-viene-calcolato"></a>
+## RESP and ESP: what is calculated
 
-**Le cariche nuove sono RESP, ottenute con l'eseguibile RESP di Amber.**
-ESP indica il potenziale elettrostatico quantistico usato come dato di ingresso.
-Il residuo ESP misura quanto bene le cariche RESP riproducono quel potenziale:
-non indica che siano state adottate le cariche ESP non ristrette di Gaussian.
-Vedi anche la [documentazione RESP](https://q4md-forcefieldtools.org/RED/resp/).
+**The new charges are RESP charges, obtained with the Amber RESP executable.**
+ESP denotes the quantum electrostatic potential used as input.
+The ESP residual measures how well the RESP charges reproduce that potential:
+it does not mean that Gaussian's unrestrained ESP charges were adopted.
+See also the [RESP documentation](https://q4md-forcefieldtools.org/RED/resp/).
 
-Il riferimento principale è il potenziale MK in fase gas a HF/6-31G*,
-calcolato sulle geometrie ottimizzate ωB97X-D/6-311++G(d,p), seguito dal fit
-iperbolico RESP. La geometria DFT e il livello HF del potenziale sono registrati
-separatamente. I controlli DFT–RESP usano invece il potenziale ωB97X-D/6-311++G(d,p).
-AM1-BCC è un metodo alternativo, esplicitamente separato dalle RESP.
+The primary reference is the gas-phase MK potential at HF/6-31G*,
+calculated on geometries optimized at ωB97X-D/6-311++G(d,p), followed by the
+hyperbolic RESP fit. The DFT geometry and the HF level of the potential are recorded
+separately. The DFT–RESP controls instead use the ωB97X-D/6-311++G(d,p) potential.
+AM1-BCC is an alternative method, explicitly kept separate from RESP.
 
-Il fit atomico usa qwt = 0,0005, ihfree = 1, vincoli sulla carica intera e sulle
-equivalenze dichiarate. Le tre orientazioni rigide hanno pesi registrati che
-compensano la diversa numerosità delle griglie. Sono una sola geometria fisica,
-non tre conformeri indipendenti. Non essendoci gruppi CH₂/CH₃ da rifinire,
-lo stadio RESP 2 è dichiarato non operativo: non viene simulato un secondo fit.
-I dettagli sono in [RESP_PROTOCOL.md](../../docs/RESP_PROTOCOL.md).
+The atom-specific fit uses qwt = 0.0005, ihfree = 1, integer-charge constraints,
+and the declared equivalence constraints. The three rigid orientations have recorded weights
+that compensate for the different numbers of grid points. They represent one physical geometry,
+not three independent conformers. Since there are no CH₂/CH₃ groups to refine,
+RESP stage 2 is declared inactive: a second fit is not simulated.
+Details are in [RESP_PROTOCOL.md](../../docs/RESP_PROTOCOL.md).
 
-L'instabilità esterna RHF→UHF osservata nei precedenti controlli è distinta
-da un errore SCF o da un'incompatibilità automatica con Amber. Questo pannello
-mantiene il riferimento HF ristretto senza dichiararne validata la stabilità
-elettronica. Le geometrie DFT hanno superato i rispettivi controlli.
+The external RHF→UHF instability observed in previous checks is distinct
+from an SCF error or an automatic incompatibility with Amber. This panel
+retains the restricted HF reference without claiming that its electronic stability
+has been validated. The DFT geometries passed their respective checks.
 
-## L0 e gruppi analizzati
+<a id="l0-e-gruppi-analizzati"></a>
+## L0 and the groups analyzed
 
-L0 è un **fit RESP con una carica condivisa per ruolo chimico**, indipendente
-dalla distanza dagli altri gruppi. Il carbonio interno non funzionalizzato è
-fissato a 0 e; ciascun blocco neutro somma a 0 e e il carbossilato a −1 e.
-I carboni di ancoraggio di COOH/COO⁻ appartengono ai rispettivi blocchi.
-I carboni e idrogeni del bordo sono ruoli distinti dal fondo interno.
-È una prova della trasferibilità dell'ipotesi modulare, non un preset approvato.
+L0 is a **RESP fit with one shared charge per chemical role**, independent
+of the distance from other groups. Unfunctionalized interior carbon is
+fixed at 0 e; each neutral block sums to 0 e and the carboxylate block to −1 e.
+The COOH/COO⁻ anchor carbons belong to their respective blocks.
+Edge carbons and hydrogens have roles distinct from the interior background.
+This is a test of the transferability of the modular hypothesis, not an approved preset.
 
-Il pannello copre:
+The panel covers:
 
-| Chimica | Unità della libreria | Contesti disponibili |
+| Chemistry | Library unit | Available contexts |
 |---|---|---|
-| Scheletro interno e bordo C–H | GGG, GRT | C₁₆, C₂₄ e controlli DFT C₅₄ |
-| Idrossili basali | HYD | Due OH cis/trans, vicini/lontani, miscele OH/EPX |
-| Epossidi basali | EPX | Singolo, coppia e miscele; coppia C₅₄ DFT recuperata |
-| Epossidi al bordo | EPH, EPT | Due controlli C₂₄ dedicati |
-| Carbonili | CAB | Frammento con due carbonili |
-| Carbossile protonato | CBX | COOH con carbonio di ancoraggio |
-| Carbossilato | CBD | COO⁻ con carbonio di ancoraggio |
+| Interior skeleton and C–H edge | GGG, GRT | C₁₆, C₂₄, and C₅₄ DFT controls |
+| Basal hydroxyls | HYD | Two cis/trans OH groups, near/far, OH/EPX mixtures |
+| Basal epoxides | EPX | Single, pair, and mixtures; C₅₄ DFT pair recovered |
+| Edge epoxides | EPH, EPT | Two dedicated C₂₄ controls |
+| Carbonyls | CAB | Fragment with two carbonyls |
+| Protonated carboxyl | CBX | COOH with anchor carbon |
+| Carboxylate | CBD | COO⁻ with anchor carbon |
 
-C₁₆/C₂₄/C₅₄ indicano la dimensione dello scheletro aromatico di partenza;
-il carbonio del carbossile è aggiuntivo. I casi chiamati OH_EPX contengono
-due OH e un epossido. Questo non è ancora un pannello esaustivo di tutte
-le distanze, densità, facce, protonazioni e combinazioni di gruppi del GO.
-Lattoni e altre funzionalità proposte non sono stati parametrizzati qui.
+C₁₆/C₂₄/C₅₄ indicate the size of the starting aromatic skeleton;
+the carboxyl carbon is additional. The cases named OH_EPX contain
+two OH groups and one epoxide. This is not yet an exhaustive panel of all
+GO group distances, densities, faces, protonation states, and combinations.
+Lactones and other proposed functionalities have not been parameterized here.
 
-## Risultati descrittivi
+<a id="risultati-descrittivi"></a>
+## Descriptive results
 
-Si calcola prima la media delle tre orientazioni di ogni struttura e poi la
-mediana tra strutture. RRMS è l'errore quadratico relativo sul potenziale;
-valori minori indicano una migliore riproduzione di quel riferimento QM.
+The three orientations of each structure are averaged first, followed by the
+median across structures. RRMS is the relative root-mean-square error in the potential;
+lower values indicate better reproduction of that QM reference.
 
-| Cariche valutate sul medesimo ESP HF | Mediana RRMS, 16 strutture |
+| Charges evaluated against the same HF ESP | Median RRMS, 16 structures |
 |---|---:|
-| RESP HF atomiche, specifiche di ciascun frammento | 0,0797 |
-| RESP DFT atomiche sugli stessi frammenti | 0,1123 |
-| RESP L0 HF, fit condiviso sui 16 casi | 0,1883 |
-| Libreria attuale completa | 0,3505 |
+| Atom-specific HF RESP, specific to each fragment | 0.0797 |
+| Atom-specific DFT RESP on the same fragments | 0.1123 |
+| HF L0 RESP, shared fit across the 16 cases | 0.1883 |
+| Complete current library | 0.3505 |
 
-I fit atomici sono valutati anche sui dati usati per determinarli. Il vantaggio
-di questi fit non dimostra una migliore dinamica o affinità di adsorbimento.
-Anche il fit L0 su tutti i 16 casi è un risultato di addestramento.
+The atom-specific fits are also evaluated against the data used to determine them. The advantage
+of these fits does not demonstrate better dynamics or adsorption affinity.
+The L0 fit across all 16 cases is also a training result.
 
-Una verifica separata esclude dal fit tutte le strutture C₂₄: L0 viene stimato
-sui sette contesti con scheletro C₁₆ e applicato ai sette C₂₄ con ruoli coperti.
-EPH ed EPT restano non disponibili perché non presenti nell'addestramento.
+A separate check excludes all C₂₄ structures from the fit: L0 is estimated
+on the seven contexts with a C₁₆ skeleton and applied to the seven C₂₄ cases with covered roles.
+EPH and EPT remain unavailable because they are absent from the training set.
 
-| Confronto sui medesimi 7 C₂₄ | Mediana RRMS, ESP HF |
+| Comparison on the same 7 C₂₄ cases | Median RRMS, HF ESP |
 |---|---:|
-| RESP L0 HF addestrato sui soli C₁₆ | 0,1792 |
-| RESP L0 HF addestrato sui 16 casi, quindi includendo i C₂₄ | 0,1777 |
-| Libreria attuale completa | 0,3501 |
+| HF L0 RESP trained only on C₁₆ | 0.1792 |
+| HF L0 RESP trained on the 16 cases, thus including C₂₄ | 0.1777 |
+| Complete current library | 0.3501 |
 
-Questo è un primo controllo fuori dall'addestramento, favorevole al candidato
-L0 sul pannello disponibile. Non dimostra trasferibilità a fogli macroscopici,
-nuove chimiche o tutte le condizioni di ossidazione.
+This is an initial check outside the training set, favoring the L0 candidate
+on the available panel. It does not demonstrate transferability to macroscopic sheets,
+new chemistries, or all oxidation conditions.
 
-La tabella delle cariche mostra però compensazioni forti per COO⁻: nel L0 HF
-su 16 casi C carbossilico = +1,731213 e, ciascun O = −1,049356 e e carbonio
-di ancoraggio = −0,632501 e. Prima dell'adozione occorre verificare sensibilità
-ai vincoli, correlazione delle variabili e contesti carbossilato aggiuntivi.
-Una decomposizione RESP non misura in modo univoco il trasferimento di carica.
+However, the charge table shows strong compensation for COO⁻: in HF L0
+across 16 cases, carboxyl C = +1.731213 e, each O = −1.049356 e, and anchor
+carbon = −0.632501 e. Before adoption, sensitivity to constraints,
+correlation between variables, and additional carboxylate contexts must be checked.
+A RESP decomposition does not uniquely measure charge transfer.
 
-## AM1-BCC e modelli pubblicati
+<a id="am1-bcc-e-modelli-pubblicati"></a>
+## AM1-BCC and published models
 
-Quattro casi hanno un termine BCC nativo non coperto e sono esclusi dal
-confronto principale: pyrene_dione, C24_single_basal_EPX_control,
-C24_EPH_edge_control e C24_OH_OH_near_trans. Le tipologie mancanti sono
-16–12–2 o 12–16–2. Non sono sostituite con zero né con parametri inventati.
-Le cariche native sono conservate; il candidato indicato AM1-BCC* nei grafici
-contiene una piccola correzione vincolata dell'arrotondamento della carica totale.
-La proiezione L0 delle AM1-BCC è ancora un candidato diverso dal metodo nativo.
+Four cases have an uncovered native BCC term and are excluded from the
+main comparison: pyrene_dione, C24_single_basal_EPX_control,
+C24_EPH_edge_control, and C24_OH_OH_near_trans. The missing types are
+16–12–2 or 12–16–2. They are replaced neither with zero nor with invented parameters.
+The native charges are preserved; the candidate labeled AM1-BCC* in the plots
+contains a small constrained correction for total-charge rounding.
+The L0 projection of AM1-BCC is yet another candidate, distinct from the native method.
 
-Il CSV completo include anche controlli da HierGO/OPLS, GOPY e Stauffer e
-la copertura effettiva di ciascun candidato. I confronti con le librerie OLD
-di foglio intero e GAFF2-AIM non hanno qui un mapping atomico completo sui
-frammenti: **non hanno ricevuto uno score fittizio**. I controlli ibridi che
-combinano fonti diverse sono etichettati come tali. La classifica dei soli
-residui sul potenziale non seleziona una coppia cariche/Lennard-Jones.
+The complete CSV also includes controls from HierGO/OPLS, GOPY, and Stauffer,
+and the actual coverage of each candidate. Comparisons with the OLD whole-sheet
+libraries and GAFF2-AIM do not have a complete atom mapping onto the
+fragments here: **they have not been assigned a fictitious score**. Hybrid controls that
+combine different sources are labeled as such. Ranking only the
+potential residuals does not select a charge/Lennard-Jones pair.
 
-## File da leggere
+<a id="file-da-leggere"></a>
+## Files to read
 
-- [Grafico selezionabile HF/DFT](comparison.html), [PNG HF](HF_ESP.png), [PNG DFT](DFT_ESP.png); gli SVG sono esportabili.
-- [Cariche RESP L0 per ruolo](L0_shared_role_charges.csv), con quattro fit separati HF/DFT e addestramento completo/C₁₆.
-- [Risultati numerici sintetici](SUMMARY_RESULTS.json).
-- [Copertura di tutti i candidati](CANDIDATE_COVERAGE.csv) e [confronti su sottoinsiemi identici](MATCHED_SUBSET_SCORES.csv).
-- [Residui per struttura](RRMS_by_physical_context.csv), compresi i casi non disponibili e le rispettive ragioni.
-- [Differenze RESP HF–DFT per ruolo](matched_HF_DFT_role_differences.csv).
-- Cariche individuali, somme per gruppo, coppie e distanze dai gruppi: [HF, 16 contesti](context_HF_16/context_analysis.json) e [DFT, 18 contesti](context_DFT_18/context_analysis.json), con CSV nelle stesse cartelle.
+- [Selectable HF/DFT plot](comparison.html), [HF PNG](HF_ESP.png), [DFT PNG](DFT_ESP.png); the SVGs can be exported.
+- [L0 RESP charges by role](L0_shared_role_charges.csv), with four separate fits for HF/DFT and full/C₁₆ training.
+- [Summary numerical results](SUMMARY_RESULTS.json).
+- [Coverage of all candidates](CANDIDATE_COVERAGE.csv) and [comparisons on identical subsets](MATCHED_SUBSET_SCORES.csv).
+- [Residuals by structure](RRMS_by_physical_context.csv), including unavailable cases and their respective reasons.
+- [HF–DFT RESP differences by role](matched_HF_DFT_role_differences.csv).
+- Individual charges, group sums, pairs, and distances from groups: [HF, 16 contexts](context_HF_16/context_analysis.json) and [DFT, 18 contexts](context_DFT_18/context_analysis.json), with CSVs in the same folders.
 
-## Recupero e provenienza
+<a id="recupero-e-provenienza"></a>
+## Recovery and provenance
 
-Il job 1452975 ha completato la sintesi complementare. Sono stati recuperati
-fit reali già terminati, verificando gli hash degli artefatti e i log MK;
-non sono stati rilanciati Gaussian, SQM o Antechamber. Il nuovo fit condiviso
-usa RESP da sorgente AmberClassic identificato, con capacità aumentata per
-le copie atomiche delle diverse molecole e orientazioni. Il solver è invariato;
-il confronto con il precedente pilot del RESP installato passa entro 10⁻⁶ e.
+Job 1452975 completed the complementary synthesis. Actual fits that had already
+finished were recovered, checking artifact hashes and MK logs;
+Gaussian, SQM, and Antechamber were not rerun. The new shared fit
+uses RESP from an identified AmberClassic source, with increased capacity for
+atom copies across different molecules and orientations. The solver is unchanged;
+comparison with the earlier pilot using the installed RESP passes within 10⁻⁶ e.
 
-Il job 1453077 ha recuperato i fit DFT–RESP C54_pristine_parent_reference e
-C54_EPX_EPX_near_trans. L'header espgen espande il numero di punti oltre
-99.999: sia il parser Python sia il lettore Fortran richiedevano una lettura
-che non tronchi la cifra aggiuntiva. La modifica dell'eseguibile separato
-riguarda la lettura dell'header e il reporting, non le equazioni del fit.
-La regressione sul pilot coincide alla precisione di output.
-Sono stati mantenuti tutti i punti: 120.100/120.005/120.107 nel primo caso e
-122.272/122.477/122.602 nel secondo. Gli input e gli output originari restano
-conservati e nessuna installazione di sistema è stata modificata.
+Job 1453077 recovered the DFT–RESP fits for C54_pristine_parent_reference and
+C54_EPX_EPX_near_trans. The espgen header expands the point count beyond
+99,999: both the Python parser and the Fortran reader required a read operation
+that would not truncate the additional digit. The change to the separate executable
+concerns header reading and reporting, not the fit equations.
+The pilot regression agrees at output precision.
+All points were retained: 120,100/120,005/120,107 in the first case and
+122,272/122,477/122,602 in the second. The original inputs and outputs remain
+preserved, and no system installation was modified.
 
-Snapshot locali dei risultati in `PARAMETERIZATION/calculations/`:
+Local result snapshots in `PARAMETERIZATION/calculations/`:
 
-| Archivio | SHA-256 |
+| Archive | SHA-256 |
 |---|---|
 | complementary_results_20261103_snapshot_001.tar.gz | 32ea75cec824cd06e740687215ec4d59267461f462ddca88e1509927c1d46552 |
 | c54_recovered_results_snapshot_20261103_attempt_001.tar.gz | 471798f22cd9d6ae5306d9b301c878a466cc11ac03ba32a3b1d04a786cca4759 |
 
-Le directory remote sono isolate sotto
+The remote directories are isolated under
 `/export/scratch/alessandro.calza3/GO_PARAMETERIZATION_20261029_fqOFQv/calculations/`.
-Il codice della sintesi e del report è conservato nelle rispettive directory
-di tentativo, con i manifest degli input e i controlli sull'eseguibile.
+The synthesis and report code is preserved in the respective attempt
+directories, together with the input manifests and executable checks.
 
-All'ultimo controllo del 3 novembre il C54_single_basal_EPX_control
-(1406363_3) era ancora in esecuzione, dopo circa 3 giorni e 11 ore, sul limite
-di cinque giorni. Il job 1453111 ne attende la conclusione e tenterà il
-postprocessing solo dopo aver verificato gli artefatti QM. La dipendenza è
-afterany: anche se il padre fallisce, i controlli scientifici restano obbligatori.
+At the last check on 3 November, C54_single_basal_EPX_control
+(1406363_3) was still running, after approximately 3 days and 11 hours, against
+the five-day limit. Job 1453111 waits for its completion and will attempt
+postprocessing only after checking the QM artifacts. The dependency is
+afterany: even if the parent fails, the scientific checks remain mandatory.
 
-Rimangono la scelta delle cariche, i controlli di sensibilità/trasferibilità,
-il confronto coerente cariche–Lennard-Jones e le verifiche in solvente e di
-adsorbimento. Il nuovo fit bonded/frcmod e la ricostruzione definitiva dei
-quattro materiali restano rinviati.
+Charge selection, sensitivity/transferability checks,
+a consistent charge–Lennard-Jones comparison, and solvent and adsorption
+checks remain outstanding. The new bonded/frcmod fit and the final reconstruction
+of the four materials remain deferred.
 
-## Decisioni successive confermate il 3 novembre
+<a id="decisioni-successive-confermate-il-3-novembre"></a>
+## Subsequent decisions confirmed on 3 November
 
-HF–RESP principale; DFT–RESP e AM1-BCC controlli. La carica totale deriva
-dalla chimica e protonazione del prodotto ed è intera, anche non nulla.
-La scelta fra libreria fissa, classi locali e redistribuzione statica resta
-aperta. GAFF/frcmod rimandati. Il [protocollo del prossimo confronto](../../docs/CHARGE_STRATEGY_BENCHMARK_20261103.md)
-include trasferibilità, scala, nuovi giunti e riferimenti sperimentali.
+HF–RESP is the primary method; DFT–RESP and AM1-BCC are controls. The total charge follows
+from the product chemistry and protonation and is an integer, which may be nonzero.
+The choice between a fixed library, local classes, and static redistribution remains
+open. GAFF/frcmod work is deferred. The [protocol for the next comparison](../../docs/CHARGE_STRATEGY_BENCHMARK_20261103.md)
+includes transferability, scale, new junctions, and experimental references.
 
-Il [diagnostico COO](COO_charge_diagnostic.csv) confronta la libreria attuale,
-RESP molecolare HF e L0: il valore elevato di C compare in L0, mentre il
-fit molecolare dà C = +0,807216 e e O = −0,786679 e. Servono confronti
-controllati per attribuire la differenza ai vari vincoli. I [carboni interni](basal_C_summary_by_context.csv)
-sono riassunti per contesto e distanza; non sono misure di trasferimento
-fisico di carica. Non sono stati eseguiti nuovi fit in questo aggiornamento.
+The [COO diagnostic](COO_charge_diagnostic.csv) compares the current library,
+molecular HF RESP, and L0: the high C value appears in L0, whereas the
+molecular fit gives C = +0.807216 e and O = −0.786679 e. Controlled comparisons
+are needed to attribute the difference to the various constraints. The [interior carbons](basal_C_summary_by_context.csv)
+are summarized by context and distance; these are not measurements of physical
+charge transfer. No new fits were performed in this update.
