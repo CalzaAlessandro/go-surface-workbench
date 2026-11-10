@@ -21,8 +21,8 @@ Generate graphene oxide sheets with explicit connectivity and optional covalent 
 </p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/images/banner_dark.svg">
-  <img src="docs/images/banner.svg" width="100%" alt="Graphene fragments and molecular groups assembling into a functionalized GO sheet, drawn in chalk on blue graph paper">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/banner.png">
+  <img src="docs/images/banner.png" width="100%" alt="A graphene oxide assembly blueprint on a drafting table with a ruler, set square, compass and pencil">
 </picture>
 
 > [!NOTE]
