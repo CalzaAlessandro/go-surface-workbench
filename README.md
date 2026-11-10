@@ -22,7 +22,7 @@ Generate graphene oxide sheets with explicit connectivity and optional covalent 
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/banner_dark.svg">
-  <img src="docs/images/banner.svg" width="100%" alt="A chalk blueprint showing graphene fragments, oxygen groups and a PEG chain assembling into a functionalized GO sheet">
+  <img src="docs/images/banner.svg" width="100%" alt="Graphene fragments and molecular groups assembling into a functionalized GO sheet, drawn in chalk on blue graph paper">
 </picture>
 
 > [!NOTE]
