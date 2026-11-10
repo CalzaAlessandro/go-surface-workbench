@@ -50,8 +50,8 @@ L 0 3.5
       </g>
      </g>
      <g id="text_1">
-      <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(78.464887 296.8531)">Libreria</text>
-      <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(79.781449 310.056108)">attuale</text>
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(78.464887 296.8531)">Current</text>
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(79.781449 310.056108)">library</text>
      </g>
     </g>
     <g id="xtick_2">
@@ -62,7 +62,7 @@ L 0 3.5
      </g>
      <g id="text_2">
       <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(177.297895 296.85224)">L0 HF–RESP</text>
-      <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(175.870473 310.055248)">training C16</text>
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(175.870473 310.055248)">C16 training</text>
      </g>
     </g>
     <g id="xtick_3">
@@ -73,7 +73,7 @@ L 0 3.5
      </g>
      <g id="text_3">
       <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(292.144497 296.85224)">SQE–RESP</text>
-      <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(286.402154 310.055248)">training C16</text>
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(286.402154 310.055248)">C16 training</text>
      </g>
     </g>
     <g id="xtick_4">
@@ -83,8 +83,8 @@ L 0 3.5
       </g>
      </g>
      <g id="text_4">
-      <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(384.527896 296.8531)">RESP molecolare</text>
-      <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(381.764146 310.056108)">riferimento fittato</text>
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(384.527896 296.8531)">Molecular RESP</text>
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'" transform="translate(381.764146 310.056108)">fitted reference</text>
      </g>
     </g>
    </g>
@@ -230,7 +230,7 @@ L 508.19976 49.923401
      </g>
     </g>
     <g id="text_14">
-     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="11.358521" y="152.756055" transform="rotate(-90 11.358521 152.756055)">HF ESP RRMS (adimensionale)</text>
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="11.358521" y="152.756055" transform="rotate(-90 11.358521 152.756055)">HF ESP RRMS (dimensionless)</text>
     </g>
    </g>
    <g id="line2d_23">
@@ -356,7 +356,7 @@ z
     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start" x="460.671137" y="239.462035" transform="rotate(-0 460.671137 239.462035)">0.076</text>
    </g>
    <g id="text_19">
-    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="278.846523" y="12.118365" transform="rotate(-0 278.846523 12.118365)">Stessi 7 contesti C24 · valori inferiori = residuo minore</text>
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="278.846523" y="12.118365" transform="rotate(-0 278.846523 12.118365)">Same 7 C24 contexts · lower values = lower residual</text>
    </g>
   </g>
  </g>

@@ -407,7 +407,7 @@ L 0 2
      </g>
     </g>
     <g id="text_7">
-     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="367.282031" y="347.397416" transform="rotate(-0 367.282031 347.397416)">RRMS del potenziale DFT diretto · scala logaritmica</text>
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="367.282031" y="347.397416" transform="rotate(-0 367.282031 347.397416)">Direct DFT potential RRMS · logarithmic scale</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -423,7 +423,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_8">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="43.624473" transform="rotate(-0 147.364303 43.624473)">RESP molecolare HF</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="43.624473" transform="rotate(-0 147.364303 43.624473)">Molecular HF-RESP</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -433,7 +433,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_9">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="75.782827" transform="rotate(-0 147.364303 75.782827)">AM1-BCC · controllo Q intero</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="75.782827" transform="rotate(-0 147.364303 75.782827)">AM1-BCC · integer Q control</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -443,7 +443,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_10">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="107.941182" transform="rotate(-0 147.364303 107.941182)">Miscela RESP/BCC 50:50</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="107.941182" transform="rotate(-0 147.364303 107.941182)">RESP/BCC 50:50 mixture</text>
      </g>
     </g>
     <g id="ytick_4">
@@ -453,7 +453,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_11">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="140.099536" transform="rotate(-0 147.364303 140.099536)">SQE–RESP · training C16</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="140.099536" transform="rotate(-0 147.364303 140.099536)">SQE–RESP · C16 training</text>
      </g>
     </g>
     <g id="ytick_5">
@@ -463,7 +463,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_12">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="172.257891" transform="rotate(-0 147.364303 172.257891)">L0 RESP · training C16</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="172.257891" transform="rotate(-0 147.364303 172.257891)">L0 RESP · C16 training</text>
      </g>
     </g>
     <g id="ytick_6">
@@ -473,7 +473,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_13">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="204.416245" transform="rotate(-0 147.364303 204.416245)">EspalomaCharge pubblicato</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="204.416245" transform="rotate(-0 147.364303 204.416245)">Published EspalomaCharge</text>
      </g>
     </g>
     <g id="ytick_7">
@@ -483,7 +483,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_14">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="236.574599" transform="rotate(-0 147.364303 236.574599)">Tabella HierGO/OPLS</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="236.574599" transform="rotate(-0 147.364303 236.574599)">HierGO/OPLS table</text>
      </g>
     </g>
     <g id="ytick_8">
@@ -493,7 +493,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_15">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="268.732954" transform="rotate(-0 147.364303 268.732954)">Libreria attuale</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="268.732954" transform="rotate(-0 147.364303 268.732954)">Current library</text>
      </g>
     </g>
     <g id="ytick_9">
@@ -503,7 +503,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_16">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="300.891308" transform="rotate(-0 147.364303 300.891308)">RESP DFT · fit sul riferimento</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="147.364303" y="300.891308" transform="rotate(-0 147.364303 300.891308)">DFT-RESP · fitted reference</text>
      </g>
     </g>
    </g>
@@ -590,7 +590,7 @@ L 580.19976 318.798979
     <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start" x="238.881309" y="299.42998" transform="rotate(-0 238.881309 299.42998)">0.104</text>
    </g>
    <g id="text_26">
-    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="367.282031" y="12.118365" transform="rotate(-0 367.282031 12.118365)">Stessi 5 contesti C24 con BCC disponibili</text>
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="367.282031" y="12.118365" transform="rotate(-0 367.282031 12.118365)">Same 5 C24 contexts with available BCC</text>
    </g>
   </g>
  </g>

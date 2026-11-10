@@ -320,7 +320,7 @@ L 571.851644 18.118365
      </g>
     </g>
     <g id="text_6">
-     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="327.782812" y="253.797416" transform="rotate(-0 327.782812 253.797416)">Carica dei tipi nativi GAFF2–AIM (e)</text>
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="327.782812" y="253.797416" transform="rotate(-0 327.782812 253.797416)">Native GAFF2–AIM type charge (e)</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -336,7 +336,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_7">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="68.365865" y="215.618381" transform="rotate(-0 68.365865 215.618381)">C, altri tipi</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="68.365865" y="215.618381" transform="rotate(-0 68.365865 215.618381)">C, other types</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -346,7 +346,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_8">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="68.365865" y="179.554185" transform="rotate(-0 68.365865 179.554185)">C, tipi c3*</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="68.365865" y="179.554185" transform="rotate(-0 68.365865 179.554185)">C, c3* types</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -356,7 +356,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_9">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="68.365865" y="143.489989" transform="rotate(-0 68.365865 143.489989)">C, tipi ca*</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="68.365865" y="143.489989" transform="rotate(-0 68.365865 143.489989)">C, ca* types</text>
      </g>
     </g>
     <g id="ytick_4">
@@ -366,7 +366,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_10">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="68.365865" y="107.425793" transform="rotate(-0 68.365865 107.425793)">H (tipi nativi)</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="68.365865" y="107.425793" transform="rotate(-0 68.365865 107.425793)">H (native types)</text>
      </g>
     </g>
     <g id="ytick_5">
@@ -376,7 +376,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_11">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="68.365865" y="71.361597" transform="rotate(-0 68.365865 71.361597)">O, tipi oh*</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="68.365865" y="71.361597" transform="rotate(-0 68.365865 71.361597)">O, oh* types</text>
      </g>
     </g>
     <g id="ytick_6">
@@ -386,7 +386,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_12">
-      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="68.365865" y="35.2974" transform="rotate(-0 68.365865 35.2974)">O, tipi os*</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end" x="68.365865" y="35.2974" transform="rotate(-0 68.365865 35.2974)">O, os* types</text>
      </g>
     </g>
    </g>
@@ -406,7 +406,7 @@ L 580.19976 225.198979
 " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="text_13">
-    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="327.782812" y="12.118365" transform="rotate(-0 327.782812 12.118365)">Topologie periodiche pubblicate · 132 tipi complessivi</text>
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="327.782812" y="12.118365" transform="rotate(-0 327.782812 12.118365)">Published periodic topologies · 132 total types</text>
    </g>
    <g id="legend_1">
     <g id="PathCollection_13">

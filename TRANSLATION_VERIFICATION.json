@@ -1,0 +1,150 @@
+{
+  "method": "Translate original SVG text nodes, then render at original PNG dimensions.",
+  "scope": "No recalculation or replacement of plotted numerical results.",
+  "source_commit": "a0b7879fb3950fa648e161f93d46e7a0e0d05ffc",
+  "review_findings": [
+    "Rejected CSV-based regeneration changed L0 COO charges and scaffold-carbon histogram populations relative to the historical figures.",
+    "Historical figure values, including 241/443 GGG carbon counts and the original COO diagnostic labels, are retained."
+  ],
+  "figures": [
+    {
+      "svg": "research/parameterization/reports/CHARGE_COMPARISON_20261103_attempt_001/COO_charge_diagnostic.svg",
+      "png": "research/parameterization/reports/CHARGE_COMPARISON_20261103_attempt_001/COO_charge_diagnostic.png",
+      "dimensions": [
+        2494,
+        1558
+      ],
+      "original_svg_sha256": "9de44f344f46091c63eccc564f7c96ccb39a864930833644f0b6c6e583d86e0a",
+      "original_png_sha256": "a23f164048664e8b33dab0d6771c1a1621799bcbbf7acc9ef3b10126d1e2fe1a",
+      "english_svg_sha256": "b043c046a566d6c9d8cb6f3422bc175dd4cec26f7c7e740ca83033831a260a56",
+      "english_png_sha256": "f4cfbc6bbb18ae9f54aedfdd04bd4a2614420e43011ca9d552c8b990e1c5910b",
+      "svg_geometry_and_numbers_identical": true
+    },
+    {
+      "svg": "research/parameterization/reports/CHARGE_COMPARISON_20261103_attempt_001/HF_ESP.svg",
+      "png": "research/parameterization/reports/CHARGE_COMPARISON_20261103_attempt_001/HF_ESP.png",
+      "dimensions": [
+        2280,
+        2070
+      ],
+      "original_svg_sha256": "8dced74677bfa72f76864b7534aa8750fb5f84d906b689885e28ab4c068e841c",
+      "original_png_sha256": "48bd624bab6b8c0d42b420d8dc46d63b8dc277c5f39b31d91409f90b8f22af1d",
+      "english_svg_sha256": "9796ce0ca79ba72cffbf24ed95c8016fd4d7886ae59509a4172a5110cc7bc864",
+      "english_png_sha256": "256edbb9be77cf52d0911bf02e05db91faf1fc1095a1e6ea4f6d8e7d33a604a8",
+      "svg_geometry_and_numbers_identical": true
+    },
+    {
+      "svg": "research/parameterization/reports/CHARGE_COMPARISON_20261103_attempt_001/DFT_ESP.svg",
+      "png": "research/parameterization/reports/CHARGE_COMPARISON_20261103_attempt_001/DFT_ESP.png",
+      "dimensions": [
+        2280,
+        2070
+      ],
+      "original_svg_sha256": "93ca58eec5e4495a03b8f6bbc54607fe1048f836268493b9a2d492bc5744eddf",
+      "original_png_sha256": "93b36b00273d1ce0652a61e8c8b35c49ae5d71502973c20318fd080ef0f60351",
+      "english_svg_sha256": "f923eab702a7d8fbaa3e3856f7dd85c25f159eb0fae385a212237761769662c8",
+      "english_png_sha256": "f8e9e403a3f21efbfbad925e528339ba5d1f1d09de09cc6f2e1b80161d7f746d",
+      "svg_geometry_and_numbers_identical": true
+    },
+    {
+      "svg": "research/parameterization/reports/CHARGE_CONTROLS_UPDATE_20261103_attempt_001/oxygen_charges.svg",
+      "png": "research/parameterization/reports/CHARGE_CONTROLS_UPDATE_20261103_attempt_001/oxygen_charges.png",
+      "dimensions": [
+        2700,
+        1260
+      ],
+      "original_svg_sha256": "703dc69f5fb7d682491ca208d21705823148b0d70cf46441bba000aac0723cde",
+      "original_png_sha256": "f6a952ee8eb1a6babea5df0a801b97689a33dba2db019a520e7d25ff021f4ca7",
+      "english_svg_sha256": "83217ed0909ff3f704a27d3c2be1ccf3e8ce6f9e0244b2a02c99789691e9edb1",
+      "english_png_sha256": "da1b6f209831267740debc9a3adc4b581dba687ee83939cbd5251d94330a067b",
+      "svg_geometry_and_numbers_identical": true
+    },
+    {
+      "svg": "research/parameterization/reports/CORRECTED_SHEETS_CHARGE_CONTROL_20261103_attempt_001/basal_distributions.svg",
+      "png": "research/parameterization/reports/CORRECTED_SHEETS_CHARGE_CONTROL_20261103_attempt_001/basal_distributions.png",
+      "dimensions": [
+        2700,
+        1080
+      ],
+      "original_svg_sha256": "978c1ef3f8654f855bb283dad03a2e056f1bb9a5974f54c002ac1c1e358968dc",
+      "original_png_sha256": "1c5ed615ea1e67e352f8bac59396be31d46f92eb7f85279aa1aed40cee889465",
+      "english_svg_sha256": "21516da694d9c1adedf3bdba63da1425809d9f2dac1623b86b312431dba9b045",
+      "english_png_sha256": "b2c6809ebb4f4d019cdf64492dc840eaebe29cc561bcf32080e7f01413a4cf46",
+      "svg_geometry_and_numbers_identical": true
+    },
+    {
+      "svg": "research/parameterization/reports/CORRECTED_SHEETS_CHARGE_CONTROL_20261103_attempt_001/COO_resonance_sensitivity.svg",
+      "png": "research/parameterization/reports/CORRECTED_SHEETS_CHARGE_CONTROL_20261103_attempt_001/COO_resonance_sensitivity.png",
+      "dimensions": [
+        2400,
+        1020
+      ],
+      "original_svg_sha256": "39ee12779a4c3f81ba730ec5588027d0b6c4d6126321f6987cee89750b577b8d",
+      "original_png_sha256": "6c1cb1c5644e9b75b79923a9b314c8689597e82750d5f88192cbf37fe29022ff",
+      "english_svg_sha256": "7ee325c30be0771a10d58ee072f1285789d9639e5c5c8d8bbb1b7c7cf95b867a",
+      "english_png_sha256": "ec9047eb9543edab8b3e8debfbff97ba4f850d53d88eb9d9f293b3108b37db96",
+      "svg_geometry_and_numbers_identical": true
+    },
+    {
+      "svg": "research/parameterization/reports/ESPALOMA_CONTROL_20261103_attempt_001/charge_difference.svg",
+      "png": "research/parameterization/reports/ESPALOMA_CONTROL_20261103_attempt_001/charge_difference.png",
+      "dimensions": [
+        2280,
+        930
+      ],
+      "original_svg_sha256": "eaf4094c69d2f82eb12049b79e0053302174336b7b21a2367eba4c08e70e7cd4",
+      "original_png_sha256": "d5df9cca288861ceea014b85d89f22e2ae7bb1ad0a64be5ffcaa6860a1f30904",
+      "english_svg_sha256": "31801f6e87edeb2a446d2f8bea1b8946ebd01a9251d92e1b23745c2a74de56c2",
+      "english_png_sha256": "092e8a0a6e93891ab054c1d78716c8630488049e6a46d624b896ea24e28d8f98",
+      "svg_geometry_and_numbers_identical": true
+    },
+    {
+      "svg": "research/parameterization/reports/QM_SQE_UPDATE_20261104_attempt_001/HF_ESP_transfer.svg",
+      "png": "research/parameterization/reports/QM_SQE_UPDATE_20261104_attempt_001/HF_ESP_transfer.png",
+      "dimensions": [
+        2130,
+        1320
+      ],
+      "original_svg_sha256": "cc7a6764e5af4060d195d89a4717030e0e51a45c60387fd39f2a93cef644644a",
+      "original_png_sha256": "d7f1c9b93b401cc33533e135968a0a413d81dc70a7d1ce9cd889695ca0311d8a",
+      "english_svg_sha256": "15daf47f2508d4cdba38ee2d3281ad881ab13db3e31eb4a64432993b2b6aca8f",
+      "english_png_sha256": "d4afb95e62c4ac9f9414870965d14721251713cd4db6aa0f7081d3f39d6d1cab",
+      "svg_geometry_and_numbers_identical": true
+    },
+    {
+      "svg": "research/parameterization/reports/DIRECT_QM_ESP_LITERATURE_20261104_attempt_001/DFT_ESP_matched5.svg",
+      "png": "research/parameterization/reports/DIRECT_QM_ESP_LITERATURE_20261104_attempt_001/DFT_ESP_matched5.png",
+      "dimensions": [
+        2430,
+        1470
+      ],
+      "original_svg_sha256": "31a4bf1244f04674ed32ca7a9c5f42bc179de47a4f43068dfb58c03d20861b70",
+      "original_png_sha256": "66090e942633b425e6031fcc5c7de0eea3aeac662fbc87cfeecf66d9f5290751",
+      "english_svg_sha256": "62bc6e6dd87154fc8964be0fceb200400e26ab90b90a6807a78c6ff95fb351bf",
+      "english_png_sha256": "9dbcba2ba0547cf1ca14a3ed84fde441d9ed489551d07c7cc715c7254ce45556",
+      "svg_geometry_and_numbers_identical": true
+    },
+    {
+      "svg": "research/parameterization/reports/DIRECT_QM_ESP_LITERATURE_20261104_attempt_001/GAFF2_AIM_native_types.svg",
+      "png": "research/parameterization/reports/DIRECT_QM_ESP_LITERATURE_20261104_attempt_001/GAFF2_AIM_native_types.png",
+      "dimensions": [
+        2430,
+        1080
+      ],
+      "original_svg_sha256": "b54ebc8f20b51425ec438fc41d71b7b8bd184274e59a2b4c1bd714417e8cf26a",
+      "original_png_sha256": "506a3b28810e81f2885ab106ab5ec34bcc87d96ccfe854f517f84a7819537ad2",
+      "english_svg_sha256": "773bc01b50de94fd4e8e49c07098fc809cba526098360de4eb1185b66796a6fd",
+      "english_png_sha256": "8430330bc1a1397113c7fc26fa15eb2b9c1878fbcacc0986e29f924585a8aff4",
+      "svg_geometry_and_numbers_identical": true
+    }
+  ],
+  "html": [
+    "research/parameterization/reports/CHARGE_COMPARISON_20261103_attempt_001/RESP_AMBER_REPORT.html",
+    "research/parameterization/reports/CHARGE_CONTROLS_UPDATE_20261103_attempt_001/comparison.html",
+    "research/parameterization/reports/CHARGE_CONTROLS_UPDATE_20261103_attempt_001/REPORT.html",
+    "research/parameterization/reports/CORRECTED_SHEETS_CHARGE_CONTROL_20261103_attempt_001/comparison.html",
+    "research/parameterization/reports/CORRECTED_SHEETS_CHARGE_CONTROL_20261103_attempt_001/REPORT.html",
+    "research/parameterization/reports/ESPALOMA_CONTROL_20261103_attempt_001/REPORT.html",
+    "research/parameterization/reports/QM_SQE_UPDATE_20261104_attempt_001/REPORT.html"
+  ]
+}

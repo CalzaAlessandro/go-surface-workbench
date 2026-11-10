@@ -212,7 +212,7 @@ L 558.809884 40.403538
      </g>
     </g>
     <g id="text_6">
-     <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="405.583438" y="297.237651" transform="rotate(-0 405.583438 297.237651)">Carica media del ruolo nel contesto indicato (e)</text>
+     <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: middle" x="405.583438" y="297.237651" transform="rotate(-0 405.583438 297.237651)">Mean role charge in the indicated context (e)</text>
     </g>
    </g>
    <g id="matplotlib.axis_2">
@@ -228,7 +228,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_7">
-      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="159.167115" y="63.434265" transform="rotate(-0 159.167115 63.434265)">OH · ossigeno</text>
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="159.167115" y="63.434265" transform="rotate(-0 159.167115 63.434265)">OH · oxygen</text>
      </g>
     </g>
     <g id="ytick_2">
@@ -238,7 +238,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_8">
-      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="159.167115" y="101.588797" transform="rotate(-0 159.167115 101.588797)">Epossido · ossigeno, misto OH/EPX</text>
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="159.167115" y="101.588797" transform="rotate(-0 159.167115 101.588797)">Epoxide · oxygen, mixed OH/EPX</text>
      </g>
     </g>
     <g id="ytick_3">
@@ -248,7 +248,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_9">
-      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="159.167115" y="139.743329" transform="rotate(-0 159.167115 139.743329)">Epossido · ossigeno, C24 singolo</text>
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="159.167115" y="139.743329" transform="rotate(-0 159.167115 139.743329)">Epoxide · oxygen, single C24</text>
      </g>
     </g>
     <g id="ytick_4">
@@ -258,7 +258,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_10">
-      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="159.167115" y="177.897861" transform="rotate(-0 159.167115 177.897861)">Carbonile · ossigeno</text>
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="159.167115" y="177.897861" transform="rotate(-0 159.167115 177.897861)">Carbonyl · oxygen</text>
      </g>
     </g>
     <g id="ytick_5">
@@ -268,7 +268,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_11">
-      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="159.167115" y="216.052392" transform="rotate(-0 159.167115 216.052392)">COOH · ossigeno carbonilico</text>
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="159.167115" y="216.052392" transform="rotate(-0 159.167115 216.052392)">COOH · carbonyl oxygen</text>
      </g>
     </g>
     <g id="ytick_6">
@@ -278,7 +278,7 @@ L -3.5 0
       </g>
      </g>
      <g id="text_12">
-      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="159.167115" y="254.206924" transform="rotate(-0 159.167115 254.206924)">COO⁻ · ossigeno</text>
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end" x="159.167115" y="254.206924" transform="rotate(-0 159.167115 254.206924)">COO⁻ · oxygen</text>
      </g>
     </g>
    </g>
@@ -299,7 +299,7 @@ L 644.99976 270.399057
      </g>
     </g>
     <g id="text_13">
-     <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="242.345798" y="12.283095" transform="rotate(-0 242.345798 12.283095)">Libreria attuale</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="242.345798" y="12.283095" transform="rotate(-0 242.345798 12.283095)">Current library</text>
     </g>
     <g id="PathCollection_7">
      <g>
@@ -331,7 +331,7 @@ L 644.99976 270.399057
      </g>
     </g>
     <g id="text_17">
-     <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="413.492048" y="12.283095" transform="rotate(-0 413.492048 12.283095)">HF–RESP molecolare</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="413.492048" y="12.283095" transform="rotate(-0 413.492048 12.283095)">Molecular HF–RESP</text>
     </g>
    </g>
   </g>
