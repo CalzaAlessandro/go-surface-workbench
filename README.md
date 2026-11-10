@@ -21,7 +21,7 @@ Generate graphene oxide sheets with explicit connectivity and optional covalent 
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/banner_dark.svg">
-  <img src="docs/images/banner.svg" width="100%" alt="A stylized GO sheet on a workbench with a hammer, illustrating model construction">
+  <img src="docs/images/banner.svg" width="100%" alt="A chalk blueprint of a graphene oxide sheet, with hydroxyl, epoxide and edge carboxyl groups">
 </picture>
 
 > [!NOTE]

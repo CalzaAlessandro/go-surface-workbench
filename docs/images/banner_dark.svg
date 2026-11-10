@@ -1,39 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="350" viewBox="0 0 1600 350" role="img">
-    <title>GO Workbench</title><desc>A stylized graphene oxide sheet on a workbench, with a hammer illustrating model construction. Schematic, not a calculated molecular structure.</desc><style>text {font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif}</style>
-    <rect width="1600" height="350" rx="12" fill="#0b1524"/>
-          <text x="74" y="116" font-size="56" font-weight="700" fill="#f1f5f9">GO Workbench</text>
-          <text x="77" y="163" font-size="26" fill="#94a3b8">Graphene oxide model construction</text>
-          <path d="M78 199 H419" stroke="#2dd4bf" stroke-width="4"/>
-          <text x="77" y="243" font-size="22" fill="#94a3b8">Build · Functionalize · Prepare inputs</text>
-          <g transform="translate(820 0) scale(.88)">
-    <g stroke-linejoin="round" stroke-linecap="round">
-      <!-- Bench, with a top and two braced legs. -->
-      <path d="M137 248 H548 V264 H137 Z" fill="#172b40" stroke="#cbd5e1" stroke-width="4"/>
-      <path d="M137 248 L189 204 H601 L548 248 Z" fill="#24425a" stroke="#cbd5e1" stroke-width="4"/>
-      <path d="M170 266 V366 H190 V266 M510 266 V366 H530 V266" fill="#172b40" stroke="#cbd5e1" stroke-width="4"/>
-      <path d="M190 326 H510" stroke="#cbd5e1" stroke-width="9"/>
-      <path d="M556 258 V332 H575 V242" fill="none" stroke="#cbd5e1" stroke-width="4"/>
-      <!-- GO is an illustrative molecular lattice, not a calculated structure. -->
-      <g transform="translate(218 120) matrix(1 .08 -.38 .55 0 0)">
-        <g fill="none" stroke="#38bdf8" stroke-width="3.4"><path d="M-30.0,0.0 L-15.0,-25.981"/><path d="M-30.0,0.0 L-15.0,25.981"/><path d="M-30.0,51.962 L-15.0,25.981"/><path d="M-30.0,51.962 L-15.0,77.942"/><path d="M-30.0,103.923 L-15.0,77.942"/><path d="M-30.0,103.923 L-15.0,129.904"/><path d="M-15.0,-25.981 L15.0,-25.981"/><path d="M-15.0,25.981 L15.0,25.981"/><path d="M-15.0,77.942 L15.0,77.942"/><path d="M-15.0,129.904 L15.0,129.904"/><path d="M15.0,-25.981 L30.0,0.0"/><path d="M15.0,25.981 L30.0,0.0"/><path d="M15.0,25.981 L30.0,51.962"/><path d="M15.0,77.942 L30.0,51.961"/><path d="M15.0,77.942 L30.0,51.962"/><path d="M15.0,77.942 L30.0,103.923"/><path d="M15.0,129.904 L30.0,103.923"/><path d="M15.0,129.904 L30.0,155.885"/><path d="M30.0,-0.0 L60.0,-0.0"/><path d="M30.0,51.961 L60.0,51.961"/><path d="M30.0,51.962 L60.0,51.962"/><path d="M30.0,103.923 L60.0,103.923"/><path d="M30.0,155.885 L60.0,155.885"/><path d="M60.0,0.0 L75.0,-25.981"/><path d="M60.0,-0.0 L75.0,25.981"/><path d="M60.0,51.961 L75.0,77.942"/><path d="M60.0,51.962 L75.0,25.981"/><path d="M60.0,51.962 L75.0,77.942"/><path d="M60.0,103.923 L75.0,77.942"/><path d="M60.0,103.923 L75.0,129.904"/><path d="M60.0,155.885 L75.0,129.904"/><path d="M75.0,-25.981 L105.0,-25.981"/><path d="M75.0,25.981 L105.0,25.981"/><path d="M75.0,77.942 L105.0,77.942"/><path d="M75.0,129.904 L105.0,129.904"/><path d="M105.0,-25.981 L120.0,0.0"/><path d="M105.0,25.981 L120.0,0.0"/><path d="M105.0,25.981 L120.0,51.962"/><path d="M105.0,77.942 L120.0,51.961"/><path d="M105.0,77.942 L120.0,51.962"/><path d="M105.0,77.942 L120.0,103.923"/><path d="M105.0,129.904 L120.0,103.923"/><path d="M105.0,129.904 L120.0,155.885"/><path d="M120.0,-0.0 L150.0,-0.0"/><path d="M120.0,51.961 L150.0,51.961"/><path d="M120.0,51.962 L150.0,51.962"/><path d="M120.0,103.923 L150.0,103.923"/><path d="M120.0,155.885 L150.0,155.885"/><path d="M150.0,0.0 L165.0,-25.981"/><path d="M150.0,-0.0 L165.0,25.981"/><path d="M150.0,51.961 L165.0,77.942"/><path d="M150.0,51.962 L165.0,25.981"/><path d="M150.0,51.962 L165.0,77.942"/><path d="M150.0,103.923 L165.0,77.942"/><path d="M150.0,103.923 L165.0,129.904"/><path d="M150.0,155.885 L165.0,129.904"/><path d="M165.0,-25.981 L195.0,-25.981"/><path d="M165.0,25.981 L195.0,25.981"/><path d="M165.0,77.942 L195.0,77.942"/><path d="M165.0,129.904 L195.0,129.904"/><path d="M195.0,-25.981 L210.0,0.0"/><path d="M195.0,25.981 L210.0,0.0"/><path d="M195.0,25.981 L210.0,51.962"/><path d="M195.0,77.942 L210.0,51.961"/><path d="M195.0,77.942 L210.0,51.962"/><path d="M195.0,77.942 L210.0,103.923"/><path d="M195.0,129.904 L210.0,103.923"/><path d="M195.0,129.904 L210.0,155.885"/><path d="M210.0,-0.0 L240.0,-0.0"/><path d="M210.0,51.961 L240.0,51.961"/><path d="M210.0,51.962 L240.0,51.962"/><path d="M210.0,103.923 L240.0,103.923"/><path d="M210.0,155.885 L240.0,155.885"/><path d="M240.0,0.0 L255.0,-25.981"/><path d="M240.0,-0.0 L255.0,25.981"/><path d="M240.0,51.961 L255.0,77.942"/><path d="M240.0,51.962 L255.0,25.981"/><path d="M240.0,51.962 L255.0,77.942"/><path d="M240.0,103.923 L255.0,77.942"/><path d="M240.0,103.923 L255.0,129.904"/><path d="M240.0,155.885 L255.0,129.904"/><path d="M255.0,-25.981 L285.0,-25.981"/><path d="M255.0,25.981 L285.0,25.981"/><path d="M255.0,77.942 L285.0,77.942"/><path d="M255.0,129.904 L285.0,129.904"/><path d="M285.0,-25.981 L300.0,0.0"/><path d="M285.0,25.981 L300.0,0.0"/><path d="M285.0,25.981 L300.0,51.962"/><path d="M285.0,77.942 L300.0,51.962"/><path d="M285.0,77.942 L300.0,103.923"/><path d="M285.0,129.904 L300.0,103.923"/></g>
-        <g fill="none" stroke="#fb923c" stroke-width="4">
-          <path d="M60 0 L60 -40"/>
-          <path d="M195 25.981 L195 -13"/>
-          <path d="M285 129.904 L285 171"/>
-          <path d="M75 -25.981 L90 -62 L105 -25.981"/>
-        </g>
-        <g font-size="20" font-weight="600" fill="#fb923c" stroke="none">
-          <text x="47" y="-47">OH</text><text x="181" y="-21">OH</text>
-          <text x="272" y="193">OH</text><text x="82" y="-69">O</text>
-        </g>
+      <title>GO Workbench</title><desc>Chalk blueprint of a graphene oxide sheet with hydroxyl, epoxide and edge carboxyl groups. Schematic model construction drawing.</desc>
+      <defs>
+  <linearGradient id="blue" x2="1" y2="1"><stop stop-color="#133f70"/><stop offset="1" stop-color="#082a50"/></linearGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0 H0 V24" fill="none" stroke="#b8dcf3" stroke-opacity=".095" stroke-width=".6"/></pattern>
+  <pattern id="major" width="120" height="120" patternUnits="userSpaceOnUse"><path d="M120 0 H0 V120" fill="none" stroke="#b8dcf3" stroke-opacity=".08" stroke-width="1"/></pattern>
+  <filter id="chalk" x="-8%" y="-8%" width="116%" height="116%">
+    <feTurbulence type="fractalNoise" baseFrequency=".45" numOctaves="3" seed="13" result="noise"/>
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="paper"><feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+</defs><style>text {font-family: "SFMono-Regular", Menlo, "DejaVu Sans Mono", monospace}</style>
+      <rect width="1600" height="350" fill="url(#blue)"/>
+      <rect width="1600" height="350" fill="url(#grid)"/>
+      <rect width="1600" height="350" fill="url(#major)"/>
+      <rect width="1600" height="350" filter="url(#paper)" opacity=".045"/>
+      
+      <path d="M36 26 H1564 V324 H36 Z M70 275 H1530" fill="none" stroke="#b8dcf3" stroke-opacity=".3"/>
+      <text x="83" y="116" fill="#f1f6ef" font-size="53" font-weight="600" letter-spacing="-2" filter="url(#chalk)">GO Workbench</text>
+      <text x="86" y="163" fill="#bdd9ec" font-size="22">Graphene oxide model construction</text>
+      <text x="86" y="222" fill="#8ce9df" font-size="17">Build · Functionalize · Prepare inputs</text>
+      <g transform="translate(1035 87) scale(.88)"><g stroke-linecap="round" stroke-linejoin="round" filter="url(#chalk)">
+      <g fill="none" stroke="#e7f0ed" stroke-width="2.2" opacity=".93"><path d="M-28.0 48.497 L-14.0 24.249"/><path d="M-28.0 48.497 L-14.0 72.746"/><path d="M-28.0 96.995 L-14.0 72.746"/><path d="M-28.0 96.995 L-14.0 121.244"/><path d="M-14.0 24.249 L14.0 24.249"/><path d="M-14.0 72.746 L14.0 72.746"/><path d="M-14.0 121.244 L14.0 121.244"/><path d="M14.0 24.249 L28.0 -0.0"/><path d="M14.0 24.249 L28.0 48.497"/><path d="M14.0 72.746 L28.0 48.497"/><path d="M14.0 72.746 L28.0 96.995"/><path d="M14.0 121.243 L28.0 96.995"/><path d="M14.0 121.243 L28.0 145.492"/><path d="M14.0 121.244 L28.0 96.995"/><path d="M14.0 169.741 L28.0 145.492"/><path d="M14.0 169.741 L28.0 193.99"/><path d="M28.0 -0.0 L56.0 -0.0"/><path d="M28.0 48.497 L56.0 48.497"/><path d="M28.0 96.995 L56.0 96.995"/><path d="M28.0 145.492 L56.0 145.492"/><path d="M28.0 193.99 L56.0 193.99"/><path d="M56.0 0.0 L70.0 -24.249"/><path d="M56.0 -0.0 L70.0 24.249"/><path d="M56.0 48.497 L70.0 24.249"/><path d="M56.0 48.497 L70.0 72.746"/><path d="M56.0 96.995 L70.0 72.746"/><path d="M56.0 96.995 L70.0 121.243"/><path d="M56.0 96.995 L70.0 121.244"/><path d="M56.0 145.492 L70.0 121.243"/><path d="M56.0 145.492 L70.0 169.741"/><path d="M56.0 193.99 L70.0 169.741"/><path d="M70.0 -24.249 L98.0 -24.249"/><path d="M70.0 24.249 L98.0 24.249"/><path d="M70.0 72.746 L98.0 72.746"/><path d="M70.0 121.243 L98.0 121.243"/><path d="M70.0 121.244 L98.0 121.244"/><path d="M70.0 169.741 L98.0 169.741"/><path d="M98.0 -24.249 L112.0 0.0"/><path d="M98.0 24.249 L112.0 0.0"/><path d="M98.0 24.249 L112.0 48.497"/><path d="M98.0 72.746 L112.0 48.497"/><path d="M98.0 72.746 L112.0 96.995"/><path d="M98.0 121.243 L112.0 96.995"/><path d="M98.0 121.243 L112.0 145.492"/><path d="M98.0 121.244 L112.0 96.995"/><path d="M98.0 169.741 L112.0 145.492"/><path d="M98.0 169.741 L112.0 193.99"/><path d="M112.0 -0.0 L140.0 -0.0"/><path d="M112.0 48.497 L140.0 48.497"/><path d="M112.0 96.995 L140.0 96.995"/><path d="M112.0 145.492 L140.0 145.492"/><path d="M112.0 193.99 L140.0 193.99"/><path d="M140.0 0.0 L154.0 -24.249"/><path d="M140.0 -0.0 L154.0 24.249"/><path d="M140.0 48.497 L154.0 24.249"/><path d="M140.0 48.497 L154.0 72.746"/><path d="M140.0 96.995 L154.0 72.746"/><path d="M140.0 96.995 L154.0 121.243"/><path d="M140.0 96.995 L154.0 121.244"/><path d="M140.0 145.492 L154.0 121.243"/><path d="M140.0 145.492 L154.0 169.741"/><path d="M140.0 193.99 L154.0 169.741"/><path d="M154.0 -24.249 L182.0 -24.249"/><path d="M154.0 24.249 L182.0 24.249"/><path d="M154.0 72.746 L182.0 72.746"/><path d="M154.0 121.243 L182.0 121.243"/><path d="M154.0 121.244 L182.0 121.244"/><path d="M154.0 169.741 L182.0 169.741"/><path d="M182.0 -24.249 L196.0 0.0"/><path d="M182.0 24.249 L196.0 0.0"/><path d="M182.0 24.249 L196.0 48.497"/><path d="M182.0 72.746 L196.0 48.497"/><path d="M182.0 72.746 L196.0 96.995"/><path d="M182.0 121.243 L196.0 96.995"/><path d="M182.0 121.243 L196.0 145.492"/><path d="M182.0 121.244 L196.0 96.995"/><path d="M182.0 169.741 L196.0 145.492"/><path d="M182.0 169.741 L196.0 193.99"/><path d="M196.0 -0.0 L224.0 -0.0"/><path d="M196.0 48.497 L224.0 48.497"/><path d="M196.0 96.995 L224.0 96.995"/><path d="M196.0 145.492 L224.0 145.492"/><path d="M196.0 193.99 L224.0 193.99"/><path d="M224.0 0.0 L238.0 -24.249"/><path d="M224.0 -0.0 L238.0 24.249"/><path d="M224.0 48.497 L238.0 24.249"/><path d="M224.0 48.497 L238.0 72.746"/><path d="M224.0 96.995 L238.0 72.746"/><path d="M224.0 96.995 L238.0 121.243"/><path d="M224.0 96.995 L238.0 121.244"/><path d="M224.0 145.492 L238.0 121.243"/><path d="M224.0 145.492 L238.0 169.741"/><path d="M224.0 193.99 L238.0 169.741"/><path d="M238.0 -24.249 L266.0 -24.249"/><path d="M238.0 24.249 L266.0 24.249"/><path d="M238.0 72.746 L266.0 72.746"/><path d="M238.0 121.243 L266.0 121.243"/><path d="M238.0 121.244 L266.0 121.244"/><path d="M238.0 169.741 L266.0 169.741"/><path d="M266.0 -24.249 L280.0 0.0"/><path d="M266.0 24.249 L280.0 0.0"/><path d="M266.0 24.249 L280.0 48.497"/><path d="M266.0 72.746 L280.0 48.497"/><path d="M266.0 72.746 L280.0 96.995"/><path d="M266.0 121.243 L280.0 96.995"/><path d="M266.0 121.243 L280.0 145.492"/><path d="M266.0 121.244 L280.0 96.995"/><path d="M266.0 169.741 L280.0 145.492"/><path d="M266.0 169.741 L280.0 193.99"/><path d="M280.0 -0.0 L308.0 -0.0"/><path d="M280.0 48.497 L308.0 48.497"/><path d="M280.0 96.995 L308.0 96.995"/><path d="M280.0 145.492 L308.0 145.492"/><path d="M280.0 193.99 L308.0 193.99"/><path d="M308.0 -0.0 L322.0 24.249"/><path d="M308.0 48.497 L322.0 24.249"/><path d="M308.0 48.497 L322.0 72.746"/><path d="M308.0 96.995 L322.0 72.746"/><path d="M308.0 96.995 L322.0 121.243"/><path d="M308.0 96.995 L322.0 121.244"/><path d="M308.0 145.492 L322.0 121.243"/><path d="M308.0 145.492 L322.0 169.741"/><path d="M308.0 193.99 L322.0 169.741"/><path d="M322.0 24.249 L350.0 24.249"/><path d="M322.0 72.746 L350.0 72.746"/><path d="M322.0 121.244 L350.0 121.244"/><path d="M350.0 24.249 L364.0 48.497"/><path d="M350.0 72.746 L364.0 48.497"/><path d="M350.0 72.746 L364.0 96.995"/><path d="M350.0 121.244 L364.0 96.995"/></g>
+      <g fill="none" stroke="#8ce9df" stroke-width="2.5">
+        <path d="M98 -24.249 L98 -48"/>
+        <path d="M266 72.746 L294 72.746 L280 96.995"/>
+        <path d="M-28 96.995 L-57 96.995 M-63 88 L-63 69 M-58 88 L-58 69 M-68 104 L-85 118"/>
       </g>
-      <!-- Hammer in motion above the sheet. -->
-      <g transform="translate(505 73) rotate(31)">
-        <rect x="-10" y="5" width="20" height="123" rx="7" fill="#2dd4bf" stroke="#0f766e" stroke-width="3"/>
-        <path d="M-48 -24 H25 L51 -7 L47 7 L24 -3 H-48 Z" fill="#cbd5e1" stroke="#cbd5e1" stroke-width="4"/>
-        <path d="M-48 -25 H-33 V7 H-48 Z" fill="#94a3b8"/>
+      <g fill="#b3f5e9" font-family="monospace" font-weight="500" font-size="17">
+        <text x="87" y="-55">OH</text><text x="289" y="65">O</text>
+        <text x="-68" y="104">C</text><text x="-69" y="62">O</text><text x="-106" y="134">HO</text>
       </g>
-      <g fill="none" stroke="#2dd4bf" stroke-width="3.5">
-        <path d="M412 57 L398 38 M396 81 L372 73 M435 43 L433 19"/>
-      </g>
-    </g></g></svg>
+    </g></g>
+      <g fill="none" stroke="#8ce9df" stroke-width="1.2" stroke-dasharray="4 5"><path d="M925 78 H1046 L1110 40 M1375 93 H1420 V151 L1310 135"/></g>
+      <text x="927" y="68" fill="#d9eeeb" font-size="13">C–OH</text><text x="1341" y="83" fill="#d9eeeb" font-size="13">EPOXIDE</text>
+      <text x="86" y="305" fill="#9ec6de" font-size="13" letter-spacing="2">GRAPHENE OXIDE / MODEL CONSTRUCTION</text>
+      <text x="1514" y="305" text-anchor="end" fill="#9ec6de" font-size="12">SCHEMATIC</text></svg>
