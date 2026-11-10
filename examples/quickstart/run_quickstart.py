@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Run a minimal, self-contained GO Workbench build, graph check, and Amber template preparation.
 
 Does not require AmberTools, Gaussian, or external engines.
@@ -7,9 +6,9 @@ from __future__ import annotations
 
 import argparse
 import json
-from pathlib import Path
 import subprocess
 import sys
+from pathlib import Path
 
 
 def parse_args() -> argparse.Namespace:
@@ -53,7 +52,7 @@ def main() -> int:
         str(model_pdb),
         "--json",
     ]
-    res_build = subprocess.run(build_cmd, capture_output=True, text=True)
+    res_build = subprocess.run(build_cmd, capture_output=True, text=True, check=False)
     if res_build.returncode != 0:
         print(f"Build failed:\n{res_build.stderr}", file=sys.stderr)
         return res_build.returncode
@@ -72,7 +71,7 @@ def main() -> int:
         str(model_json),
         "--json",
     ]
-    res_check = subprocess.run(check_cmd, capture_output=True, text=True)
+    res_check = subprocess.run(check_cmd, capture_output=True, text=True, check=False)
     if res_check.returncode != 0:
         print(f"Check failed:\n{res_check.stderr}", file=sys.stderr)
         return res_check.returncode
@@ -84,7 +83,7 @@ def main() -> int:
     assert graph["undercoordinated_atom_ids"] == [], graph
     print("[Quickstart] Graph check passed: 1 connected component, 0 undercoordinated atoms")
 
-    print(f"[Quickstart] Generating Amber input templates (without external tleap)...")
+    print("[Quickstart] Generating Amber input templates (without external tleap)...")
     amber_cmd = [
         sys.executable,
         "03_prepare_amber.py",
@@ -95,7 +94,7 @@ def main() -> int:
         "--radii",
         "mbondi2",
     ]
-    res_amber = subprocess.run(amber_cmd, capture_output=True, text=True)
+    res_amber = subprocess.run(amber_cmd, capture_output=True, text=True, check=False)
     if res_amber.returncode != 0:
         print(f"Amber preparation failed:\n{res_amber.stderr}", file=sys.stderr)
         return res_amber.returncode
