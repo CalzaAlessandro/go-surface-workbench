@@ -15,6 +15,5 @@ state which tests you ran. For parameter changes, include the source and
 validation evidence, and preserve complete charge, bonded, Lennard-Jones and
 scaling presets. See [validation status](VALIDATION.md).
 
-CI runs the full suite and the minimal example on macOS/arm64. The serialized
-coordinate hashes were recorded on that platform; Linux currently differs in
-three hash comparisons.
+CI checks Python 3.12 on macOS/arm64, matching the platform used for the
+serialized-coordinate regression baselines.
