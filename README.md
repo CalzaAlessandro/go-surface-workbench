@@ -1,7 +1,7 @@
 <a id="go-builder-go-surface-workbench"></a>
 <h1 align="center">GO Builder</h1>
 
-General-purpose graphene oxide generator with explicit connectivity.
+Generate graphene oxide sheets with explicit connectivity and optional covalent functionalization.
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Active%20development-9A6700?style=flat" alt="Status: active development">
@@ -17,35 +17,22 @@ General-purpose graphene oxide generator with explicit connectivity.
   <a href="VALIDATION.md">Validation</a>
 </p>
 
-> [!IMPORTANT]
-> **Work in Progress / Active Research Repository**
-> This repository contains the source code, parameterization protocols, and validation toolchains for the GO Builder workbench.
-> The project is currently under active scientific development. Force-field parameters, atomic charges, and model topologies are preliminary and subject to revision prior to peer-reviewed publication.
-> 
-> Molecular engine outputs (Gaussian/ORCA/Amber logs and trajectories) are tracked separately. External dependencies and molecular dynamics engines must be configured as described in [Engine setup](docs/ENGINE_SETUP.md).
+> [!NOTE]
+> New parameters, charges and topologies are preliminary.
+> See the [validation status](VALIDATION.md) before using them in simulations.
 
-Provisional repository name: **go-surface-workbench**.
-See [scientific roadmap](docs/ROADMAP.md) and [measured performance benchmarks](docs/PERFORMANCE.md).
-
-Studies on charge derivation methods and candidate force fields are documented in
-[research/parameterization](research/parameterization/README.md); newly derived
-parameters remain isolated from the libraries used in legacy simulation campaigns.
-
-The [charge presets catalog](docs/CHARGE_PRESETS.md) includes the published
-GAFF2–AIM reference with original charges and Lennard-Jones parameters, alongside
-current libraries and the HierGO/OPLS reference. New charge derivation protocols
-focus on RESP; general assignment across all presets is ongoing.
-
-This directory contains code, examples, test suites, and parameter copies with full
-provenance; it does not distribute Amber or Gaussian binaries. Legacy GOX/REGOX
-corrected models and OLD parameters serve as reference points and are neither rebuilt
-nor overwritten automatically. Alignment inputs are maintained with backups as
-described in [ALIGNMENT.md](docs/ALIGNMENT.md).
-
-The core workflow to **build and functionalize GO sheets** is:
+Build and functionalize a GO sheet with:
 `01_build_GO.py` → `02_open_epoxides.py` (optional) → `03_prepare_amber.py`.
-`prepare_fragment.py` prepares grafting reagents once; the resulting recipe can be
-reused across multiple loadings and random seeds.
+Use `prepare_fragment.py` to prepare grafting reagents for reuse across loadings
+and random seeds.
+
+The [charge presets](docs/CHARGE_PRESETS.md) include the published GAFF2–AIM
+parameters, the current libraries and the HierGO/OPLS reference.
+[Parameterization studies](research/parameterization/README.md) cover RESP
+development; experimental parameters are kept separate from the reference libraries.
+
+[Roadmap](docs/ROADMAP.md) · [Benchmarks](docs/PERFORMANCE.md) ·
+[Trajectory alignment](docs/ALIGNMENT.md)
 
 ## Installation & Environment Setup
 
@@ -62,13 +49,9 @@ environments without `uv`, a standard `requirements.txt` can be exported and ins
 in a virtual environment. Amber/AmberTools (`tleap`, `sander`, `MMPBSA.py`, `espgen`,
 `resp`) and Gaussian (`g16`) must be provided by the host environment or cluster modules.
 
-This repository contains source code, examples, tests, reference assets, documentation,
-and dependency specifications. It does not track `software/`, Vina/Open Babel/MGLTools
-binaries, archives, or large `validation/` outputs. Recreate `.venv` on target machines:
-macOS binary virtual environments cannot be transferred to Linux. Install system engines
-separately as detailed in [Engine setup](docs/ENGINE_SETUP.md). To import modules directly
-from source, use `PYTHONPATH=src uv run python ...`; root scripts resolve package paths
-automatically.
+Install molecular engines separately; see [Engine setup](docs/ENGINE_SETUP.md).
+Create a new `.venv` on each machine. To import modules from source, use
+`PYTHONPATH=src uv run python ...`; root scripts resolve package paths automatically.
 
 ## Scripts & Usage Workflow
 
@@ -229,7 +212,7 @@ modified models until valid `--parameter-templates` are supplied, including atom
 charges, and dedicated `frcmod` files. Epoxide partial charges are not reused on
 opened products. See [FRAGMENTS.md](docs/FRAGMENTS.md) and [CHARGES.md](docs/CHARGES.md).
 
-Pertinent literature is discussed in [FUNCTIONALIZATION_LITERATURE.md](docs/FUNCTIONALIZATION_LITERATURE.md).
+See [functionalization references](docs/FUNCTIONALIZATION_LITERATURE.md).
 The anti-addition mechanism represents the design choice implemented in this workbench.
 
 ## Amber Topologies, Periodicity, Docking & MM/GBSA
@@ -363,8 +346,8 @@ receipts track executed commands, script hashes, and scheduler job IDs.
 
 ## Validation Status & Original Baselines
 
-[VALIDATION.md](VALIDATION.md) delineates completed regression benchmarks from
-ongoing scientific parameterization. [COMPARISON.md](docs/COMPARISON.md) compares
+[VALIDATION.md](VALIDATION.md) lists completed regression benchmarks and
+parameterization work still in progress. [COMPARISON.md](docs/COMPARISON.md) compares
 methodologies against HierGO and GOPY. Original reference files are indexed in
 `resources/reference/SOURCES.json`; HierGO/OPLS tracks commit SHAs, file hashes,
 and upstream licenses in `resources/reference/opls/PROVENANCE.json`.
