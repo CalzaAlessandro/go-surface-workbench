@@ -6,3 +6,5 @@ research/parameterization/references/** -whitespace
 *.csv -whitespace
 # Gaussian input sections require a blank line at end of file.
 *.gjf whitespace=-blank-at-eof
+# Exclude generated parameterization HTML reports from GitHub language statistics.
+research/parameterization/reports/** linguist-generated=true
