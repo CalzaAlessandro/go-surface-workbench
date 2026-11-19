@@ -12,7 +12,7 @@ Generate graphene oxide sheets with explicit connectivity and optional covalent 
 </p>
 
 <p align="center">
-  <img src="docs/images/banner.png" width="100%" alt="Illustration of a graphene oxide blueprint becoming an assembled molecular model on blue drafting paper, with a ruler, pencil and eraser">
+  <img src="docs/images/banner.webp" width="100%" alt="Illustration of a graphene oxide blueprint becoming an assembled molecular model on blue drafting paper, with a ruler, pencil and eraser">
 </p>
 
 ## Contents
