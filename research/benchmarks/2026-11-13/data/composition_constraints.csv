@@ -1,0 +1,13 @@
+case,status,target_O_C_min,target_O_C_max,actual_O_C,group_counts
+synthetic_demonstration,BUILT_AND_CONSTRAINTS_VERIFIED,0.08,0.1,0.1,"{""COO"": 0, ""COOH"": 0, ""OH"": 6, ""carbonyl"": 0, ""epoxide"": 7}"
+synthetic_demonstration,BUILT_AND_CONSTRAINTS_VERIFIED,0.08,0.1,0.08461538461538462,"{""COO"": 0, ""COOH"": 0, ""OH"": 6, ""carbonyl"": 0, ""epoxide"": 5}"
+synthetic_demonstration,BUILT_AND_CONSTRAINTS_VERIFIED,0.08,0.1,0.1,"{""COO"": 0, ""COOH"": 0, ""OH"": 7, ""carbonyl"": 0, ""epoxide"": 6}"
+synthetic_demonstration,BUILT_AND_CONSTRAINTS_VERIFIED,0.08,0.1,0.1,"{""COO"": 0, ""COOH"": 0, ""OH"": 7, ""carbonyl"": 0, ""epoxide"": 6}"
+P935_elemental_only,BUILT_AND_CONSTRAINTS_VERIFIED,0.38114209061143245,0.39882766110381895,0.3923076923076923,"{""COO"": 0, ""COOH"": 0, ""OH"": 23, ""carbonyl"": 0, ""epoxide"": 28}"
+P935_elemental_only,BUILT_AND_CONSTRAINTS_VERIFIED,0.38114209061143245,0.39882766110381895,0.38461538461538464,"{""COO"": 0, ""COOH"": 0, ""OH"": 27, ""carbonyl"": 0, ""epoxide"": 23}"
+P935_elemental_only,BUILT_AND_CONSTRAINTS_VERIFIED,0.38114209061143245,0.39882766110381895,0.3923076923076923,"{""COO"": 0, ""COOH"": 0, ""OH"": 27, ""carbonyl"": 0, ""epoxide"": 24}"
+P935_elemental_only,BUILT_AND_CONSTRAINTS_VERIFIED,0.38114209061143245,0.39882766110381895,0.3923076923076923,"{""COO"": 0, ""COOH"": 0, ""OH"": 27, ""carbonyl"": 0, ""epoxide"": 24}"
+deliberately_infeasible,NO_INTEGER_SOLUTION,0.08,0.1,,{}
+deliberately_infeasible,NO_INTEGER_SOLUTION,0.08,0.1,,{}
+deliberately_infeasible,NO_INTEGER_SOLUTION,0.08,0.1,,{}
+deliberately_infeasible,NO_INTEGER_SOLUTION,0.08,0.1,,{}

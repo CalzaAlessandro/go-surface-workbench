@@ -1,0 +1,280 @@
+{
+  "MM": [
+    {
+      "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+      "molecules": 6,
+      "median_force_RMSE_kcal_mol_A": 8.77543915624215,
+      "median_hessian_relative_Frobenius_error": 0.207011990502271,
+      "mean_force_RMSE_kcal_mol_A": 8.80972720292193,
+      "mean_hessian_relative_Frobenius_error": 0.27733954158099694
+    },
+    {
+      "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+      "molecules": 6,
+      "median_force_RMSE_kcal_mol_A": 8.901099370871496,
+      "median_hessian_relative_Frobenius_error": 0.20701599916240013,
+      "mean_force_RMSE_kcal_mol_A": 8.889939776650824,
+      "mean_hessian_relative_Frobenius_error": 0.27739658506098014
+    },
+    {
+      "method": "GAFF2_AM1BCC_closed",
+      "molecules": 6,
+      "median_force_RMSE_kcal_mol_A": 17.270319544865885,
+      "median_hessian_relative_Frobenius_error": 0.20921415042022715,
+      "mean_force_RMSE_kcal_mol_A": 23.957830060774956,
+      "mean_hessian_relative_Frobenius_error": 0.21605174172169114
+    },
+    {
+      "method": "GAFF2_HF_RESP_closed",
+      "molecules": 6,
+      "median_force_RMSE_kcal_mol_A": 17.270085262150154,
+      "median_hessian_relative_Frobenius_error": 0.20933808349907004,
+      "mean_force_RMSE_kcal_mol_A": 24.182199701837,
+      "mean_hessian_relative_Frobenius_error": 0.2161149642451983
+    },
+    {
+      "method": "GAFF_AM1BCC_closed",
+      "molecules": 6,
+      "median_force_RMSE_kcal_mol_A": 21.472367505978006,
+      "median_hessian_relative_Frobenius_error": 0.2595992466741548,
+      "mean_force_RMSE_kcal_mol_A": 30.98430548597004,
+      "mean_hessian_relative_Frobenius_error": 0.27321860646203927
+    },
+    {
+      "method": "GAFF_HF_RESP_closed",
+      "molecules": 6,
+      "median_force_RMSE_kcal_mol_A": 21.44372005115726,
+      "median_hessian_relative_Frobenius_error": 0.2596653866217802,
+      "mean_force_RMSE_kcal_mol_A": 31.16191304054201,
+      "mean_hessian_relative_Frobenius_error": 0.27326828965681543
+    },
+    {
+      "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+      "molecules": 6,
+      "median_force_RMSE_kcal_mol_A": 8.021352064093147,
+      "median_hessian_relative_Frobenius_error": 0.1730893305696215,
+      "mean_force_RMSE_kcal_mol_A": 10.641018463529097,
+      "mean_hessian_relative_Frobenius_error": 0.18248081808056124
+    },
+    {
+      "method": "OpenFF_2.0_AM1BCC_closed",
+      "molecules": 6,
+      "median_force_RMSE_kcal_mol_A": 16.070417718892543,
+      "median_hessian_relative_Frobenius_error": 0.2091870466146148,
+      "mean_force_RMSE_kcal_mol_A": 16.00977186835313,
+      "mean_hessian_relative_Frobenius_error": 0.20938144604976672
+    },
+    {
+      "method": "QForce_Hessian_only_GAFF2_LJ_AM1BCC",
+      "molecules": 6,
+      "median_force_RMSE_kcal_mol_A": 3.9279707231573697,
+      "median_hessian_relative_Frobenius_error": 0.1375459742520993,
+      "mean_force_RMSE_kcal_mol_A": 3.9680971965003478,
+      "mean_hessian_relative_Frobenius_error": 0.1418343686079461
+    },
+    {
+      "method": "Sage_2.3_AshGC",
+      "molecules": 6,
+      "median_force_RMSE_kcal_mol_A": 14.137022089338089,
+      "median_hessian_relative_Frobenius_error": 0.18554871102234044,
+      "mean_force_RMSE_kcal_mol_A": 14.298472980101375,
+      "mean_hessian_relative_Frobenius_error": 0.18981577438285913
+    }
+  ],
+  "charges": [
+    {
+      "subset": "all_six",
+      "method": "L0_strict40",
+      "molecules": 6,
+      "median_ESP_RRMS": 0.16548157945317515
+    },
+    {
+      "subset": "all_six",
+      "method": "Local_BCC_ESP_strict40",
+      "molecules": 6,
+      "median_ESP_RRMS": 0.14293318748769296
+    },
+    {
+      "subset": "all_six",
+      "method": "SQE_ESP_strict40",
+      "molecules": 6,
+      "median_ESP_RRMS": 0.1601829318398853
+    },
+    {
+      "subset": "all_six",
+      "method": "Atomic_RESP_in_sample_control",
+      "molecules": 6,
+      "median_ESP_RRMS": 0.08080334729704444
+    },
+    {
+      "subset": "all_six",
+      "method": "AshGC",
+      "molecules": 6,
+      "median_ESP_RRMS": 0.7410199025132789
+    },
+    {
+      "subset": "all_six",
+      "method": "EspalomaCharge",
+      "molecules": 6,
+      "median_ESP_RRMS": 2.058303566695405
+    },
+    {
+      "subset": "neutral_five",
+      "method": "L0_strict40",
+      "molecules": 5,
+      "median_ESP_RRMS": 0.16575283334444788
+    },
+    {
+      "subset": "neutral_five",
+      "method": "Local_BCC_ESP_strict40",
+      "molecules": 5,
+      "median_ESP_RRMS": 0.1448112033308514
+    },
+    {
+      "subset": "neutral_five",
+      "method": "SQE_ESP_strict40",
+      "molecules": 5,
+      "median_ESP_RRMS": 0.16058615808256652
+    },
+    {
+      "subset": "neutral_five",
+      "method": "Atomic_RESP_in_sample_control",
+      "molecules": 5,
+      "median_ESP_RRMS": 0.08276414206662801
+    },
+    {
+      "subset": "neutral_five",
+      "method": "AshGC",
+      "molecules": 5,
+      "median_ESP_RRMS": 0.7528963367459107
+    },
+    {
+      "subset": "neutral_five",
+      "method": "EspalomaCharge",
+      "molecules": 5,
+      "median_ESP_RRMS": 2.092654509964661
+    },
+    {
+      "subset": "carboxylate_one",
+      "method": "L0_strict40",
+      "molecules": 1,
+      "median_ESP_RRMS": 0.16521032556190243
+    },
+    {
+      "subset": "carboxylate_one",
+      "method": "Local_BCC_ESP_strict40",
+      "molecules": 1,
+      "median_ESP_RRMS": 0.1338963818833431
+    },
+    {
+      "subset": "carboxylate_one",
+      "method": "SQE_ESP_strict40",
+      "molecules": 1,
+      "median_ESP_RRMS": 0.12194928911941372
+    },
+    {
+      "subset": "carboxylate_one",
+      "method": "Atomic_RESP_in_sample_control",
+      "molecules": 1,
+      "median_ESP_RRMS": 0.011691520430291154
+    },
+    {
+      "subset": "carboxylate_one",
+      "method": "AshGC",
+      "molecules": 1,
+      "median_ESP_RRMS": 0.25764170828158006
+    },
+    {
+      "subset": "carboxylate_one",
+      "method": "EspalomaCharge",
+      "molecules": 1,
+      "median_ESP_RRMS": 0.4300304382218673
+    },
+    {
+      "subset": "all_six",
+      "method": "current_gaff2",
+      "molecules": 6,
+      "median_ESP_RRMS": 0.32388155786819073
+    },
+    {
+      "subset": "neutral_five",
+      "method": "current_gaff2",
+      "molecules": 5,
+      "median_ESP_RRMS": 0.3247834146712942
+    },
+    {
+      "subset": "carboxylate_one",
+      "method": "current_gaff2",
+      "molecules": 1,
+      "median_ESP_RRMS": 0.18961720289634618
+    },
+    {
+      "subset": "neutral_five",
+      "method": "hiergo_opls",
+      "molecules": 5,
+      "median_ESP_RRMS": 0.22130228270861385
+    },
+    {
+      "subset": "all_six",
+      "method": "HierGO_OPLS_COO_HF_ESP_extension",
+      "molecules": 6,
+      "median_ESP_RRMS": 0.21561367550199062
+    },
+    {
+      "subset": "neutral_five",
+      "method": "HierGO_OPLS_COO_HF_ESP_extension",
+      "molecules": 5,
+      "median_ESP_RRMS": 0.22130228270861385
+    },
+    {
+      "subset": "carboxylate_one",
+      "method": "HierGO_OPLS_COO_HF_ESP_extension",
+      "molecules": 1,
+      "median_ESP_RRMS": 0.16621751712043936
+    }
+  ],
+  "charge_changes": [
+    {
+      "model_id": "C54_COO1_loading_s20261417",
+      "baseline_RRMS": 0.16521032556190243,
+      "corrected_RRMS": 0.1338963818833431,
+      "difference": -0.03131394367855933,
+      "improved": true
+    },
+    {
+      "model_id": "C54_EPX2_far_s20261407",
+      "baseline_RRMS": 0.16575283334444788,
+      "corrected_RRMS": 0.14105517164453454,
+      "difference": -0.02469766169991333,
+      "improved": true
+    },
+    {
+      "model_id": "C54_EPX4_loading_s20261409",
+      "baseline_RRMS": 0.18062409702768184,
+      "corrected_RRMS": 0.17299876692086166,
+      "difference": -0.007625330106820177,
+      "improved": true
+    },
+    {
+      "model_id": "C54_OH2_loading_s20261404",
+      "baseline_RRMS": 0.147951923067381,
+      "corrected_RRMS": 0.12890448695503667,
+      "difference": -0.01904743611234433,
+      "improved": true
+    },
+    {
+      "model_id": "C54_OH4_loading_s20261405",
+      "baseline_RRMS": 0.21436727114159565,
+      "corrected_RRMS": 0.22502625363050224,
+      "difference": 0.010658982488906593,
+      "improved": false
+    },
+    {
+      "model_id": "C54_OH6_loading_s20261406",
+      "baseline_RRMS": 0.15551684785996067,
+      "corrected_RRMS": 0.1448112033308514,
+      "difference": -0.01070564452910927,
+      "improved": true
+    }
+  ]
+}

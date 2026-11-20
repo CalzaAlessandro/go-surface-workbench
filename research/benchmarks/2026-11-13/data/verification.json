@@ -1,0 +1,886 @@
+{
+  "MM": {
+    "status": "VERIFIED",
+    "transferred_hashes_rechecked": 538,
+    "force_metrics_recomputed_on_second_machine": 54,
+    "Hessian_metrics_recomputed": 54,
+    "Espaloma_charge_variants_have_identical_bonded_and_LJ": true,
+    "GAFF_charge_variants_have_identical_bonded_and_LJ": true,
+    "results": [
+      {
+        "model_id": "pyrene_COOH",
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 9.795314287638588,
+        "Hessian_error_recomputed": 0.16691347992159686
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "force_RMSE_recomputed": 9.916504053184878,
+        "Hessian_error_recomputed": 0.16696879575034512
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 7.930522535010927,
+        "Hessian_error_recomputed": 0.1682452923779534
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "force_RMSE_recomputed": 16.39967518363939,
+        "Hessian_error_recomputed": 0.20370436152461985
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "Sage_2.3_AshGC",
+        "force_RMSE_recomputed": 17.110727328468617,
+        "Hessian_error_recomputed": 0.1809770939594504
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 9.26923218193373,
+        "Hessian_error_recomputed": 0.19797680578904595
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "force_RMSE_recomputed": 9.41193397136724,
+        "Hessian_error_recomputed": 0.1979607680944648
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 8.11218159317536,
+        "Hessian_error_recomputed": 0.1726157613318858
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "force_RMSE_recomputed": 22.346403641408962,
+        "Hessian_error_recomputed": 0.2110553229152236
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "Sage_2.3_AshGC",
+        "force_RMSE_recomputed": 19.02335801222344,
+        "Hessian_error_recomputed": 0.1868538761904482
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 8.281646130550577,
+        "Hessian_error_recomputed": 0.4593747164769608
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "force_RMSE_recomputed": 8.390264770375762,
+        "Hessian_error_recomputed": 0.45949464978216326
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 18.210813318837577,
+        "Hessian_error_recomputed": 0.20652243590660405
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "force_RMSE_recomputed": 12.23046094125238,
+        "Hessian_error_recomputed": 0.21326392363918736
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "Sage_2.3_AshGC",
+        "force_RMSE_recomputed": 10.497923337854207,
+        "Hessian_error_recomputed": 0.20301149038705543
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 7.975125293421682,
+        "Hessian_error_recomputed": 0.21604717521549607
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "force_RMSE_recomputed": 7.962186405027148,
+        "Hessian_error_recomputed": 0.21607123023033545
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 6.2401082513094535,
+        "Hessian_error_recomputed": 0.16131276492119065
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "force_RMSE_recomputed": 16.795835358294017,
+        "Hessian_error_recomputed": 0.23579361528216372
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "Sage_2.3_AshGC",
+        "force_RMSE_recomputed": 12.620935956570523,
+        "Hessian_error_recomputed": 0.18243675297835243
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 7.764561551397011,
+        "Hessian_error_recomputed": 0.45077352678220356
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "force_RMSE_recomputed": 7.855381174672039,
+        "Hessian_error_recomputed": 0.450874450990656
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 17.814892032244686,
+        "Hessian_error_recomputed": 0.2126257541383762
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "force_RMSE_recomputed": 12.545095831378312,
+        "Hessian_error_recomputed": 0.20731877031400595
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "Sage_2.3_AshGC",
+        "force_RMSE_recomputed": 10.884785023385794,
+        "Hessian_error_recomputed": 0.20137188692761546
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 9.772483772589933,
+        "Hessian_error_recomputed": 0.17295154530067836
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "force_RMSE_recomputed": 9.803368285277802,
+        "Hessian_error_recomputed": 0.1730096155179162
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 5.537593050596556,
+        "Hessian_error_recomputed": 0.17356289980735723
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "force_RMSE_recomputed": 15.741160254145674,
+        "Hessian_error_recomputed": 0.1851526826233998
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "Sage_2.3_AshGC",
+        "force_RMSE_recomputed": 15.653108222105612,
+        "Hessian_error_recomputed": 0.18424354585423267
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "GAFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 16.184328415591008,
+        "Hessian_error_recomputed": 0.19704549991452677
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "GAFF2_HF_RESP_closed",
+        "force_RMSE_recomputed": 16.425131679725048,
+        "Hessian_error_recomputed": 0.1970666804224207
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "GAFF_AM1BCC_closed",
+        "force_RMSE_recomputed": 20.258229307581093,
+        "Hessian_error_recomputed": 0.2592818576559852
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "GAFF_HF_RESP_closed",
+        "force_RMSE_recomputed": 20.45853110100611,
+        "Hessian_error_recomputed": 0.25931558475696953
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "GAFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 17.887675105086846,
+        "Hessian_error_recomputed": 0.18929035201759384
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "GAFF2_HF_RESP_closed",
+        "force_RMSE_recomputed": 17.793051334791944,
+        "Hessian_error_recomputed": 0.18936454163238153
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "GAFF_AM1BCC_closed",
+        "force_RMSE_recomputed": 21.97004968017169,
+        "Hessian_error_recomputed": 0.2599166356923245
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "GAFF_HF_RESP_closed",
+        "force_RMSE_recomputed": 21.832693561317253,
+        "Hessian_error_recomputed": 0.2600151884865909
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "GAFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 39.456938771738386,
+        "Hessian_error_recomputed": 0.25543184045272166
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "GAFF2_HF_RESP_closed",
+        "force_RMSE_recomputed": 39.475215060906265,
+        "Hessian_error_recomputed": 0.25546257953434015
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "GAFF_AM1BCC_closed",
+        "force_RMSE_recomputed": 52.39140239388298,
+        "Hessian_error_recomputed": 0.31554941079909654
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "GAFF_HF_RESP_closed",
+        "force_RMSE_recomputed": 52.4018588873661,
+        "Hessian_error_recomputed": 0.31559936445677483
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "GAFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 14.057491036732062,
+        "Hessian_error_recomputed": 0.22138280092592755
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "GAFF2_HF_RESP_closed",
+        "force_RMSE_recomputed": 15.119928804587731,
+        "Hessian_error_recomputed": 0.22160948657571947
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "GAFF_AM1BCC_closed",
+        "force_RMSE_recomputed": 17.881108039053764,
+        "Hessian_error_recomputed": 0.23983853662794674
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "GAFF_HF_RESP_closed",
+        "force_RMSE_recomputed": 18.787867327396796,
+        "Hessian_error_recomputed": 0.23999348662118422
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "GAFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 39.507583050856525,
+        "Hessian_error_recomputed": 0.2531405886946938
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "GAFF2_HF_RESP_closed",
+        "force_RMSE_recomputed": 39.53275214150264,
+        "Hessian_error_recomputed": 0.2531636588987442
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "GAFF_AM1BCC_closed",
+        "force_RMSE_recomputed": 52.430358163346405,
+        "Hessian_error_recomputed": 0.31499753986414036
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "GAFF_HF_RESP_closed",
+        "force_RMSE_recomputed": 52.43578082516854,
+        "Hessian_error_recomputed": 0.31499076447101393
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "GAFF2_AM1BCC_closed",
+        "force_RMSE_recomputed": 16.652963984644906,
+        "Hessian_error_recomputed": 0.18001936832468313
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "GAFF2_HF_RESP_closed",
+        "force_RMSE_recomputed": 16.747119189508343,
+        "Hessian_error_recomputed": 0.1800228384075839
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "GAFF_AM1BCC_closed",
+        "force_RMSE_recomputed": 20.974685331784297,
+        "Hessian_error_recomputed": 0.24972765813274242
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "GAFF_HF_RESP_closed",
+        "force_RMSE_recomputed": 21.054746540997247,
+        "Hessian_error_recomputed": 0.24969534914835917
+      }
+    ]
+  },
+  "QM_derivatives": {
+    "status": "VERIFIED",
+    "references": [
+      {
+        "model_id": "pyrene_COO",
+        "modes": 78,
+        "frequency_RMSE_cm_inverse": 2.9097222367574728e-05,
+        "maximum_abs_difference_cm_inverse": 4.9892770562109945e-05,
+        "minimum_QM_frequency_cm_inverse": 49.25199157296841,
+        "Hessian_units_and_mass_weighting_verified": true
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "modes": 81,
+        "frequency_RMSE_cm_inverse": 2.9229359210192692e-05,
+        "maximum_abs_difference_cm_inverse": 5.0374638703942765e-05,
+        "minimum_QM_frequency_cm_inverse": 52.88344004519759,
+        "Hessian_units_and_mass_weighting_verified": true
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "modes": 84,
+        "frequency_RMSE_cm_inverse": 2.940503834282057e-05,
+        "maximum_abs_difference_cm_inverse": 5.034796458858182e-05,
+        "minimum_QM_frequency_cm_inverse": 74.80579777482812,
+        "Hessian_units_and_mass_weighting_verified": true
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "modes": 87,
+        "frequency_RMSE_cm_inverse": 2.8864595008371367e-05,
+        "maximum_abs_difference_cm_inverse": 5.142625059306738e-05,
+        "minimum_QM_frequency_cm_inverse": 52.467579789660135,
+        "Hessian_units_and_mass_weighting_verified": true
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "modes": 84,
+        "frequency_RMSE_cm_inverse": 2.8750806026030284e-05,
+        "maximum_abs_difference_cm_inverse": 4.8773784556033206e-05,
+        "minimum_QM_frequency_cm_inverse": 88.477381024021,
+        "Hessian_units_and_mass_weighting_verified": true
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "modes": 72,
+        "frequency_RMSE_cm_inverse": 2.9776568456584028e-05,
+        "maximum_abs_difference_cm_inverse": 4.9170572196999274e-05,
+        "minimum_QM_frequency_cm_inverse": 97.40902678310697,
+        "Hessian_units_and_mass_weighting_verified": true
+      }
+    ]
+  },
+  "conventions": {
+    "status": "VERIFIED",
+    "systems": 54,
+    "mixing": "Lorentz-Berthelot: arithmetic sigma, geometric epsilon",
+    "exclusions": "all graph-distance 1 and 2 pairs",
+    "electrostatic_14_multiplier": 0.8333333333333334,
+    "LJ_14_multiplier": 0.5,
+    "energy_evaluation": "isolated NoCutoff, no constraints",
+    "cases": [
+      {
+        "model_id": "pyrene_COOH",
+        "method": "GAFF2_AM1BCC_closed",
+        "excluded_12_pairs": 32,
+        "excluded_13_pairs": 52,
+        "scaled_14_pairs": 70,
+        "maximum_absolute_coefficient_error": 1.3877787807814457e-17,
+        "system_sha256": "162b4f1517c006101d39691847c91432216ae83e9e4974cbea78af5e1b0a68e7"
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "GAFF2_HF_RESP_closed",
+        "excluded_12_pairs": 32,
+        "excluded_13_pairs": 52,
+        "scaled_14_pairs": 70,
+        "maximum_absolute_coefficient_error": 2.7755575615628914e-17,
+        "system_sha256": "1e28c72be18e0b892e99a8dfe7fe8afea414136fa29bbe4c9180ce8a170a08e4"
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "GAFF_AM1BCC_closed",
+        "excluded_12_pairs": 32,
+        "excluded_13_pairs": 52,
+        "scaled_14_pairs": 70,
+        "maximum_absolute_coefficient_error": 5.551115123125783e-17,
+        "system_sha256": "7e1bf335e3eb6e9be99b44ac1b1e907f3b462b8770502708560ff2d6e14016c8"
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "GAFF_HF_RESP_closed",
+        "excluded_12_pairs": 32,
+        "excluded_13_pairs": 52,
+        "scaled_14_pairs": 70,
+        "maximum_absolute_coefficient_error": 5.551115123125783e-17,
+        "system_sha256": "32be2745e81d55ffd0e47045555d90731a5d18d4776a82e74eaeb0908de2af35"
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "GAFF2_AM1BCC_closed",
+        "excluded_12_pairs": 31,
+        "excluded_13_pairs": 51,
+        "scaled_14_pairs": 68,
+        "maximum_absolute_coefficient_error": 1.3877787807814457e-17,
+        "system_sha256": "b4e8b5eee8a2ca47b6796f6da2be40ebce0e2549c6d31acca3235740d2e51f7d"
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "GAFF2_HF_RESP_closed",
+        "excluded_12_pairs": 31,
+        "excluded_13_pairs": 51,
+        "scaled_14_pairs": 68,
+        "maximum_absolute_coefficient_error": 2.7755575615628914e-17,
+        "system_sha256": "29c9044087a3d7bf887663f6550e71a8b7acb3e2dc0aece9fab31f3b34104fb7"
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "GAFF_AM1BCC_closed",
+        "excluded_12_pairs": 31,
+        "excluded_13_pairs": 51,
+        "scaled_14_pairs": 68,
+        "maximum_absolute_coefficient_error": 1.3877787807814457e-17,
+        "system_sha256": "94dea5667d88a72a94c2dc7db5d9297d6061ddc218b72a4ee82fc9a39fd1d05f"
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "GAFF_HF_RESP_closed",
+        "excluded_12_pairs": 31,
+        "excluded_13_pairs": 51,
+        "scaled_14_pairs": 68,
+        "maximum_absolute_coefficient_error": 2.7755575615628914e-17,
+        "system_sha256": "2767b9efbb2651ce31b73f15067036d4e39f3248d02bccc0b89cf0331992d438"
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "GAFF2_AM1BCC_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 2.7755575615628914e-17,
+        "system_sha256": "5044ee60f5ffeddad7820da3157340431841b04b920e606dbed15c4237720bb3"
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "GAFF2_HF_RESP_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 5.551115123125783e-17,
+        "system_sha256": "788ce1f988bb94bf05ad5c1f77abbb92f689ef376e3548cbffbdb901757856b3"
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "GAFF_AM1BCC_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 5.551115123125783e-17,
+        "system_sha256": "714715cae080e5c0e720115494f073aff14375d8640585591c76fcf119e9a28a"
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "GAFF_HF_RESP_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 5.551115123125783e-17,
+        "system_sha256": "f67f2faedc11a491313a8fcc3b3258733f9a2d9f5fa1f8ca030758f7d5444d2a"
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "GAFF2_AM1BCC_closed",
+        "excluded_12_pairs": 35,
+        "excluded_13_pairs": 60,
+        "scaled_14_pairs": 92,
+        "maximum_absolute_coefficient_error": 5.551115123125783e-17,
+        "system_sha256": "ac444974acd99b25aab951f6691ca6f336bdb3e91fdc42f0818227ad268dc049"
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "GAFF2_HF_RESP_closed",
+        "excluded_12_pairs": 35,
+        "excluded_13_pairs": 60,
+        "scaled_14_pairs": 92,
+        "maximum_absolute_coefficient_error": 1.1102230246251565e-16,
+        "system_sha256": "17075e56b2c4a3c0a87ea54a2328ef2b8fcc52d7b3181f56ff8b73155ea69361"
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "GAFF_AM1BCC_closed",
+        "excluded_12_pairs": 35,
+        "excluded_13_pairs": 60,
+        "scaled_14_pairs": 92,
+        "maximum_absolute_coefficient_error": 5.551115123125783e-17,
+        "system_sha256": "166ca88b5164499b51091fb455b660a76e1dcbcd299e9e0cff07730c7811bc5a"
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "GAFF_HF_RESP_closed",
+        "excluded_12_pairs": 35,
+        "excluded_13_pairs": 60,
+        "scaled_14_pairs": 92,
+        "maximum_absolute_coefficient_error": 1.1102230246251565e-16,
+        "system_sha256": "f2f54f897b12a2e19880c1a616795a00210eb7d01dcacffd0198a70dad096d2a"
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "GAFF2_AM1BCC_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 2.7755575615628914e-17,
+        "system_sha256": "c025b1917904bbc910f5907f888281d04b3e09181ec84f5da5310e158fa3f6a5"
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "GAFF2_HF_RESP_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 2.7755575615628914e-17,
+        "system_sha256": "e06b886e39516ace43b13027ae457a6a5d83d6219c0f792ba5d13207060a080b"
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "GAFF_AM1BCC_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 5.551115123125783e-17,
+        "system_sha256": "85580576db6b3d5b8318329b6bc2154a08fd8b69f2a2c70a24742b2b4aace2fc"
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "GAFF_HF_RESP_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 5.551115123125783e-17,
+        "system_sha256": "4dfcb4b300f8c8fb65c4046b6752a3fef6ef9200cafc1994bcf337a4a40effd8"
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "GAFF2_AM1BCC_closed",
+        "excluded_12_pairs": 29,
+        "excluded_13_pairs": 48,
+        "scaled_14_pairs": 64,
+        "maximum_absolute_coefficient_error": 1.734723475976807e-18,
+        "system_sha256": "f503ae5bf179a96f6b111808e699b794ca5bea1b8c0e0ed9535a48f5e5c5daf1"
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "GAFF2_HF_RESP_closed",
+        "excluded_12_pairs": 29,
+        "excluded_13_pairs": 48,
+        "scaled_14_pairs": 64,
+        "maximum_absolute_coefficient_error": 6.938893903907228e-18,
+        "system_sha256": "f8f565578f0dd8d37c797bcaec863bee24460ba2d8423d8248cf5b5279810e80"
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "GAFF_AM1BCC_closed",
+        "excluded_12_pairs": 29,
+        "excluded_13_pairs": 48,
+        "scaled_14_pairs": 64,
+        "maximum_absolute_coefficient_error": 1.3877787807814457e-17,
+        "system_sha256": "6f8fb2b2150c7b6b9018cd09a8ea2e7874fd660ff93f16336ccf6c62371caa41"
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "GAFF_HF_RESP_closed",
+        "excluded_12_pairs": 29,
+        "excluded_13_pairs": 48,
+        "scaled_14_pairs": 64,
+        "maximum_absolute_coefficient_error": 1.3877787807814457e-17,
+        "system_sha256": "3379e7ab9f85b32541efa5d04189b86dd421da50f3231c8ea4aa6ad66629465a"
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "excluded_12_pairs": 32,
+        "excluded_13_pairs": 52,
+        "scaled_14_pairs": 70,
+        "maximum_absolute_coefficient_error": 8.254452676936808e-12,
+        "system_sha256": "76b3df587d9aaaf80c10abf09bb37aefd3d192d28a05e46b8149af654f9427a6"
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "excluded_12_pairs": 32,
+        "excluded_13_pairs": 52,
+        "scaled_14_pairs": 70,
+        "maximum_absolute_coefficient_error": 6.607575597783466e-12,
+        "system_sha256": "afa761bd74c9eb11d0314b662c3ffcafac036d31e1934ade95e71612115ab336"
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "excluded_12_pairs": 32,
+        "excluded_13_pairs": 52,
+        "scaled_14_pairs": 70,
+        "maximum_absolute_coefficient_error": 8.254452676936808e-12,
+        "system_sha256": "de4f2afa8f0f56dde7bcc6a69d21659aa183c2ccecdd14a294da39cc8730d6cf"
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "excluded_12_pairs": 32,
+        "excluded_13_pairs": 52,
+        "scaled_14_pairs": 70,
+        "maximum_absolute_coefficient_error": 8.254452676936808e-12,
+        "system_sha256": "2bbe2d5c1ace1b0e530d2116bbebd54bdcf3e0982c62efda301b286a9f5ec12a"
+      },
+      {
+        "model_id": "pyrene_COOH",
+        "method": "Sage_2.3_AshGC",
+        "excluded_12_pairs": 32,
+        "excluded_13_pairs": 52,
+        "scaled_14_pairs": 70,
+        "maximum_absolute_coefficient_error": 8.11270495226779e-12,
+        "system_sha256": "3b6d99fcb266be8dcae9a05796ec0946e2f86296fdf6799c79233eae0f16cb2d"
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "excluded_12_pairs": 31,
+        "excluded_13_pairs": 51,
+        "scaled_14_pairs": 68,
+        "maximum_absolute_coefficient_error": 4.821296140100628e-12,
+        "system_sha256": "aae4a03f5dc0331aec63cd9d7a8c049ddbd8b9313d8646aeff6bc0432d74d8b6"
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "excluded_12_pairs": 31,
+        "excluded_13_pairs": 51,
+        "scaled_14_pairs": 68,
+        "maximum_absolute_coefficient_error": 7.033484905605292e-12,
+        "system_sha256": "70007b56d2f350a35ed40fdc087d0cd747904d1ca154ed85956fd5f49138ca62"
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "excluded_12_pairs": 31,
+        "excluded_13_pairs": 51,
+        "scaled_14_pairs": 68,
+        "maximum_absolute_coefficient_error": 4.821296140100628e-12,
+        "system_sha256": "e31b12ff453132898399e8a56e0ed3480d5d8ccb3ffd759a9ddf8c70a28743f7"
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "excluded_12_pairs": 31,
+        "excluded_13_pairs": 51,
+        "scaled_14_pairs": 68,
+        "maximum_absolute_coefficient_error": 4.821296140100628e-12,
+        "system_sha256": "f9b0fa8a3922b50df57a4b7af69aa99c3076db3e82fa6af68fbf7d863ac80041"
+      },
+      {
+        "model_id": "pyrene_COO",
+        "method": "Sage_2.3_AshGC",
+        "excluded_12_pairs": 31,
+        "excluded_13_pairs": 51,
+        "scaled_14_pairs": 68,
+        "maximum_absolute_coefficient_error": 4.980252321651335e-12,
+        "system_sha256": "0918bbb9d57feccea85859d4a220d27b0c113d533dd4e4b5d635dbb473222b5c"
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 1.1691314583117673e-11,
+        "system_sha256": "d3275001028102491e2fa3db7a63baa7135602c275363e8e54537a4f3038f060"
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 1.2958412121122365e-11,
+        "system_sha256": "fe30bf9d22932e0c319a6c6993b3fc48005d0c7095d435f482e686da1f3aa2bd"
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 1.1691314583117673e-11,
+        "system_sha256": "187c45558dd85f7605fc096c02164282a493a70c61bdebff5ff4c5f612991492"
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 1.1691314583117673e-11,
+        "system_sha256": "1224b6f17e77c68ba4264e055be40d979d8d579cb0db09cb37116127af98d889"
+      },
+      {
+        "model_id": "pyrene_diol_cis",
+        "method": "Sage_2.3_AshGC",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 1.1087297746570357e-11,
+        "system_sha256": "efadda202ec9234ed641ddecc81110d75ef1e4a0fb5403b1728eed3dd862bdba"
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "excluded_12_pairs": 35,
+        "excluded_13_pairs": 60,
+        "scaled_14_pairs": 92,
+        "maximum_absolute_coefficient_error": 1.1302292435289019e-11,
+        "system_sha256": "3d596c6da8d1f5c1fe2dff1673bf3a4dc586d474d1c2518acb118e06cf857de6"
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "excluded_12_pairs": 35,
+        "excluded_13_pairs": 60,
+        "scaled_14_pairs": 92,
+        "maximum_absolute_coefficient_error": 1.4485357358040574e-11,
+        "system_sha256": "fd80efc8990988779e0aa800596964946065b8c9aa572172c9e195d33aca1c69"
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "excluded_12_pairs": 35,
+        "excluded_13_pairs": 60,
+        "scaled_14_pairs": 92,
+        "maximum_absolute_coefficient_error": 1.1302292435289019e-11,
+        "system_sha256": "54924e1950a8b44b2a3146f5e42e7279814b06389a524b8eacc5ff1aa6ccae28"
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "excluded_12_pairs": 35,
+        "excluded_13_pairs": 60,
+        "scaled_14_pairs": 92,
+        "maximum_absolute_coefficient_error": 1.1302292435289019e-11,
+        "system_sha256": "646af0625fd269be237e4a23f29341557728f4bc70774cc635b6752787795c43"
+      },
+      {
+        "model_id": "pyrene_diol_epoxide",
+        "method": "Sage_2.3_AshGC",
+        "excluded_12_pairs": 35,
+        "excluded_13_pairs": 60,
+        "scaled_14_pairs": 92,
+        "maximum_absolute_coefficient_error": 1.1012302181256928e-11,
+        "system_sha256": "d9e9eb60731213e0f584fb252b6805e7e85d3c2c52f45cb83380dd226c483cbe"
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 1.0841438857767116e-11,
+        "system_sha256": "036001feab55c49c6f756cc8d8db29cda3d52c6f6534a5f57ae2275395be6634"
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 1.2958412121122365e-11,
+        "system_sha256": "fe30bf9d22932e0c319a6c6993b3fc48005d0c7095d435f482e686da1f3aa2bd"
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 1.0841438857767116e-11,
+        "system_sha256": "bc7ae594924865346858e4d2d3bebba1aad7be63ab4fcea420f5af11d6f027a4"
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 1.0841438857767116e-11,
+        "system_sha256": "30b8fdf0f40f9e5bde9a08316a3b44fc0c15b107bce9156ca6cf20f06f844a4b"
+      },
+      {
+        "model_id": "pyrene_diol_trans",
+        "method": "Sage_2.3_AshGC",
+        "excluded_12_pairs": 33,
+        "excluded_13_pairs": 56,
+        "scaled_14_pairs": 83,
+        "maximum_absolute_coefficient_error": 1.1087297746570357e-11,
+        "system_sha256": "efadda202ec9234ed641ddecc81110d75ef1e4a0fb5403b1728eed3dd862bdba"
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "excluded_12_pairs": 29,
+        "excluded_13_pairs": 48,
+        "scaled_14_pairs": 64,
+        "maximum_absolute_coefficient_error": 5.933847163630546e-13,
+        "system_sha256": "13027b07b3c7564b98d1bc78ea431a512aef81d5515449367f7eb8b386ab51b0"
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "excluded_12_pairs": 29,
+        "excluded_13_pairs": 48,
+        "scaled_14_pairs": 64,
+        "maximum_absolute_coefficient_error": 1.713934549840701e-12,
+        "system_sha256": "d50bf350a5584b79c370155fc06900004a584a9be1dc835abb953cb0ed7aa835"
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "excluded_12_pairs": 29,
+        "excluded_13_pairs": 48,
+        "scaled_14_pairs": 64,
+        "maximum_absolute_coefficient_error": 5.933847163630546e-13,
+        "system_sha256": "b4cec324ef800eee93381eff7a9d0ddbaffc1f3cb3bbc747ed8ddaedec3323a7"
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "excluded_12_pairs": 29,
+        "excluded_13_pairs": 48,
+        "scaled_14_pairs": 64,
+        "maximum_absolute_coefficient_error": 5.933847163630546e-13,
+        "system_sha256": "e3a1e99eca8607743f5f3bd4784b8698b5a8e2fcabf980367ad6794386e00bd9"
+      },
+      {
+        "model_id": "pyrene_pristine",
+        "method": "Sage_2.3_AshGC",
+        "excluded_12_pairs": 29,
+        "excluded_13_pairs": 48,
+        "scaled_14_pairs": 64,
+        "maximum_absolute_coefficient_error": 6.085739551187075e-13,
+        "system_sha256": "39041ff5e976bf0e42b7a458b8df5210ee4c55f3dc85dec64d6373596ebc4ce6"
+      }
+    ]
+  }
+}

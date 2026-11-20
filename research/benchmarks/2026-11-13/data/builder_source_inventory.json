@@ -1,0 +1,2302 @@
+{
+  "scope": "all retrieved HierGO entry scripts, both GOPY variants, and selected MakeGraphitics/GrapheneGUI source plus manuals; external runtime behavior not benchmarked",
+  "repositories": {
+    "hiergo": {
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a"
+    },
+    "gopy": {
+      "repository": "Iourarum/GOPY",
+      "commit": "779c5ec45de09f81a00d8147b4889151e5151e12"
+    },
+    "makegraphitics": {
+      "repository": "velocirobbie/make-graphitics",
+      "commit": "9d910ed525a8edf98f733551d616097288f9868f"
+    },
+    "graphenegui": {
+      "repository": "nicolas-loubet/GrapheneGUI",
+      "commit": "3746ea6b7d2ca9330be46906244bfe51a33d2ba4"
+    }
+  },
+  "files": [
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "OPLS-top.f90",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/OPLS-top.f90",
+      "local_sha256": "f500a638777c14076f24730cd1fa6259eded98b3f5bd7c436b6d04c3bef9b1c2",
+      "execution_performed": false
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "README.md",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/README.md",
+      "local_sha256": "8bc201c360ce2e2a11a0f4135c75e848adc370a353d00ddc2a57e0eb66318ea5",
+      "execution_performed": false
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "Scripts/add-sw-defects.py",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Scripts/add-sw-defects.py",
+      "local_sha256": "5ec19fb91873eda602a4c75f06e900b8ada34856270987df3659324678eb057c",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "read_inputs",
+          "line": 10
+        },
+        {
+          "name": "nearest_neighbors",
+          "line": 43
+        },
+        {
+          "name": "distance",
+          "line": 72
+        },
+        {
+          "name": "nearest_neighbors_fv",
+          "line": 79
+        },
+        {
+          "name": "nearest_neighbor_point",
+          "line": 95
+        },
+        {
+          "name": "create_ortho_template",
+          "line": 123
+        },
+        {
+          "name": "read_pdb_to_structure",
+          "line": 154
+        },
+        {
+          "name": "pick_defect_site",
+          "line": 175
+        },
+        {
+          "name": "td_center",
+          "line": 192
+        },
+        {
+          "name": "check_neighbors",
+          "line": 204
+        },
+        {
+          "name": "pick_sw_defect_site_ortho",
+          "line": 216
+        },
+        {
+          "name": "create_sw_list",
+          "line": 261
+        },
+        {
+          "name": "rotate_two_atoms",
+          "line": 277
+        },
+        {
+          "name": "rotate_atoms",
+          "line": 320
+        },
+        {
+          "name": "possible_sites_ortho_circle",
+          "line": 339
+        },
+        {
+          "name": "possible_sites_no_outer",
+          "line": 372
+        },
+        {
+          "name": "fix_up_rings",
+          "line": 414
+        },
+        {
+          "name": "write_pdb_file",
+          "line": 425
+        },
+        {
+          "name": "main",
+          "line": 445
+        }
+      ],
+      "classes": [],
+      "cli_options": [
+        {
+          "flags": [
+            "--infile"
+          ],
+          "line": 14,
+          "options": {
+            "nargs": "'?'",
+            "help": "'input file name (pdb)'",
+            "const": "'tile.pdb'"
+          }
+        },
+        {
+          "flags": [
+            "--array"
+          ],
+          "line": 17,
+          "options": {
+            "nargs": "2",
+            "help": "'number of rows and     columns of tiles; if not set code defaults to 20,20'"
+          }
+        },
+        {
+          "flags": [
+            "--sw"
+          ],
+          "line": 19,
+          "options": {
+            "nargs": "'?'",
+            "default": "0.0",
+            "help": "'percent of SW defects'",
+            "type": "float"
+          }
+        },
+        {
+          "flags": [
+            "--gb"
+          ],
+          "line": 20,
+          "options": {
+            "nargs": "'?'",
+            "default": "0.0",
+            "help": "'percent of mini-GB defects'",
+            "type": "float"
+          }
+        },
+        {
+          "flags": [
+            "--exclude_defect_edges"
+          ],
+          "line": 21,
+          "options": {
+            "action": "'store_true'",
+            "help": "'optional     flag with no arguments to exclude hole edges as sites for topo defects'"
+          }
+        },
+        {
+          "flags": [
+            "--outfile"
+          ],
+          "line": 23,
+          "options": {
+            "nargs": "'?'",
+            "default": "'topo-tile.pdb'",
+            "type": "str",
+            "help": "'output file name (pdb)'"
+          }
+        }
+      ]
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "Scripts/atom-typing.py",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Scripts/atom-typing.py",
+      "local_sha256": "e18edba6fa5dc9e5651be48b28b39043b7bdd89bfeaaeeff66a14ca13629a9c8",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "read_inputs",
+          "line": 14
+        },
+        {
+          "name": "read_pdb_to_structure",
+          "line": 27
+        },
+        {
+          "name": "find_nearest_neighbors",
+          "line": 48
+        },
+        {
+          "name": "distance",
+          "line": 100
+        },
+        {
+          "name": "nearest_neighbors_fv",
+          "line": 107
+        },
+        {
+          "name": "neighbors_by_atomtype",
+          "line": 119
+        },
+        {
+          "name": "opls_atom_typing",
+          "line": 187
+        },
+        {
+          "name": "remove_unbound_atoms",
+          "line": 266
+        },
+        {
+          "name": "nearest_neighbors",
+          "line": 289
+        },
+        {
+          "name": "check_typing_numbers",
+          "line": 357
+        },
+        {
+          "name": "write_xyz_file",
+          "line": 386
+        },
+        {
+          "name": "write_pdb_file",
+          "line": 398
+        },
+        {
+          "name": "main",
+          "line": 423
+        }
+      ],
+      "classes": [],
+      "cli_options": [
+        {
+          "flags": [
+            "--infile"
+          ],
+          "line": 16,
+          "options": {
+            "help": "'<Required> Set flag; input file name (pdb)'",
+            "required": "True"
+          }
+        },
+        {
+          "flags": [
+            "--outfile"
+          ],
+          "line": 17,
+          "options": {
+            "nargs": "'?'",
+            "default": "'typed.pdb'",
+            "type": "str",
+            "help": "'output file name (pdb)'"
+          }
+        },
+        {
+          "flags": [
+            "--pbc"
+          ],
+          "line": 18,
+          "options": {
+            "action": "'store_true'",
+            "help": "'default to ignoring PBC'"
+          }
+        }
+      ]
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "Scripts/create-rupture.py",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Scripts/create-rupture.py",
+      "local_sha256": "e0c24e0051c6063599a40bcd6a1342ad013603be0e6bf92df7159eaf0eff4b9c",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "read_inputs",
+          "line": 10
+        },
+        {
+          "name": "nearest_neighbors",
+          "line": 22
+        },
+        {
+          "name": "nearest_neighbor_point",
+          "line": 52
+        },
+        {
+          "name": "create_ortho_template",
+          "line": 82
+        },
+        {
+          "name": "pick_defect_site",
+          "line": 116
+        },
+        {
+          "name": "find_perp_line_between_two_atoms",
+          "line": 131
+        },
+        {
+          "name": "find_parallel_atoms",
+          "line": 152
+        },
+        {
+          "name": "group_parallel_atoms",
+          "line": 172
+        },
+        {
+          "name": "find_bonds_parallel",
+          "line": 194
+        },
+        {
+          "name": "choose_defect_carbons",
+          "line": 205
+        },
+        {
+          "name": "add_oxygen",
+          "line": 229
+        },
+        {
+          "name": "break_bonds_add_oxygen",
+          "line": 243
+        },
+        {
+          "name": "create_rupture",
+          "line": 304
+        },
+        {
+          "name": "write_pdb_file",
+          "line": 332
+        },
+        {
+          "name": "main",
+          "line": 353
+        }
+      ],
+      "classes": [],
+      "cli_options": [
+        {
+          "flags": [
+            "--size"
+          ],
+          "line": 12,
+          "options": {
+            "nargs": "'?'",
+            "default": "20",
+            "type": "int",
+            "help": "'sheet size'"
+          }
+        },
+        {
+          "flags": [
+            "--atoms"
+          ],
+          "line": 13,
+          "options": {
+            "nargs": "'?'",
+            "default": "4",
+            "type": "int",
+            "help": "'number of C-C atoms to break'"
+          }
+        },
+        {
+          "flags": [
+            "--outfile"
+          ],
+          "line": 14,
+          "options": {
+            "nargs": "'?'",
+            "default": "'rupture.pdb'",
+            "type": "str",
+            "help": "'output filename (pdb)'"
+          }
+        }
+      ]
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "Scripts/create-tile.py",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Scripts/create-tile.py",
+      "local_sha256": "b5c6473338f88f3d12a9e59b7d57287bf501ef4feb175f37d5d13381fd11d3a7",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "read_inputs",
+          "line": 11
+        },
+        {
+          "name": "create_ortho_template",
+          "line": 50
+        },
+        {
+          "name": "define_defect_min_max",
+          "line": 84
+        },
+        {
+          "name": "create_defect_size",
+          "line": 98
+        },
+        {
+          "name": "add_1_to_random",
+          "line": 107
+        },
+        {
+          "name": "create_defect_sizes",
+          "line": 125
+        },
+        {
+          "name": "nearest_neighbors",
+          "line": 161
+        },
+        {
+          "name": "determine_starting_sites",
+          "line": 187
+        },
+        {
+          "name": "grow_defect",
+          "line": 197
+        },
+        {
+          "name": "place_defects",
+          "line": 221
+        },
+        {
+          "name": "carbon_ring",
+          "line": 249
+        },
+        {
+          "name": "find_rings",
+          "line": 273
+        },
+        {
+          "name": "trim_hanging_carbons",
+          "line": 286
+        },
+        {
+          "name": "write_pdb_file",
+          "line": 316
+        },
+        {
+          "name": "main",
+          "line": 339
+        }
+      ],
+      "classes": [],
+      "cli_options": [
+        {
+          "flags": [
+            "--xfactor"
+          ],
+          "line": 14,
+          "options": {
+            "help": "'size in x dimension,     defaults to 20'",
+            "default": "20",
+            "type": "int"
+          }
+        },
+        {
+          "flags": [
+            "--yfactor"
+          ],
+          "line": 17,
+          "options": {
+            "help": "'size in y dimension,     defaults to 20'",
+            "default": "20",
+            "type": "int"
+          }
+        },
+        {
+          "flags": [
+            "--percentvac"
+          ],
+          "line": 20,
+          "options": {
+            "default": "5",
+            "type": "float",
+            "help": "'amount of carbon vacancies to add'"
+          }
+        },
+        {
+          "flags": [
+            "--distribution"
+          ],
+          "line": 23,
+          "options": {
+            "default": "'mixed'",
+            "type": "str",
+            "choices": "['small', 'medium', 'large', 'mixed']"
+          }
+        },
+        {
+          "flags": [
+            "--keep_hanging_carbon"
+          ],
+          "line": 27,
+          "options": {
+            "action": "'store_true'",
+            "help": "'optional     flag to keep hanging carbon atoms, which by default are trimmed'"
+          }
+        },
+        {
+          "flags": [
+            "--non_periodic"
+          ],
+          "line": 30,
+          "options": {
+            "action": "'store_true'",
+            "help": "'optional     flag to remove periodic boundary conditions, which by default are kept'"
+          }
+        },
+        {
+          "flags": [
+            "--outfile"
+          ],
+          "line": 34,
+          "options": {
+            "nargs": "'?'",
+            "default": "'tile.pdb'",
+            "type": "str",
+            "help": "'output file name (pdb)'"
+          }
+        }
+      ]
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "Scripts/decorate-tile.py",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Scripts/decorate-tile.py",
+      "local_sha256": "fe99894471bdb0964522de81d143d7a7861c5f2f514d2bef2a6ef16e691464d3",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "get_unit_normal",
+          "line": 19
+        },
+        {
+          "name": "scale_unit_vector",
+          "line": 41
+        },
+        {
+          "name": "midpoint_vector",
+          "line": 48
+        },
+        {
+          "name": "locate_vetor",
+          "line": 59
+        },
+        {
+          "name": "get_new_position",
+          "line": 65
+        },
+        {
+          "name": "rotate",
+          "line": 117
+        },
+        {
+          "name": "coin_flip",
+          "line": 133
+        },
+        {
+          "name": "read_inputs",
+          "line": 145
+        },
+        {
+          "name": "read_pdb_to_structure",
+          "line": 224
+        },
+        {
+          "name": "determine_oxygen",
+          "line": 244
+        },
+        {
+          "name": "distance",
+          "line": 262
+        },
+        {
+          "name": "nearest_neighbors_fv",
+          "line": 269
+        },
+        {
+          "name": "nearest_neighbors",
+          "line": 285
+        },
+        {
+          "name": "nearest_neighbor_single",
+          "line": 314
+        },
+        {
+          "name": "calculate_oxygen_num_type",
+          "line": 339
+        },
+        {
+          "name": "manual_oxygen_num_type",
+          "line": 370
+        },
+        {
+          "name": "calculate_oxygen_num_type_aged",
+          "line": 396
+        },
+        {
+          "name": "define_defect_edge_sites",
+          "line": 478
+        },
+        {
+          "name": "use_all_defect_sites",
+          "line": 489
+        },
+        {
+          "name": "recalculate_all_defect_sites",
+          "line": 499
+        },
+        {
+          "name": "add_epoxy",
+          "line": 519
+        },
+        {
+          "name": "add_ether",
+          "line": 545
+        },
+        {
+          "name": "rotate_atom",
+          "line": 565
+        },
+        {
+          "name": "add_hydroxyl",
+          "line": 581
+        },
+        {
+          "name": "add_dihydroxyl",
+          "line": 606
+        },
+        {
+          "name": "add_carboxylic_acid",
+          "line": 646
+        },
+        {
+          "name": "add_carbonyl",
+          "line": 666
+        },
+        {
+          "name": "choose_direction",
+          "line": 687
+        },
+        {
+          "name": "pick_epoxy",
+          "line": 702
+        },
+        {
+          "name": "possible_sites_circle",
+          "line": 724
+        },
+        {
+          "name": "assess_two_carbon_group",
+          "line": 753
+        },
+        {
+          "name": "remove_triple_coordinated_o",
+          "line": 766
+        },
+        {
+          "name": "find_ether_sites",
+          "line": 793
+        },
+        {
+          "name": "check_ether_overlap",
+          "line": 840
+        },
+        {
+          "name": "add_all_ether",
+          "line": 887
+        },
+        {
+          "name": "add_all_carbonyl",
+          "line": 972
+        },
+        {
+          "name": "add_all_edgehydroxyl",
+          "line": 996
+        },
+        {
+          "name": "add_carboxylicacid_carbon",
+          "line": 1017
+        },
+        {
+          "name": "choose_carbacid_atoms",
+          "line": 1035
+        },
+        {
+          "name": "check_carbacid_overlap",
+          "line": 1047
+        },
+        {
+          "name": "add_all_carboxylicacid",
+          "line": 1059
+        },
+        {
+          "name": "add_all_dihydroxyl",
+          "line": 1110
+        },
+        {
+          "name": "add_all_epoxy",
+          "line": 1162
+        },
+        {
+          "name": "add_all_hydroxyl",
+          "line": 1216
+        },
+        {
+          "name": "check_overlap",
+          "line": 1251
+        },
+        {
+          "name": "attempt_hydroxyl_placement",
+          "line": 1278
+        },
+        {
+          "name": "recalculate_defect_sites",
+          "line": 1298
+        },
+        {
+          "name": "recalculate_defect_sites_excluding_edges",
+          "line": 1326
+        },
+        {
+          "name": "add_all_hydroxyl_unrestricted",
+          "line": 1338
+        },
+        {
+          "name": "add_new_atoms",
+          "line": 1359
+        },
+        {
+          "name": "remove_PBC",
+          "line": 1380
+        },
+        {
+          "name": "calculate_hydrogen_coordinates",
+          "line": 1408
+        },
+        {
+          "name": "add_hydrogen",
+          "line": 1442
+        },
+        {
+          "name": "wrap_coords",
+          "line": 1473
+        },
+        {
+          "name": "recalculate_edge_sites",
+          "line": 1488
+        },
+        {
+          "name": "add_oxygen_hydrogen",
+          "line": 1535
+        },
+        {
+          "name": "add_oxygen_hydrogen_aged",
+          "line": 1565
+        },
+        {
+          "name": "add_oxygen_hydrogen_aged_edge",
+          "line": 1602
+        },
+        {
+          "name": "add_only_hydrogen",
+          "line": 1701
+        },
+        {
+          "name": "write_pdb_file",
+          "line": 1710
+        },
+        {
+          "name": "print_edges_for_vmd",
+          "line": 1730
+        },
+        {
+          "name": "main",
+          "line": 1746
+        }
+      ],
+      "classes": [],
+      "cli_options": [
+        {
+          "flags": [
+            "--infile"
+          ],
+          "line": 151,
+          "options": {
+            "help": "'input file name (pdb)'",
+            "default": "'tile.pdb'"
+          }
+        },
+        {
+          "flags": [
+            "--outfile"
+          ],
+          "line": 155,
+          "options": {
+            "nargs": "'?'",
+            "default": "'dec-tile.pdb'",
+            "type": "str",
+            "help": "'output file name (pdb)'"
+          }
+        },
+        {
+          "flags": [
+            "--percento"
+          ],
+          "line": 159,
+          "options": {
+            "help": "'overall amount of oxygen,     oxygen will be added to the edges in order to satisfy this percent,     defaults to 0 which will just add hydrogen'",
+            "default": "0",
+            "type": "float"
+          }
+        },
+        {
+          "flags": [
+            "--fresh"
+          ],
+          "line": 165,
+          "options": {
+            "nargs": "'?'",
+            "const": "'1:1'",
+            "type": "str",
+            "help": "'decorate with hydroxyl and epoxy groups only in a ratio     specified by hydroxyl:epoxy, defaults to 1:1.'"
+          }
+        },
+        {
+          "flags": [
+            "--aged"
+          ],
+          "line": 170,
+          "options": {
+            "nargs": "'?'",
+            "const": "900",
+            "type": "int",
+            "choices": "[600, 900, 1200, 2500]",
+            "help": "\"decorate with hydroxyl, epoxy,     carboxylic acid, epoxide and non-epoxide ether in a ratio specified     by an annealing ``temperature.'' Defaults to 900K.\""
+          }
+        },
+        {
+          "flags": [
+            "--bunching"
+          ],
+          "line": 177,
+          "options": {
+            "nargs": "'+'",
+            "type": "str",
+            "help": "'first place oxygen     in a circle of a given diameter around a given atom index or coordinate.     Syntax --bunching [Atom #] [Diameter]'"
+          }
+        },
+        {
+          "flags": [
+            "--decorate_edges_first"
+          ],
+          "line": 182,
+          "options": {
+            "action": "'store_true'",
+            "help": "'optional     flag with no arguments to decorate defect edges before the basal plane'"
+          }
+        },
+        {
+          "flags": [
+            "--exclude_tile_edges"
+          ],
+          "line": 186,
+          "options": {
+            "action": "'store_true'",
+            "help": "'optional     flag with no arguments to exclude tile edges in the decoration process'"
+          }
+        }
+      ]
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "Scripts/move_pdb_by_vector.py",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Scripts/move_pdb_by_vector.py",
+      "local_sha256": "96c9a692aa7a926ef5396fc829742a8abed65b1651a84cbcda47d1b11607c19a",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "read_pdb_to_structure",
+          "line": 15
+        },
+        {
+          "name": "write_pdb_file",
+          "line": 32
+        },
+        {
+          "name": "read_inputs",
+          "line": 59
+        },
+        {
+          "name": "move_coords_by_vector",
+          "line": 73
+        },
+        {
+          "name": "wrap_coords",
+          "line": 85
+        },
+        {
+          "name": "main",
+          "line": 104
+        }
+      ],
+      "classes": [],
+      "cli_options": [
+        {
+          "flags": [
+            "-i"
+          ],
+          "line": 61,
+          "options": {
+            "type": "str"
+          }
+        },
+        {
+          "flags": [
+            "-vector"
+          ],
+          "line": 62,
+          "options": {
+            "type": "str"
+          }
+        },
+        {
+          "flags": [
+            "-out"
+          ],
+          "line": 63,
+          "options": {
+            "type": "str"
+          }
+        }
+      ]
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "Scripts/output-outline-atoms.py",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Scripts/output-outline-atoms.py",
+      "local_sha256": "f61a14d59992d9051c5928c6c88bca879128a5385c98aef1b9c779bf30a8176d",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "read_inputs",
+          "line": 9
+        },
+        {
+          "name": "read_pdb_to_structure",
+          "line": 19
+        },
+        {
+          "name": "define_defect_edge_sites",
+          "line": 36
+        },
+        {
+          "name": "write_pdb_file",
+          "line": 69
+        },
+        {
+          "name": "main",
+          "line": 90
+        }
+      ],
+      "classes": [],
+      "cli_options": [
+        {
+          "flags": [
+            "-infile"
+          ],
+          "line": 11,
+          "options": {
+            "type": "str"
+          }
+        }
+      ]
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "Scripts/regular-dist.py",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Scripts/regular-dist.py",
+      "local_sha256": "5783b6b5196e3ebd380c7160732f6db5492e116ae66074af4c64e94947e4696d",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "find_bonds",
+          "line": 9
+        }
+      ],
+      "classes": [],
+      "cli_options": []
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "Scripts/remove-atoms.py",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Scripts/remove-atoms.py",
+      "local_sha256": "bc7db8b1fc65973d9abdb33368e2398bfeb6bc36010b5490681215eb61c3e680",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "read_pdb_to_structure",
+          "line": 14
+        },
+        {
+          "name": "write_pdb_file",
+          "line": 31
+        },
+        {
+          "name": "read_inputs",
+          "line": 59
+        },
+        {
+          "name": "remove_atoms",
+          "line": 78
+        },
+        {
+          "name": "nearest_neighbors",
+          "line": 94
+        },
+        {
+          "name": "calculate_hydrogen_coordinates",
+          "line": 120
+        },
+        {
+          "name": "add_hydrogen",
+          "line": 151
+        },
+        {
+          "name": "add_new_atoms",
+          "line": 181
+        },
+        {
+          "name": "add_only_hydrogen",
+          "line": 191
+        },
+        {
+          "name": "main",
+          "line": 200
+        }
+      ],
+      "classes": [],
+      "cli_options": [
+        {
+          "flags": [
+            "--infile"
+          ],
+          "line": 62,
+          "options": {
+            "default": "'stitched.pdb'",
+            "help": "'input file name (pdb)'"
+          }
+        },
+        {
+          "flags": [
+            "--i"
+          ],
+          "line": 63,
+          "options": {
+            "nargs": "'+'",
+            "help": "'<Required> Set flag; indicies of atoms to remove'",
+            "required": "True"
+          }
+        },
+        {
+          "flags": [
+            "--outfile"
+          ],
+          "line": 64,
+          "options": {
+            "nargs": "'?'",
+            "default": "'removed.pdb'",
+            "type": "str",
+            "help": "'output file name (pdb)'"
+          }
+        }
+      ]
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "Scripts/stitch.py",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Scripts/stitch.py",
+      "local_sha256": "fc59ca1cf692825a8c17c76c9a5fcdbe1cf8a0c41331c615689a4e72b1a7827c",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "rotate",
+          "line": 19
+        },
+        {
+          "name": "read_pdb_to_structure",
+          "line": 35
+        },
+        {
+          "name": "write_pdb_file",
+          "line": 56
+        },
+        {
+          "name": "get_absolute_path",
+          "line": 81
+        },
+        {
+          "name": "coin_flip",
+          "line": 101
+        },
+        {
+          "name": "read_inputs",
+          "line": 114
+        },
+        {
+          "name": "check_square_array",
+          "line": 148
+        },
+        {
+          "name": "randomize_list",
+          "line": 158
+        },
+        {
+          "name": "determine_array",
+          "line": 174
+        },
+        {
+          "name": "determine_new_lattice",
+          "line": 184
+        },
+        {
+          "name": "stitch_tiles",
+          "line": 191
+        },
+        {
+          "name": "distance",
+          "line": 224
+        },
+        {
+          "name": "nearest_neighbors_fv",
+          "line": 231
+        },
+        {
+          "name": "nearest_neighbors_typed",
+          "line": 247
+        },
+        {
+          "name": "is_atom_overlapping",
+          "line": 283
+        },
+        {
+          "name": "remove_overlapping_atoms",
+          "line": 311
+        },
+        {
+          "name": "is_oxygen_bordering",
+          "line": 336
+        },
+        {
+          "name": "is_oxygen_neighboring_epoxy",
+          "line": 348
+        },
+        {
+          "name": "remove_bordering_oxygen",
+          "line": 364
+        },
+        {
+          "name": "carbon_ring",
+          "line": 395
+        },
+        {
+          "name": "carbon_567_ring",
+          "line": 419
+        },
+        {
+          "name": "find_rings",
+          "line": 454
+        },
+        {
+          "name": "on_boundary",
+          "line": 464
+        },
+        {
+          "name": "trim_hanging_carbons",
+          "line": 476
+        },
+        {
+          "name": "calculate_hydrogen_coordinates",
+          "line": 525
+        },
+        {
+          "name": "add_hydrogen",
+          "line": 559
+        },
+        {
+          "name": "add_new_atoms",
+          "line": 591
+        },
+        {
+          "name": "add_only_hydrogen",
+          "line": 615
+        },
+        {
+          "name": "rotate_atom",
+          "line": 624
+        },
+        {
+          "name": "remove_PBC",
+          "line": 631
+        },
+        {
+          "name": "add_hydroxyl",
+          "line": 664
+        },
+        {
+          "name": "add_carboxylicacid_carbon",
+          "line": 683
+        },
+        {
+          "name": "choose_carbacid_atoms",
+          "line": 701
+        },
+        {
+          "name": "add_carbonyl",
+          "line": 715
+        },
+        {
+          "name": "choose_direction",
+          "line": 727
+        },
+        {
+          "name": "check_oxygen_overlap",
+          "line": 742
+        },
+        {
+          "name": "determine_sheet_edges",
+          "line": 758
+        },
+        {
+          "name": "add_oxygen_hydrogen",
+          "line": 768
+        },
+        {
+          "name": "main",
+          "line": 864
+        }
+      ],
+      "classes": [],
+      "cli_options": [
+        {
+          "flags": [
+            "--infiles"
+          ],
+          "line": 117,
+          "options": {
+            "nargs": "'+'",
+            "help": "'<Required> Set flag; input file name (pdb)'",
+            "required": "True"
+          }
+        },
+        {
+          "flags": [
+            "--percento"
+          ],
+          "line": 118,
+          "options": {
+            "help": "'overall amount of oxygen,     oxygen will be added to the edges in order to satisfy this percent,     defaults to 0'",
+            "default": "0",
+            "type": "float"
+          }
+        },
+        {
+          "flags": [
+            "--add_oxygen_to_sheet_edges"
+          ],
+          "line": 121,
+          "options": {
+            "help": "'add oxygen     determined from the --percento flag to the sheet edges only. Defaults     to False'",
+            "action": "'store_true'"
+          }
+        },
+        {
+          "flags": [
+            "--array"
+          ],
+          "line": 124,
+          "options": {
+            "nargs": "2",
+            "help": "'number of rows and     columns of tiles; if not set code will attempt to create a square     array'"
+          }
+        },
+        {
+          "flags": [
+            "--keep_overlap"
+          ],
+          "line": 127,
+          "options": {
+            "action": "'store_true'",
+            "help": "'optional     flag to keep overlapping oxygen and carbon, which by default are trimmed'"
+          }
+        },
+        {
+          "flags": [
+            "--keep_hanging_carbon"
+          ],
+          "line": 129,
+          "options": {
+            "action": "'store_true'",
+            "help": "'optional     flag to keep hanging carbon atoms, which by default are trimmed'"
+          }
+        },
+        {
+          "flags": [
+            "--ordered_tiles"
+          ],
+          "line": 131,
+          "options": {
+            "action": "'store_true'",
+            "help": "'optional     flag to keep the input order of the tiles, which by default are randomized'"
+          }
+        },
+        {
+          "flags": [
+            "--pbc"
+          ],
+          "line": 133,
+          "options": {
+            "action": "'store_true'",
+            "help": "'optional     flag to keep periodic boundary conditions, otherwise buffer distance of 10Ang is added'"
+          }
+        },
+        {
+          "flags": [
+            "--outfile"
+          ],
+          "line": 135,
+          "options": {
+            "nargs": "'?'",
+            "default": "'stitched.pdb'",
+            "type": "str",
+            "help": "'output file name (pdb)'"
+          }
+        }
+      ]
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "Scripts/trim-hanging-Cs.py",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/Scripts/trim-hanging-Cs.py",
+      "local_sha256": "485588e007c4730b73ba1731dd7f6166bfc0641d9ee6afcea1610a9e35ba07ad",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "read_inputs",
+          "line": 10
+        },
+        {
+          "name": "read_pdb_to_structure",
+          "line": 35
+        },
+        {
+          "name": "remove_overlapping_atoms",
+          "line": 59
+        },
+        {
+          "name": "single_nearest_neighbors",
+          "line": 98
+        },
+        {
+          "name": "orthogonalize_graphene",
+          "line": 122
+        },
+        {
+          "name": "wrap_orthogonal_coords",
+          "line": 138
+        },
+        {
+          "name": "make_consistant_origin",
+          "line": 153
+        },
+        {
+          "name": "distance",
+          "line": 165
+        },
+        {
+          "name": "nearest_neighbors_FV",
+          "line": 172
+        },
+        {
+          "name": "nearest_neighbors",
+          "line": 189
+        },
+        {
+          "name": "carbon_ring",
+          "line": 218
+        },
+        {
+          "name": "find_rings",
+          "line": 242
+        },
+        {
+          "name": "trim_hanging_carbons",
+          "line": 255
+        },
+        {
+          "name": "find_defect_edge_carbons",
+          "line": 285
+        },
+        {
+          "name": "remove_atom",
+          "line": 296
+        },
+        {
+          "name": "remove_excess_carbon",
+          "line": 308
+        },
+        {
+          "name": "write_pdb_file",
+          "line": 327
+        },
+        {
+          "name": "main",
+          "line": 346
+        }
+      ],
+      "classes": [],
+      "cli_options": [
+        {
+          "flags": [
+            "--infile"
+          ],
+          "line": 13,
+          "options": {
+            "help": "'<Required> Set flag; input file     name (pdb)'",
+            "required": "True",
+            "type": "str"
+          }
+        },
+        {
+          "flags": [
+            "--outfile"
+          ],
+          "line": 17,
+          "options": {
+            "nargs": "'?'",
+            "default": "'trimmed.pdb'",
+            "type": "str",
+            "help": "'output file name (pdb)'"
+          }
+        },
+        {
+          "flags": [
+            "--atoms"
+          ],
+          "line": 21,
+          "options": {
+            "nargs": "'?'",
+            "type": "int",
+            "help": "'optionally specify     an additional number of atoms to remove'"
+          }
+        },
+        {
+          "flags": [
+            "--orthogonalize"
+          ],
+          "line": 25,
+          "options": {
+            "action": "'store_true'",
+            "help": "'convert from     rhombohedral cell to orthogonal cell'"
+          }
+        }
+      ]
+    },
+    {
+      "tool": "hiergo",
+      "repository": "IFM-molecular-simulation-group/HierGO",
+      "commit": "60382a1a1807ef0003ffcc3903392e913b1e5e9a",
+      "path": "pdb-gro.f90",
+      "url": "https://github.com/IFM-molecular-simulation-group/HierGO/blob/60382a1a1807ef0003ffcc3903392e913b1e5e9a/pdb-gro.f90",
+      "local_sha256": "08a54227ca071730917086ff2ee4cfe038b6c75c017814107f8a04b0f797291c",
+      "execution_performed": false
+    },
+    {
+      "tool": "gopy",
+      "repository": "Iourarum/GOPY",
+      "commit": "779c5ec45de09f81a00d8147b4889151e5151e12",
+      "path": "GOPY.py",
+      "url": "https://github.com/Iourarum/GOPY/blob/779c5ec45de09f81a00d8147b4889151e5151e12/GOPY.py",
+      "local_sha256": "bb4ab0172ecba4f6e17e12dcb2f2eb3aeafefac258031542b9037497a811e04e",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "add_atom",
+          "line": 96
+        },
+        {
+          "name": "remove_atom",
+          "line": 103
+        },
+        {
+          "name": "generate_pristine_graphene",
+          "line": 111
+        },
+        {
+          "name": "writepdb3",
+          "line": 171
+        },
+        {
+          "name": "lw2",
+          "line": 192
+        },
+        {
+          "name": "fill_row",
+          "line": 201
+        },
+        {
+          "name": "toString",
+          "line": 212
+        },
+        {
+          "name": "check_me",
+          "line": 215
+        },
+        {
+          "name": "fill_hexagon",
+          "line": 225
+        },
+        {
+          "name": "pristine_coords_to_objects",
+          "line": 240
+        },
+        {
+          "name": "read_in_graphene",
+          "line": 247
+        },
+        {
+          "name": "read_in_GO",
+          "line": 257
+        },
+        {
+          "name": "calculate_3D_distance_2_atoms",
+          "line": 268
+        },
+        {
+          "name": "calculate_3D_distance_2_centers",
+          "line": 271
+        },
+        {
+          "name": "get_bond_id",
+          "line": 274
+        },
+        {
+          "name": "check_bond",
+          "line": 279
+        },
+        {
+          "name": "check_if_no_bond",
+          "line": 288
+        },
+        {
+          "name": "check_connected",
+          "line": 299
+        },
+        {
+          "name": "identify_bonds",
+          "line": 307
+        },
+        {
+          "name": "top_or_down",
+          "line": 332
+        },
+        {
+          "name": "get_map_anywhere",
+          "line": 340
+        },
+        {
+          "name": "get_map_central",
+          "line": 345
+        },
+        {
+          "name": "get_map_edge",
+          "line": 350
+        },
+        {
+          "name": "pick_to_add",
+          "line": 355
+        },
+        {
+          "name": "create_GO",
+          "line": 369
+        },
+        {
+          "name": "random_pick_spot",
+          "line": 521
+        },
+        {
+          "name": "add_carboxyl",
+          "line": 530
+        },
+        {
+          "name": "add_epoxy",
+          "line": 597
+        },
+        {
+          "name": "add_hydroxyl",
+          "line": 623
+        },
+        {
+          "name": "get_hydroxyl_map",
+          "line": 661
+        },
+        {
+          "name": "get_epoxy_map",
+          "line": 666
+        },
+        {
+          "name": "get_carboxyl_map",
+          "line": 671
+        },
+        {
+          "name": "remove_functional_groups",
+          "line": 676
+        },
+        {
+          "name": "find_highest_resnum",
+          "line": 707
+        },
+        {
+          "name": "find_conn_CXCY",
+          "line": 715
+        },
+        {
+          "name": "fix_sphere_m",
+          "line": 727
+        },
+        {
+          "name": "fix_sphere_h",
+          "line": 755
+        },
+        {
+          "name": "detect_neighbours_hydrogen",
+          "line": 784
+        },
+        {
+          "name": "quick_sphere",
+          "line": 790
+        },
+        {
+          "name": "hydrogen_coord_gen",
+          "line": 798
+        },
+        {
+          "name": "plot_points_on_sphere",
+          "line": 808
+        },
+        {
+          "name": "repick",
+          "line": 814
+        },
+        {
+          "name": "find_CX_neighbours",
+          "line": 822
+        },
+        {
+          "name": "compose_listofr",
+          "line": 834
+        },
+        {
+          "name": "add_NH_PEG_NH2",
+          "line": 879
+        },
+        {
+          "name": "lw",
+          "line": 1779
+        },
+        {
+          "name": "writepdb",
+          "line": 1788
+        },
+        {
+          "name": "find_rings",
+          "line": 1796
+        },
+        {
+          "name": "filter_carbon_atoms",
+          "line": 1830
+        },
+        {
+          "name": "generate_N_doping",
+          "line": 1848
+        },
+        {
+          "name": "get_contour",
+          "line": 2037
+        },
+        {
+          "name": "hole_cleanup",
+          "line": 2063
+        },
+        {
+          "name": "find_contour",
+          "line": 2090
+        },
+        {
+          "name": "hole_generation",
+          "line": 2130
+        },
+        {
+          "name": "__init__",
+          "line": 16
+        },
+        {
+          "name": "__init__",
+          "line": 85
+        }
+      ],
+      "classes": [
+        {
+          "name": "Typical_Bond",
+          "line": 15
+        },
+        {
+          "name": "Atom",
+          "line": 79
+        }
+      ],
+      "cli_options": []
+    },
+    {
+      "tool": "gopy",
+      "repository": "Iourarum/GOPY",
+      "commit": "779c5ec45de09f81a00d8147b4889151e5151e12",
+      "path": "GOPY_COO.py",
+      "url": "https://github.com/Iourarum/GOPY/blob/779c5ec45de09f81a00d8147b4889151e5151e12/GOPY_COO.py",
+      "local_sha256": "13ed907eee702c4f73af9224468ef1588af10ac315db92d6333ef7bf84493d88",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "add_atom",
+          "line": 96
+        },
+        {
+          "name": "remove_atom",
+          "line": 103
+        },
+        {
+          "name": "generate_pristine_graphene",
+          "line": 111
+        },
+        {
+          "name": "writepdb3",
+          "line": 171
+        },
+        {
+          "name": "lw2",
+          "line": 192
+        },
+        {
+          "name": "fill_row",
+          "line": 201
+        },
+        {
+          "name": "toString",
+          "line": 212
+        },
+        {
+          "name": "check_me",
+          "line": 215
+        },
+        {
+          "name": "fill_hexagon",
+          "line": 225
+        },
+        {
+          "name": "pristine_coords_to_objects",
+          "line": 240
+        },
+        {
+          "name": "read_in_graphene",
+          "line": 247
+        },
+        {
+          "name": "read_in_GO",
+          "line": 257
+        },
+        {
+          "name": "calculate_3D_distance_2_atoms",
+          "line": 268
+        },
+        {
+          "name": "calculate_3D_distance_2_centers",
+          "line": 271
+        },
+        {
+          "name": "get_bond_id",
+          "line": 274
+        },
+        {
+          "name": "check_bond",
+          "line": 279
+        },
+        {
+          "name": "check_if_no_bond",
+          "line": 288
+        },
+        {
+          "name": "check_connected",
+          "line": 299
+        },
+        {
+          "name": "identify_bonds",
+          "line": 307
+        },
+        {
+          "name": "top_or_down",
+          "line": 332
+        },
+        {
+          "name": "get_map_anywhere",
+          "line": 340
+        },
+        {
+          "name": "get_map_central",
+          "line": 345
+        },
+        {
+          "name": "get_map_edge",
+          "line": 350
+        },
+        {
+          "name": "pick_to_add",
+          "line": 355
+        },
+        {
+          "name": "create_GO",
+          "line": 369
+        },
+        {
+          "name": "random_pick_spot",
+          "line": 521
+        },
+        {
+          "name": "add_carboxyl",
+          "line": 530
+        },
+        {
+          "name": "add_epoxy",
+          "line": 597
+        },
+        {
+          "name": "add_hydroxyl",
+          "line": 623
+        },
+        {
+          "name": "get_hydroxyl_map",
+          "line": 661
+        },
+        {
+          "name": "get_epoxy_map",
+          "line": 666
+        },
+        {
+          "name": "get_carboxyl_map",
+          "line": 671
+        },
+        {
+          "name": "remove_functional_groups",
+          "line": 676
+        },
+        {
+          "name": "find_highest_resnum",
+          "line": 707
+        },
+        {
+          "name": "find_conn_CXCY",
+          "line": 715
+        },
+        {
+          "name": "fix_sphere_m",
+          "line": 727
+        },
+        {
+          "name": "fix_sphere_h",
+          "line": 755
+        },
+        {
+          "name": "detect_neighbours_hydrogen",
+          "line": 784
+        },
+        {
+          "name": "quick_sphere",
+          "line": 790
+        },
+        {
+          "name": "hydrogen_coord_gen",
+          "line": 798
+        },
+        {
+          "name": "plot_points_on_sphere",
+          "line": 808
+        },
+        {
+          "name": "repick",
+          "line": 814
+        },
+        {
+          "name": "find_CX_neighbours",
+          "line": 822
+        },
+        {
+          "name": "compose_listofr",
+          "line": 834
+        },
+        {
+          "name": "add_NH_PEG_NH2",
+          "line": 879
+        },
+        {
+          "name": "lw",
+          "line": 1779
+        },
+        {
+          "name": "writepdb",
+          "line": 1788
+        },
+        {
+          "name": "find_rings",
+          "line": 1796
+        },
+        {
+          "name": "filter_carbon_atoms",
+          "line": 1830
+        },
+        {
+          "name": "generate_N_doping",
+          "line": 1848
+        },
+        {
+          "name": "get_contour",
+          "line": 2037
+        },
+        {
+          "name": "hole_cleanup",
+          "line": 2063
+        },
+        {
+          "name": "find_contour",
+          "line": 2090
+        },
+        {
+          "name": "hole_generation",
+          "line": 2130
+        },
+        {
+          "name": "__init__",
+          "line": 16
+        },
+        {
+          "name": "__init__",
+          "line": 85
+        }
+      ],
+      "classes": [
+        {
+          "name": "Typical_Bond",
+          "line": 15
+        },
+        {
+          "name": "Atom",
+          "line": 79
+        }
+      ],
+      "cli_options": []
+    },
+    {
+      "tool": "gopy",
+      "repository": "Iourarum/GOPY",
+      "commit": "779c5ec45de09f81a00d8147b4889151e5151e12",
+      "path": "README.md",
+      "url": "https://github.com/Iourarum/GOPY/blob/779c5ec45de09f81a00d8147b4889151e5151e12/README.md",
+      "local_sha256": "33edbabce77c122fd02c2b0f5a3f3ef8f33e3cf386119bfe5e0175c0e7e85620",
+      "execution_performed": false
+    },
+    {
+      "tool": "gopy",
+      "repository": "Iourarum/GOPY",
+      "commit": "779c5ec45de09f81a00d8147b4889151e5151e12",
+      "path": "Tutorial_GO_topology.md",
+      "url": "https://github.com/Iourarum/GOPY/blob/779c5ec45de09f81a00d8147b4889151e5151e12/Tutorial_GO_topology.md",
+      "local_sha256": "35828b041e887a8ece3c9591562cbc2bdcbbe32143bfea7aebb08635b2519291",
+      "execution_performed": false
+    },
+    {
+      "tool": "makegraphitics",
+      "repository": "velocirobbie/make-graphitics",
+      "commit": "9d910ed525a8edf98f733551d616097288f9868f",
+      "path": "README.md",
+      "url": "https://github.com/velocirobbie/make-graphitics/blob/9d910ed525a8edf98f733551d616097288f9868f/README.md",
+      "local_sha256": "d8359827f3b569e2aa0505fc67cf95d37d33045de3670170afe6b535fd02cb2e",
+      "execution_performed": false
+    },
+    {
+      "tool": "makegraphitics",
+      "repository": "velocirobbie/make-graphitics",
+      "commit": "9d910ed525a8edf98f733551d616097288f9868f",
+      "path": "makegraphitics/reactors/oxidise_rf.py",
+      "url": "https://github.com/velocirobbie/make-graphitics/blob/9d910ed525a8edf98f733551d616097288f9868f/makegraphitics/reactors/oxidise_rf.py",
+      "local_sha256": "ab2cce7e9af6451b2b91aa42326fbf4ee48c48928b049c00796bfa6a81700d1c",
+      "execution_performed": false,
+      "parser": "legacy syntax; static regex inventory only",
+      "syntax_error": "Missing parentheses in call to 'print'. Did you mean print(...)? (<unknown>, line 117)",
+      "functions": [
+        {
+          "name": "__init__",
+          "line": 6
+        },
+        {
+          "name": "init_random_forest",
+          "line": 55
+        },
+        {
+          "name": "fit_empirical",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "tool": "makegraphitics",
+      "repository": "velocirobbie/make-graphitics",
+      "commit": "9d910ed525a8edf98f733551d616097288f9868f",
+      "path": "makegraphitics/reactors/oxidiser.py",
+      "url": "https://github.com/velocirobbie/make-graphitics/blob/9d910ed525a8edf98f733551d616097288f9868f/makegraphitics/reactors/oxidiser.py",
+      "local_sha256": "d4dab4895265f8b155658d5150f4b772c3732cf073fa2d84ee3174cc07e1022a",
+      "execution_performed": false,
+      "parser": "legacy syntax; static regex inventory only",
+      "syntax_error": "Missing parentheses in call to 'print'. Did you mean print(...)? (<unknown>, line 150)",
+      "functions": [
+        {
+          "name": "__init__",
+          "line": 7
+        },
+        {
+          "name": "react",
+          "line": 67
+        },
+        {
+          "name": "validate_system",
+          "line": 86
+        },
+        {
+          "name": "prepare_system",
+          "line": 90
+        },
+        {
+          "name": "set_partitions",
+          "line": 129
+        },
+        {
+          "name": "oxidise_edges",
+          "line": 148
+        },
+        {
+          "name": "oxidise",
+          "line": 203
+        },
+        {
+          "name": "ratio",
+          "line": 278
+        },
+        {
+          "name": "find_12_neighbours",
+          "line": 285
+        },
+        {
+          "name": "init_affinity_matrix",
+          "line": 309
+        },
+        {
+          "name": "neighbour_matrix",
+          "line": 320
+        },
+        {
+          "name": "update_affinity",
+          "line": 346
+        },
+        {
+          "name": "calc_affinities",
+          "line": 354
+        },
+        {
+          "name": "calc_affinity_rf",
+          "line": 368
+        },
+        {
+          "name": "calc_affinity_empirical",
+          "line": 398
+        },
+        {
+          "name": "find_new_island",
+          "line": 432
+        },
+        {
+          "name": "find_site",
+          "line": 460
+        },
+        {
+          "name": "search",
+          "line": 487
+        },
+        {
+          "name": "add_edge_OH",
+          "line": 523
+        },
+        {
+          "name": "add_charged_carboxyl",
+          "line": 556
+        },
+        {
+          "name": "add_carboxyl",
+          "line": 615
+        },
+        {
+          "name": "add_OH",
+          "line": 665
+        },
+        {
+          "name": "add_epoxy",
+          "line": 685
+        },
+        {
+          "name": "remove_graphitic_bonds",
+          "line": 713
+        },
+        {
+          "name": "change_bond_label",
+          "line": 720
+        },
+        {
+          "name": "find_connections",
+          "line": 727
+        },
+        {
+          "name": "oxidise_islands",
+          "line": 732
+        },
+        {
+          "name": "init_atom_states",
+          "line": 780
+        }
+      ]
+    },
+    {
+      "tool": "graphenegui",
+      "repository": "nicolas-loubet/GrapheneGUI",
+      "commit": "3746ea6b7d2ca9330be46906244bfe51a33d2ba4",
+      "path": "README.md",
+      "url": "https://github.com/nicolas-loubet/GrapheneGUI/blob/3746ea6b7d2ca9330be46906244bfe51a33d2ba4/README.md",
+      "local_sha256": "f57914f08584e26032af0ac3a91acf4cf757a4a15ecfe4dd5fecf8d756b80d2d",
+      "execution_performed": false
+    },
+    {
+      "tool": "graphenegui",
+      "repository": "nicolas-loubet/GrapheneGUI",
+      "commit": "3746ea6b7d2ca9330be46906244bfe51a33d2ba4",
+      "path": "graphenegui/logic/cli.py",
+      "url": "https://github.com/nicolas-loubet/GrapheneGUI/blob/3746ea6b7d2ca9330be46906244bfe51a33d2ba4/graphenegui/logic/cli.py",
+      "local_sha256": "07f85409205473908301654a40f4428d284d2da14caf4126faa246bf549c3869",
+      "execution_performed": false,
+      "parser": "Python 3 AST",
+      "functions": [
+        {
+          "name": "build_plate",
+          "line": 20
+        },
+        {
+          "name": "apply_oxidations",
+          "line": 27
+        },
+        {
+          "name": "apply_cnt",
+          "line": 35
+        },
+        {
+          "name": "apply_reduce_borders",
+          "line": 49
+        },
+        {
+          "name": "build_atom_types",
+          "line": 57
+        },
+        {
+          "name": "run_multiplate",
+          "line": 61
+        },
+        {
+          "name": "build_duplicates",
+          "line": 69
+        },
+        {
+          "name": "export_all",
+          "line": 85
+        },
+        {
+          "name": "_parse_overrides",
+          "line": 99
+        },
+        {
+          "name": "_deep_merge",
+          "line": 115
+        },
+        {
+          "name": "load_config",
+          "line": 124
+        },
+        {
+          "name": "parse_args",
+          "line": 132
+        },
+        {
+          "name": "main",
+          "line": 141
+        }
+      ],
+      "classes": [],
+      "cli_options": [
+        {
+          "flags": [
+            "-c",
+            "--config"
+          ],
+          "line": 135,
+          "options": {
+            "help": "'Archivo YAML de configuraci\u00f3n'"
+          }
+        },
+        {
+          "flags": [
+            "--set"
+          ],
+          "line": 136,
+          "options": {
+            "action": "'append'",
+            "default": "[]",
+            "metavar": "'section.field=value'",
+            "help": "'Override puntual sobre el config, ej: --set plate.factor=1.2 (repetible)'"
+          }
+        }
+      ]
+    }
+  ]
+}

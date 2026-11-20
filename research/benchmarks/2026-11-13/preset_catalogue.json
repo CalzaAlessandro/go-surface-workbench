@@ -1,0 +1,361 @@
+{
+  "schema_version": 1,
+  "catalogue_scope": "research records, not a production CLI configuration",
+  "presets": [
+    {
+      "id": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+      "charges": "Archived native AM1-BCC with rounding closure",
+      "bonded": "Espaloma 0.3.2",
+      "nonbonded": "OpenFF 2.0.0",
+      "conventions": {
+        "mixing": "Lorentz-Berthelot: arithmetic sigma, geometric epsilon",
+        "exclusions": "all graph-distance 1 and 2 pairs",
+        "electrostatic_14_multiplier": 0.8333333333333334,
+        "LJ_14_multiplier": 0.5,
+        "energy_evaluation": "isolated NoCutoff, no constraints"
+      },
+      "water_and_ions": null,
+      "parameter_scope": "six finite C/H/O graphs only",
+      "evidence": [
+        "common_QM_geometry_forces_and_Cartesian_Hessian",
+        "OpenMM_Amber_OpenMM_round_trip"
+      ],
+      "scientific_validation": "pilot_finite_gas_phase",
+      "production_CLI_available": false,
+      "scores": {
+        "method": "Espaloma_0.3.2_OpenFF2_AM1BCC_closed",
+        "molecules": 6,
+        "median_force_RMSE_kcal_mol_A": 8.77543915624215,
+        "median_hessian_relative_Frobenius_error": 0.207011990502271,
+        "mean_force_RMSE_kcal_mol_A": 8.80972720292193,
+        "mean_hessian_relative_Frobenius_error": 0.27733954158099694
+      }
+    },
+    {
+      "id": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+      "charges": "EspalomaCharge 0.0.8",
+      "bonded": "Espaloma 0.3.2",
+      "nonbonded": "OpenFF 2.0.0",
+      "conventions": {
+        "mixing": "Lorentz-Berthelot: arithmetic sigma, geometric epsilon",
+        "exclusions": "all graph-distance 1 and 2 pairs",
+        "electrostatic_14_multiplier": 0.8333333333333334,
+        "LJ_14_multiplier": 0.5,
+        "energy_evaluation": "isolated NoCutoff, no constraints"
+      },
+      "water_and_ions": null,
+      "parameter_scope": "six finite C/H/O graphs only",
+      "evidence": [
+        "common_QM_geometry_forces_and_Cartesian_Hessian",
+        "OpenMM_Amber_OpenMM_round_trip"
+      ],
+      "scientific_validation": "pilot_finite_gas_phase",
+      "production_CLI_available": false,
+      "scores": {
+        "method": "Espaloma_0.3.2_OpenFF2_EspalomaCharge",
+        "molecules": 6,
+        "median_force_RMSE_kcal_mol_A": 8.901099370871496,
+        "median_hessian_relative_Frobenius_error": 0.20701599916240013,
+        "mean_force_RMSE_kcal_mol_A": 8.889939776650824,
+        "mean_hessian_relative_Frobenius_error": 0.27739658506098014
+      }
+    },
+    {
+      "id": "GAFF2_AM1BCC_closed",
+      "charges": "Archived native AM1-BCC with rounding closure",
+      "bonded": "GAFF2 2.2.20",
+      "nonbonded": "GAFF2 2.2.20",
+      "conventions": {
+        "mixing": "Lorentz-Berthelot: arithmetic sigma, geometric epsilon",
+        "exclusions": "all graph-distance 1 and 2 pairs",
+        "electrostatic_14_multiplier": 0.8333333333333334,
+        "LJ_14_multiplier": 0.5,
+        "energy_evaluation": "isolated NoCutoff, no constraints"
+      },
+      "water_and_ions": null,
+      "parameter_scope": "six finite C/H/O graphs only",
+      "evidence": [
+        "common_QM_geometry_forces_and_Cartesian_Hessian",
+        "OpenMM_Amber_OpenMM_round_trip"
+      ],
+      "scientific_validation": "pilot_finite_gas_phase",
+      "production_CLI_available": false,
+      "scores": {
+        "method": "GAFF2_AM1BCC_closed",
+        "molecules": 6,
+        "median_force_RMSE_kcal_mol_A": 17.270319544865885,
+        "median_hessian_relative_Frobenius_error": 0.20921415042022715,
+        "mean_force_RMSE_kcal_mol_A": 23.957830060774956,
+        "mean_hessian_relative_Frobenius_error": 0.21605174172169114
+      }
+    },
+    {
+      "id": "GAFF2_HF_RESP_closed",
+      "charges": "HF-RESP, archived per molecule",
+      "bonded": "GAFF2 2.2.20",
+      "nonbonded": "GAFF2 2.2.20",
+      "conventions": {
+        "mixing": "Lorentz-Berthelot: arithmetic sigma, geometric epsilon",
+        "exclusions": "all graph-distance 1 and 2 pairs",
+        "electrostatic_14_multiplier": 0.8333333333333334,
+        "LJ_14_multiplier": 0.5,
+        "energy_evaluation": "isolated NoCutoff, no constraints"
+      },
+      "water_and_ions": null,
+      "parameter_scope": "six finite C/H/O graphs only",
+      "evidence": [
+        "common_QM_geometry_forces_and_Cartesian_Hessian",
+        "OpenMM_Amber_OpenMM_round_trip"
+      ],
+      "scientific_validation": "pilot_finite_gas_phase",
+      "production_CLI_available": false,
+      "scores": {
+        "method": "GAFF2_HF_RESP_closed",
+        "molecules": 6,
+        "median_force_RMSE_kcal_mol_A": 17.270085262150154,
+        "median_hessian_relative_Frobenius_error": 0.20933808349907004,
+        "mean_force_RMSE_kcal_mol_A": 24.182199701837,
+        "mean_hessian_relative_Frobenius_error": 0.2161149642451983
+      }
+    },
+    {
+      "id": "GAFF_AM1BCC_closed",
+      "charges": "Archived native AM1-BCC with rounding closure",
+      "bonded": "GAFF 1.81",
+      "nonbonded": "GAFF 1.81",
+      "conventions": {
+        "mixing": "Lorentz-Berthelot: arithmetic sigma, geometric epsilon",
+        "exclusions": "all graph-distance 1 and 2 pairs",
+        "electrostatic_14_multiplier": 0.8333333333333334,
+        "LJ_14_multiplier": 0.5,
+        "energy_evaluation": "isolated NoCutoff, no constraints"
+      },
+      "water_and_ions": null,
+      "parameter_scope": "six finite C/H/O graphs only",
+      "evidence": [
+        "common_QM_geometry_forces_and_Cartesian_Hessian",
+        "OpenMM_Amber_OpenMM_round_trip"
+      ],
+      "scientific_validation": "pilot_finite_gas_phase",
+      "production_CLI_available": false,
+      "scores": {
+        "method": "GAFF_AM1BCC_closed",
+        "molecules": 6,
+        "median_force_RMSE_kcal_mol_A": 21.472367505978006,
+        "median_hessian_relative_Frobenius_error": 0.2595992466741548,
+        "mean_force_RMSE_kcal_mol_A": 30.98430548597004,
+        "mean_hessian_relative_Frobenius_error": 0.27321860646203927
+      }
+    },
+    {
+      "id": "GAFF_HF_RESP_closed",
+      "charges": "HF-RESP, archived per molecule",
+      "bonded": "GAFF 1.81",
+      "nonbonded": "GAFF 1.81",
+      "conventions": {
+        "mixing": "Lorentz-Berthelot: arithmetic sigma, geometric epsilon",
+        "exclusions": "all graph-distance 1 and 2 pairs",
+        "electrostatic_14_multiplier": 0.8333333333333334,
+        "LJ_14_multiplier": 0.5,
+        "energy_evaluation": "isolated NoCutoff, no constraints"
+      },
+      "water_and_ions": null,
+      "parameter_scope": "six finite C/H/O graphs only",
+      "evidence": [
+        "common_QM_geometry_forces_and_Cartesian_Hessian",
+        "OpenMM_Amber_OpenMM_round_trip"
+      ],
+      "scientific_validation": "pilot_finite_gas_phase",
+      "production_CLI_available": false,
+      "scores": {
+        "method": "GAFF_HF_RESP_closed",
+        "molecules": 6,
+        "median_force_RMSE_kcal_mol_A": 21.44372005115726,
+        "median_hessian_relative_Frobenius_error": 0.2596653866217802,
+        "mean_force_RMSE_kcal_mol_A": 31.16191304054201,
+        "mean_hessian_relative_Frobenius_error": 0.27326828965681543
+      }
+    },
+    {
+      "id": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+      "charges": "Archived native AM1-BCC with rounding closure",
+      "bonded": "Grappa checkpoint 1.4.0",
+      "nonbonded": "OpenFF 2.0.0",
+      "conventions": {
+        "mixing": "Lorentz-Berthelot: arithmetic sigma, geometric epsilon",
+        "exclusions": "all graph-distance 1 and 2 pairs",
+        "electrostatic_14_multiplier": 0.8333333333333334,
+        "LJ_14_multiplier": 0.5,
+        "energy_evaluation": "isolated NoCutoff, no constraints"
+      },
+      "water_and_ions": null,
+      "parameter_scope": "six finite C/H/O graphs only",
+      "evidence": [
+        "common_QM_geometry_forces_and_Cartesian_Hessian",
+        "OpenMM_Amber_OpenMM_round_trip"
+      ],
+      "scientific_validation": "pilot_finite_gas_phase",
+      "production_CLI_available": false,
+      "scores": {
+        "method": "Grappa_1.4_OpenFF2_AM1BCC_closed",
+        "molecules": 6,
+        "median_force_RMSE_kcal_mol_A": 8.021352064093147,
+        "median_hessian_relative_Frobenius_error": 0.1730893305696215,
+        "mean_force_RMSE_kcal_mol_A": 10.641018463529097,
+        "mean_hessian_relative_Frobenius_error": 0.18248081808056124
+      }
+    },
+    {
+      "id": "OpenFF_2.0_AM1BCC_closed",
+      "charges": "Archived native AM1-BCC with rounding closure",
+      "bonded": "OpenFF 2.0.0",
+      "nonbonded": "OpenFF 2.0.0",
+      "conventions": {
+        "mixing": "Lorentz-Berthelot: arithmetic sigma, geometric epsilon",
+        "exclusions": "all graph-distance 1 and 2 pairs",
+        "electrostatic_14_multiplier": 0.8333333333333334,
+        "LJ_14_multiplier": 0.5,
+        "energy_evaluation": "isolated NoCutoff, no constraints"
+      },
+      "water_and_ions": null,
+      "parameter_scope": "six finite C/H/O graphs only",
+      "evidence": [
+        "common_QM_geometry_forces_and_Cartesian_Hessian",
+        "OpenMM_Amber_OpenMM_round_trip"
+      ],
+      "scientific_validation": "pilot_finite_gas_phase",
+      "production_CLI_available": false,
+      "scores": {
+        "method": "OpenFF_2.0_AM1BCC_closed",
+        "molecules": 6,
+        "median_force_RMSE_kcal_mol_A": 16.070417718892543,
+        "median_hessian_relative_Frobenius_error": 0.2091870466146148,
+        "mean_force_RMSE_kcal_mol_A": 16.00977186835313,
+        "mean_hessian_relative_Frobenius_error": 0.20938144604976672
+      }
+    },
+    {
+      "id": "QForce_Hessian_only_GAFF2_LJ_AM1BCC",
+      "charges": "Archived native AM1-BCC with rounding closure (GAFF2 benchmark)",
+      "bonded": "Q-Force 0.6.14 (molecule-specific Hessian-only fit; no torsion scans)",
+      "nonbonded": "GAFF2 2.2.20 LJ",
+      "conventions": {
+        "mixing": "Lorentz-Berthelot: arithmetic sigma, geometric epsilon",
+        "exclusions": "GROMACS nrexcl=3 (native excludes distance 1-2 and scales explicit 1-4 identically)",
+        "electrostatic_14_multiplier": 0.8333333333333334,
+        "LJ_14_multiplier": 0.5,
+        "energy_evaluation": "isolated NoCutoff, no constraints"
+      },
+      "water_and_ions": null,
+      "parameter_scope": "six finite C/H/O graphs only (molecule-specific in-sample fit)",
+      "in_sample_hessian_fit": true,
+      "torsion_scans_fitted": false,
+      "transferable": false,
+      "evidence": [
+        "common_QM_geometry_forces_and_Cartesian_Hessian_in_sample",
+        "native_QForce_vs_GROMACS_OpenMM_round_trip"
+      ],
+      "scientific_validation": "pilot_in_sample_hessian_only",
+      "production_CLI_available": false,
+      "scores": {
+        "method": "QForce_Hessian_only_GAFF2_LJ_AM1BCC",
+        "molecules": 6,
+        "median_force_RMSE_kcal_mol_A": 3.9279707231573697,
+        "median_hessian_relative_Frobenius_error": 0.1375459742520993,
+        "mean_force_RMSE_kcal_mol_A": 3.9680971965003478,
+        "mean_hessian_relative_Frobenius_error": 0.1418343686079461
+      }
+    },
+    {
+      "id": "Sage_2.3_AshGC",
+      "charges": "AshGC 1.0",
+      "bonded": "OpenFF Sage 2.3.0",
+      "nonbonded": "OpenFF Sage 2.3.0",
+      "conventions": {
+        "mixing": "Lorentz-Berthelot: arithmetic sigma, geometric epsilon",
+        "exclusions": "all graph-distance 1 and 2 pairs",
+        "electrostatic_14_multiplier": 0.8333333333333334,
+        "LJ_14_multiplier": 0.5,
+        "energy_evaluation": "isolated NoCutoff, no constraints"
+      },
+      "water_and_ions": null,
+      "parameter_scope": "six finite C/H/O graphs only",
+      "evidence": [
+        "common_QM_geometry_forces_and_Cartesian_Hessian",
+        "OpenMM_Amber_OpenMM_round_trip"
+      ],
+      "scientific_validation": "pilot_finite_gas_phase",
+      "production_CLI_available": false,
+      "scores": {
+        "method": "Sage_2.3_AshGC",
+        "molecules": 6,
+        "median_force_RMSE_kcal_mol_A": 14.137022089338089,
+        "median_hessian_relative_Frobenius_error": 0.18554871102234044,
+        "mean_force_RMSE_kcal_mol_A": 14.298472980101375,
+        "mean_hessian_relative_Frobenius_error": 0.18981577438285913
+      }
+    }
+  ],
+  "additional_components": [
+    {
+      "id": "L0_plus_local_ESP_BCC",
+      "status": "charge-only C54 evaluation; no complete force-field validation"
+    },
+    {
+      "id": "SQE_ESP_strict40",
+      "status": "charge-only C54 evaluation; no complete force-field validation"
+    },
+    {
+      "id": "current_gaff2",
+      "status": "user block-charge table control (6/6 C54 evaluated); charge-only evaluation"
+    },
+    {
+      "id": "hiergo_opls",
+      "status": "published 17-row charge table (5/6 neutral C54 evaluated; COO- omitted)"
+    },
+    {
+      "id": "HierGO_OPLS_COO_HF_ESP_extension",
+      "status": "charge-only research extension fitting COO- on 10 non-C54 fragments (6/6 C54 evaluated); OPLS-AA aromatic COO- bonded/LJ/solvation unvalidated"
+    },
+    {
+      "id": "gopy_raw",
+      "status": "published/legacy block charges (5/6 neutral C54 covered; fails charge conservation with -0.45 to -1.48 e motif sums; excluded from matched-charge ESP comparison)"
+    },
+    {
+      "id": "stauffer_esp",
+      "status": "published partial table (OH/epoxide only; 0/6 C54 complete)"
+    },
+    {
+      "id": "stauffer_sesp",
+      "status": "published partial table (OH/epoxide only; 0/6 C54 complete)"
+    },
+    {
+      "id": "DFT_optimized_GO_bonded",
+      "status": "planned; no complete fitted preset or score"
+    },
+    {
+      "id": "GAFF2_AIM",
+      "status": "literature reference only; periodic DDEC6 + AIM LJ; no automatic transfer to finite fragments"
+    }
+  ],
+  "custom_combinations": {
+    "allowed": true,
+    "lack_of_scientific_validation_blocks_use": false,
+    "must_record": [
+      "charge_source",
+      "bonded_source",
+      "nonbonded_source",
+      "mixing",
+      "exclusions",
+      "1-4_coefficients",
+      "water_ions",
+      "domain",
+      "provenance"
+    ],
+    "technical_constraints": [
+      "valid graph/atom mapping/units/finite coefficients",
+      "engine can represent exact chosen terms"
+    ],
+    "production_CLI_available": false
+  }
+}

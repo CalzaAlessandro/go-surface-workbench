@@ -1,0 +1,298 @@
+{
+  "date": "2026-11-13",
+  "QM_method": "wB97XD/6-311++G(d,p)",
+  "QM_boundary": "isolated finite fragments, gas phase",
+  "MM_metric_scope": "force and Cartesian-Hessian errors at identical QM geometries; not an MD ensemble benchmark",
+  "pretrained_training_overlap_checked": false,
+  "molecules": [
+    "pyrene_COO",
+    "pyrene_COOH",
+    "pyrene_diol_cis",
+    "pyrene_diol_epoxide",
+    "pyrene_diol_trans",
+    "pyrene_pristine"
+  ],
+  "runtime_versions": {
+    "openff-toolkit": "0.17.0",
+    "openff-interchange": "0.4.9",
+    "openff-units": "0.3.1",
+    "openff-utilities": "0.1.16",
+    "espaloma": "0.3.2",
+    "espaloma-charge": "0.0.8",
+    "torch": "2.2.2+cpu",
+    "dgl": "1.1.3",
+    "grappa": "1.5.0",
+    "openmm": "8.6.1",
+    "numpy": "1.26.4",
+    "scipy": "1.17.1",
+    "pint": "0.25.3"
+  },
+  "qforce_pilot": {
+    "method": "QForce_Hessian_only_GAFF2_LJ_AM1BCC",
+    "runtime_versions": {
+      "qforce": "0.6.14",
+      "numpy": "1.26.4",
+      "scipy": "1.17.1",
+      "ase": "3.29.0",
+      "numba": "0.68.1",
+      "networkx": "2.8.8",
+      "pycolt": "0.6.0",
+      "pulp": "2.1",
+      "openmm": "8.6.1"
+    },
+    "scope": "molecule-specific in-sample Hessian fit, fixed charges; flexible torsion scans unavailable; not a transferable GO force field",
+    "in_sample_hessian_fit": true,
+    "torsion_scans_fitted": false,
+    "polarizable": false,
+    "source_input_sha256": "8a65ec37fff03f43e9b7ece8cb9aab7967b3b4a4ac428d135611870197dcb36d",
+    "native_vs_openmm_export": {
+      "poses_per_molecule": 3,
+      "max_force_difference_kJ_mol_nm": 5.8901537869360254e-06,
+      "max_relative_energy_difference_kJ_mol": 5.676383807440288e-10
+    },
+    "results_sha256": "2b888e49dabbfb1c3e36d6bd88dfc3cc2ac172a4224515d51a5b91d9d94b1aa6"
+  },
+  "model_and_forcefield_assets": {
+    "openff_unconstrained-2.0.0.offxml": {
+      "url": "https://raw.githubusercontent.com/openforcefield/openff-forcefields/2026.01.0/openforcefields/offxml/openff_unconstrained-2.0.0.offxml",
+      "sha256": "6db19e5a66bad60f7b4488bcb7793ed2368f1c23210dcc0cd3452df08572b30c",
+      "bytes": 69536
+    },
+    "openff_unconstrained-2.3.0.offxml": {
+      "url": "https://raw.githubusercontent.com/openforcefield/openff-forcefields/2026.01.0/openforcefields/offxml/openff_unconstrained-2.3.0.offxml",
+      "sha256": "65b926cf38ae4bc2f6f9cac907c3cadba154cc84988dd10ab2c3895aaf2dd995",
+      "bytes": 105131
+    },
+    "espaloma-0.3.2.pt": {
+      "url": "https://github.com/choderalab/espaloma/releases/download/0.3.2/espaloma-0.3.2.pt",
+      "sha256": "50958655046c89a1e41671bd20fb05574d6df00fcc9e8f1ee74a4f2d59511bde",
+      "bytes": 35295464
+    }
+  },
+  "QM_source_hashes": {
+    "pyrene_COO/harmonic.fchk": "fc6b66603f2896eb1f3ddfba80e3a344cd9d570afe6d3bdcc990e98c5b766a19",
+    "pyrene_COO/gaussian.log": "29edbf0b87f46d6cde6ccdd10a25d5cf23432b8e8c4fe612f1f40db48d19062b",
+    "pyrene_COO/reference.gjf": "7da03d8635e6909c5204fd4813d7c450082d3d50c5731a9175f97bf0c1d4ef3a",
+    "pyrene_COOH/harmonic.fchk": "81ce850b8b6ce4dbd51cf6685f5da4eccef272a3d2a7cdfe76409bde30418f91",
+    "pyrene_COOH/gaussian.log": "ebc169280e8748a6d94554f11ed3a7368c72adcf3d7eb2d9b88bb3b59a5b427f",
+    "pyrene_COOH/reference.gjf": "3237dbfc1c34766c41beff3e9666bb36b131dba565911efd5fbcc05d22fc2142",
+    "pyrene_diol_cis/harmonic.fchk": "e7d811339bdf4cc904bb0032f89003daf2dd2525f2b18241b23f3decb83962a1",
+    "pyrene_diol_cis/gaussian.log": "ef524fa94828458f84f36d4b41bd0342e5edd10d23c8fc94b539f1e7a548a79c",
+    "pyrene_diol_cis/reference.gjf": "b2c15b06101546574023f7fc283dd84b60e21315571376a15b58a6d8fa8911df",
+    "pyrene_diol_epoxide/harmonic.fchk": "9b503d5639b654514295726d35f00cd574cdcd3a5137681079cbe478a62332c1",
+    "pyrene_diol_epoxide/gaussian.log": "0fd298b7a39bbf67b8b2f41e1a12ebd5ccad41689d4d3fd8266477cfa91b0964",
+    "pyrene_diol_epoxide/reference.gjf": "5c2658616da0c9a06c851b9d8c812a48b20da8d431fba7f06ee1913d2be69443",
+    "pyrene_diol_trans/harmonic.fchk": "52116b186be0a10b8aa5ef7dcfba48b403b61b9f1d496d17a123bc6619eaf123",
+    "pyrene_diol_trans/gaussian.log": "834548c9037abe966ccc56f9c900eec7629b555c024a09f1eaa83d7cd8399c2c",
+    "pyrene_diol_trans/reference.gjf": "08c13e4b292b75c5d2f93c7c8091b3d956d2912d0608c0af81a7a1190b7924b6",
+    "pyrene_pristine/harmonic.fchk": "3b22092121949fbc27aa628f8b1d1b6dcba317379384aaf38a57fbb88ffe5a21",
+    "pyrene_pristine/gaussian.log": "0214414ceaf254ec15ec52ca5ecf0de712023e877fd98fb92f50eafc65860584",
+    "pyrene_pristine/reference.gjf": "3341dd3ae7cf2d71e968f96e54dc8a6f88c0a0533bd6bbdc5ccbb9d0cf99788c"
+  },
+  "retrieval": {
+    "status": "ALL_TRANSFERRED_HASHES_VERIFIED",
+    "files": 538,
+    "archive_bytes": 5518894,
+    "archive_sha256": "0b7af21cd59e5cc8c76004b2d5bd8ec7a2d57b3bf96db3ed9f82899f996bda19"
+  },
+  "Amber_round_trip": {
+    "passed": 54,
+    "attempted": 54,
+    "maximum_energy_abs_difference_kJ_mol": 1.3298427461450046e-05,
+    "maximum_force_abs_difference_kJ_mol_nm": 0.00029075042016302177,
+    "native_sander_comparison_performed": false
+  },
+  "local_charge_model": {
+    "training_molecules": 40,
+    "evaluation_molecules": 6,
+    "parameters": 36,
+    "ridge": 0.0001,
+    "hyperparameters_selected_with_C54": false,
+    "improved_molecules": 5,
+    "worsening_cases": [
+      {
+        "model_id": "C54_OH4_loading_s20261405",
+        "baseline_RRMS": 0.21436727114159565,
+        "corrected_RRMS": 0.22502625363050224,
+        "difference": 0.010658982488906593,
+        "improved": false
+      }
+    ],
+    "fit_sha256": "f6e18591298605d20d5e30f75d76b7e7264ed6941300b956fe43bc81b1a6bee3",
+    "unregularized_normal_matrix_rank": 35,
+    "unregularized_normal_matrix_condition": 4.2614901954884285e+18
+  },
+  "published_charge_tables_and_opls_extension": {
+    "opls_coo_fit": {
+      "id": "HierGO_OPLS_COO_HF_ESP_extension",
+      "status": "CHARGE_EXTENSION_FITTED",
+      "parameters_e": {
+        "COO_anchor": -0.6543297228005721,
+        "COO_C": 1.7275926378679287,
+        "COO_O": -1.0366314575336784
+      },
+      "independent_parameters": 2,
+      "O_atoms_equivalent": true,
+      "COO_block_charge": -1,
+      "training_cases": [
+        {
+          "model_id": "pyrene_COO",
+          "grid_sha256": "75c31ede94672fef0da69994f95a72ff04ceaa5877f6cbe9683ba3731b995c3f"
+        },
+        {
+          "model_id": "C24_COO1_COOH1_far_s20261323",
+          "grid_sha256": "ce87a96f1989e378ccb95d2c89ece209e27e4a4331016fd90f4c3d9e6daaa165"
+        },
+        {
+          "model_id": "C24_COO1_COOH1_near_s20261322",
+          "grid_sha256": "395ff966fd9c50e50791cb960da4e84442f88ce81b1aba21739c7dbe797c6b5c"
+        },
+        {
+          "model_id": "C24_COO1_EPX1_far_s20261329",
+          "grid_sha256": "2f18836d5de5741628d0d2fe2cb2f416c4b6a421bf9465368e81cffc0977fb2c"
+        },
+        {
+          "model_id": "C24_COO1_EPX1_near_s20261328",
+          "grid_sha256": "77ba751749ac4ff4c7a738044411e61f16914a248c7e74d9e69a3696ce4aa326"
+        },
+        {
+          "model_id": "C24_COO1_OH2_far_s20261327",
+          "grid_sha256": "377f718cfb0f5d3dddb3327036ae642b795aee4d7e89a70e5f54f97fce7e0669"
+        },
+        {
+          "model_id": "C24_COO1_OH2_near_s20261326",
+          "grid_sha256": "146f0b0c43f645dfc8f62bca01b313f1a9857b7fe63e36c87b47c2b6b0df6db1"
+        },
+        {
+          "model_id": "C24_COO1_loading_s20261317",
+          "grid_sha256": "4456da6bfcbbd7f9ae20530611bfb39c3a90fa743ca4571702e0db93577c33a0"
+        },
+        {
+          "model_id": "C24_COO2_far_s20261321",
+          "grid_sha256": "4683a480f0b889ffdfe9119d50aee38bcafdd3101d789248054b8ae1e7497500"
+        },
+        {
+          "model_id": "C24_COO2_near_s20261320",
+          "grid_sha256": "936ec4834cedf307c411e52d008ad0ab4808a431fd10b2db5bdf047d83a6cd4b"
+        }
+      ],
+      "normal_matrix_condition": 57.35373216518124,
+      "ridge": 0,
+      "reference": "HF/6-31G* gas-phase ESP, orientation 001, equal molecule weight",
+      "original_non_COO_HierGO_charges_changed": false,
+      "C54_used_in_fit": false,
+      "full_OPLS_forcefield_validated": false,
+      "fixed_charges_during_MD": true,
+      "scope": "new charge-only research extension; not the original published HierGO model",
+      "table_sha256": "7d2e4022771427d4a713691188b24b9fdcb63acb81bc79f72bff2b64bcb4dd16"
+    },
+    "opls_coo_fit_sha256": "5f7d31fce2ff0efbf645c42b1829860dc2536fc781ab499de66e02ed2e6b2f24",
+    "published_c54_results_sha256": "180393704200765ecda9edd3b3034b991e4caa215c04390e388a0080634b0de5",
+    "oplsaa_coo_bonded_lj_audit": {
+      "source": "GROMACS oplsaa.ff (ffnonbonded.itp, ffbonded.itp) vs HierGO Oplsatom2 / atom-typing.py",
+      "hiergo_missing_COO_minus": true,
+      "oplsaa_present_types": {
+        "COO_C": "opls_271 (C_3, q=+0.700, sigma=0.375 nm, eps=0.43932 kJ/mol)",
+        "COO_O": "opls_272 (O2, q=-0.800, sigma=0.296 nm, eps=0.87864 kJ/mol)"
+      },
+      "oplsaa_present_bonded": [
+        "C_3-CA bond (0.149 nm, 334720 kJ/(mol*nm^2))",
+        "C_3-O2 bond (0.125 nm, 548940.8)",
+        "O2-C_3-O2 angle (126 deg, 669.44)",
+        "C_3-CA-CA angle (120 deg, 711.28)",
+        "improper_O_C_X_Y (180 deg, 43.932)"
+      ],
+      "oplsaa_missing_aromatic_junction_bonded": [
+        "CA-C_3-O2 angle (only aliphatic CT/C3/CT_2-C_3-O2 or neutral CA-C-O present)",
+        "CA-CA-C_3-O2 proper dihedral (only aliphatic CT-CT-C_3-O2 or neutral CA-CA-C-O/OH present)"
+      ],
+      "status": "charge-only research extension; full OPLS-AA aromatic COO- bonded/LJ/solvation validation still required"
+    }
+  },
+  "experimental_constraint_reference": "https://filgen.jp/Product/Bioscience4/Abalonyx/TDS_GO_Pastes_and_powders.pdf",
+  "experimental_group_prior_is_measured": false,
+  "production_parameter_libraries_changed": false,
+  "charge_evaluation": {
+    "source_sha256": {
+      "PARAMETERIZATION/calculations/sqe_expanded_fit_20261108_attempt_001/sqe_esp_direct_strict40.fit.json": "eef3ad41de4e07ce3ff2e8dfda639782d03773981d491182c2dde95d91e48f1b",
+      "research_trials/2026-11-13_preset_benchmark/charge_fit.json": "f6e18591298605d20d5e30f75d76b7e7264ed6941300b956fe43bc81b1a6bee3",
+      "research_trials/2026-11-13_preset_benchmark/AshGC_C54.json": "55bf33c1776eee50c6d8e127a9f7f3abdea0625ce944474289f8315fc76af2bd",
+      "research_trials/2026-11-13_preset_benchmark/EspalomaCharge_C54.json": "cd175ebb77402bdc9d0c7d9e0b9821dff23e196beecbf0acfebf83f4cfb64139",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_COO1_loading_s20261417/HF_RESP_attempt_001/fits/attempt_001/model.json": "1cfba5b0de874eca4692fa9f240a22e22bce269f1b46519549377aa9afafb72c",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_COO1_loading_s20261417/HF_RESP_attempt_001/fits/attempt_001/FIT_COMPLETE.json": "f7ce6c4a11dc6200b478a37cf54ead2abea778f419cc78e36262efa090cc0b6d",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_COO1_loading_s20261417/HF_RESP_attempt_001/fits/attempt_001/orientation_001.esp": "0b4737930fa0a94f095790acd5bb75d25eedc545750a712469fbb676451758a5",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_COO1_loading_s20261417/HF_RESP_attempt_001/fits/attempt_001/orientation_002.esp": "9704bcccc2a1455c2ef296ec7b48f50f96a3fc6bf68c96da3967180b899fd3de",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_COO1_loading_s20261417/HF_RESP_attempt_001/fits/attempt_001/orientation_003.esp": "07d3a33d3748f6d7588870c906655e1fdf07566ac105dbdc8b8d14bfae2ef2aa",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_EPX2_far_s20261407/HF_RESP_attempt_001/fits/attempt_001/model.json": "249000861d452b9d6eb9a52bb87f527ed915689a490243aa0bc0b3ab4afc4840",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_EPX2_far_s20261407/HF_RESP_attempt_001/fits/attempt_001/FIT_COMPLETE.json": "cf751379511ebd775bb86720bd68ab1648384c4cdf9dacacd5bdef717cb17f98",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_EPX2_far_s20261407/HF_RESP_attempt_001/fits/attempt_001/orientation_001.esp": "fdae752128db0c98e3affcf85b934224fa8e1e2ffe2d82132dd902e43b78e8f2",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_EPX2_far_s20261407/HF_RESP_attempt_001/fits/attempt_001/orientation_002.esp": "6e8891670b2826630c3c70e2393b69784b61056567313a6f599e190db7365496",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_EPX2_far_s20261407/HF_RESP_attempt_001/fits/attempt_001/orientation_003.esp": "f6099a6f0b77eb6c14941749de885fe4f0201442f03e26194cc2266013f6b77d",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_EPX4_loading_s20261409/HF_RESP_attempt_001/fits/attempt_001/model.json": "7d54b9c550c9f345c6d740c62788c14f4e6df67ceee1a19ce11ab6ada09a97f7",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_EPX4_loading_s20261409/HF_RESP_attempt_001/fits/attempt_001/FIT_COMPLETE.json": "3a2c4aad8a1bba97b43ae88e952cd41dbb051131129199cf06f247061fbaef21",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_EPX4_loading_s20261409/HF_RESP_attempt_001/fits/attempt_001/orientation_001.esp": "51b4f4a10ea2cd8a06ca645614a37a7ad0bfe6e3bd779bee95599c3989a9f978",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_EPX4_loading_s20261409/HF_RESP_attempt_001/fits/attempt_001/orientation_002.esp": "2163c46fc66181cd93fc8b0d83e82703aabe885f6248cd703449d2bcfc68e137",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_EPX4_loading_s20261409/HF_RESP_attempt_001/fits/attempt_001/orientation_003.esp": "c758943669c5e424d721fd4b284d4bf6e015128e5f23b9111797ad9f74b9f5d7",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH2_loading_s20261404/HF_RESP_attempt_001/fits/attempt_001/model.json": "de70589943164ca1a73ec61457a64e15f87045272a418f49892e0b3340848f33",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH2_loading_s20261404/HF_RESP_attempt_001/fits/attempt_001/FIT_COMPLETE.json": "365e0f80b2c0e7ebdb9c8ccdc191b3fd39738afef6e10371a8cc6beb92f4ed00",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH2_loading_s20261404/HF_RESP_attempt_001/fits/attempt_001/orientation_001.esp": "c334c1183e51ea52b8ab119e39161d851d307846eefb30f29b10650bf1cc929e",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH2_loading_s20261404/HF_RESP_attempt_001/fits/attempt_001/orientation_002.esp": "8d2fccd5f9f58b6fa243f96147f5e595014eba73d71f3d90640e88a7aad178ec",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH2_loading_s20261404/HF_RESP_attempt_001/fits/attempt_001/orientation_003.esp": "8290d5f29189087c95b583b54f3231a306e7d7d38aa9904f202d5cd590b9d8ca",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH4_loading_s20261405/HF_RESP_attempt_001/fits/attempt_001/model.json": "f34cef0924a183cde5474c51b663669c22301ce96d0e9eb859373a1fe9c95bc8",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH4_loading_s20261405/HF_RESP_attempt_001/fits/attempt_001/FIT_COMPLETE.json": "fe32baaa2b6deb88efd8bd3a88c42ace3577dacaddf44d1bab09049fe4dddeb4",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH4_loading_s20261405/HF_RESP_attempt_001/fits/attempt_001/orientation_001.esp": "05fe9a14bf25b565b2745c8daef29d502c1527682371ee596231b2c473dff3a4",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH4_loading_s20261405/HF_RESP_attempt_001/fits/attempt_001/orientation_002.esp": "0a5ea6e29ec950a6a4430d34449a5e5219fd913c221d30581df8f2892f052bfa",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH4_loading_s20261405/HF_RESP_attempt_001/fits/attempt_001/orientation_003.esp": "06747ca7879dc7ada3add2b139940f21c8826bca03246e42e0da527aafc0f5d6",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH6_loading_s20261406/HF_RESP_attempt_001/fits/attempt_001/model.json": "a4db6d1bbaf1e130da19377c088cc8b9d50cb67e65fad47ccc74a7a3d6e73bdb",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH6_loading_s20261406/HF_RESP_attempt_001/fits/attempt_001/FIT_COMPLETE.json": "140320f4ab2902e8971e8218252c656cdc93d7c482b95243f39984afd28a8550",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH6_loading_s20261406/HF_RESP_attempt_001/fits/attempt_001/orientation_001.esp": "7f4955bcf67ece6ae7020771a1ec095965c5ceb55ae185bda5b94e6256369e33",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH6_loading_s20261406/HF_RESP_attempt_001/fits/attempt_001/orientation_002.esp": "51033916a2037a77c7a8b81d6864acb627857a211d30e7f35065af4141f1913d",
+      "PARAMETERIZATION/calculations/expanded_resp_completed_20261112_snapshot_001/cases/C54_OH6_loading_s20261406/HF_RESP_attempt_001/fits/attempt_001/orientation_003.esp": "4d8a2e1718ba3541a6f85345a9f515338c2472251ca5c3af2dccca53cc929611"
+    },
+    "target": "HF/6-31G* MK ESP; same geometries and three orientations per molecule",
+    "pretrained_training_overlap_checked": false,
+    "pretrained_charge_vectors_renormalized": false,
+    "EspalomaCharge_adapter": "Published readout uses q_ref=formal_charge, preserving ionic total charge; no posthoc rescaling.",
+    "checkpoints": {
+      "AshGC": "7981e7f5b0b1e424c9e10a40d9e7606d96dcd3dd2b095cb4eeff6829f92238ee",
+      "EspalomaCharge": "ed3e396df3f5ee8dd42240165202be10c59bd7e60c41841512c18b0329ed76f2"
+    }
+  },
+  "native_parameter_files": {
+    "GAFF": {
+      "filename": "gaff.dat",
+      "header": "AMBER General Force Field for organic molecules (Version 1.81, May 2017)",
+      "parameter_file_sha256": null,
+      "parameter_file_hash_note": "Amber installation is containerized; generated topology hashes retained instead",
+      "LEaP_parameter_loading_log_sha256": "edd57e058c38de251a2c700deec9c454976fa50a85e1d347d3523b903c931d04"
+    },
+    "GAFF2": {
+      "filename": "gaff2.dat",
+      "header": "AMBER General Force Field for organic molecules (Version 2.2.20, March 2021)",
+      "parameter_file_sha256": null,
+      "parameter_file_hash_note": "Amber installation is containerized; generated topology hashes retained instead",
+      "LEaP_parameter_loading_log_sha256": "a1f80983d84e4bbbde5015f5f455b2e843bc6de6b2dd5a4dcbb9d24e07e2512c"
+    }
+  },
+  "NAGL_model": {
+    "checkpoint_sha256": "7981e7f5b0b1e424c9e10a40d9e7606d96dcd3dd2b095cb4eeff6829f92238ee",
+    "nagl_model": "openff-gnn-am1bcc-1.0.0.pt",
+    "nagl_version": "0.6.1",
+    "torch_version": "2.7.1",
+    "domain_checks_enabled": true,
+    "posthoc_charge_correction": false,
+    "trained_target": "OpenEye-like AM1-BCC ELF10, not ABCG2 or HF-RESP",
+    "final_parameter_validation": false
+  },
+  "Grappa": {
+    "checkpoint_sha256": "1296df398e03403279164d2ce94eeab94494381443a74e731820338509976172",
+    "source_manifest": {
+      "tag": "grappa-1.4.0",
+      "url": "https://github.com/graeter-group/grappa/releases/download/v.1.4.0/grappa-1.4.0.zip",
+      "zip_bytes": 228402366,
+      "zip_sha256": "155c731145f024fe871847530117a279e1d029b2b560449826004c2d4bef12d7",
+      "source_commit": "86f4b99dd982bfd9e627ef14e74a5130c4c8631d",
+      "downloaded_utc": "2026-11-12T23:01:41.578232+00:00"
+    }
+  }
+}

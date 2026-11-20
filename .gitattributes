@@ -1,6 +1,7 @@
 # Preserve scientific fixed-column inputs and archived reference bytes.
 resources/reference/** -whitespace
 research/parameterization/references/** -whitespace
+docs/assets/**/*.svg -whitespace
 *.sdf -whitespace
 *.frcmod -whitespace
 *.csv -whitespace

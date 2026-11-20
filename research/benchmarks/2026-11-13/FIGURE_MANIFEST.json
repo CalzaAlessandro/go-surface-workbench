@@ -1,0 +1,29 @@
+{
+  "data_files": {
+    "summary.json": "ca0542d2c1ba819b33766a99fde35afddd965df4f4314c2a454dc64c6ec7588a",
+    "mm_per_case.csv": "c683dbea70932a7e4e132c3246c292f2b11d5d7c1137ebb2ca240366b2496447",
+    "provenance.json": "01cea0527a7f69cacecb51c0d5e5bbffda9791a15161f9b83c90abb5886beec4",
+    "builder_source_inventory.json": "6ec10a2c08ba5683acd1e9434a7a7455a246bb3876b95cea6df844f341cd2403",
+    "pattern_per_case.csv": "e1e82b8f88ff5548f9fc7ed3f88e34484d6403862633fa0e891d0e15f82ee81c",
+    "charge_summary.csv": "ff7ec621a7e5bd9bfbdaed3c615434c4aaa459a9e05377be077f646681a4487a",
+    "composition_constraints.csv": "ffa3aef12fd076def558efba02ae4091f6ec4265f1dc0f17aeb620081df5ffa6",
+    "verification.json": "99fde9127d80821762b64e64c74b0b91bcff82438d17699613bef66ad2971d95",
+    "charge_coverage.csv": "22b310b1ac582286038e815bc282c0ca357d1ff1b405058c4685876d2bfacb53",
+    "pattern_examples.json": "732cda6ed1d7ea2a0ce6598e97f4f0475e6e0407bb6a481275867d07fab5a182",
+    "charge_per_case.csv": "947f2291c58c5be6fa41b84d366957b025d3246b731404a2f1b327f49270c2bd",
+    "mm_summary.csv": "c4fa02d06c23f2c4b4d701d0ab2f1b0e3a6ec555d99443f80cb14f63df3cded1"
+  },
+  "figures": {
+    "docs/assets/benchmarks/2026-11-13/QM_hessian_comparison.png": "6482f68fcd57891c827cb4415d7db88d2ea970b84bb4ac6930355271baa9e2ff",
+    "docs/assets/benchmarks/2026-11-13/oxidation_patterns.svg": "a828ca3f2969a7089eebccab155e5ebdab63f32e232ff3ee05fb679f8a34ac03",
+    "docs/assets/benchmarks/2026-11-13/oxidation_patterns.png": "bdbad6f85bab0f0f397811ad65705d7a5b23d6e0abcb7ea7ad924143c623e62f",
+    "docs/assets/benchmarks/2026-11-13/QM_hessian_comparison.svg": "45fad5d08ad316966382ff9a7265403abf7acd3b500ed96aae676ff5568ae404",
+    "docs/assets/benchmarks/2026-11-13/charge_transfer_C54.svg": "5021d4241fda0bfd7bf5ea9370f498a4a30b73d1253885de8d50600f9cc73c40",
+    "docs/assets/benchmarks/2026-11-13/charge_backends_C54.png": "9eeecaa133e9b0a46088464482213f41f79165176bc680a75374e94f3a1e6f8a",
+    "docs/assets/benchmarks/2026-11-13/QM_force_comparison.svg": "84d647eaba406df13fadfdb2bb58d37016e36b368c229f43dc7055a7843ba531",
+    "docs/assets/benchmarks/2026-11-13/QM_force_comparison.png": "760eb674b44394faf6c01855dad56e8222364988f42cef40f9d60093cbc59d69",
+    "docs/assets/benchmarks/2026-11-13/charge_backends_C54.svg": "4c0255dfaa3f317a3b589cd09f76ed20b0dae0f6063b37e5f530702e6bf44a33",
+    "docs/assets/benchmarks/2026-11-13/charge_transfer_C54.png": "817857e3bae94dbe957f9f5b1b1323910bcd4e41d3eff33aa3e1a2226c55bfba"
+  },
+  "matplotlib": "3.11.2"
+}
