@@ -6,13 +6,13 @@ No project files or dependencies are modified. Each case has a 90-second alarm.
 """
 from __future__ import annotations
 
+import argparse
 import cProfile
 import gc
 import hashlib
 import json
-import math
-import os
 import pstats
+import resource
 import signal
 import statistics
 import sys
@@ -25,6 +25,7 @@ REPORT_DIR = SOURCE / 'results' / 'benchmarks'
 REPORT_DIR.mkdir(parents=True, exist_ok=True)
 sys.path.insert(0, str(SOURCE / 'src'))
 from go_builder.build import build_sheet  # noqa: E402
+from go_builder.model import check_geometry_integrity, compute_chemistry_summary  # noqa: E402
 
 SIZES = [(8, 8), (12, 12), (16, 16)]
 GROUPS = {'OH': 4, 'epoxide': 3, 'carbonyl': 2, 'COOH': 2, 'COO': 2}
@@ -147,7 +148,77 @@ def run_case(nx: int, ny: int) -> dict:
             tracemalloc.stop()
 
 
+def run_blocco1_scaling() -> None:
+    """Reproduce the 10-case Blocco 1 O(N) scaling table."""
+    fin_comp = {'o_over_c': 0.35, 'priority': ['OH', 'epoxide', 'COOH', 'COO'], 'ph': 7.4}
+    per_comp = {'o_over_c': 0.30, 'priority': ['OH', 'epoxide']}
+    cases = [
+        ('Finite 3x3 (1.3x0.7 nm)', dict(nx=3, ny=3, pbc=[False, False, False], seed=0, composition=fin_comp), True),
+        ('Finite 6x6 (2.6x1.5 nm)', dict(nx=6, ny=6, pbc=[False, False, False], seed=0, composition=fin_comp), True),
+        ('Hex zigzag (d=4.0 nm)', dict(diameter_nm=4.0, shape='hexagonal', edge_type='zigzag', pbc=[False, False, False], seed=0, composition=fin_comp), True),
+        ('Finite 12x12 holes+island', dict(nx=12, ny=12, pbc=[False, False, False], seed=0, holes={'distribution': 'mixed', 'percent_vacancies': 5.0}, composition=fin_comp, placement={'mode': 'island', 'n_islands': 2}), True),
+        ('Finite 12x12 (5.1x3.0 nm)', dict(nx=12, ny=12, pbc=[False, False, False], seed=0, composition=fin_comp), True),
+        ('Periodic 24x24 (O/C=0.30)', dict(nx=24, ny=24, pbc=[True, True, False], seed=0, composition=per_comp), True),
+        ('Finite 24x24 (10.2x5.9 nm)', dict(nx=24, ny=24, pbc=[False, False, False], seed=0, composition=fin_comp), True),
+        ('Finite 36x36 (15.3x8.9 nm)', dict(nx=36, ny=36, pbc=[False, False, False], seed=0, composition=fin_comp), True),
+        ('Periodic 48x48 (O/C=0.30)', dict(nx=48, ny=48, pbc=[True, True, False], seed=0, composition=per_comp), True),
+        ('Periodic 64x64 (O/C=0.30)', dict(nx=64, ny=64, pbc=[True, True, False], seed=0, composition=per_comp), False),
+    ]
+    # Warm-up
+    _ = build_sheet(dict(nx=4, ny=4, pbc=[False, False, False], seed=0, composition=fin_comp))
+
+    rows = []
+    print(f"{'Case':<28} {'Atoms':>7} {'Groups':>7} {'Build(s)':>9} {'Check(s)':>9} {'Chem(s)':>8} {'Mem(MiB)':>9} {'Gate':>6} {'O/C':>6}")
+    for label, spec, trace_mem in cases:
+        gc.collect()
+        t0 = time.perf_counter()
+        model = build_sheet(spec)
+        t1 = time.perf_counter()
+        geom = check_geometry_integrity(model)
+        t2 = time.perf_counter()
+        chem = compute_chemistry_summary(model)
+        t3 = time.perf_counter()
+        if trace_mem:
+            tracemalloc.start()
+            _ = build_sheet(spec)
+            _, peak = tracemalloc.get_traced_memory()
+            tracemalloc.stop()
+            mem_mib = peak / (1024 * 1024)
+            mem_kind = 'python_peak_mib'
+        else:
+            ru = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+            mem_mib = ru / (1024 * 1024 if sys.platform == 'darwin' else 1024)
+            mem_kind = 'process_rss_mib'
+        oc = chem['o_over_c'] if chem['o_over_c'] is not None else 0.0
+        ng = len(model['metadata'].get('groups', []))
+        gate = 'PASS' if geom['passed'] else 'FAIL'
+        print(f"{label:<28} {len(model['atoms']):>7d} {ng:>7d} {t1-t0:>9.3f} {t2-t1:>9.3f} {t3-t2:>8.3f} {mem_mib:>9.1f} {gate:>6} {oc:>6.3f}", flush=True)
+        rows.append({
+            'case': label,
+            'atoms': len(model['atoms']),
+            'groups': ng,
+            'build_seconds': round(t1 - t0, 4),
+            'check_seconds': round(t2 - t1, 4),
+            'chemistry_seconds': round(t3 - t2, 4),
+            mem_kind: round(mem_mib, 2),
+            'gate': gate,
+            'realized_o_over_c': round(oc, 4),
+        })
+    (REPORT_DIR / 'blocco1_scaling_results.json').write_text(json.dumps(rows, indent=2) + '\n')
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        '--blocco1',
+        action='store_true',
+        help='Run the 10-case Blocco 1 O(N) scaling benchmark (58 to 24,576 atoms)',
+    )
+    args = parser.parse_args()
+    if args.blocco1:
+        run_blocco1_scaling()
+        return
+
     results = []
     for nx, ny in SIZES:
         result = run_case(nx, ny)

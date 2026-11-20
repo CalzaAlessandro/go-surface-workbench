@@ -9,6 +9,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 PRESETS = ("GOX8-P935", "REGOX8-P980", "REGOX8-P995", "REGOX8-P999")
+TEMPLATES = ("template-go-ph7", "template-go-island", "template-rgo")
 
 
 def invoke(*args, cwd=None, no_site=False):
@@ -29,7 +30,14 @@ def test_listing_requires_no_output_or_scientific_dependencies(tmp_path):
     result = invoke("--list-presets", "--json", cwd=tmp_path, no_site=True)
     assert result.returncode == 0, result.stderr
     report = json.loads(result.stdout)
-    assert [p["name"] for p in report["presets"]] == list(PRESETS)
+    by_name = {p["name"]: p for p in report["presets"]}
+    assert list(by_name) == [*PRESETS, *TEMPLATES]
+    for name in PRESETS:
+        assert by_name[name]["family"] == "LayerOne"
+    for name in TEMPLATES:
+        assert by_name[name]["family"] == "Template"
+        assert by_name[name]["build_enabled"] is True
+        assert by_name[name]["readiness"] == "illustrative_starting_template_not_measured"
     assert list(tmp_path.iterdir()) == []
 
 
@@ -168,3 +176,48 @@ def test_public_source_registry_and_readiness_are_preserved():
     assert len(metadata["source_info_sha256"]) == 64
     assert metadata["source_composition"] == metadata["source_info"]["source_composition"]
     assert "/Users/" not in json.dumps(metadata["source_info"])
+
+
+def test_init_config_and_write_config_from_template_work_without_site_packages(tmp_path):
+    toml_tpl = tmp_path / "template.toml"
+    json_tpl = tmp_path / "template.json"
+    res_toml = invoke("--init-config", toml_tpl, "--json", no_site=True)
+    assert res_toml.returncode == 0, res_toml.stderr
+    assert json.loads(res_toml.stdout)["format"] == "toml"
+    assert toml_tpl.is_file()
+
+    res_json = invoke("--init-config", json_tpl, "--json", no_site=True)
+    assert res_json.returncode == 0, res_json.stderr
+    assert json.loads(res_json.stdout)["format"] == "json"
+    assert json_tpl.is_file()
+
+    exported = tmp_path / "ph7.toml"
+    res_write = invoke(
+        "--preset",
+        "template-go-ph7",
+        "--write-config",
+        exported,
+        "--json",
+        no_site=True,
+    )
+    assert res_write.returncode == 0, res_write.stderr
+    write_rep = json.loads(res_write.stdout)
+    assert write_rep["status"] == "CONFIG_WRITTEN"
+    assert exported.is_file()
+
+    # The exported template config builds cleanly (with a quick 2x2 override)
+    built_json = tmp_path / "built.json"
+    res_build = invoke("--config", exported, "--size", "2.5", "2.5", "--out", built_json, "--json")
+    assert res_build.returncode == 0, res_build.stdout + res_build.stderr
+    assert json.loads(res_build.stdout)["status"] == "BUILT"
+
+
+def test_illustrative_template_presets_build_cleanly(tmp_path):
+    for name in TEMPLATES:
+        out_json = tmp_path / f"{name}.json"
+        res = invoke("--preset", name, "--size", "2.5", "2.5", "--out", out_json, "--json")
+        assert res.returncode == 0, res.stdout + res.stderr
+        rep = json.loads(res.stdout)
+        assert rep["status"] == "BUILT"
+        model = json.loads(out_json.read_text())
+        assert model["metadata"]["preset"]["family"] == "Template"

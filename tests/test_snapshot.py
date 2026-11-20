@@ -27,7 +27,7 @@ def test_wrapped_finite_receptor_is_made_whole_without_flattening_or_retyping(tm
     assert receptor.coordinates == pytest.approx(original.coordinates, abs=1e-6)
     assert [a.charge for a in receptor.atoms] == pytest.approx([-0.4, 0.1, 0.1, 0.1, 0.1])
     assert len(receptor.bonds) == 4
-    assert (output / "receptor.pdb").read_text().count("CONECT") == 4
+    assert (output / "receptor.pdb").read_text().count("CONECT") == 5
     assert json.loads((output / "boxes.json").read_text())["receptor_pdb"] == "receptor.pdb"
     assert result["flattened"] is False
 

@@ -1,0 +1,21 @@
+# Standard 4x4 nm Graphene Oxide sheet at pH 7.4 (illustrative starting configuration)
+# Usage:
+#   python 01_build_GO.py --config examples/configs/go_standard_ph7.toml --out go_ph7.json --pdb go_ph7.pdb --sdf go_ph7.sdf
+
+name = "go_standard_ph7"
+lx_nm = 4.0
+ly_nm = 4.0
+shape = "rectangular"
+pbc = [false, false, false]
+faces = "both"
+seed = 42
+
+[composition]
+o_over_c = 0.35
+priority = ["OH", "epoxide", "COOH", "COO"]
+mode = "balanced"
+ph = 7.4
+pka = 4.5
+
+[placement]
+mode = "random"

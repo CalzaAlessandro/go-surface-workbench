@@ -608,7 +608,7 @@ def _write_component(structure, prefix, radii_label):
     after = [(a.solvent_radius, a.screen) for a in reread.atoms]
     if not np.allclose(before, after, atol=1e-7, rtol=0):
         raise ValueError("Amber assembly altered GB radii/screens")
-    write_pdb(_pdb_model(reread), pdb)
+    write_pdb(_pdb_model(reread), pdb, allow_undercoordinated=True)
     # The shared writer includes a generic construction remark; replace it for
     # these already parameterized inputs without changing ATOM/CONECT records.
     text = pdb.read_text().splitlines(keepends=True)

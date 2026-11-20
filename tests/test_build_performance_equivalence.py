@@ -42,7 +42,8 @@ def _reference_collision_free(model, new_ids):
         for j, other in enumerate(atoms):
             if j == index or frozenset((atom["id"], other["id"])) in bonded:
                 continue
-            cutoff = 0.8 if "H" in (atom["element"], other["element"]) else 1.25
+            # Passo 1a raised the hard H steric cutoff from 0.80 A to 0.90 A.
+            cutoff = 0.90 if "H" in (atom["element"], other["element"]) else 1.25
             if distances[j] < cutoff:
                 return False
     return True
@@ -64,13 +65,13 @@ def _collision_cases():
         ),
         (
             "hydrogen just inside cutoff",
-            _model(["H", "C"], [[0, 0, 0], [0.799999, 0, 0]]),
+            _model(["H", "C"], [[0, 0, 0], [0.899999, 0, 0]]),
             {1},
             False,
         ),
         (
             "hydrogen exactly at cutoff",
-            _model(["H", "C"], [[0, 0, 0], [0.8, 0, 0]]),
+            _model(["H", "C"], [[0, 0, 0], [0.90, 0, 0]]),
             {1},
             True,
         ),
@@ -127,18 +128,24 @@ def _model_hash(model):
 @pytest.mark.parametrize(
     "recipe,expected_hash",
     [
+        # Updated for Passo 1a geometry upgrade: _cap_edges samples 20/-20 deg tilts when
+        # armchair-bay H-H clearance is <= 1.80 A, and OH/epoxide/COOH/COO use physical
+        # geometries with azimuth/torsion/pucker clearance optimization.
         (
             {"nx": 8, "ny": 8, "seed": 17},
-            "de2b9b8ef8af63edeed6dc52493753010aadcaebc05798503d18e0c985f2e5e2",
+            "a3a6d9eda2783669d516df2ea2845ad93248ccee84493c9f85a09a613a17d0fb",
         ),
         (
             {"nx": 8, "ny": 8, "seed": 17, "holes": [{"size": 4, "seed_atom": 145}]},
-            "61a8d986e9ade5b638b13b5afd0a3b412e840ba663cfdd6fbfd5d142cac18458",
+            "13b0bc8ff82914dda5da34200a8431ef5d0388dc5a4e0ccf7ee3a2aa4267b2a6",
         ),
         (
             {"nx": 8, "ny": 8, "seed": 17, "pbc": [True, True, False]},
             "dbd282b10e4a328faab18dd443afcaeb783318a1052dfc61f1f29f64749c7dbd",
         ),
+        # Updated for Passo 1d-1: _orthonormal_edge_frame fixes non-orthogonal edge
+        # vectors after sp3 puckering, and unified 1-4+ candidate scoring selects
+        # conflict-free geometries (cases 0-2 remain bit-for-bit identical).
         (
             {
                 "nx": 6,
@@ -153,7 +160,7 @@ def _model_hash(model):
                     "COO": 1,
                 },
             },
-            "35d9c7759e8503c210e9c35062da7af18af4e7b510d98e052918dffe847f0a5f",
+            "da1094d04a1c9abeaeaed83f7a90c008d74819850360f0760b5ee8532d01a325",
         ),
     ],
 )

@@ -1,0 +1,30 @@
+# Porous 5x5 nm Graphene Oxide sheet with mixed vacancy holes and 2 oxidized islands
+# Usage:
+#   python 01_build_GO.py --config examples/configs/go_island_porous.toml --out go_island.json --mol2 go_island.mol2 --cif go_island.cif
+
+name = "go_island_porous"
+lx_nm = 5.0
+ly_nm = 5.0
+shape = "rectangular"
+pbc = [false, false, false]
+faces = "both"
+seed = 42
+
+[holes]
+distribution = "mixed"
+percent_vacancies = 8.0
+avoid_outer_edge = true
+probe_radius_angstrom = 1.4
+
+[composition]
+o_over_c = 0.35
+priority = ["OH", "epoxide", "COOH", "COO"]
+mode = "balanced"
+ph = 7.4
+pka = 4.5
+
+[placement]
+mode = "island"
+n_islands = 2
+compactness = 0.85
+edge_mode = "random"

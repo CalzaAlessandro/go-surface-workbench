@@ -323,3 +323,70 @@ def test_supplied_old_amber_topologies_roundtrip_without_refitting(name, tmp_pat
     out = export_gromacs(top, crd, tmp_path / name)
     assert out["roundtrip_verified"]["atoms"] == len(original.atoms)
     assert out["roundtrip_verified"]["torsion_terms"] >= len(original.dihedrals)
+
+
+def test_full_priority1_and_priority2_sheet_prepare_amber_mapping(tmp_path):
+    import json
+
+    from go_builder.build import build_sheet
+    from go_builder.model import check_geometry_integrity
+
+    model = build_sheet(
+        {
+            "nx": 8,
+            "ny": 8,
+            "seed": 17,
+            "groups": {
+                "OH": 4,
+                "epoxide": 3,
+                "carbonyl": 2,
+                "COOH": 2,
+                "COO": 2,
+                "epoxide_eph": 3,
+                "epoxide_ept": 2,
+            },
+        }
+    )
+    rep = check_geometry_integrity(model)
+    assert rep["passed"] is True
+    assert rep["clash_count"] == 0
+
+    result = prepare_amber(model, tmp_path / "amber_p1_p2", reference_dir=REFERENCE)
+    assert result["status"] == "inputs_prepared"
+    assigned = json.loads(Path(result["assigned_model"]).read_text())
+    assert len(assigned["atoms"]) == len(model["atoms"])
+    assert result["net_charge"] == pytest.approx(-2.0)
+
+    by_resname = {}
+    for atom in assigned["atoms"]:
+        by_resname.setdefault(atom["resname"], []).append(atom)
+
+    assert {"GRT", "HYD", "EPX", "CAB", "CBX", "CBD", "EPH", "EPT"}.issubset(by_resname)
+    eph_atoms = by_resname["EPH"]
+    ept_atoms = by_resname["EPT"]
+    assert len(eph_atoms) == 3 * 4
+    assert len(ept_atoms) == 2 * 5
+
+    # Verify types and charges match EPH_gaff2.lib and EPT_gaff2.lib
+    eph_expected = {
+        "CZ": ("cx", 0.053),
+        "CK": ("cx", 0.137),
+        "HK": ("h1", 0.120),
+        "OE": ("op", -0.310),
+    }
+    for atom in eph_atoms:
+        atype, chg = eph_expected[atom["name"]]
+        assert atom["atom_type"] == atype
+        assert atom["charge"] == pytest.approx(chg)
+
+    ept_expected = {
+        "CP": ("cx", 0.020),
+        "CK": ("cx", 0.020),
+        "HK": ("h1", 0.120),
+        "HP": ("h1", 0.120),
+        "OE": ("op", -0.280),
+    }
+    for atom in ept_atoms:
+        atype, chg = ept_expected[atom["name"]]
+        assert atom["atom_type"] == atype
+        assert atom["charge"] == pytest.approx(chg)

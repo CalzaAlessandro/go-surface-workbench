@@ -1,0 +1,20 @@
+# Hexagonal zigzag nanoflake (~2.5 nm diameter) tailored for QM / Extended-XYZ workflows
+# Usage:
+#   python 01_build_GO.py --config examples/configs/go_hex_qm.toml --out hex_qm.json --extxyz hex_qm.extxyz --sdf hex_qm.sdf
+
+name = "go_hex_qm"
+diameter_nm = 2.5
+shape = "hexagonal"
+edge_type = "zigzag"
+pbc = [false, false, false]
+faces = "both"
+seed = 17
+
+[composition]
+o_over_c = 0.25
+priority = ["OH", "epoxide", "COOH"]
+mode = "balanced"
+enabled_groups = ["OH", "epoxide", "COOH"]
+
+[placement]
+mode = "dispersed"

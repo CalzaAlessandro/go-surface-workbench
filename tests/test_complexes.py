@@ -84,7 +84,7 @@ def test_single_ligand_assembly_preserves_parameters_and_adds_no_cross_bonds(tmp
     )
     assert [b.type.k for b in complex_.bonds] == pytest.approx([340.0] * 8)
     assert all(p.read_bytes() == data for p, data in before.items())
-    assert Path(result["complex_pdb"]).read_text().count("CONECT") == 8
+    assert Path(result["complex_pdb"]).read_text().count("CONECT") == 10
     assert Path(result["receptor_pdb"]).exists()
     assert (tmp_path / "complex/lig.parm7").exists()
     with pytest.raises(FileExistsError):
