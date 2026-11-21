@@ -261,3 +261,19 @@ def _assign_dedicated(model, template):
     model["metadata"]["junction_template"] = deepcopy(template)
     model["metadata"]["requires_parameterization"] = False
     return model
+
+
+def __getattr__(name: str):
+    if name in (
+        "FORCE_FIELD_PRESETS",
+        "assign_gaff2_v3",
+        "classify_go_v3_roles",
+        "compute_l0_v2_charges",
+        "list_force_field_presets",
+        "resolve_force_field_preset",
+        "verify_v3_bundle",
+    ):
+        from . import ff_v3
+
+        return getattr(ff_v3, name)
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

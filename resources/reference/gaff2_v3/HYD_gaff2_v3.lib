@@ -1,0 +1,51 @@
+!!index array str
+ "HYD"
+!entry.HYD.unit.atoms table  str name  str type  int typex  int resx  int flags  int seq  int elmnt  dbl chg
+ "CL" "g6" 0 1 131072 1 6 0.170326
+ "OL" "gm" 0 1 131072 2 8 -0.543041
+ "HL" "gw" 0 1 131072 3 1 0.372715
+!entry.HYD.unit.atomspertinfo table  str pname  str ptype  int ptypex  int pelmnt  dbl pchg
+ "CL" "g6" 0 -1 0.170326
+ "OL" "gm" 0 -1 -0.543041
+ "HL" "gw" 0 -1 0.372715
+!entry.HYD.unit.boundbox array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.HYD.unit.childsequence single int
+ 4
+!entry.HYD.unit.connect array int
+ 0
+ 0
+!entry.HYD.unit.connectivity table  int atom1x  int atom2x  int flags
+ 1 2 1
+ 2 3 1
+!entry.HYD.unit.hierarchy table  str abovetype  int abovex  str belowtype  int belowx
+ "U" 0 "R" 1
+ "R" 1 "A" 1
+ "R" 1 "A" 2
+ "R" 1 "A" 3
+!entry.HYD.unit.name single str
+ "HYD"
+!entry.HYD.unit.positions table  dbl x  dbl y  dbl z
+ 0.000000 0.000000 0.000000
+ 0.000000 0.000000 1.440000
+ 0.920000 0.000000 1.730000
+!entry.HYD.unit.residueconnect table  int c1x  int c2x  int c3x  int c4x  int c5x  int c6x
+ 0 0 0 0 0 0
+!entry.HYD.unit.residues table  str name  int seq  int childseq  int startatomx  str restype  int imagingx
+ "HYD" 1 4 1 "?" 0
+!entry.HYD.unit.residuesPdbSequenceNumber array int
+ 1
+!entry.HYD.unit.solventcap array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.HYD.unit.velocities table  dbl x  dbl y  dbl z
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0

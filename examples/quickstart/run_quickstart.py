@@ -99,9 +99,19 @@ def main() -> int:
         print(f"Amber preparation failed:\n{res_amber.stderr}", file=sys.stderr)
         return res_amber.returncode
 
-    expected_files = ["tleap.in", "GO_gaff2.frcmod", "assigned_model.json", "manifest.json"]
+    expected_files = [
+        "tleap.in",
+        "GO_gaff2_v3.frcmod",
+        "assigned_model.json",
+        "manifest.json",
+        "PROVENANCE.json",
+    ]
     for fname in expected_files:
         assert (amber_dir / fname).exists(), f"Missing expected template file: {fname}"
+    v3_libs = list((amber_dir / "v3_libraries").glob("*_gaff2_v3.lib"))
+    assert len(v3_libs) == 18, f"Expected 18 v3_libraries, found {len(v3_libs)}"
+    manifest = json.loads((amber_dir / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest.get("preset") == "gaff2_v3", manifest
 
     print("[Quickstart] Success: all minimal outputs verified in", output_dir)
     return 0

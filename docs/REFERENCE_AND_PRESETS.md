@@ -1,40 +1,35 @@
 # Force-field presets, custom combinations and references
 
-*Status verified as of 2026-11-19* (from the companion expanded-validation archive:
-`FORCE_FIELD_SELECTION.md` and `ERRATA_AND_UPDATES_20261119.md`).
+*Status verified as of 2026-11-21* (Block 2 AMBER Core validated across `step2a`–`step2d`;
+`resources/reference/gaff2_v3/PROVENANCE.json`).
 
-The intended interface offers named combinations and freely selectable
-components. The [research catalogue](../research/benchmarks/2026-11-13/preset_catalogue.json)
-records ten initial exercised combinations (nine transferable presets plus one
-molecule-specific Q-Force Hessian-only in-sample control), subsequently expanded
-across the verified **58/58** HF/6-31G\* RESP reference campaign (`strict40`
-calibration + `14 C54` size holdout) and **49** common MM models (`14`
-transferable paired methods evaluated with **unscaled `1.0` harmonic
-frequencies**). The general preset bank is **not yet integrated into the
-production CLI**: **`resp-current` (`resources/reference/current` + `GO_gaff2.frcmod`)
-remains the only operational CLI assignment path and default**. Existing
-commands and defaults are documented in [CHARGES.md](CHARGES.md),
-[CHARGE_PRESETS.md](CHARGE_PRESETS.md), and the [README](../README.md).
+The CLI now ships versioned AMBER preset selection (`03_prepare_amber.py --list-presets`,
+`--preset gaff2_v3 | gaff2_current`, `--charge-model {auto,l0_v2,current_lib,custom}`,
+`--charges-json`) plus multi-engine exporters (`07_export_gromacs.py`,
+`08_export_openmm.py`). **`gaff2_v3` (`resources/reference/gaff2_v3`:
+`GO_gaff2_v3.frcmod`, 18 `*_gaff2_v3.lib` with 4-color DSATUR epoxides,
+`L0_v2_charges.json`) is the validated and only recommended AMBER preset** (pairing cleanly with default `L0_v2` charges or external custom charges via `--charge-model custom --charges-json`), while **`gaff2_current` (`resources/reference/current`: `GO_gaff2.frcmod` + legacy libraries)** is **deprecated** (known bonded/charge defects) and kept untouched only for archival backwards compatibility (selected with `--preset gaff2_current` or implicit `--reference-dir` without `--preset`).
 
-## Candidates and verified campaign status (2026-11-19)
+## Candidates and verified campaign status (2026-11-21)
 
-The [common-QM benchmark](../research/benchmarks/2026-11-13/README.md) supplies
-the original pilot conventions, updated by the 2026-11-19 expanded audit and
-errata. A preferred candidate for future validation is **not yet a validated
-production default**.
+The [research catalogue](../research/benchmarks/2026-11-13/preset_catalogue.json)
+and [common-QM benchmark](../research/benchmarks/2026-11-13/README.md) were
+expanded to **58** models (`52/58` in-domain Priority 1+2 GO; `6/58` Priority-3
+rejected with `ValueError`) and evaluated across the Block 2 6-suite cross-matrix
+with **unscaled `1.0` harmonic frequencies**.
 
-| Use | Candidate | Verified evidence & readiness (2026-11-19) |
+| Use | Candidate | Verified evidence & readiness (2026-11-21) |
 |---|---|---|
-| Operational CLI default | `resp-current` (`resources/reference/current` + `GO_gaff2.frcmod`) | **Only operational CLI default** (`28.79%` C54-14 median ESP RRMS; unscaled freq MAE `46.52 cm⁻¹`); retained until `L0_v2` + `GO_gaff2_v3` pass Block 2 gates |
-| Conventional Amber controls | `GAFF2 / AM1-BCC`, `GAFF2 / HF-RESP`, `GAFF2 / ABCG2` | Native parameter generation; `GAFF2_ABCG2` audited across **58/58** models (unscaled freq MAE `46.67 cm⁻¹` on `n=58`, `45.73 cm⁻¹` on `n=52`) |
+| **Validated CLI default (Block 2)** | **`gaff2_v3 + L0_v2` (`resources/reference/gaff2_v3`)** | **11/11 Go/No-Go gates PASS**: `ALL_52 F_med = 14.78` (`F_max = 25.39`), `H_med = 17.64%`, `G_med = 0.100 Å`, unscaled `Freq_med = 35.0 cm⁻¹`, `0` imag modes (`52/52`); size-transfer `C54` (excluded from parameter fits; unseen sheets in Block 3): `C54_neutral_9 F_med = 17.32`, `C54_anionic_5 F_med = 12.61`; torsions `pyrene_COOH = 0.045`, `pyrene_COO = 0.012 kcal/mol`; π–π stacking `MAE = 1.231 kcal/mol` (`z_min = 3.4 Å`, `-5.806 kcal/mol`); `0/129` Amber namespace collisions; `WORKBENCH` topology parity `< 1e-4 kJ/mol` (`OpenMM 8.6.1` native vs pure-Py XML `NoCutoff`/`CutoffNonPeriodic`/`PME`, and GROMACS `.top/.itp` via `OpenMM GromacsTopFile`) / `< 0.03 kJ/mol` (`sander` Version 24.0, `amber24u3+at25`) |
+| Legacy CLI preset (deprecated) | `gaff2_current` (`resources/reference/current` + `GO_gaff2.frcmod`) | **Deprecated archival baseline** (kept only for regression compatibility; known defects): `ALL_52 F_med = 25.46` (`F_max = 102.27`), `H_med = 21.36%`, unscaled `Freq_med = 46.5 cm⁻¹`, `1` imag mode (`pyrene_COOH`), `C54-14` ESP RRMS `28.79%`; `GO_gaff2_v3.frcmod` fixes `COOH`/`COO-` typing (`0` imag) |
+| Conventional Amber controls | `GAFF2 / AM1-BCC`, `GAFF2 / HF-RESP`, `GAFF2 / ABCG2` | Native parameter generation; `GAFF2_ABCG2` audited across **58/58** models (`ALL_52 F_med = 18.18`, `F_max = 98.39`, `H_med = 20.10%`, unscaled `Freq = 45.7 cm⁻¹`; `C54_neutral_9` ESP `55.32%`, `C54_anionic_5` `8.69%`) |
 | Learned bonded terms | `Grappa 1.4.0 / OpenFF 2.0 / AM1-BCC` | Best harmonic curvature (`17.77%` Hessian RRMS on 49 common models; force `11.46 kcal/(mol·Å)`, unscaled freq `28.56 cm⁻¹`) |
 | Alternative learned bonded terms | `Espaloma 0.3.2 / OpenFF 2.0` (`AM1-BCC` / `EspalomaCharge`) | Best median force error (`9.28` / `9.56 kcal/(mol·Å)`) and unscaled freq MAE (`27.75` / `27.56 cm⁻¹`) on 49 common models; charge variants tested with bonded/LJ held fixed |
 | Complete OpenFF combination | `Sage 2.3.0 / AshGC 1.0` | Native coupled combination (`17.19 kcal/(mol·Å)`, `18.65%` Hessian, `40.59 cm⁻¹` unscaled on 49 common models); `Sage 2.3 / EspalomaCharge` shows only a shallow π–π minimum (`−0.531 kcal/mol` at `3.8 Å`, MAE `6.406 kcal/mol`) |
-| Blocked pre-`L0_v2` charge candidates | `L0_strict40_closed`, `Local_BCC_ESP_strict40`, `SQE_ESP_direct_strict40`, `SQE_L0_strict40` | **Blocked from promotion**: `L0_strict40` has severe `-COO-` charge pathology (`COO_C = +1.716076`, `COO_O = -1.030563`, `COO_anchor = -0.654951 e`); `Local_BCC_ESP_strict40` is rank-deficient (`35/36`, `cond = 4.26e+18`, `COO_anchor = +0.839..+0.923 e`); `SQE_ESP_direct_strict40` has unphysical `role_theta_map` weights (`augmented_rank = 24`) |
-| Blocked pre-`v3` bonded candidate | `Local_GAFF2_v2_qm_ref` (`GO_gaff2_v2_qm_ref_20261108.frcmod`) | **Blocked from promotion**: `46`-model training overlap, overloaded `c2` (`CBX`/`CBD`), inter-epoxide `cx-cx-cx` ambiguity (`117.95°` vs `60.0°`), and force regressions on `16/52` (`16/37` neutral/mixed) cases despite improving `15/15` anions |
+| Blocked pre-`L0_v2` charge candidates | `L0_strict40_closed`, `Local_BCC_ESP_strict40`, `SQE_ESP_direct_strict40`, `SQE_L0_strict40` | **Blocked archival drafts**: superseded by `L0_v2` |
+| Blocked pre-`v3` bonded candidate | `Local_GAFF2_v2_qm_ref` (`GO_gaff2_v2_qm_ref_20261108.frcmod`) | **Blocked archival draft** (`46`-model overlap, overloaded `c2`, `cx-cx-cx` ambiguity): superseded by clean-room `GO_gaff2_v3.frcmod` |
 | Published OPLS baseline | `HierGO_OPLS_native` (`hiergo_opls`); `HierGO_OPLS_docx` (`Generating_OPLS_top.docx`) | Unpatched `6/58`, `docx`-analog `36/58` (unscaled freq `56.69` vs `64.58 cm⁻¹`); `COO⁻` fails neutrality (`-0.36 e` instead of `-1.00 e`) and lacks `EPH`/`EPT` |
 | Molecule-specific QM Hessian control | `Q-Force 0.6.14` (Hessian-only fit, GAFF2 LJ/AM1-BCC) | In-sample Hessian fit (`3.928 kcal/(mol·Å)`, `13.75%`); no torsion scans and not transferable |
-| Future transferable refits (Block 2) | `L0_v2` / `L1_reg` charges + `GO_gaff2_v3` bonded (`CBX`/`CBD` split) | Planned clean-room refit targets before any production default change |
 
 GAFF 1.81 remains a reproducible baseline (with `GO_gaff2_old.frcmod` separately failing `tleap` on 3 neutral `C24` models due to missing `c2-ca-c6-c6`, `c6-c6-cx-c6`/`c6-cx-c6-c6`, and `c6-c6-c6-c6` torsions). Published HierGO/OPLS and
 GAFF2–AIM models can be retained as complete reference combinations, with

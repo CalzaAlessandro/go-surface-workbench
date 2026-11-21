@@ -1,0 +1,286 @@
+{
+  "schema_version": 1,
+  "preset_id": "gaff2_v3",
+  "version": "3.0.0",
+  "tier": "recommended",
+  "created_date": "2026-11-20",
+  "status": "production_validated_block2",
+  "charge_model": "L0_v2 (L0_v2c_a030 dual-regime HF/6-31G* MK RESP)",
+  "bonded_model": "GO_gaff2_v3 (18 lowercase GO-only atom types, 4-color DSATUR epoxides)",
+  "conventions": {
+    "vdw_combining_rule": "Lorentz-Berthelot (arithmetic sigma, geometric epsilon)",
+    "nonbonded_exclusions": "1-2 and 1-3 excluded",
+    "scee_14": 1.2,
+    "scnb_14": 2.0,
+    "lj_source": "gaff2.dat MOD4 identical to GAFF2",
+    "amber_namespace_audited_types": 129,
+    "amber_namespace_collisions": 0
+  },
+  "domain_scope": {
+    "supported_residues": [
+      "GGG",
+      "GRT",
+      "HYD",
+      "EPX",
+      "EP2",
+      "EP3",
+      "EP4",
+      "EPH",
+      "EH2",
+      "EH3",
+      "EH4",
+      "EPT",
+      "ET2",
+      "ET3",
+      "ET4",
+      "CAB",
+      "CBX",
+      "CBD"
+    ],
+    "priority_1_and_2": [
+      "basal_C",
+      "edge_CH",
+      "OH",
+      "basal_epoxide",
+      "edge_epoxide_EPH",
+      "edge_epoxide_EPT",
+      "carbonyl",
+      "COOH",
+      "COO-"
+    ],
+    "unsupported_priority_3": [
+      "lactones",
+      "planar_ethers",
+      "phenolic_sp2_OH",
+      "lactols",
+      "aldehydes",
+      "unparameterized_graft_junctions"
+    ],
+    "max_adjacent_epoxide_chromatic_number": 4
+  },
+  "calibration": {
+    "charge_calibration_set": "strict40 (40 C16/C24 models)",
+    "bonded_calibration_set": "strict37 (37 C16/C24 models) + C16 pyrene_COOH_torsion / pyrene_COO_torsion (M3)",
+    "cv_selection": {
+      "w_hess": 4.0,
+      "lam_K": 0.002,
+      "lam_0": 0.004,
+      "cv_med_force_RMSE": 14.63603909354793,
+      "cv_max_force_RMSE": 25.757396378654814,
+      "cv_med_hess_rel": 0.1812477907075066,
+      "cv_score": 1.7153130973508939
+    },
+    "c54_in_parameter_fit": false,
+    "c54_used_in_step2a_charge_variant_selection": true,
+    "unseen_blind_validation": "scheduled_block3"
+  },
+  "validation_summary": {
+    "gates_passed": {
+      "namespace_0_collisions": true,
+      "0_imaginary_modes_52": true,
+      "all_stationary_minF_lt_0p01": true,
+      "c54_neutral_F_med_le_20": true,
+      "c54_anionic_F_med_le_20": true,
+      "pyrene_COOH_tors_MAE_le_0p40": true,
+      "pyrene_COO_tors_MAE_le_0p40": true,
+      "openmm_vs_sander_parity_52": true,
+      "stress_tests_4_of_4": true,
+      "no_neutral_regression_F_vs_current": true,
+      "no_neutral_regression_freq_vs_current": true
+    },
+    "all_gates_passed": true,
+    "sander_vs_openmm_parity_52": {
+      "n_models": 52,
+      "passed": 52,
+      "max_energy_abs_diff_kJ_mol": 0.01409108350810584,
+      "max_force_abs_diff_kJ_mol_nm": 0.03167464245188967
+    },
+    "stress_tests_passed": "4/4",
+    "finite_mm": {
+      "coverage": "52/58 in-domain OK; 6/58 Priority-3 explicitly UNSUPPORTED",
+      "ALL_52": {
+        "n": 52,
+        "F_med": 14.778791683345453,
+        "F_max": 25.389027345069902,
+        "H_med_pct": 17.642434477812593,
+        "G_med_A": 0.09950819723735478,
+        "Freq_med_cm1": 34.96998685039023,
+        "total_imag": 0,
+        "imag_models": [],
+        "max_min_F_RMS": 0.00018822519132480667
+      },
+      "strict37": {
+        "n": 37,
+        "F_med": 14.68855861935403,
+        "F_max": 25.389027345069902,
+        "H_med_pct": 17.767129869752324,
+        "G_med_A": 0.09775443552314224,
+        "Freq_med_cm1": 35.87870945254725,
+        "total_imag": 0,
+        "imag_models": [],
+        "max_min_F_RMS": 0.00018822519132480667
+      },
+      "C54_neutral_9_size_transfer": {
+        "n": 9,
+        "F_med": 17.31648520557438,
+        "F_max": 21.411844496781885,
+        "H_med_pct": 17.598530743449352,
+        "G_med_A": 0.11752961461221498,
+        "Freq_med_cm1": 33.7421145083464,
+        "total_imag": 0,
+        "imag_models": [],
+        "max_min_F_RMS": 9.391410190743683e-05
+      },
+      "C54_anionic_5_size_transfer": {
+        "n": 5,
+        "F_med": 12.608941845835728,
+        "F_max": 17.784947094755776,
+        "H_med_pct": 17.17909781970667,
+        "G_med_A": 0.126967201471363,
+        "Freq_med_cm1": 32.104138450557635,
+        "total_imag": 0,
+        "imag_models": [],
+        "max_min_F_RMS": 7.072823743778224e-05
+      },
+      "extended_nq_1_holdout": {
+        "n": 1,
+        "F_med": 9.562938537841195,
+        "F_max": 9.562938537841195,
+        "H_med_pct": 20.089985369048673,
+        "G_med_A": 0.02796541612979746,
+        "Freq_med_cm1": 39.7111419154491,
+        "total_imag": 0,
+        "imag_models": [],
+        "max_min_F_RMS": 3.362222780536346e-05
+      }
+    },
+    "hf_6_31gstar_mk_esp": {
+      "strict40": {
+        "n": 40,
+        "ESP_RRMS_med_pct": 18.850876992626247,
+        "ESP_RRMS_max_pct": 40.473618352965325,
+        "charge_RMSD_med_e": 0.15402146099641334
+      },
+      "C54_all_14_size_transfer": {
+        "n": 14,
+        "ESP_RRMS_med_pct": 15.346134342291315,
+        "ESP_RRMS_max_pct": 36.12144019021603,
+        "charge_RMSD_med_e": 0.2011421071584441
+      },
+      "C54_neutral_9_size_transfer": {
+        "n": 9,
+        "ESP_RRMS_med_pct": 17.04545488061328,
+        "ESP_RRMS_max_pct": 36.12144019021603,
+        "charge_RMSD_med_e": 0.2101567428516154
+      },
+      "C54_anionic_5_size_transfer": {
+        "n": 5,
+        "ESP_RRMS_med_pct": 8.846017888247545,
+        "ESP_RRMS_max_pct": 11.296773146091109,
+        "charge_RMSD_med_e": 0.13466575700900657
+      }
+    },
+    "qm_torsions_kcal_mol": {
+      "pyrene_COOH_MAE": 0.04452348850600699,
+      "pyrene_COOH_barrier_err": 0.00434075187143268,
+      "pyrene_COO_MAE": 0.01233198008074495,
+      "pyrene_COO_barrier_err": -0.039497932160244886
+    },
+    "bsse_complexes_err_kcal_mol": {
+      "pyrene_COO_H2O": -1.1623997016838707,
+      "pyrene_COOH_H2O": 1.3839326655083841,
+      "pyrene_COO_Na": 7.121163533412556,
+      "pyrene_diol_cis_H2O": 3.049657908234513
+    },
+    "pyrene_benzene_9pt": {
+      "MAE_9pt_kcal_mol": 1.2314894235544114,
+      "RMSE_9pt_kcal_mol": 1.4367842223985237,
+      "z_min_A": 3.4,
+      "E_min_kcal_mol": -5.805618346518244,
+      "E_at_3p4_kcal_mol": -5.805618346518244,
+      "err_at_3p4_kcal_mol": 1.9596331063877424
+    }
+  },
+  "files": {
+    "CAB_gaff2_v3.lib": {
+      "sha256": "98d130a28b3717be334a66790de35dba678a1684fc7407f9238e61323ec26d57",
+      "bytes": 1281
+    },
+    "CBD_gaff2_v3.lib": {
+      "sha256": "02048cbfe695a6dfbf7532332bb7ce6f6d13532039fec6bdbd7d46603c10f54b",
+      "bytes": 1526
+    },
+    "CBX_gaff2_v3.lib": {
+      "sha256": "275768ff6b7cb6b8657df33b58bf866655f1a481cbfc6a034cdc879e8150963c",
+      "bytes": 1651
+    },
+    "EH2_gaff2_v3.lib": {
+      "sha256": "20140a00a22b92920b43d0b2a35b6bc4931bb544f3e7ace854602dc6052e6dc6",
+      "bytes": 1531
+    },
+    "EH3_gaff2_v3.lib": {
+      "sha256": "de82b82e304cf51f71a0d1579bd215bb358bd3bdc66e652c34312624c5d56937",
+      "bytes": 1531
+    },
+    "EH4_gaff2_v3.lib": {
+      "sha256": "ca429694f7765f1f1ab73324b19034b6bdd2d28afdcf7b135af914ed1abf0ab1",
+      "bytes": 1531
+    },
+    "EP2_gaff2_v3.lib": {
+      "sha256": "933c516fefcebdb42318d8dfc9f89c3ce00d54c32f8cfbc1edd360f3d6c8991b",
+      "bytes": 1409
+    },
+    "EP3_gaff2_v3.lib": {
+      "sha256": "aa35dacba2cc0c3cf21abea7d19f61a3bffd8aed66f16366062cb007123f47b5",
+      "bytes": 1409
+    },
+    "EP4_gaff2_v3.lib": {
+      "sha256": "df5045475c5f7cd0ca302722899e49c93a3906e76d7d9fab8de51caacbefded0",
+      "bytes": 1409
+    },
+    "EPH_gaff2_v3.lib": {
+      "sha256": "49a51ca8b3c5f0ec04b1ce4e27706b149d58b9a6dd7494f3ebf86f27489c43a4",
+      "bytes": 1531
+    },
+    "EPT_gaff2_v3.lib": {
+      "sha256": "43841d31e815d7562c06a89930681a3ad0699d98dffe90cfb29400f6cd8d4d06",
+      "bytes": 1654
+    },
+    "EPX_gaff2_v3.lib": {
+      "sha256": "3a97c32ac2eb74435eaca9ba79a89fe0b0c715db5363b32345cd3356203a5f8b",
+      "bytes": 1409
+    },
+    "ET2_gaff2_v3.lib": {
+      "sha256": "aa6a8a8327e08ebce16e5a32b8a8d24e57f5cb1c75a3f038e7d5eca1cbaf04b2",
+      "bytes": 1654
+    },
+    "ET3_gaff2_v3.lib": {
+      "sha256": "779f559219ddece9970880bc0b907ca155207b2c6b1b33ae9d1b8b809cbbbd42",
+      "bytes": 1654
+    },
+    "ET4_gaff2_v3.lib": {
+      "sha256": "114e37c3fc9d68af8b3426ab8b41bc428a22bc9dcb692fe212705a5bb41567b9",
+      "bytes": 1654
+    },
+    "GGG_gaff2_v3.lib": {
+      "sha256": "aa8782018720a9cf341b59a34354420cae97d6af02fd095ea40c761eda482f03",
+      "bytes": 1088
+    },
+    "GO_gaff2_v3.frcmod": {
+      "sha256": "0d581dd6d81988523c4086a5c499e7d90380998a389da2c0a76dd16868a63268",
+      "bytes": 22599
+    },
+    "GRT_gaff2_v3.lib": {
+      "sha256": "5f2abeb3c79f4ebea2aa3b8007bdf3b7600fae1f994e597e40ddc2a85481dec1",
+      "bytes": 1281
+    },
+    "HYD_gaff2_v3.lib": {
+      "sha256": "9c1eb3cd18707d17b46941131112d324459f46ca91335385213dae3b42b91994",
+      "bytes": 1402
+    },
+    "L0_v2_charges.json": {
+      "sha256": "3fd31b53c6e1a91491d2a295bdb37284bd8b19820b25b01de5a9b6c9a302a758",
+      "bytes": 1726
+    }
+  }
+}

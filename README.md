@@ -7,7 +7,7 @@ Generate graphene oxide sheets with explicit connectivity and optional covalent 
   <a href="https://doi.org/10.5281/zenodo.24119849"><img src="https://img.shields.io/badge/Archive-10.5281%2Fzenodo.24119849-2457A7?style=flat" alt="Archive DOI: 10.5281/zenodo.24119849"></a>
   <a href="https://github.com/CalzaAlessandro/go-surface-workbench/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/CalzaAlessandro/go-surface-workbench/tests.yml?branch=main&amp;style=flat&amp;label=Tests" alt="Software tests"></a>
   <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-%E2%89%A53.11-58616B?style=flat" alt="Python: 3.11 or later"></a>
-  <img src="https://img.shields.io/badge/Status-Milestone%20block--1--builder-2E8B57?style=flat" alt="Status: Milestone block-1-builder">
+  <img src="https://img.shields.io/badge/Status-Milestone%20block--2--amber--core-2E8B57?style=flat" alt="Status: Milestone block-2-amber-core">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-607D8B?style=flat" alt="License: Apache-2.0"></a>
 </p>
 
@@ -27,9 +27,10 @@ Generate graphene oxide sheets with explicit connectivity and optional covalent 
 - [License](#license)
 
 > [!IMPORTANT]
-> **Project status (`block-1-builder`)**
+> **Project status (`block-2-amber-core`)**
 > - **Ready to use — Blocco 1 (Structure Builder):** finite & periodic GO construction (`rectangular`, `hexagonal`, `circular`), nm sizing, HierGO-style pore distributions, `pH`-aware `C/O` & `O/C` composition solving, `random`/`island`/`dispersed` patterns, Priority 1 & 2 oxygen groups (`OH`, `epoxide`, `COOH`, `COO−`, `carbonyl`, `epoxide_eph`, `epoxide_ept`), $O(N)$ pre-export motif-aware integrity gating, and multi-format exports (`JSON`, `PDB`, `MOL2`, `XYZ`, `EXTXYZ`, `SDF V3000`, `CIF P1`) via direct CLI or `.toml`/`.json` configs.
-> - **Active research / preliminary — Blocco 2+:** new force-field parameters, charges, and topologies remain preliminary pending peer-reviewed validation. See the [validation status](VALIDATION.md) and [charge presets](docs/CHARGE_PRESETS.md) before using derived parameters in production simulations.
+> - **Ready to use — Blocco 2 (Core AMBER `gaff2_v3` + `L0_v2` & Multi-Engine Parity):** versioned `gaff2_v3` recommended preset (`resources/reference/gaff2_v3/`: `GO_gaff2_v3.frcmod`, 18 `*_gaff2_v3.lib`, `L0_v2c_a030` dual-regime charges, `PROVENANCE.json` SHA-256) covering Priority 1+2 chemistry (`52/58` benchmark models in-domain; Priority-3 motifs and unparameterized junctions explicitly rejected; `0/129` Amber namespace collisions), 4-color DSATUR epoxide typing, external custom charges (`--charge-model custom --charges-json`), deprecated `--preset gaff2_current` retained only for archival backwards compatibility, precision-upgraded `07_export_gromacs.py` (`.top`/`.itp`), and standalone pure-Python `08_export_openmm.py` (`.xml`).
+> - **Active research / preliminary — Blocco 3+:** closed-shell whole-sheet QM (`xTB` pre-relaxation), `L1_reg`/periodic writers, and non-AMBER force fields (`OPLS-AA`, `OpenFF`, `CHARMM`) remain in development. See [VALIDATION.md](VALIDATION.md), [CHARGE_PRESETS.md](docs/CHARGE_PRESETS.md), and [REFERENCE_AND_PRESETS.md](docs/REFERENCE_AND_PRESETS.md).
 
 ## Getting started
 
@@ -108,29 +109,42 @@ See [Feature comparison & scalability](docs/COMPARISON.md) for the updated matri
 `GOPY`, `HierGO`, `MakeGraphitics`, and `GrapheneGUI`, and [Benchmarks](docs/PERFORMANCE.md)
 for the reproducible 10-case scaling table (`scripts/benchmark_build.py --blocco1`).
 
-### Full Pipeline & Amber Quickstart Steps
+### Full Pipeline, AMBER Presets & Multi-Engine Export
 
-Build and functionalize a GO sheet with:
-`01_build_GO.py` → `02_open_epoxides.py` (optional) → `03_prepare_amber.py`.
+Build and parameterize a GO sheet with:
+`01_build_GO.py` → `02_open_epoxides.py` (optional) → `03_prepare_amber.py` → `07_export_gromacs.py` / `08_export_openmm.py`.
 Use `prepare_fragment.py` to prepare grafting reagents for reuse across loadings
 and random seeds.
 
-To run the minimal quickstart steps separately:
-
 ```bash
+# Build, check, and generate AMBER topology with default gaff2_v3 (GO_gaff2_v3.frcmod + L0_v2; requires AmberTools/tleap for --run)
 uv run python 01_build_GO.py --recipe examples/finite_GO.json --output work/finite_GO.json --pdb work/finite_GO.pdb --json
 uv run python check_model.py --model work/finite_GO.json --json
-uv run python 03_prepare_amber.py --model work/finite_GO.json --output-dir work/amber --radii mbondi2
+uv run python 03_prepare_amber.py --list-presets
+uv run python 03_prepare_amber.py --model work/finite_GO.json --output-dir work/amber_run --radii mbondi2 --run
+
+# Export to GROMACS / OpenMM (using go.prmtop/go.inpcrd created above by --run):
+uv run python 07_export_gromacs.py --topology work/amber_run/go.prmtop --coordinates work/amber_run/go.inpcrd --output-prefix work/gmx/go
+uv run python 08_export_openmm.py --topology work/amber_run/go.prmtop --coordinates work/amber_run/go.inpcrd --output work/openmm/go.xml
 ```
+
+Optional overrides (preparing LEaP inputs with external custom per-atom charges JSON or comparing against the deprecated archival baseline `gaff2_current`):
+
+```bash
+uv run python 03_prepare_amber.py --model work/finite_GO.json --output-dir work/amber_custom --preset gaff2_v3 --charge-model custom --charges-json path/to/charges.json
+uv run python 03_prepare_amber.py --model work/finite_GO.json --output-dir work/amber_legacy --preset gaff2_current
+```
+
+`gaff2_v3` supports finite Priority 1+2 GO sheets (`basal_C`, `edge_CH`, `OH`, basal `epoxide`, `epoxide_eph`, `epoxide_ept`, `carbonyl`, `COOH`, `COO−`) and explicitly rejects Priority-3 motifs (phenols, planar ethers, lactones/esters, lactols, aldehydes) and unparameterized junctions. `gaff2_current` is deprecated (kept only for archival regression compatibility when explicitly requested or when `--reference-dir` is supplied without `--preset`).
 
 ## Data and files
 
 | Output under `work/quickstart/` | Contents |
 |---|---|
 | `finite_GO.json`, `finite_GO.pdb` | Sheet connectivity and coordinates |
-| `amber/tleap.in`, `amber/GO_gaff2.frcmod` | LEaP input and parameter modifications |
-| `amber/assigned_model.json`, `amber/library_audit.json` | Atom-type and library assignments |
-| `amber/manifest.json`, `amber/normalized_libraries/` | Input manifest and unit libraries |
+| `amber/tleap.in`, `amber/GO_gaff2_v3.frcmod` | LEaP input and validated `v3` parameter modifications |
+| `amber/assigned_model.json`, `amber/library_audit.json` | 25-role graph assignment, `L0_v2` charges, and SHA-256 library audit |
+| `amber/manifest.json`, `amber/PROVENANCE.json`, `amber/v3_libraries/` | Input manifest, force-field/charge provenance, and 18 GO `.lib` units |
 
 The [command reference](docs/REFERENCE.md#scripts--usage-workflow) lists the
 build, functionalization, parameterization, docking and export scripts.

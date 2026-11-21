@@ -1,17 +1,33 @@
 {
-  "schema_version": 2,
-  "primary_derivation": "RESP on isolated/mixed GO fragments; lookup/rule/published-method calibration selected after independent context validation",
+  "schema_version": 3,
+  "primary_derivation": "HF/6-31G* MK RESP on strict40 C16/C24 fragments; L0_v2 dual-regime charges paired with GO_gaff2_v3 bonded terms (fitted on strict37 + 2 C16 torsion scans) evaluated on size-transfer C54 (excluded from fits; used in step2a variant selection; unseen sheets in Block 3), torsions, BSSE, stacking & condensed QM/MM",
   "fixed_charge_MD": true,
   "preserve_published_coefficients": true,
+  "default_amber_preset": "gaff2_v3",
   "presets": [
     {
+      "id": "gaff2_v3",
+      "charge_preset_id": "resp-l0-v2",
+      "label": "GO_gaff2_v3 + L0_v2 dual-regime HF/6-31G* RESP (Block 2 recommended)",
+      "tier": "recommended",
+      "charge_method": "L0_v2 (L0_v2c_a030: fixed roles when N_COO=0; exp(-0.30*d_graph) sp2 delocalization when N_COO>0)",
+      "mode": "dual_regime_fixed_roles_plus_sp2_delocalization",
+      "status": "production_validated_block2",
+      "source": "resources/reference/gaff2_v3",
+      "provenance": "resources/reference/gaff2_v3/PROVENANCE.json",
+      "paired_parameters": "GO_gaff2_v3.frcmod (18 lowercase GO-only types, 4-color DSATUR epoxides) + 18 clean 1-unit *_gaff2_v3.lib files",
+      "domain_scope": "Priority 1+2 (GGG, GRT, HYD, EPX, EPH, EPT, CAB, CBX, CBD); Priority 3 explicitly rejected"
+    },
+    {
       "id": "resp-current",
-      "label": "Current user RESP block libraries",
+      "preset_id": "gaff2_current",
+      "label": "Deprecated legacy user RESP block libraries (gaff2_current)",
+      "tier": "legacy",
       "charge_method": "RESP (user-reported HF/6-31G* fragment protocol)",
       "mode": "fixed_library",
-      "status": "legacy_reference_not_newly_validated",
+      "status": "legacy_deprecated_retained_for_compatibility_only",
       "source": "resources/reference/current",
-      "paired_parameters": "existing current GAFF2 source preset; unchanged"
+      "paired_parameters": "existing GO_gaff2.frcmod; deprecated archival baseline retained for backwards compatibility"
     },
     {
       "id": "resp-go-new",
@@ -89,7 +105,7 @@
     }
   ],
   "charge_preset_changes_model_dimensions": false,
-  "bonded_parameter_derivation_status": "deferred_by_user_current_focus_charges_and_charge_LJ_pairs",
+  "bonded_parameter_derivation_status": "block2_amber_gaff2_v3_validated_other_families_pending",
   "published_bundle_policy": {
     "preserve_together": [
       "partial_charges",
@@ -102,13 +118,13 @@
     "redistribution_under_published_name_permitted": false,
     "unsupported_chemistry": "explicit_error_no_cross_preset_fallback",
     "Amber_export_gate": "validated_full_conversion_and_explicit_compatible_GB_radius_policy",
-    "enforcement_status": "research_catalog_policy; generic production selector not implemented"
+    "enforcement_status": "amber_gaff2_v3_preset_selector_operational_other_families_catalog_only"
   },
   "net_charge_policy": "integer determined by chemistry and protonation, including nonzero totals; no global neutralization",
   "assignment_methods": [
     {
       "id": "fixed_library",
-      "status": "legacy_assignment_available_new_modular_HF_RESP_candidate_not_production_validated"
+      "status": "gaff2_v3_L0_v2_validated_default_and_legacy_current_deprecated_retained"
     },
     {
       "id": "graph_context",

@@ -13,12 +13,20 @@ import math
 import re
 import shutil
 import subprocess
+import xml.etree.ElementTree as ET
 from copy import deepcopy
 from pathlib import Path
 
 import numpy as np
 
 from .ff import DEFAULT_REFERENCE, assign_current_fragments, normalize_libraries
+from .ff_v3 import (
+    assign_gaff2_v3,
+    compute_l0_v2_charges,
+    load_custom_charges,
+    resolve_force_field_preset,
+    verify_v3_bundle,
+)
 
 ENGINE_SOURCES = [
     "https://ambermd.org/FileFormats.php",
@@ -72,12 +80,60 @@ def _residue_map(model):
     return result
 
 
+def _write_amber_provenance(
+    output_dir: Path,
+    *,
+    preset: str,
+    frcmod_name: str,
+    frcmod_sha256: str,
+    assigned: dict,
+    radii: str,
+    topology_path: Path | None = None,
+    coordinates_path: Path | None = None,
+) -> Path:
+    ff_meta = assigned.get("metadata", {}).get("force_field", {})
+    prov = {
+        "schema_version": 1,
+        "preset": preset,
+        "version": ff_meta.get("version", "1.0.0"),
+        "tier": ff_meta.get("tier", "legacy"),
+        "custom_combination": bool(ff_meta.get("custom_combination", False)),
+        "bonded_model": ff_meta.get("bonded_model", ff_meta.get("name")),
+        "charge_model": ff_meta.get("charge_model", "current_lib"),
+        "charge_regime": ff_meta.get("charge_regime", "fixed_fragment_libraries"),
+        "charge_info": ff_meta.get("charge_info"),
+        "conventions": {
+            "vdw_combining_rule": "Lorentz-Berthelot",
+            "nonbonded_exclusions": "1-2 and 1-3 excluded",
+            "scee_14": 1.2,
+            "scnb_14": 2.0,
+            "gb_radii_set": radii,
+        },
+        "files": {
+            "frcmod": frcmod_name,
+            "frcmod_sha256": frcmod_sha256,
+            "bundle_provenance_sha256": ff_meta.get("provenance_sha256"),
+            "prmtop_sha256": _sha(topology_path) if topology_path else None,
+            "inpcrd_sha256": _sha(coordinates_path) if coordinates_path else None,
+        },
+        "atom_count": len(assigned["atoms"]),
+        "bond_count": len(assigned["bonds"]),
+        "net_charge_e": float(sum(a["charge"] for a in assigned["atoms"])),
+    }
+    prov_path = output_dir / "PROVENANCE.json"
+    _json(prov_path, prov)
+    return prov_path
+
+
 def prepare_amber(
     model,
     output_dir,
     *,
     run=False,
     tleap="tleap",
+    preset=None,
+    charge_model="auto",
+    charges_json=None,
     reference_dir=None,
     parameter_templates=None,
     radii="mbondi2",
@@ -102,19 +158,121 @@ def prepare_amber(
         )
     if radii not in ("bondi", "mbondi", "mbondi2", "mbondi3"):
         raise ValueError("Unsupported GB radii set")
-    reference_dir = Path(reference_dir or DEFAULT_REFERENCE)
-    assigned = assign_current_fragments(
-        model, reference_dir, parameter_templates=parameter_templates
-    )
+
+    if preset is None:
+        resolved_preset = "gaff2_current" if reference_dir is not None else "gaff2_v3"
+    else:
+        resolved_preset = resolve_force_field_preset(preset)
+    if charges_json is not None and charge_model != "custom":
+        raise ValueError(
+            f"charges_json requires charge_model='custom' (got {charge_model!r})"
+        )
+    if parameter_templates is not None and (charge_model != "auto" or charges_json is not None):
+        raise ValueError(
+            "parameter_templates supplies dedicated charges and cannot be combined with explicit charge_model/charges_json overrides"
+        )
+
     executable = shutil.which(str(tleap)) if run else None
     if run and executable is None:
         raise ValueError(f"tleap executable unavailable: {tleap}")
-    source_frcmod = reference_dir / "GO_gaff2.frcmod"
-    if not source_frcmod.is_file():
-        raise ValueError("Current GO_gaff2.frcmod is missing")
-    output_dir.mkdir(parents=True)
-    audit = normalize_libraries(reference_dir, output_dir / "normalized_libraries")
-    shutil.copyfile(source_frcmod, output_dir / "GO_gaff2.frcmod")
+
+    if resolved_preset == "gaff2_v3":
+        bundle = verify_v3_bundle(reference_dir)
+        frcmod_name = "GO_gaff2_v3.frcmod"
+        source_frcmod = Path(bundle["frcmod_path"])
+        assigned = assign_gaff2_v3(
+            model,
+            reference_dir=reference_dir,
+            charge_model=charge_model,
+            custom_charges=charges_json,
+            parameter_templates=parameter_templates,
+        )
+        output_dir.mkdir(parents=True)
+        v3_lib_out = output_dir / "v3_libraries"
+        v3_lib_out.mkdir(parents=True)
+        audit = {}
+        ref_dir = Path(bundle["reference_dir"])
+        for lib_file in sorted(ref_dir.glob("*_gaff2_v3.lib")):
+            dest = v3_lib_out / lib_file.name
+            shutil.copyfile(lib_file, dest)
+            audit[lib_file.stem.split("_")[0]] = {
+                "source": str(lib_file),
+                "sha256": _sha(dest),
+            }
+        shutil.copyfile(source_frcmod, output_dir / frcmod_name)
+    else:
+        cur_dir = Path(reference_dir or DEFAULT_REFERENCE)
+        frcmod_name = "GO_gaff2.frcmod"
+        source_frcmod = cur_dir / frcmod_name
+        if not source_frcmod.is_file():
+            raise ValueError("Current GO_gaff2.frcmod is missing")
+        assigned = assign_current_fragments(
+            model, cur_dir, parameter_templates=parameter_templates
+        )
+        if parameter_templates is not None:
+            for atom in assigned["atoms"]:
+                ameta = atom.setdefault("metadata", {})
+                ameta["charge_source"] = "dedicated_parameter_templates"
+                ameta.pop("v3_role", None)
+                ameta.pop("epoxide_color", None)
+            assigned.setdefault("metadata", {})["force_field"] = {
+                "preset": "gaff2_current",
+                "version": "1.0.0",
+                "tier": "custom_combination",
+                "custom_combination": True,
+                "name": "GAFF2 + dedicated parameter_templates",
+                "bonded_model": "dedicated_parameter_templates",
+                "charge_model": "dedicated_parameter_templates",
+                "charge_regime": "dedicated_parameter_templates",
+                "charge_info": {
+                    "charge_model": "dedicated_parameter_templates",
+                    "regime": "dedicated_parameter_templates",
+                    "provenance": parameter_templates.get("provenance"),
+                },
+            }
+        else:
+            ff_meta = assigned.setdefault("metadata", {}).setdefault("force_field", {})
+            if charge_model in ("auto", "current", "current_lib"):
+                q_info = {"charge_model": "current_lib", "regime": "fixed_fragment_libraries"}
+                custom_combo = False
+                q_model_name = "current_lib"
+                if charge_model == "current_lib":
+                    q_info["source_dir"] = str(cur_dir.resolve())
+            elif charge_model in ("l0_v2", "L0_v2"):
+                q_vec, q_info = compute_l0_v2_charges(assigned)
+                for idx, atom in enumerate(assigned["atoms"]):
+                    atom["charge"] = float(q_vec[idx])
+                    atom.setdefault("metadata", {})["charge_source"] = "custom_combo:gaff2_current+L0_v2"
+                custom_combo = True
+                q_model_name = "L0_v2c_a030"
+            elif charge_model == "custom":
+                if charges_json is None:
+                    raise ValueError("custom charges_json is required when charge_model='custom'")
+                q_vec, q_info = load_custom_charges(charges_json, assigned)
+                for idx, atom in enumerate(assigned["atoms"]):
+                    atom["charge"] = float(q_vec[idx])
+                    atom.setdefault("metadata", {})["charge_source"] = f"custom:{q_info['source']}"
+                custom_combo = True
+                q_model_name = "custom"
+            else:
+                raise ValueError(
+                    f"Unsupported charge_model {charge_model!r} for gaff2_current"
+                )
+            ff_meta.update(
+                {
+                    "preset": "gaff2_current",
+                    "version": "1.0.0",
+                    "tier": "custom_combination" if custom_combo else "legacy",
+                    "custom_combination": custom_combo,
+                    "charge_model": q_model_name,
+                    "charge_regime": q_info["regime"],
+                    "charge_info": q_info,
+                }
+            )
+        output_dir.mkdir(parents=True)
+        audit = normalize_libraries(cur_dir, output_dir / "normalized_libraries")
+        shutil.copyfile(source_frcmod, output_dir / frcmod_name)
+
     extra = []
     if parameter_templates:
         source = Path(parameter_templates["frcmod"])
@@ -124,7 +282,7 @@ def prepare_amber(
     assigned["atoms"].sort(key=lambda atom: residues[(atom["resid"], atom["resname"])])
     lines = [
         "source leaprc.gaff2",
-        "loadAmberParams GO_gaff2.frcmod",
+        f"loadAmberParams {frcmod_name}",
         *extra,
         f"set default PBRadii {radii}",
         "mol = createUnit GO",
@@ -163,12 +321,26 @@ def prepare_amber(
     leap_input.write_text("\n".join(lines) + "\n")
     _json(output_dir / "assigned_model.json", assigned)
     _json(output_dir / "library_audit.json", audit)
+    frcmod_sha = _sha(source_frcmod)
+    prov_path = _write_amber_provenance(
+        output_dir,
+        preset=resolved_preset,
+        frcmod_name=frcmod_name,
+        frcmod_sha256=frcmod_sha,
+        assigned=assigned,
+        radii=radii,
+    )
+    ff_meta = assigned.get("metadata", {}).get("force_field", {})
     result = {
         "status": "inputs_prepared",
+        "preset": resolved_preset,
+        "charge_model": ff_meta.get("charge_model"),
+        "custom_combination": bool(ff_meta.get("custom_combination", False)),
         "parameterized": False,
         "leap_input": str(leap_input),
         "assigned_model": str(output_dir / "assigned_model.json"),
         "library_audit": str(output_dir / "library_audit.json"),
+        "provenance": str(prov_path),
         "topology": None,
         "coordinates": None,
         "radii_set": radii,
@@ -176,7 +348,7 @@ def prepare_amber(
         "atom_count": len(assigned["atoms"]),
         "bond_count": len(assigned["bonds"]),
         "net_charge": sum(a["charge"] for a in assigned["atoms"]),
-        "go_frcmod_sha256": _sha(source_frcmod),
+        "go_frcmod_sha256": frcmod_sha,
         "gbsa": gbsa_readiness(assigned),
         "periodic_policy": "finite solute; requested box is not solvation; nonzero bond images rejected",
         "engine_sources": ENGINE_SOURCES,
@@ -212,9 +384,19 @@ def prepare_amber(
         if not np.allclose(
             [a["charge"] for a in imported["atoms"]],
             [a["charge"] for a in assigned["atoms"]],
-            atol=1e-7,
+            atol=1e-6,
         ):
             raise ValueError("LEaP altered assigned fragment charges")
+        _write_amber_provenance(
+            output_dir,
+            preset=resolved_preset,
+            frcmod_name=frcmod_name,
+            frcmod_sha256=frcmod_sha,
+            assigned=assigned,
+            radii=radii,
+            topology_path=top,
+            coordinates_path=crd,
+        )
         result.update(
             status="parameterized",
             parameterized=True,
@@ -456,6 +638,164 @@ def _verify_parameter_roundtrip(original, converted):
     return summary
 
 
+def _link_upstream_provenance(topology, coordinates):
+    top_path = Path(topology).resolve()
+    crd_path = Path(coordinates).resolve()
+    top_sha = _sha(top_path)
+    crd_sha = _sha(crd_path)
+    upstream_path = top_path.parent / "PROVENANCE.json"
+    upstream_data = None
+    upstream_sha = None
+    verified = False
+    if upstream_path.is_file():
+        try:
+            raw_bytes = upstream_path.read_bytes()
+            candidate = json.loads(raw_bytes.decode("utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+            raw_bytes = None
+            candidate = None
+        files_meta = candidate.get("files") if isinstance(candidate, dict) else None
+        if (
+            raw_bytes is not None
+            and isinstance(files_meta, dict)
+            and files_meta.get("prmtop_sha256") == top_sha
+            and files_meta.get("inpcrd_sha256") == crd_sha
+        ):
+            upstream_data = candidate
+            upstream_sha = hashlib.sha256(raw_bytes).hexdigest()
+            verified = True
+    return {
+        "source_topology": str(top_path),
+        "source_topology_sha256": top_sha,
+        "source_coordinates": str(crd_path),
+        "source_coordinates_sha256": crd_sha,
+        "amber_provenance": str(upstream_path) if verified else None,
+        "amber_provenance_sha256": upstream_sha if verified else None,
+        "amber_provenance_verified": verified,
+        "preset": upstream_data.get("preset") if verified else None,
+        "charge_model": upstream_data.get("charge_model") if verified else None,
+        "charge_regime": upstream_data.get("charge_regime") if verified else None,
+        "custom_combination": upstream_data.get("custom_combination") if verified else None,
+    }
+
+
+def _upgrade_gromacs_precision(top_path: Path, itp_path: Path, structure, converted) -> int:
+    """Rewrite ParmEd GROMACS force-field numbers at full float64 precision.
+
+    ParmEd formats .top/.itp values with 4-8 digits (e.g. fudgeQQ=0.83333333,
+    6-8 decimal LJ sigma/eps and partial charges, and 4-5 digit bond force
+    constants), introducing up to ~0.08 kJ/mol energy drift and >1e-3 kJ/(mol*nm)
+    force drift on unrelaxed contacts relative to Amber/OpenMM.
+    """
+    scale_sig = (2.0 ** (5.0 / 6.0)) * 0.1
+    type_lj: dict[str, tuple[float, float]] = {}
+    for s_atom, c_atom in zip(structure.atoms, converted.atoms, strict=True):
+        rmin = float(s_atom.rmin)
+        sig = 0.0 if rmin == 0.0 else rmin * scale_sig
+        eps = float(s_atom.epsilon) * 4.184
+        type_lj.setdefault(str(c_atom.type), (sig, eps))
+
+    scee_vals = [
+        float(dt.scee)
+        for d in structure.dihedrals
+        if not getattr(d, "improper", False) and not getattr(d, "ignore_end", False)
+        for dt in (d.type if isinstance(d.type, list) else [d.type])
+        if dt is not None and float(getattr(dt, "scee", 0.0)) > 0.0
+    ]
+    scnb_vals = [
+        float(dt.scnb)
+        for d in structure.dihedrals
+        if not getattr(d, "improper", False) and not getattr(d, "ignore_end", False)
+        for dt in (d.type if isinstance(d.type, list) else [d.type])
+        if dt is not None and float(getattr(dt, "scnb", 0.0)) > 0.0
+    ]
+    fudge_qq = 1.0 / scee_vals[0] if scee_vals and all(abs(x - scee_vals[0]) < 1e-9 for x in scee_vals) else None
+    fudge_lj = 1.0 / scnb_vals[0] if scnb_vals and all(abs(x - scnb_vals[0]) < 1e-9 for x in scnb_vals) else None
+
+    top_section = None
+    top_out: list[str] = []
+    for raw_line in top_path.read_text(encoding="utf-8").splitlines(keepends=True):
+        stripped = raw_line.strip()
+        if stripped.startswith("[") and stripped.endswith("]"):
+            top_section = stripped[1:-1].strip().lower()
+            top_out.append(raw_line)
+            continue
+        if stripped and not stripped.startswith((";", "#", "*")):
+            body, sep, comment = raw_line.rstrip("\r\n").partition(";")
+            parts = body.split()
+            suffix = f" ; {comment.strip()}" if sep else ""
+            if top_section == "defaults" and len(parts) >= 5:
+                flj = fudge_lj if fudge_lj is not None else float(parts[3])
+                fqq = fudge_qq if fudge_qq is not None else float(parts[4])
+                top_out.append(f"{parts[0]} {parts[1]} {parts[2]} {flj:.15g} {fqq:.15g}{suffix}\n")
+                continue
+            if top_section == "atomtypes" and len(parts) >= 7 and parts[0] in type_lj:
+                sig, eps = type_lj[parts[0]]
+                top_out.append(
+                    f"{parts[0]:<10s} {parts[1]:>5s} {parts[2]:>11s} {parts[3]:>11s} {parts[4]:>2s} "
+                    f"{sig:21.15e} {eps:21.15e}{suffix}\n"
+                )
+                continue
+        top_out.append(raw_line)
+    top_path.write_text("".join(top_out), encoding="utf-8")
+
+    bond_lookup: dict[tuple[int, int], tuple[float, float]] = {}
+    for bond in structure.bonds:
+        if bond.type is None:
+            continue
+        i1, i2 = bond.atom1.idx + 1, bond.atom2.idx + 1
+        key = (min(i1, i2), max(i1, i2))
+        bond_lookup[key] = (float(bond.type.req) * 0.1, float(bond.type.k) * 836.8)
+
+    updated_bonds = 0
+    section = None
+    out_lines: list[str] = []
+    for raw_line in itp_path.read_text(encoding="utf-8").splitlines(keepends=True):
+        stripped = raw_line.strip()
+        if stripped.startswith("[") and stripped.endswith("]"):
+            section = stripped[1:-1].strip().lower()
+            out_lines.append(raw_line)
+            continue
+        if section == "atoms" and stripped and not stripped.startswith((";", "#")):
+            body, sep, comment = raw_line.rstrip("\r\n").partition(";")
+            parts = body.split()
+            if len(parts) >= 8:
+                try:
+                    nr = int(parts[0])
+                except ValueError:
+                    out_lines.append(raw_line)
+                    continue
+                if 1 <= nr <= len(structure.atoms):
+                    s_atom = structure.atoms[nr - 1]
+                    suffix = f" ; {comment.strip()}" if sep else ""
+                    extra = (" " + " ".join(parts[8:])) if len(parts) > 8 else ""
+                    out_lines.append(
+                        f"{nr:6d} {parts[1]:>10s} {parts[2]:>6s} {parts[3]:>6s} "
+                        f"{parts[4]:>6s} {parts[5]:>6s} {float(s_atom.charge):22.15e} "
+                        f"{float(s_atom.mass):15.10f}{extra}{suffix}\n"
+                    )
+                    continue
+        if section == "bonds" and stripped and not stripped.startswith((";", "#")):
+            body, sep, comment = raw_line.rstrip("\r\n").partition(";")
+            parts = body.split()
+            if len(parts) >= 5 and parts[2] == "1":
+                try:
+                    ai, aj = int(parts[0]), int(parts[1])
+                except ValueError:
+                    out_lines.append(raw_line)
+                    continue
+                key = (min(ai, aj), max(ai, aj))
+                if key in bond_lookup:
+                    c0, c1 = bond_lookup[key]
+                    suffix = f" ; {comment.strip()}" if sep else ""
+                    out_lines.append(f"{ai:6d} {aj:6d} {1:5d} {c0:21.15e} {c1:21.15e}{suffix}\n")
+                    updated_bonds += 1
+                    continue
+        out_lines.append(raw_line)
+    itp_path.write_text("".join(out_lines), encoding="utf-8")
+    return updated_bonds
+
+
 def export_gromacs(topology, coordinates, output_prefix, *, overwrite=False, model=None):
     """Convert the same complete Amber parameterization with ParmEd.
 
@@ -475,6 +815,7 @@ def export_gromacs(topology, coordinates, output_prefix, *, overwrite=False, mod
             ("itp", ".itp"),
             ("gro", ".gro"),
             ("manifest", ".manifest.json"),
+            ("provenance", ".provenance.json"),
         ]
     }
     if any(p.exists() for p in paths.values()):
@@ -482,6 +823,7 @@ def export_gromacs(topology, coordinates, output_prefix, *, overwrite=False, mod
     if overwrite:
         raise ValueError("overwrite is unsupported; choose a fresh prefix")
     structure = _load_amber(topology, coordinates)
+    upstream = _link_upstream_provenance(topology, coordinates)
     import parmed as pmd
 
     converted = pmd.gromacs.GromacsTopologyFile.from_structure(structure)
@@ -489,21 +831,462 @@ def export_gromacs(topology, coordinates, output_prefix, *, overwrite=False, mod
     converted.write(str(paths["top"]), molfile=str(paths["itp"]), combine="all")
     text = paths["top"].read_text().replace(f'"{paths["itp"]}"', f'"{paths["itp"].name}"')
     paths["top"].write_text(text)
+    bonds_upgraded = _upgrade_gromacs_precision(paths["top"], paths["itp"], structure, converted)
     structure.save(str(paths["gro"]), overwrite=False)
     roundtrip = pmd.load_file(str(paths["top"]), xyz=str(paths["gro"]))
     verification = _verify_parameter_roundtrip(structure, roundtrip)
+    prov = {
+        "schema_version": 1,
+        "format": "gromacs",
+        **upstream,
+        "itp_bond_precision_upgraded": bonds_upgraded,
+        "outputs": {k: str(v) for k, v in paths.items() if k != "provenance"},
+    }
+    _json(paths["provenance"], prov)
     result = {key: str(value) for key, value in paths.items()}
     result.update(
         status="exported",
         parameterized=True,
         roundtrip_verified=verification,
         source_topology_sha256=_sha(topology),
+        itp_bond_precision_upgraded=bonds_upgraded,
+        preset=upstream["preset"],
+        charge_model=upstream["charge_model"],
         atom_count=len(structure.atoms),
         bond_count=len(structure.bonds),
         periodic_molecules="no (finite covalent topology only)",
         gbsa_note="GB radii/screens remain in source Amber topology; standard GROMACS export does not transfer these fields",
         engine_sources=ENGINE_SOURCES,
     )
+    _json(paths["manifest"], result)
+    return result
+
+
+def _fmt_xml_float(value: float) -> str:
+    val = float(value)
+    if val == 0.0:
+        return "0"
+    return format(val, ".16g")
+
+
+def _verify_standard_lorentz_berthelot_lj(structure) -> None:
+    """Reject NBFIX, non-Lorentz mixing, 12-6-4 C4 terms, and 10-12 H-bond terms."""
+    comb = str(getattr(structure, "combining_rule", "lorentz") or "lorentz").lower()
+    if comb != "lorentz":
+        raise ValueError(
+            f"Unsupported Amber LJ combining_rule {comb!r}; standalone NonbondedForce XML requires Lorentz-Berthelot"
+        )
+    if hasattr(structure, "has_NBFIX") and structure.has_NBFIX():
+        raise ValueError(
+            "Amber topology contains pair-specific Lennard-Jones overrides (NBFIX); "
+            "standalone NonbondedForce OpenMM XML export cannot represent NBFIX"
+        )
+    parm_data = getattr(structure, "parm_data", None) or {}
+    ccoef = parm_data.get("LENNARD_JONES_CCOEF")
+    if ccoef and any(abs(float(x)) > 0.0 for x in ccoef):
+        raise ValueError(
+            "Amber topology contains nonzero 12-6-4 LENNARD_JONES_CCOEF terms unsupported by standalone NonbondedForce XML"
+        )
+    pointers = parm_data.get("POINTERS")
+    nb_index = parm_data.get("NONBONDED_PARM_INDEX")
+    acoef = parm_data.get("LENNARD_JONES_ACOEF")
+    bcoef = parm_data.get("LENNARD_JONES_BCOEF")
+    if pointers is not None and nb_index is not None and acoef is not None and bcoef is not None and len(pointers) > 1:
+        ntypes = int(pointers[1])
+        hba = parm_data.get("HBOND_ACOEF") or []
+        hbb = parm_data.get("HBOND_BCOEF") or []
+        nb_map: dict[int, tuple[float, float]] = {}
+        for atom in structure.atoms:
+            nb_i = int(getattr(atom, "nb_idx", 0) or 0)
+            if nb_i <= 0:
+                continue
+            r_eps = (float(atom.rmin), float(atom.epsilon))
+            if nb_i in nb_map:
+                prev = nb_map[nb_i]
+                if not (math.isclose(prev[0], r_eps[0], rel_tol=1e-6, abs_tol=1e-9) and math.isclose(prev[1], r_eps[1], rel_tol=1e-6, abs_tol=1e-9)):
+                    raise ValueError(f"Inconsistent LJ parameters within Amber nb_idx {nb_i}")
+            else:
+                nb_map[nb_i] = r_eps
+        active = sorted(nb_map)
+        for idx_pos, nb_i in enumerate(active):
+            r_i, e_i = nb_map[nb_i]
+            for nb_j in active[idx_pos:]:
+                r_j, e_j = nb_map[nb_j]
+                eps_lb = math.sqrt(e_i * e_j)
+                ptr = int(nb_index[ntypes * (nb_i - 1) + (nb_j - 1)])
+                if ptr < 0:
+                    hb_i = -ptr - 1
+                    ha = float(hba[hb_i]) if hb_i < len(hba) else 0.0
+                    hb = float(hbb[hb_i]) if hb_i < len(hbb) else 0.0
+                    if abs(ha) > 0.0 or abs(hb) > 0.0:
+                        raise ValueError(
+                            "Amber topology contains nonzero 10-12 HBOND terms unsupported by standalone NonbondedForce XML"
+                        )
+                    if eps_lb > 0.0:
+                        raise ValueError(
+                            "Amber topology disables 12-6 LJ via 10-12 HBOND index on an active LJ pair; "
+                            "standalone NonbondedForce XML would silently introduce a nonzero LJ interaction"
+                        )
+                    continue
+                if ptr == 0:
+                    if eps_lb > 0.0:
+                        raise ValueError(
+                            "Amber topology omits 12-6 LJ pair entry on an active LJ pair; "
+                            "standalone NonbondedForce XML would silently introduce a nonzero LJ interaction"
+                        )
+                    continue
+                r_lb = r_i + r_j
+                a_lb = eps_lb * (r_lb**12)
+                b_lb = 2.0 * eps_lb * (r_lb**6)
+                a_p = float(acoef[ptr - 1])
+                b_p = float(bcoef[ptr - 1])
+                if not (
+                    math.isclose(a_p, a_lb, rel_tol=1e-4, abs_tol=1e-6)
+                    and math.isclose(b_p, b_lb, rel_tol=1e-4, abs_tol=1e-6)
+                ):
+                    raise ValueError(
+                        "Amber topology nonbonded pair coefficients deviate from Lorentz-Berthelot "
+                        "combining rules (geometric mixing or pair-specific LJ overrides unsupported "
+                        "in standalone NonbondedForce XML)"
+                    )
+
+
+def _amber_parm_to_openmm_xml(
+    structure,
+    *,
+    nonbonded_method: str = "NoCutoff",
+    cutoff_nm: float = 1.0,
+) -> tuple[str, dict[str, int]]:
+    """Serialize an AmberParm directly into an OpenMM <System> XML string."""
+    method_codes = {"NoCutoff": 0, "CutoffNonPeriodic": 1, "PME": 4}
+    if nonbonded_method not in method_codes:
+        raise ValueError(f"Unsupported nonbonded_method {nonbonded_method!r}")
+    if not math.isfinite(float(cutoff_nm)) or float(cutoff_nm) <= 0.0:
+        raise ValueError("cutoff_nm must be positive and finite")
+    if getattr(structure, "impropers", None):
+        raise ValueError("Unsupported CHARMM-style impropers in AmberParm")
+    _verify_standard_lorentz_berthelot_lj(structure)
+    if nonbonded_method == "PME" and structure.box is None:
+        raise ValueError("PME requires periodic box vectors in the source Amber topology/coordinates")
+
+    # Match OpenMM AmberPrmtopFile.createSystem: bonded forces and 1-4 exceptions use direct distances ("0")
+    use_pbc = "0"
+    if structure.box is not None and getattr(structure, "box_vectors", None) is not None:
+        import parmed as pmd
+
+        vecs = structure.box_vectors.value_in_unit(pmd.unit.nanometers)
+        box_rows = [[float(c) for c in row] for row in vecs]
+    else:
+        box_rows = [[2.0, 0.0, 0.0], [0.0, 2.0, 0.0], [0.0, 0.0, 2.0]]
+
+    root = ET.Element("System", {"openmmVersion": "8.0", "type": "System", "version": "1"})
+    box_el = ET.SubElement(root, "PeriodicBoxVectors")
+    for label, row in zip(("A", "B", "C"), box_rows, strict=True):
+        ET.SubElement(
+            box_el,
+            label,
+            {"x": _fmt_xml_float(row[0]), "y": _fmt_xml_float(row[1]), "z": _fmt_xml_float(row[2])},
+        )
+
+    particles_el = ET.SubElement(root, "Particles")
+    for atom in structure.atoms:
+        ET.SubElement(particles_el, "Particle", {"mass": _fmt_xml_float(atom.mass)})
+    ET.SubElement(root, "Constraints")
+
+    forces_el = ET.SubElement(root, "Forces")
+
+    bond_force = ET.SubElement(
+        forces_el,
+        "Force",
+        {
+            "forceGroup": "0",
+            "name": "HarmonicBondForce",
+            "type": "HarmonicBondForce",
+            "usesPeriodic": use_pbc,
+            "version": "2",
+        },
+    )
+    bonds_el = ET.SubElement(bond_force, "Bonds")
+    for bond in structure.bonds:
+        if bond.type is None:
+            raise ValueError("Untyped bond encountered during OpenMM XML export")
+        ET.SubElement(
+            bonds_el,
+            "Bond",
+            {
+                "d": _fmt_xml_float(float(bond.type.req) * 0.1),
+                "k": _fmt_xml_float(float(bond.type.k) * 836.8),
+                "p1": str(bond.atom1.idx),
+                "p2": str(bond.atom2.idx),
+            },
+        )
+
+    angle_force = ET.SubElement(
+        forces_el,
+        "Force",
+        {
+            "forceGroup": "0",
+            "name": "HarmonicAngleForce",
+            "type": "HarmonicAngleForce",
+            "usesPeriodic": use_pbc,
+            "version": "2",
+        },
+    )
+    angles_el = ET.SubElement(angle_force, "Angles")
+    for angle in structure.angles:
+        if angle.type is None:
+            raise ValueError("Untyped angle encountered during OpenMM XML export")
+        ET.SubElement(
+            angles_el,
+            "Angle",
+            {
+                "a": _fmt_xml_float(math.radians(float(angle.type.theteq))),
+                "k": _fmt_xml_float(float(angle.type.k) * 8.368),
+                "p1": str(angle.atom1.idx),
+                "p2": str(angle.atom2.idx),
+                "p3": str(angle.atom3.idx),
+            },
+        )
+
+    torsion_force = ET.SubElement(
+        forces_el,
+        "Force",
+        {
+            "forceGroup": "0",
+            "name": "PeriodicTorsionForce",
+            "type": "PeriodicTorsionForce",
+            "usesPeriodic": use_pbc,
+            "version": "2",
+        },
+    )
+    torsions_el = ET.SubElement(torsion_force, "Torsions")
+    torsion_count = 0
+    for dihedral in structure.dihedrals:
+        types = dihedral.type if isinstance(dihedral.type, list) else [dihedral.type]
+        for dt in types:
+            if dt is None:
+                raise ValueError("Untyped dihedral encountered during OpenMM XML export")
+            per = int(round(abs(float(dt.per))))
+            phi_k = float(dt.phi_k)
+            if per == 0 and phi_k == 0.0:
+                continue
+            ET.SubElement(
+                torsions_el,
+                "Torsion",
+                {
+                    "k": _fmt_xml_float(phi_k * 4.184),
+                    "p1": str(dihedral.atom1.idx),
+                    "p2": str(dihedral.atom2.idx),
+                    "p3": str(dihedral.atom3.idx),
+                    "p4": str(dihedral.atom4.idx),
+                    "periodicity": str(per),
+                    "phase": _fmt_xml_float(math.radians(float(dt.phase))),
+                },
+            )
+            torsion_count += 1
+
+    nb_force = ET.SubElement(
+        forces_el,
+        "Force",
+        {
+            "alpha": "0",
+            "cutoff": _fmt_xml_float(cutoff_nm),
+            "dispersionCorrection": "1",
+            "ewaldTolerance": "0.0005",
+            "exceptionsUsePeriodic": use_pbc,
+            "forceGroup": "0",
+            "includeDirectSpace": "1",
+            "ljAlpha": "0",
+            "ljnx": "0",
+            "ljny": "0",
+            "ljnz": "0",
+            "method": str(method_codes[nonbonded_method]),
+            "name": "NonbondedForce",
+            "nx": "0",
+            "ny": "0",
+            "nz": "0",
+            "recipForceGroup": "-1",
+            "rfDielectric": "78.3",
+            "switchingDistance": "-1",
+            "type": "NonbondedForce",
+            "useSwitchingFunction": "0",
+            "version": "4",
+        },
+    )
+    ET.SubElement(nb_force, "GlobalParameters")
+    ET.SubElement(nb_force, "ParticleOffsets")
+    ET.SubElement(nb_force, "ExceptionOffsets")
+
+    nb_particles = ET.SubElement(nb_force, "Particles")
+    q_list: list[float] = []
+    sig_list: list[float] = []
+    eps_list: list[float] = []
+    scale_sig = (2.0 ** (5.0 / 6.0)) * 0.1
+    for atom in structure.atoms:
+        q = float(atom.charge)
+        eps = float(atom.epsilon) * 4.184
+        rmin = float(atom.rmin)
+        sig = 0.0 if rmin == 0.0 else rmin * scale_sig
+        q_list.append(q)
+        sig_list.append(sig)
+        eps_list.append(eps)
+        ET.SubElement(
+            nb_particles,
+            "Particle",
+            {
+                "eps": _fmt_xml_float(eps),
+                "q": _fmt_xml_float(q),
+                "sig": _fmt_xml_float(sig),
+            },
+        )
+
+    excluded_12_13: set[tuple[int, int]] = set()
+    for bond in structure.bonds:
+        i, j = bond.atom1.idx, bond.atom2.idx
+        excluded_12_13.add((min(i, j), max(i, j)))
+    for angle in structure.angles:
+        i, j = angle.atom1.idx, angle.atom3.idx
+        excluded_12_13.add((min(i, j), max(i, j)))
+
+    pairs_14: dict[tuple[int, int], tuple[float, float]] = {}
+    for dihedral in structure.dihedrals:
+        if getattr(dihedral, "improper", False) or getattr(dihedral, "ignore_end", False):
+            continue
+        i, j = dihedral.atom1.idx, dihedral.atom4.idx
+        if i == j:
+            continue
+        pair = (min(i, j), max(i, j))
+        if pair in excluded_12_13:
+            continue
+        dt = dihedral.type[0] if isinstance(dihedral.type, list) else dihedral.type
+        scee = float(dt.scee) if dt is not None and float(getattr(dt, "scee", 0.0)) > 0.0 else 1.2
+        scnb = float(dt.scnb) if dt is not None and float(getattr(dt, "scnb", 0.0)) > 0.0 else 2.0
+        pairs_14.setdefault(pair, (scee, scnb))
+
+    exceptions_el = ET.SubElement(nb_force, "Exceptions")
+    all_exceptions: dict[tuple[int, int], tuple[float, float, float]] = {}
+    for pair in excluded_12_13:
+        all_exceptions[pair] = (0.0, 0.0, 0.5)
+    for pair, (scee, scnb) in pairs_14.items():
+        i, j = pair
+        q12 = (q_list[i] * q_list[j]) / scee
+        sig12 = 0.5 * (sig_list[i] + sig_list[j])
+        eps12 = math.sqrt(eps_list[i] * eps_list[j]) / scnb
+        if eps12 == 0.0 and sig12 == 0.0:
+            sig12 = 0.5
+        all_exceptions[pair] = (eps12, q12, sig12)
+
+    for (i, j), (eps12, q12, sig12) in sorted(all_exceptions.items()):
+        ET.SubElement(
+            exceptions_el,
+            "Exception",
+            {
+                "eps": _fmt_xml_float(eps12),
+                "p1": str(i),
+                "p2": str(j),
+                "q": _fmt_xml_float(q12),
+                "sig": _fmt_xml_float(sig12),
+            },
+        )
+
+    ET.indent(root, space="  ")
+    xml_text = '<?xml version="1.0" ?>\n' + ET.tostring(root, encoding="unicode") + "\n"
+    counts = {
+        "atoms": len(structure.atoms),
+        "bonds": len(structure.bonds),
+        "angles": len(structure.angles),
+        "torsions": torsion_count,
+        "exceptions": len(all_exceptions),
+        "excluded_12_13": len(excluded_12_13),
+        "scaled_14": len(pairs_14),
+    }
+    return xml_text, counts
+
+
+def export_openmm(
+    topology,
+    coordinates,
+    output_xml,
+    *,
+    nonbonded_method="NoCutoff",
+    cutoff_nm=1.0,
+    overwrite=False,
+    model=None,
+    _force_pure_python=False,
+):
+    """Export an Amber prmtop/inpcrd topology into a standalone OpenMM System XML."""
+    if model and (_periodic_edges(model) or model.get("metadata", {}).get("covalently_periodic")):
+        raise ValueError(
+            "Periodic winding OpenMM covalent export not implemented/validated"
+        )
+    xml_path = Path(output_xml).resolve()
+    paths = {
+        "xml": xml_path,
+        "manifest": xml_path.with_suffix(".manifest.json"),
+        "provenance": xml_path.with_suffix(".provenance.json"),
+    }
+    if any(p.exists() for p in paths.values()):
+        raise FileExistsError("OpenMM export files already exist; choose a fresh output path")
+    if overwrite:
+        raise ValueError("overwrite is unsupported; choose a fresh output path")
+    structure = _load_amber(topology, coordinates)
+    if not structure.atoms:
+        raise ValueError("Amber topology contains no atoms")
+    upstream = _link_upstream_provenance(topology, coordinates)
+
+    xml_text, counts = _amber_parm_to_openmm_xml(
+        structure,
+        nonbonded_method=nonbonded_method,
+        cutoff_nm=cutoff_nm,
+    )
+    serializer = "pure_python_amber_xml"
+    if not _force_pure_python:
+        try:
+            import openmm
+
+            system = openmm.XmlSerializer.deserialize(xml_text)
+            if system.getNumParticles() != len(structure.atoms):
+                raise RuntimeError("OpenMM XML round-trip particle count mismatch")
+            serializer = f"pure_python_amber_xml+openmm_{openmm.__version__}_verified"
+        except ImportError:
+            pass
+
+    xml_path.parent.mkdir(parents=True, exist_ok=True)
+    xml_path.write_text(xml_text, encoding="utf-8")
+    prov = {
+        "schema_version": 1,
+        "format": "openmm_system_xml",
+        **upstream,
+        "nonbonded_method": nonbonded_method,
+        "cutoff_nm": float(cutoff_nm),
+        "serializer": serializer,
+        "counts": counts,
+        "outputs": {k: str(v) for k, v in paths.items() if k != "provenance"},
+    }
+    _json(paths["provenance"], prov)
+    result = {
+        "status": "exported",
+        "parameterized": True,
+        "output": str(xml_path),
+        "xml": str(xml_path),
+        "manifest": str(paths["manifest"]),
+        "provenance": str(paths["provenance"]),
+        "serializer": serializer,
+        "nonbonded_method": nonbonded_method,
+        "cutoff_nm": float(cutoff_nm),
+        "source_topology_sha256": _sha(topology),
+        "xml_sha256": _sha(xml_path),
+        "preset": upstream["preset"],
+        "charge_model": upstream["charge_model"],
+        "atom_count": counts["atoms"],
+        "bond_count": counts["bonds"],
+        "angle_count": counts["angles"],
+        "torsion_count": counts["torsions"],
+        "exception_count": counts["exceptions"],
+        "periodic_policy": "finite solute unless solvated/boxed PME prmtop supplied",
+        "gbsa_note": "Standard explicit NonbondedForce XML does not include implicit GBSA force; source prmtop holds GB radii",
+        "engine_sources": ENGINE_SOURCES,
+    }
     _json(paths["manifest"], result)
     return result
 

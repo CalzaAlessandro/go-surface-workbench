@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "model_id": "L0_v2c_a030",
+  "preset_id": "gaff2_v3",
+  "regime_rule": "neutral_fixed_roles_when_N_COO_eq_0_else_sp2_sheet_delocalization",
+  "calibration_set": "strict40 (no C54 size-holdout leakage)",
+  "qm_target": "HF/6-31G* Merz-Kollman ESP (Amber RESP, 3 rigid orientations, integer closed)",
+  "alpha": 0.3,
+  "d_max": 10,
+  "delta_sheet_e": -0.345574,
+  "acceptor_roles": [
+    "scaffold_C",
+    "edge_C",
+    "COO_anchor",
+    "COOH_anchor",
+    "carbonyl_C",
+    "extended_quinone_carbonyl_C"
+  ],
+  "exclude_bfs_roles": [
+    "COO_C",
+    "COO_O"
+  ],
+  "role_charges_e": {
+    "scaffold_C": 0.0,
+    "edge_H": 0.115393,
+    "edge_C": -0.115393,
+    "hydroxyl_O": -0.543041,
+    "hydroxyl_H": 0.372715,
+    "hydroxyl_C": 0.170326,
+    "epoxide_C": 0.154669,
+    "epoxide_O": -0.309338,
+    "EPH_CH": 0.040632,
+    "EPH_H": 0.086186,
+    "EPH_O": -0.287435,
+    "EPH_C": 0.160617,
+    "EPT_C": 0.099197,
+    "EPT_H": 0.068094,
+    "EPT_O": -0.334582,
+    "carbonyl_O": -0.505398,
+    "carbonyl_C": 0.505398,
+    "COOH_C": 0.846712,
+    "COOH_O": -0.594499,
+    "COOH_OH": -0.63822,
+    "COOH_H": 0.457133,
+    "COOH_anchor": -0.071126,
+    "COO_C": 0.835809,
+    "COO_O": -0.799783,
+    "COO_anchor": 0.109331
+  },
+  "cbd_roles": {
+    "COO_C": 0.835809,
+    "COO_O": -0.799783,
+    "COO_anchor": 0.109331
+  },
+  "cv_selection": {
+    "variant": "L0_v2c_a030",
+    "alpha": 0.3,
+    "d_max": 10,
+    "lam_cbd": 3e-05,
+    "lam_delta": 0.0001,
+    "cv_mean_ion_rrms": 0.0486144242221634,
+    "cv_med_ion_rrms": 0.04658564774838924,
+    "passes_gate": true,
+    "raw_x": [
+      0.8358088351837438,
+      -0.7997834901820638,
+      0.10933249474342908,
+      -0.3455743495630452
+    ]
+  }
+}

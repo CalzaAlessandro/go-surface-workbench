@@ -21,6 +21,7 @@ STAGES = (
     "functionalize",
     "amber",
     "gromacs",
+    "openmm",
     "audit",
     "qm",
     "esp-import",
@@ -298,8 +299,30 @@ def parser_for(stage: str) -> argparse.ArgumentParser:
         )
         parser.add_argument("--seed", type=int, help="Reproducible site/orientation selection seed")
     elif stage == "amber":
-        parser.add_argument("--model", required=True, type=Path)
-        parser.add_argument("--output-dir", required=True, type=Path)
+        parser.add_argument("--model", type=Path)
+        parser.add_argument("--output-dir", type=Path)
+        parser.add_argument(
+            "--preset",
+            choices=("gaff2_v3", "gaff2_current"),
+            default=None,
+            help="AMBER force-field preset (default: gaff2_v3, or gaff2_current if --reference-dir is set)",
+        )
+        parser.add_argument(
+            "--list-presets",
+            action="store_true",
+            help="List packaged AMBER force-field presets and exit",
+        )
+        parser.add_argument(
+            "--charge-model",
+            choices=("auto", "l0_v2", "current_lib", "custom"),
+            default="auto",
+            help="Charge model override (auto selects preset default)",
+        )
+        parser.add_argument(
+            "--charges-json",
+            type=Path,
+            help="Explicit per-atom charges JSON for --charge-model custom",
+        )
         parser.add_argument(
             "--run", action="store_true", help="Execute external tleap after preparing its inputs"
         )
@@ -313,6 +336,16 @@ def parser_for(stage: str) -> argparse.ArgumentParser:
         parser.add_argument("--topology", required=True, type=Path)
         parser.add_argument("--coordinates", required=True, type=Path)
         parser.add_argument("--output-prefix", required=True, type=Path)
+    elif stage == "openmm":
+        parser.add_argument("--topology", required=True, type=Path)
+        parser.add_argument("--coordinates", required=True, type=Path)
+        parser.add_argument("--output", required=True, type=Path)
+        parser.add_argument(
+            "--nonbonded-method",
+            choices=("NoCutoff", "CutoffNonPeriodic", "PME"),
+            default="NoCutoff",
+        )
+        parser.add_argument("--cutoff-nm", type=float, default=1.0)
     elif stage == "audit":
         parser.add_argument("--output-dir", required=True, type=Path)
         parser.add_argument("--current-dir", type=Path)
@@ -1083,6 +1116,14 @@ def _report(stage: str, result: dict, machine: bool, error: bool = False) -> Non
             enabled = "buildable" if p.get("build_enabled") else "disabled"
             print(f"  - {p['name']:<20s} [{tag}, {enabled}, {p.get('readiness')}]")
         return
+    if not error and stage == "amber" and result.get("status") == "AVAILABLE_FORCE_FIELD_PRESETS":
+        print("Available AMBER force-field presets:")
+        for p in result["presets"]:
+            default_tag = " [DEFAULT]" if p.get("default") else ""
+            print(f"  - {p['name']:<16s} ({p.get('tier', 'preset')}, v{p.get('version', '?')}){default_tag}")
+            print(f"      Bonded : {p.get('bonded_model')}")
+            print(f"      Charges: {p.get('charge_model')} | {p.get('status')}")
+        return
     if not error and stage == "build" and result.get("status") in ("CONFIG_INITIALIZED", "CONFIG_WRITTEN"):
         print(f"[{result['status']}] Wrote configuration to {result['output']}")
         return
@@ -1097,6 +1138,11 @@ def _report(stage: str, result: dict, machine: bool, error: bool = False) -> Non
             "message",
             "output",
             "output_dir",
+            "xml",
+            "provenance",
+            "preset",
+            "charge_model",
+            "custom_combination",
             "atoms",
             "atom_count",
             "bonds",
@@ -1468,14 +1514,23 @@ def _dispatch(stage: str, args: argparse.Namespace) -> dict:
             result["_display"] = display_ctx
         return result
     if stage == "amber":
+        from .ff_v3 import list_force_field_presets
         from .topology import prepare_amber
 
+        if args.list_presets:
+            return {
+                "status": "AVAILABLE_FORCE_FIELD_PRESETS",
+                "presets": list_force_field_presets(),
+            }
         templates = _read(args.parameter_templates) if args.parameter_templates else None
         return prepare_amber(
             _read(args.model),
             args.output_dir,
             run=args.run,
             tleap=args.tleap,
+            preset=args.preset,
+            charge_model=args.charge_model,
+            charges_json=args.charges_json,
             reference_dir=args.reference_dir,
             parameter_templates=templates,
             radii=args.radii,
@@ -1484,6 +1539,16 @@ def _dispatch(stage: str, args: argparse.Namespace) -> dict:
         from .topology import export_gromacs
 
         return export_gromacs(args.topology, args.coordinates, args.output_prefix)
+    if stage == "openmm":
+        from .topology import export_openmm
+
+        return export_openmm(
+            args.topology,
+            args.coordinates,
+            args.output,
+            nonbonded_method=args.nonbonded_method,
+            cutoff_nm=args.cutoff_nm,
+        )
     if stage == "audit":
         from .charges import audit_charge_sources
 
@@ -1577,6 +1642,9 @@ def main(stage: str | None = None, argv: list[str] | None = None) -> int:
             parser.error(
                 "--out/--output is required for building (or use --list-presets / --init-config / --write-config)"
             )
+    elif stage == "amber":
+        if not args.list_presets and (args.model is None or args.output_dir is None):
+            parser.error("--model and --output-dir are required (or use --list-presets)")
 
     command = [
         getattr(args, "worker_python", None) or sys.executable,

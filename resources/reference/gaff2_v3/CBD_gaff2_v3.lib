@@ -1,0 +1,57 @@
+!!index array str
+ "CBD"
+!entry.CBD.unit.atoms table  str name  str type  int typex  int resx  int flags  int seq  int elmnt  dbl chg
+ "CY" "gb" 0 1 131072 1 6 0.109331
+ "C4" "gd" 0 1 131072 2 6 0.835809
+ "OJ" "gu" 0 1 131072 3 8 -0.799783
+ "OK" "gu" 0 1 131072 4 8 -0.799783
+!entry.CBD.unit.atomspertinfo table  str pname  str ptype  int ptypex  int pelmnt  dbl pchg
+ "CY" "gb" 0 -1 0.109331
+ "C4" "gd" 0 -1 0.835809
+ "OJ" "gu" 0 -1 -0.799783
+ "OK" "gu" 0 -1 -0.799783
+!entry.CBD.unit.boundbox array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.CBD.unit.childsequence single int
+ 5
+!entry.CBD.unit.connect array int
+ 0
+ 0
+!entry.CBD.unit.connectivity table  int atom1x  int atom2x  int flags
+ 1 2 1
+ 2 3 1
+ 2 4 1
+!entry.CBD.unit.hierarchy table  str abovetype  int abovex  str belowtype  int belowx
+ "U" 0 "R" 1
+ "R" 1 "A" 1
+ "R" 1 "A" 2
+ "R" 1 "A" 3
+ "R" 1 "A" 4
+!entry.CBD.unit.name single str
+ "CBD"
+!entry.CBD.unit.positions table  dbl x  dbl y  dbl z
+ 0.000000 0.000000 0.000000
+ 0.000000 0.000000 1.550000
+ -1.080000 0.000000 2.120000
+ 1.080000 0.000000 2.120000
+!entry.CBD.unit.residueconnect table  int c1x  int c2x  int c3x  int c4x  int c5x  int c6x
+ 0 0 0 0 0 0
+!entry.CBD.unit.residues table  str name  int seq  int childseq  int startatomx  str restype  int imagingx
+ "CBD" 1 5 1 "?" 0
+!entry.CBD.unit.residuesPdbSequenceNumber array int
+ 1
+!entry.CBD.unit.solventcap array dbl
+ -1.000000
+ 0.0
+ 0.0
+ 0.0
+ 0.0
+!entry.CBD.unit.velocities table  dbl x  dbl y  dbl z
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
+ 0.0 0.0 0.0
