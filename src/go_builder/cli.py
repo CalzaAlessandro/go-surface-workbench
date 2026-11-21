@@ -1646,12 +1646,13 @@ def main(stage: str | None = None, argv: list[str] | None = None) -> int:
         if not args.list_presets and (args.model is None or args.output_dir is None):
             parser.error("--model and --output-dir are required (or use --list-presets)")
 
-    command = [
-        getattr(args, "worker_python", None) or sys.executable,
-        str(ROOT / "go.py"),
-        stage,
-        *_worker_argv(argv),
-    ]
+    worker_py = getattr(args, "worker_python", None) or sys.executable
+    packaged_resources = Path(__file__).resolve().parent / "_resources"
+    go_script = ROOT / "go.py"
+    if not packaged_resources.exists() and go_script.is_file():
+        command = [worker_py, str(go_script), stage, *_worker_argv(argv)]
+    else:
+        command = [worker_py, "-m", "go_builder", stage, *_worker_argv(argv)]
     try:
         if stage == "build":
             if args.list_presets:

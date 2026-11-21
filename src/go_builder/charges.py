@@ -16,13 +16,33 @@ import statistics
 from collections import defaultdict
 from pathlib import Path
 
-REFERENCE = Path(__file__).resolve().parents[2] / "resources/reference"
+
+def _resolve_reference_root() -> Path:
+    pkg_candidate = Path(__file__).resolve().parent / "_resources/reference"
+    if pkg_candidate.exists():
+        return pkg_candidate
+    repo_candidate = Path(__file__).resolve().parents[2] / "resources/reference"
+    if repo_candidate.exists():
+        return repo_candidate
+    return pkg_candidate
+
+
+REFERENCE = _resolve_reference_root()
 ELEMENTS = {1: "H", 6: "C", 7: "N", 8: "O", 9: "F", 15: "P", 16: "S", 17: "Cl", 35: "Br", 53: "I"}
 MOTIFS = {
     "HYD": "hydroxyl",
     "EPX": "epoxide",
+    "EP2": "epoxide",
+    "EP3": "epoxide",
+    "EP4": "epoxide",
     "EPH": "epoxide",
+    "EH2": "epoxide",
+    "EH3": "epoxide",
+    "EH4": "epoxide",
     "EPT": "epoxide",
+    "ET2": "epoxide",
+    "ET3": "epoxide",
+    "ET4": "epoxide",
     "CAB": "carbonyl",
     "CBX": "carboxylic_acid",
     "CBD": "carboxylate",

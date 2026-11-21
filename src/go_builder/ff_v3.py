@@ -29,8 +29,20 @@ import numpy as np
 from .ff import FRAGMENTS as CURRENT_FRAGMENTS
 from .ff import _assign_dedicated, load_fragment_library
 
-DEFAULT_V3_REFERENCE = Path(__file__).resolve().parents[2] / "resources/reference/gaff2_v3"
-DEFAULT_CURRENT_REFERENCE = Path(__file__).resolve().parents[2] / "resources/reference/current"
+
+def _resolve_reference_dir(subpath: str) -> Path:
+    """Resolve packaged or repository-relative reference assets."""
+    pkg_candidate = Path(__file__).resolve().parent / "_resources" / "reference" / subpath
+    if pkg_candidate.exists():
+        return pkg_candidate
+    repo_candidate = Path(__file__).resolve().parents[2] / "resources" / "reference" / subpath
+    if repo_candidate.exists():
+        return repo_candidate
+    return pkg_candidate
+
+
+DEFAULT_V3_REFERENCE = _resolve_reference_dir("gaff2_v3")
+DEFAULT_CURRENT_REFERENCE = _resolve_reference_dir("current")
 
 EPX_COLOR_TYPES = ("gx", "gy", "gz", "ge")
 RES_COLORS_EPX = ("EPX", "EP2", "EP3", "EP4")
@@ -124,8 +136,17 @@ _ROLE_TO_CURRENT_LIB_KEY = {
 }
 
 
-def _sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+def _sha256_bytes(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def _reject_duplicate_json_keys(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+    out: dict[str, Any] = {}
+    for k, v in pairs:
+        if k in out:
+            raise ValueError(f"Duplicate JSON object key: {k!r}")
+        out[k] = v
+    return out
 
 
 def resolve_force_field_preset(name: str | None) -> str:
@@ -151,7 +172,14 @@ def verify_v3_bundle(reference_dir: str | Path | None = None) -> dict[str, Any]:
     prov_path = ref_dir / "PROVENANCE.json"
     if not prov_path.is_file():
         raise ValueError(f"Missing gaff2_v3 PROVENANCE.json in {ref_dir}")
-    provenance = json.loads(prov_path.read_text(encoding="utf-8"))
+    prov_bytes = prov_path.read_bytes()
+    prov_sha256 = _sha256_bytes(prov_bytes)
+    provenance = json.loads(
+        prov_bytes.decode("utf-8"),
+        object_pairs_hook=_reject_duplicate_json_keys,
+    )
+    if not isinstance(provenance, dict):
+        raise ValueError("Malformed PROVENANCE.json: top-level JSON value must be an object")
     files = provenance.get("files")
     if not isinstance(files, dict):
         raise ValueError("Malformed PROVENANCE.json: missing files manifest")
@@ -163,20 +191,43 @@ def verify_v3_bundle(reference_dir: str | Path | None = None) -> dict[str, Any]:
         raise ValueError(
             f"Incomplete gaff2_v3 bundle manifest; missing required entries: {missing_required}"
         )
+    expected_names = set(files) | {"PROVENANCE.json"}
+    extra_files = sorted(
+        p.name for p in ref_dir.iterdir() if p.name not in expected_names
+    )
+    if extra_files:
+        raise ValueError(
+            f"Unmanifested file(s) found in gaff2_v3 bundle directory: {extra_files}"
+        )
+    payload_bytes: dict[str, bytes] = {}
     for fname, meta in files.items():
+        if not isinstance(fname, str) or Path(fname).name != fname or Path(fname).is_absolute():
+            raise ValueError(f"Unsafe manifest file name in PROVENANCE.json: {fname!r}")
+        if not isinstance(meta, dict) or not isinstance(meta.get("sha256"), str):
+            raise ValueError(f"Malformed manifest entry for {fname!r} in PROVENANCE.json")
         target = ref_dir / fname
         if not target.is_file():
             raise ValueError(f"Missing gaff2_v3 bundle file: {target}")
-        if _sha256(target) != meta["sha256"]:
+        raw = target.read_bytes()
+        if _sha256_bytes(raw) != meta["sha256"]:
             raise ValueError(f"gaff2_v3 SHA-256 mismatch for {fname}")
+        payload_bytes[fname] = raw
+    lib_bytes = {
+        fname: payload_bytes[fname]
+        for fname in sorted(files)
+        if fname.endswith("_gaff2_v3.lib")
+    }
     return {
         "reference_dir": str(ref_dir),
         "provenance": provenance,
-        "provenance_sha256": _sha256(prov_path),
+        "provenance_sha256": prov_sha256,
         "frcmod_path": ref_dir / "GO_gaff2_v3.frcmod",
         "frcmod_sha256": files["GO_gaff2_v3.frcmod"]["sha256"],
+        "frcmod_bytes": payload_bytes["GO_gaff2_v3.frcmod"],
         "l0_v2_path": ref_dir / "L0_v2_charges.json",
         "l0_v2_sha256": files["L0_v2_charges.json"]["sha256"],
+        "l0_v2_bytes": payload_bytes["L0_v2_charges.json"],
+        "lib_bytes": lib_bytes,
     }
 
 
@@ -300,10 +351,25 @@ def classify_go_v3_roles(model: dict[str, Any]) -> list[str]:
     n = len(atoms)
     id2i = {a["id"]: i for i, a in enumerate(atoms)}
     adj: list[list[int]] = [[] for _ in range(n)]
+    seen_pairs: set[tuple[int, int]] = set()
     for b in model["bonds"]:
         i, j = id2i[b["a"]], id2i[b["b"]]
+        if i == j:
+            raise ValueError(f"Self-loop bond at atom {atoms[i]['id']}")
+        pair = (min(i, j), max(i, j))
+        if pair in seen_pairs:
+            raise ValueError(
+                f"Duplicate bond between atoms {atoms[i]['id']} and {atoms[j]['id']}"
+            )
+        seen_pairs.add(pair)
         adj[i].append(j)
         adj[j].append(i)
+
+    # Validate hydrogen valence before element loops so ordering never masks invalid H-H or dangling H bonds.
+    for i, a in enumerate(atoms):
+        if a["element"] == "H":
+            if len(adj[i]) != 1 or atoms[adj[i][0]]["element"] not in ("C", "O"):
+                raise ValueError(f"Unsupported hydrogen valence at atom {a['id']}")
 
     roles = [""] * n
 
@@ -376,6 +442,7 @@ def color_epoxides_v3(
     model: dict[str, Any], roles: list[str]
 ) -> tuple[dict[int, int], list[dict[str, Any]]]:
     """Deterministically color epoxide units {0,1,2,3} via DSATUR so adjacent epoxides differ."""
+    roles = _validate_roles_arg(model, roles)
     atoms = model["atoms"]
     id2i = {a["id"]: i for i, a in enumerate(atoms)}
     adj: list[set[int]] = [set() for _ in range(len(atoms))]
@@ -438,7 +505,7 @@ def decompose_go_v3(
     model: dict[str, Any], roles: list[str] | None = None
 ) -> tuple[list[str], list[tuple[int, str, list[tuple[int, str]]]], list[str], dict[int, int]]:
     """Decompose GO graph into clean 1-unit v3 residues & return (roles, res_list, v3_types, atom_color)."""
-    roles = classify_go_v3_roles(model) if roles is None else roles
+    roles = _validate_roles_arg(model, roles)
     atoms = model["atoms"]
     n = len(atoms)
     id2i = {a["id"]: idx for idx, a in enumerate(atoms)}
@@ -557,17 +624,63 @@ def decompose_go_v3(
     return roles, res_list, v3_types, atom_color
 
 
+def _strict_int_formal_charge(value: Any, label: str) -> int:
+    if isinstance(value, bool):
+        raise ValueError(f"{label} must be an exact integer formal charge, got bool ({value!r})")
+    if isinstance(value, (int, np.integer)):
+        return int(value)
+    if isinstance(value, (float, np.floating)):
+        fval = float(value)
+        if math.isfinite(fval) and fval.is_integer():
+            return int(fval)
+    raise ValueError(f"{label} must be an exact integer formal charge, got {value!r}")
+
+
+def _validate_roles_arg(model: dict[str, Any], roles: list[str] | None) -> list[str]:
+    expected = classify_go_v3_roles(model)
+    if roles is None:
+        return expected
+    n_atoms = len(model.get("atoms", []))
+    if not isinstance(roles, (list, tuple)) or len(roles) != n_atoms:
+        raise ValueError(
+            f"Explicit roles sequence length ({len(roles) if isinstance(roles, (list, tuple)) else type(roles).__name__}) "
+            f"does not match model atom count ({n_atoms})"
+        )
+    out = list(roles)
+    invalid = [r for r in out if not isinstance(r, str) or r not in _ROLE_TO_CURRENT_LIB_KEY]
+    if invalid:
+        raise ValueError(f"Unsupported role name(s) in roles argument: {invalid[:5]}")
+    for idx, (got, exp) in enumerate(zip(out, expected, strict=True)):
+        if got != exp:
+            atom = model["atoms"][idx]
+            raise ValueError(
+                f"Explicit role mismatch at atom index {idx} "
+                f"(id={atom.get('id')}, element={atom.get('element')}): "
+                f"got {got!r}, expected {exp!r}"
+            )
+    return out
+
+
 def _expected_formal_charge(model: dict[str, Any], roles: list[str]) -> int:
     n_coo = sum(1 for r in roles if r == "COO_anchor")
     expected = -n_coo
     if "formal_charge" in model and model["formal_charge"] is not None:
-        if int(model["formal_charge"]) != expected:
+        fc = _strict_int_formal_charge(model["formal_charge"], "Model formal_charge")
+        if fc != expected:
             raise ValueError(
                 f"Model formal_charge={model['formal_charge']} disagrees with deprotonated carboxylate count (-{n_coo})"
             )
-    elif not model.get("metadata", {}).get("formal_charges_unknown"):
-        fc_vals = [int(a.get("formal_charge") or 0) for a in model["atoms"]]
-        if any(v != 0 for v in fc_vals) and sum(fc_vals) != expected:
+    fc_vals = [
+        _strict_int_formal_charge(a["formal_charge"], f"Atom {a.get('id')} formal_charge")
+        if a.get("formal_charge") is not None
+        else 0
+        for a in model["atoms"]
+    ]
+    all_atom_fc = bool(model["atoms"]) and all(
+        a.get("formal_charge") is not None for a in model["atoms"]
+    )
+    if not model.get("metadata", {}).get("formal_charges_unknown"):
+        if (any(v != 0 for v in fc_vals) or all_atom_fc) and sum(fc_vals) != expected:
             raise ValueError(
                 f"Per-atom formal_charge sum ({sum(fc_vals)}) disagrees with carboxylate count (-{n_coo})"
             )
@@ -579,11 +692,12 @@ def compute_l0_v2_charges(
     roles: list[str] | None = None,
     *,
     reference_dir: str | Path | None = None,
+    verified_bundle: dict[str, Any] | None = None,
 ) -> tuple[np.ndarray, dict[str, Any]]:
     """Compute exact L0_v2 (L0_v2c_a030) dual-regime HF/6-31G* MK RESP charges."""
-    info = verify_v3_bundle(reference_dir)
-    l0_data = json.loads(Path(info["l0_v2_path"]).read_text(encoding="utf-8"))
-    roles = classify_go_v3_roles(model) if roles is None else roles
+    info = verified_bundle if verified_bundle is not None else verify_v3_bundle(reference_dir)
+    l0_data = json.loads(info["l0_v2_bytes"].decode("utf-8"))
+    roles = _validate_roles_arg(model, roles)
     atoms = model["atoms"]
     n_atoms = len(atoms)
     id2i = {a["id"]: i for i, a in enumerate(atoms)}
@@ -593,12 +707,14 @@ def compute_l0_v2_charges(
         adj[ia].append(ib)
         adj[ib].append(ia)
 
-    role_q = l0_data["role_charges_e"]
+    role_q = {k: _to_charge_float(v) for k, v in l0_data["role_charges_e"].items()}
     acceptor_roles = set(l0_data["acceptor_roles"])
     exclude_roles = set(l0_data["exclude_bfs_roles"])
-    alpha = float(l0_data["alpha"])
+    alpha = _to_charge_float(l0_data["alpha"])
+    if isinstance(l0_data["d_max"], bool) or not isinstance(l0_data["d_max"], (int, np.integer)):
+        raise ValueError("L0_v2 d_max must be an integer")
     d_max = int(l0_data["d_max"])
-    delta_sheet = float(l0_data["delta_sheet_e"])
+    delta_sheet = _to_charge_float(l0_data["delta_sheet_e"])
 
     q = np.array([float(role_q[r]) for r in roles], dtype=float)
     n_coo = sum(1 for r in roles if r == "COO_anchor")
@@ -646,10 +762,13 @@ def compute_l0_v2_charges(
     else:
         regime = "neutral_fixed_roles"
 
-    residual = float(q.sum()) - float(expected_fc)
-    if abs(residual) >= 1e-9:
+    if not np.all(np.isfinite(q)):
+        raise ValueError("L0_v2 charge calculation produced nonfinite values")
+    net_q = float(q.sum())
+    residual = net_q - float(expected_fc)
+    if not math.isfinite(net_q) or not math.isfinite(residual) or abs(residual) >= 1e-9:
         raise ValueError(
-            f"L0_v2 charge conservation check failed: sum={float(q.sum())}, expected={expected_fc}"
+            f"L0_v2 charge conservation check failed: sum={net_q}, expected={expected_fc}"
         )
 
     charge_meta = {
@@ -657,7 +776,7 @@ def compute_l0_v2_charges(
         "regime": regime,
         "n_coo": n_coo,
         "formal_charge_e": expected_fc,
-        "net_charge_e": float(q.sum()),
+        "net_charge_e": net_q,
         "charge_residual_e": residual,
         "alpha": alpha,
         "d_max": d_max,
@@ -674,7 +793,7 @@ def compute_current_lib_role_charges(
     reference_dir: str | Path | None = None,
 ) -> tuple[np.ndarray, dict[str, Any]]:
     """Compute legacy fixed-library charges directly from resources/reference/current/*_gaff2.lib."""
-    roles = classify_go_v3_roles(model) if roles is None else roles
+    roles = _validate_roles_arg(model, roles)
     cur_dir = Path(reference_dir or DEFAULT_CURRENT_REFERENCE).resolve()
     libs = {
         name: load_fragment_library(cur_dir / f"{name}_gaff2.lib", name)
@@ -685,24 +804,29 @@ def compute_current_lib_role_charges(
         for role, (resname, aname) in _ROLE_TO_CURRENT_LIB_KEY.items()
     }
     q = np.array([float(lookup[r]) for r in roles], dtype=float)
+    if not np.all(np.isfinite(q)):
+        raise ValueError("current_lib charge calculation produced nonfinite values")
     expected_fc = _expected_formal_charge(model, roles)
-    residual = float(q.sum()) - float(expected_fc)
-    if abs(residual) >= 1e-6:
-        raise ValueError(f"current_lib net charge {float(q.sum())} != expected {expected_fc}")
+    net_q = float(q.sum())
+    residual = net_q - float(expected_fc)
+    if not math.isfinite(net_q) or not math.isfinite(residual) or abs(residual) >= 1e-6:
+        raise ValueError(f"current_lib net charge {net_q} != expected {expected_fc}")
     return q, {
         "charge_model": "current_lib",
         "regime": "fixed_fragment_libraries",
         "n_coo": -expected_fc,
         "formal_charge_e": expected_fc,
-        "net_charge_e": float(q.sum()),
+        "net_charge_e": net_q,
         "charge_residual_e": residual,
         "source_dir": str(cur_dir),
     }
 
 
 def _to_charge_float(value: Any) -> float:
-    if isinstance(value, bool) or not isinstance(value, (int, float, np.number)):
-        raise ValueError(f"Custom charge value must be a finite number, got {type(value).__name__}")
+    if isinstance(value, (bool, np.bool_)) or not isinstance(
+        value, (int, float, np.integer, np.floating)
+    ):
+        raise ValueError(f"Custom charge value must be a finite real number, got {type(value).__name__}")
     val = float(value)
     if not math.isfinite(val):
         raise ValueError("Custom charge value must be finite")
@@ -712,19 +836,21 @@ def _to_charge_float(value: Any) -> float:
 def _to_atom_id(key: Any) -> int:
     if isinstance(key, bool):
         raise ValueError("Custom charge atom ID cannot be a boolean")
-    try:
+    if isinstance(key, (int, np.integer)):
         return int(key)
-    except (TypeError, ValueError) as exc:
-        raise ValueError(f"Custom charge atom ID must be an integer, got {key!r}") from exc
-
-
-def _reject_duplicate_json_keys(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
-    out: dict[str, Any] = {}
-    for k, v in pairs:
-        if k in out:
-            raise ValueError(f"Duplicate JSON object key in custom charges: {k!r}")
-        out[k] = v
-    return out
+    if isinstance(key, str):
+        stripped = key.strip()
+        if stripped:
+            try:
+                return int(stripped, 10)
+            except ValueError as exc:
+                raise ValueError(
+                    f"Custom charge atom ID must be a base-10 integer string, got {key!r}"
+                ) from exc
+    raise ValueError(
+        f"Custom charge atom ID must be an exact integer or integer string, "
+        f"got {type(key).__name__} ({key!r})"
+    )
 
 
 def _parse_id_charge_map(raw_map: dict[Any, Any]) -> dict[int, float]:
@@ -747,7 +873,7 @@ def load_custom_charges(
     """Load and validate explicit per-atom partial charges with full provenance tracking."""
     atoms = model["atoms"]
     n = len(atoms)
-    roles = classify_go_v3_roles(model) if roles is None else roles
+    roles = _validate_roles_arg(model, roles)
     expected_fc = _expected_formal_charge(model, roles)
 
     source_sha256 = None
@@ -758,10 +884,11 @@ def load_custom_charges(
         p = Path(charges_source).resolve()
         if not p.is_file():
             raise FileNotFoundError(f"Custom charges JSON not found: {p}")
-        source_sha256 = _sha256(p)
+        raw_bytes = p.read_bytes()
+        source_sha256 = _sha256_bytes(raw_bytes)
         source_desc = str(p)
         payload = json.loads(
-            p.read_text(encoding="utf-8"),
+            raw_bytes.decode("utf-8"),
             object_pairs_hook=_reject_duplicate_json_keys,
         )
     elif isinstance(charges_source, (list, np.ndarray)):
@@ -773,6 +900,24 @@ def load_custom_charges(
 
     if isinstance(payload, dict):
         external_prov = payload.get("provenance") if isinstance(payload.get("provenance"), dict) else None
+        if "charges_e" in payload and "charges_by_id" in payload:
+            raise ValueError(
+                "Custom charges JSON cannot specify both 'charges_e' and 'charges_by_id'"
+            )
+        if "charges_e" in payload or "charges_by_id" in payload:
+            for extra_k in payload:
+                if extra_k in ("charges_e", "charges_by_id", "provenance"):
+                    continue
+                is_int_key = False
+                try:
+                    _to_atom_id(extra_k)
+                    is_int_key = True
+                except ValueError:
+                    pass
+                if is_int_key:
+                    raise ValueError(
+                        f"Custom charges object cannot mix structured field with direct atom-ID key {extra_k!r}"
+                    )
         if "charges_e" in payload:
             raw_list = payload["charges_e"]
             if not isinstance(raw_list, list):
@@ -801,10 +946,11 @@ def load_custom_charges(
     if q.shape != (n,) or not np.all(np.isfinite(q)):
         raise ValueError(f"Custom charges must have shape ({n},) with all finite floats")
 
-    residual = float(q.sum()) - float(expected_fc)
-    if abs(residual) > 1e-4:
+    net_q = float(q.sum())
+    residual = net_q - float(expected_fc)
+    if not math.isfinite(net_q) or not math.isfinite(residual) or abs(residual) > 1e-4:
         raise ValueError(
-            f"Custom charge sum ({float(q.sum()):.6f} e) differs from formal charge ({expected_fc} e) beyond 1e-4 e"
+            f"Custom charge sum ({net_q:.6f} e) differs from formal charge ({expected_fc} e) beyond 1e-4 e"
         )
 
     return q, {
@@ -812,7 +958,7 @@ def load_custom_charges(
         "regime": "per_atom_override",
         "n_coo": -expected_fc,
         "formal_charge_e": expected_fc,
-        "net_charge_e": float(q.sum()),
+        "net_charge_e": net_q,
         "charge_residual_e": residual,
         "source": source_desc,
         "source_sha256": source_sha256,
@@ -824,6 +970,7 @@ def assign_gaff2_v3(
     model: dict[str, Any],
     *,
     reference_dir: str | Path | None = None,
+    verified_bundle: dict[str, Any] | None = None,
     charge_model: str = "auto",
     custom_charges: str | Path | dict[str, Any] | list[float] | np.ndarray | None = None,
     current_reference_dir: str | Path | None = None,
@@ -865,12 +1012,12 @@ def assign_gaff2_v3(
         }
         return out
 
-    bundle = verify_v3_bundle(reference_dir)
+    bundle = verified_bundle if verified_bundle is not None else verify_v3_bundle(reference_dir)
     roles, res_list, v3_types, atom_color = decompose_go_v3(assigned)
 
     if charge_model in ("auto", "l0_v2", "L0_v2"):
         q_vec, charge_meta = compute_l0_v2_charges(
-            assigned, roles, reference_dir=bundle["reference_dir"]
+            assigned, roles, verified_bundle=bundle
         )
         custom_combo = False
         q_tag = "gaff2_v3:L0_v2c_a030"

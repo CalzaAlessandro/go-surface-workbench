@@ -1,11 +1,12 @@
-<a id="go-builder-go-surface-workbench"></a>
 <h1 align="center">GO Workbench</h1>
 
-Generate graphene oxide sheets with explicit connectivity and optional covalent functionalization.
+<p align="center">
+  <em>Linear-scaling graphene oxide builder, validated AMBER parameterization, and multi-engine topology export for docking and molecular dynamics.</em>
+</p>
 
 <p align="center">
   <a href="https://doi.org/10.5281/zenodo.24119849"><img src="https://img.shields.io/badge/Archive-10.5281%2Fzenodo.24119849-2457A7?style=flat" alt="Archive DOI: 10.5281/zenodo.24119849"></a>
-  <a href="https://github.com/CalzaAlessandro/go-surface-workbench/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/CalzaAlessandro/go-surface-workbench/tests.yml?branch=main&amp;style=flat&amp;label=Tests" alt="Software tests"></a>
+  <a href="https://github.com/CalzaAlessandro/go-surface-workbench/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/CalzaAlessandro/go-surface-workbench/tests.yml?branch=main&amp;style=flat" alt="Tests"></a>
   <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-%E2%89%A53.11-58616B?style=flat" alt="Python: 3.11 or later"></a>
   <img src="https://img.shields.io/badge/Status-Milestone%20block--2--amber--core-2E8B57?style=flat" alt="Status: Milestone block-2-amber-core">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache--2.0-607D8B?style=flat" alt="License: Apache-2.0"></a>
@@ -15,217 +16,129 @@ Generate graphene oxide sheets with explicit connectivity and optional covalent 
   <img src="docs/images/banner.webp" width="100%" alt="Illustration of a graphene oxide blueprint becoming an assembled molecular model on blue drafting paper, with a ruler, pencil and eraser">
 </p>
 
-## Contents
+**GO Workbench** constructs chemically valid finite and periodic graphene oxide (GO) models in $O(N)$ time up to $24{,}500+$ atoms, assigns validated AMBER **`gaff2_v3` + `L0_v2`** parameters with `0/129` namespace collisions, and exports verified inputs and topologies for **molecular docking** (`PDB`, `MOL2`, `SDF`) and **vacuum or solvated MD** (**AMBER**, **GROMACS**, and **OpenMM**).
 
-- [Getting started](#getting-started)
-- [Usage and examples](#usage-and-examples)
-- [Data and files](#data-and-files)
-- [Methods and validation](#methods-and-validation)
-- [Documentation](#documentation)
-- [Citation](#citation)
-- [Contributing](#contributing)
-- [License](#license)
+---
 
-> [!IMPORTANT]
-> **Project status (`block-2-amber-core`)**
-> - **Ready to use — Blocco 1 (Structure Builder):** finite & periodic GO construction (`rectangular`, `hexagonal`, `circular`), nm sizing, HierGO-style pore distributions, `pH`-aware `C/O` & `O/C` composition solving, `random`/`island`/`dispersed` patterns, Priority 1 & 2 oxygen groups (`OH`, `epoxide`, `COOH`, `COO−`, `carbonyl`, `epoxide_eph`, `epoxide_ept`), $O(N)$ pre-export motif-aware integrity gating, and multi-format exports (`JSON`, `PDB`, `MOL2`, `XYZ`, `EXTXYZ`, `SDF V3000`, `CIF P1`) via direct CLI or `.toml`/`.json` configs.
-> - **Ready to use — Blocco 2 (Core AMBER `gaff2_v3` + `L0_v2` & Multi-Engine Parity):** versioned `gaff2_v3` recommended preset (`resources/reference/gaff2_v3/`: `GO_gaff2_v3.frcmod`, 18 `*_gaff2_v3.lib`, `L0_v2c_a030` dual-regime charges, `PROVENANCE.json` SHA-256) covering Priority 1+2 chemistry (`52/58` benchmark models in-domain; Priority-3 motifs and unparameterized junctions explicitly rejected; `0/129` Amber namespace collisions), 4-color DSATUR epoxide typing, external custom charges (`--charge-model custom --charges-json`), deprecated `--preset gaff2_current` retained only for archival backwards compatibility, precision-upgraded `07_export_gromacs.py` (`.top`/`.itp`), and standalone pure-Python `08_export_openmm.py` (`.xml`).
-> - **Active research / preliminary — Blocco 3+:** closed-shell whole-sheet QM (`xTB` pre-relaxation), `L1_reg`/periodic writers, and non-AMBER force fields (`OPLS-AA`, `OpenFF`, `CHARMM`) remain in development. See [VALIDATION.md](VALIDATION.md), [CHARGE_PRESETS.md](docs/CHARGE_PRESETS.md), and [REFERENCE_AND_PRESETS.md](docs/REFERENCE_AND_PRESETS.md).
+## Development Roadmap & Block Status
 
-## Getting started
+| Block | Scope | Status | Milestone Tag |
+|---|---|---|---|
+| **Block 1 — Structure Builder** | Finite & periodic GO (`rectangular`, `hexagonal`, `circular`), nm sizing, HierGO-style pores, `pH`-aware `C/O` & `O/C` solver, `random`/`island`/`dispersed` patterns, Priority 1+2 groups, $O(N)$ motif-aware gate, `JSON`/`PDB`/`MOL2`/`XYZ`/`EXTXYZ`/`SDF V3000`/`CIF P1` exports | **Done** | [`block-1-builder`](https://github.com/CalzaAlessandro/go-surface-workbench/releases/tag/block-1-builder) |
+| **Block 2 — Core AMBER (`gaff2_v3` + `L0_v2`) & Multi-Engine Parity** | `GO_gaff2_v3.frcmod`, 18 lowercase GO types (`0/129` Amber collisions), 18 `*_gaff2_v3.lib`, 4-color DSATUR epoxide typing, `L0_v2c_a030` + custom charge JSON, SHA-256 `PROVENANCE.json`, precision GROMACS `.top`/`.itp` & pure-Python OpenMM `.xml` exporters (`11/11` gates, `407 passed`) | **Done** | [`block-2-amber-core`](https://github.com/CalzaAlessandro/go-surface-workbench/releases/tag/block-2-amber-core) |
+| **Block 3 — Realistic Sheet QM/RESP Validation** | Closed-shell Clar/Hückel blind mid-size (`80–87` atoms) & realistic (`185–190` atoms) GO sheets on HPC (gas & PCM DFT + HF/6-31G* RESP) | **In progress** | — |
+| **Block 4 — Advanced Charges, `gaff2_v3.1` & Irregular Islands** | Proximity charges (`L1_reg`/`SQE`), additive Priority-3 motifs (phenols, furanic ethers, lactones), organic irregular `island` mode & optional `clar`/Hückel filter | **Planned** | — |
+| **Block 5 — Periodic Topologies** | Direct periodic topology writers from `model.json` bond images for GROMACS, OpenMM, AMBER, and OpenFF | **Planned** | — |
+| **Block 6 — Multi-Force-Field & Literature Catalog** | `OPLS-AA`, `OpenFF`, and `CHARMM36m`/CGenFF presets alongside a tiered literature catalog | **Planned** | — |
+| **Block 7 — Condensed-Phase MD, MM-GBSA/PBSA & Biomolecules** | Explicit-water MD, 3-level MM-GBSA/PBSA calibration + `idecomp`, docking (`Vina`/`PatchDock`) & plug-and-play downstream solvation (`gmx solvate`, OpenMM `Modeller.addSolvent`), Linux + macOS CI | **Planned** | — |
 
-Requires Python 3.11 or later (`tomllib` stdlib support; bundled quickstart also tested on Python 3.12+). Dependencies (`pyproject.toml` and `uv.lock`) include NumPy, SciPy, ParmEd, and RDKit. From the repository root:
+---
+
+## Installation & Quickstart
+
+Requires **Python ≥ 3.11** (standard-library `tomllib`; dependencies managed via [pyproject.toml](pyproject.toml) and `uv.lock`: NumPy, SciPy, ParmEd, RDKit). From the repository root:
 
 ```bash
 uv sync --frozen
 uv run python examples/quickstart/run_quickstart.py --output-dir work/quickstart
 ```
 
-The example builds a small sheet, checks its connectivity and prepares Amber
-inputs using Python dependencies. Install AmberTools to compile a topology;
-later QM, docking and simulation steps use their respective external engines.
-
-[Quickstart and expected outputs](docs/QUICKSTART.md) ·
-[Installation details](docs/REFERENCE.md#installation--environment-setup) ·
-[Engine setup](docs/ENGINE_SETUP.md)
-
-## Usage and examples
-
-### Blocco 1 Builder: Direct CLI, `.toml`/`.json` Configs & Presets
-
-`01_build_GO.py` (equivalent to `go.py build`) works directly from CLI flags without
-a config file, from commented `.toml`/`.json` configs, or from packaged presets
-(`LayerOne` + illustrative templates):
+When installed from a wheel or sdist, all stages are also exposed through the module entry point:
 
 ```bash
-# 1) Direct CLI: 4x4 nm oxidized GO at pH 7.4, 2 islands, 5% mixed pores, multi-format export
+python -m go_builder --help
+```
+
+External scientific engines (`AmberTools`/`tleap`, `sander`, `GROMACS`, `OpenMM`, `Gaussian`/`xTB`, `AutoDock Vina`/`GNINA`) remain external to the Python package; see [Engine setup](docs/ENGINE_SETUP.md) and [Quickstart details](docs/QUICKSTART.md).
+
+---
+
+## Core Workflows
+
+### 1. Build, Check & Export GO Structures (`01_build_GO.py`)
+
+Construct models directly from CLI flags, commented `.toml`/`.json` configs ([`examples/configs/`](examples/configs/)), or packaged presets:
+
+```bash
+# Direct CLI: 4x4 nm GO at pH 7.4, 2 islands, 5% mixed pores, multi-format export
 uv run python 01_build_GO.py \
   --size 4 4 --oc 0.35 --ph 7.4 --place island --islands 2 --holes mixed:5 --seed 42 \
   --out work/go.json --pdb work/go.pdb --mol2 work/go.mol2 --sdf work/go.sdf --cif work/go.cif \
   --log work/go.log
 
-# 2) Hexagonal zigzag nanoflake (2.5 nm diameter) for QM / ASE / xTB workflows
+# Hexagonal zigzag nanoflake (2.5 nm diameter) for QM / xTB / ASE workflows
 uv run python 01_build_GO.py \
   --shape hexagonal --edge zigzag --diam 2.5 --oc 0.25 --place dispersed --seed 17 \
   --out work/hex.json --extxyz work/hex.extxyz --sdf work/hex.sdf
 
-# 3) Annotated TOML/JSON config template & shipped TOML examples
+# Config templates, shipped TOML recipes, packaged presets, and strict gate check
 uv run python 01_build_GO.py --init-config work/my_go.toml
 uv run python 01_build_GO.py --config examples/configs/go_island_porous.toml --out work/island.json
-
-# 4) Packaged presets & strict post-build geometry check (exit 1 on failure)
 uv run python 01_build_GO.py --list-presets
-uv run python 01_build_GO.py --preset template-go-ph7 --out work/go_ph7.json --pdb work/go_ph7.pdb
 uv run python check_model.py --model work/go.json --strict
 ```
 
-Three ready-to-run commented TOML examples are shipped in `examples/configs/`:
-[`go_standard_ph7.toml`](examples/configs/go_standard_ph7.toml),
-[`go_island_porous.toml`](examples/configs/go_island_porous.toml), and
-[`go_hex_qm.toml`](examples/configs/go_hex_qm.toml) (also compatible with
-[`prepare_composition.py`](prepare_composition.py)).
+Every built model preserves exact constructed connectivity (`geometry_status = "constructed_unrelaxed"`) and passes the $O(N)$ motif-aware integrity gate (`0` clashes, bond lengths, skew-cell minimum image, valence & charge checks) with single-core CPU scaling:
 
-### Export Formats & Pre-Export Integrity Gate
+| System | Atoms | Build time | Gate time | Clashes |
+|---|---:|---:|---:|---:|
+| Finite `12×12` (`O/C=0.35`, pH 7.4) | `913` | `0.16 s` | `0.03 s` | `0` |
+| Finite `24×24` (`O/C=0.35`, pH 7.4) | `3,666` | `0.67 s` | `0.12 s` | `0` |
+| Finite `36×36` (`O/C=0.35`, pH 7.4) | `8,294` | `1.60 s` | `0.26 s` | `0` |
+| Periodic `64×64` (`O/C=0.30`) | `24,576` | `6.30 s` | `1.33 s` | `0` |
 
-Every constructed model retains explicit connectivity (`geometry_status = "constructed_unrelaxed"`,
-no forced minimization) and passes the motif-aware $O(N)$ gate (`1-2`/`1-3`/`1-4+` clashes,
-motif bond lengths, skew-cell minimum image, valence & charge checks) before export:
-`--out` (authoritative JSON graph), `--pdb` (wwPDB `CONECT` + formal charges),
-`--mol2` (contiguous-residue Tripos MOL2, ParmEd-verified), `--xyz`, `--extxyz`
-(`Lattice`, `pbc`, escaped metadata), `--sdf` (Molfile V3000 with Kekulé orders,
-formal charges & `RAD=2` on unpaired $\pi$-sites, RDKit `sanitize=True` verified),
-`--cif` (`P 1` with `>= 20 Å` non-periodic clearance), and `--log`.
+### 2. Parameterize for AMBER (`gaff2_v3` + `L0_v2`) & Export to GROMACS / OpenMM
 
-### Scalability & Literature Comparison
-
-Workbench scales linearly ($O(N)$) from `<100` to `24,500+` atoms on a single CPU core
-with `0` clashes (`Gate: PASS`):
-- `Finite 12×12` (`913` atoms, `O/C = 0.35`, `pH 7.4`): **`0.16 s`** build, `0.03 s` gate
-- `Finite 24×24` (`3,666` atoms, `O/C = 0.35`, `pH 7.4`): **`0.67 s`** build, `0.12 s` gate
-- `Finite 36×36` (`8,294` atoms, `O/C = 0.35`, `pH 7.4`): **`1.60 s`** build, `0.26 s` gate
-- `Periodic 64×64` (`24,576` atoms, `4,915` groups, `O/C = 0.30`): **`6.30 s`** build, `1.33 s` gate
-
-See [Feature comparison & scalability](docs/COMPARISON.md) for the updated matrix vs
-`GOPY`, `HierGO`, `MakeGraphitics`, and `GrapheneGUI`, and [Benchmarks](docs/PERFORMANCE.md)
-for the reproducible 10-case scaling table (`scripts/benchmark_build.py --blocco1`).
-
-### Full Pipeline, AMBER Presets & Multi-Engine Export
-
-Build and parameterize a GO sheet with:
-`01_build_GO.py` → `02_open_epoxides.py` (optional) → `03_prepare_amber.py` → `07_export_gromacs.py` / `08_export_openmm.py`.
-Use `prepare_fragment.py` to prepare grafting reagents for reuse across loadings
-and random seeds.
+Run the core pipeline `01_build_GO.py` → [`02_open_epoxides.py`](02_open_epoxides.py) (optional) → [`03_prepare_amber.py`](03_prepare_amber.py) → [`07_export_gromacs.py`](07_export_gromacs.py) / [`08_export_openmm.py`](08_export_openmm.py):
 
 ```bash
-# Build, check, and generate AMBER topology with default gaff2_v3 (GO_gaff2_v3.frcmod + L0_v2; requires AmberTools/tleap for --run)
 uv run python 01_build_GO.py --recipe examples/finite_GO.json --output work/finite_GO.json --pdb work/finite_GO.pdb --json
-uv run python check_model.py --model work/finite_GO.json --json
 uv run python 03_prepare_amber.py --list-presets
 uv run python 03_prepare_amber.py --model work/finite_GO.json --output-dir work/amber_run --radii mbondi2 --run
 
-# Export to GROMACS / OpenMM (using go.prmtop/go.inpcrd created above by --run):
+# Verified cross-engine exports from Amber topology + coordinates:
 uv run python 07_export_gromacs.py --topology work/amber_run/go.prmtop --coordinates work/amber_run/go.inpcrd --output-prefix work/gmx/go
 uv run python 08_export_openmm.py --topology work/amber_run/go.prmtop --coordinates work/amber_run/go.inpcrd --output work/openmm/go.xml
 ```
 
-Optional overrides (preparing LEaP inputs with external custom per-atom charges JSON or comparing against the deprecated archival baseline `gaff2_current`):
+- **In-domain coverage (`gaff2_v3`)**: finite Priority 1+2 GO chemistry (`basal_C`, `edge_CH`, `OH`, basal `epoxide`, `epoxide_eph`, `epoxide_ept`, `carbonyl`, `COOH`, `COO−`) using `GO_gaff2_v3.frcmod`, 18 lowercase GO `.lib` units (`0/129` AMBER namespace collisions), 4-color DSATUR epoxide typing, and dual-regime `L0_v2c_a030` charges. Priority-3 motifs and unparameterized junctions are explicitly rejected.
+- **Custom charges & archival fallback**: pass `--charge-model custom --charges-json <file>` to inject external per-atom charges; `--preset gaff2_current` is deprecated and kept solely for archival backwards compatibility.
+- **Docking & MD regimes**: `PDB` (`CONECT`), `MOL2` (Tripos + charges), and `SDF V3000` support downstream docking (`AutoDock Vina`, `PatchDock`, `assemble_complex`); AMBER/GROMACS/OpenMM exporters support both **vacuum/gas-phase** and **explicitly solvated** systems (prepared in `tleap` via `solvateBox`/`addIonsRand` alongside standard biomolecular force fields). Direct `gmx solvate` split `.itp` helpers and OpenMM `ForceField` XML templates are scheduled in Block 7.
 
-```bash
-uv run python 03_prepare_amber.py --model work/finite_GO.json --output-dir work/amber_custom --preset gaff2_v3 --charge-model custom --charges-json path/to/charges.json
-uv run python 03_prepare_amber.py --model work/finite_GO.json --output-dir work/amber_legacy --preset gaff2_current
-```
+---
 
-`gaff2_v3` supports finite Priority 1+2 GO sheets (`basal_C`, `edge_CH`, `OH`, basal `epoxide`, `epoxide_eph`, `epoxide_ept`, `carbonyl`, `COOH`, `COO−`) and explicitly rejects Priority-3 motifs (phenols, planar ethers, lactones/esters, lactols, aldehydes) and unparameterized junctions. `gaff2_current` is deprecated (kept only for archival regression compatibility when explicitly requested or when `--reference-dir` is supplied without `--preset`).
+## Validation Summary
 
-## Data and files
+- **Software regression suite**: **`407 passed`** (`uv run pytest -q`), covering graph construction, motif gate, covalent functionalization, wheel/sdist packaging, `gaff2_v3` / `L0_v2` perception, `PROVENANCE.json` SHA-256 (`20/20` files), OpenMM XML serialization, and GROMACS `.top`/`.itp` + `SETTLE` round-trip verification.
+- **AMBER core parameterization (`gaff2_v3` + `L0_v2`)**: **`11/11` Go/No-Go gates (`step2b`) PASS**; `0` imaginary modes across `52/52` in-domain models (`6/58` Priority-3 explicitly `UNSUPPORTED`); `0/129` AMBER namespace collisions; `sander` 24.0 vs OpenMM 8.6.1 vs GROMACS parity **`max|ΔE| = 0.0267 kJ/mol`** and **`max|ΔF| = 0.0317 kJ/(mol·nm)`** (`4/4` synthetic + `ff19SB+TIP3P+Na` stress tests PASS).
 
-| Output under `work/quickstart/` | Contents |
-|---|---|
-| `finite_GO.json`, `finite_GO.pdb` | Sheet connectivity and coordinates |
-| `amber/tleap.in`, `amber/GO_gaff2_v3.frcmod` | LEaP input and validated `v3` parameter modifications |
-| `amber/assigned_model.json`, `amber/library_audit.json` | 25-role graph assignment, `L0_v2` charges, and SHA-256 library audit |
-| `amber/manifest.json`, `amber/PROVENANCE.json`, `amber/v3_libraries/` | Input manifest, force-field/charge provenance, and 18 GO `.lib` units |
+Full tables, evaluator details, and current scope limits are recorded in [VALIDATION.md](VALIDATION.md).
 
-The [command reference](docs/REFERENCE.md#scripts--usage-workflow) lists the
-build, functionalization, parameterization, docking and export scripts.
-
-## Methods and validation
-
-The [charge presets](docs/CHARGE_PRESETS.md) and [force-field presets & references](docs/REFERENCE_AND_PRESETS.md)
-document the published GAFF2–AIM parameters, current libraries, HierGO/OPLS reference,
-and the 2026-11-19 expanded 58-fragment audit (extending the historical
-[13 Nov 2026 pilot](research/benchmarks/2026-11-13/README.md)).
-[Parameterization studies](research/parameterization/README.md) cover RESP
-development; experimental parameters are kept separate from the reference libraries.
-
-[VALIDATION.md](VALIDATION.md) lists completed regression benchmarks and
-parameterization work still in progress. [Feature comparison & scalability](docs/COMPARISON.md)
-compares capabilities against HierGO, GOPY, MakeGraphitics, and GrapheneGUI. Original
-reference files are indexed in `resources/reference/SOURCES.json`; HierGO/OPLS tracks
-commit SHAs, file hashes, and upstream licenses in `resources/reference/opls/PROVENANCE.json`.
-
-Graph checks establish connectivity, coordination, and constructed steric/bond-length
-validity. They do not establish electronic structure, force-field accuracy, or equilibration.
-See the [charge-derivation reference](docs/REFERENCE.md#charge-derivation-audits--validation)
-for the QM and ESP workflow.
+---
 
 ## Documentation
 
-<a id="installation--environment-setup"></a>
-<a id="scripts--usage-workflow"></a>
-<a id="generating-a-graphene-oxide-sheet"></a>
-<a id="construction-details"></a>
-<a id="covalent-functionalization-amino-acids-peg-peptides-cyclodextrins"></a>
-<a id="amber-topologies-periodicity-docking--mmgbsa"></a>
-<a id="receptor-preparation-and-3d-bounding-boxes"></a>
-<a id="autodock-vina--empirical-gnina-docking"></a>
-<a id="complex-assembly-for-md--mmgbsa"></a>
-<a id="charge-derivation-audits--validation"></a>
-<a id="local-execution--slurm-integration"></a>
-<a id="validation-status--original-baselines"></a>
-<a id="citation--license"></a>
-
-<details>
-<summary>Topic index</summary>
-
-- [Installation & Environment Setup](docs/REFERENCE.md#installation--environment-setup)
-- [Scripts & Usage Workflow](docs/REFERENCE.md#scripts--usage-workflow)
-- [Generating a Graphene Oxide Sheet](docs/REFERENCE.md#generating-a-graphene-oxide-sheet)
-- [Construction Details](docs/REFERENCE.md#construction-details)
-- [Covalent Functionalization (Amino Acids, PEG, Peptides, Cyclodextrins)](docs/REFERENCE.md#covalent-functionalization-amino-acids-peg-peptides-cyclodextrins)
-- [Amber Topologies, Periodicity, Docking & MM/GBSA](docs/REFERENCE.md#amber-topologies-periodicity-docking--mmgbsa)
-- [Receptor Preparation and 3D Bounding Boxes](docs/REFERENCE.md#receptor-preparation-and-3d-bounding-boxes)
-- [AutoDock Vina & Empirical GNINA Docking](docs/REFERENCE.md#autodock-vina--empirical-gnina-docking)
-- [Complex Assembly for MD & MM/GBSA](docs/REFERENCE.md#complex-assembly-for-md--mmgbsa)
-- [Charge Derivation: Audits & Validation](docs/REFERENCE.md#charge-derivation-audits--validation)
-- [Local Execution & Slurm Integration](docs/REFERENCE.md#local-execution--slurm-integration)
-- [Validation Status & Original Baselines](docs/REFERENCE.md#validation-status--original-baselines)
-- [Citation & License](#citation)
-
-</details>
-
-| Topic | Guide |
+| Topic | Document |
 |---|---|
-| First example | [Quickstart](docs/QUICKSTART.md) |
-| Commands and complete workflows | [Command reference](docs/REFERENCE.md) |
-| Feature comparison & scalability | [Comparison vs literature](docs/COMPARISON.md) |
-| Covalent functionalization | [Fragments](docs/FRAGMENTS.md) |
-| Charge models and presets | [Charge presets](docs/CHARGE_PRESETS.md) · [Force-field presets & references](docs/REFERENCE_AND_PRESETS.md) |
-| 13 Nov 2026 pilot benchmark | [Pilot report](research/benchmarks/2026-11-13/README.md) · [Per-case tables](research/benchmarks/2026-11-13/PER_CASE_RESULTS.md) |
-| External programs | [Engine setup](docs/ENGINE_SETUP.md) |
-| Validation and limitations | [Validation](VALIDATION.md) |
-| Development plans and timings | [Roadmap](docs/ROADMAP.md) · [Benchmarks](docs/PERFORMANCE.md) |
+| Installation & quickstart outputs | [docs/QUICKSTART.md](docs/QUICKSTART.md) |
+| CLI flags, recipes & full workflow reference | [docs/REFERENCE.md](docs/REFERENCE.md) |
+| Validation gates & parity results | [VALIDATION.md](VALIDATION.md) |
+| Charge models (`L0_v2` & custom JSON) | [docs/CHARGE_PRESETS.md](docs/CHARGE_PRESETS.md) |
+| Force-field presets & reference provenance | [docs/REFERENCE_AND_PRESETS.md](docs/REFERENCE_AND_PRESETS.md) |
+| Feature comparison vs literature | [docs/COMPARISON.md](docs/COMPARISON.md) |
+| Linear-scaling benchmarks | [docs/PERFORMANCE.md](docs/PERFORMANCE.md) |
+| External simulation & QM engines | [docs/ENGINE_SETUP.md](docs/ENGINE_SETUP.md) |
+| Covalent functionalization fragments | [docs/FRAGMENTS.md](docs/FRAGMENTS.md) |
+| Trajectory alignment utilities | [docs/ALIGNMENT.md](docs/ALIGNMENT.md) |
+| External dataset notices & licenses | [THIRD_PARTY.md](THIRD_PARTY.md) |
 
-[Trajectory alignment](docs/ALIGNMENT.md).
+---
 
-## Citation
+## Citation, Contributing & License
 
-If you use this software or its parameter libraries, cite the archived release:
+If you use **GO Workbench** or its parameter libraries, please cite:
 
-Alessandro Calza (2026). *GO Workbench*, version 0.1.0.
-[DOI: 10.5281/zenodo.24119849](https://doi.org/10.5281/zenodo.24119849).
-
-Citation metadata: [CITATION.cff](CITATION.cff).
+> Alessandro Calza (2026). *GO Workbench*, version 0.1.0. [DOI: 10.5281/zenodo.24119849](https://doi.org/10.5281/zenodo.24119849) · [CITATION.cff](CITATION.cff)
 
 <details>
 <summary>BibTeX</summary>
@@ -243,10 +156,5 @@ Citation metadata: [CITATION.cff](CITATION.cff).
 
 </details>
 
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for setup and checks. Report problems or propose changes through [GitHub Issues](https://github.com/CalzaAlessandro/go-surface-workbench/issues). Include the affected file or command and a short description.
-
-## License
-
-This project is licensed under the [Apache 2.0 License](LICENSE).
+- **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md) and open issues on [GitHub Issues](https://github.com/CalzaAlessandro/go-surface-workbench/issues).
+- **License**: Original code and documentation in this repository are licensed under the [Apache 2.0 License](LICENSE). Third-party tools and reference datasets under `resources/reference/` retain their upstream terms documented in [THIRD_PARTY.md](THIRD_PARTY.md).

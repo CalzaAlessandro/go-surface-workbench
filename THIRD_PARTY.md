@@ -1,8 +1,11 @@
 # Third-party and reference material
 
-This is a private development snapshot. No project-wide license has been
-selected, and no ownership claim is made over the copied reference data. Review
-all source terms before any public redistribution.
+Original GO Workbench code in this repository is licensed under the Apache 2.0
+License (see `LICENSE`). Third-party and reference datasets listed below are
+**not** covered by the Apache 2.0 project license; they retain their own upstream
+licenses, provenance, and redistribution terms, and no ownership claim is made
+over copied reference data. Review all source terms before any public
+redistribution.
 
 ## HierGO reference files
 

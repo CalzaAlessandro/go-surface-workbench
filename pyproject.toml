@@ -2,6 +2,8 @@
 name = "go-builder"
 version = "0.1.0"
 requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE", "THIRD_PARTY.md"]
 dependencies = [
     "netcdf4>=1.7.5.1.post1",
     "numpy>=2.4.6",
@@ -14,8 +16,29 @@ dependencies = [
 composition = ["scipy>=1.14"]
 
 [build-system]
-requires = ["uv_build>=0.13.6,<0.14.0"]
-build-backend = "uv_build"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/go_builder"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"resources/reference/gaff2_v3" = "go_builder/_resources/reference/gaff2_v3"
+"resources/reference/current" = "go_builder/_resources/reference/current"
+"resources/reference/old" = "go_builder/_resources/reference/old"
+"resources/reference/opls" = "go_builder/_resources/reference/opls"
+"resources/reference/SOURCES.json" = "go_builder/_resources/reference/SOURCES.json"
+
+[tool.hatch.build.targets.sdist]
+only-include = [
+    "/src",
+    "/resources/reference",
+    "/pyproject.toml",
+    "/README.md",
+    "/VALIDATION.md",
+    "/LICENSE",
+    "/THIRD_PARTY.md",
+]
 
 [dependency-groups]
 dev = [

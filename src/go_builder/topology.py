@@ -7,12 +7,15 @@ bonded-force implementation for a covalently winding sheet.
 
 from __future__ import annotations
 
+import contextlib
 import hashlib
 import json
 import math
+import os
 import re
 import shutil
 import subprocess
+import tempfile
 import xml.etree.ElementTree as ET
 from copy import deepcopy
 from pathlib import Path
@@ -21,6 +24,7 @@ import numpy as np
 
 from .ff import DEFAULT_REFERENCE, assign_current_fragments, normalize_libraries
 from .ff_v3 import (
+    RES_COLORS_EPX,
     assign_gaff2_v3,
     compute_l0_v2_charges,
     load_custom_charges,
@@ -90,8 +94,30 @@ def _write_amber_provenance(
     radii: str,
     topology_path: Path | None = None,
     coordinates_path: Path | None = None,
+    topology_sha256: str | None = None,
+    coordinates_sha256: str | None = None,
+    junction_frcmod_name: str | None = None,
+    junction_frcmod_sha256: str | None = None,
 ) -> Path:
     ff_meta = assigned.get("metadata", {}).get("force_field", {})
+    files_prov = {
+        "frcmod": frcmod_name,
+        "frcmod_sha256": frcmod_sha256,
+        "bundle_provenance_sha256": ff_meta.get("provenance_sha256"),
+        "prmtop_sha256": (
+            topology_sha256
+            if topology_sha256 is not None
+            else (_sha(topology_path) if topology_path else None)
+        ),
+        "inpcrd_sha256": (
+            coordinates_sha256
+            if coordinates_sha256 is not None
+            else (_sha(coordinates_path) if coordinates_path else None)
+        ),
+    }
+    if junction_frcmod_name is not None:
+        files_prov["junction_frcmod"] = junction_frcmod_name
+        files_prov["junction_frcmod_sha256"] = junction_frcmod_sha256
     prov = {
         "schema_version": 1,
         "preset": preset,
@@ -109,13 +135,7 @@ def _write_amber_provenance(
             "scnb_14": 2.0,
             "gb_radii_set": radii,
         },
-        "files": {
-            "frcmod": frcmod_name,
-            "frcmod_sha256": frcmod_sha256,
-            "bundle_provenance_sha256": ff_meta.get("provenance_sha256"),
-            "prmtop_sha256": _sha(topology_path) if topology_path else None,
-            "inpcrd_sha256": _sha(coordinates_path) if coordinates_path else None,
-        },
+        "files": files_prov,
         "atom_count": len(assigned["atoms"]),
         "bond_count": len(assigned["bonds"]),
         "net_charge_e": float(sum(a["charge"] for a in assigned["atoms"])),
@@ -179,10 +199,11 @@ def prepare_amber(
     if resolved_preset == "gaff2_v3":
         bundle = verify_v3_bundle(reference_dir)
         frcmod_name = "GO_gaff2_v3.frcmod"
-        source_frcmod = Path(bundle["frcmod_path"])
+        frcmod_sha = bundle["frcmod_sha256"]
         assigned = assign_gaff2_v3(
             model,
             reference_dir=reference_dir,
+            verified_bundle=bundle,
             charge_model=charge_model,
             custom_charges=charges_json,
             parameter_templates=parameter_templates,
@@ -192,20 +213,24 @@ def prepare_amber(
         v3_lib_out.mkdir(parents=True)
         audit = {}
         ref_dir = Path(bundle["reference_dir"])
-        for lib_file in sorted(ref_dir.glob("*_gaff2_v3.lib")):
-            dest = v3_lib_out / lib_file.name
-            shutil.copyfile(lib_file, dest)
-            audit[lib_file.stem.split("_")[0]] = {
-                "source": str(lib_file),
-                "sha256": _sha(dest),
+        manifest_files = bundle["provenance"]["files"]
+        for lib_name, lib_raw in sorted(bundle["lib_bytes"].items()):
+            dest = v3_lib_out / lib_name
+            dest.write_bytes(lib_raw)
+            res_key = lib_name.removesuffix("_gaff2_v3.lib")
+            audit[res_key] = {
+                "source": str(ref_dir / lib_name),
+                "sha256": manifest_files[lib_name]["sha256"],
             }
-        shutil.copyfile(source_frcmod, output_dir / frcmod_name)
+        (output_dir / frcmod_name).write_bytes(bundle["frcmod_bytes"])
     else:
         cur_dir = Path(reference_dir or DEFAULT_REFERENCE)
         frcmod_name = "GO_gaff2.frcmod"
         source_frcmod = cur_dir / frcmod_name
         if not source_frcmod.is_file():
             raise ValueError("Current GO_gaff2.frcmod is missing")
+        source_frcmod_bytes = source_frcmod.read_bytes()
+        frcmod_sha = hashlib.sha256(source_frcmod_bytes).hexdigest()
         assigned = assign_current_fragments(
             model, cur_dir, parameter_templates=parameter_templates
         )
@@ -271,12 +296,14 @@ def prepare_amber(
             )
         output_dir.mkdir(parents=True)
         audit = normalize_libraries(cur_dir, output_dir / "normalized_libraries")
-        shutil.copyfile(source_frcmod, output_dir / frcmod_name)
+        (output_dir / frcmod_name).write_bytes(source_frcmod_bytes)
 
     extra = []
+    junction_frcmod_sha = None
     if parameter_templates:
-        source = Path(parameter_templates["frcmod"])
-        shutil.copyfile(source, output_dir / "junction.frcmod")
+        junction_bytes = Path(parameter_templates["frcmod"]).read_bytes()
+        junction_frcmod_sha = hashlib.sha256(junction_bytes).hexdigest()
+        (output_dir / "junction.frcmod").write_bytes(junction_bytes)
         extra = ["loadAmberParams junction.frcmod"]
     residues = _residue_map(assigned)
     assigned["atoms"].sort(key=lambda atom: residues[(atom["resid"], atom["resname"])])
@@ -321,7 +348,6 @@ def prepare_amber(
     leap_input.write_text("\n".join(lines) + "\n")
     _json(output_dir / "assigned_model.json", assigned)
     _json(output_dir / "library_audit.json", audit)
-    frcmod_sha = _sha(source_frcmod)
     prov_path = _write_amber_provenance(
         output_dir,
         preset=resolved_preset,
@@ -329,6 +355,8 @@ def prepare_amber(
         frcmod_sha256=frcmod_sha,
         assigned=assigned,
         radii=radii,
+        junction_frcmod_name="junction.frcmod" if parameter_templates else None,
+        junction_frcmod_sha256=junction_frcmod_sha,
     )
     ff_meta = assigned.get("metadata", {}).get("force_field", {})
     result = {
@@ -353,6 +381,8 @@ def prepare_amber(
         "periodic_policy": "finite solute; requested box is not solvation; nonzero bond images rejected",
         "engine_sources": ENGINE_SOURCES,
     }
+    if junction_frcmod_sha is not None:
+        result["junction_frcmod_sha256"] = junction_frcmod_sha
     if run:
         completed = subprocess.run(
             [executable, "-f", "tleap.in"],
@@ -387,6 +417,8 @@ def prepare_amber(
             atol=1e-6,
         ):
             raise ValueError("LEaP altered assigned fragment charges")
+        top_sha = imported["metadata"]["source_topology_sha256"]
+        crd_sha = imported["metadata"]["source_coordinates_sha256"]
         _write_amber_provenance(
             output_dir,
             preset=resolved_preset,
@@ -396,39 +428,145 @@ def prepare_amber(
             radii=radii,
             topology_path=top,
             coordinates_path=crd,
+            topology_sha256=top_sha,
+            coordinates_sha256=crd_sha,
+            junction_frcmod_name="junction.frcmod" if parameter_templates else None,
+            junction_frcmod_sha256=junction_frcmod_sha,
         )
         result.update(
             status="parameterized",
             parameterized=True,
             topology=str(top),
             coordinates=str(crd),
-            topology_sha256=_sha(top),
+            topology_sha256=top_sha,
             gbsa=gbsa_readiness(imported),
         )
     _json(output_dir / "manifest.json", result)
     return result
 
 
-def _load_amber(topology, coordinates=None):
+def _load_amber_with_digests(topology, coordinates=None):
     import parmed as pmd
 
-    structure = pmd.load_file(
-        str(topology), **({"xyz": str(coordinates)} if coordinates is not None else {})
-    )
+    top_path = Path(topology).resolve()
+    top_bytes = top_path.read_bytes()
+    top_sha = hashlib.sha256(top_bytes).hexdigest()
+    crd_bytes = None
+    crd_sha = None
+    crd_name = None
+    if coordinates is not None:
+        crd_path = Path(coordinates).resolve()
+        crd_bytes = crd_path.read_bytes()
+        crd_sha = hashlib.sha256(crd_bytes).hexdigest()
+        crd_name = crd_path.name
+    with tempfile.TemporaryDirectory() as tmp_dir:
+        tmp_root = Path(tmp_dir)
+        tmp_top = tmp_root / (top_path.name or "input.prmtop")
+        tmp_top.write_bytes(top_bytes)
+        load_kwargs = {}
+        if crd_bytes is not None:
+            safe_crd_name = (
+                crd_name
+                if crd_name and crd_name != tmp_top.name
+                else f"coords_{crd_name or 'input.inpcrd'}"
+            )
+            tmp_crd = tmp_root / safe_crd_name
+            tmp_crd.write_bytes(crd_bytes)
+            load_kwargs["xyz"] = str(tmp_crd)
+        structure = pmd.load_file(str(tmp_top), **load_kwargs)
     if not isinstance(structure, pmd.amber.AmberParm):
         raise ValueError("An existing fully parameterized Amber prmtop is required")
     if structure.coordinates is None:
         raise ValueError("Amber coordinates are required; coordinates are never fabricated")
     _check_parameterized(structure)
-    return structure
+    return structure, top_sha, crd_sha
+
+
+def _load_amber(topology, coordinates=None):
+    return _load_amber_with_digests(topology, coordinates)[0]
 
 
 def _check_parameterized(structure):
-    for field in ("bonds", "angles", "dihedrals", "impropers"):
-        if any(term.type is None for term in getattr(structure, field)):
-            raise ValueError(f"Unparameterized {field} in topology")
+    for bond in structure.bonds:
+        if (
+            bond.type is None
+            or not math.isfinite(float(bond.type.k))
+            or not math.isfinite(float(bond.type.req))
+        ):
+            raise ValueError("Unparameterized or nonfinite bonds in topology")
+    for angle in structure.angles:
+        if (
+            angle.type is None
+            or not math.isfinite(float(angle.type.k))
+            or not math.isfinite(float(angle.type.theteq))
+        ):
+            raise ValueError("Unparameterized or nonfinite angles in topology")
+    for dihedral in structure.dihedrals:
+        types = dihedral.type if isinstance(dihedral.type, list) else [dihedral.type]
+        if not types:
+            raise ValueError("Unparameterized dihedrals in topology")
+        for dt in types:
+            if dt is None:
+                raise ValueError("Unparameterized dihedrals in topology")
+            phi_k = float(dt.phi_k)
+            per = float(dt.per)
+            phase = float(dt.phase)
+            scee = float(getattr(dt, "scee", 0.0))
+            scnb = float(getattr(dt, "scnb", 0.0))
+            if not (
+                math.isfinite(phi_k)
+                and math.isfinite(per)
+                and math.isfinite(phase)
+                and math.isfinite(scee)
+                and math.isfinite(scnb)
+            ):
+                raise ValueError("Nonfinite dihedral parameter in topology")
+            if per < 0.0 or not per.is_integer():
+                raise ValueError(
+                    f"Negative or non-integer dihedral periodicity {dt.per!r} in topology"
+                )
+            if per == 0.0 and abs(phi_k) > 0.0:
+                raise ValueError(
+                    f"Zero dihedral periodicity with nonzero force constant ({phi_k}) in topology"
+                )
+            if scee < 0.0 or scnb < 0.0:
+                raise ValueError(
+                    f"Negative 1-4 scaling factor in topology (scee={scee}, scnb={scnb})"
+                )
+    for improper in structure.impropers:
+        if (
+            improper.type is None
+            or not math.isfinite(float(improper.type.psi_k))
+            or not math.isfinite(float(improper.type.psi_eq))
+        ):
+            raise ValueError("Unparameterized or nonfinite impropers in topology")
+    parm_data = getattr(structure, "parm_data", None) or {}
+    for flag in ("DIHEDRAL_FORCE_CONSTANT", "DIHEDRAL_PHASE"):
+        for raw_val in parm_data.get(flag) or []:
+            if not math.isfinite(float(raw_val)):
+                raise ValueError(f"Nonfinite {flag} parameter in topology")
+    raw_pers = parm_data.get("DIHEDRAL_PERIODICITY") or []
+    raw_fks = parm_data.get("DIHEDRAL_FORCE_CONSTANT") or []
+    for idx, raw_per in enumerate(raw_pers):
+        fper = float(raw_per)
+        if not math.isfinite(fper) or fper < 0.0 or not fper.is_integer():
+            raise ValueError(
+                f"Negative, non-integer, or nonfinite dihedral periodicity {raw_per!r} in topology"
+            )
+        if fper == 0.0 and idx < len(raw_fks) and abs(float(raw_fks[idx])) > 0.0:
+            raise ValueError(
+                f"Zero dihedral periodicity with nonzero force constant ({raw_fks[idx]}) in topology"
+            )
+    for flag in ("SCEE_SCALE_FACTOR", "SCNB_SCALE_FACTOR"):
+        for raw_sc in parm_data.get(flag) or []:
+            fsc = float(raw_sc)
+            if not math.isfinite(fsc) or fsc < 0.0:
+                raise ValueError(
+                    f"Negative or nonfinite 1-4 scaling factor {raw_sc!r} in {flag}"
+                )
     if any(
         not math.isfinite(a.charge)
+        or not math.isfinite(a.mass)
         or a.mass <= 0
         or not math.isfinite(a.epsilon)
         or not math.isfinite(a.rmin)
@@ -437,14 +575,37 @@ def _check_parameterized(structure):
         raise ValueError("Missing or invalid atom charge/mass/Lennard-Jones parameters")
     if not np.isfinite(structure.coordinates).all():
         raise ValueError("Nonfinite imported coordinates")
+    if structure.box is not None:
+        box_arr = np.asarray(structure.box, dtype=float)
+        if (
+            box_arr.shape[0] < 6
+            or not np.isfinite(box_arr[:6]).all()
+            or np.any(box_arr[:3] <= 0.0)
+            or np.any((box_arr[3:6] <= 0.0) | (box_arr[3:6] >= 180.0))
+        ):
+            raise ValueError(
+                "Invalid nonfinite or nonpositive periodic box dimensions in topology"
+            )
+        if getattr(structure, "box_vectors", None) is not None:
+            import parmed as pmd
+
+            vecs = np.asarray(
+                structure.box_vectors.value_in_unit(pmd.unit.nanometers), dtype=float
+            )
+            if (
+                vecs.shape != (3, 3)
+                or not np.isfinite(vecs).all()
+                or abs(float(np.linalg.det(vecs))) <= 1e-12
+            ):
+                raise ValueError("Invalid or degenerate periodic box vectors in topology")
 
 
 def annotate_imported_epoxides(model):
-    """Annotate intact current EPX basal motifs from existing explicit bonds.
+    """Annotate intact basal epoxide motifs (EPX/EP2/EP3/EP4) from explicit bonds.
 
-    This recognizes a known named template and its complete local graph. It
-    never assigns bonds from distances, guesses arbitrary oxygen chemistry,
-    or treats edge epoxides as supported basal graft sites.
+    This recognizes known named basal epoxide templates and their complete local
+    graph. It never assigns bonds from distances, guesses arbitrary oxygen
+    chemistry, or treats edge epoxides as supported basal graft sites.
     """
     model = deepcopy(model)
     by_id = {a["id"]: a for a in model["atoms"]}
@@ -454,8 +615,8 @@ def annotate_imported_epoxides(model):
         neighbors[bond["b"]].add(bond["a"])
     grouped = {}
     for atom in model["atoms"]:
-        if atom["resname"] == "EPX":
-            grouped.setdefault(atom["resid"], []).append(atom)
+        if atom["resname"] in RES_COLORS_EPX:
+            grouped.setdefault((atom["resid"], atom["resname"]), []).append(atom)
     metadata = model.setdefault("metadata", {})
     existing = list(metadata.get("groups", []))
     represented = {frozenset(g.get("site_ids", [])) for g in existing}
@@ -504,7 +665,7 @@ def import_amber(topology, coordinates=None, **options):
         raise ValueError(f"Unknown import options: {sorted(options)}")
     import parmed as pmd
 
-    structure = _load_amber(topology, coordinates)
+    structure, top_sha, crd_sha = _load_amber_with_digests(topology, coordinates)
     atoms = []
     xyz = structure.coordinates
     for i, atom in enumerate(structure.atoms):
@@ -563,8 +724,9 @@ def import_amber(topology, coordinates=None, **options):
             "formal_charges_unknown": True,
             "parameterized": True,
             "source_topology": str(Path(topology).resolve()),
-            "source_topology_sha256": _sha(topology),
+            "source_topology_sha256": top_sha,
             "source_coordinates": str(Path(coordinates).resolve()) if coordinates else None,
+            "source_coordinates_sha256": crd_sha,
             "radii_set": " ".join(structure.parm_data.get("RADIUS_SET", [])),
             "bond_image_policy": "Amber endpoints imported verbatim; no bond images in prmtop; no distance inference",
             "wrapped_or_stretched_bonds": stretched,
@@ -573,8 +735,11 @@ def import_amber(topology, coordinates=None, **options):
     return annotate_imported_epoxides(result)
 
 
-def _verify_parameter_roundtrip(original, converted):
+def _verify_parameter_roundtrip(original, converted, *, top_path=None):
     """Verify numerical atoms, valence terms and 1-4 scaling after conversion."""
+    import parmed as pmd
+
+    is_gmx = isinstance(converted, pmd.gromacs.GromacsTopologyFile)
 
     def atom_values(structure):
         return [(a.charge, a.mass, a.epsilon, a.rmin) for a in structure.atoms]
@@ -597,12 +762,14 @@ def _verify_parameter_roundtrip(original, converted):
                 result.extend(
                     (
                         (*ids, int(term.improper)),
-                        (
+                        (t.phi_k, t.per, t.phase)
+                        if is_gmx
+                        else (
                             t.phi_k,
                             t.per,
                             t.phase,
-                            0.0 if term.improper else t.scee,
-                            0.0 if term.improper else t.scnb,
+                            0.0 if (term.improper or term.ignore_end) else t.scee,
+                            0.0 if (term.improper or term.ignore_end) else t.scnb,
                         ),
                     )
                     for t in types
@@ -621,6 +788,27 @@ def _verify_parameter_roundtrip(original, converted):
         atom_values(original), atom_values(converted), atol=2e-6, rtol=2e-6
     ):
         raise ValueError("GROMACS round-trip atom charge/mass/Lennard-Jones mismatch")
+    if bool(getattr(converted, "unknown_functional", False)):
+        raise ValueError("GROMACS round-trip encountered unknown_functional in topology")
+    for extra_field in (
+        "rb_torsions",
+        "urey_bradleys",
+        "trigonal_angles",
+        "out_of_plane_bends",
+        "pi_torsions",
+        "stretch_bends",
+        "torsion_torsions",
+        "chiral_frames",
+        "multipole_frames",
+    ):
+        if len(getattr(original, extra_field, ())) != len(getattr(converted, extra_field, ())):
+            raise ValueError(f"GROMACS round-trip {extra_field} count mismatch")
+    if len(getattr(original, "cmaps", ())) != len(getattr(converted, "cmaps", ())):
+        raise ValueError("GROMACS round-trip CMAP torsion count mismatch")
+    if (hasattr(original, "has_NBFIX") and original.has_NBFIX()) != (
+        hasattr(converted, "has_NBFIX") and converted.has_NBFIX()
+    ):
+        raise ValueError("GROMACS round-trip NBFIX pair override mismatch")
     summary = {"atoms": len(original.atoms)}
     for field in ("bonds", "angles", "dihedrals", "impropers"):
         before, after = valence(original, field), valence(converted, field)
@@ -630,19 +818,628 @@ def _verify_parameter_roundtrip(original, converted):
         ):
             raise ValueError(f"GROMACS round-trip {field} parameter/scaling mismatch")
         summary["torsion_terms" if field == "dihedrals" else field] = len(before)
-    # ParmEd expands standard Amber 1-4 interactions into explicit GROMACS pairs;
-    # proper torsion scee/scnb above verify their retained scaling factors.
+
+    orig_eps = sum(1 for a in original.atoms if isinstance(a, pmd.ExtraPoint))
+    conv_eps = sum(1 for a in converted.atoms if isinstance(a, pmd.ExtraPoint))
+    if orig_eps != conv_eps:
+        raise ValueError("GROMACS round-trip extra-point count mismatch")
+
+    if is_gmx:
+        orig_12_13, orig_pairs_14, orig_extra_excl, orig_unexcl_14, orig_zero_excl, _orig_g = (
+            _extract_amber_exclusions(original)
+        )
+        if orig_unexcl_14:
+            raise ValueError(
+                f"GROMACS round-trip failed: source Amber topology leaves {len(orig_unexcl_14)} 1-4 pair(s) unexcluded"
+            )
+        if top_path is not None:
+            _verify_gromacs_topology_sections(Path(top_path), converted=converted)
+        else:
+            for itp in getattr(converted, "itps", ()) or ():
+                itp_p = Path(itp)
+                if itp_p.is_absolute() and itp_p.is_file():
+                    _verify_gromacs_topology_sections(itp_p, converted=converted)
+        orig_comb = str(getattr(original, "combining_rule", "lorentz") or "lorentz").lower()
+        conv_comb = str(getattr(converted, "combining_rule", "lorentz") or "lorentz").lower()
+        if orig_comb != conv_comb:
+            raise ValueError(
+                f"GROMACS round-trip combining_rule mismatch ({orig_comb!r} vs {conv_comb!r})"
+            )
+        expected_comb_rule = (
+            2 if orig_comb == "lorentz" else 3 if orig_comb == "geometric" else None
+        )
+        if expected_comb_rule is None:
+            raise ValueError(f"GROMACS round-trip unsupported combining_rule={orig_comb!r}")
+        defaults = getattr(converted, "defaults", None)
+        if defaults is not None:
+            nbfunc = getattr(defaults, "nbfunc", None)
+            if nbfunc is not None and int(nbfunc) != 1:
+                raise ValueError(
+                    f"GROMACS round-trip [ defaults ] nbfunc={nbfunc} mismatch (expected 1)"
+                )
+            comb_rule = getattr(defaults, "comb_rule", None)
+            if comb_rule is not None and int(comb_rule) != expected_comb_rule:
+                raise ValueError(
+                    f"GROMACS round-trip [ defaults ] comb_rule={comb_rule} mismatch "
+                    f"(expected {expected_comb_rule})"
+                )
+            gen_pairs = str(getattr(defaults, "gen_pairs", "yes")).strip().lower()
+            if gen_pairs not in {"yes", "no"}:
+                raise ValueError(
+                    f"GROMACS round-trip invalid [ defaults ] gen_pairs={getattr(defaults, 'gen_pairs', None)!r}"
+                )
+            for fudge_attr in ("fudgeLJ", "fudgeQQ"):
+                fudge_val = getattr(defaults, fudge_attr, None)
+                if (
+                    fudge_val is None
+                    or not math.isfinite(float(fudge_val))
+                    or float(fudge_val) < 0.0
+                ):
+                    raise ValueError(
+                        f"GROMACS round-trip invalid [ defaults ] {fudge_attr}={fudge_val!r}"
+                    )
+        expected_adjusts = {
+            pair: (
+                float(original.atoms[pair[0]].rmin) + float(original.atoms[pair[1]].rmin),
+                math.sqrt(
+                    float(original.atoms[pair[0]].epsilon)
+                    * float(original.atoms[pair[1]].epsilon)
+                )
+                / float(scnb),
+                1.0 / float(scee),
+            )
+            for pair, (scee, scnb) in orig_pairs_14.items()
+        }
+        converted_adjusts: dict[tuple[int, int], tuple[float, float, float]] = {}
+        for adj in converted.adjusts:
+            pair = tuple(sorted((int(adj.atom1.idx), int(adj.atom2.idx))))
+            if pair in converted_adjusts:
+                raise ValueError(f"GROMACS round-trip duplicate 1-4 adjust pair {pair}")
+            converted_adjusts[pair] = (
+                float(adj.type.rmin),
+                float(adj.type.epsilon),
+                float(adj.type.chgscale),
+            )
+        if sorted(converted_adjusts) != sorted(expected_adjusts):
+            raise ValueError(
+                f"GROMACS round-trip 1-4 pair identity mismatch "
+                f"(expected {len(expected_adjusts)} pairs, got {len(converted_adjusts)})"
+            )
+        if expected_adjusts:
+            exp_arr = [expected_adjusts[k] for k in sorted(expected_adjusts)]
+            got_arr = [converted_adjusts[k] for k in sorted(converted_adjusts)]
+            if not np.allclose(exp_arr, got_arr, atol=2e-6, rtol=2e-6):
+                raise ValueError("GROMACS round-trip 1-4 pair LJ/electrostatic parameter mismatch")
+        conv_explicit_excl = _molecule_instance_explicit_exclusions(converted)
+        if conv_explicit_excl != orig_extra_excl:
+            raise ValueError("GROMACS round-trip explicit nonbonded exclusion mismatch")
+        mol_nrexcls: set[int] = set()
+        for mol_entry in (getattr(converted, "molecules", None) or {}).values():
+            if isinstance(mol_entry, tuple) and len(mol_entry) >= 2:
+                mol_obj = mol_entry[0]
+                raw_nrexcl = getattr(mol_obj, "nrexcl", None)
+                if len(mol_entry) == 2:
+                    tuple_nrexcl = int(mol_entry[1])
+                    if raw_nrexcl is not None and int(raw_nrexcl) != tuple_nrexcl:
+                        raise ValueError(
+                            f"GROMACS round-trip inconsistent moleculetype nrexcl ({raw_nrexcl} vs {tuple_nrexcl})"
+                        )
+                    mol_nrexcls.add(tuple_nrexcl)
+                else:
+                    mol_nrexcls.add(int(raw_nrexcl) if raw_nrexcl is not None else int(mol_entry[2]))
+        if not mol_nrexcls:
+            mol_nrexcls = {int(getattr(converted, "nrexcl", 3))}
+        if len(mol_nrexcls) != 1:
+            raise ValueError(
+                f"GROMACS round-trip mixed nrexcl across moleculetypes: {sorted(mol_nrexcls)}"
+            )
+        nrexcl = next(iter(mol_nrexcls))
+        if nrexcl < 0:
+            raise ValueError(f"GROMACS round-trip invalid nrexcl={nrexcl}")
+        conv_g = _bond_graph_pairs_upto(converted, nrexcl)
+        conv_graph_excl = set().union(*conv_g.values()) if conv_g else set()
+        unexcluded_adjusts = set(converted_adjusts) - (conv_graph_excl | conv_explicit_excl)
+        if unexcluded_adjusts:
+            raise ValueError(
+                f"GROMACS round-trip nrexcl={nrexcl} leaves {len(unexcluded_adjusts)} 1-4 adjust pair(s) unexcluded"
+            )
+        conv_zero_excl = (conv_graph_excl | conv_explicit_excl) - set(converted_adjusts)
+        if conv_zero_excl != orig_zero_excl:
+            raise ValueError(
+                f"GROMACS round-trip effective nonbonded exclusion mismatch "
+                f"(expected {len(orig_zero_excl)} zero-interaction pairs, got {len(conv_zero_excl)})"
+            )
+        summary["pairs_14"] = len(expected_adjusts)
+    orig_box_nm = _structure_box_vectors_nm(original)
+    if orig_box_nm is not None:
+        conv_box_nm = _structure_box_vectors_nm(converted)
+        if conv_box_nm is None:
+            raise ValueError(
+                "GROMACS round-trip periodic box mismatch: missing periodic box in exported GRO"
+            )
+        orig_red = np.asarray(_reduce_openmm_box_vectors(orig_box_nm), dtype=float)
+        conv_red = np.asarray(_reduce_openmm_box_vectors(conv_box_nm), dtype=float)
+        if abs(float(np.linalg.det(orig_red))) < 1e-9 or abs(float(np.linalg.det(conv_red))) < 1e-9:
+            raise ValueError("GROMACS round-trip periodic box mismatch: degenerate cell vectors")
+        direct_ok = np.allclose(orig_red, conv_red, atol=1e-3, rtol=1e-5)
+        if not direct_ok:
+            m_mat = conv_red @ np.linalg.inv(orig_red)
+            m_int = np.rint(m_mat)
+            orig_metric = orig_red @ orig_red.T
+            conv_metric = conv_red @ conv_red.T
+            unimodular_ok = (
+                np.allclose(m_mat, m_int, atol=1e-3, rtol=1e-4)
+                and abs(abs(float(np.linalg.det(m_int))) - 1.0) < 1e-3
+                and np.allclose(m_int @ orig_metric @ m_int.T, conv_metric, atol=2e-3, rtol=1e-4)
+            )
+            if not unimodular_ok:
+                raise ValueError(
+                    "GROMACS round-trip periodic box mismatch between source Amber and exported GRO"
+                )
+        summary["periodic_box_verified"] = True
+    else:
+        summary["periodic_box_verified"] = False
     summary["coordinate_tolerance_angstrom"] = 0.006
     if not np.allclose(original.coordinates, converted.coordinates, atol=0.006, rtol=0):
         raise ValueError("GROMACS round-trip coordinate mismatch beyond GRO precision")
     return summary
 
 
-def _link_upstream_provenance(topology, coordinates):
+def _atom_signature(atom) -> tuple[str, str, str]:
+    res = getattr(atom, "residue", None)
+    return (
+        str(getattr(atom, "name", "")),
+        str(getattr(res, "name", "")) if res is not None else "",
+        str(getattr(atom, "type", "")),
+    )
+
+
+def _structure_box_vectors_nm(structure) -> np.ndarray | None:
+    box = getattr(structure, "box", None)
+    box_vectors = getattr(structure, "box_vectors", None)
+    if box is None or box_vectors is None:
+        return None
+    import parmed as pmd
+
+    vecs_nm = np.asarray(box_vectors.value_in_unit(pmd.unit.nanometer), dtype=float)
+    if vecs_nm.shape != (3, 3) or not np.all(np.isfinite(vecs_nm)):
+        raise ValueError("GROMACS round-trip periodic box mismatch: non-finite box vectors")
+    return vecs_nm
+
+
+def _molecule_instance_explicit_exclusions(converted) -> set[tuple[int, int]]:
+    explicit_excl = {
+        tuple(sorted((int(a.idx), int(p.idx))))
+        for a in converted.atoms
+        for p in (getattr(a, "exclusion_partners", ()) or ())
+        if int(p.idx) != int(a.idx)
+    }
+    molecules = getattr(converted, "molecules", None) or {}
+    if not molecules:
+        return explicit_excl
+
+    mol_specs: list[tuple[int, list[tuple[str, str, str]], set[tuple[int, int]]]] = []
+    for mol_entry in molecules.values():
+        mol_obj = mol_entry[0] if isinstance(mol_entry, tuple) and mol_entry else mol_entry
+        mol_atoms = list(getattr(mol_obj, "atoms", ()) or ())
+        if not mol_atoms:
+            continue
+        idx_by_id = {id(a): idx for idx, a in enumerate(mol_atoms)}
+        mol_pairs: set[tuple[int, int]] = set()
+        for idx, atom in enumerate(mol_atoms):
+            for partner in (getattr(atom, "exclusion_partners", ()) or ()):
+                p_idx = idx_by_id.get(id(partner), int(partner.idx))
+                if p_idx != idx:
+                    mol_pairs.add((min(idx, p_idx), max(idx, p_idx)))
+        mol_specs.append((len(mol_atoms), [_atom_signature(a) for a in mol_atoms], mol_pairs))
+
+    if not any(pairs for _, _, pairs in mol_specs):
+        return explicit_excl
+
+    conv_sigs = [_atom_signature(a) for a in converted.atoms]
+    total_atoms = len(conv_sigs)
+    if len(mol_specs) == 1:
+        mol_len, mol_sig, mol_pairs = mol_specs[0]
+        if mol_len <= 0 or total_atoms % mol_len != 0:
+            raise ValueError(
+                "GROMACS round-trip unmappable moleculetype explicit exclusions"
+            )
+        for offset in range(0, total_atoms, mol_len):
+            if conv_sigs[offset : offset + mol_len] != mol_sig:
+                raise ValueError(
+                    "GROMACS round-trip unmappable moleculetype explicit exclusions"
+                )
+            for u, v in mol_pairs:
+                explicit_excl.add((offset + u, offset + v))
+        return explicit_excl
+
+    cursor = 0
+    while cursor < total_atoms:
+        matches = [
+            (mol_len, mol_pairs)
+            for mol_len, mol_sig, mol_pairs in mol_specs
+            if cursor + mol_len <= total_atoms and conv_sigs[cursor : cursor + mol_len] == mol_sig
+        ]
+        if len(matches) != 1:
+            raise ValueError(
+                "GROMACS round-trip unmappable multi-moleculetype explicit exclusions"
+            )
+        mol_len, mol_pairs = matches[0]
+        for u, v in mol_pairs:
+            explicit_excl.add((cursor + u, cursor + v))
+        cursor += mol_len
+    return explicit_excl
+
+
+_ALLOWED_GROMACS_SECTIONS = frozenset(
+    {
+        "defaults",
+        "atomtypes",
+        "bondtypes",
+        "pairtypes",
+        "angletypes",
+        "dihedraltypes",
+        "nonbond_params",
+        "moleculetype",
+        "atoms",
+        "bonds",
+        "pairs",
+        "angles",
+        "dihedrals",
+        "exclusions",
+        "system",
+        "molecules",
+        "settles",
+    }
+)
+
+
+def _verify_gromacs_topology_sections(top_path: Path, *, converted) -> None:
+    import parmed as pmd
+
+    molecules = getattr(converted, "molecules", None) or {}
+    mol_by_name = {
+        str(mol_name): mol_entry[0]
+        for mol_name, mol_entry in molecules.items()
+        if isinstance(mol_entry, tuple) and mol_entry
+    }
+    _moltype_reset_sections = frozenset(
+        {
+            "defaults",
+            "atomtypes",
+            "bondtypes",
+            "pairtypes",
+            "angletypes",
+            "dihedraltypes",
+            "nonbond_params",
+            "moleculetype",
+            "system",
+            "molecules",
+        }
+    )
+    _max_section_tokens = {
+        "atoms": 8,
+        "bonds": 5,
+        "angles": 6,
+        "dihedrals": 8,
+        "pairs": 5,
+    }
+
+    def _is_eligible_settle_water(mol_name: str | None) -> bool:
+        if mol_name is None or mol_name not in mol_by_name:
+            return False
+        mol_obj = mol_by_name[mol_name]
+        real_atoms = [a for a in mol_obj.atoms if not isinstance(a, pmd.ExtraPoint)]
+        return (
+            len(real_atoms) == 3
+            and len(mol_obj.atoms) >= 3
+            and [int(a.atomic_number) for a in mol_obj.atoms[:3]] == [8, 1, 1]
+        )
+
+    def _validate_settle_row(mol_name: str | None, toks: list[str], filename: str) -> None:
+        if not _is_eligible_settle_water(mol_name):
+            raise ValueError(
+                f"GROMACS round-trip SETTLE water geometry/ordering mismatch in {filename}"
+            )
+        assert mol_name is not None
+        mol_obj = mol_by_name[mol_name]
+        try:
+            if len(toks) != 4:
+                raise ValueError
+            row_atom = int(toks[0])
+            funct = int(toks[1])
+            doh_nm = float(toks[2])
+            dhh_nm = float(toks[3])
+        except ValueError as exc:
+            raise ValueError(
+                f"GROMACS round-trip SETTLE water geometry/ordering mismatch in {filename}"
+            ) from exc
+        if (
+            row_atom != 1
+            or funct != 1
+            or not (math.isfinite(doh_nm) and doh_nm > 0.0)
+            or not (math.isfinite(dhh_nm) and dhh_nm > 0.0)
+        ):
+            raise ValueError(
+                f"GROMACS round-trip SETTLE water geometry/ordering mismatch in {filename}"
+            )
+        idx_by_id = {id(a): idx for idx, a in enumerate(mol_obj.atoms)}
+        bond_reqs: dict[tuple[int, int], float] = {}
+        for bond in getattr(mol_obj, "bonds", ()) or ():
+            if bond.type is None:
+                continue
+            i1 = idx_by_id.get(id(bond.atom1), int(bond.atom1.idx))
+            i2 = idx_by_id.get(id(bond.atom2), int(bond.atom2.idx))
+            bond_reqs[(min(i1, i2), max(i1, i2))] = float(bond.type.req)
+        r01 = bond_reqs.get((0, 1))
+        r02 = bond_reqs.get((0, 2))
+        if (
+            r01 is None
+            or r02 is None
+            or not (math.isfinite(r01) and r01 > 0.0 and math.isfinite(r02) and r02 > 0.0)
+            or abs(r01 - r02) > 1e-4
+        ):
+            raise ValueError(
+                f"GROMACS round-trip SETTLE water geometry/ordering mismatch in {filename}"
+            )
+        doh_a = doh_nm * 10.0
+        if abs(doh_a - r01) > 2e-3 or abs(doh_a - r02) > 2e-3:
+            raise ValueError(
+                f"GROMACS round-trip SETTLE water geometry/ordering mismatch in {filename}"
+            )
+        dhh_a = dhh_nm * 10.0
+        r12 = bond_reqs.get((1, 2))
+        if r12 is not None and math.isfinite(r12) and r12 > 0.0:
+            expected_hh = r12
+        else:
+            theta_deg = None
+            for ang in getattr(mol_obj, "angles", ()) or ():
+                if ang.type is None:
+                    continue
+                i1 = idx_by_id.get(id(ang.atom1), int(ang.atom1.idx))
+                i2 = idx_by_id.get(id(ang.atom2), int(ang.atom2.idx))
+                i3 = idx_by_id.get(id(ang.atom3), int(ang.atom3.idx))
+                if i2 == 0 and {i1, i3} == {1, 2}:
+                    theta_deg = float(ang.type.theteq)
+                    break
+            if theta_deg is None or not (math.isfinite(theta_deg) and 0.0 < theta_deg < 180.0):
+                raise ValueError(
+                    f"GROMACS round-trip SETTLE water geometry/ordering mismatch in {filename}"
+                )
+            expected_hh = 2.0 * r01 * math.sin(math.radians(theta_deg) / 2.0)
+        if abs(dhh_a - expected_hh) > 2e-3:
+            raise ValueError(
+                f"GROMACS round-trip SETTLE water geometry/ordering mismatch in {filename}"
+            )
+
+    def _scan_with_defines(defines: frozenset[str]) -> tuple[set[str], set[str]]:
+        active_stack: set[Path] = set()
+        include_count = [0]
+        global_cond_depth = [0]
+        seen_moltypes: set[str] = set()
+        flex_cond_moltypes: set[str] = set()
+        rigid_settle_moltypes: set[str] = set()
+        state: dict[str, object] = {
+            "section": None,
+            "moltype": None,
+            "moltype_has_settles": False,
+            "in_settles": False,
+            "settles_rows": 0,
+            "settles_file": None,
+        }
+
+        def _finalize_settles() -> None:
+            if state["in_settles"] and int(state["settles_rows"]) != 1:  # type: ignore[arg-type]
+                raise ValueError(
+                    f"GROMACS round-trip invalid [settles] row count in {state['settles_file']}"
+                )
+            state["in_settles"] = False
+            state["settles_rows"] = 0
+            state["settles_file"] = None
+
+        def _check_conditional_scope(sec_name: str | None, filename: str) -> None:
+            if global_cond_depth[0] <= 0:
+                return
+            if "FLEXIBLE" not in defines:
+                if sec_name != "settles":
+                    raise ValueError(
+                        f"GROMACS round-trip unverified non-SETTLE directive/data inside rigid FLEXIBLE conditional in {filename}"
+                    )
+                return
+            mol_name = state["moltype"] if isinstance(state["moltype"], str) else None
+            if sec_name not in {"bonds", "angles"} or not _is_eligible_settle_water(mol_name):
+                raise ValueError(
+                    f"GROMACS round-trip unverified non-water/non-bonded directive/data inside FLEXIBLE conditional in {filename}"
+                )
+            assert mol_name is not None
+            flex_cond_moltypes.add(mol_name)
+
+        def _scan(cur: Path) -> None:
+            resolved = cur.resolve()
+            if resolved in active_stack:
+                raise ValueError(f"GROMACS round-trip cyclic #include detected: {resolved.name}")
+            if not resolved.is_file():
+                raise ValueError(f"GROMACS round-trip missing topology file {resolved}")
+            if include_count[0] >= 1024:
+                raise ValueError("GROMACS round-trip exceeded maximum #include traversal depth")
+            include_count[0] += 1
+            active_stack.add(resolved)
+            cond_stack: list[dict[str, bool]] = []
+            try:
+                for raw_line in resolved.read_text(encoding="utf-8").splitlines():
+                    stripped_raw = raw_line.rstrip()
+                    code = raw_line.split(";", 1)[0].strip()
+                    if stripped_raw.endswith("\\") or code.endswith("\\"):
+                        raise ValueError(
+                            f"GROMACS round-trip unsupported line continuation (\\) in {resolved.name}"
+                        )
+                    if not code:
+                        continue
+                    is_active = all(frame["active"] for frame in cond_stack)
+                    if code.startswith("#"):
+                        if re.match(r"^#\s*(?:ifdef|ifndef)(?=$|[^A-Za-z0-9_])", code):
+                            m_if = re.match(r"^#\s*(ifdef|ifndef)\s+FLEXIBLE\s*$", code)
+                            if not m_if:
+                                raise ValueError(
+                                    f"GROMACS round-trip unsupported preprocessor directive in {resolved.name}: {code!r}"
+                                )
+                            if global_cond_depth[0] >= 1:
+                                raise ValueError(
+                                    f"GROMACS round-trip nested preprocessor conditional in {resolved.name}: {code!r}"
+                                )
+                            cond_true = (
+                                ("FLEXIBLE" in defines)
+                                if m_if.group(1) == "ifdef"
+                                else ("FLEXIBLE" not in defines)
+                            )
+                            cond_stack.append({"active": cond_true, "saw_else": False})
+                            global_cond_depth[0] += 1
+                            continue
+                        if re.match(r"^#\s*else(?=$|[^A-Za-z0-9_])", code):
+                            if not re.match(r"^#\s*else\s*$", code):
+                                raise ValueError(
+                                    f"GROMACS round-trip unsupported preprocessor directive in {resolved.name}: {code!r}"
+                                )
+                            if not cond_stack or cond_stack[-1]["saw_else"]:
+                                raise ValueError(
+                                    f"GROMACS round-trip unexpected #else directive in {resolved.name}"
+                                )
+                            cond_stack[-1]["saw_else"] = True
+                            cond_stack[-1]["active"] = not cond_stack[-1]["active"]
+                            continue
+                        if re.match(r"^#\s*endif(?=$|[^A-Za-z0-9_])", code):
+                            if not re.match(r"^#\s*endif\s*$", code):
+                                raise ValueError(
+                                    f"GROMACS round-trip unsupported preprocessor directive in {resolved.name}: {code!r}"
+                                )
+                            if not cond_stack:
+                                raise ValueError(
+                                    f"GROMACS round-trip unexpected #endif directive in {resolved.name}"
+                                )
+                            cond_stack.pop()
+                            global_cond_depth[0] -= 1
+                            continue
+                        if re.match(r"^#\s*include(?=$|[^A-Za-z0-9_])", code):
+                            inc_match = re.match(
+                                r'^#\s*include\s*(?:"([^"]+)"|<([^>]+)>)\s*$', code
+                            )
+                            if not inc_match:
+                                raise ValueError(
+                                    f"GROMACS round-trip malformed #include directive in {resolved.name}: {code!r}"
+                                )
+                            if is_active:
+                                inc_target = inc_match.group(1) or inc_match.group(2)
+                                inc_path = (resolved.parent / inc_target).resolve()
+                                if not inc_path.is_file():
+                                    raise ValueError(
+                                        f"GROMACS round-trip missing #include target {inc_target!r} in {resolved.name}"
+                                    )
+                                _scan(inc_path)
+                            continue
+                        raise ValueError(
+                            f"GROMACS round-trip unsupported preprocessor directive in {resolved.name}: {code!r}"
+                        )
+                    if not is_active:
+                        continue
+                    sec_match = re.match(r"^\[\s*([^\]]+?)\s*\]$", code)
+                    if sec_match:
+                        _finalize_settles()
+                        sec = sec_match.group(1).strip().lower()
+                        state["section"] = sec
+                        if sec in _moltype_reset_sections:
+                            state["moltype"] = None
+                            state["moltype_has_settles"] = False
+                        if sec not in _ALLOWED_GROMACS_SECTIONS:
+                            raise ValueError(
+                                f"GROMACS round-trip unsupported/unverified directive [{sec}] in {resolved.name}"
+                            )
+                        _check_conditional_scope(sec, resolved.name)
+                        if sec == "settles":
+                            mol_name = state["moltype"] if isinstance(state["moltype"], str) else None
+                            if mol_name is None or mol_name not in mol_by_name:
+                                raise ValueError(
+                                    f"GROMACS round-trip unsupported/unverified directive [settles] in {resolved.name}"
+                                )
+                            mol_obj = mol_by_name[mol_name]
+                            real_atoms = [a for a in mol_obj.atoms if not isinstance(a, pmd.ExtraPoint)]
+                            if (
+                                len(real_atoms) != 3
+                                or sorted(int(a.atomic_number) for a in real_atoms) != [1, 1, 8]
+                            ):
+                                raise ValueError(
+                                    f"GROMACS round-trip unsupported/unverified directive [settles] in {resolved.name}"
+                                )
+                            if not _is_eligible_settle_water(mol_name):
+                                raise ValueError(
+                                    f"GROMACS round-trip SETTLE water geometry/ordering mismatch in {resolved.name}"
+                                )
+                            if state["moltype_has_settles"]:
+                                raise ValueError(
+                                    f"GROMACS round-trip duplicate [settles] directive in moleculetype {mol_name!r} of {resolved.name}"
+                                )
+                            state["moltype_has_settles"] = True
+                            rigid_settle_moltypes.add(mol_name)
+                            state["in_settles"] = True
+                            state["settles_rows"] = 0
+                            state["settles_file"] = resolved.name
+                        continue
+                    if code.startswith("["):
+                        raise ValueError(
+                            f"GROMACS round-trip malformed section header in {resolved.name}: {code!r}"
+                        )
+                    toks = code.split()
+                    sec = state["section"] if isinstance(state["section"], str) else None
+                    _check_conditional_scope(sec, resolved.name)
+                    if sec == "moleculetype":
+                        if state["moltype"] is not None:
+                            raise ValueError(
+                                f"GROMACS round-trip unexpected multiple entries in [moleculetype] of {resolved.name}"
+                            )
+                        mol_name = toks[0]
+                        if mol_name in seen_moltypes:
+                            raise ValueError(
+                                f"GROMACS round-trip duplicate [moleculetype] {mol_name!r} in {resolved.name}"
+                            )
+                        seen_moltypes.add(mol_name)
+                        state["moltype"] = mol_name
+                    elif sec in _max_section_tokens and len(toks) > _max_section_tokens[sec]:
+                        raise ValueError(
+                            f"GROMACS round-trip unsupported B-state columns in [{sec}] of {resolved.name}"
+                        )
+                    elif sec == "settles":
+                        rows = int(state["settles_rows"]) + 1  # type: ignore[arg-type]
+                        state["settles_rows"] = rows
+                        if rows > 1:
+                            raise ValueError(
+                                f"GROMACS round-trip invalid [settles] row count in {resolved.name}"
+                            )
+                        mol_name = state["moltype"] if isinstance(state["moltype"], str) else None
+                        _validate_settle_row(mol_name, toks, resolved.name)
+                if cond_stack:
+                    raise ValueError(
+                        f"GROMACS round-trip unterminated preprocessor conditional in {resolved.name}"
+                    )
+            finally:
+                active_stack.discard(resolved)
+
+        _scan(Path(top_path))
+        _finalize_settles()
+        return flex_cond_moltypes, rigid_settle_moltypes
+
+    _, rigid_settle_moltypes = _scan_with_defines(frozenset())
+    flex_cond_moltypes, _ = _scan_with_defines(frozenset({"FLEXIBLE"}))
+    missing_rigid = sorted(flex_cond_moltypes - rigid_settle_moltypes)
+    if missing_rigid:
+        raise ValueError(
+            f"GROMACS round-trip FLEXIBLE-conditional water missing rigid [settles] for {missing_rigid}"
+        )
+
+
+def _link_upstream_provenance(topology, coordinates, *, top_sha: str | None = None, crd_sha: str | None = None):
     top_path = Path(topology).resolve()
     crd_path = Path(coordinates).resolve()
-    top_sha = _sha(top_path)
-    crd_sha = _sha(crd_path)
+    top_sha = top_sha if top_sha is not None else _sha(top_path)
+    crd_sha = crd_sha if crd_sha is not None else _sha(crd_path)
     upstream_path = top_path.parent / "PROVENANCE.json"
     upstream_data = None
     upstream_sha = None
@@ -822,43 +1619,79 @@ def export_gromacs(topology, coordinates, output_prefix, *, overwrite=False, mod
         raise FileExistsError("GROMACS export files already exist; choose a fresh prefix")
     if overwrite:
         raise ValueError("overwrite is unsupported; choose a fresh prefix")
-    structure = _load_amber(topology, coordinates)
-    upstream = _link_upstream_provenance(topology, coordinates)
+    structure, top_sha, crd_sha = _load_amber_with_digests(topology, coordinates)
+    upstream = _link_upstream_provenance(
+        topology, coordinates, top_sha=top_sha, crd_sha=crd_sha
+    )
+    _verify_supported_amber_terms(
+        structure, target="GROMACS", allow_explicit_exclusions=False
+    )
     import parmed as pmd
 
     converted = pmd.gromacs.GromacsTopologyFile.from_structure(structure)
+    created_dirs: list[Path] = []
+    cur_dir = prefix.parent
+    while not cur_dir.exists():
+        created_dirs.append(cur_dir)
+        if cur_dir.parent == cur_dir:
+            break
+        cur_dir = cur_dir.parent
     prefix.parent.mkdir(parents=True, exist_ok=True)
-    converted.write(str(paths["top"]), molfile=str(paths["itp"]), combine="all")
-    text = paths["top"].read_text().replace(f'"{paths["itp"]}"', f'"{paths["itp"].name}"')
-    paths["top"].write_text(text)
-    bonds_upgraded = _upgrade_gromacs_precision(paths["top"], paths["itp"], structure, converted)
-    structure.save(str(paths["gro"]), overwrite=False)
-    roundtrip = pmd.load_file(str(paths["top"]), xyz=str(paths["gro"]))
-    verification = _verify_parameter_roundtrip(structure, roundtrip)
-    prov = {
-        "schema_version": 1,
-        "format": "gromacs",
-        **upstream,
-        "itp_bond_precision_upgraded": bonds_upgraded,
-        "outputs": {k: str(v) for k, v in paths.items() if k != "provenance"},
-    }
-    _json(paths["provenance"], prov)
-    result = {key: str(value) for key, value in paths.items()}
-    result.update(
-        status="exported",
-        parameterized=True,
-        roundtrip_verified=verification,
-        source_topology_sha256=_sha(topology),
-        itp_bond_precision_upgraded=bonds_upgraded,
-        preset=upstream["preset"],
-        charge_model=upstream["charge_model"],
-        atom_count=len(structure.atoms),
-        bond_count=len(structure.bonds),
-        periodic_molecules="no (finite covalent topology only)",
-        gbsa_note="GB radii/screens remain in source Amber topology; standard GROMACS export does not transfer these fields",
-        engine_sources=ENGINE_SOURCES,
-    )
-    _json(paths["manifest"], result)
+    published: list[Path] = []
+    try:
+        with tempfile.TemporaryDirectory(
+            dir=prefix.parent, prefix=f".{prefix.name}.tmp."
+        ) as stage_dir_str:
+            stage_dir = Path(stage_dir_str)
+            staged = {key: stage_dir / fp.name for key, fp in paths.items()}
+            converted.write(str(staged["top"]), molfile=str(staged["itp"]), combine="all")
+            text = staged["top"].read_text().replace(
+                f'"{staged["itp"]}"', f'"{paths["itp"].name}"'
+            )
+            staged["top"].write_text(text)
+            bonds_upgraded = _upgrade_gromacs_precision(
+                staged["top"], staged["itp"], structure, converted
+            )
+            structure.save(str(staged["gro"]), overwrite=False)
+            roundtrip = pmd.load_file(str(staged["top"]), xyz=str(staged["gro"]))
+            verification = _verify_parameter_roundtrip(
+                structure, roundtrip, top_path=staged["top"]
+            )
+            prov = {
+                "schema_version": 1,
+                "format": "gromacs",
+                **upstream,
+                "itp_bond_precision_upgraded": bonds_upgraded,
+                "outputs": {k: str(v) for k, v in paths.items() if k != "provenance"},
+            }
+            _json(staged["provenance"], prov)
+            result = {key: str(value) for key, value in paths.items()}
+            result.update(
+                status="exported",
+                parameterized=True,
+                roundtrip_verified=verification,
+                source_topology_sha256=upstream["source_topology_sha256"],
+                itp_bond_precision_upgraded=bonds_upgraded,
+                preset=upstream["preset"],
+                charge_model=upstream["charge_model"],
+                atom_count=len(structure.atoms),
+                bond_count=len(structure.bonds),
+                periodic_molecules="no (finite covalent topology only)",
+                gbsa_note="GB radii/screens remain in source Amber topology; standard GROMACS export does not transfer these fields",
+                engine_sources=ENGINE_SOURCES,
+            )
+            _json(staged["manifest"], result)
+            for key in ("top", "itp", "gro", "provenance", "manifest"):
+                os.link(staged[key], paths[key])
+                published.append(paths[key])
+    except Exception:
+        for fp in published:
+            with contextlib.suppress(FileNotFoundError):
+                fp.unlink()
+        for d in created_dirs:
+            with contextlib.suppress(OSError):
+                d.rmdir()
+        raise
     return result
 
 
@@ -869,28 +1702,280 @@ def _fmt_xml_float(value: float) -> str:
     return format(val, ".16g")
 
 
-def _verify_standard_lorentz_berthelot_lj(structure) -> None:
+def _validate_14_scaling_factor(scee: float, scnb: float, *, context: str) -> tuple[float, float]:
+    """Validate finite, positive, standard Amber 1-4 scaling factors (scee=1.2, scnb=2.0)."""
+    f_ee = float(scee)
+    f_nb = float(scnb)
+    if not (math.isfinite(f_ee) and math.isfinite(f_nb)) or f_ee <= 0.0 or f_nb <= 0.0:
+        raise ValueError(
+            f"1-4 scaling factors on {context} must be positive and finite "
+            f"(got scee={scee!r}, scnb={scnb!r})"
+        )
+    if not (
+        math.isclose(f_ee, 1.2, rel_tol=1e-6, abs_tol=1e-9)
+        and math.isclose(f_nb, 2.0, rel_tol=1e-6, abs_tol=1e-9)
+    ):
+        raise ValueError(
+            f"Non-standard Amber 1-4 scaling factors on {context} "
+            f"(scee={f_ee!r}, scnb={f_nb!r}; exporter requires scee=1.2, scnb=2.0)"
+        )
+    return f_ee, f_nb
+
+
+def _bond_graph_pairs_upto(structure, max_dist: int = 3) -> dict[int, set[tuple[int, int]]]:
+    """Return canonical (i < j) atom pairs keyed by shortest bond-graph distance 1..max_dist."""
+    if max_dist < 1:
+        return {}
+    from collections import deque
+
+    n_atoms = len(structure.atoms)
+    adj: list[list[int]] = [[] for _ in range(n_atoms)]
+    for bond in structure.bonds:
+        i, j = int(bond.atom1.idx), int(bond.atom2.idx)
+        if i != j:
+            adj[i].append(j)
+            adj[j].append(i)
+    by_dist: dict[int, set[tuple[int, int]]] = {d: set() for d in range(1, max_dist + 1)}
+    for start in range(n_atoms):
+        gdist = {start: 0}
+        dq = deque([start])
+        while dq:
+            u = dq.popleft()
+            du = gdist[u]
+            if du == max_dist:
+                continue
+            for v in adj[u]:
+                if v not in gdist:
+                    nd = du + 1
+                    gdist[v] = nd
+                    dq.append(v)
+                    if start < v:
+                        by_dist[nd].add((start, v))
+    return by_dist
+
+
+def _extract_amber_exclusions(
+    structure,
+) -> tuple[
+    set[tuple[int, int]],
+    dict[tuple[int, int], tuple[float, float]],
+    set[tuple[int, int]],
+    set[tuple[int, int]],
+    set[tuple[int, int]],
+    dict[int, set[tuple[int, int]]],
+]:
+    """Return 1-2/1-3 pairs, scaled 1-4 pairs, extra/unexcluded/zero-excl sets, and graph distances."""
+    n_atoms = len(structure.atoms)
+    excluded_12_13: set[tuple[int, int]] = set()
+    for bond in structure.bonds:
+        i, j = bond.atom1.idx, bond.atom2.idx
+        if i != j:
+            excluded_12_13.add((min(i, j), max(i, j)))
+    for angle in structure.angles:
+        i, j = angle.atom1.idx, angle.atom3.idx
+        if i != j:
+            excluded_12_13.add((min(i, j), max(i, j)))
+
+    graph_d = _bond_graph_pairs_upto(structure, 3)
+    graph_12 = graph_d[1]
+    graph_13 = graph_d[2]
+    graph_14 = graph_d[3]
+
+    explicit_partner_pairs: set[tuple[int, int]] = set()
+    amber_excluded: set[tuple[int, int]] = set()
+    for atom in structure.atoms:
+        i = atom.idx
+        for partner in getattr(atom, "exclusion_partners", ()) or ():
+            j = partner.idx
+            if j != i:
+                pair = (min(i, j), max(i, j))
+                explicit_partner_pairs.add(pair)
+                amber_excluded.add(pair)
+
+    parm_data = getattr(structure, "parm_data", None) or {}
+    num_excl = parm_data.get("NUMBER_EXCLUDED_ATOMS")
+    excl_list = parm_data.get("EXCLUDED_ATOMS_LIST")
+    has_amber_excl_list = num_excl is not None and excl_list is not None
+    if has_amber_excl_list:
+        pos = 0
+        for i, raw_cnt in enumerate(num_excl):
+            if i >= n_atoms:
+                break
+            cnt = int(raw_cnt)
+            if cnt < 0 or pos + cnt > len(excl_list):
+                raise ValueError(
+                    "Malformed NUMBER_EXCLUDED_ATOMS / EXCLUDED_ATOMS_LIST in Amber topology"
+                )
+            for k in range(cnt):
+                j1 = int(excl_list[pos + k])
+                if j1 <= 0:
+                    continue
+                if j1 > n_atoms:
+                    raise ValueError(
+                        f"Out-of-range excluded atom index {j1} in EXCLUDED_ATOMS_LIST"
+                    )
+                j = j1 - 1
+                if j != i:
+                    amber_excluded.add((min(i, j), max(i, j)))
+            pos += cnt
+        missing_bonded = excluded_12_13 - amber_excluded
+        if missing_bonded:
+            raise ValueError(
+                f"Amber EXCLUDED_ATOMS_LIST omits {len(missing_bonded)} 1-2/1-3 bonded pair(s); "
+                f"non-excluded bonded pairs are unsupported"
+            )
+
+    for flag in ("DIHEDRALS_INC_HYDROGEN", "DIHEDRALS_WITHOUT_HYDROGEN"):
+        raw_dih = parm_data.get(flag)
+        if raw_dih is None:
+            continue
+        n_raw = len(raw_dih)
+        if n_raw % 5 != 0:
+            raise ValueError(f"Malformed {flag} section length ({n_raw}) in Amber topology")
+        for k in range(0, n_raw, 5):
+            if int(raw_dih[k + 2]) == 0 or int(raw_dih[k + 3]) == 0:
+                raise ValueError(
+                    f"Amber {flag} entry {k // 5} places atom index 0 in sign-flagged slot 3/4 "
+                    f"({[int(x) for x in raw_dih[k : k + 5]]}), which has ambiguous 1-4/improper semantics"
+                )
+
+    pairs_14: dict[tuple[int, int], tuple[float, float]] = {}
+    dihedral_14_ends: set[tuple[int, int]] = set()
+    for dihedral in structure.dihedrals:
+        if getattr(dihedral, "improper", False):
+            continue
+        i, j = dihedral.atom1.idx, dihedral.atom4.idx
+        pair = (min(i, j), max(i, j))
+        is_active = not getattr(dihedral, "ignore_end", False)
+        if is_active:
+            if (
+                i == j
+                or pair in excluded_12_13
+                or pair in graph_12
+                or pair in graph_13
+                or pair in explicit_partner_pairs
+            ):
+                raise ValueError(
+                    f"Amber topology contains active 1-4 dihedral on bonded/excluded pair {(i, j)}, unsupported by export"
+                )
+        elif (
+            i != j
+            and pair not in excluded_12_13
+            and pair not in graph_12
+            and pair not in graph_13
+        ):
+            dihedral_14_ends.add(pair)
+        if not is_active:
+            continue
+        dt = dihedral.type[0] if isinstance(dihedral.type, list) else dihedral.type
+        if dt is None:
+            raise ValueError(f"Untyped dihedral on 1-4 pair {pair}")
+        scee, scnb = _validate_14_scaling_factor(
+            getattr(dt, "scee", 0.0),
+            getattr(dt, "scnb", 0.0),
+            context=f"1-4 dihedral pair {pair}",
+        )
+        if pair in pairs_14:
+            raise ValueError(
+                f"Amber topology contains duplicate active 1-4 dihedral interaction on atom pair {pair}, unsupported by export"
+            )
+        pairs_14[pair] = (scee, scnb)
+
+    if has_amber_excl_list:
+        missing_14_excl = set(pairs_14) - amber_excluded
+        if missing_14_excl:
+            raise ValueError(
+                f"Amber EXCLUDED_ATOMS_LIST omits {len(missing_14_excl)} active 1-4 pair(s)"
+            )
+        unexcluded_14 = (graph_14 | dihedral_14_ends) - amber_excluded - set(pairs_14)
+        orig_zero_excl = (amber_excluded | explicit_partner_pairs) - set(pairs_14)
+    else:
+        unexcluded_14 = set()
+        orig_zero_excl = (excluded_12_13 | explicit_partner_pairs) - set(pairs_14)
+
+    extra_exclusions = (amber_excluded | explicit_partner_pairs) - excluded_12_13 - set(pairs_14)
+    return excluded_12_13, pairs_14, extra_exclusions, unexcluded_14, orig_zero_excl, graph_d
+
+
+def _verify_standard_lorentz_berthelot_lj(structure, *, target: str = "OpenMM XML") -> None:
     """Reject NBFIX, non-Lorentz mixing, 12-6-4 C4 terms, and 10-12 H-bond terms."""
     comb = str(getattr(structure, "combining_rule", "lorentz") or "lorentz").lower()
     if comb != "lorentz":
         raise ValueError(
-            f"Unsupported Amber LJ combining_rule {comb!r}; standalone NonbondedForce XML requires Lorentz-Berthelot"
+            f"Unsupported Amber LJ combining_rule {comb!r}; {target} export requires Lorentz-Berthelot"
         )
     if hasattr(structure, "has_NBFIX") and structure.has_NBFIX():
         raise ValueError(
-            "Amber topology contains pair-specific Lennard-Jones overrides (NBFIX); "
-            "standalone NonbondedForce OpenMM XML export cannot represent NBFIX"
+            f"Amber topology contains pair-specific Lennard-Jones overrides (NBFIX); "
+            f"{target} export cannot represent NBFIX"
+        )
+    if hasattr(structure, "has_1012") and structure.has_1012():
+        raise ValueError(
+            f"Amber topology contains 10-12 HBOND terms unsupported by {target} export"
         )
     parm_data = getattr(structure, "parm_data", None) or {}
+    for flag in (
+        "LENNARD_JONES_ACOEF",
+        "LENNARD_JONES_BCOEF",
+        "LENNARD_JONES_14_ACOEF",
+        "LENNARD_JONES_14_BCOEF",
+        "HBOND_ACOEF",
+        "HBOND_BCOEF",
+    ):
+        vals = parm_data.get(flag)
+        if vals and any(not math.isfinite(float(x)) for x in vals):
+            raise ValueError(f"Nonfinite entry in Amber {flag} table unsupported by {target} export")
     ccoef = parm_data.get("LENNARD_JONES_CCOEF")
-    if ccoef and any(abs(float(x)) > 0.0 for x in ccoef):
+    if ccoef and any((not math.isfinite(float(x))) or abs(float(x)) > 0.0 for x in ccoef):
         raise ValueError(
-            "Amber topology contains nonzero 12-6-4 LENNARD_JONES_CCOEF terms unsupported by standalone NonbondedForce XML"
+            f"Amber topology contains nonzero or nonfinite 12-6-4 LENNARD_JONES_CCOEF terms unsupported by {target} export"
         )
     pointers = parm_data.get("POINTERS")
     nb_index = parm_data.get("NONBONDED_PARM_INDEX")
     acoef = parm_data.get("LENNARD_JONES_ACOEF")
     bcoef = parm_data.get("LENNARD_JONES_BCOEF")
+    c14 = parm_data.get("LENNARD_JONES_14_CCOEF")
+    if c14 and any((not math.isfinite(float(x))) or abs(float(x)) > 0.0 for x in c14):
+        raise ValueError(
+            f"Amber/Chamber topology contains nonzero or nonfinite 12-6-4 LENNARD_JONES_14_CCOEF terms unsupported by {target} export"
+        )
+    a14 = parm_data.get("LENNARD_JONES_14_ACOEF")
+    b14 = parm_data.get("LENNARD_JONES_14_BCOEF")
+    if a14 is not None or b14 is not None:
+        if (
+            acoef is None
+            or bcoef is None
+            or a14 is None
+            or b14 is None
+            or len(a14) != len(acoef)
+            or len(b14) != len(bcoef)
+            or not all(
+                math.isclose(float(x14), float(x), rel_tol=1e-6, abs_tol=1e-9)
+                for x14, x in zip(a14, acoef, strict=True)
+            )
+            or not all(
+                math.isclose(float(x14), float(x), rel_tol=1e-6, abs_tol=1e-9)
+                for x14, x in zip(b14, bcoef, strict=True)
+            )
+        ):
+            raise ValueError(
+                f"Amber/Chamber topology contains distinct 1-4 Lennard-Jones tables "
+                f"(LENNARD_JONES_14_ACOEF/BCOEF) unsupported by {target} export"
+            )
+    for atom in structure.atoms:
+        raw_r14 = getattr(atom, "rmin_14", None)
+        raw_e14 = getattr(atom, "epsilon_14", None)
+        if raw_r14 is not None or raw_e14 is not None:
+            r14 = float(atom.rmin if raw_r14 is None else raw_r14)
+            e14 = float(atom.epsilon if raw_e14 is None else raw_e14)
+            if not (math.isfinite(r14) and math.isfinite(e14)) or not (
+                math.isclose(r14, float(atom.rmin), rel_tol=1e-6, abs_tol=1e-9)
+                and math.isclose(e14, float(atom.epsilon), rel_tol=1e-6, abs_tol=1e-9)
+            ):
+                raise ValueError(
+                    f"Amber/Chamber topology contains distinct per-atom 1-4 Lennard-Jones parameters "
+                    f"(rmin_14/epsilon_14) unsupported by {target} export"
+                )
     if pointers is not None and nb_index is not None and acoef is not None and bcoef is not None and len(pointers) > 1:
         ntypes = int(pointers[1])
         hba = parm_data.get("HBOND_ACOEF") or []
@@ -914,25 +1999,30 @@ def _verify_standard_lorentz_berthelot_lj(structure) -> None:
                 r_j, e_j = nb_map[nb_j]
                 eps_lb = math.sqrt(e_i * e_j)
                 ptr = int(nb_index[ntypes * (nb_i - 1) + (nb_j - 1)])
+                ptr_sym = int(nb_index[ntypes * (nb_j - 1) + (nb_i - 1)])
+                if ptr != ptr_sym:
+                    raise ValueError(
+                        f"Asymmetric Amber NONBONDED_PARM_INDEX entry for types ({nb_i}, {nb_j}) unsupported by {target} export"
+                    )
                 if ptr < 0:
                     hb_i = -ptr - 1
                     ha = float(hba[hb_i]) if hb_i < len(hba) else 0.0
                     hb = float(hbb[hb_i]) if hb_i < len(hbb) else 0.0
                     if abs(ha) > 0.0 or abs(hb) > 0.0:
                         raise ValueError(
-                            "Amber topology contains nonzero 10-12 HBOND terms unsupported by standalone NonbondedForce XML"
+                            f"Amber topology contains nonzero 10-12 HBOND terms unsupported by {target} export"
                         )
                     if eps_lb > 0.0:
                         raise ValueError(
-                            "Amber topology disables 12-6 LJ via 10-12 HBOND index on an active LJ pair; "
-                            "standalone NonbondedForce XML would silently introduce a nonzero LJ interaction"
+                            f"Amber topology disables 12-6 LJ via 10-12 HBOND index on an active LJ pair; "
+                            f"{target} export would silently introduce a nonzero LJ interaction"
                         )
                     continue
                 if ptr == 0:
                     if eps_lb > 0.0:
                         raise ValueError(
-                            "Amber topology omits 12-6 LJ pair entry on an active LJ pair; "
-                            "standalone NonbondedForce XML would silently introduce a nonzero LJ interaction"
+                            f"Amber topology omits 12-6 LJ pair entry on an active LJ pair; "
+                            f"{target} export would silently introduce a nonzero LJ interaction"
                         )
                     continue
                 r_lb = r_i + r_j
@@ -945,10 +2035,155 @@ def _verify_standard_lorentz_berthelot_lj(structure) -> None:
                     and math.isclose(b_p, b_lb, rel_tol=1e-4, abs_tol=1e-6)
                 ):
                     raise ValueError(
-                        "Amber topology nonbonded pair coefficients deviate from Lorentz-Berthelot "
-                        "combining rules (geometric mixing or pair-specific LJ overrides unsupported "
-                        "in standalone NonbondedForce XML)"
+                        f"Amber topology nonbonded pair coefficients deviate from Lorentz-Berthelot "
+                        f"combining rules (geometric mixing or pair-specific LJ overrides unsupported by {target} export)"
                     )
+
+
+def _verify_supported_amber_terms(
+    structure, *, target: str, allow_explicit_exclusions: bool
+) -> None:
+    """Reject Amber topology terms that cannot be represented faithfully by the exporter."""
+    import parmed as pmd
+
+    _verify_standard_lorentz_berthelot_lj(structure, target=target)
+    parm_data = getattr(structure, "parm_data", None) or {}
+    if any(int(x) != 0 for x in (parm_data.get("IPOL") or [])):
+        raise ValueError(
+            f"Amber topology enables polarization (IPOL != 0), unsupported by {target} export"
+        )
+    pointers = parm_data.get("POINTERS") or []
+    ptr_dict = getattr(structure, "pointers", None) or {}
+    if (
+        int(ptr_dict.get("IFPERT", 0) or 0) != 0
+        or any(len(pointers) > idx and int(pointers[idx]) != 0 for idx in range(20, 27))
+        or any(
+            str(k).startswith("PERT_") and bool(np.asarray(v).size > 0)
+            for k, v in parm_data.items()
+        )
+    ):
+        raise ValueError(
+            f"Amber topology enables perturbation (IFPERT != 0), unsupported by {target} export"
+        )
+    if (
+        (len(pointers) > 29 and int(pointers[29]) != 0)
+        or bool(parm_data.get("CAP_INFO"))
+        or bool(parm_data.get("CAP_INFO2"))
+    ):
+        raise ValueError(
+            f"Amber topology contains solvent cap (CAP_INFO) unsupported by {target} export"
+        )
+    if any(isinstance(a, pmd.ExtraPoint) for a in structure.atoms):
+        raise ValueError(
+            f"Amber topology contains virtual sites / ExtraPoints unsupported by {target} export"
+        )
+    cmap_count = [int(x) for x in (parm_data.get("CMAP_COUNT") or [])]
+    charmm_cmap_count = [int(x) for x in (parm_data.get("CHARMM_CMAP_COUNT") or [])]
+    if (
+        getattr(structure, "cmaps", None)
+        or any(x > 0 for x in cmap_count)
+        or any(x > 0 for x in charmm_cmap_count)
+        or bool(parm_data.get("CMAP_INDEX"))
+        or bool(parm_data.get("CHARMM_CMAP_INDEX"))
+    ):
+        raise ValueError(
+            f"Amber topology contains CMAP torsion terms unsupported by {target} export"
+        )
+    unsupported_attrs = (
+        "urey_bradleys",
+        "impropers",
+        "rb_torsions",
+        "trigonal_angles",
+        "out_of_plane_bends",
+        "pi_torsions",
+        "stretch_bends",
+        "torsion_torsions",
+        "multipole_frames",
+        "chiral_frames",
+        "drude_pairs",
+        "adjusts",
+    )
+    for attr in unsupported_attrs:
+        if getattr(structure, attr, None):
+            raise ValueError(
+                f"Amber topology contains {attr} terms unsupported by {target} export"
+            )
+    excluded_12_13, pairs_14, extra_exclusions, unexcluded_14, orig_zero_excl, graph_d = (
+        _extract_amber_exclusions(structure)
+    )
+    if not allow_explicit_exclusions and extra_exclusions:
+        raise ValueError(
+            f"Amber topology contains {len(extra_exclusions)} explicit nonbonded exclusion(s) "
+            f"unsupported by {target} export"
+        )
+    if not allow_explicit_exclusions and unexcluded_14:
+        raise ValueError(
+            f"Amber topology leaves {len(unexcluded_14)} 1-4 pair(s) unexcluded; "
+            f"{target} nrexcl=3 export cannot disable 1-4 scaling on unexcluded pairs"
+        )
+    if not allow_explicit_exclusions:
+        g123 = graph_d[1] | graph_d[2] | graph_d[3]
+        missing_graph_excl = (g123 - set(pairs_14)) - orig_zero_excl
+        if missing_graph_excl:
+            raise ValueError(
+                f"Amber topology leaves {len(missing_graph_excl)} bond-graph <=3 pair(s) unexcluded; "
+                f"{target} nrexcl=3 export automatically excludes all 1-2/1-3/1-4 graph pairs"
+            )
+        extra_beyond_3 = orig_zero_excl - g123
+        if extra_beyond_3:
+            raise ValueError(
+                f"Amber topology contains {len(extra_beyond_3)} exclusion(s) beyond bond-graph distance 3, "
+                f"unsupported by {target} nrexcl=3 export"
+            )
+        non_top_14 = set(pairs_14) - graph_d[3]
+        if non_top_14:
+            raise ValueError(
+                f"Amber topology contains {len(non_top_14)} 1-4 pair(s) not at bond-graph distance 3, "
+                f"unsupported by {target} export"
+            )
+
+
+def _reduce_openmm_box_vectors(vecs_nm: np.ndarray) -> list[list[float]]:
+    """Convert periodic box vectors to OpenMM reduced lower-triangular right-handed form."""
+    arr = np.asarray(vecs_nm, dtype=float)
+    if arr.shape != (3, 3) or not np.isfinite(arr).all():
+        raise ValueError("Invalid periodic box vectors in topology")
+    if abs(float(np.linalg.det(arr))) <= 1e-12:
+        raise ValueError("Degenerate zero-volume periodic box vectors in topology")
+
+    # Preserve metric tensor (lengths and angles) in OpenMM lower-triangular right-handed orientation.
+    if (
+        abs(arr[0, 1]) > 1e-10
+        or abs(arr[0, 2]) > 1e-10
+        or abs(arr[1, 2]) > 1e-10
+        or arr[0, 0] <= 0.0
+        or arr[1, 1] <= 0.0
+        or arr[2, 2] <= 0.0
+    ):
+        gram = arr @ arr.T
+        low = np.linalg.cholesky(gram)
+    else:
+        low = arr.copy()
+        low[0, 1] = 0.0
+        low[0, 2] = 0.0
+        low[1, 2] = 0.0
+
+    a, b, c = low[0].copy(), low[1].copy(), low[2].copy()
+    for _ in range(4):
+        c = c - b * round(float(c[1] / b[1]))
+        c = c - a * round(float(c[0] / a[0]))
+        b = b - a * round(float(b[0] / a[0]))
+    a[1] = a[2] = b[2] = 0.0
+    if not (
+        a[0] > 0.0
+        and b[1] > 0.0
+        and c[2] > 0.0
+        and a[0] >= 2.0 * abs(b[0]) - 1e-9
+        and a[0] >= 2.0 * abs(c[0]) - 1e-9
+        and b[1] >= 2.0 * abs(c[1]) - 1e-9
+    ):
+        raise ValueError("Periodic box vectors cannot be brought into OpenMM reduced form")
+    return [[float(x) for x in a], [float(x) for x in b], [float(x) for x in c]]
 
 
 def _amber_parm_to_openmm_xml(
@@ -963,9 +2198,9 @@ def _amber_parm_to_openmm_xml(
         raise ValueError(f"Unsupported nonbonded_method {nonbonded_method!r}")
     if not math.isfinite(float(cutoff_nm)) or float(cutoff_nm) <= 0.0:
         raise ValueError("cutoff_nm must be positive and finite")
-    if getattr(structure, "impropers", None):
-        raise ValueError("Unsupported CHARMM-style impropers in AmberParm")
-    _verify_standard_lorentz_berthelot_lj(structure)
+    _verify_supported_amber_terms(
+        structure, target="OpenMM XML", allow_explicit_exclusions=True
+    )
     if nonbonded_method == "PME" and structure.box is None:
         raise ValueError("PME requires periodic box vectors in the source Amber topology/coordinates")
 
@@ -975,7 +2210,20 @@ def _amber_parm_to_openmm_xml(
         import parmed as pmd
 
         vecs = structure.box_vectors.value_in_unit(pmd.unit.nanometers)
-        box_rows = [[float(c) for c in row] for row in vecs]
+        box_rows = _reduce_openmm_box_vectors(np.asarray(vecs, dtype=float))
+        if nonbonded_method == "PME":
+            mat = np.asarray(box_rows, dtype=float)
+            vol = abs(float(np.linalg.det(mat)))
+            heights = [
+                vol / float(np.linalg.norm(np.cross(mat[(i + 1) % 3], mat[(i + 2) % 3])))
+                for i in range(3)
+            ]
+            max_allowed = 0.5 * min(box_rows[0][0], box_rows[1][1], box_rows[2][2], *heights)
+            if float(cutoff_nm) >= max_allowed:
+                raise ValueError(
+                    f"PME cutoff_nm={cutoff_nm} must be strictly less than half the periodic box "
+                    f"dimension/height ({max_allowed:.6f} nm)"
+                )
     else:
         box_rows = [[2.0, 0.0, 0.0], [0.0, 2.0, 0.0], [0.0, 0.0, 2.0]]
 
@@ -1066,10 +2314,26 @@ def _amber_parm_to_openmm_xml(
         for dt in types:
             if dt is None:
                 raise ValueError("Untyped dihedral encountered during OpenMM XML export")
-            per = int(round(abs(float(dt.per))))
+            per_f = float(dt.per)
+            if not math.isfinite(per_f) or per_f < 0.0 or not per_f.is_integer():
+                raise ValueError(f"Invalid torsion periodicity {dt.per!r} during OpenMM XML export")
+            per = int(per_f)
             phi_k = float(dt.phi_k)
+            phase_f = float(dt.phase)
+            if not math.isfinite(phi_k) or not math.isfinite(phase_f):
+                raise ValueError("Nonfinite torsion parameters on dihedral during OpenMM XML export")
+            for scale_name in ("scee", "scnb"):
+                raw_scale = getattr(dt, scale_name, 0.0)
+                if raw_scale is not None and not math.isfinite(float(raw_scale)):
+                    raise ValueError(
+                        f"Nonfinite torsion {scale_name}={raw_scale!r} during OpenMM XML export"
+                    )
             if per == 0 and phi_k == 0.0:
                 continue
+            if per == 0:
+                raise ValueError(
+                    f"Invalid torsion periodicity 0 with nonzero force constant {phi_k!r} during OpenMM XML export"
+                )
             ET.SubElement(
                 torsions_el,
                 "Torsion",
@@ -1140,32 +2404,11 @@ def _amber_parm_to_openmm_xml(
             },
         )
 
-    excluded_12_13: set[tuple[int, int]] = set()
-    for bond in structure.bonds:
-        i, j = bond.atom1.idx, bond.atom2.idx
-        excluded_12_13.add((min(i, j), max(i, j)))
-    for angle in structure.angles:
-        i, j = angle.atom1.idx, angle.atom3.idx
-        excluded_12_13.add((min(i, j), max(i, j)))
-
-    pairs_14: dict[tuple[int, int], tuple[float, float]] = {}
-    for dihedral in structure.dihedrals:
-        if getattr(dihedral, "improper", False) or getattr(dihedral, "ignore_end", False):
-            continue
-        i, j = dihedral.atom1.idx, dihedral.atom4.idx
-        if i == j:
-            continue
-        pair = (min(i, j), max(i, j))
-        if pair in excluded_12_13:
-            continue
-        dt = dihedral.type[0] if isinstance(dihedral.type, list) else dihedral.type
-        scee = float(dt.scee) if dt is not None and float(getattr(dt, "scee", 0.0)) > 0.0 else 1.2
-        scnb = float(dt.scnb) if dt is not None and float(getattr(dt, "scnb", 0.0)) > 0.0 else 2.0
-        pairs_14.setdefault(pair, (scee, scnb))
+    excluded_12_13, pairs_14, extra_exclusions, _, _, _ = _extract_amber_exclusions(structure)
 
     exceptions_el = ET.SubElement(nb_force, "Exceptions")
     all_exceptions: dict[tuple[int, int], tuple[float, float, float]] = {}
-    for pair in excluded_12_13:
+    for pair in excluded_12_13 | extra_exclusions:
         all_exceptions[pair] = (0.0, 0.0, 0.5)
     for pair, (scee, scnb) in pairs_14.items():
         i, j = pair
@@ -1198,6 +2441,7 @@ def _amber_parm_to_openmm_xml(
         "torsions": torsion_count,
         "exceptions": len(all_exceptions),
         "excluded_12_13": len(excluded_12_13),
+        "explicit_exclusions": len(extra_exclusions),
         "scaled_14": len(pairs_14),
     }
     return xml_text, counts
@@ -1229,10 +2473,12 @@ def export_openmm(
         raise FileExistsError("OpenMM export files already exist; choose a fresh output path")
     if overwrite:
         raise ValueError("overwrite is unsupported; choose a fresh output path")
-    structure = _load_amber(topology, coordinates)
+    structure, top_sha, crd_sha = _load_amber_with_digests(topology, coordinates)
     if not structure.atoms:
         raise ValueError("Amber topology contains no atoms")
-    upstream = _link_upstream_provenance(topology, coordinates)
+    upstream = _link_upstream_provenance(
+        topology, coordinates, top_sha=top_sha, crd_sha=crd_sha
+    )
 
     xml_text, counts = _amber_parm_to_openmm_xml(
         structure,
@@ -1251,43 +2497,69 @@ def export_openmm(
         except ImportError:
             pass
 
+    created_dirs: list[Path] = []
+    cur_dir = xml_path.parent
+    while not cur_dir.exists():
+        created_dirs.append(cur_dir)
+        if cur_dir.parent == cur_dir:
+            break
+        cur_dir = cur_dir.parent
     xml_path.parent.mkdir(parents=True, exist_ok=True)
-    xml_path.write_text(xml_text, encoding="utf-8")
-    prov = {
-        "schema_version": 1,
-        "format": "openmm_system_xml",
-        **upstream,
-        "nonbonded_method": nonbonded_method,
-        "cutoff_nm": float(cutoff_nm),
-        "serializer": serializer,
-        "counts": counts,
-        "outputs": {k: str(v) for k, v in paths.items() if k != "provenance"},
-    }
-    _json(paths["provenance"], prov)
-    result = {
-        "status": "exported",
-        "parameterized": True,
-        "output": str(xml_path),
-        "xml": str(xml_path),
-        "manifest": str(paths["manifest"]),
-        "provenance": str(paths["provenance"]),
-        "serializer": serializer,
-        "nonbonded_method": nonbonded_method,
-        "cutoff_nm": float(cutoff_nm),
-        "source_topology_sha256": _sha(topology),
-        "xml_sha256": _sha(xml_path),
-        "preset": upstream["preset"],
-        "charge_model": upstream["charge_model"],
-        "atom_count": counts["atoms"],
-        "bond_count": counts["bonds"],
-        "angle_count": counts["angles"],
-        "torsion_count": counts["torsions"],
-        "exception_count": counts["exceptions"],
-        "periodic_policy": "finite solute unless solvated/boxed PME prmtop supplied",
-        "gbsa_note": "Standard explicit NonbondedForce XML does not include implicit GBSA force; source prmtop holds GB radii",
-        "engine_sources": ENGINE_SOURCES,
-    }
-    _json(paths["manifest"], result)
+    published: list[Path] = []
+    try:
+        with tempfile.TemporaryDirectory(
+            dir=xml_path.parent, prefix=f".{xml_path.name}.tmp."
+        ) as stage_dir_str:
+            stage_dir = Path(stage_dir_str)
+            staged = {key: stage_dir / fp.name for key, fp in paths.items()}
+            xml_bytes = xml_text.encode("utf-8")
+            staged["xml"].write_bytes(xml_bytes)
+            prov = {
+                "schema_version": 1,
+                "format": "openmm_system_xml",
+                **upstream,
+                "nonbonded_method": nonbonded_method,
+                "cutoff_nm": float(cutoff_nm),
+                "serializer": serializer,
+                "counts": counts,
+                "outputs": {k: str(v) for k, v in paths.items() if k != "provenance"},
+            }
+            _json(staged["provenance"], prov)
+            result = {
+                "status": "exported",
+                "parameterized": True,
+                "output": str(xml_path),
+                "xml": str(xml_path),
+                "manifest": str(paths["manifest"]),
+                "provenance": str(paths["provenance"]),
+                "serializer": serializer,
+                "nonbonded_method": nonbonded_method,
+                "cutoff_nm": float(cutoff_nm),
+                "source_topology_sha256": upstream["source_topology_sha256"],
+                "xml_sha256": hashlib.sha256(xml_bytes).hexdigest(),
+                "preset": upstream["preset"],
+                "charge_model": upstream["charge_model"],
+                "atom_count": counts["atoms"],
+                "bond_count": counts["bonds"],
+                "angle_count": counts["angles"],
+                "torsion_count": counts["torsions"],
+                "exception_count": counts["exceptions"],
+                "periodic_policy": "finite solute unless solvated/boxed PME prmtop supplied",
+                "gbsa_note": "Standard explicit NonbondedForce XML does not include implicit GBSA force; source prmtop holds GB radii",
+                "engine_sources": ENGINE_SOURCES,
+            }
+            _json(staged["manifest"], result)
+            for key in ("xml", "provenance", "manifest"):
+                os.link(staged[key], paths[key])
+                published.append(paths[key])
+    except Exception:
+        for fp in published:
+            with contextlib.suppress(FileNotFoundError):
+                fp.unlink()
+        for d in created_dirs:
+            with contextlib.suppress(OSError):
+                d.rmdir()
+        raise
     return result
 
 

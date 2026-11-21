@@ -14,7 +14,19 @@ from copy import deepcopy
 from pathlib import Path
 
 FRAGMENTS = ("GGG", "GRT", "HYD", "EPX", "EPH", "EPT", "CBX", "CBD", "CAB")
-DEFAULT_REFERENCE = Path(__file__).resolve().parents[2] / "resources/reference/current"
+
+
+def _resolve_current_reference() -> Path:
+    pkg_candidate = Path(__file__).resolve().parent / "_resources/reference/current"
+    if pkg_candidate.exists():
+        return pkg_candidate
+    repo_candidate = Path(__file__).resolve().parents[2] / "resources/reference/current"
+    if repo_candidate.exists():
+        return repo_candidate
+    return pkg_candidate
+
+
+DEFAULT_REFERENCE = _resolve_current_reference()
 
 
 def _sha(path):
@@ -232,9 +244,25 @@ def assign_current_fragments(model, reference_dir=None, *, parameter_templates=N
 
 def _assign_dedicated(model, template):
     required = ("atoms", "bonds", "frcmod", "provenance")
-    if not isinstance(template, dict) or any(not template.get(k) for k in required):
+    if (
+        not isinstance(template, dict)
+        or any(not template.get(k) for k in required)
+        or not isinstance(template.get("atoms"), list)
+        or not isinstance(template.get("bonds"), list)
+    ):
         raise ValueError("Dedicated junction template requires atoms, bonds, frcmod and provenance")
-    records = {a["id"]: a for a in template["atoms"]}
+    records = {}
+    for rec in template["atoms"]:
+        if not isinstance(rec, dict):
+            raise ValueError("Dedicated junction template atom entries must be objects")
+        aid = rec.get("id")
+        if isinstance(aid, bool) or not isinstance(aid, int):
+            raise ValueError(
+                f"Dedicated junction template atom ID must be an integer, got {aid!r}"
+            )
+        if aid in records:
+            raise ValueError(f"Duplicate atom ID {aid} in dedicated junction template")
+        records[aid] = rec
     if set(records) != {a["id"] for a in model["atoms"]}:
         raise ValueError("Dedicated junction template must cover the complete model atom IDs")
 
@@ -245,19 +273,73 @@ def _assign_dedicated(model, template):
         return (*sorted((b["a"], b["b"])), float(b.get("order", 1)), image)
 
     expected = {bond_signature(b) for b in template["bonds"]}
+    if len(expected) != len(template["bonds"]):
+        raise ValueError("Duplicate bond in dedicated junction template")
     if expected != {bond_signature(b) for b in model["bonds"]}:
         raise ValueError("Dedicated junction template bonds do not match model")
     if not Path(template["frcmod"]).is_file():
         raise ValueError("Dedicated junction frcmod missing")
+    def _strict_int_fc(val, label):
+        if isinstance(val, bool):
+            raise ValueError(f"{label} must be an exact integer formal charge, got bool ({val!r})")
+        if isinstance(val, int):
+            return int(val)
+        if isinstance(val, float) and math.isfinite(val) and val.is_integer():
+            return int(val)
+        raise ValueError(f"{label} must be an exact integer formal charge, got {val!r}")
+
+    formal_charges_unknown = bool(model.get("metadata", {}).get("formal_charges_unknown"))
+    top_fc_raw = model.get("formal_charge")
+    top_fc = _strict_int_fc(top_fc_raw, "Model formal_charge") if top_fc_raw is not None else None
+    atom_fcs = []
+    has_atom_fc = False
+    all_atom_fc = bool(model["atoms"])
+    for atom in model["atoms"]:
+        raw_fc = atom.get("formal_charge")
+        if raw_fc is not None:
+            has_atom_fc = True
+            atom_fcs.append(_strict_int_fc(raw_fc, f"Atom {atom.get('id')} formal_charge"))
+        else:
+            all_atom_fc = False
+            atom_fcs.append(0)
+    atom_fc_sum = sum(atom_fcs)
+    if (
+        top_fc is not None
+        and (any(v != 0 for v in atom_fcs) or (all_atom_fc and not formal_charges_unknown))
+        and atom_fc_sum != top_fc
+    ):
+        raise ValueError(
+            f"Per-atom formal_charge sum ({atom_fc_sum}) disagrees with model formal_charge ({top_fc})"
+        )
+
+    charges = []
     for atom in model["atoms"]:
         record = records[atom["id"]]
-        if record.get("element") != atom["element"] or not record.get("atom_type"):
+        atype = record.get("atom_type")
+        if record.get("element") != atom["element"] or not isinstance(atype, str) or not atype.strip():
             raise ValueError("Dedicated junction template element/type mismatch")
-        if not isinstance(record.get("charge"), (float, int)) or not math.isfinite(
-            record["charge"]
-        ):
-            raise ValueError("Dedicated junction template requires finite explicit charges")
-        atom.update(atom_type=record["atom_type"], charge=float(record["charge"]))
+        chg = record.get("charge")
+        if isinstance(chg, bool) or not isinstance(chg, (float, int)) or not math.isfinite(chg):
+            raise ValueError("Dedicated junction template requires finite numeric explicit charges")
+        charges.append(float(chg))
+
+    total_q = math.fsum(charges)
+    if not math.isfinite(total_q):
+        raise ValueError("Dedicated junction template total charge is not finite")
+    expected_fc = (
+        top_fc
+        if top_fc is not None
+        else (atom_fc_sum if has_atom_fc and not formal_charges_unknown else None)
+    )
+    if expected_fc is not None and abs(total_q - float(expected_fc)) > 1e-4:
+        raise ValueError(
+            f"Dedicated junction template total charge ({total_q:.6f} e) "
+            f"disagrees with declared formal charge ({expected_fc} e)"
+        )
+
+    for atom, chg_val in zip(model["atoms"], charges, strict=True):
+        record = records[atom["id"]]
+        atom.update(atom_type=record["atom_type"], charge=chg_val)
     model["metadata"]["junction_template"] = deepcopy(template)
     model["metadata"]["requires_parameterization"] = False
     return model

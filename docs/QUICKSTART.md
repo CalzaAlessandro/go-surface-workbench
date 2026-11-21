@@ -16,9 +16,9 @@ and no undercoordinated atoms.
 | Output under `work/quickstart/` | Contents |
 |---|---|
 | `finite_GO.json`, `finite_GO.pdb` | Sheet connectivity and coordinates |
-| `amber/tleap.in`, `amber/GO_gaff2.frcmod` | LEaP input and parameter modifications |
-| `amber/assigned_model.json`, `amber/library_audit.json` | Atom-type and library assignments |
-| `amber/manifest.json`, `amber/normalized_libraries/` | Input manifest and unit libraries |
+| `amber/tleap.in`, `amber/GO_gaff2_v3.frcmod` | LEaP input and validated Block 2 GAFF2 v3 parameter modifications |
+| `amber/assigned_model.json`, `amber/library_audit.json` | 18-type GO atom assignments, `L0_v2` charges, and library audit |
+| `amber/PROVENANCE.json`, `amber/manifest.json`, `amber/v3_libraries/` | SHA-256 provenance, input manifest, and 18 verified GAFF2 v3 unit libraries |
 
 To run the same steps individually:
 

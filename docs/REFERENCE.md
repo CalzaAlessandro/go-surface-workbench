@@ -37,11 +37,12 @@ Create a new `.venv` on each machine. To import modules from source, use
 | `prepare_fragment.py` | Optional: prepares a fragment from SDF/MOL/MOL2/SMILES and explicitly sets the reactive attachment site |
 | `01_build_GO.py` | Generates basal sheet, vacancies/holes, functional groups, and edge H-terminations |
 | `02_open_epoxides.py` | Optional: anti-opening of basal epoxides with the selected nucleophilic fragment |
-| `03_prepare_amber.py` | Assigns GAFF2 templates and prepares LEaP inputs; `--run` executes external AmberTools |
+| `03_prepare_amber.py` | Assigns GAFF2 v3 templates/`L0_v2` charges by default (`--preset`, `--list-presets`, `--charge-model`) and prepares LEaP inputs; `--run` executes external AmberTools |
 | `04_prepare_docking_receptor.py` | Extracts native or equilibrated GO and constructs 3D bounding boxes without flattening |
 | `05_dock_boxes.py` | Bounded docking using AutoDock Vina or GNINA (with Vina scoring and CNN disabled) |
 | `06_assemble_docked_complex.py` | Assembles the complete receptor and pre-parameterized ligands in docked pose coordinates |
 | `07_export_gromacs.py` | Exports a completed Amber topology into GROMACS `.top`, `.itp`, and `.gro` |
+| `08_export_openmm.py` | Exports a completed Amber topology into a standalone OpenMM `<System>` XML (`NoCutoff`, `CutoffNonPeriodic`, `PME`) |
 | `audit_charges.py` | Descriptive audit and comparison of CURRENT, OLD, and HierGO/OPLS charge assignments |
 | `prepare_QM.py` | Generates Gaussian/MK ESP single-point inputs on explicitly capped finite fragments |
 | `compare_ESP.py` | Evaluates electrostatic potential RMSD across candidate charge sets on identical grids |
@@ -50,7 +51,7 @@ Create a new `.venv` on each machine. To import modules from source, use
 | `update_alignment.py` | Audits and migrates CPPTRAJ alignment inputs with automatic backups |
 
 All commands are accessible via the `go.py` unified CLI: `fragment`, `build`,
-`functionalize`, `amber`, `gromacs`, `audit`, `qm`, `esp-import`, `esp`, `import`,
+`functionalize`, `amber`, `gromacs`, `openmm`, `audit`, `qm`, `esp-import`, `esp`, `import`,
 `check`, `snapshot`, `dock`, `complex`, `alignment`. Run `go.py <command> --help`
 to list specific options.
 

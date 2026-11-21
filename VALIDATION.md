@@ -1,12 +1,12 @@
 # Software and Force-Field Validation Status
 
 ## Local Software Regression Suite
-- Verified with `uv sync --frozen` + `uv run pytest -q`: **`385 passed`** (covers Blocco 1 graph/geometry construction, placement failure handling, anti-grafting, covalent functionalization, external-engine preparation, Blocco 2 `gaff2_v3` / `L0_v2` graph perception, 4-color DSATUR epoxide coloring, `PROVENANCE.json` SHA-256 verification, precision GROMACS `.top`/`.itp` export, and pure-Python OpenMM XML export).
+- Verified with `uv sync --frozen` + `uv run pytest -q`: **`407 passed`** (covers Blocco 1 graph/geometry construction, placement failure handling, anti-grafting, covalent functionalization, external-engine preparation, Blocco 2 `gaff2_v3` / `L0_v2` graph perception, 4-color DSATUR epoxide coloring, `PROVENANCE.json` SHA-256 verification, precision GROMACS `.top`/`.itp` export, and pure-Python OpenMM XML export).
 - Quickstart end-to-end smoke test (`uv run python examples/quickstart/run_quickstart.py`) passes and verifies `GO_gaff2_v3.frcmod`, 18 `v3_libraries/*_gaff2_v3.lib`, `PROVENANCE.json`, and `preset == "gaff2_v3"`.
 
 ## Block 2 Core AMBER Validation (`gaff2_v3` + `L0_v2`, 2026-11-20/21)
 - **Go/No-Go Gates (`step2b`)**: **11/11 PASS** (`all_gates_passed: true`; bonded terms fitted strictly on `strict37` + 2 C16 torsion scans):
-  - `0/129` AMBER namespace collisions across 18 lowercase GO-only types (`ga..gu`);
+  - `0/129` AMBER namespace collisions across 18 lowercase GO-only types (`ga, gb, gc, gd, ge, gh, gk, gm, go, gp, gq, gu, gw, gx, gy, gz, g1, g6`);
   - `0` imaginary harmonic modes across `52/52` in-domain models (`max min F_RMS = 1.88e-4 kJ/(mol·nm) < 0.01`);
   - `ALL_52`: `F_med = 14.78`, `F_max = 25.39 kcal/(mol·Å)`, `H_med = 17.64%`, `G_med = 0.100 Å`, unscaled `Freq_med = 35.0 cm⁻¹`;
   - Size-transfer `C54` panel (excluded from all parameter fits; used for `L0_v2` candidate selection in `step2a`; unseen large sheets scheduled in Block 3): `C54_neutral_9` (`F_med = 17.32`, `F_max = 21.41`) and `C54_anionic_5` (`F_med = 12.61`, `F_max = 17.78`);
