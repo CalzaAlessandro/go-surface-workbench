@@ -16,6 +16,11 @@ from numbers import Real
 
 import numpy as np
 
+from .electronic import (
+    IncrementalKekuleMatcher,
+    _bipartite_coloring,
+    analyze_aromatic_electronic_structure,
+)
 from .errors import PlacementError
 from .model import (
     _build_spatial_cells,
@@ -2418,8 +2423,10 @@ def _parse_placement(raw_placement):
     else:
         raise ValueError("placement must be a string or an object")
     mode = raw.get("mode")
-    if mode not in ("random", "island", "dispersed"):
-        raise ValueError("placement.mode must be 'random', 'island', or 'dispersed'")
+    if mode not in ("random", "island", "irregular_island", "dispersed"):
+        raise ValueError(
+            "placement.mode must be 'random', 'island', 'irregular_island', or 'dispersed'"
+        )
     if mode in ("random", "dispersed"):
         extra = set(raw) - {"mode"}
         if extra:
@@ -2434,10 +2441,34 @@ def _parse_placement(raw_placement):
         "radius",
         "compactness",
         "edge_mode",
+        "style",
+        "branching",
     }
     extra = set(raw) - allowed_island
     if extra:
-        raise ValueError(f"Unknown placement keys for mode 'island': {sorted(extra)}")
+        raise ValueError(f"Unknown placement keys for mode {mode!r}: {sorted(extra)}")
+
+    if mode == "irregular_island":
+        style = raw.get("style", "irregular")
+        if style != "irregular":
+            raise ValueError("placement.style must be 'irregular' when mode='irregular_island'")
+    else:
+        style = raw.get("style", "compact")
+        if style not in ("compact", "irregular"):
+            raise ValueError("placement.style must be 'compact' or 'irregular'")
+
+    if style == "compact":
+        if raw.get("branching") is not None:
+            raise ValueError(
+                "placement.branching is only supported for irregular islands "
+                "(mode='irregular_island' or style='irregular')"
+            )
+        branching = None
+    else:
+        branching = _finite_real(raw.get("branching", 0.65), "placement.branching")
+        if not 0.0 <= branching <= 1.0:
+            raise ValueError("placement.branching must be between 0 and 1")
+
     centers = raw.get("centers")
     seed_atoms = raw.get("seed_atoms")
     if centers is not None and seed_atoms is not None:
@@ -2490,7 +2521,9 @@ def _parse_placement(raw_placement):
     if edge_mode not in ("random", "near_islands"):
         raise ValueError("placement.edge_mode must be 'random' or 'near_islands'")
     return {
-        "mode": "island",
+        "mode": mode,
+        "style": style,
+        "branching": branching,
         "n_islands": n_islands,
         "centers": parsed_centers,
         "seed_atoms": parsed_seeds,
@@ -2498,6 +2531,58 @@ def _parse_placement(raw_placement):
         "compactness": compactness,
         "edge_mode": edge_mode,
     }
+
+
+def _parse_clar_spec(raw_clar):
+    if raw_clar is None or raw_clar is False:
+        return {"enabled": False, "min_huckel_gap": 0.0, "max_attempts": 128}
+    if raw_clar is True:
+        return {"enabled": True, "min_huckel_gap": 0.0, "max_attempts": 128}
+    if not isinstance(raw_clar, dict):
+        raise ValueError("clar must be a boolean or an object")
+    allowed = {"enabled", "min_huckel_gap", "max_attempts"}
+    extra = set(raw_clar) - allowed
+    if extra:
+        raise ValueError(f"Unknown clar keys: {sorted(extra)}")
+    enabled = raw_clar.get("enabled", True)
+    if type(enabled) is not bool:
+        raise ValueError("clar.enabled must be a boolean")
+    min_gap = _finite_real(raw_clar.get("min_huckel_gap", 0.0), "clar.min_huckel_gap")
+    if min_gap < 0.0:
+        raise ValueError("clar.min_huckel_gap must be >= 0")
+    max_attempts = _integer(raw_clar.get("max_attempts", 128), "clar.max_attempts", 1)
+    return {
+        "enabled": enabled,
+        "min_huckel_gap": min_gap,
+        "max_attempts": max_attempts,
+    }
+
+
+def _clar_next_single_choice(
+    matcher: IncrementalKekuleMatcher,
+    quota: list[int],
+    *,
+    future_a: int = 0,
+    future_b: int = 0,
+) -> tuple[int | None, bool]:
+    """Return (required_sublattice, allow_expose) for next single-site Clar placement."""
+    if matcher.free_a and quota[0] > 0:
+        return 0, False
+    if matcher.free_b and quota[1] > 0:
+        return 1, False
+    # If another later single-site stage (e.g., OH after carbonyl) holds enough quota,
+    # an expose here stays reversible.
+    if quota[0] > 0 and len(matcher.free_b) + 1 <= future_b:
+        return 0, True
+    if quota[1] > 0 and len(matcher.free_a) + 1 <= future_a:
+        return 1, True
+    if matcher.free_a or matcher.free_b:
+        return None, False
+    if quota[0] <= 0 and quota[1] <= 0:
+        return None, False
+    if quota[0] >= quota[1]:
+        return 0, True
+    return 1, True
 
 
 def _min_img_xy_dist(pos_a, pos_b, model):
@@ -2557,6 +2642,367 @@ def _order_by_island(items, pos_fn, island_centers, compactness, model, rng):
     return [item for _, item in scored]
 
 
+def _place_irregular_island_basal(
+    model,
+    base,
+    base_coords,
+    ns,
+    eligible_basal,
+    used_basal,
+    needed_ep,
+    needed_oh,
+    island_centers,
+    chosen_seed_atoms,
+    branching,
+    compactness,
+    faces,
+    rng,
+    *,
+    group_id,
+    achieved,
+    adj,
+    coords_by_id,
+    occupied_edges,
+    spatial_grid,
+    by_id,
+    bond_by_atom,
+    sublattice_map=None,
+    oh_quota=None,
+    matcher=None,
+):
+    """Grow irregular branched Lerf-Klinowski oxidation islands (interleaved epoxide + OH)."""
+    if needed_ep == 0 and needed_oh == 0:
+        return True, group_id
+
+    eligible_set = set(eligible_basal)
+    avail_basal = eligible_set - used_basal
+    if not avail_basal:
+        return False, group_id
+
+    nbrs1: dict[int, set[int]] = {cid: {int(n) for n, _, _ in ns[cid]} for cid in ns}
+    nbrs2: dict[int, set[int]] = {
+        cid: {n2 for n1 in nbrs1[cid] for n2 in nbrs1[n1] if n2 != cid}
+        for cid in ns
+    }
+
+    n_islands = max(1, len(island_centers))
+    island_seeds: list[int] = []
+    used_seeds: set[int] = set()
+    for k in range(n_islands):
+        if (
+            chosen_seed_atoms is not None
+            and k < len(chosen_seed_atoms)
+            and chosen_seed_atoms[k] in avail_basal
+            and chosen_seed_atoms[k] not in used_seeds
+        ):
+            sid = int(chosen_seed_atoms[k])
+        else:
+            pool = avail_basal - used_seeds
+            if not pool:
+                pool = avail_basal
+            center = island_centers[k]
+            sid = min(pool, key=lambda s: (_min_img_xy_dist(base_coords[s], center, base), s))
+        island_seeds.append(sid)
+        used_seeds.add(sid)
+
+    def _rotate_vec(vec: np.ndarray, angle_rad: float) -> np.ndarray:
+        ca, sa = math.cos(angle_rad), math.sin(angle_rad)
+        vx, vy = float(vec[0]), float(vec[1])
+        out = np.array([ca * vx - sa * vy, sa * vx + ca * vy], dtype=float)
+        nrm = float(np.linalg.norm(out))
+        return out / nrm if nrm > 1e-12 else vec
+
+    island_sites: list[set[int]] = [set() for _ in range(n_islands)]
+    all_ox_basal = set(used_basal)
+    tips: list[list[list]] = []
+    for k in range(n_islands):
+        theta = rng.uniform(0.0, 2.0 * math.pi)
+        uvec = np.array([math.cos(theta), math.sin(theta)], dtype=float)
+        tips.append([[island_seeds[k], uvec, 0]])
+    tip_cursor = [0] * n_islands
+    exhausted = [False] * n_islands
+
+    rem_ep = int(needed_ep)
+    rem_oh = int(needed_oh)
+    turn = 0
+    branch_len = max(2, int(round(5.0 - 2.0 * branching)))
+
+    def _try_place(
+        gtype: str,
+        sites: list[int],
+        island_idx: int,
+        *,
+        allow_expose: bool = True,
+        eligible_closers: set[int] | None = None,
+    ) -> bool:
+        nonlocal group_id, rem_ep, rem_oh
+        kek_token = None
+        if matcher is not None:
+            if gtype == "epoxide":
+                ok, kek_token = matcher.check_remove_pair(sites[0], sites[1])
+            else:
+                ok, kek_token = matcher.check_remove_single(
+                    sites[0], allow_expose=allow_expose, eligible_closers=eligible_closers
+                )
+            if not ok:
+                return False
+        face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
+        if not _place_group(
+            model,
+            gtype,
+            sites,
+            face,
+            group_id,
+            faces=faces,
+            adj=adj,
+            coords_by_id=coords_by_id,
+            occupied_edges=occupied_edges,
+            spatial_grid=spatial_grid,
+            by_id=by_id,
+            bond_by_atom=bond_by_atom,
+        ):
+            return False
+        if matcher is not None:
+            if gtype == "epoxide":
+                matcher.commit_remove_pair(kek_token)
+            else:
+                matcher.commit_remove_single(kek_token)
+        used_basal.update(sites)
+        all_ox_basal.update(sites)
+        island_sites[island_idx].update(sites)
+        group_id += 1
+        achieved[gtype] += 1
+        if gtype == "OH":
+            rem_oh -= 1
+            if oh_quota is not None and sublattice_map is not None:
+                oh_quota[sublattice_map[sites[0]]] -= 1
+        else:
+            rem_ep -= 1
+
+        tip_list = tips[island_idx]
+        t_idx = tip_cursor[island_idx] % len(tip_list)
+        tip_sid, tip_vec, tip_age = tip_list[t_idx]
+        new_tip_sid = sites[0]
+        if len(sites) == 2:
+            d0 = _min_img_xy_dist(base_coords[sites[0]], island_centers[island_idx], base)
+            d1 = _min_img_xy_dist(base_coords[sites[1]], island_centers[island_idx], base)
+            new_tip_sid = sites[1] if d1 >= d0 else sites[0]
+
+        delta = _minimum_image(base_coords[new_tip_sid] - base_coords[tip_sid], base)[:2]
+        step_norm = float(np.linalg.norm(delta))
+        step_dir = (delta / step_norm) if step_norm > 1e-6 else tip_vec
+
+        new_age = tip_age + 1
+        if branching > 0.05 and new_age >= branch_len:
+            turn_sign = rng.choice([-1.0, 1.0])
+            rot_deg = rng.uniform(55.0, 105.0) * turn_sign
+            fork_vec = _rotate_vec(step_dir, math.radians(rot_deg))
+            if rng.random() < 0.50 * branching and len(tip_list) < 3:
+                keep_vec = _rotate_vec(step_dir, math.radians(-0.5 * rot_deg))
+                tip_list[t_idx] = [new_tip_sid, keep_vec, 0]
+                tip_list.append([new_tip_sid, fork_vec, 0])
+            else:
+                tip_list[t_idx] = [new_tip_sid, fork_vec, 0]
+            tip_cursor[island_idx] = (tip_cursor[island_idx] + 1) % len(tip_list)
+        else:
+            wobble = rng.uniform(-0.22, 0.22) * (1.0 - 0.3 * branching)
+            blended = (1.0 - 0.35 * branching) * tip_vec + (0.35 * branching) * step_dir
+            bnrm = float(np.linalg.norm(blended))
+            if bnrm > 1e-6:
+                blended = blended / bnrm
+            else:
+                blended = tip_vec
+            tip_list[t_idx] = [new_tip_sid, _rotate_vec(blended, wobble), new_age]
+        return True
+
+    def _collect_candidates(
+        island_idx: int, gtype: str, hop_tier: int, wanted_color: int | None = None
+    ) -> list[list[int]]:
+        """Gather candidate sites in 1-2 hop frontier (tier 0), 3-4 hop (tier 1), or global (tier 2)."""
+        avail = eligible_set - used_basal
+        if not avail:
+            return []
+        if gtype == "OH" and wanted_color is not None and sublattice_map is not None:
+            avail = {s for s in avail if sublattice_map[s] == wanted_color}
+            if not avail:
+                return []
+        elif gtype == "OH" and oh_quota is not None and sublattice_map is not None:
+            avail = {s for s in avail if oh_quota[sublattice_map[s]] > 0}
+            if not avail:
+                return []
+
+        isl_set = island_sites[island_idx]
+        if not isl_set:
+            seed = island_seeds[island_idx]
+            local = ({seed} | nbrs1[seed] | nbrs2[seed]) if seed in nbrs1 else avail
+        elif hop_tier == 0:
+            local = set()
+            for u in isl_set:
+                local.update(nbrs1[u])
+                local.update(nbrs2[u])
+        elif hop_tier == 1:
+            local = set()
+            for u in isl_set:
+                ring2 = nbrs1[u] | nbrs2[u]
+                for v in ring2:
+                    local.update(nbrs1[v])
+                    local.update(nbrs2[v])
+        else:
+            local = avail
+
+        if gtype == "OH":
+            cand_nodes = sorted(local & avail)
+            if not isl_set and cand_nodes and island_seeds[island_idx] in avail:
+                return [[island_seeds[island_idx]]]
+            return [[s] for s in cand_nodes]
+
+        pairs: list[list[int]] = []
+        seen_pairs: set[tuple[int, int]] = set()
+        seed_pool = (local & avail) if isl_set else ({island_seeds[island_idx]} | nbrs1[island_seeds[island_idx]]) & avail
+        for u in sorted(seed_pool):
+            for v in sorted(nbrs1[u] & avail):
+                key = (u, v) if u < v else (v, u)
+                if key not in seen_pairs:
+                    seen_pairs.add(key)
+                    pairs.append([key[0], key[1]])
+        return pairs
+
+    def _score_and_pick(
+        candidates: list[list[int]],
+        gtype: str,
+        island_idx: int,
+        hop_tier: int,
+        *,
+        allow_expose: bool = True,
+        eligible_closers: set[int] | None = None,
+    ) -> bool:
+        if not candidates:
+            return False
+        tip_list = tips[island_idx]
+        tip_sid, tip_vec, _ = tip_list[tip_cursor[island_idx] % len(tip_list)]
+        tip_pos = base_coords[tip_sid]
+        other_ox = all_ox_basal - island_sites[island_idx]
+        jitter_scale = max(0.05, 0.35 * (1.0 - 0.5 * compactness))
+        scored = []
+        for sites in candidates:
+            pos = (
+                base_coords[sites[0]]
+                if len(sites) == 1
+                else _pair_midpoint(base_coords, sites[0], sites[1], base)
+            )
+            delta = _minimum_image(pos - tip_pos, base)[:2]
+            d_tip = float(math.hypot(delta[0], delta[1]))
+            align = float((delta[0] * tip_vec[0] + delta[1] * tip_vec[1]) / d_tip) if d_tip > 1e-6 else 0.0
+            n1_ox = max(len(nbrs1[s] & all_ox_basal) for s in sites)
+            n_other_2h = sum(len((nbrs1[s] | nbrs2[s]) & other_ox) for s in sites)
+            infill_pen = branching * 2.8 * max(0, n1_ox - 1)
+            global_bias = 0.0 if hop_tier == 0 else (2.5 if hop_tier == 1 else 6.0)
+            score = (
+                0.45 * d_tip
+                - branching * 2.4 * align
+                + infill_pen
+                + 5.0 * n_other_2h
+                + global_bias
+                + jitter_scale * rng.random()
+            )
+            scored.append((score, sites))
+        scored.sort(key=lambda item: item[0])
+        for _, sites in scored:
+            if _try_place(
+                gtype,
+                sites,
+                island_idx,
+                allow_expose=allow_expose,
+                eligible_closers=eligible_closers,
+            ):
+                return True
+        return False
+
+    while rem_ep > 0 or rem_oh > 0:
+        if rem_ep == 0:
+            order_types = ("OH",)
+        elif rem_oh == 0:
+            order_types = ("epoxide",)
+        elif matcher is not None and (matcher.free_a or matcher.free_b):
+            order_types = ("OH", "epoxide")
+        else:
+            p_ep = rem_ep / float(rem_ep + rem_oh)
+            order_types = ("epoxide", "OH") if rng.random() < p_ep else ("OH", "epoxide")
+
+        oh_color = None
+        oh_expose = True
+        oh_closers = None
+        if matcher is not None and oh_quota is not None and rem_oh > 0:
+            oh_color, oh_expose = _clar_next_single_choice(matcher, oh_quota)
+            if oh_expose and oh_color is not None and sublattice_map is not None:
+                oh_closers = {
+                    s
+                    for s in (eligible_set - used_basal)
+                    if sublattice_map[s] == 1 - oh_color
+                }
+
+        placed_step = False
+        # Build ordered island indices starting at current turn (active first, then exhausted)
+        active_order = [
+            (turn + offset) % n_islands
+            for offset in range(n_islands)
+            if not exhausted[(turn + offset) % n_islands]
+        ]
+        if not active_order:
+            active_order = [(turn + offset) % n_islands for offset in range(n_islands)]
+
+        for gtype in order_types:
+            if gtype == "OH" and matcher is not None and oh_color is None:
+                continue
+            w_col = oh_color if gtype == "OH" else None
+            # First try frontier growth (tier 0 then tier 1) across islands
+            for tier in (0, 1):
+                for k in active_order:
+                    cands = _collect_candidates(k, gtype, tier, wanted_color=w_col)
+                    if _score_and_pick(
+                        cands,
+                        gtype,
+                        k,
+                        tier,
+                        allow_expose=(oh_expose if gtype == "OH" else True),
+                        eligible_closers=(oh_closers if gtype == "OH" else None),
+                    ):
+                        turn = (k + 1) % n_islands
+                        placed_step = True
+                        break
+                    if tier == 1 and not cands and gtype != "OH":
+                        exhausted[k] = True
+                if placed_step:
+                    break
+            if placed_step:
+                break
+
+        if not placed_step:
+            # Fallback to tier 2 (anywhere remaining in eligible_set) across any group type still left
+            for gtype in order_types:
+                if gtype == "OH" and matcher is not None and oh_color is None:
+                    continue
+                w_col = oh_color if gtype == "OH" else None
+                k0 = active_order[0]
+                cands = _collect_candidates(k0, gtype, 2, wanted_color=w_col)
+                if _score_and_pick(
+                    cands,
+                    gtype,
+                    k0,
+                    2,
+                    allow_expose=(oh_expose if gtype == "OH" else True),
+                    eligible_closers=(oh_closers if gtype == "OH" else None),
+                ):
+                    turn = (k0 + 1) % n_islands
+                    placed_step = True
+                    break
+
+        if not placed_step:
+            return False, group_id
+
+    return True, group_id
+
+
 def _compute_mean_basal_group_nn_distance(model, coords_by_id):
     basal_groups = [g for g in model["metadata"]["groups"] if g["type"] in ("OH", "epoxide")]
     if len(basal_groups) < 2:
@@ -2614,13 +3060,28 @@ def _clone_model_fast(base: dict) -> dict:
     }
 
 
-def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=False, max_attempts=128):
+def _decorate(
+    base,
+    counts,
+    fixed,
+    faces,
+    rng,
+    *,
+    placement_spec=None,
+    has_p2=False,
+    max_attempts=128,
+    clar_spec=None,
+):
     ns = adjacency(base)
     edge = [i for i, n in ns.items() if len(n) == 2]
     basal = {i for i, n in ns.items() if len(n) == 3}
     base_coords = _coordinates(base)
 
-    if placement_spec and placement_spec["mode"] == "island" and placement_spec["seed_atoms"] is not None:
+    is_island_mode = placement_spec is not None and placement_spec["mode"] in (
+        "island",
+        "irregular_island",
+    )
+    if is_island_mode and placement_spec["seed_atoms"] is not None:
         for sid in placement_spec["seed_atoms"]:
             if sid not in ns:
                 raise ValueError(
@@ -2730,9 +3191,10 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                 )
 
     mode = placement_spec["mode"] if placement_spec is not None else "random"
-    island_radius = placement_spec["radius"] if mode == "island" else None
+    is_irregular = is_island_mode and placement_spec["style"] == "irregular"
+    island_radius = placement_spec["radius"] if is_island_mode else None
     fixed_island_centers = None
-    if mode == "island":
+    if is_island_mode:
         if placement_spec["centers"] is not None:
             fixed_island_centers = placement_spec["centers"]
         elif placement_spec["seed_atoms"] is not None:
@@ -2741,7 +3203,7 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                 for sid in placement_spec["seed_atoms"]
             ]
 
-    if mode == "island" and island_radius is not None and fixed_island_centers is not None:
+    if is_island_mode and island_radius is not None and fixed_island_centers is not None:
         disk_basal = {
             s
             for s in basal
@@ -2765,6 +3227,85 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                 suggestions=["Increase placement.radius", "Reduce basal group counts", "Add island centers"],
             )
 
+    clar_enabled = bool(clar_spec and clar_spec["enabled"])
+    base_bipartite = False
+    sublattice_map = None
+    clar_base_quotas = None
+    base_matcher = None
+    if clar_enabled:
+        by_id_base = {int(a["id"]): a for a in base["atoms"]}
+        c_adj_base = {int(cid): {int(n) for n, _, _ in ns[cid]} for cid in ns}
+        base_bipartite, sublattice_map = _bipartite_coloring(sorted(ns), c_adj_base, by_id_base)
+        if base_bipartite:
+            removed_fixed = set()
+            for gname in ("OH", "carbonyl", "epoxide", "epoxide_eph", "epoxide_ept"):
+                for sites in fixed.get(gname, ()):
+                    removed_fixed.update(sites)
+            rem_sc = [cid for cid in ns if cid not in removed_fixed]
+            n_a0 = sum(1 for cid in rem_sc if sublattice_map[cid] == 0)
+            n_b0 = sum(1 for cid in rem_sc if sublattice_map[cid] == 1)
+            d0 = n_a0 - n_b0
+            k_cab = random_counts["carbonyl"]
+            k_oh = random_counts["OH"]
+            k_single = k_cab + k_oh
+            if (d0 + k_single) % 2 != 0 or abs(d0) > k_single:
+                raise PlacementError(
+                    "Requested counts cannot achieve Clar bipartite sublattice balance "
+                    f"(initial |N_A - N_B|={abs(d0)}, single-site OH+carbonyl={k_single})",
+                    requested=requested_report,
+                    capacity=capacity,
+                    attempts=0,
+                    suggestions=[
+                        "Adjust OH or carbonyl counts by 1 for even sublattice parity",
+                        "Disable clar filtering or use composition mode",
+                    ],
+                )
+            need_a = (d0 + k_single) // 2
+            need_b = k_single - need_a
+            base_matcher = IncrementalKekuleMatcher(c_adj_base, sublattice_map, rem_sc)
+            if len(base_matcher.free_a) > need_a or len(base_matcher.free_b) > need_b:
+                raise PlacementError(
+                    "Scaffold/fixed geometry has unrepairable Kekule radical deficit "
+                    f"(free_a={len(base_matcher.free_a)}, free_b={len(base_matcher.free_b)}, "
+                    f"quota=({need_a}, {need_b}))",
+                    requested=requested_report,
+                    capacity=capacity,
+                    attempts=0,
+                    suggestions=[
+                        "Increase OH/carbonyl counts or modify holes/fixed sites",
+                        "Disable clar filtering",
+                    ],
+                )
+            n_ep = random_counts["epoxide"]
+            n_eph = random_counts["epoxide_eph"]
+            edge_a = sum(1 for cid in edge if sublattice_map[cid] == 0)
+            edge_b = sum(1 for cid in edge if sublattice_map[cid] == 1)
+            basal_a = sum(1 for cid in basal if sublattice_map[cid] == 0)
+            basal_b = sum(1 for cid in basal if sublattice_map[cid] == 1)
+            if k_cab == 0:
+                cab_a_range = (0, 0)
+            elif k_oh == 0:
+                cab_a_range = (need_a, need_a)
+            else:
+                low_cab_a = max(0, need_a - k_oh, need_a - max(0, basal_a - n_ep))
+                high_cab_a = min(k_cab, need_a, edge_a, k_cab - max(0, need_b - max(0, basal_b - n_ep)))
+                if low_cab_a > high_cab_a:
+                    low_cab_a = max(0, need_a - k_oh)
+                    high_cab_a = min(k_cab, need_a)
+                cab_a_range = (low_cab_a, high_cab_a)
+            if n_eph == 0 and (
+                cab_a_range[0] > edge_a
+                or (k_cab - cab_a_range[1]) > edge_b
+            ):
+                raise PlacementError(
+                    "Insufficient A/B sublattice sites for Clar-balanced placement",
+                    requested=requested_report,
+                    capacity=capacity,
+                    attempts=0,
+                    suggestions=["Enlarge the sheet", "Adjust composition or disable clar"],
+                )
+            clar_base_quotas = (need_a, need_b, k_cab, k_oh, cab_a_range)
+
     # Retry stereochemical placements and randomized tie choices. Count is exact
     # on success; search failure is explicit and never silently undershoots.
     best_achieved = dict.fromkeys(report_keys, 0)
@@ -2773,8 +3314,9 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
     has_ept_work = random_counts["epoxide_ept"] > 0 or bool(fixed.get("epoxide_ept"))
     has_any_groups = any(counts.values()) or bool(fixed)
     radius_too_small_seen = False
+    clar_fail_reason = None
 
-    for _ in range(max_attempts):
+    for attempt_idx in range(max_attempts):
         model = _clone_model_fast(base)
         adj = adjacency(model)
         coords_by_id = _coordinates(model)
@@ -2791,8 +3333,9 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
         rng.shuffle(edge_pool)
 
         island_centers = fixed_island_centers
-        chosen_seed_atoms = placement_spec["seed_atoms"] if mode == "island" else None
-        if mode == "island":
+        chosen_seed_atoms = placement_spec["seed_atoms"] if is_island_mode else None
+        cand_basal = basal
+        if is_island_mode:
             if island_centers is None:
                 nuclei_pool = basal_sorted if basal_sorted else sorted(ns)
                 chosen_seed_atoms = _choose_island_nuclei(
@@ -2808,36 +3351,47 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                     for s in basal
                     if _min_dist_to_centers(base_coords[s], island_centers, base) <= island_radius
                 }
-                matching = _max_matching(base, cand_basal, rng) if has_epx_work else []
+                matching = (
+                    _max_matching(base, cand_basal, rng)
+                    if (has_epx_work and not is_irregular)
+                    else []
+                )
                 if (
                     random_counts["OH"] + 2 * random_counts["epoxide"] > len(cand_basal)
-                    or random_counts["epoxide"] > len(matching)
+                    or (not is_irregular and random_counts["epoxide"] > len(matching))
                 ):
                     radius_too_small_seen = True
                     continue
                 cand_basal_sorted = sorted(cand_basal)
             else:
                 cand_basal_sorted = basal_sorted
-                matching = _max_matching(base, basal, rng) if has_epx_work else []
+                matching = (
+                    _max_matching(base, basal, rng)
+                    if (has_epx_work and not is_irregular)
+                    else []
+                )
 
             compactness = placement_spec["compactness"]
-            if has_epx_work:
-                matching = _order_by_island(
-                    matching,
-                    lambda p: _pair_midpoint(base_coords, p[0], p[1], base),
+            if not is_irregular:
+                if has_epx_work:
+                    matching = _order_by_island(
+                        matching,
+                        lambda p: _pair_midpoint(base_coords, p[0], p[1], base),
+                        island_centers,
+                        compactness,
+                        base,
+                        rng,
+                    )
+                oh_pool = _order_by_island(
+                    cand_basal_sorted,
+                    lambda s: base_coords[s],
                     island_centers,
                     compactness,
                     base,
                     rng,
                 )
-            oh_pool = _order_by_island(
-                cand_basal_sorted,
-                lambda s: base_coords[s],
-                island_centers,
-                compactness,
-                base,
-                rng,
-            )
+            else:
+                oh_pool = []
             if placement_spec["edge_mode"] == "near_islands":
                 edge_pool = _order_by_island(
                     edge_pool,
@@ -2856,11 +3410,30 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
             oh_pool = list(basal_sorted)
             rng.shuffle(oh_pool)
 
+        cab_quota = None
+        oh_quota = None
+        matcher = base_matcher.copy() if base_matcher is not None else None
+        if clar_enabled and clar_base_quotas is not None:
+            need_a, need_b, k_cab, k_oh, (low_ca, high_ca) = clar_base_quotas
+            if k_cab == 0:
+                cab_a = 0
+            elif k_oh == 0:
+                cab_a = need_a
+            else:
+                ideal = int(round(k_cab * (need_a / float(k_cab + k_oh))))
+                base_ca = max(low_ca, min(high_ca, ideal))
+                span_ca = high_ca - low_ca + 1
+                offset = ((attempt_idx + 1) // 2) * (1 if attempt_idx % 2 == 1 else -1)
+                cab_a = low_ca + ((base_ca - low_ca + offset) % span_ca)
+            cab_b = k_cab - cab_a
+            cab_quota = [cab_a, cab_b]
+            oh_quota = [need_a - cab_a, need_b - cab_b]
+
         ept_matching = []
         if has_ept_work and random_counts["epoxide_ept"] > 0:
             ept_matching = _max_matching(base, set(edge), rng)
             rng.shuffle(ept_matching)
-            if mode == "island" and placement_spec["edge_mode"] == "near_islands":
+            if is_island_mode and placement_spec["edge_mode"] == "near_islands":
                 ept_matching = _order_by_island(
                     ept_matching,
                     lambda p: _pair_midpoint(base_coords, p[0], p[1], base),
@@ -2892,7 +3465,18 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                     else:
                         placed_edge_pts.append(_pair_midpoint(base_coords, sites[0], sites[1], base)[:2])
 
-        def _place_dispersed(candidates, pos_fn, placed_pts, needed, group_name, is_pair, update_sets):
+        def _place_dispersed(
+            candidates,
+            pos_fn,
+            placed_pts,
+            needed,
+            group_name,
+            is_pair,
+            update_sets,
+            sub_quota=None,
+            future_a=0,
+            future_b=0,
+        ):
             nonlocal group_id
             remaining = []
             for cand in candidates:
@@ -2909,6 +3493,27 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
             ]
             placed_here = 0
             while placed_here < needed and remaining:
+                wanted_col = None
+                allow_exp = True
+                closers = None
+                if matcher is not None and not is_pair and sub_quota is not None:
+                    wanted_col, allow_exp = _clar_next_single_choice(
+                        matcher, sub_quota, future_a=future_a, future_b=future_b
+                    )
+                    if wanted_col is None:
+                        return False
+                    if allow_exp and sublattice_map is not None:
+                        closers = {
+                            c_item[0] if False else c_item
+                            for c_item, _, _ in remaining
+                            if sublattice_map[c_item] == 1 - wanted_col
+                        }
+                        if group_name == "carbonyl" and random_counts["OH"] > 0:
+                            closers |= {
+                                s
+                                for s in (basal - used_basal)
+                                if sublattice_map[s] == 1 - wanted_col
+                            }
                 if not placed_pts:
                     order = list(range(len(remaining)))
                 else:
@@ -2917,8 +3522,23 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                         key=lambda idx: (-round(min_d[idx], 9), remaining[idx][2]),
                     )
                 chosen_idx = None
+                kek_token = None
                 for idx in order:
                     cand = remaining[idx][0]
+                    if sub_quota is not None and sublattice_map is not None and not is_pair:
+                        if wanted_col is not None and sublattice_map[cand] != wanted_col:
+                            continue
+                        if sub_quota[sublattice_map[cand]] <= 0:
+                            continue
+                    if matcher is not None and (is_pair or sub_quota is not None):
+                        if is_pair:
+                            ok_k, kek_token = matcher.check_remove_pair(cand[0], cand[1])
+                        else:
+                            ok_k, kek_token = matcher.check_remove_single(
+                                cand, allow_expose=allow_exp, eligible_closers=closers
+                            )
+                        if not ok_k:
+                            continue
                     sites_arg = list(cand) if is_pair else [cand]
                     face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
                     if _place_group(
@@ -2939,8 +3559,15 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                         break
                 if chosen_idx is None:
                     return False
+                if matcher is not None and kek_token is not None:
+                    if is_pair:
+                        matcher.commit_remove_pair(kek_token)
+                    else:
+                        matcher.commit_remove_single(kek_token)
                 cand, pt, _ = remaining[chosen_idx]
                 update_sets(cand)
+                if sub_quota is not None and sublattice_map is not None and not is_pair:
+                    sub_quota[sublattice_map[cand]] -= 1
                 group_id += 1
                 achieved[group_name] += 1
                 placed_here += 1
@@ -3004,6 +3631,11 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                     for pair in ept_matching:
                         if pair[0] in used_edge or pair[1] in used_edge:
                             continue
+                        kek_token = None
+                        if matcher is not None:
+                            ok_k, kek_token = matcher.check_remove_pair(pair[0], pair[1])
+                            if not ok_k:
+                                continue
                         face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
                         if _place_group(
                             model,
@@ -3019,6 +3651,8 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                             by_id=by_id,
                             bond_by_atom=bond_by_atom,
                         ):
+                            if matcher is not None:
+                                matcher.commit_remove_pair(kek_token)
                             used_edge.update(pair)
                             group_id += 1
                             achieved["epoxide_ept"] += 1
@@ -3059,7 +3693,7 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                 avail_edge_eph = set(edge) - used_edge
                 eph_matching = _bipartite_matching(ns, avail_basal_eph, avail_edge_eph, rng)
                 rng.shuffle(eph_matching)
-                if mode == "island" and (
+                if is_island_mode and (
                     placement_spec["edge_mode"] == "near_islands" or island_radius is None
                 ):
                     eph_matching = _order_by_island(
@@ -3086,6 +3720,11 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                     for pair in eph_matching:
                         if pair[0] in used_basal or pair[1] in used_edge:
                             continue
+                        kek_token = None
+                        if matcher is not None:
+                            ok_k, kek_token = matcher.check_remove_pair(pair[0], pair[1])
+                            if not ok_k:
+                                continue
                         face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
                         if _place_group(
                             model,
@@ -3101,6 +3740,8 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                             by_id=by_id,
                             bond_by_atom=bond_by_atom,
                         ):
+                            if matcher is not None:
+                                matcher.commit_remove_pair(kek_token)
                             used_basal.add(pair[0])
                             used_edge.add(pair[1])
                             group_id += 1
@@ -3140,6 +3781,9 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                 else:
                     needed = random_counts[group]
                     if needed:
+                        g_quota = cab_quota if group == "carbonyl" else None
+                        f_a = oh_quota[0] if (group == "carbonyl" and oh_quota is not None) else 0
+                        f_b = oh_quota[1] if (group == "carbonyl" and oh_quota is not None) else 0
                         if mode == "dispersed":
                             if not _place_dispersed(
                                 edge_pool,
@@ -3149,7 +3793,68 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                                 group,
                                 False,
                                 lambda s: used_edge.add(s),
+                                sub_quota=g_quota,
+                                future_a=f_a,
+                                future_b=f_b,
                             ):
+                                success = False
+                                break
+                        elif g_quota is not None and matcher is not None:
+                            placed_here = 0
+                            while placed_here < needed:
+                                w_col, allow_exp = _clar_next_single_choice(
+                                    matcher, g_quota, future_a=f_a, future_b=f_b
+                                )
+                                if w_col is None:
+                                    break
+                                closers = None
+                                if allow_exp and sublattice_map is not None:
+                                    closers = {
+                                        s
+                                        for s in edge_pool
+                                        if s not in used_edge and sublattice_map[s] == 1 - w_col
+                                    }
+                                    if random_counts["OH"] > 0:
+                                        closers |= {
+                                            s
+                                            for s in (basal - used_basal)
+                                            if sublattice_map[s] == 1 - w_col
+                                        }
+                                picked = False
+                                for site in edge_pool:
+                                    if site in used_edge or sublattice_map[site] != w_col:
+                                        continue
+                                    ok_k, kek_token = matcher.check_remove_single(
+                                        site, allow_expose=allow_exp, eligible_closers=closers
+                                    )
+                                    if not ok_k:
+                                        continue
+                                    face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
+                                    if _place_group(
+                                        model,
+                                        group,
+                                        [site],
+                                        face,
+                                        group_id,
+                                        faces=faces,
+                                        adj=adj,
+                                        coords_by_id=coords_by_id,
+                                        occupied_edges=occupied_edges,
+                                        spatial_grid=spatial_grid,
+                                        by_id=by_id,
+                                        bond_by_atom=bond_by_atom,
+                                    ):
+                                        matcher.commit_remove_single(kek_token)
+                                        used_edge.add(site)
+                                        g_quota[sublattice_map[site]] -= 1
+                                        group_id += 1
+                                        achieved[group] += 1
+                                        placed_here += 1
+                                        picked = True
+                                        break
+                                if not picked:
+                                    break
+                            if placed_here < needed:
                                 success = False
                                 break
                         else:
@@ -3157,6 +3862,9 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                             for site in edge_pool:
                                 if site in used_edge:
                                     continue
+                                if g_quota is not None and sublattice_map is not None:
+                                    if g_quota[sublattice_map[site]] <= 0:
+                                        continue
                                 face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
                                 if _place_group(
                                     model,
@@ -3173,6 +3881,8 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                                     bond_by_atom=bond_by_atom,
                                 ):
                                     used_edge.add(site)
+                                    if g_quota is not None and sublattice_map is not None:
+                                        g_quota[sublattice_map[site]] -= 1
                                     group_id += 1
                                     achieved[group] += 1
                                     placed_here += 1
@@ -3182,8 +3892,7 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                                 success = False
                                 break
 
-        # 4. Place epoxide groups
-        if success:
+        if success and is_irregular:
             if "epoxide" in fixed:
                 for sites in fixed["epoxide"]:
                     face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
@@ -3206,52 +3915,8 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                     used_basal.update(sites)
                     group_id += 1
                     achieved["epoxide"] += 1
-            else:
-                needed = random_counts["epoxide"]
-                if needed:
-                    if mode == "dispersed":
-                        if not _place_dispersed(
-                            matching,
-                            lambda p: _pair_midpoint(base_coords, p[0], p[1], base),
-                            placed_basal_pts,
-                            needed,
-                            "epoxide",
-                            True,
-                            lambda p: used_basal.update(p),
-                        ):
-                            success = False
-                    else:
-                        placed_here = 0
-                        for pair in matching:
-                            if pair[0] in used_basal or pair[1] in used_basal:
-                                continue
-                            face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
-                            if _place_group(
-                                model,
-                                "epoxide",
-                                list(pair),
-                                face,
-                                group_id,
-                                faces=faces,
-                                adj=adj,
-                                coords_by_id=coords_by_id,
-                                occupied_edges=occupied_edges,
-                                spatial_grid=spatial_grid,
-                                by_id=by_id,
-                                bond_by_atom=bond_by_atom,
-                            ):
-                                used_basal.update(pair)
-                                group_id += 1
-                                achieved["epoxide"] += 1
-                                placed_here += 1
-                                if placed_here == needed:
-                                    break
-                        if placed_here < needed:
-                            success = False
 
-        # 5. Place OH groups
-        if success:
-            if "OH" in fixed:
+            if success and "OH" in fixed:
                 for sites in fixed["OH"]:
                     face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
                     if not _place_group(
@@ -3273,49 +3938,235 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                     used_basal.update(sites)
                     group_id += 1
                     achieved["OH"] += 1
-            else:
-                needed = random_counts["OH"]
-                if needed:
-                    if mode == "dispersed":
-                        if not _place_dispersed(
-                            oh_pool,
-                            lambda s: base_coords[s],
-                            placed_basal_pts,
-                            needed,
-                            "OH",
-                            False,
-                            lambda s: used_basal.add(s),
+
+            if success:
+                irreg_ok, group_id = _place_irregular_island_basal(
+                    model,
+                    base,
+                    base_coords,
+                    ns,
+                    cand_basal,
+                    used_basal,
+                    0 if "epoxide" in fixed else random_counts["epoxide"],
+                    0 if "OH" in fixed else random_counts["OH"],
+                    island_centers,
+                    chosen_seed_atoms,
+                    placement_spec["branching"],
+                    placement_spec["compactness"],
+                    faces,
+                    rng,
+                    group_id=group_id,
+                    achieved=achieved,
+                    adj=adj,
+                    coords_by_id=coords_by_id,
+                    occupied_edges=occupied_edges,
+                    spatial_grid=spatial_grid,
+                    by_id=by_id,
+                    bond_by_atom=bond_by_atom,
+                    sublattice_map=sublattice_map if clar_enabled else None,
+                    oh_quota=oh_quota if clar_enabled else None,
+                    matcher=matcher,
+                )
+                if not irreg_ok:
+                    success = False
+        else:
+            # 4. Place epoxide groups (fixed before OH preserves exact legacy atom/group ordering)
+            if success:
+                if "epoxide" in fixed:
+                    for sites in fixed["epoxide"]:
+                        face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
+                        if not _place_group(
+                            model,
+                            "epoxide",
+                            list(sites),
+                            face,
+                            group_id,
+                            faces=faces,
+                            adj=adj,
+                            coords_by_id=coords_by_id,
+                            occupied_edges=occupied_edges,
+                            spatial_grid=spatial_grid,
+                            by_id=by_id,
+                            bond_by_atom=bond_by_atom,
                         ):
                             success = False
-                    else:
-                        placed_here = 0
-                        for site in oh_pool:
-                            if site in used_basal:
-                                continue
-                            face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
-                            if _place_group(
-                                model,
-                                "OH",
-                                [site],
-                                face,
-                                group_id,
-                                faces=faces,
-                                adj=adj,
-                                coords_by_id=coords_by_id,
-                                occupied_edges=occupied_edges,
-                                spatial_grid=spatial_grid,
-                                by_id=by_id,
-                                bond_by_atom=bond_by_atom,
+                            break
+                        used_basal.update(sites)
+                        group_id += 1
+                        achieved["epoxide"] += 1
+                else:
+                    needed = random_counts["epoxide"]
+                    if needed:
+                        if mode == "dispersed":
+                            if not _place_dispersed(
+                                matching,
+                                lambda p: _pair_midpoint(base_coords, p[0], p[1], base),
+                                placed_basal_pts,
+                                needed,
+                                "epoxide",
+                                True,
+                                lambda p: used_basal.update(p),
                             ):
-                                used_basal.add(site)
-                                group_id += 1
-                                achieved["OH"] += 1
-                                placed_here += 1
-                                if placed_here == needed:
-                                    break
-                        if placed_here < needed:
-                            success = False
+                                success = False
+                        else:
+                            placed_here = 0
+                            for pair in matching:
+                                if pair[0] in used_basal or pair[1] in used_basal:
+                                    continue
+                                kek_token = None
+                                if matcher is not None:
+                                    ok_k, kek_token = matcher.check_remove_pair(pair[0], pair[1])
+                                    if not ok_k:
+                                        continue
+                                face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
+                                if _place_group(
+                                    model,
+                                    "epoxide",
+                                    list(pair),
+                                    face,
+                                    group_id,
+                                    faces=faces,
+                                    adj=adj,
+                                    coords_by_id=coords_by_id,
+                                    occupied_edges=occupied_edges,
+                                    spatial_grid=spatial_grid,
+                                    by_id=by_id,
+                                    bond_by_atom=bond_by_atom,
+                                ):
+                                    if matcher is not None:
+                                        matcher.commit_remove_pair(kek_token)
+                                    used_basal.update(pair)
+                                    group_id += 1
+                                    achieved["epoxide"] += 1
+                                    placed_here += 1
+                                    if placed_here == needed:
+                                        break
+                            if placed_here < needed:
+                                success = False
 
+            # 5. Place OH groups
+            if success:
+                if "OH" in fixed:
+                    for sites in fixed["OH"]:
+                        face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
+                        if not _place_group(
+                            model,
+                            "OH",
+                            list(sites),
+                            face,
+                            group_id,
+                            faces=faces,
+                            adj=adj,
+                            coords_by_id=coords_by_id,
+                            occupied_edges=occupied_edges,
+                            spatial_grid=spatial_grid,
+                            by_id=by_id,
+                            bond_by_atom=bond_by_atom,
+                        ):
+                            success = False
+                            break
+                        used_basal.update(sites)
+                        group_id += 1
+                        achieved["OH"] += 1
+                else:
+                    needed = random_counts["OH"]
+                    if needed:
+                        if mode == "dispersed":
+                            if not _place_dispersed(
+                                oh_pool,
+                                lambda s: base_coords[s],
+                                placed_basal_pts,
+                                needed,
+                                "OH",
+                                False,
+                                lambda s: used_basal.add(s),
+                                sub_quota=oh_quota,
+                            ):
+                                success = False
+                        elif oh_quota is not None and matcher is not None:
+                            placed_here = 0
+                            while placed_here < needed:
+                                w_col, allow_exp = _clar_next_single_choice(matcher, oh_quota)
+                                if w_col is None:
+                                    break
+                                closers = None
+                                if allow_exp and sublattice_map is not None:
+                                    closers = {
+                                        s
+                                        for s in oh_pool
+                                        if s not in used_basal and sublattice_map[s] == 1 - w_col
+                                    }
+                                picked = False
+                                for site in oh_pool:
+                                    if site in used_basal or sublattice_map[site] != w_col:
+                                        continue
+                                    ok_k, kek_token = matcher.check_remove_single(
+                                        site, allow_expose=allow_exp, eligible_closers=closers
+                                    )
+                                    if not ok_k:
+                                        continue
+                                    face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
+                                    if _place_group(
+                                        model,
+                                        "OH",
+                                        [site],
+                                        face,
+                                        group_id,
+                                        faces=faces,
+                                        adj=adj,
+                                        coords_by_id=coords_by_id,
+                                        occupied_edges=occupied_edges,
+                                        spatial_grid=spatial_grid,
+                                        by_id=by_id,
+                                        bond_by_atom=bond_by_atom,
+                                    ):
+                                        matcher.commit_remove_single(kek_token)
+                                        used_basal.add(site)
+                                        oh_quota[sublattice_map[site]] -= 1
+                                        group_id += 1
+                                        achieved["OH"] += 1
+                                        placed_here += 1
+                                        picked = True
+                                        break
+                                if not picked:
+                                    break
+                            if placed_here < needed:
+                                success = False
+                        else:
+                            placed_here = 0
+                            for site in oh_pool:
+                                if site in used_basal:
+                                    continue
+                                if oh_quota is not None and sublattice_map is not None:
+                                    if oh_quota[sublattice_map[site]] <= 0:
+                                        continue
+                                face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
+                                if _place_group(
+                                    model,
+                                    "OH",
+                                    [site],
+                                    face,
+                                    group_id,
+                                    faces=faces,
+                                    adj=adj,
+                                    coords_by_id=coords_by_id,
+                                    occupied_edges=occupied_edges,
+                                    spatial_grid=spatial_grid,
+                                    by_id=by_id,
+                                    bond_by_atom=bond_by_atom,
+                                ):
+                                    used_basal.add(site)
+                                    if oh_quota is not None and sublattice_map is not None:
+                                        oh_quota[sublattice_map[site]] -= 1
+                                    group_id += 1
+                                    achieved["OH"] += 1
+                                    placed_here += 1
+                                    if placed_here == needed:
+                                        break
+                            if placed_here < needed:
+                                success = False
+
+        clar_meta = None
         if success:
             try:
                 _cap_edges(
@@ -3333,11 +4184,36 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                 integrity = check_geometry_integrity(model)
                 if not integrity["passed"]:
                     success = False
+            if success and clar_enabled:
+                elec = analyze_aromatic_electronic_structure(model, compute_huckel=True)
+                min_gap = clar_spec["min_huckel_gap"]
+                if elec["bipartite"] and elec["sublattice_imbalance"] != 0:
+                    success = False
+                    clar_fail_reason = f"sublattice_imbalance={elec['sublattice_imbalance']}"
+                elif not elec["kekule_perfect"]:
+                    success = False
+                    clar_fail_reason = "no perfect Kekule matching"
+                elif elec["huckel_gap_beta"] is None or elec["huckel_gap_beta"] < min_gap:
+                    success = False
+                    clar_fail_reason = (
+                        f"huckel_gap_beta={elec['huckel_gap_beta']} < {min_gap}"
+                    )
+                else:
+                    clar_meta = {
+                        "enabled": True,
+                        "min_huckel_gap": float(min_gap),
+                        "sublattice_imbalance": elec["sublattice_imbalance"],
+                        "kekule_perfect": bool(elec["kekule_perfect"]),
+                        "huckel_gap_beta": float(elec["huckel_gap_beta"]),
+                    }
 
         if success:
             if placement_spec is not None:
                 pmeta = {"mode": mode}
-                if mode == "island":
+                if is_island_mode:
+                    if is_irregular:
+                        pmeta["style"] = placement_spec["style"]
+                        pmeta["branching"] = placement_spec["branching"]
                     pmeta.update(
                         {
                             "n_islands": len(island_centers),
@@ -3354,6 +4230,8 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
                 if mean_nn is not None:
                     pmeta["mean_basal_group_nn_distance"] = mean_nn
                 model["metadata"]["placement"] = pmeta
+            if clar_meta is not None:
+                model["metadata"]["clar"] = clar_meta
             return model
         if sum(achieved.values()) > sum(best_achieved.values()):
             best_achieved = achieved
@@ -3365,6 +4243,16 @@ def _decorate(base, counts, fixed, faces, rng, *, placement_spec=None, has_p2=Fa
             capacity=capacity,
             attempts=max_attempts,
             suggestions=["Increase placement.radius", "Reduce basal group counts", "Add island centers"],
+        )
+    if clar_enabled and clar_fail_reason is not None:
+        raise PlacementError(
+            f"Clar closed-shell electronic filter not satisfied in {max_attempts} attempts "
+            f"(last failure: {clar_fail_reason})",
+            requested=requested_report,
+            achieved=best_achieved,
+            capacity=capacity,
+            attempts=max_attempts,
+            suggestions=["Increase clar.max_attempts", "Lower clar.min_huckel_gap", "Adjust OH/carbonyl parity"],
         )
     raise PlacementError(
         f"No collision-free exact placement found in {max_attempts} attempts; "
@@ -3710,6 +4598,7 @@ def build_sheet(recipe: dict) -> dict:
         "groups",
         "faces",
         "placement",
+        "clar",
         "composition",
         "c_over_o",
         "o_over_c",
@@ -3839,6 +4728,7 @@ def build_sheet(recipe: dict) -> dict:
     if faces not in ("both", "up", "down"):
         raise ValueError("faces must be both/up/down")
     placement_spec = _parse_placement(recipe.get("placement"))
+    clar_spec = _parse_clar_spec(recipe.get("clar"))
     rng = random.Random(seed)
     model = _tile(nx, ny, length, list(pbc), vacuum, seed, str(recipe.get("name", "GO")))
     _apply_shape(
@@ -3851,6 +4741,17 @@ def build_sheet(recipe: dict) -> dict:
         cut_radius=cut_radius_a,
     )
     _apply_holes(model, recipe, rng, bond_length=length)
+
+    clar_comp_parity_base = None
+    if clar_spec["enabled"]:
+        base_ns = adjacency(model)
+        by_id_sc = {int(a["id"]): a for a in model["atoms"]}
+        c_adj_sc = {int(cid): {int(n) for n, _, _ in base_ns[cid]} for cid in base_ns}
+        bipartite_sc, color_sc = _bipartite_coloring(sorted(base_ns), c_adj_sc, by_id_sc)
+        if bipartite_sc:
+            n_a_sc = sum(1 for cid in base_ns if color_sc[cid] == 0)
+            n_b_sc = sum(1 for cid in base_ns if color_sc[cid] == 1)
+            clar_comp_parity_base = n_a_sc - n_b_sc
 
     morph_metrics = (
         _scaffold_morphology_metrics(model, length) if use_morphology_meta else None
@@ -3878,8 +4779,17 @@ def build_sheet(recipe: dict) -> dict:
         for comp_attempt in range(12):
             resolved_counts = None
             attempt_report = None
-            for sub_try in range(4):
-                w_mult = weight_multipliers if weight_multipliers else None
+            sub_tries = 10 if clar_spec["enabled"] else 4
+            for sub_try in range(sub_tries):
+                w_mult = dict(weight_multipliers) if weight_multipliers else None
+                if (
+                    clar_spec["enabled"]
+                    and sub_try >= 2
+                    and clar_comp_parity_base is not None
+                ):
+                    w_mult = dict(w_mult) if w_mult else {}
+                    factor = 1.0 + 0.03 * ((sub_try // 2) * (1 if sub_try % 2 == 0 else -1))
+                    w_mult["OH"] = max(0.2, w_mult.get("OH", 1.0) * factor)
                 if comp_attempt == 0 and sub_try == 0:
                     _, attempt_report = resolve_composition(
                         clean_recipe,
@@ -3935,6 +4845,13 @@ def build_sheet(recipe: dict) -> dict:
                         _weight_multipliers=w_mult,
                     )
                 cand_counts = attempt_report["group_counts"]
+                if clar_spec["enabled"] and clar_comp_parity_base is not None:
+                    k_single_cand = cand_counts["OH"] + cand_counts["carbonyl"]
+                    if (
+                        (clar_comp_parity_base + k_single_cand) % 2 != 0
+                        or abs(clar_comp_parity_base) > k_single_cand
+                    ) and sub_try < sub_tries - 1:
+                        continue
                 sig = tuple(cand_counts[g] for g in GROUPS)
                 if sig not in tried_counts or comp_attempt == 0:
                     resolved_counts = cand_counts
@@ -3955,7 +4872,10 @@ def build_sheet(recipe: dict) -> dict:
                     attempt_rng,
                     placement_spec=placement_spec,
                     has_p2=has_p2,
-                    max_attempts=16 if comp_attempt < 11 else 128,
+                    max_attempts=(
+                        16 if comp_attempt < 11 else max(128, clar_spec["max_attempts"])
+                    ),
+                    clar_spec=clar_spec,
                 )
                 final_counts = resolved_counts
                 comp_report = attempt_report
@@ -3964,6 +4884,11 @@ def build_sheet(recipe: dict) -> dict:
             except PlacementError as exc:
                 last_error = exc
                 msg = str(exc)
+                if "Clar" in msg:
+                    weight_multipliers["OH"] = weight_multipliers.get("OH", 1.0) * (
+                        0.96 if comp_attempt % 2 == 0 else 1.04
+                    )
+                    continue
                 bottleneck_groups: list[str] = []
                 if exc.attempts == 0:
                     if "epoxide count exceeds" in msg:
@@ -4050,6 +4975,8 @@ def build_sheet(recipe: dict) -> dict:
             rng,
             placement_spec=placement_spec,
             has_p2=has_p2,
+            max_attempts=clar_spec["max_attempts"] if clar_spec["enabled"] else 128,
+            clar_spec=clar_spec,
         )
 
     # GGG is a one-atom library fragment, so each pristine carbon needs a

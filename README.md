@@ -53,6 +53,11 @@ uv run python 01_build_GO.py \
   --size 4 4 --oc 0.35 --ph 7.4 --place island --islands 2 --holes mixed:5 --seed 42 \
   --out work/go.json --pdb work/go.pdb --mol2 work/go.mol2 --sdf work/go.sdf --cif work/go.cif
 
+# Build an irregular Lerf-Klinowski island model with optional closed-shell pi filtering
+uv run python 01_build_GO.py \
+  --size 4 4 --oc 0.35 --ph 7.4 --place irregular_island --islands 2 --branching 0.70 --clar --seed 42 \
+  --out work/go_irreg.json
+
 # Inspect configuration recipes and verify a constructed model
 uv run python 01_build_GO.py --init-config work/my_go.toml
 uv run python 01_build_GO.py --config examples/configs/go_island_porous.toml --out work/island.json
@@ -61,6 +66,13 @@ uv run python check_model.py --model work/go.json --strict
 ```
 
 Models export to `JSON` (authoritative graph), `PDB` (with `CONECT` records), `MOL2`, `XYZ`, `EXTXYZ`, `SDF` (V3000) and `CIF`.
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/images/placement_modes_dark.svg">
+  <img alt="Four graphene oxide oxidation placement modes on a 4 x 4 nm sheet" src="docs/images/placement_modes.svg" width="100%">
+</picture>
+
+*Four spatial oxidation modes built on identical `4.0 × 4.0 nm` scaffolds (`O/C = 0.35`, pH `7.4`, `seed = 42`, `2` island nuclei): `dispersed`, `random`, compact `island`, and branched Lerf–Klinowski `irregular_island` (`branching = 0.70`), highlighting intact aromatic $sp^2$ six-membered rings.*
 
 Parameterization and multi-engine conversion follow [03_prepare_amber.py](03_prepare_amber.py) → [07_export_gromacs.py](07_export_gromacs.py) or [08_export_openmm.py](08_export_openmm.py), with optional covalent epoxide opening via [02_open_epoxides.py](02_open_epoxides.py):
 
@@ -91,9 +103,9 @@ All CLI stages and command-line flags are listed in the [command reference](docs
 
 ## Methods and validation
 
-Finite and periodic sheets (`rectangular`, `hexagonal`, `circular`) are generated with specified lateral dimensions, pH-aware `C/O` or `O/C` compositions, vacancy distributions and spatial oxidation modes (`random`, `island`, `dispersed`). Every built structure keeps explicit connectivity (`geometry_status = "constructed_unrelaxed"`) and passes pre-export checks for steric clashes, bond lengths, minimum-image distances, valences and net charge. Single-core construction runs in $O(N)$ time, requiring `0.16 s` for `913` atoms (`12×12`, `O/C = 0.35`, pH `7.4`), `0.67 s` for `3,666` atoms (`24×24`), `1.60 s` for `8,294` atoms (`36×36`), and `6.30 s` for a `24,576`-atom periodic `64×64` sheet, with zero steric clashes. Geometric checks verify graph and local coordination validity; they do not establish electronic structure or conformational equilibration.
+Finite and periodic sheets (`rectangular`, `hexagonal`, `circular`) are generated with specified lateral dimensions, pH-aware `C/O` or `O/C` compositions, vacancy distributions and spatial oxidation modes (`random`, `island`, `irregular_island`, `dispersed`), with optional `--clar` bipartite sublattice, Kekulé matching, and Hückel $\pi$-gap screening (`--min-huckel-gap`). Every built structure keeps explicit connectivity (`geometry_status = "constructed_unrelaxed"`) and passes pre-export checks for steric clashes, bond lengths, minimum-image distances, valences and net charge. Single-core construction runs in $O(N)$ time, requiring `0.16 s` for `913` atoms (`12×12`, `O/C = 0.35`, pH `7.4`), `0.67 s` for `3,666` atoms (`24×24`), `1.60 s` for `8,294` atoms (`36×36`), and `6.30 s` for a `24,576`-atom periodic `64×64` sheet, with zero steric clashes. Geometric checks verify graph and local coordination validity; they do not establish electronic structure or conformational equilibration.
 
-The default `gaff2_v3` preset covers finite GO models bearing basal carbons, aromatic CH edges, hydroxyls, basal and edge epoxides, carbonyls, carboxylic acids and carboxylates, using 18 dedicated lowercase Amber atom types (`0/129` collisions with `ff19SB`, `GAFF2`, water and ions), 4-color epoxide typing, and dual-regime `L0_v2` charges. Unsupported Priority-3 motifs (phenols, planar ethers, lactones) and unparameterized junctions are rejected cleanly. Across 52 in-domain benchmark models (`6/58` Priority-3 models excluded by design), harmonic frequency analysis gives zero imaginary modes, Amber `sander` 24.0, OpenMM 8.6.1 and GROMACS energies agree within `0.0267 kJ/mol` (`max|ΔF| = 0.0317 kJ/(mol·nm)`), all 20 library files verify against SHA-256 checksums in `PROVENANCE.json`, and the regression suite passes `407` automated tests. Experimental parameterization studies in `research/` are kept separate from the reference libraries.
+The default `gaff2_v3` preset covers finite GO models bearing basal carbons, aromatic CH edges, hydroxyls, basal and edge epoxides, carbonyls, carboxylic acids and carboxylates, using 18 dedicated lowercase Amber atom types (`0/129` collisions with `ff19SB`, `GAFF2`, water and ions), 4-color epoxide typing, and dual-regime `L0_v2` charges. Unsupported Priority-3 motifs (phenols, planar ethers, lactones) and unparameterized junctions are rejected cleanly. Across 52 in-domain benchmark models (`6/58` Priority-3 models excluded by design), harmonic frequency analysis gives zero imaginary modes, Amber `sander` 24.0, OpenMM 8.6.1 and GROMACS energies agree within `0.0267 kJ/mol` (`max|ΔF| = 0.0317 kJ/(mol·nm)`), all 20 library files verify against SHA-256 checksums in `PROVENANCE.json`, and the regression suite passes `420` automated tests. Experimental parameterization studies in `research/` are kept separate from the reference libraries.
 
 ### Development status
 
@@ -102,7 +114,7 @@ The default `gaff2_v3` preset covers finite GO models bearing basal carbons, aro
 | Block 1 | Structure builder, placement modes, $O(N)$ integrity checks and multi-format exports | Done | [`block-1-builder`](https://github.com/CalzaAlessandro/go-surface-workbench/releases/tag/block-1-builder) |
 | Block 2 | Core Amber `gaff2_v3` + `L0_v2` libraries, custom charges, GROMACS and OpenMM exporters (`407` tests) | Done | [`block-2-amber-core`](https://github.com/CalzaAlessandro/go-surface-workbench/releases/tag/block-2-amber-core) |
 | Block 3 | Closed-shell QM optimization and HF/DFT RESP benchmarks on `80–190`-atom sheets | In progress | — |
-| Block 4 | Proximity charge models (`L1_reg`/`SQE`), additive Priority-3 motifs (`gaff2_v3.1`), irregular island builder | Planned | — |
+| Block 4 | Irregular Lerf–Klinowski islands & `--clar` filter (`420` tests); `L1_reg`/`SQE` charges & `gaff2_v3.1` Priority-3 motifs pending Block 3 | In progress | — |
 | Block 5 | Direct periodic topology writers for GROMACS, OpenMM, Amber and OpenFF | Planned | — |
 | Block 6 | `OPLS-AA`, `OpenFF` and `CHARMM36m` presets and tiered literature catalog | Planned | — |
 | Block 7 | Explicit-water MD, MM-GBSA/PBSA calibration, docking and direct solvation helpers, Linux/macOS CI | Planned | — |

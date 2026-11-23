@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import shlex
 import subprocess
 import sys
@@ -214,24 +215,49 @@ def parser_for(stage: str) -> argparse.ArgumentParser:
             help="Explicit group counts or percentages (e.g. OH=10,epoxide=8,COO=2 or OH=15%%,epoxide=10%%)",
         )
 
-        place_group = parser.add_argument_group("Placement")
+        place_group = parser.add_argument_group("Placement & Electronic Filter")
         place_group.add_argument(
             "--place",
             dest="placement",
-            choices=("random", "island", "dispersed"),
+            choices=("random", "island", "irregular_island", "dispersed"),
             help="Functional group spatial placement mode (default: random)",
         )
         place_group.add_argument(
             "--placement",
             dest="placement",
-            choices=("random", "island", "dispersed"),
+            choices=("random", "island", "irregular_island", "dispersed"),
             help=argparse.SUPPRESS,
         )
         place_group.add_argument(
             "--islands",
             type=int,
             metavar="N",
-            help="Number of island nuclei when using --place island (default: 1)",
+            help="Number of island nuclei when using --place island or irregular_island (default: 1)",
+        )
+        place_group.add_argument(
+            "--island-style",
+            dest="island_style",
+            choices=("compact", "irregular"),
+            help="Island morphology when using --place island (default: compact; forced irregular for irregular_island)",
+        )
+        place_group.add_argument(
+            "--branching",
+            type=float,
+            metavar="F",
+            help="Branching intensity in [0.0, 1.0] for irregular islands (default: 0.65)",
+        )
+        place_group.add_argument(
+            "--clar",
+            action="store_true",
+            default=False,
+            help="Enforce bipartite sublattice balance, Kekule matching, and nonzero Huckel pi-gap",
+        )
+        place_group.add_argument(
+            "--min-huckel-gap",
+            dest="min_huckel_gap",
+            type=float,
+            metavar="BETA",
+            help="Minimum Huckel HOMO-LUMO pi gap (|beta| units) when --clar is active (default: 0.0)",
         )
         place_group.add_argument(
             "--faces",
@@ -588,8 +614,23 @@ def _check_build_cli_conflicts(args: argparse.Namespace) -> None:
     if args.islands is not None:
         if args.islands < 1:
             raise ValueError("--islands must be >= 1")
-        if args.placement is not None and args.placement != "island":
-            raise ValueError("--islands requires --place island")
+        if args.placement is not None and args.placement not in ("island", "irregular_island"):
+            raise ValueError("--islands requires --place island or irregular_island")
+    if getattr(args, "island_style", None) is not None:
+        if args.placement is not None and args.placement not in ("island", "irregular_island"):
+            raise ValueError("--island-style requires --place island or irregular_island")
+        if args.placement == "irregular_island" and args.island_style != "irregular":
+            raise ValueError("--island-style compact conflicts with --place irregular_island")
+    if getattr(args, "branching", None) is not None:
+        if not math.isfinite(args.branching) or not 0.0 <= args.branching <= 1.0:
+            raise ValueError("--branching must be between 0 and 1")
+        if args.placement is not None and args.placement not in ("island", "irregular_island"):
+            raise ValueError("--branching requires --place island or irregular_island")
+        if getattr(args, "island_style", None) == "compact":
+            raise ValueError("--branching requires --place irregular_island or --island-style irregular")
+    if getattr(args, "min_huckel_gap", None) is not None:
+        if not math.isfinite(args.min_huckel_gap) or args.min_huckel_gap < 0.0:
+            raise ValueError("--min-huckel-gap must be >= 0")
 
 
 def _resolve_build_recipe(args: argparse.Namespace) -> tuple[dict, dict | None]:
@@ -666,22 +707,74 @@ def _resolve_build_recipe(args: argparse.Namespace) -> tuple[dict, dict | None]:
         recipe["holes"] = parsed_holes
         cli_overrides["holes"] = parsed_holes
 
-    if args.placement is not None or args.islands is not None:
+    island_style = getattr(args, "island_style", None)
+    branching = getattr(args, "branching", None)
+    if (
+        args.placement is not None
+        or args.islands is not None
+        or island_style is not None
+        or branching is not None
+    ):
         existing_placement = recipe.get("placement")
-        if args.islands is not None:
-            if isinstance(existing_placement, dict) and existing_placement.get("mode") == "island":
-                updated = dict(existing_placement)
-                updated["n_islands"] = args.islands
-                recipe["placement"] = updated
-            else:
-                recipe["placement"] = {"mode": "island", "n_islands": args.islands}
-        elif args.placement is not None:
-            if not (
-                isinstance(existing_placement, dict)
-                and existing_placement.get("mode") == args.placement
+        has_island_opts = (
+            args.islands is not None or island_style is not None or branching is not None
+        )
+        if args.placement in ("random", "dispersed"):
+            recipe["placement"] = args.placement
+        elif has_island_opts or args.placement in ("island", "irregular_island"):
+            if isinstance(existing_placement, dict) and existing_placement.get("mode") in (
+                "island",
+                "irregular_island",
             ):
-                recipe["placement"] = args.placement
+                updated = dict(existing_placement)
+            elif existing_placement in ("island", "irregular_island"):
+                updated = {"mode": existing_placement}
+            else:
+                updated = {}
+            target_mode = (
+                args.placement
+                if args.placement in ("island", "irregular_island")
+                else updated.get("mode", "island")
+            )
+            if args.placement is None and existing_placement in ("random", "dispersed"):
+                raise ValueError(
+                    f"Cannot combine island flags with placement mode {existing_placement!r}"
+                )
+            updated["mode"] = target_mode
+            if args.islands is not None:
+                updated["n_islands"] = args.islands
+            if island_style is not None:
+                updated["style"] = island_style
+            if branching is not None:
+                eff_style = updated.get(
+                    "style",
+                    "irregular" if target_mode == "irregular_island" else "compact",
+                )
+                if eff_style != "irregular":
+                    raise ValueError(
+                        "--branching requires --place irregular_island or --island-style irregular"
+                    )
+                updated["branching"] = branching
+            if (
+                len(updated) == 1
+                and target_mode in ("island", "irregular_island")
+                and args.placement is not None
+            ):
+                recipe["placement"] = target_mode
+            else:
+                recipe["placement"] = updated
         cli_overrides["placement"] = recipe["placement"]
+
+    use_clar = getattr(args, "clar", False)
+    min_huckel_gap = getattr(args, "min_huckel_gap", None)
+    if use_clar or min_huckel_gap is not None:
+        existing_clar = recipe.get("clar")
+        clar_obj = dict(existing_clar) if isinstance(existing_clar, dict) else {}
+        clar_obj["enabled"] = True
+        if min_huckel_gap is not None:
+            clar_obj["min_huckel_gap"] = float(min_huckel_gap)
+        recipe["clar"] = clar_obj
+        cli_overrides["clar"] = clar_obj
 
     has_comp_cli = any(
         val is not None
@@ -1019,7 +1112,11 @@ def format_build_report(ctx: dict) -> str:
     if isinstance(placement, dict):
         pmode = placement.get("mode", "random")
         extra = []
-        if pmode == "island":
+        if pmode in ("island", "irregular_island"):
+            if placement.get("style"):
+                extra.append(f"style={placement['style']}")
+            if placement.get("branching") is not None:
+                extra.append(f"branching={placement['branching']}")
             extra.append(f"islands={placement.get('n_islands', 1)}")
             if placement.get("compactness") is not None:
                 extra.append(f"compactness={placement['compactness']}")

@@ -311,6 +311,8 @@ def _classify_co_bond(
             return "COO-", _CO_MOTIF_RANGES["COO-"]
         if any(atoms[nbr]["element"] == "H" for nbr in bonded_sets[io]):
             return "COOH_C-OH", _CO_MOTIF_RANGES["COOH_C-OH"]
+        if len(bonded_sets[io]) >= 2:
+            return "C-O_sp3", _CO_MOTIF_RANGES["C-O_sp3"]
         return "C=O", _CO_MOTIF_RANGES["C=O"]
     return "C-O_sp3", _CO_MOTIF_RANGES["C-O_sp3"]
 

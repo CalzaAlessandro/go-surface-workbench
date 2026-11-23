@@ -250,14 +250,22 @@ pka = 4.5                         # Effective carboxyl pKa (default: 4.5)
 
 # --- Spatial Placement ---
 [placement]
-mode = "random"                   # "random" (default) | "island" | "dispersed"
-# Additional options when mode = "island":
+mode = "random"                   # "random" (default) | "island" | "irregular_island" | "dispersed"
+# Additional options when mode = "island" or "irregular_island":
+# style = "compact"               # "compact" (default for "island") | "irregular" (branched Lerf-Klinowski)
+# branching = 0.65                # Branching intensity in [0.0, 1.0] for irregular islands
 # n_islands = 2                   # Number of island nuclei (default: 1)
 # compactness = 0.85              # Clustering tightness in [0.0, 1.0] (default: 0.85)
 # edge_mode = "random"            # "random" (default) | "near_islands"
 # radius = 12.0                   # Optional max disk radius in A around each island center
 # centers = [[10.0, 10.0], [25.0, 25.0]]  # Explicit [x, y] island centers in A (mutually exclusive with seed_atoms)
 # seed_atoms = [25, 80]           # Explicit scaffold carbon IDs for island nuclei
+
+# --- Optional Closed-Shell Electronic Filter ---
+# [clar]
+# enabled = true                  # Require bipartite sublattice balance, Kekule matching & Huckel gap
+# min_huckel_gap = 0.0            # Minimum HOMO-LUMO pi gap in |beta| units (default: 0.0)
+# max_attempts = 128
 """
 
 
@@ -284,8 +292,20 @@ def render_annotated_json_template() -> str:
             },
             "composition_vs_groups": "Use EITHER 'composition' (o_over_c or c_over_o, priority/preferences, mode='balanced'|'random', ph/deprotonation_fraction, pka=4.5, enabled_groups) OR explicit 'groups' ({group: count | {percent, basis} | {fraction, basis} | {id}}).",
             "placement": {
-                "mode": ["random", "island", "dispersed"],
-                "island_fields": ["n_islands", "compactness (0..1, default 0.85)", "edge_mode ('random'|'near_islands')", "radius (A)", "centers ([[x,y],...])", "seed_atoms ([id,...])"],
+                "mode": ["random", "island", "irregular_island", "dispersed"],
+                "island_fields": [
+                    "style ('compact'|'irregular')",
+                    "branching (0..1, irregular only, default 0.65)",
+                    "n_islands",
+                    "compactness (0..1, default 0.85)",
+                    "edge_mode ('random'|'near_islands')",
+                    "radius (A)",
+                    "centers ([[x,y],...])",
+                    "seed_atoms ([id,...])",
+                ],
+            },
+            "clar": {
+                "optional": "boolean or {enabled, min_huckel_gap (>=0, default 0.0), max_attempts (>=1, default 128)}",
             },
         },
         "name": "go_sheet",
