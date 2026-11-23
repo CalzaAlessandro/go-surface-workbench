@@ -1,6 +1,8 @@
 <h1 align="center">GO Workbench</h1>
 
-Generate graphene oxide sheets with explicit connectivity, assign Amber parameters and export topologies for Amber, OpenMM or GROMACS.
+<p align="center">
+  Generate graphene oxide sheets with explicit connectivity, assign Amber parameters and export topologies for Amber, OpenMM or GROMACS.
+</p>
 
 <p align="center">
   <a href="https://doi.org/10.5281/zenodo.24119849"><img src="https://img.shields.io/badge/Archive-10.5281%2Fzenodo.24119849-2457A7?style=flat" alt="Archive DOI: 10.5281/zenodo.24119849"></a>
@@ -16,108 +18,110 @@ Generate graphene oxide sheets with explicit connectivity, assign Amber paramete
 
 ## Contents
 
-- [Getting started](#getting-started)
-- [Usage and examples](#usage-and-examples)
-- [Data and files](#data-and-files)
-- [Methods and validation](#methods-and-validation)
+- [Features](#features)
+- [Installation & quickstart](#installation--quickstart)
+- [Usage](#usage)
+- [Outputs](#outputs)
+- [Chemistry & validation](#chemistry--validation)
+- [Roadmap](#roadmap)
 - [Documentation](#documentation)
 - [Citation](#citation)
 - [Contributing](#contributing)
 - [License](#license)
 
 > [!NOTE]
-> Structure generation and the core Amber parameterization (`gaff2_v3` with `L0_v2` charges) are validated for finite graphene oxide sheets containing Priority 1 and 2 oxygen groups. Larger-sheet charge validation, periodic topology writers and non-Amber force fields are in progress; see [VALIDATION.md](VALIDATION.md) before running production simulations.
+> Structure generation and the default Amber parameterization (`gaff2_v3` with `L0_v2` charges) are ready for finite graphene oxide sheets functionalized with standard basal and edge oxygen groups, with verified export to Amber, OpenMM and GROMACS. Direct periodic topology writers, additional edge motifs and non-Amber force fields are under active development; see [VALIDATION.md](VALIDATION.md) before running production simulations.
 
-## Getting started
+## Features
 
-Requires Python 3.11 or later. Dependencies are listed in [pyproject.toml](pyproject.toml) and `uv.lock` (NumPy, SciPy, ParmEd and RDKit). From the repository root:
-
-```bash
-uv sync --frozen
-uv run python examples/quickstart/run_quickstart.py --output-dir work/quickstart
-```
-
-When installed from a wheel or source distribution, all stages are available through `python -m go_builder --help`. External programs such as AmberTools (`tleap`, `sander`), GROMACS, OpenMM, Gaussian, xTB and AutoDock Vina are optional at install time and must be provided by the host environment when executing simulations or quantum-chemical jobs.
-
-[Quickstart and expected outputs](docs/QUICKSTART.md) ·
-[Installation details](docs/REFERENCE.md#installation--environment-setup) ·
-[Engine setup](docs/ENGINE_SETUP.md)
-
-## Usage and examples
-
-Sheets can be constructed with [01_build_GO.py](01_build_GO.py) using command-line flags, TOML or JSON configuration files (examples in [`examples/configs/`](examples/configs/)), or packaged presets:
-
-```bash
-# Build a 4 x 4 nm GO sheet at pH 7.4 with two oxidized islands and 5% pores
-uv run python 01_build_GO.py \
-  --size 4 4 --oc 0.35 --ph 7.4 --place island --islands 2 --holes mixed:5 --seed 42 \
-  --out work/go.json --pdb work/go.pdb --mol2 work/go.mol2 --sdf work/go.sdf --cif work/go.cif
-
-# Build an irregular Lerf-Klinowski island model with optional closed-shell pi filtering
-uv run python 01_build_GO.py \
-  --size 4 4 --oc 0.35 --ph 7.4 --place irregular_island --islands 2 --branching 0.70 --clar --seed 42 \
-  --out work/go_irreg.json
-
-# Inspect configuration recipes and verify a constructed model
-uv run python 01_build_GO.py --init-config work/my_go.toml
-uv run python 01_build_GO.py --config examples/configs/go_island_porous.toml --out work/island.json
-uv run python 01_build_GO.py --list-presets
-uv run python check_model.py --model work/go.json --strict
-```
-
-Models export to `JSON` (authoritative graph), `PDB` (with `CONECT` records), `MOL2`, `XYZ`, `EXTXYZ`, `SDF` (V3000) and `CIF`.
+- **Controllable graphene oxide architectures:** Build rectangular, hexagonal or circular sheets (finite or periodic) with user-defined lateral size, `O/C` or `C/O` oxidation level, pH-aware protonation states and structural vacancies/pores.
+- **Tunable spatial oxidation & $\pi$-system control:** Distribute oxygen groups in `dispersed`, `random`, compact `island` or branched Lerf–Klinowski `irregular_island` morphologies, with optional closed-shell Kekulé and Hückel $\pi$-gap screening (`--clar`, `--min-huckel-gap`).
+- **Built-in structural verification:** Every model retains its authoritative bond graph and passes automated pre-export checks for steric clashes, bond lengths, coordination/valences and net formal charge in linear $O(N)$ runtime up to tens of thousands of atoms.
+- **Transferable Amber parameterization:** Assigns `gaff2_v3` bonded/Lennard-Jones parameters and `L0_v2` partial charges using dedicated graphene-oxide atom types designed not to collide with standard biomolecular, solvent or ion libraries (`ff19SB`, `GAFF2`, water, ions), or accepts custom per-atom charges (`--charge-model custom`).
+- **Multi-engine & multi-format workflows:** Exports native inputs for **Amber**, **OpenMM** and **GROMACS**, alongside `JSON`, `PDB` (with `CONECT`), `MOL2`, `SDF`, `XYZ`, `EXTXYZ` and `CIF`, plus covalent epoxide functionalization and docking receptor/box preparation.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/images/placement_modes_dark.svg">
   <img alt="Four graphene oxide oxidation placement modes on a 4 x 4 nm sheet" src="docs/images/placement_modes.svg" width="100%">
 </picture>
 
-*Four spatial oxidation modes built on identical `4.0 × 4.0 nm` scaffolds (`O/C = 0.35`, pH `7.4`, `seed = 42`, `2` island nuclei): `dispersed`, `random`, compact `island`, and branched Lerf–Klinowski `irregular_island` (`branching = 0.70`), highlighting intact aromatic $sp^2$ six-membered rings.*
+*Four spatial oxidation morphologies generated on identical `4.0 × 4.0 nm` graphene scaffolds (`O/C = 0.35`, pH `7.4`, `seed = 42`, `2` island nuclei): `dispersed`, `random`, compact `island` and branched Lerf–Klinowski `irregular_island` (`branching = 0.70`), showing preserved aromatic $sp^2$ six-membered domains.*
 
-Parameterization and multi-engine conversion follow [03_prepare_amber.py](03_prepare_amber.py) → [07_export_gromacs.py](07_export_gromacs.py) or [08_export_openmm.py](08_export_openmm.py), with optional covalent epoxide opening via [02_open_epoxides.py](02_open_epoxides.py):
+## Installation & quickstart
+
+Requires **Python 3.11+** (core Python dependencies: `numpy`, `scipy`, `parmed`, `rdkit`, `netcdf4`, pinned in [pyproject.toml](pyproject.toml) and `uv.lock`). From the repository root:
 
 ```bash
-# Build, assign gaff2_v3 parameters + L0_v2 charges, and compile with tleap
+uv sync --frozen
+uv run python examples/quickstart/run_quickstart.py --output-dir work/quickstart
+```
+
+When installed from a wheel or source distribution, all workflow stages are also exposed via `python -m go_builder --help`. External programs—such as **AmberTools** (`tleap`, `sander`), **GROMACS**, **OpenMM**, **AutoDock Vina**, **Gaussian** and **xTB**—are optional at install time and only required when running simulation or quantum-chemical steps.
+
+See [Quickstart](docs/QUICKSTART.md), [Installation details](docs/REFERENCE.md#installation--environment-setup) and [Engine setup](docs/ENGINE_SETUP.md).
+
+## Usage
+
+### Build a graphene oxide sheet
+
+Structures can be built from CLI flags, TOML/JSON configuration files ([`examples/configs/`](examples/configs/)), or built-in recipes using [01_build_GO.py](01_build_GO.py):
+
+```bash
+# 4 x 4 nm GO sheet at pH 7.4 with two compact oxidized islands and 5% pores
+uv run python 01_build_GO.py \
+  --size 4 4 --oc 0.35 --ph 7.4 --place island --islands 2 --holes mixed:5 --seed 42 \
+  --out work/go.json --pdb work/go.pdb --mol2 work/go.mol2 --sdf work/go.sdf --cif work/go.cif
+
+# Branched Lerf-Klinowski island morphology with closed-shell Kekule filtering
+uv run python 01_build_GO.py \
+  --size 4 4 --oc 0.35 --ph 7.4 --place irregular_island --islands 2 --branching 0.70 --clar --seed 42 \
+  --out work/go_irreg.json
+
+# Generate a template config, build from TOML, list recipes, or run strict integrity checks
+uv run python 01_build_GO.py --init-config work/my_go.toml
+uv run python 01_build_GO.py --config examples/configs/go_island_porous.toml --out work/island.json
+uv run python 01_build_GO.py --list-presets
+uv run python check_model.py --model work/go.json --strict
+```
+
+### Parameterize and export for MD
+
+Assign force-field parameters with [03_prepare_amber.py](03_prepare_amber.py) and convert to GROMACS ([07_export_gromacs.py](07_export_gromacs.py)) or OpenMM ([08_export_openmm.py](08_export_openmm.py)), with optional covalent epoxide ring opening via [02_open_epoxides.py](02_open_epoxides.py):
+
+```bash
+# Build from recipe, assign gaff2_v3 parameters + L0_v2 charges, and assemble with tleap
 uv run python 01_build_GO.py --recipe examples/finite_GO.json --output work/finite_GO.json --pdb work/finite_GO.pdb
 uv run python 03_prepare_amber.py --model work/finite_GO.json --output-dir work/amber --radii mbondi2 --run
 
-# Export the completed Amber topology and coordinates to GROMACS and OpenMM
+# Convert the Amber topology to GROMACS and OpenMM
 uv run python 07_export_gromacs.py --topology work/amber/go.prmtop --coordinates work/amber/go.inpcrd --output-prefix work/gmx/go
 uv run python 08_export_openmm.py --topology work/amber/go.prmtop --coordinates work/amber/go.inpcrd --output work/openmm/go.xml
 ```
 
-User-supplied per-atom charges can be passed with `--charge-model custom --charges-json <file>`. The archival baseline `--preset gaff2_current` is deprecated and kept for backwards compatibility. Exported `PDB` and `MOL2` files support rigid or flexible receptor docking (`AutoDock Vina`, `PatchDock`), while Amber, GROMACS and OpenMM outputs cover both gas-phase runs and explicitly solvated systems prepared in `tleap`.
+Custom user charges can be supplied via `--charge-model custom --charges-json <file>`. The legacy `--preset gaff2_current` option remains available for backwards compatibility. Exported `PDB` and `MOL2` files also support rigid or flexible docking (`AutoDock Vina`, `PatchDock`), while Amber, GROMACS and OpenMM exports cover both gas-phase and explicitly solvated setups.
 
-## Data and files
+## Outputs
 
-| What you need | Where to find it |
+| Stage | Key files |
 |---|---|
-| Constructed structure and graph | `work/finite_GO.json`, `finite_GO.pdb` (or `.mol2`, `.sdf`, `.xyz`, `.cif`) |
-| Ready Amber sheet | `work/amber/go.prmtop` and `go.inpcrd` (after `--run`) |
-| Amber input scripts and residue units | `work/amber/tleap.in`, `GO_gaff2_v3.frcmod`, `v3_libraries/` |
-| Charge assignment and checksum records | `work/amber/assigned_model.json`, `library_audit.json`, `PROVENANCE.json` |
-| Ready GROMACS topology | `work/gmx/go.top`, `go.itp` and `go.gro` |
-| Ready OpenMM system | `work/openmm/go.xml` |
+| Structure builder | `work/finite_GO.json`, `finite_GO.pdb` (plus optional `.mol2`, `.sdf`, `.xyz`, `.cif`) |
+| Amber preparation (`--run`) | `work/amber/go.prmtop`, `go.inpcrd`, `tleap.in`, `GO_gaff2_v3.frcmod`, `v3_libraries/` |
+| Reproducibility & provenance | `work/amber/assigned_model.json`, `library_audit.json`, `PROVENANCE.json` |
+| GROMACS export | `work/gmx/go.top`, `go.itp`, `go.gro` |
+| OpenMM export | `work/openmm/go.xml` |
 
-All CLI stages and command-line flags are listed in the [command reference](docs/REFERENCE.md#scripts--usage-workflow).
+For the complete flag and script reference, see [docs/REFERENCE.md](docs/REFERENCE.md#scripts--usage-workflow).
 
-## Methods and validation
+## Chemistry & validation
 
-Finite and periodic sheets (`rectangular`, `hexagonal`, `circular`) are generated with specified lateral dimensions, pH-aware `C/O` or `O/C` compositions, vacancy distributions and spatial oxidation modes (`random`, `island`, `irregular_island`, `dispersed`), with optional `--clar` bipartite sublattice, Kekulé matching, and Hückel $\pi$-gap screening (`--min-huckel-gap`). Every built structure keeps explicit connectivity (`geometry_status = "constructed_unrelaxed"`) and passes pre-export checks for steric clashes, bond lengths, minimum-image distances, valences and net charge. Single-core construction runs in $O(N)$ time, requiring `0.16 s` for `913` atoms (`12×12`, `O/C = 0.35`, pH `7.4`), `0.67 s` for `3,666` atoms (`24×24`), `1.60 s` for `8,294` atoms (`36×36`), and `6.30 s` for a `24,576`-atom periodic `64×64` sheet, with zero steric clashes. Geometric checks verify graph and local coordination validity; they do not establish electronic structure or conformational equilibration.
+- **Supported chemistry (`gaff2_v3`):** Basal aromatic/graphitic carbons, aromatic `CH` edges, hydroxyls, basal and edge epoxides, edge carbonyls, carboxylic acids and deprotonated carboxylates. Unsupported motifs (such as phenolic `sp2`-OH, planar furanic ethers or edge lactones) are explicitly rejected rather than silently mistyped.
+- **Verification scope:** Built geometries are checked automatically for topological and coordination validity (`geometry_status = "constructed_unrelaxed"`). Cross-engine Amber, OpenMM and GROMACS energy/force parity, vibrational stability and library SHA-256 integrity are continuously verified by the automated test suite; details, benchmark tables and known limitations are documented in [VALIDATION.md](VALIDATION.md) and [docs/PERFORMANCE.md](docs/PERFORMANCE.md).
 
-The default `gaff2_v3` preset covers finite GO models bearing basal carbons, aromatic CH edges, hydroxyls, basal and edge epoxides, carbonyls, carboxylic acids and carboxylates, using 18 dedicated lowercase Amber atom types (`0/129` collisions with `ff19SB`, `GAFF2`, water and ions), 4-color epoxide typing, and dual-regime `L0_v2` charges. Unsupported Priority-3 motifs (phenols, planar ethers, lactones) and unparameterized junctions are rejected cleanly. Across 52 in-domain benchmark models (`6/58` Priority-3 models excluded by design), harmonic frequency analysis gives zero imaginary modes, Amber `sander` 24.0, OpenMM 8.6.1 and GROMACS energies agree within `0.0267 kJ/mol` (`max|ΔF| = 0.0317 kJ/(mol·nm)`), all 20 library files verify against SHA-256 checksums in `PROVENANCE.json`, and the regression suite passes `420` automated tests. Experimental parameterization studies in `research/` are kept separate from the reference libraries.
+## Roadmap
 
-### Development status
-
-| Block | Scope | Status | Milestone |
-|---|---|---|---|
-| Block 1 | Structure builder, placement modes, $O(N)$ integrity checks and multi-format exports | Done | [`block-1-builder`](https://github.com/CalzaAlessandro/go-surface-workbench/releases/tag/block-1-builder) |
-| Block 2 | Core Amber `gaff2_v3` + `L0_v2` libraries, custom charges, GROMACS and OpenMM exporters (`407` tests) | Done | [`block-2-amber-core`](https://github.com/CalzaAlessandro/go-surface-workbench/releases/tag/block-2-amber-core) |
-| Block 3 | Closed-shell QM optimization and HF/DFT RESP benchmarks on `80–190`-atom sheets | In progress | — |
-| Block 4 | Irregular Lerf–Klinowski islands & `--clar` filter (`420` tests); `L1_reg`/`SQE` charges & `gaff2_v3.1` Priority-3 motifs pending Block 3 | In progress | — |
-| Block 5 | Direct periodic topology writers for GROMACS, OpenMM, Amber and OpenFF | Planned | — |
-| Block 6 | `OPLS-AA`, `OpenFF` and `CHARMM36m` presets and tiered literature catalog | Planned | — |
-| Block 7 | Explicit-water MD, MM-GBSA/PBSA calibration, docking and direct solvation helpers, Linux/macOS CI | Planned | — |
+- **Available now:** Sheet construction, spatial oxidation & pore modes (including branched Lerf–Klinowski islands and `--clar` Kekulé screening), $O(N)$ structural checks, `gaff2_v3` + `L0_v2` Amber parameterization, custom charges, multi-format exports, covalent epoxide opening and docking preparation, plus cross-engine GROMACS and OpenMM exporters.
+- **In progress:** Large-sheet quantum-chemical electrostatic benchmarks, charge regularization refinements and expanded edge-oxygen support (phenols, planar ethers, lactones).
+- **Planned:** Direct periodic topology writers (`GROMACS`, `OpenMM`, `Amber`, `OpenFF`), additional force-field presets (`OPLS-AA`, `OpenFF`, `CHARMM36m`) and automated explicit-solvent MD/solvation helpers.
 
 ## Documentation
 
@@ -137,12 +141,12 @@ The default `gaff2_v3` preset covers finite GO models bearing basal carbons, aro
 
 ## Citation
 
-If you use this software or its parameter libraries, cite the archived release:
+If you use this software or its parameter libraries, please cite:
 
 Alessandro Calza (2026). *GO Workbench*, version 0.1.0.
 [DOI: 10.5281/zenodo.24119849](https://doi.org/10.5281/zenodo.24119849).
 
-Citation metadata: [CITATION.cff](CITATION.cff).
+Citation metadata is available in [CITATION.cff](CITATION.cff).
 
 <details>
 <summary>BibTeX</summary>
@@ -162,7 +166,7 @@ Citation metadata: [CITATION.cff](CITATION.cff).
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for setup and checks. Report problems or propose changes through [GitHub Issues](https://github.com/CalzaAlessandro/go-surface-workbench/issues). Include the affected file or command and a short description.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and checks. Bug reports and feature requests are welcome via [GitHub Issues](https://github.com/CalzaAlessandro/go-surface-workbench/issues).
 
 ## License
 
