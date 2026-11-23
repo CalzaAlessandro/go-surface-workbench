@@ -21,7 +21,7 @@ uv run python go.py --help
 uv run pytest -q
 ```
 
-Dependencies (`pyproject.toml` and `uv.lock`) include NumPy, ParmEd, and RDKit. For
+Dependencies (`pyproject.toml` and `uv.lock`) include NumPy, SciPy, ParmEd, and RDKit. For
 environments without `uv`, a standard `requirements.txt` can be exported and installed
 in a virtual environment. Amber/AmberTools (`tleap`, `sander`, `MMPBSA.py`, `espgen`,
 `resp`) and Gaussian (`g16`) must be provided by the host environment or cluster modules.
@@ -57,7 +57,18 @@ to list specific options.
 
 ## Generating a Graphene Oxide Sheet
 
+Sheets can be generated either directly from CLI flags / TOML configs or from JSON recipe files:
+
 ```bash
+# CLI construction: 4 x 4 nm GO sheet, O/C = 0.35, pH 7.4, branched irregular islands + Clar check
+uv run python 01_build_GO.py --size 4 4 --oc 0.35 --ph 7.4 \
+  --place irregular_island --islands 2 --branching 0.70 --clar --seed 42 \
+  --out work/GO_irreg.json --pdb work/GO_irreg.pdb
+
+# TOML config workflow, template generation, and recipe workflow
+uv run python 01_build_GO.py --init-config work/my_go.toml
+uv run python 01_build_GO.py --config examples/configs/go_island_porous.toml --out work/GO_island.json
+uv run python 01_build_GO.py --list-presets
 uv run python 01_build_GO.py --recipe examples/finite_GO.json \
   --output work/GO.json --pdb work/GO.pdb
 uv run python 03_prepare_amber.py --model work/GO.json \
@@ -65,6 +76,21 @@ uv run python 03_prepare_amber.py --model work/GO.json \
 uv run python 07_export_gromacs.py --topology work/amber/go.prmtop \
   --coordinates work/amber/go.inpcrd --output-prefix work/gromacs/GO
 ```
+
+Key high-level builder flags (`01_build_GO.py` / `go.py build`):
+
+| Option | Description |
+|---|---|
+| `--size W H` | Target sheet lateral dimensions in nm |
+| `--oc VAL` / `--co VAL` | Target oxygen-to-carbon or carbon-to-oxygen ratio |
+| `--ph VAL` | Solution pH controlling carboxyl (`COOH`/`COO`) protonation balance |
+| `--place MODE` | Oxidation spatial placement: `dispersed`, `random`, `island`, or `irregular_island` |
+| `--islands N`, `--island-style` | Number of oxidized island nuclei and island compactness style |
+| `--branching F` | Branching tendency `[0, 1]` for branched Lerf–Klinowski `irregular_island` growth |
+| `--holes SPEC` | Pore / vacancy specification (e.g., `mixed:5`) |
+| `--clar`, `--min-huckel-gap G` | Enforce closed-shell Kekulé matchings and minimum Hückel HOMO–LUMO gap (in $|\beta|$) |
+| `--config PATH`, `--init-config PATH` | Load a TOML/JSON configuration file or write an annotated starter TOML template |
+| `--list-presets` | Print packaged sheet recipes |
 
 Without `--run`, `03_prepare_amber.py` generates input files but does not execute
 AmberTools. With `--run`, it requires `tleap` on `$PATH` and verifies topology creation.
@@ -312,7 +338,7 @@ For example, preparing Amber inputs on an HPC cluster:
 ```bash
 uv run python 03_prepare_amber.py --model work/GO.json \
   --output-dir work/amber_slurm --slurm --cpus 1 --memory 2G \
-  --time 00:10:00 --partition ciamician_cpu
+  --time 00:10:00 --partition <partition_name>
 ```
 
 Common flags across downstream stages: `--slurm`, `--dry-run`, `--submission-dir`,

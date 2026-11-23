@@ -1,7 +1,7 @@
 # Quickstart
 
 Build a small GO sheet, check its connectivity and prepare Amber inputs.
-Run these commands from the repository root with Python 3.12 and [uv](https://docs.astral.sh/uv/):
+Run these commands from the repository root with Python 3.11 or later and [uv](https://docs.astral.sh/uv/):
 
 ```bash
 uv sync --frozen
@@ -16,7 +16,7 @@ and no undercoordinated atoms.
 | Output under `work/quickstart/` | Contents |
 |---|---|
 | `finite_GO.json`, `finite_GO.pdb` | Sheet connectivity and coordinates |
-| `amber/tleap.in`, `amber/GO_gaff2_v3.frcmod` | LEaP input and validated Block 2 GAFF2 v3 parameter modifications |
+| `amber/tleap.in`, `amber/GO_gaff2_v3.frcmod` | LEaP input and GAFF2 v3 parameter modifications |
 | `amber/assigned_model.json`, `amber/library_audit.json` | 18-type GO atom assignments, `L0_v2` charges, and library audit |
 | `amber/PROVENANCE.json`, `amber/manifest.json`, `amber/v3_libraries/` | SHA-256 provenance, input manifest, and 18 verified GAFF2 v3 unit libraries |
 
