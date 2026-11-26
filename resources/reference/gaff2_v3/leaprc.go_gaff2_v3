@@ -1,0 +1,41 @@
+# Standalone AMBER LEaP resource file for GO_gaff2_v3 (18 custom GO atom types)
+source leaprc.gaff2
+addAtomTypes {
+  { "g1" "H" "sp3" }
+  { "g6" "C" "sp3" }
+  { "ga" "C" "sp2" }
+  { "gb" "C" "sp2" }
+  { "gc" "C" "sp2" }
+  { "gd" "C" "sp2" }
+  { "ge" "C" "sp3" }
+  { "gh" "H" "sp3" }
+  { "gk" "C" "sp2" }
+  { "gm" "O" "sp3" }
+  { "go" "O" "sp2" }
+  { "gp" "O" "sp3" }
+  { "gq" "O" "sp2" }
+  { "gu" "O" "sp2" }
+  { "gw" "H" "sp3" }
+  { "gx" "C" "sp3" }
+  { "gy" "C" "sp3" }
+  { "gz" "C" "sp3" }
+}
+loadAmberParams GO_gaff2_v3.frcmod
+loadoff GGG_gaff2_v3.lib
+loadoff GRT_gaff2_v3.lib
+loadoff HYD_gaff2_v3.lib
+loadoff CAB_gaff2_v3.lib
+loadoff CBX_gaff2_v3.lib
+loadoff CBD_gaff2_v3.lib
+loadoff EPX_gaff2_v3.lib
+loadoff EP2_gaff2_v3.lib
+loadoff EP3_gaff2_v3.lib
+loadoff EP4_gaff2_v3.lib
+loadoff EPH_gaff2_v3.lib
+loadoff EH2_gaff2_v3.lib
+loadoff EH3_gaff2_v3.lib
+loadoff EH4_gaff2_v3.lib
+loadoff EPT_gaff2_v3.lib
+loadoff ET2_gaff2_v3.lib
+loadoff ET3_gaff2_v3.lib
+loadoff ET4_gaff2_v3.lib

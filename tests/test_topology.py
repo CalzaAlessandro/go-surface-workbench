@@ -390,3 +390,35 @@ def test_full_priority1_and_priority2_sheet_prepare_amber_mapping(tmp_path):
         atype, chg = ept_expected[atom["name"]]
         assert atom["atom_type"] == atype
         assert atom["charge"] == pytest.approx(chg)
+
+
+def test_leap_emits_add_atom_types_for_v3_and_current_custom_types(tmp_path):
+    from go_builder.build import build_sheet
+
+    model = build_sheet(
+        {
+            "nx": 8,
+            "ny": 8,
+            "seed": 17,
+            "groups": {"OH": 4, "epoxide": 3, "carbonyl": 2, "COOH": 2, "COO": 2},
+        }
+    )
+    res_v3 = prepare_amber(model, tmp_path / "v3_leap", preset="gaff2_v3", run=False)
+    leap_v3 = Path(res_v3["leap_input"]).read_text()
+    idx_src = leap_v3.index("source leaprc.gaff2")
+    idx_add = leap_v3.index("addAtomTypes {")
+    idx_prm = leap_v3.index("loadAmberParams GO_gaff2_v3.frcmod")
+    assert idx_src < idx_add < idx_prm
+    for tname in (
+        "ga", "gb", "gc", "gd", "ge", "gh", "gk", "gm", "go",
+        "gp", "gq", "gu", "gw", "gx", "gy", "gz", "g1", "g6",
+    ):
+        assert f'"{tname}"' in leap_v3
+
+    res_cur = prepare_amber(
+        model, tmp_path / "cur_leap", preset="gaff2_current", reference_dir=REFERENCE, run=False
+    )
+    leap_cur = Path(res_cur["leap_input"]).read_text()
+    assert leap_cur.index("addAtomTypes {") < leap_cur.index("loadAmberParams GO_gaff2.frcmod")
+    assert '"c6" "C" "sp3"' in leap_cur
+    assert '"op" "O" "sp3"' in leap_cur

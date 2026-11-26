@@ -39,6 +39,34 @@ ENGINE_SOURCES = [
     "https://manual.gromacs.org/current/reference-manual/topologies/molecule-definition.html",
 ]
 
+# Register custom GO atom types with LEaP `addAtomTypes` so `set default PBRadii`
+# resolves true element/bonding Born radii & screens (matching ParmEd `ChRad`)
+# rather than falling back to (1.50 A, 0.80).
+_CUSTOM_LEAP_ATOM_TYPES: dict[str, tuple[str, str]] = {
+    # gaff2_v3 18 custom GO-only atom types
+    "ga": ("C", "sp2"),
+    "gb": ("C", "sp2"),
+    "gc": ("C", "sp2"),
+    "gd": ("C", "sp2"),
+    "gk": ("C", "sp2"),
+    "g6": ("C", "sp3"),
+    "gx": ("C", "sp3"),
+    "gy": ("C", "sp3"),
+    "gz": ("C", "sp3"),
+    "ge": ("C", "sp3"),
+    "gh": ("H", "sp3"),
+    "g1": ("H", "sp3"),
+    "gw": ("H", "sp3"),
+    "gm": ("O", "sp3"),
+    "gp": ("O", "sp3"),
+    "go": ("O", "sp2"),
+    "gq": ("O", "sp2"),
+    "gu": ("O", "sp2"),
+    # legacy gaff2_current non-standard GAFF2 types
+    "c6": ("C", "sp3"),
+    "op": ("O", "sp3"),
+}
+
 
 def _sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -307,8 +335,23 @@ def prepare_amber(
         extra = ["loadAmberParams junction.frcmod"]
     residues = _residue_map(assigned)
     assigned["atoms"].sort(key=lambda atom: residues[(atom["resid"], atom["resname"])])
+    leap_type_keys = (
+        sorted(k for k in _CUSTOM_LEAP_ATOM_TYPES if k.startswith("g"))
+        if resolved_preset == "gaff2_v3"
+        else sorted(
+            {a["atom_type"] for a in assigned["atoms"] if a["atom_type"] in _CUSTOM_LEAP_ATOM_TYPES}
+        )
+    )
+    add_atom_types_lines = []
+    if leap_type_keys:
+        add_atom_types_lines.append("addAtomTypes {")
+        for tname in leap_type_keys:
+            elem, hyb = _CUSTOM_LEAP_ATOM_TYPES[tname]
+            add_atom_types_lines.append(f'  {{ "{tname}" "{elem}" "{hyb}" }}')
+        add_atom_types_lines.append("}")
     lines = [
         "source leaprc.gaff2",
+        *add_atom_types_lines,
         f"loadAmberParams {frcmod_name}",
         *extra,
         f"set default PBRadii {radii}",
@@ -2191,6 +2234,7 @@ def _amber_parm_to_openmm_xml(
     *,
     nonbonded_method: str = "NoCutoff",
     cutoff_nm: float = 1.0,
+    periodic_covalent: bool = False,
 ) -> tuple[str, dict[str, int]]:
     """Serialize an AmberParm directly into an OpenMM <System> XML string."""
     method_codes = {"NoCutoff": 0, "CutoffNonPeriodic": 1, "PME": 4}
@@ -2201,11 +2245,13 @@ def _amber_parm_to_openmm_xml(
     _verify_supported_amber_terms(
         structure, target="OpenMM XML", allow_explicit_exclusions=True
     )
-    if nonbonded_method == "PME" and structure.box is None:
+    if (nonbonded_method == "PME" or periodic_covalent) and structure.box is None:
         raise ValueError("PME requires periodic box vectors in the source Amber topology/coordinates")
+    if periodic_covalent and nonbonded_method != "PME":
+        raise ValueError("Periodic covalent OpenMM export requires nonbonded_method='PME'")
 
-    # Match OpenMM AmberPrmtopFile.createSystem: bonded forces and 1-4 exceptions use direct distances ("0")
-    use_pbc = "0"
+    # Finite Amber prmtops use direct distances ("0"); covalently periodic sheets require "1".
+    use_pbc = "1" if periodic_covalent else "0"
     if structure.box is not None and getattr(structure, "box_vectors", None) is not None:
         import parmed as pmd
 
@@ -2668,3 +2714,10 @@ def gbsa_readiness(model):
         if atoms and all(a.get("charge") is not None for a in atoms)
         else None,
     }
+
+
+from .periodic_topology import (  # noqa: E402,F401
+    export_periodic_amber,
+    export_periodic_gromacs,
+    export_periodic_openmm,
+)

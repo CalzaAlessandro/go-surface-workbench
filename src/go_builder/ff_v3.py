@@ -183,7 +183,15 @@ def verify_v3_bundle(reference_dir: str | Path | None = None) -> dict[str, Any]:
     files = provenance.get("files")
     if not isinstance(files, dict):
         raise ValueError("Malformed PROVENANCE.json: missing files manifest")
-    required_files = {"GO_gaff2_v3.frcmod", "L0_v2_charges.json"} | {
+    required_files = {
+        "GO_gaff2_v3.frcmod",
+        "L0_v2_charges.json",
+        "leaprc.go_gaff2_v3",
+        "GO_gaff2_v3_ffnonbonded.itp",
+        "GO_gaff2_v3_ffbonded.itp",
+        "GO_gaff2_v3_openmm.xml",
+        "GO_gaff2_v3_lammps.inc",
+    } | {
         f"{res}_gaff2_v3.lib" for res in V3_RESIDUE_NAMES
     }
     missing_required = sorted(required_files - set(files))

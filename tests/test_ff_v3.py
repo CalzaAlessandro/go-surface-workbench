@@ -106,10 +106,25 @@ def _scramble_model(model: dict, *, seed: int = 123, kekule_alt: bool = True) ->
 
 def test_v3_bundle_integrity_and_tamper_detection(tmp_path):
     info = verify_v3_bundle()
-    assert len(info["provenance"]["files"]) == 20
+    assert len(info["provenance"]["files"]) == 25
     assert Path(info["frcmod_path"]).name == "GO_gaff2_v3.frcmod"
     assert Path(info["l0_v2_path"]).name == "L0_v2_charges.json"
     assert len(V3_RESIDUE_NAMES) == 18
+
+    # Standalone multi-engine files present and well-formed
+    ref_dir = Path(info["reference_dir"])
+    leaprc_txt = (ref_dir / "leaprc.go_gaff2_v3").read_text(encoding="utf-8")
+    assert "addAtomTypes {" in leaprc_txt and "loadAmberParams GO_gaff2_v3.frcmod" in leaprc_txt
+    for res in V3_RESIDUE_NAMES:
+        assert f"loadoff {res}_gaff2_v3.lib" in leaprc_txt
+    nb_itp = (ref_dir / "GO_gaff2_v3_ffnonbonded.itp").read_text(encoding="utf-8")
+    assert "[ atomtypes ]" in nb_itp and "ga          6 " in nb_itp and "gw          1 " in nb_itp
+    b_itp = (ref_dir / "GO_gaff2_v3_ffbonded.itp").read_text(encoding="utf-8")
+    assert "[ bondtypes ]" in b_itp and "[ angletypes ]" in b_itp and "[ dihedraltypes ]" in b_itp
+    omm_xml = (ref_dir / "GO_gaff2_v3_openmm.xml").read_text(encoding="utf-8")
+    assert "<ForceField>" in omm_xml and '<PeriodicTorsionForce ordering="amber">' in omm_xml
+    lmp_inc = (ref_dir / "GO_gaff2_v3_lammps.inc").read_text(encoding="utf-8")
+    assert "improper_style  cvff" in lmp_inc and "dihedral_style  fourier" in lmp_inc
 
     copied = tmp_path / "gaff2_v3"
     shutil.copytree(DEFAULT_V3_REFERENCE, copied)

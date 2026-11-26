@@ -1,0 +1,696 @@
+<ForceField>
+  <!-- Standalone OpenMM ForceField for GO_gaff2_v3 (converted verbatim from GO_gaff2_v3.frcmod) -->
+  <!-- Parity note: HarmonicBondForce, HarmonicAngleForce, NonbondedForce, and all Proper torsions match -->
+  <!-- tleap AmberPrmtopFile to < 1e-4 kcal/mol (0.000000 on proper torsions). Note that OpenMM -->
+  <!-- <ForceField> wildcard <Improper> ordering='amber' breaks (I, J, L) peripheral-slot ties via -->
+  <!-- residue/template/element rules, whereas AMBER tleap breaks ties by atom index; use -->
+  <!-- AmberPrmtopFile or 08_export_openmm.py / export_periodic_openmm (<System> XML, < 1e-6 kJ/mol) -->
+  <!-- whenever exact prmtop improper quartet identity on puckered sp2 sites is required. -->
+  <AtomTypes>
+    <Type name="gaff2_v3-ga" class="ga" element="C" mass="12.0100"/>
+    <Type name="gaff2_v3-gb" class="gb" element="C" mass="12.0100"/>
+    <Type name="gaff2_v3-gh" class="gh" element="H" mass="1.0080"/>
+    <Type name="gaff2_v3-g6" class="g6" element="C" mass="12.0100"/>
+    <Type name="gaff2_v3-gm" class="gm" element="O" mass="16.0000"/>
+    <Type name="gaff2_v3-gw" class="gw" element="H" mass="1.0080"/>
+    <Type name="gaff2_v3-gx" class="gx" element="C" mass="12.0100"/>
+    <Type name="gaff2_v3-gy" class="gy" element="C" mass="12.0100"/>
+    <Type name="gaff2_v3-gz" class="gz" element="C" mass="12.0100"/>
+    <Type name="gaff2_v3-ge" class="ge" element="C" mass="12.0100"/>
+    <Type name="gaff2_v3-gp" class="gp" element="O" mass="16.0000"/>
+    <Type name="gaff2_v3-g1" class="g1" element="H" mass="1.0080"/>
+    <Type name="gaff2_v3-gk" class="gk" element="C" mass="12.0100"/>
+    <Type name="gaff2_v3-gq" class="gq" element="O" mass="16.0000"/>
+    <Type name="gaff2_v3-gc" class="gc" element="C" mass="12.0100"/>
+    <Type name="gaff2_v3-go" class="go" element="O" mass="16.0000"/>
+    <Type name="gaff2_v3-gd" class="gd" element="C" mass="12.0100"/>
+    <Type name="gaff2_v3-gu" class="gu" element="O" mass="16.0000"/>
+  </AtomTypes>
+  <HarmonicBondForce>
+    <Bond class1="g1" class2="ge" length="0.10913500" k="298411.33168000"/>
+    <Bond class1="g1" class2="gx" length="0.10913500" k="298411.33168000"/>
+    <Bond class1="g1" class2="gy" length="0.10913500" k="298411.33168000"/>
+    <Bond class1="g1" class2="gz" length="0.10913500" k="298411.33168000"/>
+    <Bond class1="g6" class2="g6" length="0.15649500" k="187684.36576000"/>
+    <Bond class1="g6" class2="ga" length="0.15208800" k="203451.85344000"/>
+    <Bond class1="g6" class2="gb" length="0.15227900" k="205335.65760000"/>
+    <Bond class1="g6" class2="ge" length="0.15403600" k="201028.98272000"/>
+    <Bond class1="g6" class2="gk" length="0.15270000" k="196522.48000000"/>
+    <Bond class1="g6" class2="gm" length="0.14306400" k="229708.29440000"/>
+    <Bond class1="g6" class2="gx" length="0.15403600" k="201028.98272000"/>
+    <Bond class1="g6" class2="gy" length="0.15403600" k="201028.98272000"/>
+    <Bond class1="g6" class2="gz" length="0.15403600" k="201028.98272000"/>
+    <Bond class1="ga" class2="ga" length="0.13901400" k="293492.95600000"/>
+    <Bond class1="ga" class2="gb" length="0.14044600" k="290449.76544000"/>
+    <Bond class1="ga" class2="gc" length="0.14907000" k="219944.51200000"/>
+    <Bond class1="ga" class2="gd" length="0.14907000" k="219944.51200000"/>
+    <Bond class1="ga" class2="ge" length="0.14789400" k="216544.17520000"/>
+    <Bond class1="ga" class2="gh" length="0.10860000" k="301825.39200000"/>
+    <Bond class1="ga" class2="gk" length="0.14904600" k="219757.31984000"/>
+    <Bond class1="ga" class2="gx" length="0.14789400" k="216544.17520000"/>
+    <Bond class1="ga" class2="gy" length="0.14789400" k="216544.17520000"/>
+    <Bond class1="ga" class2="gz" length="0.14789400" k="216544.17520000"/>
+    <Bond class1="gb" class2="gb" length="0.13610200" k="359755.80080000"/>
+    <Bond class1="gb" class2="gc" length="0.14857500" k="219877.06592000"/>
+    <Bond class1="gb" class2="gd" length="0.15434900" k="215069.39888000"/>
+    <Bond class1="gb" class2="ge" length="0.14814100" k="216742.91520000"/>
+    <Bond class1="gb" class2="gh" length="0.10857900" k="333182.54736000"/>
+    <Bond class1="gb" class2="gk" length="0.14767200" k="220080.49200000"/>
+    <Bond class1="gb" class2="gx" length="0.14814100" k="216742.91520000"/>
+    <Bond class1="gb" class2="gy" length="0.14814100" k="216742.91520000"/>
+    <Bond class1="gb" class2="gz" length="0.14814100" k="216742.91520000"/>
+    <Bond class1="gc" class2="gm" length="0.13506900" k="299460.34416000"/>
+    <Bond class1="gc" class2="go" length="0.12107100" k="500971.15632000"/>
+    <Bond class1="gd" class2="gu" length="0.12494800" k="496136.62800000"/>
+    <Bond class1="ge" class2="ge" length="0.15045800" k="201579.93184000"/>
+    <Bond class1="ge" class2="gk" length="0.15035000" k="211317.10400000"/>
+    <Bond class1="ge" class2="gp" length="0.14315900" k="217239.89072000"/>
+    <Bond class1="ge" class2="gx" length="0.15046900" k="207835.76496000"/>
+    <Bond class1="ge" class2="gy" length="0.15046900" k="207835.76496000"/>
+    <Bond class1="ge" class2="gz" length="0.15046900" k="207835.76496000"/>
+    <Bond class1="gk" class2="gk" length="0.15470400" k="183406.89520000"/>
+    <Bond class1="gk" class2="gq" length="0.12130300" k="497626.71776000"/>
+    <Bond class1="gk" class2="gx" length="0.15035000" k="211317.10400000"/>
+    <Bond class1="gk" class2="gy" length="0.15035000" k="211317.10400000"/>
+    <Bond class1="gk" class2="gz" length="0.15035000" k="211317.10400000"/>
+    <Bond class1="gm" class2="gw" length="0.09662700" k="455275.26560000"/>
+    <Bond class1="gp" class2="gx" length="0.14315900" k="217239.89072000"/>
+    <Bond class1="gp" class2="gy" length="0.14315900" k="217239.89072000"/>
+    <Bond class1="gp" class2="gz" length="0.14315900" k="217239.89072000"/>
+    <Bond class1="gx" class2="gx" length="0.15045800" k="201579.93184000"/>
+    <Bond class1="gx" class2="gy" length="0.15046900" k="207835.76496000"/>
+    <Bond class1="gx" class2="gz" length="0.15046900" k="207835.76496000"/>
+    <Bond class1="gy" class2="gy" length="0.15045800" k="201579.93184000"/>
+    <Bond class1="gy" class2="gz" length="0.15046900" k="207835.76496000"/>
+    <Bond class1="gz" class2="gz" length="0.15045800" k="201579.93184000"/>
+  </HarmonicBondForce>
+  <HarmonicAngleForce>
+    <Angle class1="ga" class2="ga" class3="ga" angle="2.0548391348" k="447.67293760"/>
+    <Angle class1="ga" class2="ga" class3="gb" angle="2.0792124832" k="417.60922400"/>
+    <Angle class1="g6" class2="ga" class3="ga" angle="2.0995155494" k="507.52505760"/>
+    <Angle class1="ga" class2="ga" class3="gx" angle="2.0975016139" k="487.05776640"/>
+    <Angle class1="ga" class2="ga" class3="gy" angle="2.0975016139" k="487.05776640"/>
+    <Angle class1="ga" class2="ga" class3="gz" angle="2.0975016139" k="487.05776640"/>
+    <Angle class1="ga" class2="ga" class3="ge" angle="2.0975016139" k="487.05776640"/>
+    <Angle class1="ga" class2="ga" class3="gk" angle="2.0992846423" k="514.26631840"/>
+    <Angle class1="ga" class2="ga" class3="gc" angle="2.1001546889" k="514.12992000"/>
+    <Angle class1="ga" class2="ga" class3="gd" angle="2.1001546889" k="514.12992000"/>
+    <Angle class1="ga" class2="ga" class3="gh" angle="2.0923007073" k="375.72320000"/>
+    <Angle class1="gb" class2="ga" class3="gb" angle="2.1321559989" k="546.43793120"/>
+    <Angle class1="g6" class2="ga" class3="gb" angle="2.0755935430" k="480.11148960"/>
+    <Angle class1="gb" class2="ga" class3="gx" angle="2.0693932609" k="481.45455360"/>
+    <Angle class1="gb" class2="ga" class3="gy" angle="2.0693932609" k="481.45455360"/>
+    <Angle class1="gb" class2="ga" class3="gz" angle="2.0693932609" k="481.45455360"/>
+    <Angle class1="gb" class2="ga" class3="ge" angle="2.0693932609" k="481.45455360"/>
+    <Angle class1="gb" class2="ga" class3="gk" angle="2.0902413933" k="515.50059840"/>
+    <Angle class1="gb" class2="ga" class3="gc" angle="2.1001546889" k="514.12992000"/>
+    <Angle class1="gb" class2="ga" class3="gd" angle="2.1001546889" k="514.12992000"/>
+    <Angle class1="gb" class2="ga" class3="gh" angle="2.0923007073" k="375.72320000"/>
+    <Angle class1="g6" class2="ga" class3="g6" angle="2.0741543445" k="541.01630400"/>
+    <Angle class1="g6" class2="ga" class3="gx" angle="2.0549853934" k="539.00547360"/>
+    <Angle class1="g6" class2="ga" class3="gy" angle="2.0549853934" k="539.00547360"/>
+    <Angle class1="g6" class2="ga" class3="gz" angle="2.0549853934" k="539.00547360"/>
+    <Angle class1="g6" class2="ga" class3="ge" angle="2.0549853934" k="539.00547360"/>
+    <Angle class1="g6" class2="ga" class3="gk" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="g6" class2="ga" class3="gc" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="g6" class2="ga" class3="gd" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="g6" class2="ga" class3="gh" angle="2.0923007073" k="375.72320000"/>
+    <Angle class1="gx" class2="ga" class3="gx" angle="2.0599555675" k="537.15363520"/>
+    <Angle class1="gx" class2="ga" class3="gy" angle="2.0598119269" k="537.87077280"/>
+    <Angle class1="gx" class2="ga" class3="gz" angle="2.0598119269" k="537.87077280"/>
+    <Angle class1="ge" class2="ga" class3="gx" angle="2.0598119269" k="537.87077280"/>
+    <Angle class1="gk" class2="ga" class3="gx" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gc" class2="ga" class3="gx" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gd" class2="ga" class3="gx" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gh" class2="ga" class3="gx" angle="2.0923007073" k="375.72320000"/>
+    <Angle class1="gy" class2="ga" class3="gy" angle="2.0599555675" k="537.15363520"/>
+    <Angle class1="gy" class2="ga" class3="gz" angle="2.0598119269" k="537.87077280"/>
+    <Angle class1="ge" class2="ga" class3="gy" angle="2.0598119269" k="537.87077280"/>
+    <Angle class1="gk" class2="ga" class3="gy" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gc" class2="ga" class3="gy" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gd" class2="ga" class3="gy" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gh" class2="ga" class3="gy" angle="2.0923007073" k="375.72320000"/>
+    <Angle class1="gz" class2="ga" class3="gz" angle="2.0599555675" k="537.15363520"/>
+    <Angle class1="ge" class2="ga" class3="gz" angle="2.0598119269" k="537.87077280"/>
+    <Angle class1="gk" class2="ga" class3="gz" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gc" class2="ga" class3="gz" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gd" class2="ga" class3="gz" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gh" class2="ga" class3="gz" angle="2.0923007073" k="375.72320000"/>
+    <Angle class1="ge" class2="ga" class3="ge" angle="2.0599555675" k="537.15363520"/>
+    <Angle class1="ge" class2="ga" class3="gk" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gc" class2="ga" class3="ge" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gd" class2="ga" class3="ge" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="ge" class2="ga" class3="gh" angle="2.0923007073" k="375.72320000"/>
+    <Angle class1="gk" class2="ga" class3="gk" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="gc" class2="ga" class3="gk" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="gd" class2="ga" class3="gk" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="gh" class2="ga" class3="gk" angle="2.0228366031" k="392.45920000"/>
+    <Angle class1="gc" class2="ga" class3="gc" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="gc" class2="ga" class3="gd" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="gc" class2="ga" class3="gh" angle="2.0228366031" k="392.45920000"/>
+    <Angle class1="gd" class2="ga" class3="gd" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="gd" class2="ga" class3="gh" angle="2.0228366031" k="392.45920000"/>
+    <Angle class1="ga" class2="gb" class3="ga" angle="2.0947441682" k="532.79056000"/>
+    <Angle class1="ga" class2="gb" class3="gb" angle="2.1127475885" k="408.58684640"/>
+    <Angle class1="g6" class2="gb" class3="ga" angle="2.1088813352" k="508.27232000"/>
+    <Angle class1="ga" class2="gb" class3="gx" angle="2.1146089822" k="510.58105120"/>
+    <Angle class1="ga" class2="gb" class3="gy" angle="2.1146089822" k="510.58105120"/>
+    <Angle class1="ga" class2="gb" class3="gz" angle="2.1146089822" k="510.58105120"/>
+    <Angle class1="ga" class2="gb" class3="ge" angle="2.1146089822" k="510.58105120"/>
+    <Angle class1="ga" class2="gb" class3="gk" angle="2.1272901955" k="513.56173280"/>
+    <Angle class1="ga" class2="gb" class3="gc" angle="2.1268756798" k="506.45479040"/>
+    <Angle class1="ga" class2="gb" class3="gd" angle="2.1341205415" k="502.84483520"/>
+    <Angle class1="ga" class2="gb" class3="gh" angle="2.0742171764" k="347.11049760"/>
+    <Angle class1="gb" class2="gb" class3="gb" angle="2.0571948057" k="527.12960800"/>
+    <Angle class1="g6" class2="gb" class3="gb" angle="2.1674936803" k="503.55025760"/>
+    <Angle class1="gb" class2="gb" class3="gx" angle="2.1382896095" k="492.32458560"/>
+    <Angle class1="gb" class2="gb" class3="gy" angle="2.1382896095" k="492.32458560"/>
+    <Angle class1="gb" class2="gb" class3="gz" angle="2.1382896095" k="492.32458560"/>
+    <Angle class1="gb" class2="gb" class3="ge" angle="2.1382896095" k="492.32458560"/>
+    <Angle class1="gb" class2="gb" class3="gk" angle="2.1001546889" k="514.12992000"/>
+    <Angle class1="gb" class2="gb" class3="gc" angle="2.0695478970" k="505.22887840"/>
+    <Angle class1="gb" class2="gb" class3="gd" angle="2.0850851671" k="492.95051200"/>
+    <Angle class1="gb" class2="gb" class3="gh" angle="2.1485418480" k="325.12106720"/>
+    <Angle class1="g6" class2="gb" class3="g6" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="g6" class2="gb" class3="gx" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="g6" class2="gb" class3="gy" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="g6" class2="gb" class3="gz" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="g6" class2="gb" class3="ge" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="g6" class2="gb" class3="gk" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="g6" class2="gb" class3="gc" angle="2.0770179062" k="539.99959200"/>
+    <Angle class1="g6" class2="gb" class3="gd" angle="2.0556074287" k="540.30251360"/>
+    <Angle class1="g6" class2="gb" class3="gh" angle="2.0267875049" k="453.55731520"/>
+    <Angle class1="gx" class2="gb" class3="gx" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="gx" class2="gb" class3="gy" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="gx" class2="gb" class3="gz" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="ge" class2="gb" class3="gx" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="gk" class2="gb" class3="gx" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gc" class2="gb" class3="gx" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gd" class2="gb" class3="gx" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gh" class2="gb" class3="gx" angle="2.0556788127" k="401.96524800"/>
+    <Angle class1="gy" class2="gb" class3="gy" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="gy" class2="gb" class3="gz" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="ge" class2="gb" class3="gy" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="gk" class2="gb" class3="gy" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gc" class2="gb" class3="gy" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gd" class2="gb" class3="gy" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gh" class2="gb" class3="gy" angle="2.0556788127" k="401.96524800"/>
+    <Angle class1="gz" class2="gb" class3="gz" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="ge" class2="gb" class3="gz" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="gk" class2="gb" class3="gz" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gc" class2="gb" class3="gz" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gd" class2="gb" class3="gz" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gh" class2="gb" class3="gz" angle="2.0556788127" k="401.96524800"/>
+    <Angle class1="ge" class2="gb" class3="ge" angle="2.0385445663" k="538.06240000"/>
+    <Angle class1="ge" class2="gb" class3="gk" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gc" class2="gb" class3="ge" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="gd" class2="gb" class3="ge" angle="2.0605357149" k="539.73600000"/>
+    <Angle class1="ge" class2="gb" class3="gh" angle="2.0556788127" k="401.96524800"/>
+    <Angle class1="gk" class2="gb" class3="gk" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="gc" class2="gb" class3="gk" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="gd" class2="gb" class3="gk" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="gh" class2="gb" class3="gk" angle="2.0222109025" k="396.22480000"/>
+    <Angle class1="gc" class2="gb" class3="gc" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="gc" class2="gb" class3="gd" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="gc" class2="gb" class3="gh" angle="2.0228366031" k="392.45920000"/>
+    <Angle class1="gd" class2="gb" class3="gd" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="gd" class2="gb" class3="gh" angle="2.0228366031" k="392.45920000"/>
+    <Angle class1="ga" class2="gh" class3="ga" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="ga" class2="gh" class3="gb" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="gb" class2="gh" class3="gb" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="ga" class2="g6" class3="ga" angle="1.9701744345" k="509.30576800"/>
+    <Angle class1="ga" class2="g6" class3="gb" angle="1.9431923424" k="512.00695840"/>
+    <Angle class1="g6" class2="g6" class3="ga" angle="1.9287193741" k="488.35731680"/>
+    <Angle class1="ga" class2="g6" class3="gx" angle="1.9496579146" k="505.40376960"/>
+    <Angle class1="ga" class2="g6" class3="gy" angle="1.9496579146" k="505.40376960"/>
+    <Angle class1="ga" class2="g6" class3="gz" angle="1.9496579146" k="505.40376960"/>
+    <Angle class1="ga" class2="g6" class3="ge" angle="1.9496579146" k="505.40376960"/>
+    <Angle class1="ga" class2="g6" class3="gk" angle="1.9401079965" k="509.10912000"/>
+    <Angle class1="ga" class2="g6" class3="gm" angle="1.8597354099" k="623.34487200"/>
+    <Angle class1="gb" class2="g6" class3="gb" angle="1.9913850718" k="521.46698240"/>
+    <Angle class1="g6" class2="g6" class3="gb" angle="1.9263397922" k="499.86499040"/>
+    <Angle class1="gb" class2="g6" class3="gx" angle="1.9614748408" k="506.29412480"/>
+    <Angle class1="gb" class2="g6" class3="gy" angle="1.9614748408" k="506.29412480"/>
+    <Angle class1="gb" class2="g6" class3="gz" angle="1.9614748408" k="506.29412480"/>
+    <Angle class1="gb" class2="g6" class3="ge" angle="1.9614748408" k="506.29412480"/>
+    <Angle class1="gb" class2="g6" class3="gk" angle="1.9401079965" k="509.10912000"/>
+    <Angle class1="gb" class2="g6" class3="gm" angle="1.8538632497" k="633.56554720"/>
+    <Angle class1="g6" class2="g6" class3="g6" angle="1.9620834371" k="498.36795520"/>
+    <Angle class1="g6" class2="g6" class3="gx" angle="1.9397854597" k="497.36212160"/>
+    <Angle class1="g6" class2="g6" class3="gy" angle="1.9397854597" k="497.36212160"/>
+    <Angle class1="g6" class2="g6" class3="gz" angle="1.9397854597" k="497.36212160"/>
+    <Angle class1="g6" class2="g6" class3="ge" angle="1.9397854597" k="497.36212160"/>
+    <Angle class1="g6" class2="g6" class3="gk" angle="1.9448203855" k="505.09248000"/>
+    <Angle class1="g6" class2="g6" class3="gm" angle="1.8973451609" k="604.33193920"/>
+    <Angle class1="gx" class2="g6" class3="gx" angle="1.9542451635" k="508.43968000"/>
+    <Angle class1="gx" class2="g6" class3="gy" angle="1.9542451635" k="508.43968000"/>
+    <Angle class1="gx" class2="g6" class3="gz" angle="1.9542451635" k="508.43968000"/>
+    <Angle class1="ge" class2="g6" class3="gx" angle="1.9542451635" k="508.43968000"/>
+    <Angle class1="gk" class2="g6" class3="gx" angle="1.9385372002" k="508.85808000"/>
+    <Angle class1="gm" class2="g6" class3="gx" angle="1.8776718096" k="636.31527200"/>
+    <Angle class1="gy" class2="g6" class3="gy" angle="1.9542451635" k="508.43968000"/>
+    <Angle class1="gy" class2="g6" class3="gz" angle="1.9542451635" k="508.43968000"/>
+    <Angle class1="ge" class2="g6" class3="gy" angle="1.9542451635" k="508.43968000"/>
+    <Angle class1="gk" class2="g6" class3="gy" angle="1.9385372002" k="508.85808000"/>
+    <Angle class1="gm" class2="g6" class3="gy" angle="1.8776718096" k="636.31527200"/>
+    <Angle class1="gz" class2="g6" class3="gz" angle="1.9542451635" k="508.43968000"/>
+    <Angle class1="ge" class2="g6" class3="gz" angle="1.9542451635" k="508.43968000"/>
+    <Angle class1="gk" class2="g6" class3="gz" angle="1.9385372002" k="508.85808000"/>
+    <Angle class1="gm" class2="g6" class3="gz" angle="1.8776718096" k="636.31527200"/>
+    <Angle class1="ge" class2="g6" class3="ge" angle="1.9542451635" k="508.43968000"/>
+    <Angle class1="ge" class2="g6" class3="gk" angle="1.9385372002" k="508.85808000"/>
+    <Angle class1="ge" class2="g6" class3="gm" angle="1.8776718096" k="636.31527200"/>
+    <Angle class1="gk" class2="g6" class3="gk" angle="1.9425514575" k="506.76608000"/>
+    <Angle class1="gk" class2="g6" class3="gm" angle="1.9104373992" k="645.25648000"/>
+    <Angle class1="gm" class2="g6" class3="gm" angle="1.9154988541" k="818.55776000"/>
+    <Angle class1="g6" class2="gm" class3="g6" angle="1.9826940303" k="739.14544000"/>
+    <Angle class1="g6" class2="gm" class3="gc" angle="2.0214403397" k="748.35024000"/>
+    <Angle class1="g6" class2="gm" class3="gw" angle="1.9005399861" k="478.02702080"/>
+    <Angle class1="gc" class2="gm" class3="gc" angle="1.9451694513" k="781.98960000"/>
+    <Angle class1="gc" class2="gm" class3="gw" angle="1.8590592694" k="558.13890560"/>
+    <Angle class1="gm" class2="gw" class3="gm" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="ga" class2="gx" class3="ga" angle="2.0951269189" k="484.94735680"/>
+    <Angle class1="ga" class2="gx" class3="gb" angle="1.9911894204" k="511.71826240"/>
+    <Angle class1="g6" class2="gx" class3="ga" angle="2.0425715645" k="493.46263360"/>
+    <Angle class1="ga" class2="gx" class3="gx" angle="2.0296994122" k="429.05664800"/>
+    <Angle class1="ga" class2="gx" class3="gy" angle="2.0576559216" k="463.84577120"/>
+    <Angle class1="ga" class2="gx" class3="gz" angle="2.0576559216" k="463.84577120"/>
+    <Angle class1="ga" class2="gx" class3="ge" angle="2.0576559216" k="463.84577120"/>
+    <Angle class1="ga" class2="gx" class3="gk" angle="2.0113174300" k="507.18448000"/>
+    <Angle class1="ga" class2="gx" class3="gp" angle="2.0019048693" k="582.94416800"/>
+    <Angle class1="g1" class2="gx" class3="ga" angle="2.0190317853" k="354.79232160"/>
+    <Angle class1="gb" class2="gx" class3="gb" angle="2.0867130357" k="495.49103680"/>
+    <Angle class1="g6" class2="gx" class3="gb" angle="2.0134118251" k="504.50672000"/>
+    <Angle class1="gb" class2="gx" class3="gx" angle="2.0437360482" k="461.84916640"/>
+    <Angle class1="gb" class2="gx" class3="gy" angle="2.1265091606" k="492.45680000"/>
+    <Angle class1="gb" class2="gx" class3="gz" angle="2.1265091606" k="492.45680000"/>
+    <Angle class1="gb" class2="gx" class3="ge" angle="2.1265091606" k="492.45680000"/>
+    <Angle class1="gb" class2="gx" class3="gk" angle="2.0113174300" k="507.18448000"/>
+    <Angle class1="gb" class2="gx" class3="gp" angle="1.9991168804" k="600.27596960"/>
+    <Angle class1="g1" class2="gx" class3="gb" angle="2.0278816518" k="357.70020160"/>
+    <Angle class1="g6" class2="gx" class3="g6" angle="1.9926657944" k="503.04315680"/>
+    <Angle class1="g6" class2="gx" class3="gx" angle="2.0848497222" k="478.03789920"/>
+    <Angle class1="g6" class2="gx" class3="gy" angle="2.0756284496" k="488.33974400"/>
+    <Angle class1="g6" class2="gx" class3="gz" angle="2.0756284496" k="488.33974400"/>
+    <Angle class1="g6" class2="gx" class3="ge" angle="2.0756284496" k="488.33974400"/>
+    <Angle class1="g6" class2="gx" class3="gk" angle="2.0474457455" k="498.98384000"/>
+    <Angle class1="g6" class2="gx" class3="gp" angle="2.0001096237" k="611.92506240"/>
+    <Angle class1="g1" class2="gx" class3="g6" angle="2.0196651653" k="355.39398080"/>
+    <Angle class1="gx" class2="gx" class3="gx" angle="1.0471975512" k="698.81168000"/>
+    <Angle class1="gx" class2="gx" class3="gy" angle="2.0649215528" k="466.94276800"/>
+    <Angle class1="gx" class2="gx" class3="gz" angle="2.0649215528" k="466.94276800"/>
+    <Angle class1="ge" class2="gx" class3="gx" angle="2.0649215528" k="466.94276800"/>
+    <Angle class1="gk" class2="gx" class3="gx" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="gp" class2="gx" class3="gx" angle="1.0120518560" k="728.83020640"/>
+    <Angle class1="g1" class2="gx" class3="gx" angle="2.0737525697" k="344.27290880"/>
+    <Angle class1="gy" class2="gx" class3="gy" angle="1.9167396086" k="695.44439680"/>
+    <Angle class1="gy" class2="gx" class3="gz" angle="2.0594885174" k="520.99168000"/>
+    <Angle class1="ge" class2="gx" class3="gy" angle="2.0594885174" k="520.99168000"/>
+    <Angle class1="gk" class2="gx" class3="gy" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="gp" class2="gx" class3="gy" angle="2.0002331930" k="604.94531360"/>
+    <Angle class1="g1" class2="gx" class3="gy" angle="2.0715312892" k="353.96640000"/>
+    <Angle class1="gz" class2="gx" class3="gz" angle="1.9167396086" k="695.44439680"/>
+    <Angle class1="ge" class2="gx" class3="gz" angle="2.0594885174" k="520.99168000"/>
+    <Angle class1="gk" class2="gx" class3="gz" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="gp" class2="gx" class3="gz" angle="2.0002331930" k="604.94531360"/>
+    <Angle class1="g1" class2="gx" class3="gz" angle="2.0715312892" k="353.96640000"/>
+    <Angle class1="ge" class2="gx" class3="ge" angle="1.9167396086" k="695.44439680"/>
+    <Angle class1="ge" class2="gx" class3="gk" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="ge" class2="gx" class3="gp" angle="2.0002331930" k="604.94531360"/>
+    <Angle class1="g1" class2="gx" class3="ge" angle="2.0715312892" k="353.96640000"/>
+    <Angle class1="gk" class2="gx" class3="gk" angle="2.0771163428" k="497.72864000"/>
+    <Angle class1="gk" class2="gx" class3="gp" angle="2.0067795739" k="632.78816000"/>
+    <Angle class1="g1" class2="gx" class3="gk" angle="2.0294688542" k="358.56880000"/>
+    <Angle class1="gp" class2="gx" class3="gp" angle="1.1623892818" k="1041.56496000"/>
+    <Angle class1="g1" class2="gx" class3="gp" angle="1.9907673998" k="448.87039840"/>
+    <Angle class1="ga" class2="gy" class3="ga" angle="2.0951269189" k="484.94735680"/>
+    <Angle class1="ga" class2="gy" class3="gb" angle="1.9911894204" k="511.71826240"/>
+    <Angle class1="g6" class2="gy" class3="ga" angle="2.0425715645" k="493.46263360"/>
+    <Angle class1="ga" class2="gy" class3="gx" angle="2.0576559216" k="463.84577120"/>
+    <Angle class1="ga" class2="gy" class3="gy" angle="2.0296994122" k="429.05664800"/>
+    <Angle class1="ga" class2="gy" class3="gz" angle="2.0576559216" k="463.84577120"/>
+    <Angle class1="ga" class2="gy" class3="ge" angle="2.0576559216" k="463.84577120"/>
+    <Angle class1="ga" class2="gy" class3="gk" angle="2.0113174300" k="507.18448000"/>
+    <Angle class1="ga" class2="gy" class3="gp" angle="2.0019048693" k="582.94416800"/>
+    <Angle class1="g1" class2="gy" class3="ga" angle="2.0190317853" k="354.79232160"/>
+    <Angle class1="gb" class2="gy" class3="gb" angle="2.0867130357" k="495.49103680"/>
+    <Angle class1="g6" class2="gy" class3="gb" angle="2.0134118251" k="504.50672000"/>
+    <Angle class1="gb" class2="gy" class3="gx" angle="2.1265091606" k="492.45680000"/>
+    <Angle class1="gb" class2="gy" class3="gy" angle="2.0437360482" k="461.84916640"/>
+    <Angle class1="gb" class2="gy" class3="gz" angle="2.1265091606" k="492.45680000"/>
+    <Angle class1="gb" class2="gy" class3="ge" angle="2.1265091606" k="492.45680000"/>
+    <Angle class1="gb" class2="gy" class3="gk" angle="2.0113174300" k="507.18448000"/>
+    <Angle class1="gb" class2="gy" class3="gp" angle="1.9991168804" k="600.27596960"/>
+    <Angle class1="g1" class2="gy" class3="gb" angle="2.0278816518" k="357.70020160"/>
+    <Angle class1="g6" class2="gy" class3="g6" angle="1.9926657944" k="503.04315680"/>
+    <Angle class1="g6" class2="gy" class3="gx" angle="2.0756284496" k="488.33974400"/>
+    <Angle class1="g6" class2="gy" class3="gy" angle="2.0848497222" k="478.03789920"/>
+    <Angle class1="g6" class2="gy" class3="gz" angle="2.0756284496" k="488.33974400"/>
+    <Angle class1="g6" class2="gy" class3="ge" angle="2.0756284496" k="488.33974400"/>
+    <Angle class1="g6" class2="gy" class3="gk" angle="2.0474457455" k="498.98384000"/>
+    <Angle class1="g6" class2="gy" class3="gp" angle="2.0001096237" k="611.92506240"/>
+    <Angle class1="g1" class2="gy" class3="g6" angle="2.0196651653" k="355.39398080"/>
+    <Angle class1="gx" class2="gy" class3="gx" angle="1.9167396086" k="695.44439680"/>
+    <Angle class1="gx" class2="gy" class3="gy" angle="2.0649215528" k="466.94276800"/>
+    <Angle class1="gx" class2="gy" class3="gz" angle="2.0594885174" k="520.99168000"/>
+    <Angle class1="ge" class2="gy" class3="gx" angle="2.0594885174" k="520.99168000"/>
+    <Angle class1="gk" class2="gy" class3="gx" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="gp" class2="gy" class3="gx" angle="2.0002331930" k="604.94531360"/>
+    <Angle class1="g1" class2="gy" class3="gx" angle="2.0715312892" k="353.96640000"/>
+    <Angle class1="gy" class2="gy" class3="gy" angle="1.0471975512" k="698.81168000"/>
+    <Angle class1="gy" class2="gy" class3="gz" angle="2.0649215528" k="466.94276800"/>
+    <Angle class1="ge" class2="gy" class3="gy" angle="2.0649215528" k="466.94276800"/>
+    <Angle class1="gk" class2="gy" class3="gy" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="gp" class2="gy" class3="gy" angle="1.0120518560" k="728.83020640"/>
+    <Angle class1="g1" class2="gy" class3="gy" angle="2.0737525697" k="344.27290880"/>
+    <Angle class1="gz" class2="gy" class3="gz" angle="1.9167396086" k="695.44439680"/>
+    <Angle class1="ge" class2="gy" class3="gz" angle="2.0594885174" k="520.99168000"/>
+    <Angle class1="gk" class2="gy" class3="gz" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="gp" class2="gy" class3="gz" angle="2.0002331930" k="604.94531360"/>
+    <Angle class1="g1" class2="gy" class3="gz" angle="2.0715312892" k="353.96640000"/>
+    <Angle class1="ge" class2="gy" class3="ge" angle="1.9167396086" k="695.44439680"/>
+    <Angle class1="ge" class2="gy" class3="gk" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="ge" class2="gy" class3="gp" angle="2.0002331930" k="604.94531360"/>
+    <Angle class1="g1" class2="gy" class3="ge" angle="2.0715312892" k="353.96640000"/>
+    <Angle class1="gk" class2="gy" class3="gk" angle="2.0771163428" k="497.72864000"/>
+    <Angle class1="gk" class2="gy" class3="gp" angle="2.0067795739" k="632.78816000"/>
+    <Angle class1="g1" class2="gy" class3="gk" angle="2.0294688542" k="358.56880000"/>
+    <Angle class1="gp" class2="gy" class3="gp" angle="1.1623892818" k="1041.56496000"/>
+    <Angle class1="g1" class2="gy" class3="gp" angle="1.9907673998" k="448.87039840"/>
+    <Angle class1="ga" class2="gz" class3="ga" angle="2.0951269189" k="484.94735680"/>
+    <Angle class1="ga" class2="gz" class3="gb" angle="1.9911894204" k="511.71826240"/>
+    <Angle class1="g6" class2="gz" class3="ga" angle="2.0425715645" k="493.46263360"/>
+    <Angle class1="ga" class2="gz" class3="gx" angle="2.0576559216" k="463.84577120"/>
+    <Angle class1="ga" class2="gz" class3="gy" angle="2.0576559216" k="463.84577120"/>
+    <Angle class1="ga" class2="gz" class3="gz" angle="2.0296994122" k="429.05664800"/>
+    <Angle class1="ga" class2="gz" class3="ge" angle="2.0576559216" k="463.84577120"/>
+    <Angle class1="ga" class2="gz" class3="gk" angle="2.0113174300" k="507.18448000"/>
+    <Angle class1="ga" class2="gz" class3="gp" angle="2.0019048693" k="582.94416800"/>
+    <Angle class1="g1" class2="gz" class3="ga" angle="2.0190317853" k="354.79232160"/>
+    <Angle class1="gb" class2="gz" class3="gb" angle="2.0867130357" k="495.49103680"/>
+    <Angle class1="g6" class2="gz" class3="gb" angle="2.0134118251" k="504.50672000"/>
+    <Angle class1="gb" class2="gz" class3="gx" angle="2.1265091606" k="492.45680000"/>
+    <Angle class1="gb" class2="gz" class3="gy" angle="2.1265091606" k="492.45680000"/>
+    <Angle class1="gb" class2="gz" class3="gz" angle="2.0437360482" k="461.84916640"/>
+    <Angle class1="gb" class2="gz" class3="ge" angle="2.1265091606" k="492.45680000"/>
+    <Angle class1="gb" class2="gz" class3="gk" angle="2.0113174300" k="507.18448000"/>
+    <Angle class1="gb" class2="gz" class3="gp" angle="1.9991168804" k="600.27596960"/>
+    <Angle class1="g1" class2="gz" class3="gb" angle="2.0278816518" k="357.70020160"/>
+    <Angle class1="g6" class2="gz" class3="g6" angle="1.9926657944" k="503.04315680"/>
+    <Angle class1="g6" class2="gz" class3="gx" angle="2.0756284496" k="488.33974400"/>
+    <Angle class1="g6" class2="gz" class3="gy" angle="2.0756284496" k="488.33974400"/>
+    <Angle class1="g6" class2="gz" class3="gz" angle="2.0848497222" k="478.03789920"/>
+    <Angle class1="g6" class2="gz" class3="ge" angle="2.0756284496" k="488.33974400"/>
+    <Angle class1="g6" class2="gz" class3="gk" angle="2.0474457455" k="498.98384000"/>
+    <Angle class1="g6" class2="gz" class3="gp" angle="2.0001096237" k="611.92506240"/>
+    <Angle class1="g1" class2="gz" class3="g6" angle="2.0196651653" k="355.39398080"/>
+    <Angle class1="gx" class2="gz" class3="gx" angle="1.9167396086" k="695.44439680"/>
+    <Angle class1="gx" class2="gz" class3="gy" angle="2.0594885174" k="520.99168000"/>
+    <Angle class1="gx" class2="gz" class3="gz" angle="2.0649215528" k="466.94276800"/>
+    <Angle class1="ge" class2="gz" class3="gx" angle="2.0594885174" k="520.99168000"/>
+    <Angle class1="gk" class2="gz" class3="gx" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="gp" class2="gz" class3="gx" angle="2.0002331930" k="604.94531360"/>
+    <Angle class1="g1" class2="gz" class3="gx" angle="2.0715312892" k="353.96640000"/>
+    <Angle class1="gy" class2="gz" class3="gy" angle="1.9167396086" k="695.44439680"/>
+    <Angle class1="gy" class2="gz" class3="gz" angle="2.0649215528" k="466.94276800"/>
+    <Angle class1="ge" class2="gz" class3="gy" angle="2.0594885174" k="520.99168000"/>
+    <Angle class1="gk" class2="gz" class3="gy" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="gp" class2="gz" class3="gy" angle="2.0002331930" k="604.94531360"/>
+    <Angle class1="g1" class2="gz" class3="gy" angle="2.0715312892" k="353.96640000"/>
+    <Angle class1="gz" class2="gz" class3="gz" angle="1.0471975512" k="698.81168000"/>
+    <Angle class1="ge" class2="gz" class3="gz" angle="2.0649215528" k="466.94276800"/>
+    <Angle class1="gk" class2="gz" class3="gz" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="gp" class2="gz" class3="gz" angle="1.0120518560" k="728.83020640"/>
+    <Angle class1="g1" class2="gz" class3="gz" angle="2.0737525697" k="344.27290880"/>
+    <Angle class1="ge" class2="gz" class3="ge" angle="1.9167396086" k="695.44439680"/>
+    <Angle class1="ge" class2="gz" class3="gk" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="ge" class2="gz" class3="gp" angle="2.0002331930" k="604.94531360"/>
+    <Angle class1="g1" class2="gz" class3="ge" angle="2.0715312892" k="353.96640000"/>
+    <Angle class1="gk" class2="gz" class3="gk" angle="2.0771163428" k="497.72864000"/>
+    <Angle class1="gk" class2="gz" class3="gp" angle="2.0067795739" k="632.78816000"/>
+    <Angle class1="g1" class2="gz" class3="gk" angle="2.0294688542" k="358.56880000"/>
+    <Angle class1="gp" class2="gz" class3="gp" angle="1.1623892818" k="1041.56496000"/>
+    <Angle class1="g1" class2="gz" class3="gp" angle="1.9907673998" k="448.87039840"/>
+    <Angle class1="ga" class2="ge" class3="ga" angle="2.0951269189" k="484.94735680"/>
+    <Angle class1="ga" class2="ge" class3="gb" angle="1.9911894204" k="511.71826240"/>
+    <Angle class1="g6" class2="ge" class3="ga" angle="2.0425715645" k="493.46263360"/>
+    <Angle class1="ga" class2="ge" class3="gx" angle="2.0576559216" k="463.84577120"/>
+    <Angle class1="ga" class2="ge" class3="gy" angle="2.0576559216" k="463.84577120"/>
+    <Angle class1="ga" class2="ge" class3="gz" angle="2.0576559216" k="463.84577120"/>
+    <Angle class1="ga" class2="ge" class3="ge" angle="2.0296994122" k="429.05664800"/>
+    <Angle class1="ga" class2="ge" class3="gk" angle="2.0113174300" k="507.18448000"/>
+    <Angle class1="ga" class2="ge" class3="gp" angle="2.0019048693" k="582.94416800"/>
+    <Angle class1="g1" class2="ge" class3="ga" angle="2.0190317853" k="354.79232160"/>
+    <Angle class1="gb" class2="ge" class3="gb" angle="2.0867130357" k="495.49103680"/>
+    <Angle class1="g6" class2="ge" class3="gb" angle="2.0134118251" k="504.50672000"/>
+    <Angle class1="gb" class2="ge" class3="gx" angle="2.1265091606" k="492.45680000"/>
+    <Angle class1="gb" class2="ge" class3="gy" angle="2.1265091606" k="492.45680000"/>
+    <Angle class1="gb" class2="ge" class3="gz" angle="2.1265091606" k="492.45680000"/>
+    <Angle class1="gb" class2="ge" class3="ge" angle="2.0437360482" k="461.84916640"/>
+    <Angle class1="gb" class2="ge" class3="gk" angle="2.0113174300" k="507.18448000"/>
+    <Angle class1="gb" class2="ge" class3="gp" angle="1.9991168804" k="600.27596960"/>
+    <Angle class1="g1" class2="ge" class3="gb" angle="2.0278816518" k="357.70020160"/>
+    <Angle class1="g6" class2="ge" class3="g6" angle="1.9926657944" k="503.04315680"/>
+    <Angle class1="g6" class2="ge" class3="gx" angle="2.0756284496" k="488.33974400"/>
+    <Angle class1="g6" class2="ge" class3="gy" angle="2.0756284496" k="488.33974400"/>
+    <Angle class1="g6" class2="ge" class3="gz" angle="2.0756284496" k="488.33974400"/>
+    <Angle class1="g6" class2="ge" class3="ge" angle="2.0848497222" k="478.03789920"/>
+    <Angle class1="g6" class2="ge" class3="gk" angle="2.0474457455" k="498.98384000"/>
+    <Angle class1="g6" class2="ge" class3="gp" angle="2.0001096237" k="611.92506240"/>
+    <Angle class1="g1" class2="ge" class3="g6" angle="2.0196651653" k="355.39398080"/>
+    <Angle class1="gx" class2="ge" class3="gx" angle="1.9167396086" k="695.44439680"/>
+    <Angle class1="gx" class2="ge" class3="gy" angle="2.0594885174" k="520.99168000"/>
+    <Angle class1="gx" class2="ge" class3="gz" angle="2.0594885174" k="520.99168000"/>
+    <Angle class1="ge" class2="ge" class3="gx" angle="2.0649215528" k="466.94276800"/>
+    <Angle class1="gk" class2="ge" class3="gx" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="gp" class2="ge" class3="gx" angle="2.0002331930" k="604.94531360"/>
+    <Angle class1="g1" class2="ge" class3="gx" angle="2.0715312892" k="353.96640000"/>
+    <Angle class1="gy" class2="ge" class3="gy" angle="1.9167396086" k="695.44439680"/>
+    <Angle class1="gy" class2="ge" class3="gz" angle="2.0594885174" k="520.99168000"/>
+    <Angle class1="ge" class2="ge" class3="gy" angle="2.0649215528" k="466.94276800"/>
+    <Angle class1="gk" class2="ge" class3="gy" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="gp" class2="ge" class3="gy" angle="2.0002331930" k="604.94531360"/>
+    <Angle class1="g1" class2="ge" class3="gy" angle="2.0715312892" k="353.96640000"/>
+    <Angle class1="gz" class2="ge" class3="gz" angle="1.9167396086" k="695.44439680"/>
+    <Angle class1="ge" class2="ge" class3="gz" angle="2.0649215528" k="466.94276800"/>
+    <Angle class1="gk" class2="ge" class3="gz" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="gp" class2="ge" class3="gz" angle="2.0002331930" k="604.94531360"/>
+    <Angle class1="g1" class2="ge" class3="gz" angle="2.0715312892" k="353.96640000"/>
+    <Angle class1="ge" class2="ge" class3="ge" angle="1.0471975512" k="698.81168000"/>
+    <Angle class1="ge" class2="ge" class3="gk" angle="2.0593139844" k="499.15120000"/>
+    <Angle class1="ge" class2="ge" class3="gp" angle="1.0120518560" k="728.83020640"/>
+    <Angle class1="g1" class2="ge" class3="ge" angle="2.0737525697" k="344.27290880"/>
+    <Angle class1="gk" class2="ge" class3="gk" angle="2.0771163428" k="497.72864000"/>
+    <Angle class1="gk" class2="ge" class3="gp" angle="2.0067795739" k="632.78816000"/>
+    <Angle class1="g1" class2="ge" class3="gk" angle="2.0294688542" k="358.56880000"/>
+    <Angle class1="gp" class2="ge" class3="gp" angle="1.1623892818" k="1041.56496000"/>
+    <Angle class1="g1" class2="ge" class3="gp" angle="1.9907673998" k="448.87039840"/>
+    <Angle class1="gx" class2="gp" class3="gx" angle="1.1095396649" k="908.02757920"/>
+    <Angle class1="gx" class2="gp" class3="gy" angle="1.0779153460" k="995.87568000"/>
+    <Angle class1="gx" class2="gp" class3="gz" angle="1.0779153460" k="995.87568000"/>
+    <Angle class1="ge" class2="gp" class3="gx" angle="1.0779153460" k="995.87568000"/>
+    <Angle class1="gy" class2="gp" class3="gy" angle="1.1095396649" k="908.02757920"/>
+    <Angle class1="gy" class2="gp" class3="gz" angle="1.0779153460" k="995.87568000"/>
+    <Angle class1="ge" class2="gp" class3="gy" angle="1.0779153460" k="995.87568000"/>
+    <Angle class1="gz" class2="gp" class3="gz" angle="1.1095396649" k="908.02757920"/>
+    <Angle class1="ge" class2="gp" class3="gz" angle="1.0779153460" k="995.87568000"/>
+    <Angle class1="ge" class2="gp" class3="ge" angle="1.1095396649" k="908.02757920"/>
+    <Angle class1="gx" class2="g1" class3="gx" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="gx" class2="g1" class3="gy" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="gx" class2="g1" class3="gz" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="ge" class2="g1" class3="gx" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="gy" class2="g1" class3="gy" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="gy" class2="g1" class3="gz" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="ge" class2="g1" class3="gy" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="gz" class2="g1" class3="gz" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="ge" class2="g1" class3="gz" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="ge" class2="g1" class3="ge" angle="1.9460421160" k="502.08000000"/>
+    <Angle class1="ga" class2="gk" class3="ga" angle="2.0582667869" k="504.33936000"/>
+    <Angle class1="ga" class2="gk" class3="gb" angle="2.0460438971" k="504.72596160"/>
+    <Angle class1="g6" class2="gk" class3="ga" angle="2.0767672769" k="495.88768000"/>
+    <Angle class1="ga" class2="gk" class3="gx" angle="2.0535543979" k="502.74944000"/>
+    <Angle class1="ga" class2="gk" class3="gy" angle="2.0535543979" k="502.74944000"/>
+    <Angle class1="ga" class2="gk" class3="gz" angle="2.0535543979" k="502.74944000"/>
+    <Angle class1="ga" class2="gk" class3="ge" angle="2.0535543979" k="502.74944000"/>
+    <Angle class1="ga" class2="gk" class3="gk" angle="2.0633769364" k="493.87182880"/>
+    <Angle class1="ga" class2="gk" class3="gq" angle="2.1357567877" k="648.37439680"/>
+    <Angle class1="gb" class2="gk" class3="gb" angle="2.0582667869" k="504.33936000"/>
+    <Angle class1="g6" class2="gk" class3="gb" angle="2.0767672769" k="495.88768000"/>
+    <Angle class1="gb" class2="gk" class3="gx" angle="2.0535543979" k="502.74944000"/>
+    <Angle class1="gb" class2="gk" class3="gy" angle="2.0535543979" k="502.74944000"/>
+    <Angle class1="gb" class2="gk" class3="gz" angle="2.0535543979" k="502.74944000"/>
+    <Angle class1="gb" class2="gk" class3="ge" angle="2.0535543979" k="502.74944000"/>
+    <Angle class1="gb" class2="gk" class3="gk" angle="2.0616345742" k="493.43585600"/>
+    <Angle class1="gb" class2="gk" class3="gq" angle="2.1383287049" k="649.74842240"/>
+    <Angle class1="g6" class2="gk" class3="g6" angle="2.0364501712" k="494.96720000"/>
+    <Angle class1="g6" class2="gk" class3="gx" angle="2.0422097578" k="498.06336000"/>
+    <Angle class1="g6" class2="gk" class3="gy" angle="2.0422097578" k="498.06336000"/>
+    <Angle class1="g6" class2="gk" class3="gz" angle="2.0422097578" k="498.06336000"/>
+    <Angle class1="g6" class2="gk" class3="ge" angle="2.0422097578" k="498.06336000"/>
+    <Angle class1="g6" class2="gk" class3="gk" angle="2.0319123152" k="491.87104000"/>
+    <Angle class1="g6" class2="gk" class3="gq" angle="2.1450096507" k="639.73360000"/>
+    <Angle class1="gx" class2="gk" class3="gx" angle="1.9882790839" k="508.77440000"/>
+    <Angle class1="gx" class2="gk" class3="gy" angle="1.9882790839" k="508.77440000"/>
+    <Angle class1="gx" class2="gk" class3="gz" angle="1.9882790839" k="508.77440000"/>
+    <Angle class1="ge" class2="gk" class3="gx" angle="1.9882790839" k="508.77440000"/>
+    <Angle class1="gk" class2="gk" class3="gx" angle="1.9528489001" k="505.42720000"/>
+    <Angle class1="gq" class2="gk" class3="gx" angle="2.1418680580" k="647.85056000"/>
+    <Angle class1="gy" class2="gk" class3="gy" angle="1.9882790839" k="508.77440000"/>
+    <Angle class1="gy" class2="gk" class3="gz" angle="1.9882790839" k="508.77440000"/>
+    <Angle class1="ge" class2="gk" class3="gy" angle="1.9882790839" k="508.77440000"/>
+    <Angle class1="gk" class2="gk" class3="gy" angle="1.9528489001" k="505.42720000"/>
+    <Angle class1="gq" class2="gk" class3="gy" angle="2.1418680580" k="647.85056000"/>
+    <Angle class1="gz" class2="gk" class3="gz" angle="1.9882790839" k="508.77440000"/>
+    <Angle class1="ge" class2="gk" class3="gz" angle="1.9882790839" k="508.77440000"/>
+    <Angle class1="gk" class2="gk" class3="gz" angle="1.9528489001" k="505.42720000"/>
+    <Angle class1="gq" class2="gk" class3="gz" angle="2.1418680580" k="647.85056000"/>
+    <Angle class1="ge" class2="gk" class3="ge" angle="1.9882790839" k="508.77440000"/>
+    <Angle class1="ge" class2="gk" class3="gk" angle="1.9528489001" k="505.42720000"/>
+    <Angle class1="ge" class2="gk" class3="gq" angle="2.1418680580" k="647.85056000"/>
+    <Angle class1="gk" class2="gk" class3="gk" angle="2.0114919629" k="490.78320000"/>
+    <Angle class1="gk" class2="gk" class3="gq" angle="2.0952789371" k="633.87851040"/>
+    <Angle class1="gq" class2="gk" class3="gq" angle="2.2717205544" k="878.13792000"/>
+    <Angle class1="gk" class2="gq" class3="gk" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="ga" class2="gc" class3="ga" angle="2.0582667869" k="504.33936000"/>
+    <Angle class1="ga" class2="gc" class3="gb" angle="2.0582667869" k="504.33936000"/>
+    <Angle class1="ga" class2="gc" class3="go" angle="2.1397736629" k="652.36928000"/>
+    <Angle class1="ga" class2="gc" class3="gm" angle="1.9800760364" k="655.80016000"/>
+    <Angle class1="gb" class2="gc" class3="gb" angle="2.0582667869" k="504.33936000"/>
+    <Angle class1="gb" class2="gc" class3="go" angle="2.1861835386" k="624.28710880"/>
+    <Angle class1="gb" class2="gc" class3="gm" angle="1.9638785083" k="650.57601760"/>
+    <Angle class1="go" class2="gc" class3="go" angle="2.2717205544" k="878.13792000"/>
+    <Angle class1="gm" class2="gc" class3="go" angle="2.1300183196" k="842.13711040"/>
+    <Angle class1="gm" class2="gc" class3="gm" angle="1.9296360210" k="973.19840000"/>
+    <Angle class1="gc" class2="go" class3="gc" angle="2.0943951024" k="539.73600000"/>
+    <Angle class1="ga" class2="gd" class3="ga" angle="2.0582667869" k="504.33936000"/>
+    <Angle class1="ga" class2="gd" class3="gb" angle="2.0582667869" k="504.33936000"/>
+    <Angle class1="ga" class2="gd" class3="gu" angle="2.1397736629" k="652.36928000"/>
+    <Angle class1="gb" class2="gd" class3="gb" angle="2.0582667869" k="504.33936000"/>
+    <Angle class1="gb" class2="gd" class3="gu" angle="2.0079585439" k="573.05570240"/>
+    <Angle class1="gu" class2="gd" class3="gu" angle="2.2893667058" k="812.60894880"/>
+    <Angle class1="gd" class2="gu" class3="gd" angle="2.0943951024" k="539.73600000"/>
+  </HarmonicAngleForce>
+  <PeriodicTorsionForce ordering="amber">
+    <Proper class1="ga" class2="ga" class3="gk" class4="ga" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="ga" class2="ga" class3="gk" class4="gb" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="ga" class2="ga" class3="gk" class4="gq" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="ga" class2="gb" class3="gc" class4="gm" periodicity1="2" phase1="3.1415926536" k1="3.7459770400" periodicity2="4" phase2="0.0000000000" k2="0.0031798400"/>
+    <Proper class1="ga" class2="gb" class3="gc" class4="go" periodicity1="2" phase1="3.1415926536" k1="3.7459770400" periodicity2="4" phase2="0.0000000000" k2="0.0031798400"/>
+    <Proper class1="ga" class2="gb" class3="gd" class4="gu" periodicity1="2" phase1="3.1415926536" k1="2.6127824800" periodicity2="4" phase2="3.1415926536" k2="0.1531762400"/>
+    <Proper class1="ga" class2="gb" class3="gk" class4="ga" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="ga" class2="gb" class3="gk" class4="gb" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="ga" class2="gb" class3="gk" class4="gq" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="ga" class2="gc" class3="gm" class4="gw" periodicity1="2" phase1="3.1415926536" k1="9.6232000000"/>
+    <Proper class1="ga" class2="gk" class3="gk" class4="gq" periodicity1="2" phase1="3.1415926536" k1="2.9288000000"/>
+    <Proper class1="gb" class2="ga" class3="gk" class4="gq" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="gb" class2="gb" class3="gc" class4="gm" periodicity1="2" phase1="3.1415926536" k1="3.7459770400" periodicity2="4" phase2="0.0000000000" k2="0.0031798400"/>
+    <Proper class1="gb" class2="gb" class3="gc" class4="go" periodicity1="2" phase1="3.1415926536" k1="3.7459770400" periodicity2="4" phase2="0.0000000000" k2="0.0031798400"/>
+    <Proper class1="gb" class2="gb" class3="gd" class4="gu" periodicity1="2" phase1="3.1415926536" k1="2.6127824800" periodicity2="4" phase2="3.1415926536" k2="0.1531762400"/>
+    <Proper class1="gb" class2="gb" class3="gk" class4="gq" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="gb" class2="gc" class3="gm" class4="gw" periodicity1="2" phase1="3.1415926536" k1="9.6232000000"/>
+    <Proper class1="gb" class2="gk" class3="gk" class4="gq" periodicity1="2" phase1="3.1415926536" k1="2.9288000000"/>
+    <Proper class1="go" class2="gc" class3="gm" class4="gw" periodicity1="2" phase1="3.1415926536" k1="9.6232000000" periodicity2="1" phase2="0.0000000000" k2="7.9496000000"/>
+    <Proper class1="" class2="g1" class3="ge" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="g1" class3="gx" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="g1" class3="gy" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="g1" class3="gz" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="g6" class3="g6" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="g6" class3="ga" class4="" periodicity1="2" phase1="0.0000000000" k1="0.0000000000"/>
+    <Proper class1="" class2="g6" class3="gb" class4="" periodicity1="2" phase1="0.0000000000" k1="0.0000000000"/>
+    <Proper class1="" class2="g6" class3="ge" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="g6" class3="gk" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="g6" class3="gm" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6973333333"/>
+    <Proper class1="" class2="g6" class3="gx" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="g6" class3="gy" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="g6" class3="gz" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="ga" class3="ga" class4="" periodicity1="2" phase1="3.1415926536" k1="10.0418301200"/>
+    <Proper class1="" class2="ga" class3="gb" class4="" periodicity1="2" phase1="3.1415926536" k1="10.0418301200"/>
+    <Proper class1="" class2="ga" class3="gc" class4="" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="" class2="ga" class3="gd" class4="" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="" class2="ga" class3="ge" class4="" periodicity1="2" phase1="0.0000000000" k1="0.0000000000"/>
+    <Proper class1="" class2="ga" class3="gh" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="ga" class3="gk" class4="" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="" class2="ga" class3="gx" class4="" periodicity1="2" phase1="0.0000000000" k1="0.0000000000"/>
+    <Proper class1="" class2="ga" class3="gy" class4="" periodicity1="2" phase1="0.0000000000" k1="0.0000000000"/>
+    <Proper class1="" class2="ga" class3="gz" class4="" periodicity1="2" phase1="0.0000000000" k1="0.0000000000"/>
+    <Proper class1="" class2="gb" class3="gb" class4="" periodicity1="2" phase1="3.1415926536" k1="10.0418301200"/>
+    <Proper class1="" class2="gb" class3="gc" class4="" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="" class2="gb" class3="gd" class4="" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="" class2="gb" class3="ge" class4="" periodicity1="2" phase1="0.0000000000" k1="0.0000000000"/>
+    <Proper class1="" class2="gb" class3="gh" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="gb" class3="gk" class4="" periodicity1="2" phase1="3.1415926536" k1="4.1840000000"/>
+    <Proper class1="" class2="gb" class3="gx" class4="" periodicity1="2" phase1="0.0000000000" k1="0.0000000000"/>
+    <Proper class1="" class2="gb" class3="gy" class4="" periodicity1="2" phase1="0.0000000000" k1="0.0000000000"/>
+    <Proper class1="" class2="gb" class3="gz" class4="" periodicity1="2" phase1="0.0000000000" k1="0.0000000000"/>
+    <Proper class1="" class2="gc" class3="gm" class4="" periodicity1="2" phase1="3.1415926536" k1="9.6232000000"/>
+    <Proper class1="" class2="gc" class3="go" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="gd" class3="gu" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="ge" class3="ge" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="ge" class3="gk" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="ge" class3="gp" class4="" periodicity1="3" phase1="0.0000000000" k1="1.6038666667"/>
+    <Proper class1="" class2="ge" class3="gx" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="ge" class3="gy" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="ge" class3="gz" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="gk" class3="gk" class4="" periodicity1="2" phase1="3.1415926536" k1="1.2552000000"/>
+    <Proper class1="" class2="gk" class3="gq" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="gk" class3="gx" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="gk" class3="gy" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="gk" class3="gz" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="gm" class3="gw" class4="" periodicity1="2" phase1="3.1415926536" k1="0.0000000000"/>
+    <Proper class1="" class2="gp" class3="gx" class4="" periodicity1="3" phase1="0.0000000000" k1="1.6038666667"/>
+    <Proper class1="" class2="gp" class3="gy" class4="" periodicity1="3" phase1="0.0000000000" k1="1.6038666667"/>
+    <Proper class1="" class2="gp" class3="gz" class4="" periodicity1="3" phase1="0.0000000000" k1="1.6038666667"/>
+    <Proper class1="" class2="gx" class3="gx" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="gx" class3="gy" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="gx" class3="gz" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="gy" class3="gy" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="gy" class3="gz" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Proper class1="" class2="gz" class3="gz" class4="" periodicity1="3" phase1="0.0000000000" k1="0.6508444444"/>
+    <Improper class1="ga" class2="" class3="" class4="gx" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="ga" class2="" class3="" class4="gy" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="ga" class2="" class3="" class4="gz" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="ga" class2="" class3="" class4="ge" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="ga" class2="" class3="" class4="g6" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="ga" class2="" class3="" class4="ga" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="ga" class2="" class3="" class4="gb" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="ga" class2="" class3="" class4="gc" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="ga" class2="" class3="" class4="gd" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="ga" class2="" class3="" class4="gh" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="ga" class2="" class3="" class4="gk" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="gb" class2="" class3="" class4="gx" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="gb" class2="" class3="" class4="gy" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="gb" class2="" class3="" class4="gz" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="gb" class2="" class3="" class4="ge" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="gb" class2="" class3="" class4="g6" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="gb" class2="" class3="" class4="ga" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="gb" class2="" class3="" class4="gb" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="gb" class2="" class3="" class4="gc" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="gb" class2="" class3="" class4="gd" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="gb" class2="" class3="" class4="gh" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="gb" class2="" class3="" class4="gk" periodicity1="2" phase1="3.1415926536" k1="8.2245724800"/>
+    <Improper class1="gc" class2="" class3="" class4="go" periodicity1="2" phase1="3.1415926536" k1="60.4978367200"/>
+    <Improper class1="gd" class2="" class3="" class4="gu" periodicity1="2" phase1="3.1415926536" k1="60.4978367200"/>
+    <Improper class1="gk" class2="" class3="" class4="gq" periodicity1="2" phase1="3.1415926536" k1="60.4978367200"/>
+  </PeriodicTorsionForce>
+  <NonbondedForce coulomb14scale="0.8333333333333334" lj14scale="0.5">
+    <UseAttributeFromResidue name="charge"/>
+    <Atom class="ga" sigma="0.3315212310" epsilon="0.4133792000"/>
+    <Atom class="gb" sigma="0.3315212310" epsilon="0.4133792000"/>
+    <Atom class="gh" sigma="0.2625478522" epsilon="0.0673624000"/>
+    <Atom class="g6" sigma="0.3397709531" epsilon="0.4510352000"/>
+    <Atom class="gm" sigma="0.3242871334" epsilon="0.3891120000"/>
+    <Atom class="gw" sigma="0.0537924646" epsilon="0.0196648000"/>
+    <Atom class="gx" sigma="0.3397709531" epsilon="0.4510352000"/>
+    <Atom class="gy" sigma="0.3397709531" epsilon="0.4510352000"/>
+    <Atom class="gz" sigma="0.3397709531" epsilon="0.4510352000"/>
+    <Atom class="ge" sigma="0.3397709531" epsilon="0.4510352000"/>
+    <Atom class="gp" sigma="0.3156097799" epsilon="0.3037584000"/>
+    <Atom class="g1" sigma="0.2421997255" epsilon="0.0870272000"/>
+    <Atom class="gk" sigma="0.3315212310" epsilon="0.4133792000"/>
+    <Atom class="gq" sigma="0.3048120874" epsilon="0.6121192000"/>
+    <Atom class="gc" sigma="0.3315212310" epsilon="0.4133792000"/>
+    <Atom class="go" sigma="0.3048120874" epsilon="0.6121192000"/>
+    <Atom class="gd" sigma="0.3315212310" epsilon="0.4133792000"/>
+    <Atom class="gu" sigma="0.3048120874" epsilon="0.6121192000"/>
+  </NonbondedForce>
+</ForceField>

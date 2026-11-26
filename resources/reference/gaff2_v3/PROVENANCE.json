@@ -281,6 +281,26 @@
     "L0_v2_charges.json": {
       "sha256": "3fd31b53c6e1a91491d2a295bdb37284bd8b19820b25b01de5a9b6c9a302a758",
       "bytes": 1726
+    },
+    "leaprc.go_gaff2_v3": {
+      "sha256": "f04b0ca3d00a4effeab3752c1aaa14df276c38cac5d9594e95090c1a46761d8c",
+      "bytes": 980
+    },
+    "GO_gaff2_v3_ffnonbonded.itp": {
+      "sha256": "7ab359029244836067e4df03b5a88fb0f63d824cee51e66f12d7a289415f6dcb",
+      "bytes": 1569
+    },
+    "GO_gaff2_v3_ffbonded.itp": {
+      "sha256": "b34b1be6e9c34b734e644345451f3918caa1e96f5d8cf66563b4ce0054981796",
+      "bytes": 36959
+    },
+    "GO_gaff2_v3_openmm.xml": {
+      "sha256": "2fcb0f3b4a2253788204bd961ec1e32f5abb18f7134889ca1b092f028b531d02",
+      "bytes": 61902
+    },
+    "GO_gaff2_v3_lammps.inc": {
+      "sha256": "112bcd1fb06451dd09f8ee6b56067102754ded01fcb278dc1e97e157e83b0b93",
+      "bytes": 1898
     }
   }
 }
