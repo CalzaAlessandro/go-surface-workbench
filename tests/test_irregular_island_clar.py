@@ -406,3 +406,124 @@ def test_geometry_integrity_ester_lactone_co_single_bond():
     assert geom_bad["passed"] is False
     assert geom_bad["bond_length_violations"][0]["motif"] == "C=O"
 
+
+@pytest.mark.parametrize(
+    "placement",
+    ["random", "dispersed", "island", "irregular_island"],
+)
+def test_cli_clar_defaults_on_across_modes_and_opt_out(tmp_path, placement):
+    import subprocess
+    import sys
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1]
+    out_json = tmp_path / f"cli_default_{placement}.json"
+    res = subprocess.run(
+        [
+            sys.executable,
+            str(root / "01_build_GO.py"),
+            "--size",
+            "2.8",
+            "2.8",
+            "--oc",
+            "0.25",
+            "--place",
+            placement,
+            "--seed",
+            "11",
+            "--out",
+            str(out_json),
+            "--json",
+        ],
+        capture_output=True,
+        text=True,
+    )
+    assert res.returncode == 0, res.stdout + res.stderr
+    model = json.loads(out_json.read_text(encoding="utf-8"))
+    assert model["metadata"]["clar"]["enabled"] is True
+    assert model["metadata"]["clar"]["kekule_perfect"] is True
+
+    odd_fail = subprocess.run(
+        [
+            sys.executable,
+            str(root / "01_build_GO.py"),
+            "--nx",
+            "3",
+            "ny_unused",
+        ]
+        if False
+        else [
+            sys.executable,
+            str(root / "01_build_GO.py"),
+            "--nx",
+            "3",
+            "--ny",
+            "3",
+            "--groups",
+            "OH=1",
+            "--out",
+            str(tmp_path / "odd_fail.json"),
+            "--json",
+        ],
+        capture_output=True,
+        text=True,
+    )
+    assert odd_fail.returncode != 0
+    assert "Clar" in odd_fail.stdout
+
+    odd_ok_path = tmp_path / "odd_noclar.json"
+    odd_ok = subprocess.run(
+        [
+            sys.executable,
+            str(root / "01_build_GO.py"),
+            "--nx",
+            "3",
+            "--ny",
+            "3",
+            "--groups",
+            "OH=1",
+            "--no-clar",
+            "--out",
+            str(odd_ok_path),
+            "--json",
+        ],
+        capture_output=True,
+        text=True,
+    )
+    assert odd_ok.returncode == 0, odd_ok.stdout + odd_ok.stderr
+    odd_model = json.loads(odd_ok_path.read_text(encoding="utf-8"))
+    assert "clar" not in odd_model["metadata"]
+
+
+def test_edge_carboxyl_graph_spacing_across_cooh_and_coo():
+    from collections import deque
+    from go_builder.model import adjacency
+
+    model = build_sheet(
+        {"nx": 6, "ny": 6, "seed": 17, "groups": {"COOH": 2, "COO": 2}}
+    )
+    by_id = {int(a["id"]): a for a in model["atoms"]}
+    adj = adjacency(model)
+    scaffold_ids = {
+        int(a["id"])
+        for a in model["atoms"]
+        if a["element"] == "C" and a.get("metadata", {}).get("role") == "sheet_carbon"
+    }
+    acid_anchors = [
+        int(g["site_ids"][0])
+        for g in model["metadata"]["groups"]
+        if g.get("type") in ("COOH", "COO")
+    ]
+    assert len(acid_anchors) == 4
+    for i, src in enumerate(acid_anchors):
+        dist = {src: 0}
+        q = deque([src])
+        while q:
+            u = q.popleft()
+            for v, _, _ in adj[u]:
+                if v in scaffold_ids and v not in dist and by_id[v]["element"] == "C":
+                    dist[v] = dist[u] + 1
+                    q.append(v)
+        for dst in acid_anchors[i + 1 :]:
+            assert dist[dst] >= 3, f"Adjacent acid anchors {src} and {dst} at graph dist {dist[dst]}"
+

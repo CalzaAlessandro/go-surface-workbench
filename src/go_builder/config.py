@@ -261,9 +261,11 @@ mode = "random"                   # "random" (default) | "island" | "irregular_i
 # centers = [[10.0, 10.0], [25.0, 25.0]]  # Explicit [x, y] island centers in A (mutually exclusive with seed_atoms)
 # seed_atoms = [25, 80]           # Explicit scaffold carbon IDs for island nuclei
 
-# --- Optional Closed-Shell Electronic Filter ---
-# [clar]
-# enabled = true                  # Require bipartite sublattice balance, Kekule matching & Huckel gap
+# --- Closed-Shell Clar Electronic Filter ---
+# Enforces bipartite sp2 sublattice balance (|N_A - N_B| = 0) and a perfect Kekule matching
+# (closed-shell aromatic domains). Default ON in CLI; pass --no-clar or set enabled = false for radical tests.
+[clar]
+enabled = true
 # min_huckel_gap = 0.0            # Minimum HOMO-LUMO pi gap in |beta| units (default: 0.0)
 # max_attempts = 128
 """
@@ -305,7 +307,8 @@ def render_annotated_json_template() -> str:
                 ],
             },
             "clar": {
-                "optional": "boolean or {enabled, min_huckel_gap (>=0, default 0.0), max_attempts (>=1, default 128)}",
+                "default": "Enabled by default in CLI and templates (disable via --no-clar or enabled=false)",
+                "format": "boolean or {enabled, min_huckel_gap (>=0, default 0.0), max_attempts (>=1, default 128)}",
             },
         },
         "name": "go_sheet",
@@ -330,6 +333,9 @@ def render_annotated_json_template() -> str:
         },
         "placement": {
             "mode": "random",
+        },
+        "clar": {
+            "enabled": True,
         },
     }
     return json.dumps(template, indent=2, allow_nan=False) + "\n"

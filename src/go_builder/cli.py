@@ -23,6 +23,7 @@ STAGES = (
     "amber",
     "gromacs",
     "openmm",
+    "lammps",
     "audit",
     "qm",
     "esp-import",
@@ -248,9 +249,12 @@ def parser_for(stage: str) -> argparse.ArgumentParser:
         )
         place_group.add_argument(
             "--clar",
-            action="store_true",
-            default=False,
-            help="Enforce bipartite sublattice balance, Kekule matching, and nonzero Huckel pi-gap",
+            action=argparse.BooleanOptionalAction,
+            default=None,
+            help=(
+                "Enforce Clar closed-shell Kekule pi-system balance (even bipartite sublattice parity, "
+                "perfect Kekule matching, nonzero Huckel gap) across all placement modes (default: ON; disable with --no-clar)"
+            ),
         )
         place_group.add_argument(
             "--min-huckel-gap",
@@ -358,20 +362,55 @@ def parser_for(stage: str) -> argparse.ArgumentParser:
         parser.add_argument(
             "--radii", choices=("bondi", "mbondi", "mbondi2", "mbondi3"), default="mbondi2"
         )
+        parser.add_argument(
+            "--direct-periodic",
+            action="store_true",
+            help="Directly build periodic Amber prmtop/inpcrd from gaff2_v3 frcmod without tleap",
+        )
     elif stage == "gromacs":
-        parser.add_argument("--topology", required=True, type=Path)
-        parser.add_argument("--coordinates", required=True, type=Path)
+        parser.add_argument("--topology", type=Path)
+        parser.add_argument("--coordinates", type=Path)
+        parser.add_argument("--model", type=Path)
         parser.add_argument("--output-prefix", required=True, type=Path)
+        parser.add_argument(
+            "--charge-model",
+            choices=("auto", "l0_v2", "current_lib", "custom"),
+            default="auto",
+        )
+        parser.add_argument("--charges-json", type=Path)
+        parser.add_argument("--reference-dir", type=Path)
+        parser.add_argument("--cutoff-nm", type=float, default=None)
     elif stage == "openmm":
-        parser.add_argument("--topology", required=True, type=Path)
-        parser.add_argument("--coordinates", required=True, type=Path)
+        parser.add_argument("--topology", type=Path)
+        parser.add_argument("--coordinates", type=Path)
+        parser.add_argument("--model", type=Path)
         parser.add_argument("--output", required=True, type=Path)
         parser.add_argument(
             "--nonbonded-method",
             choices=("NoCutoff", "CutoffNonPeriodic", "PME"),
-            default="NoCutoff",
+            default=None,
         )
-        parser.add_argument("--cutoff-nm", type=float, default=1.0)
+        parser.add_argument("--cutoff-nm", type=float, default=None)
+        parser.add_argument(
+            "--charge-model",
+            choices=("auto", "l0_v2", "current_lib", "custom"),
+            default="auto",
+        )
+        parser.add_argument("--charges-json", type=Path)
+        parser.add_argument("--reference-dir", type=Path)
+    elif stage == "lammps":
+        parser.add_argument("--topology", type=Path)
+        parser.add_argument("--coordinates", type=Path)
+        parser.add_argument("--model", type=Path)
+        parser.add_argument("--output-prefix", required=True, type=Path)
+        parser.add_argument("--cutoff-ang", type=float, default=None)
+        parser.add_argument(
+            "--charge-model",
+            choices=("auto", "l0_v2", "current_lib", "custom"),
+            default="auto",
+        )
+        parser.add_argument("--charges-json", type=Path)
+        parser.add_argument("--reference-dir", type=Path)
     elif stage == "audit":
         parser.add_argument("--output-dir", required=True, type=Path)
         parser.add_argument("--current-dir", type=Path)
@@ -629,6 +668,8 @@ def _check_build_cli_conflicts(args: argparse.Namespace) -> None:
         if getattr(args, "island_style", None) == "compact":
             raise ValueError("--branching requires --place irregular_island or --island-style irregular")
     if getattr(args, "min_huckel_gap", None) is not None:
+        if getattr(args, "clar", None) is False:
+            raise ValueError("--min-huckel-gap cannot be combined with --no-clar")
         if not math.isfinite(args.min_huckel_gap) or args.min_huckel_gap < 0.0:
             raise ValueError("--min-huckel-gap must be >= 0")
 
@@ -765,16 +806,24 @@ def _resolve_build_recipe(args: argparse.Namespace) -> tuple[dict, dict | None]:
                 recipe["placement"] = updated
         cli_overrides["placement"] = recipe["placement"]
 
-    use_clar = getattr(args, "clar", False)
+    use_clar = getattr(args, "clar", None)
     min_huckel_gap = getattr(args, "min_huckel_gap", None)
-    if use_clar or min_huckel_gap is not None:
+    if use_clar is not None or min_huckel_gap is not None:
         existing_clar = recipe.get("clar")
         clar_obj = dict(existing_clar) if isinstance(existing_clar, dict) else {}
-        clar_obj["enabled"] = True
+        if use_clar is False:
+            clar_obj["enabled"] = False
+        elif use_clar is True or min_huckel_gap is not None:
+            clar_obj["enabled"] = True
         if min_huckel_gap is not None:
             clar_obj["min_huckel_gap"] = float(min_huckel_gap)
         recipe["clar"] = clar_obj
         cli_overrides["clar"] = clar_obj
+    elif "clar" not in recipe or recipe["clar"] is None:
+        from .presets import LAYERONE_PRESET_NAMES
+
+        if args.preset not in LAYERONE_PRESET_NAMES:
+            recipe["clar"] = {"enabled": True}
 
     has_comp_cli = any(
         val is not None
@@ -1619,6 +1668,17 @@ def _dispatch(stage: str, args: argparse.Namespace) -> dict:
                 "status": "AVAILABLE_FORCE_FIELD_PRESETS",
                 "presets": list_force_field_presets(),
             }
+        if args.direct_periodic:
+            from .periodic_topology import export_periodic_amber
+
+            return export_periodic_amber(
+                _read(args.model),
+                args.output_dir,
+                charge_model=args.charge_model,
+                charges_json=args.charges_json,
+                reference_dir=args.reference_dir,
+                radii=args.radii,
+            )
         templates = _read(args.parameter_templates) if args.parameter_templates else None
         return prepare_amber(
             _read(args.model),
@@ -1633,18 +1693,61 @@ def _dispatch(stage: str, args: argparse.Namespace) -> dict:
             radii=args.radii,
         )
     if stage == "gromacs":
+        if args.model is not None:
+            from .periodic_topology import export_periodic_gromacs
+
+            return export_periodic_gromacs(
+                _read(args.model),
+                args.output_prefix,
+                charge_model=args.charge_model,
+                charges_json=args.charges_json,
+                reference_dir=args.reference_dir,
+                cutoff_nm=args.cutoff_nm,
+            )
         from .topology import export_gromacs
 
         return export_gromacs(args.topology, args.coordinates, args.output_prefix)
     if stage == "openmm":
+        if args.model is not None:
+            from .periodic_topology import export_periodic_openmm
+
+            return export_periodic_openmm(
+                _read(args.model),
+                args.output,
+                nonbonded_method=args.nonbonded_method or "PME",
+                cutoff_nm=args.cutoff_nm,
+                charge_model=args.charge_model,
+                charges_json=args.charges_json,
+                reference_dir=args.reference_dir,
+            )
         from .topology import export_openmm
 
         return export_openmm(
             args.topology,
             args.coordinates,
             args.output,
-            nonbonded_method=args.nonbonded_method,
-            cutoff_nm=args.cutoff_nm,
+            nonbonded_method=args.nonbonded_method or "NoCutoff",
+            cutoff_nm=1.0 if args.cutoff_nm is None else args.cutoff_nm,
+        )
+    if stage == "lammps":
+        if args.model is not None:
+            from .lammps_export import export_periodic_lammps
+
+            return export_periodic_lammps(
+                _read(args.model),
+                args.output_prefix,
+                cutoff_ang=args.cutoff_ang,
+                charge_model=args.charge_model,
+                charges_json=args.charges_json,
+                reference_dir=args.reference_dir,
+            )
+        from .lammps_export import export_lammps
+
+        return export_lammps(
+            args.topology,
+            args.coordinates,
+            args.output_prefix,
+            cutoff_ang=120.0 if args.cutoff_ang is None else args.cutoff_ang,
         )
     if stage == "audit":
         from .charges import audit_charge_sources
@@ -1742,6 +1845,25 @@ def main(stage: str | None = None, argv: list[str] | None = None) -> int:
     elif stage == "amber":
         if not args.list_presets and (args.model is None or args.output_dir is None):
             parser.error("--model and --output-dir are required (or use --list-presets)")
+        if args.direct_periodic and args.parameter_templates is not None:
+            parser.error("--direct-periodic cannot be combined with --parameter-templates")
+        if args.direct_periodic and args.run:
+            parser.error("--direct-periodic does not use external tleap (--run)")
+    elif stage in ("gromacs", "openmm", "lammps"):
+        has_amber_pair = args.topology is not None or args.coordinates is not None
+        if args.model is not None and has_amber_pair:
+            parser.error("--model cannot be combined with --topology or --coordinates")
+        if args.model is None and (args.topology is None or args.coordinates is None):
+            parser.error("supply either --model or both --topology and --coordinates")
+        if args.model is None and (
+            args.charge_model != "auto"
+            or args.charges_json is not None
+            or args.reference_dir is not None
+            or (stage == "gromacs" and args.cutoff_nm is not None)
+        ):
+            parser.error(
+                "--charge-model, --charges-json, --reference-dir, and periodic options require --model"
+            )
 
     worker_py = getattr(args, "worker_python", None) or sys.executable
     packaged_resources = Path(__file__).resolve().parent / "_resources"

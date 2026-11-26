@@ -88,7 +88,7 @@ Key high-level builder flags (`01_build_GO.py` / `go.py build`):
 | `--islands N`, `--island-style` | Number of oxidized island nuclei and island compactness style |
 | `--branching F` | Branching tendency `[0, 1]` for branched Lerf–Klinowski `irregular_island` growth |
 | `--holes SPEC` | Pore / vacancy specification (e.g., `mixed:5`) |
-| `--clar`, `--min-huckel-gap G` | Enforce closed-shell Kekulé matchings and minimum Hückel HOMO–LUMO gap (in $|\beta|$) |
+| `--clar` / `--no-clar`, `--min-huckel-gap G` | Clar closed-shell screening (default: ON in CLI; `--no-clar` disables it). Requires bipartite sublattice parity (`|N_A - N_B| = 0`), a perfect Kekulé matching so conjugated $sp^2$ domains remain closed-shell rather than open-shell radicals, and an optional minimum Hückel HOMO–LUMO gap in $|\beta|$ units |
 | `--config PATH`, `--init-config PATH` | Load a TOML/JSON configuration file or write an annotated starter TOML template |
 | `--list-presets` | Print packaged sheet recipes |
 
@@ -130,11 +130,19 @@ single carbon sites without overlapping.
 
 **Placement is randomized for standard groups unless explicit IDs are supplied.**
 Each attempt generates an entire candidate layout, validating COOH, COO, carbonyls,
-epoxides, and hydroxyls in sequence. If steric constraints are violated, up to 128
-stochastic layout attempts are evaluated. The `seed` parameter ensures exact
-reproducibility; `faces: both` randomly distributes basal groups between top and bottom
-faces without forcing an exact 50/50 split. Unfunctionalized edge carbons are saturated
-with hydrogen atoms to yield an initial unrelaxed starting geometry.
+epoxides, and hydroxyls in sequence. Edge `-COOH` and `-COO-` groups prefer perimeter
+sites separated by at least 3 graph C–C bonds from already placed carboxyls to avoid
+unphysical ortho/bay inter-acid cyclization unless site capacity requires fallback.
+When Clar closed-shell screening is active (ON by default in `01_build_GO.py` / `go.py build`
+across all placement modes, and balanced automatically in `--oc`/`--co` composition mode;
+disable with `--no-clar` or `clar = false`), candidates must additionally satisfy
+even bipartite sublattice parity (`N_A - N_B + OH + carbonyl` even with
+`OH + carbonyl >= |N_A - N_B|`) and admit a perfect Kekulé matching so the conjugated
+$\pi$ network has no artificial radical centers. If steric or Clar constraints are
+violated, up to 128 stochastic layout attempts are evaluated. The `seed` parameter
+ensures exact reproducibility; `faces: both` randomly distributes basal groups between
+top and bottom faces without forcing an exact 50/50 split. Unfunctionalized edge carbons
+are saturated with hydrogen atoms to yield an initial unrelaxed starting geometry.
 
 To anchor groups at specific sites, replace group counts with an object:
 

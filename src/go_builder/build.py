@@ -3250,14 +3250,17 @@ def _decorate(
             k_single = k_cab + k_oh
             if (d0 + k_single) % 2 != 0 or abs(d0) > k_single:
                 raise PlacementError(
-                    "Requested counts cannot achieve Clar bipartite sublattice balance "
-                    f"(initial |N_A - N_B|={abs(d0)}, single-site OH+carbonyl={k_single})",
+                    "Requested counts cannot achieve Clar closed-shell bipartite sublattice balance "
+                    "(every OH or carbonyl removes one pi site from either sublattice A or B, so a "
+                    "closed-shell Kekule pi system requires even sublattice parity: (N_A - N_B + OH + carbonyl) even "
+                    f"with OH + carbonyl >= |N_A - N_B|; got |N_A - N_B|={abs(d0)}, single-site OH+carbonyl={k_single})",
                     requested=requested_report,
                     capacity=capacity,
                     attempts=0,
                     suggestions=[
-                        "Adjust OH or carbonyl counts by 1 for even sublattice parity",
-                        "Disable clar filtering or use composition mode",
+                        "Adjust OH or carbonyl counts by +/-1 for even closed-shell sublattice parity",
+                        "Disable Clar screening with --no-clar (CLI) or clar=False (recipe) if an open-shell radical is intended",
+                        "Use composition mode (--oc / --co) for automatic Clar parity balancing",
                     ],
                 )
             need_a = (d0 + k_single) // 2
@@ -3448,6 +3451,17 @@ def _decorate(
         group_id = 1
         achieved = dict.fromkeys(report_keys, 0)
         success = True
+
+        # Track edge scaffold carbons within graph distance <= 2 (ortho/bay) of placed COOH/COO
+        # to avoid adjacent unscreened edge acid cyclization unless capacity requires fallback.
+        acid_blocked_edge: set[int] = set()
+
+        def _mark_acid_neighborhood(anchor_cid: int) -> None:
+            acid_blocked_edge.add(anchor_cid)
+            for n1, _, _ in ns[anchor_cid]:
+                acid_blocked_edge.add(n1)
+                for n2, _, _ in ns[n1]:
+                    acid_blocked_edge.add(n2)
 
         placed_basal_pts = []
         placed_edge_pts = []
@@ -3774,6 +3788,8 @@ def _decorate(
                         ):
                             success = False
                             break
+                        if group in ("COOH", "COO") and sites:
+                            _mark_acid_neighborhood(sites[0])
                         group_id += 1
                         achieved[group] += 1
                     if not success:
@@ -3785,6 +3801,10 @@ def _decorate(
                         f_a = oh_quota[0] if (group == "carbonyl" and oh_quota is not None) else 0
                         f_b = oh_quota[1] if (group == "carbonyl" and oh_quota is not None) else 0
                         if mode == "dispersed":
+                            def _disp_edge_update(s: int, grp: str = group) -> None:
+                                used_edge.add(s)
+                                if grp in ("COOH", "COO"):
+                                    _mark_acid_neighborhood(s)
                             if not _place_dispersed(
                                 edge_pool,
                                 lambda s: base_coords[s],
@@ -3792,7 +3812,7 @@ def _decorate(
                                 needed,
                                 group,
                                 False,
-                                lambda s: used_edge.add(s),
+                                _disp_edge_update,
                                 sub_quota=g_quota,
                                 future_a=f_a,
                                 future_b=f_b,
@@ -3859,35 +3879,45 @@ def _decorate(
                                 break
                         else:
                             placed_here = 0
-                            for site in edge_pool:
-                                if site in used_edge:
-                                    continue
-                                if g_quota is not None and sublattice_map is not None:
-                                    if g_quota[sublattice_map[site]] <= 0:
+                            # For COOH/COO, try graph-spaced sites (dist >= 3 bonds from existing acids) first,
+                            # checking acid_blocked_edge dynamically so multiple acids within one group also space out;
+                            # fall back to all remaining edge sites only if spaced capacity is exhausted.
+                            for allow_adjacent_acid in ((False, True) if group in ("COOH", "COO") else (True,)):
+                                for site in edge_pool:
+                                    if site in used_edge:
                                         continue
-                                face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
-                                if _place_group(
-                                    model,
-                                    group,
-                                    [site],
-                                    face,
-                                    group_id,
-                                    faces=faces,
-                                    adj=adj,
-                                    coords_by_id=coords_by_id,
-                                    occupied_edges=occupied_edges,
-                                    spatial_grid=spatial_grid,
-                                    by_id=by_id,
-                                    bond_by_atom=bond_by_atom,
-                                ):
-                                    used_edge.add(site)
+                                    if not allow_adjacent_acid and site in acid_blocked_edge:
+                                        continue
                                     if g_quota is not None and sublattice_map is not None:
-                                        g_quota[sublattice_map[site]] -= 1
-                                    group_id += 1
-                                    achieved[group] += 1
-                                    placed_here += 1
-                                    if placed_here == needed:
-                                        break
+                                        if g_quota[sublattice_map[site]] <= 0:
+                                            continue
+                                    face = 1 if faces == "up" else -1 if faces == "down" else rng.choice([-1, 1])
+                                    if _place_group(
+                                        model,
+                                        group,
+                                        [site],
+                                        face,
+                                        group_id,
+                                        faces=faces,
+                                        adj=adj,
+                                        coords_by_id=coords_by_id,
+                                        occupied_edges=occupied_edges,
+                                        spatial_grid=spatial_grid,
+                                        by_id=by_id,
+                                        bond_by_atom=bond_by_atom,
+                                    ):
+                                        used_edge.add(site)
+                                        if group in ("COOH", "COO"):
+                                            _mark_acid_neighborhood(site)
+                                        if g_quota is not None and sublattice_map is not None:
+                                            g_quota[sublattice_map[site]] -= 1
+                                        group_id += 1
+                                        achieved[group] += 1
+                                        placed_here += 1
+                                        if placed_here == needed:
+                                            break
+                                if placed_here == needed:
+                                    break
                             if placed_here < needed:
                                 success = False
                                 break
@@ -4185,7 +4215,7 @@ def _decorate(
                 if not integrity["passed"]:
                     success = False
             if success and clar_enabled:
-                elec = analyze_aromatic_electronic_structure(model, compute_huckel=True)
+                elec = analyze_aromatic_electronic_structure(model, compute_huckel=False)
                 min_gap = clar_spec["min_huckel_gap"]
                 if elec["bipartite"] and elec["sublattice_imbalance"] != 0:
                     success = False
@@ -4193,19 +4223,22 @@ def _decorate(
                 elif not elec["kekule_perfect"]:
                     success = False
                     clar_fail_reason = "no perfect Kekule matching"
-                elif elec["huckel_gap_beta"] is None or elec["huckel_gap_beta"] < min_gap:
-                    success = False
-                    clar_fail_reason = (
-                        f"huckel_gap_beta={elec['huckel_gap_beta']} < {min_gap}"
-                    )
                 else:
-                    clar_meta = {
-                        "enabled": True,
-                        "min_huckel_gap": float(min_gap),
-                        "sublattice_imbalance": elec["sublattice_imbalance"],
-                        "kekule_perfect": bool(elec["kekule_perfect"]),
-                        "huckel_gap_beta": float(elec["huckel_gap_beta"]),
-                    }
+                    need_huckel = min_gap > 0.0 or elec["n_aromatic_sp2_carbons"] <= 800
+                    if need_huckel:
+                        elec = analyze_aromatic_electronic_structure(model, compute_huckel=True)
+                    gap = elec["huckel_gap_beta"]
+                    if min_gap > 0.0 and (gap is None or gap < min_gap):
+                        success = False
+                        clar_fail_reason = f"huckel_gap_beta={gap} < {min_gap}"
+                    else:
+                        clar_meta = {
+                            "enabled": True,
+                            "min_huckel_gap": float(min_gap),
+                            "sublattice_imbalance": elec["sublattice_imbalance"],
+                            "kekule_perfect": bool(elec["kekule_perfect"]),
+                            "huckel_gap_beta": float(gap) if gap is not None else None,
+                        }
 
         if success:
             if placement_spec is not None:
